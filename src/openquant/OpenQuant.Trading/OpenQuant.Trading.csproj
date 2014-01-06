@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files\SmartQuant Ltd\OpenQuant\Bin\OpenQuant.Trading.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F59047F-AED7-4550-B0D3-01768149FACF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>OpenQuant.Trading</AssemblyName>
+    <ApplicationVersion>1.0.5037.20291</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>OpenQuant.Trading</RootNamespace>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="BarRequest.cs" />
+    <Compile Include="BarRequestItem.cs" />
+    <Compile Include="BarSlice.cs" />
+    <Compile Include="BarSliceManager.cs" />
+    <Compile Include="IInstrumentSource.cs" />
+    <Compile Include="MarketDataRequest.cs" />
+    <Compile Include="ObjectiveType.cs" />
+    <Compile Include="OptimizationParameter.cs" />
+    <Compile Include="RequestType.cs" />
+    <Compile Include="SolutionRunner.cs" />
+    <Compile Include="StrategyError.cs" />
+    <Compile Include="StrategyErrorEventArgs.cs" />
+    <Compile Include="StrategyMode.cs" />
+    <Compile Include="StrategyOptimizer.cs" />
+    <Compile Include="StrategyRunner.cs" />
+    <Compile Include="UserCommand.cs" />
+    <Compile Include="UserCommandEventArgs.cs" />
+    <Compile Include="UserCommandManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

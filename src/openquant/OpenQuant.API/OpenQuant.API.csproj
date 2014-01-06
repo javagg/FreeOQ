@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files\SmartQuant Ltd\OpenQuant\Bin\OpenQuant.API.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40E0C499-01D7-4D12-97C6-EBA1F605F756}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>OpenQuant.API</AssemblyName>
+    <ApplicationVersion>1.0.5037.20290</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>OpenQuant.API</RootNamespace>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="OpenQuant.ObjectMap">
+      <HintPath>lib\OpenQuant.ObjectMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="OpenQuant.Config">
+      <HintPath>lib\OpenQuant.Config.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="QuoteSeries.cs" />
+    <Compile Include="OrderSide.cs" />
+    <Compile Include="OpenQuant.cs" />
+    <Compile Include="ISeries.cs" />
+    <Compile Include="Indicator.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="TimeInForce.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="BrokerOrderField.cs" />
+    <Compile Include="UserCommand.cs" />
+    <Compile Include="StopType.cs" />
+    <Compile Include="SearchOption.cs" />
+    <Compile Include="Provider.cs" />
+    <Compile Include="MarketDataProvider.cs" />
+    <Compile Include="IBFaMethod.cs" />
+    <Compile Include="Bar.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="StopStatus.cs" />
+    <Compile Include="PositionList.cs" />
+    <Compile Include="PositionListEnumerator.cs" />
+    <Compile Include="QuoteData.cs" />
+    <Compile Include="IBEx.cs" />
+    <Compile Include="ScriptInfo.cs" />
+    <Compile Include="BidAsk.cs" />
+    <Compile Include="TransactionSide.cs" />
+    <Compile Include="InstrumentProvider.cs" />
+    <Compile Include="BrokerPositionField.cs" />
+    <Compile Include="BrokerOrderList.cs" />
+    <Compile Include="OrderBook.cs" />
+    <Compile Include="MarketDataFilter.cs" />
+    <Compile Include="ExecutionProvider.cs" />
+    <Compile Include="SQMarketDataFilter.cs" />
+    <Compile Include="DrawStyle.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="BarFactory.cs" />
+    <Compile Include="AltIDGroupList.cs" />
+    <Compile Include="StrategyMode.cs" />
+    <Compile Include="InstrumentList.cs" />
+    <Compile Include="BarType.cs" />
+    <Compile Include="OrderRoute.cs" />
+    <Compile Include="BrokerPositionList.cs" />
+    <Compile Include="TradeSeries.cs" />
+    <Compile Include="Portfolio.cs" />
+    <Compile Include="InstrumentType.cs" />
+    <Compile Include="ProviderError.cs" />
+    <Compile Include="ProviderProperty.cs" />
+    <Compile Include="ProviderManager.cs" />
+    <Compile Include="HistoricalDataProvider.cs" />
+    <Compile Include="PortfolioPricer.cs" />
+    <Compile Include="DefaultPortfolioPricer.cs" />
+    <Compile Include="DefaultCurrencyConverter.cs" />
+    <Compile Include="PositionSide.cs" />
+    <Compile Include="Instrument.cs" />
+    <Compile Include="OrderBookEntry.cs" />
+    <Compile Include="OrderStatus.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="BrokerOrderFieldList.cs" />
+    <Compile Include="BrokerAccount.cs" />
+    <Compile Include="BarSeriesList.cs" />
+    <Compile Include="Trade.cs" />
+    <Compile Include="DataRequests.cs" />
+    <Compile Include="PortfolioAccount.cs" />
+    <Compile Include="OrderBookAction.cs" />
+    <Compile Include="ExecutionReportList.cs" />
+    <Compile Include="ExecutionReportListEnumerator.cs" />
+    <Compile Include="Appearance.cs" />
+    <Compile Include="Stop.cs" />
+    <Compile Include="ParameterAttribute.cs" />
+    <Compile Include="ProviderList.cs" />
+    <Compile Include="ExecutionReportType.cs" />
+    <Compile Include="BrokerAccountFieldList.cs" />
+    <Compile Include="BarSeriesInfo.cs" />
+    <Compile Include="BarData.cs" />
+    <Compile Include="Strategy.cs" />
+    <Compile Include="CommissionType.cs" />
+    <Compile Include="BrokerOrder.cs" />
+    <Compile Include="Quote.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="BarSeries.cs" />
+    <Compile Include="BarSeriesEnumerator.cs" />
+    <Compile Include="OptimizationParameterAttribute.cs" />
+    <Compile Include="Cross.cs" />
+    <Compile Include="BrokerPosition.cs" />
+    <Compile Include="BrokerAccountField.cs" />
+    <Compile Include="StopMode.cs" />
+    <Compile Include="OrderList.cs" />
+    <Compile Include="Performance.cs" />
+    <Compile Include="OrderBookUpdate.cs" />
+    <Compile Include="BrokerPositionFieldList.cs" />
+    <Compile Include="AltIDGroup.cs" />
+    <Compile Include="TimeSeries.cs" />
+    <Compile Include="OrderType.cs" />
+    <Compile Include="SQPortfolioPricer.cs" />
+    <Compile Include="InstrumentManager.cs" />
+    <Compile Include="ScriptSettings.cs" />
+    <Compile Include="ProviderPropertyList.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="ObjectConverter.cs" />
+    <Compile Include="PutCall.cs" />
+    <Compile Include="BrokerAccountList.cs" />
+    <Compile Include="TransactionList.cs" />
+    <Compile Include="TransactionListEnumerator.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="BarRequestList.cs" />
+    <Compile Include="HistoricalDataRequest.cs" />
+    <Compile Include="ExecutionReport.cs" />
+    <Compile Include="BrokerInfo.cs" />
+    <Compile Include="EnumConverter.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="BarRequest.cs" />
+    <Compile Include="OrderMarker.cs" />
+    <Compile Include="Chart.cs" />
+    <Compile Include="Indicators\KRI.cs" />
+    <Compile Include="Indicators\SAR.cs" />
+    <Compile Include="Indicators\TH.cs" />
+    <Compile Include="Indicators\OBV.cs" />
+    <Compile Include="Indicators\NVI.cs" />
+    <Compile Include="Indicators\MDI.cs" />
+    <Compile Include="Indicators\MACD.cs" />
+    <Compile Include="Indicators\ENVU.cs" />
+    <Compile Include="Indicators\PCU.cs" />
+    <Compile Include="Indicators\MASS.cs" />
+    <Compile Include="Indicators\VROC.cs" />
+    <Compile Include="Indicators\OSC.cs" />
+    <Compile Include="Indicators\MFI.cs" />
+    <Compile Include="Indicators\DX.cs" />
+    <Compile Include="Indicators\AD.cs" />
+    <Compile Include="Indicators\D_Slow.cs" />
+    <Compile Include="Indicators\ATR.cs" />
+    <Compile Include="Indicators\VWAP.cs" />
+    <Compile Include="Indicators\Range.cs" />
+    <Compile Include="Indicators\PVT.cs" />
+    <Compile Include="Indicators\EMV.cs" />
+    <Compile Include="Indicators\LRS.cs" />
+    <Compile Include="Indicators\K_Fast.cs" />
+    <Compile Include="Indicators\AroonU.cs" />
+    <Compile Include="Indicators\KCU.cs" />
+    <Compile Include="Indicators\TR.cs" />
+    <Compile Include="Indicators\SMV.cs" />
+    <Compile Include="Indicators\WMA.cs" />
+    <Compile Include="Indicators\MOM.cs" />
+    <Compile Include="Indicators\BBL.cs" />
+    <Compile Include="Indicators\B.cs" />
+    <Compile Include="Indicators\VCH.cs" />
+    <Compile Include="Indicators\TRIX.cs" />
+    <Compile Include="Indicators\SMD.cs" />
+    <Compile Include="Indicators\R.cs" />
+    <Compile Include="Indicators\EMA.cs" />
+    <Compile Include="Indicators\HV.cs" />
+    <Compile Include="Indicators\WAD.cs" />
+    <Compile Include="Indicators\VOSC.cs" />
+    <Compile Include="Indicators\ENVL.cs" />
+    <Compile Include="Indicators\RegressionDistanceMode.cs" />
+    <Compile Include="Indicators\RSI.cs" />
+    <Compile Include="Indicators\PDM.cs" />
+    <Compile Include="Indicators\PCL.cs" />
+    <Compile Include="Indicators\MarketFI.cs" />
+    <Compile Include="Indicators\CCI.cs" />
+    <Compile Include="Indicators\SMA.cs" />
+    <Compile Include="Indicators\UltOsc.cs" />
+    <Compile Include="Indicators\PERF.cs" />
+    <Compile Include="Indicators\ROC.cs" />
+    <Compile Include="Indicators\D_Fast.cs" />
+    <Compile Include="Indicators\ADXR.cs" />
+    <Compile Include="Indicators\TL.cs" />
+    <Compile Include="Indicators\MDM.cs" />
+    <Compile Include="Indicators\K_Slow.cs" />
+    <Compile Include="Indicators\FO.cs" />
+    <Compile Include="Indicators\CAD.cs" />
+    <Compile Include="Indicators\IndicatorStyle.cs" />
+    <Compile Include="Indicators\PDI.cs" />
+    <Compile Include="Indicators\CMO.cs" />
+    <Compile Include="Indicators\AroonL.cs" />
+    <Compile Include="Indicators\VHF.cs" />
+    <Compile Include="Indicators\PVI.cs" />
+    <Compile Include="Indicators\LRI.cs" />
+    <Compile Include="Indicators\DPO.cs" />
+    <Compile Include="Indicators\BBU.cs" />
+    <Compile Include="Indicators\ADX.cs" />
+    <Compile Include="Indicators\KCL.cs" />
+    <Compile Include="Design\AltSourceForm.cs" />
+    <Compile Include="Design\IBExTypeConverter.cs" />
+    <Compile Include="Design\AltIDGroupTypeConverter.cs" />
+    <Compile Include="Design\AltIDGroupListTypeConverter.cs" />
+    <Compile Include="Design\AltIDGroupListEditor.cs" />
+    <Compile Include="Design\AltSourceTypeEditor.cs" />
+    <Compile Include="Design\AltIDGroupPropertyDescriptor.cs" />
+    <Compile Include="Plugins\UserProvider.cs" />
+    <Compile Include="Plugins\SQProviderTypeDescriptor.cs" />
+    <Compile Include="Plugins\SQProviderTypeDescriptionProvider.cs" />
+    <Compile Include="Plugins\SubscriptionDataType.cs" />
+    <Compile Include="Plugins\OrderRecord.cs" />
+    <Compile Include="Plugins\UserIndicator.cs" />
+    <Compile Include="Plugins\SQProvider.cs" />
+    <Compile Include="Plugins\SQProviderPropertyDescriptor.cs" />
+    <Compile Include="Engine\ProjectList.cs" />
+    <Compile Include="Engine\Solution.cs" />
+    <Compile Include="Engine\IDE.cs" />
+    <Compile Include="Engine\Statistics.cs" />
+    <Compile Include="Engine\ProjectInfo.cs" />
+    <Compile Include="Engine\InstrumentList.cs" />
+    <Compile Include="Engine\ParameterSet.cs" />
+    <Compile Include="Engine\Parameter.cs" />
+    <Compile Include="Engine\Project.cs" />
+    <Compile Include="Engine\ProjectInfoList.cs" />
+    <Compile Include="Engine\SolutionInfo.cs" />
+    <Compile Include="Engine\Scenario.cs" />
+    <Compile Include="Logs\IStrategyLog.cs" />
+    <Compile Include="Logs\IStrategyLogList.cs" />
+    <Compile Include="Logs\IStrategyLogManager.cs" />
+    <Compile Include="Quant\Matrix.cs" />
+    <Compile Include="Quant\OptionType.cs" />
+    <Compile Include="Quant\OptionPosition.cs" />
+    <Compile Include="Quant\OptionPrice.cs" />
+    <Compile Include="Quant\FinMath.cs" />
+    <Compile Include="Quant\Vector.cs" />
+    <Compile Include="Quant\MatrixDiag.cs" />
+    <Compile Include="Compression\PriceSizeItem.cs" />
+    <Compile Include="Compression\BarCompressor.cs" />
+    <Compile Include="Compression\VolumeBarCompressor.cs" />
+    <Compile Include="Compression\DataEntryEnumerator.cs" />
+    <Compile Include="Compression\QuoteDataEnumerator.cs" />
+    <Compile Include="Compression\TradeDataEnumerator.cs" />
+    <Compile Include="Compression\TimeBarCompressor.cs" />
+    <Compile Include="Compression\DataEntry.cs" />
+    <Compile Include="Compression\CompressedBarEventHandler.cs" />
+    <Compile Include="Compression\RangeBarCompressor.cs" />
+    <Compile Include="Compression\TickBarCompressor.cs" />
+    <Compile Include="Compression\CompressedBarEventArgs.cs" />
+    <Compile Include="Compression\BarDataEnumerator.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Design\AltSourceForm.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../OpenQuant.Finam/DllSelector.cs">
+    <Files>
+      <File FileName="TransactionListEnumerator.cs" Line="1" Column="1" />
+      <File FileName="QuoteSeries.cs" Line="6" Column="2" />
+      <File FileName="../../../../../../run/media/alex/software/smart/OpenQuant.ObjectMap/Map.cs" Line="11" Column="20" />
+      <File FileName="../../../../../../run/media/alex/software/smart/OpenQuant.Finam/OpenBookData.cs" Line="18" Column="6" />
+      <File FileName="../OpenQuant.Finam/TransaqFortsMoney.cs" Line="1" Column="1" />
+      <File FileName="../OpenQuant.Finam/TXmlConnector.cs" Line="1" Column="1" />
+      <File FileName="../OpenQuant.Finam/TXcnConnector.cs" Line="1" Column="1" />
+      <File FileName="../OpenQuant.Finam/TransaqSecurity.cs" Line="1" Column="1" />
+      <File FileName="../OpenQuant.Finam/DllSelector.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

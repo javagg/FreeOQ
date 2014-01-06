@@ -1,0 +1,64 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="openquant/OpenQuant.Trading/SolutionRunner.cs">
+    <Files>
+      <File FileName="openquant/OpenQuant.API/Appearance.cs" Line="10" Column="1" />
+      <File FileName="openquant/OpenQuant.API/AssemblyInfo.cs" Line="8" Column="36" />
+      <File FileName="openquant/OpenQuant.API/Bar.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BarData.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BarFactory.cs" Line="1" Column="26" />
+      <File FileName="openquant/OpenQuant.API/BarRequest.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BarRequestList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BarSeries.cs" Line="1" Column="7" />
+      <File FileName="openquant/OpenQuant.API/BarSeriesEnumerator.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BarSeriesInfo.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BarSeriesList.cs" Line="1" Column="26" />
+      <File FileName="openquant/OpenQuant.API/BrokerAccount.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BrokerAccountFieldList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BrokerAccountField.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BrokerPositionList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/Canvas.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/Chart.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/DefaultCurrencyConverter.cs" Line="1" Column="28" />
+      <File FileName="openquant/OpenQuant.API/BrokerOrderList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/BrokerPosition.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/DataManager.cs" Line="4" Column="7" />
+      <File FileName="openquant/OpenQuant.API/ExecutionReportListEnumerator.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/ExecutionReportType.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/HistoricalDataProvider.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/HistoricalDataRequest.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/IBEx.cs" Line="2" Column="7" />
+      <File FileName="openquant/OpenQuant.API/IBFaMethod.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/MarketDataProvider.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/ObjectConverter.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/OrderBook.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/OrderBookAction.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/OrderBookEntry.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/PortfolioAccount.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/PortfolioPricer.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/Position.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/PositionList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/ProviderList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/ProviderManager.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/QuoteData.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/QuoteSeries.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/Route.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/ScriptInfo.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/TransactionListEnumerator.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/TransactionList.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.API/TradeSeries.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/OptimizationParameter.cs" Line="1" Column="29" />
+      <File FileName="openquant/OpenQuant.Trading/UserCommand.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/StrategyRunner.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/StrategyOptimizer.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/StrategyMode.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/StrategyErrorEventArgs.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/StrategyError.cs" Line="1" Column="1" />
+      <File FileName="openquant/OpenQuant.Trading/SolutionRunner.cs" Line="6" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

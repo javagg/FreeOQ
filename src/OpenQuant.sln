@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenQuant.API", "openquant\OpenQuant.API\OpenQuant.API.csproj", "{40E0C499-01D7-4D12-97C6-EBA1F605F756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenQuant.Finam", "openquant\OpenQuant.Finam\OpenQuant.Finam.csproj", "{5C4F7119-E153-4DB3-B5D7-531AF66335CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenQuant.Trading", "openquant\OpenQuant.Trading\OpenQuant.Trading.csproj", "{9F59047F-AED7-4550-B0D3-01768149FACF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.FIX", "freequant\FreeQuant.FIX\FreeQuant.FIX.csproj", "{B0CC6138-44F7-4092-9A0A-D3E550107644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Providers", "freequant\FreeQuant.Providers\FreeQuant.Providers.csproj", "{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Series", "freequant\FreeQuant.Series\FreeQuant.Series.csproj", "{01766337-46DD-4449-BED0-3B07C37519ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenQuant.ObjectMap", "openquant\OpenQuant.ObjectMap\OpenQuant.ObjectMap.csproj", "{6D451F39-360E-4689-9E6C-2E0BE7574820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Instruments", "freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj", "{2768F1D0-79E8-4E6D-AB34-19F598176D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Data", "freequant\FreeQuant.Data\FreeQuant.Data.csproj", "{ADBC5DAD-5E84-4B45-BF7D-418391260276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Execution", "freequant\FreeQuant.Execution\FreeQuant.Execution.csproj", "{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Optimization", "freequant\FreeQuant.Optimization\FreeQuant.Optimization.csproj", "{4740F91B-634F-4934-AC4A-2C4A17759D7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Testing", "freequant\FreeQuant.Testing\FreeQuant.Testing.csproj", "{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Trading", "freequant\FreeQuant.Trading\FreeQuant.Trading.csproj", "{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01766337-46DD-4449-BED0-3B07C37519ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01766337-46DD-4449-BED0-3B07C37519ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01766337-46DD-4449-BED0-3B07C37519ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01766337-46DD-4449-BED0-3B07C37519ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2768F1D0-79E8-4E6D-AB34-19F598176D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2768F1D0-79E8-4E6D-AB34-19F598176D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2768F1D0-79E8-4E6D-AB34-19F598176D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2768F1D0-79E8-4E6D-AB34-19F598176D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E0C499-01D7-4D12-97C6-EBA1F605F756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E0C499-01D7-4D12-97C6-EBA1F605F756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E0C499-01D7-4D12-97C6-EBA1F605F756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E0C499-01D7-4D12-97C6-EBA1F605F756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4740F91B-634F-4934-AC4A-2C4A17759D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4740F91B-634F-4934-AC4A-2C4A17759D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4740F91B-634F-4934-AC4A-2C4A17759D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4740F91B-634F-4934-AC4A-2C4A17759D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F59047F-AED7-4550-B0D3-01768149FACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F59047F-AED7-4550-B0D3-01768149FACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F59047F-AED7-4550-B0D3-01768149FACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F59047F-AED7-4550-B0D3-01768149FACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADBC5DAD-5E84-4B45-BF7D-418391260276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBC5DAD-5E84-4B45-BF7D-418391260276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBC5DAD-5E84-4B45-BF7D-418391260276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBC5DAD-5E84-4B45-BF7D-418391260276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = openquant\OpenQuant.API\OpenQuant.API.csproj
+	EndGlobalSection
+EndGlobal
