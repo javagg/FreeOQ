@@ -31,9 +31,21 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BruteForce.cs" />
+    <Compile Include="CoordinateDescent.cs" />
+    <Compile Include="EOptimizerType.cs" />
+    <Compile Include="EParamType.cs" />
+    <Compile Include="ESimulatedAnnealingScheme.cs" />
+    <Compile Include="EStoppingCriterion.cs" />
+    <Compile Include="EVerboseMode.cs" />
+    <Compile Include="IOptimizable.cs" />
+    <Compile Include="OptimizationParameterAttribute.cs" />
+    <Compile Include="Optimizer.cs" />
+    <Compile Include="ParamSet.cs" />
+    <Compile Include="SimulatedAnnealing.cs" />
+    <Compile Include="TOptimizable.cs" />
+    <Compile Include="TwoParams.cs" />
+  </ItemGroup>
 </Project>

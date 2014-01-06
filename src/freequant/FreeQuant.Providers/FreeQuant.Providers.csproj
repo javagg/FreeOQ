@@ -31,9 +31,88 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BarEventArgs.cs" />
+    <Compile Include="BarEventHandler.cs" />
+    <Compile Include="BarFactory.cs" />
+    <Compile Include="BarFactoryInput.cs" />
+    <Compile Include="BarFactoryItem.cs" />
+    <Compile Include="BarFactoryItemList.cs" />
+    <Compile Include="BarSliceEventArgs.cs" />
+    <Compile Include="BarSliceEventHandler.cs" />
+    <Compile Include="BrokerAccount.cs" />
+    <Compile Include="BrokerAccountField.cs" />
+    <Compile Include="BrokerAccountList.cs" />
+    <Compile Include="BrokerInfo.cs" />
+    <Compile Include="BrokerInfoField.cs" />
+    <Compile Include="BrokerOrder.cs" />
+    <Compile Include="BrokerOrderField.cs" />
+    <Compile Include="BrokerPosition.cs" />
+    <Compile Include="BrokerPositionField.cs" />
+    <Compile Include="CorporateActionEventArgs.cs" />
+    <Compile Include="CorporateActionEventHandler.cs" />
+    <Compile Include="ExecutionProviderList.cs" />
+    <Compile Include="FundamentalEventArgs.cs" />
+    <Compile Include="FundamentalEventHandler.cs" />
+    <Compile Include="HistoricalBarEventArgs.cs" />
+    <Compile Include="HistoricalBarEventHandler.cs" />
+    <Compile Include="HistoricalDataErrorEventArgs.cs" />
+    <Compile Include="HistoricalDataErrorEventHandler.cs" />
+    <Compile Include="HistoricalDataEventArgs.cs" />
+    <Compile Include="HistoricalDataEventHandler.cs" />
+    <Compile Include="HistoricalDataProviderList.cs" />
+    <Compile Include="HistoricalDataRange.cs" />
+    <Compile Include="HistoricalDataRequest.cs" />
+    <Compile Include="HistoricalDataType.cs" />
+    <Compile Include="HistoricalMarketDepthEventArgs.cs" />
+    <Compile Include="HistoricalMarketDepthEventHandler.cs" />
+    <Compile Include="HistoricalQuoteEventArgs.cs" />
+    <Compile Include="HistoricalQuoteEventHandler.cs" />
+    <Compile Include="HistoricalTradeEventArgs.cs" />
+    <Compile Include="HistoricalTradeEventHandler.cs" />
+    <Compile Include="IBarFactory.cs" />
+    <Compile Include="IExecutionProvider.cs" />
+    <Compile Include="IHistoricalDataProvider.cs" />
+    <Compile Include="IInstrumentProvider.cs" />
+    <Compile Include="IMarketDataFilter.cs" />
+    <Compile Include="IMarketDataProvider.cs" />
+    <Compile Include="IMultiRouteExecutionProvider.cs" />
+    <Compile Include="INewsProvider.cs" />
+    <Compile Include="InstrumentProviderList.cs" />
+    <Compile Include="IntradayEventArgs.cs" />
+    <Compile Include="IProvider.cs" />
+    <Compile Include="ISimulationMarketDataProvider.cs" />
+    <Compile Include="MarketDataEventArgs.cs" />
+    <Compile Include="MarketDataEventHandler.cs" />
+    <Compile Include="MarketDataProviderList.cs" />
+    <Compile Include="MarketDataSnapshotEventArgs.cs" />
+    <Compile Include="MarketDataSnapshotEventHandler.cs" />
+    <Compile Include="MarketDepthEventArgs.cs" />
+    <Compile Include="MarketDepthEventHandler.cs" />
+    <Compile Include="NewsEventArgs.cs" />
+    <Compile Include="NewsEventHandler.cs" />
+    <Compile Include="OfflineBarFactory.cs" />
+    <Compile Include="ProviderError.cs" />
+    <Compile Include="ProviderErrorCollection.cs" />
+    <Compile Include="ProviderErrorEventArgs.cs" />
+    <Compile Include="ProviderErrorEventHandler.cs" />
+    <Compile Include="ProviderEventArgs.cs" />
+    <Compile Include="ProviderEventHandler.cs" />
+    <Compile Include="ProviderId.cs" />
+    <Compile Include="ProviderList.cs" />
+    <Compile Include="ProviderManager.cs" />
+    <Compile Include="ProviderStatus.cs" />
+    <Compile Include="QuoteEventArgs.cs" />
+    <Compile Include="QuoteEventHandler.cs" />
+    <Compile Include="SecurityDefinitionEventArgs.cs" />
+    <Compile Include="SecurityDefinitionEventHandler.cs" />
+    <Compile Include="TradeEventArgs.cs" />
+    <Compile Include="TradeEventHandler.cs" />
+    <Compile Include="Design\BarFactoryItemListEditor.cs" />
+    <Compile Include="Design\BarSizesTypeConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Design\" />
+  </ItemGroup>
 </Project>

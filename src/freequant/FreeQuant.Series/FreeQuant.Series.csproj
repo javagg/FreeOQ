@@ -31,9 +31,29 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BarSeries.cs" />
+    <Compile Include="BarSlycing.cs" />
+    <Compile Include="DailySeries.cs" />
+    <Compile Include="DateTimeEventArgs.cs" />
+    <Compile Include="DoubleSeries.cs" />
+    <Compile Include="ECompressStyle.cs" />
+    <Compile Include="ECross.cs" />
+    <Compile Include="EDrawStyle.cs" />
+    <Compile Include="EIndexOption.cs" />
+    <Compile Include="ENameOption.cs" />
+    <Compile Include="ETickBase.cs" />
+    <Compile Include="EWidthStyle.cs" />
+    <Compile Include="IndicatorParameterAttribute.cs" />
+    <Compile Include="ItemAddedEventHandler.cs" />
+    <Compile Include="PnFSeries.cs" />
+    <Compile Include="QuoteArray.cs" />
+    <Compile Include="QuoteArrayEventArgs.cs" />
+    <Compile Include="Regression.cs" />
+    <Compile Include="SeriesEventArgs.cs" />
+    <Compile Include="TimeSeries.cs" />
+    <Compile Include="TradeArray.cs" />
+    <Compile Include="TradeArrayEventArgs.cs" />
+  </ItemGroup>
 </Project>

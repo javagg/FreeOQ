@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B59E197F-3529-4D45-BA90-2A7AE0962B5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant.Simulation</RootNamespace>
+    <AssemblyName>FreeQuant.Simulation</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SlippageProvider.cs" />
+    <Compile Include="SimulatorState.cs" />
+    <Compile Include="Simulator.cs" />
+    <Compile Include="SimulationMode.cs" />
+    <Compile Include="SimulationExecutionService.cs" />
+    <Compile Include="SimulationExecutionProvider.cs" />
+    <Compile Include="SimulationDataProvider.cs" />
+    <Compile Include="SeriesObjectEventHandler.cs" />
+    <Compile Include="SeriesObjectEventArgs.cs" />
+    <Compile Include="OrderEntryList.cs" />
+    <Compile Include="OrderEntry.cs" />
+    <Compile Include="ISlippageProvider.cs" />
+    <Compile Include="IntervalList.cs" />
+    <Compile Include="IntervalEventHandler.cs" />
+    <Compile Include="IntervalEventArgs.cs" />
+    <Compile Include="Interval.cs" />
+    <Compile Include="ICommissionProvider.cs" />
+    <Compile Include="FillOnTradeMode.cs" />
+    <Compile Include="FillOnQuoteMode.cs" />
+    <Compile Include="FillOnBarMode.cs" />
+    <Compile Include="ExceptionEventHandler.cs" />
+    <Compile Include="ExceptionEventArgs.cs" />
+    <Compile Include="CustomCommissionProvider.cs" />
+    <Compile Include="CommissionProvider.cs" />
+    <Compile Include="BarFilterItem.cs" />
+    <Compile Include="BarFilter.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Design\BarFilterItemListEditor.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Design\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources.resx" />
+  </ItemGroup>
+</Project>

@@ -31,9 +31,96 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="LiveTester.cs" />
+    <Compile Include="PerformanceTrackerList.cs" />
+    <Compile Include="TesterEventHandler.cs" />
+    <Compile Include="TesterSettings.cs" />
+    <Compile Include="TimeIntervalSize.cs" />
+    <Compile Include="Components\TesterComponentAttribute.cs" />
+    <Compile Include="Components\TesterComponentEventArgs.cs" />
+    <Compile Include="Components\TesterComponentEventHandler.cs" />
+    <Compile Include="Components\TesterComponentManager.cs" />
+    <Compile Include="Components\TesterComponentRecord.cs" />
+    <Compile Include="Components\TesterComponentRecordList.cs" />
+    <Compile Include="MathStatistics\Average.cs" />
+    <Compile Include="MathStatistics\Division.cs" />
+    <Compile Include="MathStatistics\Maximum.cs" />
+    <Compile Include="MathStatistics\Median.cs" />
+    <Compile Include="MathStatistics\Minimum.cs" />
+    <Compile Include="MathStatistics\Return.cs" />
+    <Compile Include="Pertrac\CompoundAverageReturn.cs" />
+    <Compile Include="Pertrac\FinalWealth.cs" />
+    <Compile Include="Pertrac\GainDays.cs" />
+    <Compile Include="Pertrac\GainStandardDeviation.cs" />
+    <Compile Include="Pertrac\InitialWealth.cs" />
+    <Compile Include="Pertrac\Kurtosis.cs" />
+    <Compile Include="Pertrac\LossDays.cs" />
+    <Compile Include="Pertrac\LossStandardDeviation.cs" />
+    <Compile Include="Pertrac\MARRatio.cs" />
+    <Compile Include="Pertrac\ModifiedSharpeRatio.cs" />
+    <Compile Include="Pertrac\PercentageOfProfitableForPeriod.cs" />
+    <Compile Include="Pertrac\ReturnForPeriod.cs" />
+    <Compile Include="Pertrac\SharpeRatio.cs" />
+    <Compile Include="Pertrac\SimpleItem.cs" />
+    <Compile Include="Pertrac\Skewness.cs" />
+    <Compile Include="Pertrac\SotrinoRatio.cs" />
+    <Compile Include="Pertrac\StandardDeviation.cs" />
+    <Compile Include="Pertrac\TotalDays.cs" />
+    <Compile Include="Pertrac\TradeDays.cs" />
+    <Compile Include="Pertrac\VaR.cs" />
+    <Compile Include="RoundTrips\OpenRoundTripList.cs" />
+    <Compile Include="RoundTrips\RoundTrip.cs" />
+    <Compile Include="RoundTrips\RoundTripArray.cs" />
+    <Compile Include="RoundTrips\RoundTripList.cs" />
+    <Compile Include="RoundTrips\RoundTripListEnumerator.cs" />
+    <Compile Include="RoundTrips\RoundTripListEventArgs.cs" />
+    <Compile Include="RoundTrips\RoundTripListEventHandler.cs" />
+    <Compile Include="RoundTrips\RoundTripStatus.cs" />
+    <Compile Include="RoundTrips\RoundTripsTesterItem.cs" />
+    <Compile Include="RoundTripsStatistics\AllRoundTripsTotalPnL.cs" />
+    <Compile Include="RoundTripsStatistics\ConsecutiveLosers.cs" />
+    <Compile Include="RoundTripsStatistics\ConsecutiveWinners.cs" />
+    <Compile Include="RoundTripsStatistics\LargestLosingRoundTrip.cs" />
+    <Compile Include="RoundTripsStatistics\LargestWinningRoundTrip.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTrips.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTripsDuration.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTripsTotalPnL.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTripsValues.cs" />
+    <Compile Include="RoundTripsStatistics\NumberOfRoundTrips.cs" />
+    <Compile Include="RoundTripsStatistics\OpenRoundTripValue.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsDuration.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsEntryEfficiency.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsExitEfficiency.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsValues.cs" />
+    <Compile Include="RoundTripsStatistics\TotalRoundTripsEfficiency.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTrips.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTripsDuration.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTripsTotalPnL.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTripsValues.cs" />
+    <Compile Include="TesterItems\ComponentNameEventArgs.cs" />
+    <Compile Include="TesterItems\CumulativeAnnualSeries.cs" />
+    <Compile Include="TesterItems\CumulativeDailySeries.cs" />
+    <Compile Include="TesterItems\CumulativeMonthlySeries.cs" />
+    <Compile Include="TesterItems\NegativeSeries.cs" />
+    <Compile Include="TesterItems\PositiveSeries.cs" />
+    <Compile Include="TesterItems\SeriesTesterItem.cs" />
+    <Compile Include="TesterItems\SimpleAnnualSeries.cs" />
+    <Compile Include="TesterItems\SimpleDailySeries.cs" />
+    <Compile Include="TesterItems\SimpleMonthlySeries.cs" />
+    <Compile Include="TesterItems\SimpleSeriesItem.cs" />
+    <Compile Include="TesterItems\TesterComponentNameEventHandler.cs" />
+    <Compile Include="TesterItems\TesterItem.cs" />
+    <Compile Include="TesterItems\TesterItemEventHandler.cs" />
+    <Compile Include="TesterItems\TesterItemList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="MathStatistics\" />
+    <Folder Include="Pertrac\" />
+    <Folder Include="RoundTrips\" />
+    <Folder Include="RoundTripsStatistics\" />
+    <Folder Include="TesterItems\" />
+  </ItemGroup>
 </Project>

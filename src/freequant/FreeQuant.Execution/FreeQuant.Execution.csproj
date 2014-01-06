@@ -31,9 +31,24 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="TrailingStopOrder.cs" />
+    <Compile Include="TrailingStopLimitOrder.cs" />
+    <Compile Include="StopOrder.cs" />
+    <Compile Include="StopLimitOrder.cs" />
+    <Compile Include="SingleOrder.cs" />
+    <Compile Include="SellSideOrderList.cs" />
+    <Compile Include="OrderManager.cs" />
+    <Compile Include="OrderListTable.cs" />
+    <Compile Include="OrderList.cs" />
+    <Compile Include="OrderEventHandler.cs" />
+    <Compile Include="OrderEventArgs.cs" />
+    <Compile Include="OrderDbServer.cs" />
+    <Compile Include="MarketOrder.cs" />
+    <Compile Include="LimitOrder.cs" />
+    <Compile Include="IOrderServer.cs" />
+    <Compile Include="IOrder.cs" />
+    <Compile Include="InstrumentOrderListTable.cs" />
+  </ItemGroup>
 </Project>

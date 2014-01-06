@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Testing", "freequ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Trading", "freequant\FreeQuant.Trading\FreeQuant.Trading.csproj", "{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Simulation", "freequant\FreeQuant.Simulation\FreeQuant.Simulation.csproj", "{B59E197F-3529-4D45-BA90-2A7AE0962B5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0CC6138-44F7-4092-9A0A-D3E550107644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B59E197F-3529-4D45-BA90-2A7AE0962B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59E197F-3529-4D45-BA90-2A7AE0962B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59E197F-3529-4D45-BA90-2A7AE0962B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59E197F-3529-4D45-BA90-2A7AE0962B5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = openquant\OpenQuant.API\OpenQuant.API.csproj

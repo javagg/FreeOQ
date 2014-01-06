@@ -31,9 +31,43 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Bar.cs" />
+    <Compile Include="BarArray.cs" />
+    <Compile Include="BarArrayEventArgs.cs" />
+    <Compile Include="BarData.cs" />
+    <Compile Include="BarMaker.cs" />
+    <Compile Include="BarPrice.cs" />
+    <Compile Include="BarSize.cs" />
+    <Compile Include="BarType.cs" />
+    <Compile Include="ChartStyle.cs" />
+    <Compile Include="Daily.cs" />
+    <Compile Include="DailyArray.cs" />
+    <Compile Include="DailyArrayEventArgs.cs" />
+    <Compile Include="DataArray.cs" />
+    <Compile Include="DataSeriesList.cs" />
+    <Compile Include="IDataObject.cs" />
+    <Compile Include="IDataSeries.cs" />
+    <Compile Include="IMarketData.cs" />
+    <Compile Include="ISeriesObject.cs" />
+    <Compile Include="MarketDepth.cs" />
+    <Compile Include="MarketDepthArray.cs" />
+    <Compile Include="MDOperation.cs" />
+    <Compile Include="MDSide.cs" />
+    <Compile Include="MemorySeries`1.cs" />
+    <Compile Include="OrderBook.cs" />
+    <Compile Include="OrderBookEntry.cs" />
+    <Compile Include="OrderBookEntryList.cs" />
+    <Compile Include="OrderBookEventArgs.cs" />
+    <Compile Include="OrderBookEventHandler.cs" />
+    <Compile Include="PnF.cs" />
+    <Compile Include="PnFKind.cs" />
+    <Compile Include="PriceViewAttribute.cs" />
+    <Compile Include="Quote.cs" />
+    <Compile Include="SearchOption.cs" />
+    <Compile Include="SeriesObject.cs" />
+    <Compile Include="Trade.cs" />
+    <Compile Include="ViewAttribute.cs" />
+  </ItemGroup>
 </Project>

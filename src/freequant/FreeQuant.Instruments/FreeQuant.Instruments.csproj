@@ -31,9 +31,76 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountAction.cs" />
+    <Compile Include="AccountPosition.cs" />
+    <Compile Include="AccountPositionList.cs" />
+    <Compile Include="AccountTransaction.cs" />
+    <Compile Include="AccountTransactionEventArgs.cs" />
+    <Compile Include="AccountTransactionEventHandler.cs" />
+    <Compile Include="AccountTransactionList.cs" />
+    <Compile Include="BarSeriesEventArgs.cs" />
+    <Compile Include="BarSeriesEventHandler.cs" />
+    <Compile Include="BarSeriesList.cs" />
+    <Compile Include="Bond.cs" />
+    <Compile Include="CorporateActionArrayList.cs" />
+    <Compile Include="Currency.cs" />
+    <Compile Include="CurrencyConverter.cs" />
+    <Compile Include="CurrencyList.cs" />
+    <Compile Include="CurrencyManager.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="Derivative.cs" />
+    <Compile Include="Equity.cs" />
+    <Compile Include="Exchange.cs" />
+    <Compile Include="FileDataServer.cs" />
+    <Compile Include="FundamentalArrayList.cs" />
+    <Compile Include="Futures.cs" />
+    <Compile Include="ICurrencyConverter.cs" />
+    <Compile Include="IDataServer.cs" />
+    <Compile Include="IInstrumentServer.cs" />
+    <Compile Include="Instrument.cs" />
+    <Compile Include="InstrumentDbServer.cs" />
+    <Compile Include="InstrumentEventArgs.cs" />
+    <Compile Include="InstrumentEventHandler.cs" />
+    <Compile Include="InstrumentList.cs" />
+    <Compile Include="InstrumentManager.cs" />
+    <Compile Include="IPortfolioPricer.cs" />
+    <Compile Include="IPortfolioServer.cs" />
+    <Compile Include="IPricer.cs" />
+    <Compile Include="Leg.cs" />
+    <Compile Include="LegList.cs" />
+    <Compile Include="MarginManager.cs" />
+    <Compile Include="MarginManager1.cs" />
+    <Compile Include="MarginPosition.cs" />
+    <Compile Include="MarketDataSubscription.cs" />
+    <Compile Include="MarketDataType.cs" />
+    <Compile Include="Option.cs" />
+    <Compile Include="Performance.cs" />
+    <Compile Include="Portfolio.cs" />
+    <Compile Include="PortfolioDbServer.cs" />
+    <Compile Include="PortfolioEventArgs.cs" />
+    <Compile Include="PortfolioEventHandler.cs" />
+    <Compile Include="PortfolioList.cs" />
+    <Compile Include="PortfolioManager.cs" />
+    <Compile Include="PortfolioPricer.cs" />
+    <Compile Include="PortfolioStatistics.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="PositionEventArgs.cs" />
+    <Compile Include="PositionEventHandler.cs" />
+    <Compile Include="PositionList.cs" />
+    <Compile Include="PositionSide.cs" />
+    <Compile Include="Pricer.cs" />
+    <Compile Include="QuoteArrayList.cs" />
+    <Compile Include="Swap.cs" />
+    <Compile Include="TradeArrayList.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="TransactionCost.cs" />
+    <Compile Include="TransactionEventArgs.cs" />
+    <Compile Include="TransactionEventHandler.cs" />
+    <Compile Include="TransactionList.cs" />
+    <Compile Include="Underlying.cs" />
+    <Compile Include="UnderlyingList.cs" />
+  </ItemGroup>
 </Project>
