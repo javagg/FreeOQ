@@ -1,4 +1,4 @@
-﻿using oL6nXjcX2wYBRbhX2q;
+using oL6nXjcX2wYBRbhX2q;
 using RadDBE9P5I945u5gCE;
 using System;
 using System.Drawing;
