@@ -2,18 +2,18 @@
 
 namespace OpenQuant.API
 {
-  public class BarFactory
-  {
-    private IBarFactory barFactory;
+	public class BarFactory
+	{
+		private IBarFactory barFactory;
 
-    internal BarFactory(IBarFactory barFactory)
-    {
-      this.barFactory = barFactory;
-    }
+		internal BarFactory(IBarFactory barFactory)
+		{
+			this.barFactory = barFactory;
+		}
 
-    public void Reset()
-    {
-      this.barFactory.Reset();
-    }
-  }
+		public void Reset()
+		{
+			this.barFactory.Reset();
+		}
+	}
 }

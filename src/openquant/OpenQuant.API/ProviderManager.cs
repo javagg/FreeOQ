@@ -9,7 +9,7 @@ namespace OpenQuant.API
     static ProviderManager()
     {
       ProviderManager.Providers = new ProviderList();
-      foreach (IProvider provider in SmartQuant.Providers.ProviderManager.Providers)
+      foreach (IProvider provider in FreeQuant.Providers.ProviderManager.Providers)
       {
         if (provider is IMarketDataProvider)
           ProviderManager.Providers.Add((Provider) new MarketDataProvider(provider as IMarketDataProvider));
@@ -20,7 +20,7 @@ namespace OpenQuant.API
         else if (provider is IInstrumentProvider)
           ProviderManager.Providers.Add((Provider) new InstrumentProvider(provider as IInstrumentProvider));
       }
-      SmartQuant.Providers.ProviderManager.Added += new ProviderEventHandler(ProviderManager.ProviderManager_Added);
+      FreeQuant.Providers.ProviderManager.Added += new ProviderEventHandler(ProviderManager.ProviderManager_Added);
     }
 
     private static void ProviderManager_Added(ProviderEventArgs args)

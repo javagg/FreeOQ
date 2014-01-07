@@ -54,12 +54,12 @@ namespace OpenQuant.API
 
     public static void Init()
     {
-      SmartQuant.Instruments.Currency.Converter = (ICurrencyConverter) new DefaultCurrencyConverter();
-      foreach (SmartQuant.Instruments.Instrument sq_instrument in (FIXGroupList) SmartQuant.Instruments.InstrumentManager.Instruments)
+      FreeQuant.Instruments.Currency.Converter = (ICurrencyConverter) new DefaultCurrencyConverter();
+      foreach (FreeQuant.Instruments.Instrument sq_instrument in (FIXGroupList) FreeQuant.Instruments.InstrumentManager.Instruments)
         OpenQuant.AddInstrument(sq_instrument);
-      SmartQuant.Instruments.InstrumentManager.InstrumentAdded += new InstrumentEventHandler(OpenQuant.SQInstrumentManager_InstrumentAdded);
-      SmartQuant.Instruments.InstrumentManager.InstrumentRemoved += new InstrumentEventHandler(OpenQuant.SQInstrumentManager_InstrumentRemoved);
-      foreach (SmartQuant.Instruments.Portfolio sq_portfolio in PortfolioManager.Portfolios)
+      FreeQuant.Instruments.InstrumentManager.InstrumentAdded += new InstrumentEventHandler(OpenQuant.SQInstrumentManager_InstrumentAdded);
+      FreeQuant.Instruments.InstrumentManager.InstrumentRemoved += new InstrumentEventHandler(OpenQuant.SQInstrumentManager_InstrumentRemoved);
+      foreach (FreeQuant.Instruments.Portfolio sq_portfolio in PortfolioManager.Portfolios)
         OpenQuant.AddPortfolio(sq_portfolio);
       PortfolioManager.PortfolioAdded += new PortfolioEventHandler(OpenQuant.SQ_PortfolioManager_PortfolioAdded);
       OpenQuant.InitOrders();
@@ -129,7 +129,7 @@ namespace OpenQuant.API
       OpenQuant.RemoveInstrument(args.Instrument);
     }
 
-    private static void AddInstrument(SmartQuant.Instruments.Instrument sq_instrument)
+    private static void AddInstrument(FreeQuant.Instruments.Instrument sq_instrument)
     {
       Instrument instrument = new Instrument(sq_instrument);
       OpenQuant.instruments.Add(sq_instrument.Symbol, instrument);
@@ -137,7 +137,7 @@ namespace OpenQuant.API
       Map.SQ_OQ_Instrument[(object) sq_instrument] = (object) instrument;
     }
 
-    private static void RemoveInstrument(SmartQuant.Instruments.Instrument sq_instrument)
+    private static void RemoveInstrument(FreeQuant.Instruments.Instrument sq_instrument)
     {
       OpenQuant.instruments.Remove(sq_instrument.Symbol);
       Instrument instrument = Map.SQ_OQ_Instrument[(object) sq_instrument] as Instrument;
@@ -150,7 +150,7 @@ namespace OpenQuant.API
       OpenQuant.AddPortfolio(args.Portfolio);
     }
 
-    private static void AddPortfolio(SmartQuant.Instruments.Portfolio sq_portfolio)
+    private static void AddPortfolio(FreeQuant.Instruments.Portfolio sq_portfolio)
     {
       Portfolio portfolio = new Portfolio(sq_portfolio);
       Map.OQ_SQ_Portfolio[(object) portfolio] = (object) sq_portfolio;

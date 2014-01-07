@@ -9,7 +9,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   public class OrderBookEntryList : ICollection, IEnumerable
   {

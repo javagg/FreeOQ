@@ -1,24 +1,19 @@
-﻿// Type: SmartQuant.Instruments.Account
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
 using nlmLboft3R6jnhSDBs;
-using SmartQuant;
+using FreeQuant;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   [Serializable]
   public class Account
   {
     private string DgS6XFeLsB;
-    private string hsM64apY0X;
-    private Currency unN6JryrhI;
-    private AccountTransactionList Dpw6ryi1vX;
-    private AccountPositionList lUQ63QtJNB;
+    private string description;
+	private Currency currency; 
+    private AccountTransactionList transactions;
+    private AccountPositionList positions;
 
     public string Name
     {
@@ -36,11 +31,11 @@ namespace SmartQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.hsM64apY0X;
+				return this.description; 
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
-        this.hsM64apY0X = value;
+        this.description = value;
       }
     }
 
@@ -48,7 +43,7 @@ namespace SmartQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.Dpw6ryi1vX;
+				return this.transactions;
       }
     }
 
@@ -56,7 +51,7 @@ namespace SmartQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.lUQ63QtJNB;
+				return this.positions; 
       }
     }
 
@@ -64,11 +59,11 @@ namespace SmartQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.unN6JryrhI;
+        return this.currency;
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
-        this.unN6JryrhI = value;
+        this.currency = value;
       }
     }
 
@@ -76,7 +71,7 @@ namespace SmartQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        AccountPosition accountPosition = this.lUQ63QtJNB[currency];
+        AccountPosition accountPosition = this.positions[currency];
         if (accountPosition != null)
           return accountPosition.Value;
         else
@@ -92,13 +87,13 @@ namespace SmartQuant.Instruments
     public Account(string name, string description, Currency currency)
     {
       Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      this.Dpw6ryi1vX = new AccountTransactionList();
-      this.lUQ63QtJNB = new AccountPositionList();
+      this.transactions = new AccountTransactionList();
+      this.positions = new AccountPositionList();
       // ISSUE: explicit constructor call
       base.\u002Ector();
       this.DgS6XFeLsB = name;
-      this.hsM64apY0X = description;
-      this.unN6JryrhI = currency;
+      this.description = description;
+      this.currency = currency;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -145,43 +140,43 @@ namespace SmartQuant.Instruments
     public double GetValue()
     {
       double num = 0.0;
-      foreach (AccountPosition accountPosition in this.lUQ63QtJNB)
-        num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.unN6JryrhI);
+      foreach (AccountPosition accountPosition in this.positions)
+        num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.currency);
       return num;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public double GetValue(DateTime dateTime)
     {
-      Account account = new Account(this.unN6JryrhI);
-      foreach (AccountTransaction transaction in this.Dpw6ryi1vX)
+      Account account = new Account(this.currency);
+      foreach (AccountTransaction transaction in this.transactions)
       {
         if (transaction.DateTime <= dateTime)
           account.Add(transaction);
       }
       double num = 0.0;
       foreach (AccountPosition accountPosition in account.Positions)
-        num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.unN6JryrhI, dateTime);
+        num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.currency, dateTime);
       return num;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Clear()
     {
-      this.Dpw6ryi1vX.Clear();
-      this.lUQ63QtJNB.Clear();
+      this.transactions.Clear();
+      this.positions.Clear();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(AccountTransaction transaction)
     {
-      AccountPosition position = this.lUQ63QtJNB[transaction.Currency];
+      AccountPosition position = this.positions[transaction.Currency];
       if (position == null)
       {
         position = new AccountPosition(transaction.Currency);
-        this.lUQ63QtJNB.Add(position);
+        this.positions.Add(position);
       }
-      this.Dpw6ryi1vX.Add(transaction);
+      this.transactions.Add(transaction);
       this.ciP6G6y5gB(transaction);
       position.y1ms0plk33 += transaction.Value;
       this.tom6YJohef();
@@ -220,13 +215,13 @@ namespace SmartQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(double val, DateTime dateTime)
     {
-      this.Add(val, this.unN6JryrhI, dateTime);
+      this.Add(val, this.currency, dateTime);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(double val)
     {
-      this.Add(val, this.unN6JryrhI, Clock.Now);
+      this.Add(val, this.currency, Clock.Now);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -250,25 +245,25 @@ namespace SmartQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Deposit(double val)
     {
-      this.Deposit(val, this.unN6JryrhI, Clock.Now);
+      this.Deposit(val, this.currency, Clock.Now);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Deposit(double val, DateTime dateTime)
     {
-      this.Deposit(val, this.unN6JryrhI, dateTime);
+      this.Deposit(val, this.currency, dateTime);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Deposit(double val, string text)
     {
-      this.Deposit(val, this.unN6JryrhI, Clock.Now, text);
+      this.Deposit(val, this.currency, Clock.Now, text);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Deposit(double val, DateTime dateTime, string text)
     {
-      this.Deposit(val, this.unN6JryrhI, dateTime, text);
+      this.Deposit(val, this.currency, dateTime, text);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -292,25 +287,25 @@ namespace SmartQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Withdraw(double val)
     {
-      this.Withdraw(val, this.unN6JryrhI, Clock.Now);
+      this.Withdraw(val, this.currency, Clock.Now);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Withdraw(double val, DateTime dateTime)
     {
-      this.Withdraw(val, this.unN6JryrhI, dateTime);
+      this.Withdraw(val, this.currency, dateTime);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Withdraw(double val, string text)
     {
-      this.Withdraw(val, this.unN6JryrhI, Clock.Now, text);
+      this.Withdraw(val, this.currency, Clock.Now, text);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Withdraw(double val, DateTime dateTime, string text)
     {
-      this.Withdraw(val, this.unN6JryrhI, dateTime, text);
+      this.Withdraw(val, this.currency, dateTime, text);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

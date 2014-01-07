@@ -6,7 +6,7 @@ namespace OpenQuant.API
 {
   public class BarSeries : IEnumerable, ISeries
   {
-    internal SmartQuant.Series.BarSeries series;
+	internal FreeQuant.Series.BarSeries series;
 
     public string Name
     {
@@ -52,7 +52,7 @@ namespace OpenQuant.API
     {
       get
       {
-        SmartQuant.Data.Bar bar = this.series[dateTime];
+		FreeQuant.Data.Bar bar = this.series[dateTime];
         if (bar == null)
           return (Bar) null;
         else
@@ -112,14 +112,14 @@ namespace OpenQuant.API
       }
     }
 
-    internal BarSeries(SmartQuant.Series.BarSeries series)
+	internal BarSeries(FreeQuant.Series.BarSeries series)
     {
       this.series = series;
     }
 
     public BarSeries(string name, string title)
     {
-      this.series = new SmartQuant.Series.BarSeries(name, title);
+		this.series = new FreeQuant.Series.BarSeries(name, title);
     }
 
     public BarSeries(string name)
@@ -139,32 +139,32 @@ namespace OpenQuant.API
 
     public void Add(DateTime datetime, double open, double high, double low, double close, long volume, long size)
     {
-      this.series.Add(new SmartQuant.Data.Bar(datetime, open, high, low, close, volume, size));
+			this.series.Add(new FreeQuant.Data.Bar(datetime, open, high, low, close, volume, size));
     }
 
     public void Add(BarType barType, long size, DateTime beginTime, DateTime endTime, double open, double high, double low, double close, long volume, long openInt)
     {
-      this.series.Add(new SmartQuant.Data.Bar(EnumConverter.Convert(barType), size, beginTime, endTime, open, high, low, close, volume, openInt));
+			this.series.Add(new FreeQuant.Data.Bar(EnumConverter.Convert(barType), size, beginTime, endTime, open, high, low, close, volume, openInt));
     }
 
     public void Remove(DateTime dateTime)
     {
-      ((SmartQuant.Series.TimeSeries) this.series).Remove(dateTime);
+			((FreeQuant.Series.TimeSeries) this.series).Remove(dateTime);
     }
 
     public void Remove(int index)
     {
-      ((SmartQuant.Series.TimeSeries) this.series).Remove(index);
+			((FreeQuant.Series.TimeSeries) this.series).Remove(index);
     }
 
     public bool Contains(DateTime dateTime)
     {
-      return ((SmartQuant.Series.TimeSeries) this.series).Contains(dateTime);
+			return ((FreeQuant.Series.TimeSeries) this.series).Contains(dateTime);
     }
 
     public bool Contains(Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.series).Contains(bar.DateTime);
+			return ((FreeQuant.Series.TimeSeries) this.series).Contains(bar.DateTime);
     }
 
     public DateTime GetDateTime(int index)
@@ -184,47 +184,47 @@ namespace OpenQuant.API
 
     public virtual Cross Crosses(TimeSeries series, DateTime dateTime)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) series.series, dateTime));
+			return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) series.series, dateTime));
     }
 
     public virtual bool CrossesBelow(TimeSeries series, DateTime dateTime)
     {
-      return this.series.CrossesBelow((SmartQuant.Series.TimeSeries) series.series, dateTime);
+			return this.series.CrossesBelow((FreeQuant.Series.TimeSeries) series.series, dateTime);
     }
 
     public virtual bool CrossesAbove(TimeSeries series, DateTime dateTime)
     {
-      return this.series.CrossesAbove((SmartQuant.Series.TimeSeries) series.series, dateTime);
+			return this.series.CrossesAbove((FreeQuant.Series.TimeSeries) series.series, dateTime);
     }
 
     public bool CrossesBelow(BarSeries series, Bar bar)
     {
-      return this.series.CrossesBelow((SmartQuant.Series.TimeSeries) series.series, bar.bar);
+			return this.series.CrossesBelow((FreeQuant.Series.TimeSeries) series.series, bar.bar);
     }
 
     public bool CrossesAbove(BarSeries series, Bar bar)
     {
-      return this.series.CrossesAbove((SmartQuant.Series.TimeSeries) series.series, bar.bar);
+			return this.series.CrossesAbove((FreeQuant.Series.TimeSeries) series.series, bar.bar);
     }
 
     public bool CrossesBelow(Indicator indicator, Bar bar)
     {
-      return this.series.CrossesBelow((SmartQuant.Series.TimeSeries) indicator.indicator, bar.bar);
+			return this.series.CrossesBelow((FreeQuant.Series.TimeSeries) indicator.indicator, bar.bar);
     }
 
     public bool CrossesAbove(Indicator indicator, Bar bar)
     {
-      return this.series.CrossesAbove((SmartQuant.Series.TimeSeries) indicator.indicator, bar.bar);
+			return this.series.CrossesAbove((FreeQuant.Series.TimeSeries) indicator.indicator, bar.bar);
     }
 
     public Cross Crosses(Indicator indicator, Bar bar)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) indicator.indicator, bar.bar));
+			return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) indicator.indicator, bar.bar));
     }
 
     public Cross Crosses(BarSeries series, Bar bar)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) series.series, bar.bar));
+			return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) series.series, bar.bar));
     }
 
     public double HighestHigh()

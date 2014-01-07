@@ -2,11 +2,11 @@
 {
   internal class DefaultPortfolioPricer : PortfolioPricer
   {
-    public SmartQuant.Instruments.PortfolioPricer Pricer { get; set; }
+		public FreeQuant.Instruments.PortfolioPricer Pricer { get; set; }
 
     public DefaultPortfolioPricer()
     {
-      this.Pricer = new SmartQuant.Instruments.PortfolioPricer();
+			this.Pricer = new FreeQuant.Instruments.PortfolioPricer();
     }
 
     public override double Price(Position position)

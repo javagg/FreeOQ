@@ -1,5 +1,4 @@
-﻿//using SmartQuant.Providers;
-using FreeQuant.Providers;
+﻿using FreeQuant.Providers;
 
 namespace OpenQuant.API
 {

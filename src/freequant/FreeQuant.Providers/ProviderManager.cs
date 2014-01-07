@@ -1,16 +1,11 @@
-﻿// Type: SmartQuant.Providers.ProviderManager
-// Assembly: SmartQuant.Providers, Version=1.0.5036.28339, Culture=neutral, PublicKeyToken=null
-// MVID: 3D0E1BE3-2A81-422F-8BE5-1E2F3B27770F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Providers.dll
-
-using dW79p7NPlS6ZxObcx3;
+﻿using dW79p7NPlS6ZxObcx3;
 using GUBX1u5sgj9bjojYlR;
 using i0eSeRYRAl7LvcyCmM;
 using i6Ws9TSsrEw5WGORfa;
 using nZi7vTcQmWAr4x9X4G;
 using Obgh2s3A3GOOarwj6c;
-using SmartQuant;
-using SmartQuant.FIX;
+using FreeQuant;
+using FreeQuant.FIX;
 using System;
 using System.IO;
 using System.Reflection;
@@ -19,7 +14,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using YS2DsgRiCe1qDb6nZV;
 
-namespace SmartQuant.Providers
+namespace FreeQuant.Providers
 {
   public class ProviderManager
   {

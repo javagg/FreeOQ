@@ -11,7 +11,7 @@ namespace OpenQuant.API
       this.pricer = pricer;
     }
 
-    public double Price(SmartQuant.Instruments.Position position)
+    public double Price(FreeQuant.Instruments.Position position)
     {
       return this.pricer.Price(new Position(position));
     }

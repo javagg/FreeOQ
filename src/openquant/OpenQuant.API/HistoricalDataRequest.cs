@@ -6,7 +6,7 @@ namespace OpenQuant.API
 {
   public class HistoricalDataRequest
   {
-    internal SmartQuant.Providers.HistoricalDataRequest request;
+		internal FreeQuant.Providers.HistoricalDataRequest request;
 
     public Instrument Instrument
     {
@@ -60,7 +60,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal HistoricalDataRequest(SmartQuant.Providers.HistoricalDataRequest request)
+		internal HistoricalDataRequest(FreeQuant.Providers.HistoricalDataRequest request)
     {
       this.request = request;
     }

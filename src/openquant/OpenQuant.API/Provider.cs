@@ -1,5 +1,4 @@
 ﻿using OpenQuant.ObjectMap;
-//using SmartQuant.Providers;
 using FreeQuant.Providers;
 using System.Reflection;
 

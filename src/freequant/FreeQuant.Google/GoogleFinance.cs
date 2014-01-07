@@ -19,7 +19,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Google
+namespace FreeQuant.Google
 {
   public class GoogleFinance : IHistoricalDataProvider, IProvider
   {

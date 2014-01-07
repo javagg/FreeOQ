@@ -1,9 +1,4 @@
-﻿// Type: OpenQuant.API.Strategy
-// Assembly: OpenQuant.API, Version=1.0.5037.20290, Culture=neutral, PublicKeyToken=null
-// MVID: EDDC005E-5962-4767-9721-B9BF91924AC8
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Bin\OpenQuant.API.dll
-
-using OpenQuant.API.Engine;
+﻿using OpenQuant.API.Engine;
 using OpenQuant.API.Logs;
 using OpenQuant.API.Plugins;
 using OpenQuant.Config;
@@ -33,6 +28,7 @@ namespace OpenQuant.API
     private bool stopTraceOnTrade = true;
     private bool stopTraceOnQuote = true;
     private long defaultBarSize = -1L;
+
     [Parameter("Testing Period", "Reporting")]
     internal TimeIntervalSize TestingPeriod = (TimeIntervalSize) 864000000000;
     private DateTime startDate = DateTime.MinValue;
@@ -44,7 +40,7 @@ namespace OpenQuant.API
     private Performance performance;
     private Performance metaPerformance;
     private Instrument instrument;
-    private SmartQuant.Instruments.Instrument sq_Instrument;
+	private FreeQuant.Instruments.Instrument sq_Instrument;
     private InstrumentList instrumentList;
     private Dictionary<DateTime, HashSet<object>> timers;
     private DataRequests dataRequests;
@@ -289,7 +285,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return new TradeSeries((Map.OQ_SQ_Instrument[(object) this.instrument] as SmartQuant.Instruments.Instrument).Trades);
+        return new TradeSeries((Map.OQ_SQ_Instrument[(object) this.instrument] as FreeQuant.Instruments.Instrument).Trades);
       }
     }
 
@@ -297,7 +293,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return new QuoteSeries((Map.OQ_SQ_Instrument[(object) this.instrument] as SmartQuant.Instruments.Instrument).Quotes);
+        return new QuoteSeries((Map.OQ_SQ_Instrument[(object) this.instrument] as FreeQuant.Instruments.Instrument).Quotes);
       }
     }
 
@@ -367,7 +363,7 @@ namespace OpenQuant.API
       this.Currency = CurrencyManager.DefaultCurrency.Code;
     }
 
-    private void Init(SmartQuant.Instruments.Portfolio sq_Portfolio, SmartQuant.Instruments.Portfolio sq_MetaPortfolio, SmartQuant.Instruments.Instrument sq_Instrument, DataRequests strategyRequests, string strategyName, IStrategyLogManager strategyLogManager)
+    private void Init(FreeQuant.Instruments.Portfolio sq_Portfolio, FreeQuant.Instruments.Portfolio sq_MetaPortfolio, FreeQuant.Instruments.Instrument sq_Instrument, DataRequests strategyRequests, string strategyName, IStrategyLogManager strategyLogManager)
     {
       this.sq_Instrument = sq_Instrument;
       this.instrument = Map.SQ_OQ_Instrument[(object) sq_Instrument] as Instrument;
@@ -382,7 +378,7 @@ namespace OpenQuant.API
 
     private void Done()
     {
-      SmartQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
+      FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
     }
 
     public BarSeries GetBars(BarType barType, long barSize)
@@ -412,12 +408,12 @@ namespace OpenQuant.API
 
     public QuoteSeries GetQuotes(Instrument instrument)
     {
-      return new QuoteSeries((Map.OQ_SQ_Instrument[(object) instrument] as SmartQuant.Instruments.Instrument).Quotes);
+      return new QuoteSeries((Map.OQ_SQ_Instrument[(object) instrument] as FreeQuant.Instruments.Instrument).Quotes);
     }
 
     public TradeSeries GetTrades(Instrument instrument)
     {
-      return new TradeSeries((Map.OQ_SQ_Instrument[(object) instrument] as SmartQuant.Instruments.Instrument).Trades);
+      return new TradeSeries((Map.OQ_SQ_Instrument[(object) instrument] as FreeQuant.Instruments.Instrument).Trades);
     }
 
     public BarSeries GetHistoricalBars(DateTime begin, DateTime end, BarType barType, long barSize)
@@ -1270,7 +1266,7 @@ namespace OpenQuant.API
       {
         hashSet = new HashSet<object>();
         this.timers.Add(datetime, hashSet);
-        SmartQuant.Clock.AddReminder(new ReminderEventHandler(this.OnReminder), datetime, (object) null);
+        FreeQuant.Clock.AddReminder(new ReminderEventHandler(this.OnReminder), datetime, (object) null);
       }
       hashSet.Add(data);
     }
@@ -1289,7 +1285,7 @@ namespace OpenQuant.API
       if (hashSet.Count != 0)
         return;
       this.timers.Remove(datetime);
-      SmartQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), datetime);
+      FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), datetime);
     }
 
     public void RemoveTimer(DateTime datetime)
@@ -1468,14 +1464,14 @@ namespace OpenQuant.API
 
     private void Draw(DoubleSeries series, int padNumber, DrawStyle stype)
     {
-      Dictionary<SmartQuant.Instruments.Instrument, Dictionary<DoubleSeries, Tuple<int, DrawStyle>>> dictionary1;
+      Dictionary<FreeQuant.Instruments.Instrument, Dictionary<DoubleSeries, Tuple<int, DrawStyle>>> dictionary1;
       if (Map.DrawTable.ContainsKey((object) this.strategyName))
       {
-        dictionary1 = Map.DrawTable[(object) this.strategyName] as Dictionary<SmartQuant.Instruments.Instrument, Dictionary<DoubleSeries, Tuple<int, DrawStyle>>>;
+        dictionary1 = Map.DrawTable[(object) this.strategyName] as Dictionary<FreeQuant.Instruments.Instrument, Dictionary<DoubleSeries, Tuple<int, DrawStyle>>>;
       }
       else
       {
-        dictionary1 = new Dictionary<SmartQuant.Instruments.Instrument, Dictionary<DoubleSeries, Tuple<int, DrawStyle>>>();
+        dictionary1 = new Dictionary<FreeQuant.Instruments.Instrument, Dictionary<DoubleSeries, Tuple<int, DrawStyle>>>();
         Map.DrawTable[(object) this.strategyName] = (object) dictionary1;
       }
       Dictionary<DoubleSeries, Tuple<int, DrawStyle>> dictionary2;

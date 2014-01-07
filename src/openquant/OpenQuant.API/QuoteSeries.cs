@@ -69,7 +69,7 @@ namespace OpenQuant.API
       {
         get
         {
-          return (object) new Quote(this.enumerator.Current as SmartQuant.Data.Quote);
+          return (object) new Quote(this.enumerator.Current as FreeQuant.Data.Quote);
         }
       }
 

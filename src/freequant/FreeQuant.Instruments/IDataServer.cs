@@ -7,7 +7,7 @@ using SmartQuant.Data;
 using SmartQuant.Series;
 using System;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public interface IDataServer
   {

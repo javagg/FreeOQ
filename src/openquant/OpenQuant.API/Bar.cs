@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class Bar
   {
-    internal SmartQuant.Data.Bar bar;
+    internal FreeQuant.Data.Bar bar;
 
     public DateTime DateTime
     {
@@ -176,10 +176,10 @@ namespace OpenQuant.API
 
     public Bar(DateTime dateTime, double open, double high, double low, double close, long volume, long size)
     {
-      this.bar = new SmartQuant.Data.Bar(dateTime, open, high, low, close, volume, size);
+      this.bar = new FreeQuant.Data.Bar(dateTime, open, high, low, close, volume, size);
     }
 
-    internal Bar(SmartQuant.Data.Bar bar)
+    internal Bar(FreeQuant.Data.Bar bar)
     {
       this.bar = bar;
     }

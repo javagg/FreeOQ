@@ -1,8 +1,8 @@
 ﻿namespace OpenQuant.Finam
 {
-  public enum DllSelector
-  {
-    txmlconnector_dll,
-    txcn_dll,
-  }
+	public enum DllSelector
+	{
+		txmlconnector_dll,
+		txcn_dll,
+	}
 }

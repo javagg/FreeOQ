@@ -9,7 +9,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using VFUvY5knK01pUIalDo;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class PositionList : IEnumerable
   {

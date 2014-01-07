@@ -8,7 +8,7 @@ using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   [Serializable]
   public class Daily : Bar

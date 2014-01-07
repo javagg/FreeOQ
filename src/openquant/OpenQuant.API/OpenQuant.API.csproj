@@ -282,4 +282,14 @@
     <EmbeddedResource Include="Design\AltSourceForm.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Series\FreeQuant.Series.csproj">
+      <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
+      <Name>FreeQuant.Series</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

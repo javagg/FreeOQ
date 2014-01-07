@@ -217,31 +217,31 @@ namespace OpenQuant.API
     {
       switch (barType)
       {
-        case SmartQuant.Data.BarType.Time:
+				case FreeQuant.Data.BarType.Time:
           return BarType.Time;
-        case SmartQuant.Data.BarType.Tick:
+				case FreeQuant.Data.BarType.Tick:
           return BarType.Tick;
-        case SmartQuant.Data.BarType.Volume:
+				case FreeQuant.Data.BarType.Volume:
           return BarType.Volume;
-        case SmartQuant.Data.BarType.Range:
+				case FreeQuant.Data.BarType.Range:
           return BarType.Range;
         default:
           throw new NotImplementedException("BarType is not supported : " + (object) barType);
       }
     }
 
-    internal static SmartQuant.Data.BarType Convert(BarType barType)
+		internal static FreeQuant.Data.BarType Convert(BarType barType)
     {
       switch (barType)
       {
         case BarType.Time:
-          return SmartQuant.Data.BarType.Time;
+					return FreeQuant.Data.BarType.Time;
         case BarType.Tick:
-          return SmartQuant.Data.BarType.Tick;
+					return FreeQuant.Data.BarType.Tick;
         case BarType.Volume:
-          return SmartQuant.Data.BarType.Volume;
+					return FreeQuant.Data.BarType.Volume;
         case BarType.Range:
-          return SmartQuant.Data.BarType.Range;
+					return FreeQuant.Data.BarType.Range;
         default:
           throw new NotImplementedException("BarType is not supported : " + (object) barType);
       }
@@ -273,30 +273,30 @@ namespace OpenQuant.API
       }
     }
 
-    internal static SmartQuant.Data.BarData Convert(BarData barData)
+		internal static FreeQuant.Data.BarData Convert(BarData barData)
     {
       switch (barData)
       {
         case BarData.Close:
-          return SmartQuant.Data.BarData.Close;
+					return FreeQuant.Data.BarData.Close;
         case BarData.Open:
-          return SmartQuant.Data.BarData.Open;
+					return FreeQuant.Data.BarData.Open;
         case BarData.High:
-          return SmartQuant.Data.BarData.High;
+					return FreeQuant.Data.BarData.High;
         case BarData.Low:
-          return SmartQuant.Data.BarData.Low;
+					return FreeQuant.Data.BarData.Low;
         case BarData.Median:
-          return SmartQuant.Data.BarData.Median;
+					return FreeQuant.Data.BarData.Median;
         case BarData.Typical:
-          return SmartQuant.Data.BarData.Typical;
+					return FreeQuant.Data.BarData.Typical;
         case BarData.Weighted:
-          return SmartQuant.Data.BarData.Weighted;
+					return FreeQuant.Data.BarData.Weighted;
         case BarData.Average:
-          return SmartQuant.Data.BarData.Average;
+					return FreeQuant.Data.BarData.Average;
         case BarData.Volume:
-          return SmartQuant.Data.BarData.Volume;
+					return FreeQuant.Data.BarData.Volume;
         case BarData.OpenInt:
-          return SmartQuant.Data.BarData.OpenInt;
+					return FreeQuant.Data.BarData.OpenInt;
         default:
           throw new NotImplementedException("BarData is not supported : " + (object) barData);
       }

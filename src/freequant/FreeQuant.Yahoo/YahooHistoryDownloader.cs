@@ -1,8 +1,3 @@
-// Type: SmartQuant.Yahoo.YahooHistoryDownloader
-// Assembly: SmartQuant.Yahoo, Version=1.0.5036.28350, Culture=neutral, PublicKeyToken=null
-// MVID: 033612BA-C890-4EC7-AB6C-594B5A102D50
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Yahoo.dll
-
 using CkC6gLogtoswXETFiV;
 using ee15rOC9NalRXxVUl2;
 using FreeQuant;
@@ -20,7 +15,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Yahoo
+namespace FreeQuant.Yahoo
 {
   public class YahooHistoryDownloader : IHistoricalDataProvider, IProvider
   {

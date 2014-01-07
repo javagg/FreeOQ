@@ -5,7 +5,7 @@ namespace OpenQuant.API
 {
   internal class DefaultCurrencyConverter : CurrencyConverter
   {
-    public override double Convert(double amount, SmartQuant.Instruments.Currency fromCurrency, SmartQuant.Instruments.Currency toCurrency)
+		public override double Convert(double amount, FreeQuant.Instruments.Currency fromCurrency, FreeQuant.Instruments.Currency toCurrency)
     {
       if (fromCurrency == toCurrency)
         return amount;

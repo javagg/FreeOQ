@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class PositionList : IEnumerable
   {
-    private SmartQuant.Instruments.PositionList positionList;
+    private FreeQuant.Instruments.PositionList positionList;
 
     public int Count
     {
@@ -18,7 +18,7 @@ namespace OpenQuant.API
     {
       get
       {
-        SmartQuant.Instruments.Position position = this.positionList[symbol];
+        FreeQuant.Instruments.Position position = this.positionList[symbol];
         if (position != null)
           return new Position(position);
         else
@@ -30,7 +30,7 @@ namespace OpenQuant.API
     {
       get
       {
-        SmartQuant.Instruments.Position position = this.positionList[instrument.instrument];
+        FreeQuant.Instruments.Position position = this.positionList[instrument.instrument];
         if (position != null)
           return new Position(position);
         else
@@ -38,7 +38,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal PositionList(SmartQuant.Instruments.PositionList positionList)
+    internal PositionList(FreeQuant.Instruments.PositionList positionList)
     {
       this.positionList = positionList;
     }

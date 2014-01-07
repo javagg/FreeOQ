@@ -6,8 +6,8 @@ namespace OpenQuant.API
 {
   public class BrokerPositionFieldList : ICollection, IEnumerable
   {
-    private SmartQuant.Providers.BrokerPositionField[] fields;
-    private Dictionary<string, SmartQuant.Providers.BrokerPositionField> table;
+		private FreeQuant.Providers.BrokerPositionField[] fields;
+		private Dictionary<string, FreeQuant.Providers.BrokerPositionField> table;
 
     public int Count
     {
@@ -37,7 +37,7 @@ namespace OpenQuant.API
     {
       get
       {
-        SmartQuant.Providers.BrokerPositionField field;
+				FreeQuant.Providers.BrokerPositionField field;
         if (this.table.TryGetValue(name, out field))
           return new BrokerPositionField(field);
         else
@@ -45,11 +45,11 @@ namespace OpenQuant.API
       }
     }
 
-    internal BrokerPositionFieldList(SmartQuant.Providers.BrokerPositionField[] fields)
+		internal BrokerPositionFieldList(FreeQuant.Providers.BrokerPositionField[] fields)
     {
       this.fields = fields;
-      this.table = new Dictionary<string, SmartQuant.Providers.BrokerPositionField>();
-      foreach (SmartQuant.Providers.BrokerPositionField brokerPositionField in fields)
+			this.table = new Dictionary<string, FreeQuant.Providers.BrokerPositionField>();
+			foreach (FreeQuant.Providers.BrokerPositionField brokerPositionField in fields)
         this.table.Add(brokerPositionField.Name, brokerPositionField);
     }
 
@@ -63,7 +63,7 @@ namespace OpenQuant.API
 
     public IEnumerator GetEnumerator()
     {
-      foreach (SmartQuant.Providers.BrokerPositionField field in this.fields)
+			foreach (FreeQuant.Providers.BrokerPositionField field in this.fields)
         yield return (object) new BrokerPositionField(field);
     }
   }

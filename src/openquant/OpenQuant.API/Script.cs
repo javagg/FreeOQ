@@ -17,17 +17,17 @@ namespace OpenQuant.API
 
     public void AddTimer(DateTime dateTime, object data)
     {
-      SmartQuant.Clock.AddReminder(new ReminderEventHandler(this.OnReminder), dateTime, data);
+      FreeQuant.Clock.AddReminder(new ReminderEventHandler(this.OnReminder), dateTime, data);
     }
 
     public void RemoveTimers()
     {
-      SmartQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
+      FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
     }
 
     public void RemoveTimer(DateTime dateTime)
     {
-      SmartQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), dateTime);
+      FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), dateTime);
     }
 
     private void OnReminder(ReminderEventArgs args)

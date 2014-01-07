@@ -4,18 +4,18 @@ namespace OpenQuant.API
 {
   internal class TransactionListEnumerator : IEnumerator
   {
-    private SmartQuant.Instruments.TransactionList transactionList;
+    private FreeQuant.Instruments.TransactionList transactionList;
     private IEnumerator enumerator;
 
     public object Current
     {
       get
       {
-        return (object) new Transaction(this.enumerator.Current as SmartQuant.Instruments.Transaction);
+        return (object) new Transaction(this.enumerator.Current as FreeQuant.Instruments.Transaction);
       }
     }
 
-    internal TransactionListEnumerator(SmartQuant.Instruments.TransactionList transactionList)
+    internal TransactionListEnumerator(FreeQuant.Instruments.TransactionList transactionList)
     {
       this.transactionList = transactionList;
       this.enumerator = transactionList.GetEnumerator();

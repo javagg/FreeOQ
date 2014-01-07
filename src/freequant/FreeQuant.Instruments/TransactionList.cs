@@ -4,7 +4,7 @@
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
 
 using nlmLboft3R6jnhSDBs;
-using SmartQuant.Charting;
+using FreeQuant.Charting;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using VFUvY5knK01pUIalDo;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class TransactionList : IEnumerable, IDrawable, IZoomable
   {

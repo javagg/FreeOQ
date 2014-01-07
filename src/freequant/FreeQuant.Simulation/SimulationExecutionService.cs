@@ -1,17 +1,12 @@
-﻿// Type: SmartQuant.Simulation.SimulationExecutionService
-// Assembly: SmartQuant.Simulation, Version=1.0.5036.28353, Culture=neutral, PublicKeyToken=null
-// MVID: 7CFB1E94-1672-436F-90C9-C8B7893A5618
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Simulation.dll
-
-using CJ5Xsgeg9JvhJUnvO3D;
+﻿using CJ5Xsgeg9JvhJUnvO3D;
 using mTh3qhZ0lnTdfaGms5;
-using SmartQuant;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
-using SmartQuant.Services;
-using SmartQuant.Xml;
+using FreeQuant;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
+using FreeQuant.Services;
+using FreeQuant.Xml;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +17,7 @@ using System.Runtime.InteropServices;
 using WL48KKjholiRoHZ0FY;
 using Y9kGLiKILMabFE38T3;
 
-namespace SmartQuant.Simulation
+namespace FreeQuant.Simulation
 {
   public class SimulationExecutionService : ServiceBase, IExecutionService, IMarketService, IService
   {

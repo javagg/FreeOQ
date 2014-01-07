@@ -28,7 +28,7 @@
       }
     }
 
-    internal BrokerAccountField(SmartQuant.Providers.BrokerAccountField field)
+		internal BrokerAccountField(FreeQuant.Providers.BrokerAccountField field)
     {
       this.field = field;
     }

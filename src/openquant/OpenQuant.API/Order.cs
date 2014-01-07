@@ -116,23 +116,23 @@ namespace OpenQuant.API
       {
         switch (((NewOrderSingle) this.order).TimeInForce)
         {
-          case SmartQuant.FIX.TimeInForce.Day:
+          case FreeQuant.FIX.TimeInForce.Day:
             return TimeInForce.Day;
-          case SmartQuant.FIX.TimeInForce.GTC:
+          case FreeQuant.FIX.TimeInForce.GTC:
             return TimeInForce.GTC;
-          case SmartQuant.FIX.TimeInForce.OPG:
+          case FreeQuant.FIX.TimeInForce.OPG:
             return TimeInForce.OPG;
-          case SmartQuant.FIX.TimeInForce.IOC:
+          case FreeQuant.FIX.TimeInForce.IOC:
             return TimeInForce.IOC;
-          case SmartQuant.FIX.TimeInForce.FOK:
+          case FreeQuant.FIX.TimeInForce.FOK:
             return TimeInForce.FOK;
-          case SmartQuant.FIX.TimeInForce.GTX:
+          case FreeQuant.FIX.TimeInForce.GTX:
             return TimeInForce.GTX;
-          case SmartQuant.FIX.TimeInForce.GoodTillDate:
+          case FreeQuant.FIX.TimeInForce.GoodTillDate:
             return TimeInForce.GTD;
-          case SmartQuant.FIX.TimeInForce.AtTheClose:
+          case FreeQuant.FIX.TimeInForce.AtTheClose:
             return TimeInForce.ATC;
-          case SmartQuant.FIX.TimeInForce.GoodForSeconds:
+          case FreeQuant.FIX.TimeInForce.GoodForSeconds:
             return TimeInForce.GFS;
           default:
             throw new NotImplementedException("TimeInForce is not supported : " + (object) ((NewOrderSingle) this.order).TimeInForce);
@@ -143,31 +143,31 @@ namespace OpenQuant.API
         switch (value)
         {
           case TimeInForce.Day:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.Day;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.Day;
             break;
           case TimeInForce.GTC:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.GTC;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.GTC;
             break;
           case TimeInForce.OPG:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.OPG;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.OPG;
             break;
           case TimeInForce.IOC:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.IOC;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.IOC;
             break;
           case TimeInForce.FOK:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.FOK;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.FOK;
             break;
           case TimeInForce.GTX:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.GTX;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.GTX;
             break;
           case TimeInForce.GTD:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.GoodTillDate;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.GoodTillDate;
             break;
           case TimeInForce.ATC:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.AtTheClose;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.AtTheClose;
             break;
           case TimeInForce.GFS:
-            ((NewOrderSingle) this.order).TimeInForce = SmartQuant.FIX.TimeInForce.GoodForSeconds;
+            ((NewOrderSingle) this.order).TimeInForce = FreeQuant.FIX.TimeInForce.GoodForSeconds;
             break;
           default:
             throw new NotImplementedException("TimeInForce is not supported : " + (object) value);

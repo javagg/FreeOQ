@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant</RootNamespace>
+    <AssemblyName>FreeQuant</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32Window.cs" />
+    <Compile Include="UserReference.cs" />
+    <Compile Include="TraceLevel.cs" />
+    <Compile Include="Trace.cs" />
+    <Compile Include="SystemInfo.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="SmartQuantReference.cs" />
+    <Compile Include="RuntimeMode.cs" />
+    <Compile Include="RuntimeErrorOutputTarget.cs" />
+    <Compile Include="RuntimeErrorManager.cs" />
+    <Compile Include="RuntimeErrorLevel.cs" />
+    <Compile Include="RuntimeErrorEventHandler.cs" />
+    <Compile Include="RuntimeErrorEventArgs.cs" />
+    <Compile Include="RuntimeErrorCollection.cs" />
+    <Compile Include="RuntimeError.cs" />
+    <Compile Include="Runtime.cs" />
+    <Compile Include="ReminderEventHandler.cs" />
+    <Compile Include="ReminderEventArgs.cs" />
+    <Compile Include="ReferenceType.cs" />
+    <Compile Include="ReferenceList.cs" />
+    <Compile Include="ReferenceEventHandler.cs" />
+    <Compile Include="ReferenceEventArgs.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="RAMItemInfo.cs" />
+    <Compile Include="RAMInfo.cs" />
+    <Compile Include="PluginList.cs" />
+    <Compile Include="PluginEventHandler.cs" />
+    <Compile Include="PluginEventArgs.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="NewLogSchedule.cs" />
+    <Compile Include="LogFile.cs" />
+    <Compile Include="LicenseInfo.cs" />
+    <Compile Include="Installation.cs" />
+    <Compile Include="InfoItemBase.cs" />
+    <Compile Include="InfoBase`1.cs" />
+    <Compile Include="IInstallReferenceItem.cs" />
+    <Compile Include="IInstallReferenceEnum.cs" />
+    <Compile Include="IAssemblyName.cs" />
+    <Compile Include="IAssemblyEnum.cs" />
+    <Compile Include="IAssemblyCacheItem.cs" />
+    <Compile Include="IAssemblyCache.cs" />
+    <Compile Include="GacReference.cs" />
+    <Compile Include="GAC.cs" />
+    <Compile Include="Framework.cs" />
+    <Compile Include="EvaluationType.cs" />
+    <Compile Include="Edition.cs" />
+    <Compile Include="DbServerType.cs" />
+    <Compile Include="CustomReference.cs" />
+    <Compile Include="CPUItemInfo.cs" />
+    <Compile Include="CPUInfo.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="CompilingService.cs" />
+    <Compile Include="ClockMode.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="Design\FlagsEnumTypeConverter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Design\" />
+  </ItemGroup>
+</Project>

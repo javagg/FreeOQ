@@ -2,7 +2,7 @@
 {
   public class BrokerOrderField
   {
-    private SmartQuant.Providers.BrokerOrderField field;
+		private FreeQuant.Providers.BrokerOrderField field;
 
     public string Name
     {
@@ -20,7 +20,7 @@
       }
     }
 
-    internal BrokerOrderField(SmartQuant.Providers.BrokerOrderField field)
+		internal BrokerOrderField(FreeQuant.Providers.BrokerOrderField field)
     {
       this.field = field;
     }

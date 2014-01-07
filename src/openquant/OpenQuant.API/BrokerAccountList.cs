@@ -5,7 +5,7 @@ namespace OpenQuant.API
 {
   public class BrokerAccountList : ICollection, IEnumerable
   {
-    private SmartQuant.Providers.BrokerAccountList list;
+		private FreeQuant.Providers.BrokerAccountList list;
 
     public int Count
     {
@@ -47,7 +47,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal BrokerAccountList(SmartQuant.Providers.BrokerAccountList list)
+		internal BrokerAccountList(FreeQuant.Providers.BrokerAccountList list)
     {
       this.list = list;
     }
@@ -62,7 +62,7 @@ namespace OpenQuant.API
 
     public IEnumerator GetEnumerator()
     {
-      foreach (SmartQuant.Providers.BrokerAccount brokerAccount in this.list)
+			foreach (FreeQuant.Providers.BrokerAccount brokerAccount in this.list)
         yield return (object) new BrokerAccount(brokerAccount);
     }
   }

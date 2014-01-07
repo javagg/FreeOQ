@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class BrokerPosition
   {
-    private SmartQuant.Providers.BrokerPosition brokerPosition;
+		private FreeQuant.Providers.BrokerPosition brokerPosition;
 
     public string Symbol
     {
@@ -134,7 +134,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal BrokerPosition(SmartQuant.Providers.BrokerPosition brokerPosition)
+		internal BrokerPosition(FreeQuant.Providers.BrokerPosition brokerPosition)
     {
       this.brokerPosition = brokerPosition;
     }

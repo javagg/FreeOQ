@@ -1,15 +1,10 @@
-﻿// Type: SmartQuant.Testing.MathStatistics.Division
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using Byqm85MNrFBe6JPJlI;
-using SmartQuant.Series;
-using SmartQuant.Testing.TesterItems;
+﻿using Byqm85MNrFBe6JPJlI;
+using FreeQuant.Series;
+using FreeQuant.Testing.TesterItems;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Testing.MathStatistics
+namespace FreeQuant.Testing.MathStatistics
 {
   public class Division : SeriesTesterItem
   {

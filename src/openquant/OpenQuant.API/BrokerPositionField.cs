@@ -2,7 +2,7 @@
 {
   public class BrokerPositionField
   {
-    private SmartQuant.Providers.BrokerPositionField field;
+		private FreeQuant.Providers.BrokerPositionField field;
 
     public string Name
     {
@@ -20,7 +20,7 @@
       }
     }
 
-    internal BrokerPositionField(SmartQuant.Providers.BrokerPositionField field)
+		internal BrokerPositionField(FreeQuant.Providers.BrokerPositionField field)
     {
       this.field = field;
     }

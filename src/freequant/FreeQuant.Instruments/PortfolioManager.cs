@@ -4,13 +4,13 @@
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
 
 using nlmLboft3R6jnhSDBs;
-using SmartQuant;
+using FreeQuant;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using VFUvY5knK01pUIalDo;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class PortfolioManager
   {

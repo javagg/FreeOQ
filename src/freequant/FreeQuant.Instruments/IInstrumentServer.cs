@@ -5,7 +5,7 @@
 
 using System;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public interface IInstrumentServer
   {

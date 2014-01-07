@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D4F9F19-9481-41E6-9FBB-1560E5CFC345}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant.FIXApplication</RootNamespace>
+    <AssemblyName>FreeQuant.FIXApplication</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestRecord.cs" />
+    <Compile Include="QuickFIX43Provider.cs" />
+    <Compile Include="QuickFIX43CommonProvider.cs" />
+    <Compile Include="QuickFIX43CommonApplication.cs" />
+    <Compile Include="QuickFIX43Application.cs" />
+    <Compile Include="QuickFIX42Provider.cs" />
+    <Compile Include="QuickFIX42CommonProvider.cs" />
+    <Compile Include="QuickFIX42CommonApplication.cs" />
+    <Compile Include="QuickFIX42Application.cs" />
+    <Compile Include="NullLogFactory.cs" />
+    <Compile Include="InitiatorMode.cs" />
+    <Compile Include="IFIXApplication.cs" />
+    <Compile Include="FIXSessionIDEventArgs.cs" />
+    <Compile Include="FIXSecurityDefinitionRequestEventHandler.cs" />
+    <Compile Include="FIXSecurityDefinitionEventHandler.cs" />
+    <Compile Include="FIXNewOrderSingleEventHandler.cs" />
+    <Compile Include="FIXMarketDataSnapshotEventHandler.cs" />
+    <Compile Include="FIXMarketDataRequestRejectEventHandler.cs" />
+    <Compile Include="FIXMarketDataRequestEventHandler.cs" />
+    <Compile Include="FIXMarketDataIncrementalRefreshEventHandler.cs" />
+    <Compile Include="FIXLogoutEventHandler.cs" />
+    <Compile Include="FIXLogonEventHandler.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

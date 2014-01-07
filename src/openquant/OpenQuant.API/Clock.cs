@@ -2,14 +2,12 @@
 
 namespace OpenQuant.API
 {
-  public class Clock
-  {
-    public static DateTime Now
-    {
-      get
-      {
-        return SmartQuant.Clock.Now;
-      }
-    }
-  }
+	public class Clock
+	{
+		public static DateTime Now {
+			get {
+				return FreeQuant.Clock.Now;
+			}
+		}
+	}
 }

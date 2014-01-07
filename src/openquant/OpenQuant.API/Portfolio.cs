@@ -6,7 +6,7 @@ namespace OpenQuant.API
 {
   public class Portfolio
   {
-    internal SmartQuant.Instruments.Portfolio portfolio;
+    internal FreeQuant.Instruments.Portfolio portfolio;
     private PositionList positions;
     private TransactionList transactions;
     private PortfolioAccount account;
@@ -35,7 +35,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal Portfolio(SmartQuant.Instruments.Portfolio portfolio)
+    internal Portfolio(FreeQuant.Instruments.Portfolio portfolio)
     {
       this.portfolio = portfolio;
       this.positions = new PositionList(portfolio.Positions);
@@ -112,7 +112,7 @@ namespace OpenQuant.API
         default:
           throw new ArgumentException(string.Format("Unknown TransactionSide - {0} ", (object) side));
       }
-      SmartQuant.Instruments.Transaction transaction = new SmartQuant.Instruments.Transaction(datetime, side1, qty, instrument.instrument, price);
+      FreeQuant.Instruments.Transaction transaction = new FreeQuant.Instruments.Transaction(datetime, side1, qty, instrument.instrument, price);
       transaction.Currency = CurrencyManager.Currencies[instrument.instrument.Currency];
       if (text != null)
         transaction.Text = text;

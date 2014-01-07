@@ -6,8 +6,8 @@ namespace OpenQuant.API
 {
   public class BrokerAccountFieldList : ICollection, IEnumerable
   {
-    private SmartQuant.Providers.BrokerAccountField[] fields;
-    private Dictionary<string, Dictionary<string, SmartQuant.Providers.BrokerAccountField>> table;
+		private FreeQuant.Providers.BrokerAccountField[] fields;
+		private Dictionary<string, Dictionary<string, FreeQuant.Providers.BrokerAccountField>> table;
 
     public int Count
     {
@@ -37,10 +37,10 @@ namespace OpenQuant.API
     {
       get
       {
-        Dictionary<string, SmartQuant.Providers.BrokerAccountField> dictionary;
+				Dictionary<string, FreeQuant.Providers.BrokerAccountField> dictionary;
         if (!this.table.TryGetValue(name, out dictionary))
           return (BrokerAccountField) null;
-        SmartQuant.Providers.BrokerAccountField field;
+				FreeQuant.Providers.BrokerAccountField field;
         if (dictionary.TryGetValue(currency, out field))
           return new BrokerAccountField(field);
         else
@@ -56,16 +56,16 @@ namespace OpenQuant.API
       }
     }
 
-    internal BrokerAccountFieldList(SmartQuant.Providers.BrokerAccountField[] fields)
+		internal BrokerAccountFieldList(FreeQuant.Providers.BrokerAccountField[] fields)
     {
       this.fields = fields;
-      this.table = new Dictionary<string, Dictionary<string, SmartQuant.Providers.BrokerAccountField>>();
-      foreach (SmartQuant.Providers.BrokerAccountField brokerAccountField in fields)
+			this.table = new Dictionary<string, Dictionary<string, FreeQuant.Providers.BrokerAccountField>>();
+			foreach (FreeQuant.Providers.BrokerAccountField brokerAccountField in fields)
       {
-        Dictionary<string, SmartQuant.Providers.BrokerAccountField> dictionary;
+				Dictionary<string, FreeQuant.Providers.BrokerAccountField> dictionary;
         if (!this.table.TryGetValue(brokerAccountField.Name, out dictionary))
         {
-          dictionary = new Dictionary<string, SmartQuant.Providers.BrokerAccountField>();
+					dictionary = new Dictionary<string, FreeQuant.Providers.BrokerAccountField>();
           this.table.Add(brokerAccountField.Name, dictionary);
         }
         dictionary.Add(brokerAccountField.Currency, brokerAccountField);
@@ -82,17 +82,17 @@ namespace OpenQuant.API
 
     public IEnumerator GetEnumerator()
     {
-      foreach (SmartQuant.Providers.BrokerAccountField field in this.fields)
+			foreach (FreeQuant.Providers.BrokerAccountField field in this.fields)
         yield return (object) new BrokerAccountField(field);
     }
 
     public BrokerAccountField[] GetAllByName(string name)
     {
-      Dictionary<string, SmartQuant.Providers.BrokerAccountField> dictionary;
+			Dictionary<string, FreeQuant.Providers.BrokerAccountField> dictionary;
       if (!this.table.TryGetValue(name, out dictionary))
         return new BrokerAccountField[0];
       List<BrokerAccountField> list = new List<BrokerAccountField>();
-      foreach (SmartQuant.Providers.BrokerAccountField field in dictionary.Values)
+			foreach (FreeQuant.Providers.BrokerAccountField field in dictionary.Values)
         list.Add(new BrokerAccountField(field));
       return list.ToArray();
     }

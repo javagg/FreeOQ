@@ -39,37 +39,37 @@ namespace OpenQuant.API
 
     public void Deposit(string currencyCode, double value, DateTime dateTime)
     {
-      SmartQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
+      FreeQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
       this.account.Deposit(value, currency, dateTime);
     }
 
     public void Deposit(string currencyCode, double value)
     {
-      SmartQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
+      FreeQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
       this.account.Deposit(value, currency);
     }
 
     public void Deposit(string currencyCode, double value, DateTime dateTime, string text)
     {
-      SmartQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
+      FreeQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
       this.account.Deposit(value, currency, dateTime, text);
     }
 
     public void Withdraw(string currencyCode, double value, DateTime dateTime)
     {
-      SmartQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
+      FreeQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
       this.account.Withdraw(value, currency, dateTime);
     }
 
     public void Withdraw(string currencyCode, double value)
     {
-      SmartQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
+      FreeQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
       this.account.Withdraw(value, currency);
     }
 
     public void Withdraw(string currencyCode, double value, DateTime dateTime, string text)
     {
-      SmartQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
+      FreeQuant.Instruments.Currency currency = CurrencyManager.Currencies[currencyCode];
       this.account.Withdraw(value, currency, dateTime, text);
     }
   }

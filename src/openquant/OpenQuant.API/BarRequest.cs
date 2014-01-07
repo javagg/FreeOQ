@@ -41,7 +41,7 @@
       this.isBarFactoryRequest = isBarFactoryRequest;
     }
 
-    private BarRequest(SmartQuant.Data.BarType barType, long barSize, bool isBarFactoryRequest)
+    private BarRequest(FreeQuant.Data.BarType barType, long barSize, bool isBarFactoryRequest)
       : this(EnumConverter.Convert(barType), barSize, isBarFactoryRequest)
     {
     }

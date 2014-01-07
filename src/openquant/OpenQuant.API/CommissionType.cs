@@ -1,9 +1,9 @@
 ﻿namespace OpenQuant.API
 {
-  public enum CommissionType
-  {
-    PerShare,
-    Percent,
-    Absolute,
-  }
+	public enum CommissionType
+	{
+		PerShare,
+		Percent,
+		Absolute
+	}
 }

@@ -2,7 +2,7 @@
 {
   public class BrokerAccount
   {
-    private SmartQuant.Providers.BrokerAccount brokerAccount;
+		private FreeQuant.Providers.BrokerAccount brokerAccount;
 
     public string Name
     {
@@ -48,21 +48,21 @@
       }
     }
 
-    internal BrokerAccount(SmartQuant.Providers.BrokerAccount brokerAccount)
+		internal BrokerAccount(FreeQuant.Providers.BrokerAccount brokerAccount)
     {
       this.brokerAccount = brokerAccount;
     }
 
     public BrokerPosition AddPosition()
     {
-      SmartQuant.Providers.BrokerPosition brokerPosition = new SmartQuant.Providers.BrokerPosition();
+			FreeQuant.Providers.BrokerPosition brokerPosition = new FreeQuant.Providers.BrokerPosition();
       this.brokerAccount.AddPosition(brokerPosition);
       return new BrokerPosition(brokerPosition);
     }
 
     public BrokerOrder AddOrder()
     {
-      SmartQuant.Providers.BrokerOrder brokerOrder = new SmartQuant.Providers.BrokerOrder();
+			FreeQuant.Providers.BrokerOrder brokerOrder = new FreeQuant.Providers.BrokerOrder();
       this.brokerAccount.AddOrder(brokerOrder);
       return new BrokerOrder(brokerOrder);
     }

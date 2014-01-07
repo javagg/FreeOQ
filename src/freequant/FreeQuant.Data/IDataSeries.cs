@@ -6,7 +6,7 @@
 using System;
 using System.Collections;
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   public interface IDataSeries : IEnumerable
   {

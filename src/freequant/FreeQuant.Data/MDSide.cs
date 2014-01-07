@@ -3,7 +3,7 @@
 // MVID: FAB3F3C9-6D4A-4391-AE43-0CE5E1C624DD
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Data.dll
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   public enum MDSide
   {

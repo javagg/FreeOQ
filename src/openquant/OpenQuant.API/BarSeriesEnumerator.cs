@@ -5,18 +5,18 @@ namespace OpenQuant.API
 {
   internal class BarSeriesEnumerator : IEnumerator
   {
-    private SmartQuant.Series.BarSeries series;
+		private FreeQuant.Series.BarSeries series;
     private IEnumerator enumerator;
 
     public object Current
     {
       get
       {
-        return (object) new Bar(this.enumerator.Current as SmartQuant.Data.Bar);
+				return (object) new Bar(this.enumerator.Current as FreeQuant.Data.Bar);
       }
     }
 
-    internal BarSeriesEnumerator(SmartQuant.Series.BarSeries series)
+		internal BarSeriesEnumerator(FreeQuant.Series.BarSeries series)
     {
       this.series = series;
       this.enumerator = series.GetEnumerator();

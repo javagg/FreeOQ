@@ -1,15 +1,10 @@
-﻿// Type: SmartQuant.Series.Regression
-// Assembly: SmartQuant.Series, Version=1.0.5036.28339, Culture=neutral, PublicKeyToken=null
-// MVID: E9488B3A-52DD-4064-9514-4FAD9D0B10AA
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Series.dll
-
-using mXqpVnllGuXP6crdfN;
+﻿using mXqpVnllGuXP6crdfN;
 using NEVPmg8vBnJoRISXwf;
-using SmartQuant.Charting;
+using FreeQuant.Charting;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Series
+namespace FreeQuant.Series
 {
   public class Regression
   {

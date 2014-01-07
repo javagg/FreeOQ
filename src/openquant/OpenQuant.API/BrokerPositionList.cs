@@ -5,7 +5,7 @@ namespace OpenQuant.API
 {
   public class BrokerPositionList : ICollection, IEnumerable
   {
-    private SmartQuant.Providers.BrokerPosition[] positions;
+		private FreeQuant.Providers.BrokerPosition[] positions;
 
     public int Count
     {
@@ -42,7 +42,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal BrokerPositionList(SmartQuant.Providers.BrokerPosition[] positions)
+		internal BrokerPositionList(FreeQuant.Providers.BrokerPosition[] positions)
     {
       this.positions = positions;
     }
@@ -57,7 +57,7 @@ namespace OpenQuant.API
 
     public IEnumerator GetEnumerator()
     {
-      foreach (SmartQuant.Providers.BrokerPosition brokerPosition in this.positions)
+			foreach (FreeQuant.Providers.BrokerPosition brokerPosition in this.positions)
         yield return (object) new BrokerPosition(brokerPosition);
     }
   }

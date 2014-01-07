@@ -4,18 +4,18 @@ namespace OpenQuant.API
 {
   internal class PositionListEnumerator : IEnumerator
   {
-    private SmartQuant.Instruments.PositionList positionList;
+    private FreeQuant.Instruments.PositionList positionList;
     private IEnumerator enumerator;
 
     public object Current
     {
       get
       {
-        return (object) new Position(this.enumerator.Current as SmartQuant.Instruments.Position);
+        return (object) new Position(this.enumerator.Current as FreeQuant.Instruments.Position);
       }
     }
 
-    internal PositionListEnumerator(SmartQuant.Instruments.PositionList positionList)
+    internal PositionListEnumerator(FreeQuant.Instruments.PositionList positionList)
     {
       this.positionList = positionList;
       this.enumerator = positionList.GetEnumerator();

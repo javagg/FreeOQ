@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class Quote
   {
-    internal SmartQuant.Data.Quote quote;
+    internal FreeQuant.Data.Quote quote;
 
     public DateTime DateTime
     {
@@ -56,10 +56,10 @@ namespace OpenQuant.API
 
     public Quote(DateTime dateTime, double bid, int bidSize, double ask, int askSize)
     {
-      this.quote = new SmartQuant.Data.Quote(dateTime, bid, bidSize, ask, askSize);
+      this.quote = new FreeQuant.Data.Quote(dateTime, bid, bidSize, ask, askSize);
     }
 
-    internal Quote(SmartQuant.Data.Quote quote)
+    internal Quote(FreeQuant.Data.Quote quote)
     {
       this.quote = quote;
     }

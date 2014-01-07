@@ -1,21 +1,16 @@
-﻿// Type: SmartQuant.Testing.LiveTester
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using ASQMKC8WePBGJ83PL4;
+﻿using ASQMKC8WePBGJ83PL4;
 using Byqm85MNrFBe6JPJlI;
 using iA35u4dCToxkZX7vHa;
-using SmartQuant;
-using SmartQuant.Business;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Series;
-using SmartQuant.Testing.MathStatistics;
-using SmartQuant.Testing.Pertrac;
-using SmartQuant.Testing.RoundTrips;
-using SmartQuant.Testing.RoundTripsStatistics;
-using SmartQuant.Testing.TesterItems;
+using FreeQuant;
+using FreeQuant.Business;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Series;
+using FreeQuant.Testing.MathStatistics;
+using FreeQuant.Testing.Pertrac;
+using FreeQuant.Testing.RoundTrips;
+using FreeQuant.Testing.RoundTripsStatistics;
+using FreeQuant.Testing.TesterItems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +20,7 @@ using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Testing
+namespace FreeQuant.Testing
 {
   public class LiveTester
   {
@@ -986,27 +981,27 @@ namespace SmartQuant.Testing
         switch (obj1.Transaction.Side)
         {
           case Side.Buy:
-            this.currentAccount -= SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocation += SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocationLong += SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.currentAccount -= FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocation += FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocationLong += FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
             this.isAllocationLong = true;
             break;
           case Side.Sell:
-            this.currentAccount += SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocation -= SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocationLong -= SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.currentAccount += FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocation -= FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocationLong -= FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
             this.isAllocationLong = true;
             break;
           case Side.BuyMinus:
-            this.currentAccount -= SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocation += SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocationShort += SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.currentAccount -= FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocation += FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocationShort += FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
             this.isAllocationShort = true;
             break;
           case Side.SellShort:
-            this.currentAccount += SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocation -= SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
-            this.allocationShort -= SmartQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.currentAccount += FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocation -= FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
+            this.allocationShort -= FreeQuant.Instruments.Currency.Convert(obj1.Transaction.Value, obj1.Transaction.Currency, this.portfolio.Account.Currency);
             this.isAllocationShort = true;
             break;
         }
@@ -1169,27 +1164,27 @@ namespace SmartQuant.Testing
               switch (local_1.Side)
               {
                 case Side.Buy:
-                  this.currentAccount -= SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocation += SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocationLong += SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.currentAccount -= FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocation += FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocationLong += FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
                   local_2 = true;
                   break;
                 case Side.Sell:
-                  this.currentAccount += SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocation -= SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocationLong -= SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.currentAccount += FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocation -= FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocationLong -= FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
                   local_2 = true;
                   break;
                 case Side.BuyMinus:
-                  this.currentAccount -= SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocation += SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocationShort += SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.currentAccount -= FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocation += FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocationShort += FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
                   local_3 = true;
                   break;
                 case Side.SellShort:
-                  this.currentAccount += SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocation -= SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
-                  this.allocationShort -= SmartQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.currentAccount += FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocation -= FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
+                  this.allocationShort -= FreeQuant.Instruments.Currency.Convert(local_1.Value, local_1.Currency, this.portfolio.Account.Currency);
                   local_3 = true;
                   break;
               }

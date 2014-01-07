@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using VFUvY5knK01pUIalDo;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class InstrumentDbServer : IInstrumentServer
   {

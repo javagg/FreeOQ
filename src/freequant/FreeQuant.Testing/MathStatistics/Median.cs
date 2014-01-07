@@ -1,17 +1,12 @@
-﻿// Type: SmartQuant.Testing.MathStatistics.Median
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using ASQMKC8WePBGJ83PL4;
+﻿using ASQMKC8WePBGJ83PL4;
 using Byqm85MNrFBe6JPJlI;
-using SmartQuant.Testing.TesterItems;
+using FreeQuant.Testing.TesterItems;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Testing.MathStatistics
+namespace FreeQuant.Testing.MathStatistics
 {
   public class Median : SeriesTesterItem
   {

@@ -1,17 +1,12 @@
-﻿// Type: SmartQuant.Simulation.SimulationDataProvider
-// Assembly: SmartQuant.Simulation, Version=1.0.5036.28353, Culture=neutral, PublicKeyToken=null
-// MVID: 7CFB1E94-1672-436F-90C9-C8B7893A5618
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Simulation.dll
-
-using CJ5Xsgeg9JvhJUnvO3D;
+﻿using CJ5Xsgeg9JvhJUnvO3D;
 using lPGdY4dVgZ5i40XSAw;
 using Ro5JtCVLApA6K9JGvl;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.FIXData;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
+using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.FIXData;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,13 +17,13 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using Y9kGLiKILMabFE38T3;
 
-namespace SmartQuant.Simulation
+namespace FreeQuant.Simulation
 {
   public class SimulationDataProvider : ISimulationMarketDataProvider, IMarketDataProvider, IProvider
   {
     private const string nWGyg9yZVO = "Simulator(market data)";
     private const string U6ByembQOS = "Simulation data provider";
-    private const string wHoyyeM6ef = "http://www.smartquant.com";
+    private const string wHoyyeM6ef = "http://www.FreeQuant.com";
     private const byte FhJy0jACT6 = (byte) 1;
     private const string clQyPVFekp = "Information";
     private const string JgPyFjZLOy = "Status";

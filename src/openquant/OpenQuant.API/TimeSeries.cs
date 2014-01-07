@@ -154,37 +154,37 @@ namespace OpenQuant.API
 
     public virtual Cross Crosses(BarSeries series, Bar bar)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) series.series, bar.bar));
+      return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) series.series, bar.bar));
     }
 
     public virtual bool CrossesBelow(BarSeries series, Bar bar, BarData barData)
     {
-      return this.series.CrossesBelow((SmartQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
+      return this.series.CrossesBelow((FreeQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
     }
 
     public virtual bool CrossesAbove(BarSeries series, Bar bar, BarData barData)
     {
-      return this.series.CrossesAbove((SmartQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
+      return this.series.CrossesAbove((FreeQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
     }
 
     public virtual Cross Crosses(BarSeries series, Bar bar, BarData barData)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) series.series, bar.bar, (int) barData));
+      return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) series.series, bar.bar, (int) barData));
     }
 
     public virtual Cross Crosses(Indicator indicator, DateTime dateTime)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) indicator.indicator, dateTime));
+      return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) indicator.indicator, dateTime));
     }
 
     public virtual bool CrossesBelow(Indicator indicator, DateTime dateTime)
     {
-      return this.series.CrossesBelow((SmartQuant.Series.TimeSeries) indicator.indicator, dateTime);
+      return this.series.CrossesBelow((FreeQuant.Series.TimeSeries) indicator.indicator, dateTime);
     }
 
     public virtual bool CrossesAbove(Indicator indicator, DateTime dateTime)
     {
-      return this.series.CrossesAbove((SmartQuant.Series.TimeSeries) indicator.indicator, dateTime);
+      return this.series.CrossesAbove((FreeQuant.Series.TimeSeries) indicator.indicator, dateTime);
     }
 
     public virtual bool CrossesBelow(double level, Bar bar)
@@ -194,17 +194,17 @@ namespace OpenQuant.API
 
     public virtual Cross Crosses(TimeSeries series, DateTime dateTime)
     {
-      return EnumConverter.Convert(this.series.Crosses((SmartQuant.Series.TimeSeries) series.series, dateTime));
+      return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries) series.series, dateTime));
     }
 
     public virtual bool CrossesBelow(TimeSeries series, DateTime dateTime)
     {
-      return this.series.CrossesBelow((SmartQuant.Series.TimeSeries) series.series, dateTime);
+      return this.series.CrossesBelow((FreeQuant.Series.TimeSeries) series.series, dateTime);
     }
 
     public virtual bool CrossesAbove(TimeSeries series, DateTime dateTime)
     {
-      return this.series.CrossesAbove((SmartQuant.Series.TimeSeries) series.series, dateTime);
+      return this.series.CrossesAbove((FreeQuant.Series.TimeSeries) series.series, dateTime);
     }
 
     public virtual bool CrossesAbove(double level, Bar bar)
@@ -264,12 +264,12 @@ namespace OpenQuant.API
 
     public double GetCorrelation(TimeSeries timeSeries)
     {
-      return this.series.GetCorrelation((SmartQuant.Series.TimeSeries) timeSeries.series);
+      return this.series.GetCorrelation((FreeQuant.Series.TimeSeries) timeSeries.series);
     }
 
     public double GetCovariance(TimeSeries timeSeries)
     {
-      return this.series.GetCovariance((SmartQuant.Series.TimeSeries) timeSeries.series);
+      return this.series.GetCovariance((FreeQuant.Series.TimeSeries) timeSeries.series);
     }
 
     public double GetExcess(int index1, int index2)

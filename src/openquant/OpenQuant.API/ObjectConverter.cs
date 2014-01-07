@@ -6,12 +6,12 @@ namespace OpenQuant.API
 {
   internal class ObjectConverter : IObjectConverter
   {
-    public object Convert(SmartQuant.Data.Bar bar)
+    public object Convert(FreeQuant.Data.Bar bar)
     {
       return (object) new Bar(bar);
     }
 
-    public object Convert(SmartQuant.Instruments.Portfolio portfolio)
+    public object Convert(FreeQuant.Instruments.Portfolio portfolio)
     {
       return (object) new Portfolio(portfolio);
     }
@@ -21,17 +21,17 @@ namespace OpenQuant.API
       return (object) new Order(order);
     }
 
-    public object Convert(SmartQuant.Data.Trade trade)
+    public object Convert(FreeQuant.Data.Trade trade)
     {
       return (object) new Trade(trade);
     }
 
-    public object Convert(SmartQuant.Data.Quote quote)
+    public object Convert(FreeQuant.Data.Quote quote)
     {
       return (object) new Quote(quote);
     }
 
-    public object Convert(SmartQuant.Providers.ProviderError error)
+    public object Convert(FreeQuant.Providers.ProviderError error)
     {
       return (object) new ProviderError(error);
     }

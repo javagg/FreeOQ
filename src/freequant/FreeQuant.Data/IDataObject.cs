@@ -5,7 +5,7 @@
 
 using System;
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   public interface IDataObject
   {

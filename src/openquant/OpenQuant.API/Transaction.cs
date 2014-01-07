@@ -5,7 +5,7 @@ namespace OpenQuant.API
 {
   public class Transaction
   {
-    internal SmartQuant.Instruments.Transaction transaction;
+    internal FreeQuant.Instruments.Transaction transaction;
 
     public Instrument Instrument
     {
@@ -80,7 +80,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal Transaction(SmartQuant.Instruments.Transaction transaction)
+    internal Transaction(FreeQuant.Instruments.Transaction transaction)
     {
       this.transaction = transaction;
     }

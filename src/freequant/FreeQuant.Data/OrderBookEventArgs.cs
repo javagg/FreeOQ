@@ -7,7 +7,7 @@ using RadDBE9P5I945u5gCE;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   public class OrderBookEventArgs : EventArgs
   {

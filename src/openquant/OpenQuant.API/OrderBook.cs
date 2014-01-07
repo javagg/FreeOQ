@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class OrderBook
   {
-    private SmartQuant.Data.OrderBook book;
+    private FreeQuant.Data.OrderBook book;
 
     public int Count
     {
@@ -14,7 +14,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal OrderBook(SmartQuant.Data.OrderBook book)
+    internal OrderBook(FreeQuant.Data.OrderBook book)
     {
       this.book = book;
     }

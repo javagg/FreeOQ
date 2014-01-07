@@ -56,4 +56,26 @@
     <Compile Include="UserCommandManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\OpenQuant.API\OpenQuant.API.csproj">
+      <Project>{40E0C499-01D7-4D12-97C6-EBA1F605F756}</Project>
+      <Name>OpenQuant.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Testing\FreeQuant.Testing.csproj">
+      <Project>{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}</Project>
+      <Name>FreeQuant.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Trading\FreeQuant.Trading.csproj">
+      <Project>{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}</Project>
+      <Name>FreeQuant.Trading</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

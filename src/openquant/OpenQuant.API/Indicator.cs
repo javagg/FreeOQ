@@ -15,11 +15,11 @@ namespace OpenQuant.API
     {
       get
       {
-        return ((SmartQuant.Series.TimeSeries) this.indicator).Name;
+				return ((FreeQuant.Series.TimeSeries) this.indicator).Name;
       }
       set
       {
-        ((SmartQuant.Series.TimeSeries) this.indicator).Name = value;
+				((FreeQuant.Series.TimeSeries) this.indicator).Name = value;
       }
     }
 
@@ -28,11 +28,11 @@ namespace OpenQuant.API
     {
       get
       {
-        return ((SmartQuant.Series.TimeSeries) this.indicator).Title;
+				return ((FreeQuant.Series.TimeSeries) this.indicator).Title;
       }
       set
       {
-        ((SmartQuant.Series.TimeSeries) this.indicator).Title = value;
+				((FreeQuant.Series.TimeSeries) this.indicator).Title = value;
       }
     }
 
@@ -42,11 +42,11 @@ namespace OpenQuant.API
     {
       get
       {
-        return ((SmartQuant.Series.TimeSeries) this.indicator).Color;
+				return ((FreeQuant.Series.TimeSeries) this.indicator).Color;
       }
       set
       {
-        ((SmartQuant.Series.TimeSeries) this.indicator).Color = value;
+				((FreeQuant.Series.TimeSeries) this.indicator).Color = value;
       }
     }
 
@@ -85,7 +85,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return ((SmartQuant.Series.TimeSeries) this.indicator).Count;
+				return ((FreeQuant.Series.TimeSeries) this.indicator).Count;
       }
     }
 
@@ -111,7 +111,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return ((SmartQuant.Series.TimeSeries) this.indicator).FirstDateTime;
+				return ((FreeQuant.Series.TimeSeries) this.indicator).FirstDateTime;
       }
     }
 
@@ -120,7 +120,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return ((SmartQuant.Series.TimeSeries) this.indicator).LastDateTime;
+				return ((FreeQuant.Series.TimeSeries) this.indicator).LastDateTime;
       }
     }
 
@@ -147,127 +147,127 @@ namespace OpenQuant.API
 
     public virtual bool Contains(DateTime dateTime)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).Contains(dateTime);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).Contains(dateTime);
     }
 
     public virtual bool Contains(Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).Contains(bar.DateTime);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).Contains(bar.DateTime);
     }
 
     public virtual Cross Crosses(TimeSeries series, DateTime dateTime)
     {
-      return EnumConverter.Convert(((SmartQuant.Series.TimeSeries) this.indicator).Crosses((SmartQuant.Series.TimeSeries) series.series, dateTime));
+			return EnumConverter.Convert(((FreeQuant.Series.TimeSeries) this.indicator).Crosses((FreeQuant.Series.TimeSeries) series.series, dateTime));
     }
 
     public virtual bool CrossesBelow(TimeSeries series, DateTime dateTime)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesBelow((SmartQuant.Series.TimeSeries) series.series, dateTime);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesBelow((FreeQuant.Series.TimeSeries) series.series, dateTime);
     }
 
     public virtual bool CrossesAbove(TimeSeries series, DateTime dateTime)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesAbove((SmartQuant.Series.TimeSeries) series.series, dateTime);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesAbove((FreeQuant.Series.TimeSeries) series.series, dateTime);
     }
 
     public virtual bool CrossesBelow(BarSeries series, Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesBelow((SmartQuant.Series.TimeSeries) series.series, bar.bar);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesBelow((FreeQuant.Series.TimeSeries) series.series, bar.bar);
     }
 
     public virtual bool CrossesAbove(BarSeries series, Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesAbove((SmartQuant.Series.TimeSeries) series.series, bar.bar);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesAbove((FreeQuant.Series.TimeSeries) series.series, bar.bar);
     }
 
     public virtual bool CrossesBelow(Indicator indicator, Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesBelow((SmartQuant.Series.TimeSeries) indicator.indicator, bar.bar);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesBelow((FreeQuant.Series.TimeSeries) indicator.indicator, bar.bar);
     }
 
     public virtual bool CrossesAbove(Indicator indicator, Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesAbove((SmartQuant.Series.TimeSeries) indicator.indicator, bar.bar);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesAbove((FreeQuant.Series.TimeSeries) indicator.indicator, bar.bar);
     }
 
     public virtual Cross Crosses(Indicator indicator, Bar bar)
     {
-      return EnumConverter.Convert(((SmartQuant.Series.TimeSeries) this.indicator).Crosses((SmartQuant.Series.TimeSeries) indicator.indicator, bar.bar));
+      return EnumConverter.Convert(((FreeQuant.Series.TimeSeries) this.indicator).Crosses((FreeQuant.Series.TimeSeries) indicator.indicator, bar.bar));
     }
 
     public virtual Cross Crosses(BarSeries series, Bar bar)
     {
-      return EnumConverter.Convert(((SmartQuant.Series.TimeSeries) this.indicator).Crosses((SmartQuant.Series.TimeSeries) series.series, bar.bar));
+      return EnumConverter.Convert(((FreeQuant.Series.TimeSeries) this.indicator).Crosses((FreeQuant.Series.TimeSeries) series.series, bar.bar));
     }
 
     public virtual bool CrossesBelow(BarSeries series, Bar bar, BarData barData)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesBelow((SmartQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesBelow((FreeQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
     }
 
     public virtual bool CrossesAbove(BarSeries series, Bar bar, BarData barData)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesAbove((SmartQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
+			return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesAbove((FreeQuant.Series.TimeSeries) series.series, bar.bar, (int) barData);
     }
 
     public virtual Cross Crosses(BarSeries series, Bar bar, BarData barData)
     {
-      return EnumConverter.Convert(((SmartQuant.Series.TimeSeries) this.indicator).Crosses((SmartQuant.Series.TimeSeries) series.series, bar.bar, (int) barData));
+			return EnumConverter.Convert(((FreeQuant.Series.TimeSeries) this.indicator).Crosses((FreeQuant.Series.TimeSeries) series.series, bar.bar, (int) barData));
     }
 
     public virtual bool CrossesBelow(double level, Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesBelow(level, ((SmartQuant.Series.TimeSeries) this.indicator).GetIndex(bar.DateTime));
+      return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesBelow(level, ((FreeQuant.Series.TimeSeries) this.indicator).GetIndex(bar.DateTime));
     }
 
     public virtual bool CrossesAbove(double level, Bar bar)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).CrossesAbove(level, ((SmartQuant.Series.TimeSeries) this.indicator).GetIndex(bar.DateTime));
+      return ((FreeQuant.Series.TimeSeries) this.indicator).CrossesAbove(level, ((FreeQuant.Series.TimeSeries) this.indicator).GetIndex(bar.DateTime));
     }
 
     public virtual Cross Crosses(double level, Bar bar)
     {
-      return EnumConverter.Convert(((SmartQuant.Series.TimeSeries) this.indicator).Crosses(level, ((SmartQuant.Series.TimeSeries) this.indicator).GetIndex(bar.DateTime)));
+      return EnumConverter.Convert(((FreeQuant.Series.TimeSeries) this.indicator).Crosses(level, ((FreeQuant.Series.TimeSeries) this.indicator).GetIndex(bar.DateTime)));
     }
 
     public virtual DateTime GetDateTime(int index)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetDateTime(index);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetDateTime(index);
     }
 
     public int GetIndex(DateTime dateTime)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetIndex(dateTime);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetIndex(dateTime);
     }
 
     public double GetMax(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMax(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMax(index1, index2);
     }
 
     public double GetMax(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMax(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMax(dateTime1, dateTime2);
     }
 
     public double GetMin(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMin(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMin(index1, index2);
     }
 
     public double GetMin(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMin(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMin(dateTime1, dateTime2);
     }
 
     public double GetAsymmetry(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetAsymmetry(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetAsymmetry(index1, index2);
     }
 
     public double GetAsymmetry(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetAsymmetry(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetAsymmetry(dateTime1, dateTime2);
     }
 
     public double GetAutoCorrelation(int lag)
@@ -282,122 +282,122 @@ namespace OpenQuant.API
 
     public double GetCorrelation(TimeSeries timeSeries)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetCorrelation((SmartQuant.Series.TimeSeries) timeSeries.series);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetCorrelation((FreeQuant.Series.TimeSeries) timeSeries.series);
     }
 
     public double GetCovariance(TimeSeries timeSeries)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetCovariance((SmartQuant.Series.TimeSeries) timeSeries.series);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetCovariance((FreeQuant.Series.TimeSeries) timeSeries.series);
     }
 
     public double GetExcess(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetExcess(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetExcess(index1, index2);
     }
 
     public double GetExcess(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetExcess(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetExcess(dateTime1, dateTime2);
     }
 
     public double GetMean(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMean(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMean(index1, index2);
     }
 
     public double GetMean(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMean(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMean(dateTime1, dateTime2);
     }
 
     public double GetMedian(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMedian(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMedian(index1, index2);
     }
 
     public double GetMedian(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMedian(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMedian(dateTime1, dateTime2);
     }
 
     public double GetMoment(int k, int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMoment(k, index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMoment(k, index1, index2);
     }
 
     public double GetMoment(int k, DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetMoment(k, dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetMoment(k, dateTime1, dateTime2);
     }
 
     public double GetNegativeStdDev(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetNegativeStdDev(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetNegativeStdDev(index1, index2);
     }
 
     public double GetNegativeStdDev(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetNegativeStdDev(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetNegativeStdDev(dateTime1, dateTime2);
     }
 
     public double GetNegativeVariance(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetNegativeVariance(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetNegativeVariance(index1, index2);
     }
 
     public double GetNegativeVariance(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetNegativeVariance(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetNegativeVariance(dateTime1, dateTime2);
     }
 
     public double GetPositiveStdDev(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetPositiveStdDev(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetPositiveStdDev(index1, index2);
     }
 
     public double GetPositiveStdDev(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetPositiveStdDev(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetPositiveStdDev(dateTime1, dateTime2);
     }
 
     public double GetPositiveVariance(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetPositiveVariance(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetPositiveVariance(index1, index2);
     }
 
     public double GetPositiveVariance(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetPositiveVariance(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetPositiveVariance(dateTime1, dateTime2);
     }
 
     public double GetStdDev(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetStdDev(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetStdDev(index1, index2);
     }
 
     public double GetStdDev(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetStdDev(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetStdDev(dateTime1, dateTime2);
     }
 
     public double GetSum(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetSum(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetSum(index1, index2);
     }
 
     public double GetSum(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetSum(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetSum(dateTime1, dateTime2);
     }
 
     public double GetVariance(int index1, int index2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetVariance(index1, index2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetVariance(index1, index2);
     }
 
     public double GetVariance(DateTime dateTime1, DateTime dateTime2)
     {
-      return ((SmartQuant.Series.TimeSeries) this.indicator).GetVariance(dateTime1, dateTime2);
+      return ((FreeQuant.Series.TimeSeries) this.indicator).GetVariance(dateTime1, dateTime2);
     }
   }
 }

@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -55,5 +56,11 @@
     <Compile Include="TimeSeries.cs" />
     <Compile Include="TradeArray.cs" />
     <Compile Include="TradeArrayEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

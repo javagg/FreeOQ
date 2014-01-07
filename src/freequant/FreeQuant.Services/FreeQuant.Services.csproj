@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9E495CF-9DFB-4E57-9D99-A80D06915A87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant.Services</RootNamespace>
+    <AssemblyName>FreeQuant.Services</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceStatus.cs" />
+    <Compile Include="ServiceManager.cs" />
+    <Compile Include="ServiceList.cs" />
+    <Compile Include="ServiceId.cs" />
+    <Compile Include="ServiceEventHandler.cs" />
+    <Compile Include="ServiceEventArgs.cs" />
+    <Compile Include="ServiceErrorType.cs" />
+    <Compile Include="ServiceErrorList.cs" />
+    <Compile Include="ServiceErrorEventHandler.cs" />
+    <Compile Include="ServiceErrorEventArgs.cs" />
+    <Compile Include="ServiceError.cs" />
+    <Compile Include="ServiceBase.cs" />
+    <Compile Include="NewOrderSingleEventHandler.cs" />
+    <Compile Include="NewOrderSingleEventArgs.cs" />
+    <Compile Include="MarketServiceEventArgs.cs" />
+    <Compile Include="LogoutEventHandler.cs" />
+    <Compile Include="LogoutEventArgs.cs" />
+    <Compile Include="LogonEventHandler.cs" />
+    <Compile Include="LogonEventArgs.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="IMarketService.cs" />
+    <Compile Include="IExecutionService.cs" />
+    <Compile Include="ExecutionServiceList.cs" />
+    <Compile Include="ExecutionServiceEventArgs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

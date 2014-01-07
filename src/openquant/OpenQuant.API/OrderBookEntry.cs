@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   internal class OrderBookEntry
   {
-    private SmartQuant.Data.OrderBookEntry entry;
+    private FreeQuant.Data.OrderBookEntry entry;
 
     public DateTime DateTime
     {
@@ -30,7 +30,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal OrderBookEntry(SmartQuant.Data.OrderBookEntry entry)
+    internal OrderBookEntry(FreeQuant.Data.OrderBookEntry entry)
     {
       this.entry = entry;
     }

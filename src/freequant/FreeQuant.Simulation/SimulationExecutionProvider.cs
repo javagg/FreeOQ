@@ -1,13 +1,8 @@
-﻿// Type: SmartQuant.Simulation.SimulationExecutionProvider
-// Assembly: SmartQuant.Simulation, Version=1.0.5036.28353, Culture=neutral, PublicKeyToken=null
-// MVID: 7CFB1E94-1672-436F-90C9-C8B7893A5618
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Simulation.dll
-
-using CJ5Xsgeg9JvhJUnvO3D;
-using SmartQuant;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.Providers;
+﻿using CJ5Xsgeg9JvhJUnvO3D;
+using FreeQuant;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.Providers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,14 +13,14 @@ using System.Runtime.InteropServices;
 using VHHKll9MOQqxjH5svX;
 using Y9kGLiKILMabFE38T3;
 
-namespace SmartQuant.Simulation
+namespace FreeQuant.Simulation
 {
   [TypeConverter(typeof (ExpandableObjectConverter))]
   public class SimulationExecutionProvider : IExecutionProvider, IProvider
   {
     private const string IpgPGddVVV = "Simulator(execution)";
     private const string XmtPajagWB = "Simulation Execution Provider";
-    private const string WgiPvc3Gxa = "http://www.smartquant.com";
+    private const string WgiPvc3Gxa = "http://www.FreeQuant.com";
     private const byte hS1P42nNDo = (byte) 2;
     private const string TaVPU6ItfP = "Information";
     private const string POlPN9ROBL = "Status";

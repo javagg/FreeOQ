@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class Trade
   {
-    internal SmartQuant.Data.Trade trade;
+    internal FreeQuant.Data.Trade trade;
 
     public DateTime DateTime
     {
@@ -40,10 +40,10 @@ namespace OpenQuant.API
 
     public Trade(DateTime dateTime, double price, int size)
     {
-      this.trade = new SmartQuant.Data.Trade(dateTime, price, size);
+      this.trade = new FreeQuant.Data.Trade(dateTime, price, size);
     }
 
-    internal Trade(SmartQuant.Data.Trade trade)
+    internal Trade(FreeQuant.Data.Trade trade)
     {
       this.trade = trade;
     }

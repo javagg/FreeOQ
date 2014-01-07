@@ -4,8 +4,8 @@
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
 
 using nlmLboft3R6jnhSDBs;
-using SmartQuant.Charting;
-using SmartQuant.FIX;
+using FreeQuant.Charting;
+using FreeQuant.FIX;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using VFUvY5knK01pUIalDo;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class Transaction : IComparable, IDrawable, ICloneable
   {

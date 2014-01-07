@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class TransactionList : IEnumerable
   {
-    private SmartQuant.Instruments.TransactionList transactionList;
+    private FreeQuant.Instruments.TransactionList transactionList;
 
     public int Count
     {
@@ -22,7 +22,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal TransactionList(SmartQuant.Instruments.TransactionList transactionList)
+    internal TransactionList(FreeQuant.Instruments.TransactionList transactionList)
     {
       this.transactionList = transactionList;
     }

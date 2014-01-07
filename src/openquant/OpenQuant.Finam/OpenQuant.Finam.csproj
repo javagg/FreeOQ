@@ -32,7 +32,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="BidOfferPair.cs" />
     <Compile Include="DllSelector.cs" />
     <Compile Include="ITransaqConnector.cs" />

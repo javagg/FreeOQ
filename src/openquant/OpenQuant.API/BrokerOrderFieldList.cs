@@ -5,7 +5,7 @@ namespace OpenQuant.API
 {
   public class BrokerOrderFieldList : ICollection, IEnumerable
   {
-    private SmartQuant.Providers.BrokerOrderField[] fields;
+		private FreeQuant.Providers.BrokerOrderField[] fields;
 
     public int Count
     {
@@ -35,7 +35,7 @@ namespace OpenQuant.API
     {
       get
       {
-        foreach (SmartQuant.Providers.BrokerOrderField field in this.fields)
+				foreach (FreeQuant.Providers.BrokerOrderField field in this.fields)
         {
           if (field.Name == name)
             return new BrokerOrderField(field);
@@ -44,7 +44,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal BrokerOrderFieldList(SmartQuant.Providers.BrokerOrderField[] fields)
+		internal BrokerOrderFieldList(FreeQuant.Providers.BrokerOrderField[] fields)
     {
       this.fields = fields;
     }
@@ -59,7 +59,7 @@ namespace OpenQuant.API
 
     public IEnumerator GetEnumerator()
     {
-      foreach (SmartQuant.Providers.BrokerOrderField field in this.fields)
+			foreach (FreeQuant.Providers.BrokerOrderField field in this.fields)
         yield return (object) new BrokerOrderField(field);
     }
   }

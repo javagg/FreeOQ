@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class Position
   {
-    internal SmartQuant.Instruments.Position position;
+    internal FreeQuant.Instruments.Position position;
     private TransactionList transactions;
 
     public Instrument Instrument
@@ -21,9 +21,9 @@ namespace OpenQuant.API
       {
         switch (this.position.Side)
         {
-          case SmartQuant.Instruments.PositionSide.Long:
+          case FreeQuant.Instruments.PositionSide.Long:
             return PositionSide.Long;
-          case SmartQuant.Instruments.PositionSide.Short:
+          case FreeQuant.Instruments.PositionSide.Short:
             return PositionSide.Short;
           default:
             throw new NotImplementedException("Unknown PositionSide : " + (object) this.position.Side);
@@ -119,7 +119,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal Position(SmartQuant.Instruments.Position position)
+    internal Position(FreeQuant.Instruments.Position position)
     {
       this.position = position;
       this.transactions = new TransactionList(position.Transactions);

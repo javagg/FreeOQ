@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Data
+namespace FreeQuant.Data
 {
   public class OrderBook
   {

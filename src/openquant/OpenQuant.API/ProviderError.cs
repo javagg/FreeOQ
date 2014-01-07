@@ -4,7 +4,7 @@ namespace OpenQuant.API
 {
   public class ProviderError
   {
-    private SmartQuant.Providers.ProviderError error;
+    private FreeQuant.Providers.ProviderError error;
 
     public DateTime DateTime
     {
@@ -46,7 +46,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal ProviderError(SmartQuant.Providers.ProviderError error)
+    internal ProviderError(FreeQuant.Providers.ProviderError error)
     {
       this.error = error;
     }

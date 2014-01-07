@@ -69,7 +69,7 @@ namespace OpenQuant.API
       {
         get
         {
-          return (object) new Trade(this.enumerator.Current as SmartQuant.Data.Trade);
+          return (object) new Trade(this.enumerator.Current as FreeQuant.Data.Trade);
         }
       }
 

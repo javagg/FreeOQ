@@ -1,8 +1,3 @@
-// Type: SmartQuant.QUIK.QUIKFIX
-// Assembly: SmartQuant.QUIK, Version=1.0.5036.28351, Culture=neutral, PublicKeyToken=null
-// MVID: 08625731-7887-40B5-AAC8-76261F4D7C10
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.QUIK.dll
-
 using m0njJaOATyghKuNrUx;
 using qkaElGt6k8WAL3MJDk;
 using QuickFix;
@@ -17,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms.Design;
 using UYZN4krhQ8QrO8INWH;
 
-namespace SmartQuant.QUIK
+namespace FreeQuant.QUIK
 {
   public class QUIKFIX : QuickFIX42Provider
   {

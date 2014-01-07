@@ -2,7 +2,7 @@
 {
   public class BrokerOrder
   {
-    private SmartQuant.Providers.BrokerOrder brokerOrder;
+		private FreeQuant.Providers.BrokerOrder brokerOrder;
 
     public string OrderID
     {
@@ -144,7 +144,7 @@
       }
     }
 
-    internal BrokerOrder(SmartQuant.Providers.BrokerOrder brokerOrder)
+		internal BrokerOrder(FreeQuant.Providers.BrokerOrder brokerOrder)
     {
       this.brokerOrder = brokerOrder;
     }

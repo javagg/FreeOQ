@@ -13,7 +13,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return (object) new ExecutionReport((FIXMessage) (this.enumerator.Current as SmartQuant.FIX.ExecutionReport));
+				return (object) new ExecutionReport((FIXMessage) (this.enumerator.Current as FreeQuant.FIX.ExecutionReport));
       }
     }
 

@@ -1,21 +1,16 @@
-﻿// Type: SmartQuant.Execution.OrderManager
-// Assembly: SmartQuant.Execution, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: 444CC37E-F17B-4ED8-9FD1-FAF0B8C26A05
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Execution.dll
-
-using LI7wYoxjcQSGYmaiNa;
+﻿using LI7wYoxjcQSGYmaiNa;
 using RZ1j9O1DCcsDf19ge6;
-using SmartQuant;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
-using SmartQuant.Services;
+using FreeQuant;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
+using FreeQuant.Services;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Execution
+namespace FreeQuant.Execution
 {
   public class OrderManager
   {
@@ -420,7 +415,7 @@ label_10:
       transaction.Qty = obj3;
       transaction.Strategy = obj0.Strategy;
       transaction.Text = obj0.Text;
-      SmartQuant.Instruments.Currency currency = (CurrencyManager.Currencies[obj0.Currency] ?? CurrencyManager.Currencies[obj0.Instrument.Currency]) ?? CurrencyManager.DefaultCurrency;
+      FreeQuant.Instruments.Currency currency = (CurrencyManager.Currencies[obj0.Currency] ?? CurrencyManager.Currencies[obj0.Instrument.Currency]) ?? CurrencyManager.DefaultCurrency;
       transaction.Currency = currency;
       transaction.TransactionCost.Set(CommType.Absolute, obj0.Commission);
       obj0.Portfolio.Add(transaction);

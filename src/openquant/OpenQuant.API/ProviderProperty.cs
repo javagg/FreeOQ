@@ -1,4 +1,4 @@
-﻿using SmartQuant.Providers;
+﻿using FreeQuant.Providers;
 using System;
 using System.Reflection;
 

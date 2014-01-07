@@ -5,11 +5,11 @@ namespace OpenQuant.API
 {
   public class Canvas
   {
-    private SmartQuant.Charting.Canvas canvas;
+		private FreeQuant.Charting.Canvas canvas;
 
     public Canvas(string name)
     {
-      this.canvas = new SmartQuant.Charting.Canvas(name);
+			this.canvas = new FreeQuant.Charting.Canvas(name);
     }
 
     public void Clear()
@@ -34,7 +34,7 @@ namespace OpenQuant.API
 
     public void Add(Indicator indicator)
     {
-      ((SmartQuant.Series.TimeSeries) indicator.indicator).Draw();
+			((FreeQuant.Series.TimeSeries) indicator.indicator).Draw();
     }
 
     public void Add(TradeSeries tradeSeries)

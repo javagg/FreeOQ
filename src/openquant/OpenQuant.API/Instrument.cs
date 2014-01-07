@@ -15,7 +15,7 @@ namespace OpenQuant.API
     private const string CATEGORY_INDUSTRY = "Industry";
     private const string CATEGORY_DISPLAY = "Display";
     private const string CATEGORY_TICK_SIZE = "TickSize";
-    internal SmartQuant.Instruments.Instrument instrument;
+    internal FreeQuant.Instruments.Instrument instrument;
     private OrderBook book;
 
     [Description("Instrument symbol")]
@@ -350,7 +350,7 @@ namespace OpenQuant.API
       }
     }
 
-    internal Instrument(SmartQuant.Instruments.Instrument instrument)
+    internal Instrument(FreeQuant.Instruments.Instrument instrument)
     {
       this.instrument = instrument;
       this.book = new OrderBook(instrument.OrderBook);
@@ -364,9 +364,9 @@ namespace OpenQuant.API
 
     public Instrument(InstrumentType type, string symbol, string secutityExchange, string currency)
     {
-      if (SmartQuant.Instruments.InstrumentManager.Instruments.Contains(symbol))
+      if (FreeQuant.Instruments.InstrumentManager.Instruments.Contains(symbol))
         return;
-      this.instrument = new SmartQuant.Instruments.Instrument(symbol, EnumConverter.Convert(type));
+      this.instrument = new FreeQuant.Instruments.Instrument(symbol, EnumConverter.Convert(type));
       this.instrument.SecurityExchange = secutityExchange;
       this.instrument.Currency = currency;
       this.instrument.Save();

@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 using VFUvY5knK01pUIalDo;
 using x4kjQFrrfpZvQx9QMP;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class Instrument : FIXInstrument
   {

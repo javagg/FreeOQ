@@ -7,7 +7,7 @@ using nlmLboft3R6jnhSDBs;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Instruments
+namespace FreeQuant.Instruments
 {
   public class InstrumentEventArgs : EventArgs
   {
