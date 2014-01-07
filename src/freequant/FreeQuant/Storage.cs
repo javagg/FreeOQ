@@ -8,9 +8,8 @@ using BoBSVVX0yGpEOB0Qj2;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant
+namespace FreeQuant
 {
-  [LicenseProvider(typeof (A6mJqrm7oqdfvuwEFGG))]
   public class Storage
   {
     public DbServerType ServerType
@@ -26,7 +25,6 @@ namespace SmartQuant
       GItcYDqSxj5aE60JeS.GRAroVBQNR();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal Storage()
     {
     }

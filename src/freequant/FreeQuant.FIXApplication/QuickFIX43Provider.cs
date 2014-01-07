@@ -57,7 +57,7 @@ namespace SmartQuant.FIXApplication
     [Category("Information")]
     public virtual string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return BeAEwTZGlZaeOmY5cm.J00weU3cM6(3542);
       }
@@ -77,7 +77,7 @@ namespace SmartQuant.FIXApplication
     [Description("URL of this provider")]
     public virtual string URL
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return BeAEwTZGlZaeOmY5cm.J00weU3cM6(3590);
       }

@@ -5,24 +5,14 @@
 
 using deZgvqpY4MQTDmgNxy;
 using oqvZcLyyH5L6j7Q2Ce;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
 using System;
-using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Pricers
+namespace FreeQuant.Pricers
 {
   public class IndexPricer : IPricer
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public IndexPricer()
-    {
-      nLGExKeI8bcCnxjjkZ.YOWMADbz5DMDT();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Price(Instrument instrument)
     {
       double num = 0.0;
@@ -45,31 +35,26 @@ namespace SmartQuant.Pricers
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Volatility(Instrument instrument)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Delta(Instrument instrument)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Gamma(Instrument instrument)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Theta(Instrument instrument)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Vega(Instrument instrument)
     {
       return 0.0;
@@ -81,7 +66,6 @@ namespace SmartQuant.Pricers
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Price(Instrument instrument, DateTime dateTime)
     {
       double num = 0.0;
@@ -134,7 +118,6 @@ namespace SmartQuant.Pricers
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Rho(Instrument instrument, DateTime dateTime)
     {
       return 0.0;

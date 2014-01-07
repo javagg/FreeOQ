@@ -10,9 +10,8 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant
+namespace FreeQuant
 {
-  [LicenseProvider(typeof (A6mJqrm7oqdfvuwEFGG))]
   public class SystemInfo
   {
     private static SystemInfo aeGNnq1YC;

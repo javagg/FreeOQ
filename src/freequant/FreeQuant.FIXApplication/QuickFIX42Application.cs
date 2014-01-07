@@ -1,8 +1,3 @@
-﻿// Type: SmartQuant.FIXApplication.QuickFIX42Application
-// Assembly: SmartQuant.FIXApplication, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 44426555-807E-4D6E-87F0-79C6A497EF45
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FIXApplication.dll
-
 using aX1YwCE8tvUgZCyfib;
 using QuickFix;
 using QuickFix42;
@@ -12,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using zWmpDbtlldCIky2Q1f;
 
-namespace SmartQuant.FIXApplication
+namespace FreeQuant.FIXApplication
 {
   public class QuickFIX42Application : QuickFix42.MessageCracker, IFIXApplication, Application
   {
@@ -41,7 +36,6 @@ namespace SmartQuant.FIXApplication
 
     public event FIXSecurityDefinitionEventHandler SecurityDefinition;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public QuickFIX42Application()
     {
       Ni0n2nNTxpPQwXYoJS.cvl3IaMzFxY5E();
@@ -50,7 +44,6 @@ namespace SmartQuant.FIXApplication
       base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Connect()
     {
       Session session = Session.lookupSession(this.fSessionID);
@@ -59,7 +52,6 @@ namespace SmartQuant.FIXApplication
       session.logon();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Disconnect()
     {
       Session session = Session.lookupSession(this.fSessionID);
@@ -68,14 +60,12 @@ namespace SmartQuant.FIXApplication
       session.logout();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void onCreate(SessionID sessionID)
     {
       Console.WriteLine(BeAEwTZGlZaeOmY5cm.J00weU3cM6(774) + (object) sessionID + BeAEwTZGlZaeOmY5cm.J00weU3cM6(796));
       this.fSessionID = sessionID;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void onLogon(SessionID sessionID)
     {
       Console.WriteLine(BeAEwTZGlZaeOmY5cm.J00weU3cM6(802) + (object) sessionID + BeAEwTZGlZaeOmY5cm.J00weU3cM6(822));
@@ -84,7 +74,6 @@ namespace SmartQuant.FIXApplication
       this.lCISky2Q1((object) this, new FIXSessionIDEventArgs(sessionID));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void onLogout(SessionID sessionID)
     {
       Console.WriteLine(BeAEwTZGlZaeOmY5cm.J00weU3cM6(828) + (object) sessionID + BeAEwTZGlZaeOmY5cm.J00weU3cM6(850));
@@ -93,7 +82,6 @@ namespace SmartQuant.FIXApplication
       this.N4PQenDmP((object) this, new FIXSessionIDEventArgs(sessionID));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void toAdmin(QuickFix.Message message, SessionID sessionID)
     {
       Console.WriteLine(BeAEwTZGlZaeOmY5cm.J00weU3cM6(856) + (object) sessionID + BeAEwTZGlZaeOmY5cm.J00weU3cM6(876) + (string) (object) message + BeAEwTZGlZaeOmY5cm.J00weU3cM6(884));

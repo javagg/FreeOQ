@@ -17,7 +17,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using zWmpDbtlldCIky2Q1f;
 
-namespace SmartQuant.FIXApplication
+namespace FreeQuant.FIXApplication
 {
   public class QuickFIX42Provider : IMarketDataProvider, IInstrumentProvider, IProvider, IExecutionProvider
   {
@@ -47,7 +47,7 @@ namespace SmartQuant.FIXApplication
     [Description("SmartQuant unique identificator for this provider")]
     public virtual byte Id
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return (byte) 3;
       }
@@ -57,7 +57,7 @@ namespace SmartQuant.FIXApplication
     [Description("Name of this provider")]
     public virtual string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return BeAEwTZGlZaeOmY5cm.J00weU3cM6(1680);
       }
@@ -351,7 +351,6 @@ namespace SmartQuant.FIXApplication
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private string Ni08n2nTx([In] FIXRelatedSymGroup obj0)
     {
       foreach (DictionaryEntry dictionaryEntry in this.mdRequests)
@@ -362,12 +361,10 @@ namespace SmartQuant.FIXApplication
       return (string) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void SendOrderStatusRequest(OrderStatusRequest request)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void SendNewOrderSingle(NewOrderSingle order)
     {
       if (this.IsConnected)
@@ -634,7 +631,6 @@ namespace SmartQuant.FIXApplication
       this.e4HAgJhCB(new ProviderErrorEventArgs((IProvider) this, id, code, message));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void EmitError(string message)
     {
       this.EmitError(-1, -1, message);

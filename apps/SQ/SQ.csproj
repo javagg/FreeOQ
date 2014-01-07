@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A46090D-980B-4AE0-827E-E117AF99C256}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SQ</RootNamespace>
+    <AssemblyName>SQ</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="OpenQuant\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OpenQuant\AssemblyInfo.cs" />
+    <Compile Include="OpenQuant\EditorManager.cs" />
+    <Compile Include="OpenQuant\EmptyListMenuItem.cs" />
+    <Compile Include="OpenQuant\EnvironmentListener.cs" />
+    <Compile Include="OpenQuant\ExpandableTabControl.cs" />
+    <Compile Include="OpenQuant\Global.cs" />
+    <Compile Include="OpenQuant\IDE.cs" />
+    <Compile Include="OpenQuant\IDEHelper.cs" />
+    <Compile Include="OpenQuant\IUpdateUI.cs" />
+    <Compile Include="OpenQuant\ListViewSorter.cs" />
+    <Compile Include="OpenQuant\Program.cs" />
+    <Compile Include="OpenQuant\ProviderMenuItem.cs" />
+    <Compile Include="OpenQuant\ReleaseNotesForm.cs" />
+    <Compile Include="OpenQuant\RepairConfigurationsForm.cs" />
+    <Compile Include="OpenQuant\Runner.cs" />
+    <Compile Include="OpenQuant\RunnerError.cs" />
+    <Compile Include="OpenQuant\RunnerErrorEventArgs.cs" />
+    <Compile Include="OpenQuant\SetupFolders.cs" />
+    <Compile Include="OpenQuant\SetupInfo.cs" />
+    <Compile Include="OpenQuant\SimulationProgressBar.cs" />
+    <Compile Include="OpenQuant\ToolbarManager.cs" />
+    <Compile Include="OpenQuant\ToolbarMenuItem.cs" />
+    <Compile Include="OpenQuant\WindowMenuItem.cs" />
+    <Compile Include="OpenQuant\WindowViewItem.cs" />
+    <Compile Include="OpenQuant\WindowsForm.cs" />
+    <Compile Include="OpenQuant\WindowsMenuItem.cs" />
+    <Compile Include="OpenQuant\BrokerInfo\BrokerAccountItem.cs" />
+    <Compile Include="OpenQuant\BrokerInfo\BrokerInfoWindow.cs" />
+    <Compile Include="OpenQuant\BrokerInfo\BrokerOrderViewItem.cs" />
+    <Compile Include="OpenQuant\BrokerInfo\BrokerPositionViewItem.cs" />
+    <Compile Include="OpenQuant\Flags\FlagsXmlDocument.cs" />
+    <Compile Include="OpenQuant\Flags\IDEFlags.cs" />
+    <Compile Include="OpenQuant\Flags\UpdateUIXmlNode.cs" />
+    <Compile Include="OpenQuant\Indicators\IndicatorListWindow.cs" />
+    <Compile Include="OpenQuant\Indicators\IndicatorNode.cs" />
+    <Compile Include="OpenQuant\Instruments\InstrumentListWindow.cs" />
+    <Compile Include="OpenQuant\Options\ConfigurationModeOptions.cs" />
+    <Compile Include="OpenQuant\Options\ConfigurationModeOptionsPanel.cs" />
+    <Compile Include="OpenQuant\Options\ConfigurationOptions.cs" />
+    <Compile Include="OpenQuant\Options\EnvironmentOptions.cs" />
+    <Compile Include="OpenQuant\Options\LayoutOptions.cs" />
+    <Compile Include="OpenQuant\Options\LayoutOptionsPanel.cs" />
+    <Compile Include="OpenQuant\Options\MemoryManagementOptions.cs" />
+    <Compile Include="OpenQuant\Options\OpenQuantOptions.cs" />
+    <Compile Include="OpenQuant\Options\PortfolioItem.cs" />
+    <Compile Include="OpenQuant\Options\PostRunActionItem.cs" />
+    <Compile Include="OpenQuant\Options\ProviderItem.cs" />
+    <Compile Include="OpenQuant\Options\ProvidersOptions.cs" />
+    <Compile Include="OpenQuant\Options\SolutionsOptions.cs" />
+    <Compile Include="OpenQuant\Options\SolutionsOptionsPanel.cs" />
+    <Compile Include="OpenQuant\Options\StartupActionItem.cs" />
+    <Compile Include="OpenQuant\Options\StartupOptions.cs" />
+    <Compile Include="OpenQuant\Options\StartupOptionsPanel.cs" />
+    <Compile Include="OpenQuant\Options\ToolbarItem.cs" />
+    <Compile Include="OpenQuant\Options\Xml\ActiveModeXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\CheckForUpdatesXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\ConfigurationModeListXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\ConfigurationModeXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\ConfigurationXmlDocument.cs" />
+    <Compile Include="OpenQuant\Options\Xml\ExecutionProviderXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\MarketDataProviderXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\NullableBooleanValueXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\PortfolioXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\PostRunActionXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\ProviderXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\RecentSolutionsXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\SolutionsXmlDocument.cs" />
+    <Compile Include="OpenQuant\Options\Xml\StartupActionXmlNode.cs" />
+    <Compile Include="OpenQuant\Options\Xml\StartupXmlDocument.cs" />
+    <Compile Include="OpenQuant\Orders\ExecutionReportViewItem.cs" />
+    <Compile Include="OpenQuant\Orders\ModifyOrderForm.cs" />
+    <Compile Include="OpenQuant\Orders\OrderManagerWindow.cs" />
+    <Compile Include="OpenQuant\Orders\OrderViewItem.cs" />
+    <Compile Include="OpenQuant\Orders2\InstrumentItem.cs" />
+    <Compile Include="OpenQuant\Orders2\OrderManagerWindow.cs" />
+    <Compile Include="OpenQuant\Orders2\SecurityTypeItem.cs" />
+    <Compile Include="OpenQuant\Portfolios\AccountPositionViewItem.cs" />
+    <Compile Include="OpenQuant\Portfolios\AccountTransactionViewItem.cs" />
+    <Compile Include="OpenQuant\Portfolios\PortfolioWindow.cs" />
+    <Compile Include="OpenQuant\Portfolios\PositionViewItem.cs" />
+    <Compile Include="OpenQuant\Portfolios\TransactionViewItem.cs" />
+    <Compile Include="OpenQuant\Projects\BuildError.cs" />
+    <Compile Include="OpenQuant\Projects\BuildErrorCollection.cs" />
+    <Compile Include="OpenQuant\Projects\InstrumentList.cs" />
+    <Compile Include="OpenQuant\Projects\MarketDataRequestList.cs" />
+    <Compile Include="OpenQuant\Projects\OpenQuantListEventArgs`1.cs" />
+    <Compile Include="OpenQuant\Projects\OpenQuantListEventHandler`1.cs" />
+    <Compile Include="OpenQuant\Projects\OpenQuantList`1.cs" />
+    <Compile Include="OpenQuant\Projects\PostRunAction.cs" />
+    <Compile Include="OpenQuant\Projects\ProjectEditorKey.cs" />
+    <Compile Include="OpenQuant\Projects\ProjectInfoMenuItem.cs" />
+    <Compile Include="OpenQuant\Projects\ProjectManager.cs" />
+    <Compile Include="OpenQuant\Projects\Solution.cs" />
+    <Compile Include="OpenQuant\Projects\SolutionEditorKey.cs" />
+    <Compile Include="OpenQuant\Projects\SolutionInfo.cs" />
+    <Compile Include="OpenQuant\Projects\SolutionInfoList.cs" />
+    <Compile Include="OpenQuant\Projects\SolutionSettings.cs" />
+    <Compile Include="OpenQuant\Projects\StrategyProject.cs" />
+    <Compile Include="OpenQuant\Projects\StrategyProperty.cs" />
+    <Compile Include="OpenQuant\Projects\StrategyPropertyDescriptor.cs" />
+    <Compile Include="OpenQuant\Projects\StrategyPropertyKey.cs" />
+    <Compile Include="OpenQuant\Projects\StrategySettings.cs" />
+    <Compile Include="OpenQuant\Projects\StrategySettingsTypeDescriptor.cs" />
+    <Compile Include="OpenQuant\Projects\UI\BarChart.cs" />
+    <Compile Include="OpenQuant\Projects\UI\BarDataCell.cs" />
+    <Compile Include="OpenQuant\Projects\UI\BarRequstPropertiesDialog.cs" />
+    <Compile Include="OpenQuant\Projects\UI\BarSeriesObjectItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\EmptyCell.cs" />
+    <Compile Include="OpenQuant\Projects\UI\ErrorListWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\InstrumentItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\MarketDataRequestListEditor.cs" />
+    <Compile Include="OpenQuant\Projects\UI\MarketScanerWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\MarketScannerCell.cs" />
+    <Compile Include="OpenQuant\Projects\UI\NewProjectDialog.cs" />
+    <Compile Include="OpenQuant\Projects\UI\NewSolutionDialog.cs" />
+    <Compile Include="OpenQuant\Projects\UI\OptimizationWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\OptmizationDialog.cs" />
+    <Compile Include="OpenQuant\Projects\UI\PerformanceWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\ProjectEditorWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\ProjectErrorDialog.cs" />
+    <Compile Include="OpenQuant\Projects\UI\ResultsWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\SeriesCell.cs" />
+    <Compile Include="OpenQuant\Projects\UI\SolutionExplorerWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\StrategyMonitorWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\TransactionViewItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\UserCommandViewItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\UserCommandsWindow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\CodeLangItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\CodeNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\InstrumentListNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\InstrumentNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\InstrumentViewRow.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\MethodNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\ObjectNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\OptimizationParameterViewItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\RequestListNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\RequestNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\ScenarioNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\SolutionNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Items\StrategyNode.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\RoundTripRowItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\RoundTripsTableViewer.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\RoundTripsViewer.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\StatisticListView.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\StatisticViewer.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\StatisticsViewerContainer.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\TesterComponentItem.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\TesterFormProperties.cs" />
+    <Compile Include="OpenQuant\Projects\UI\Tester\TesterPanel.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\ChartColorTemplateConfigXmlDocument.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\ChartColorTemplateXmlDocument.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\InstrumentListXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\InstrumentXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\PathXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\ProjectListXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\ProjectXmlDocument.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\ProjectXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\PropertyListXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\PropertyXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\RecentSolutionListXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\RecentSolutionXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\RecentSolutionsXmlDocument.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\RequestListXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\RequestXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\SimulationSettingsXmlNode.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\SolutionXmlDocument.cs" />
+    <Compile Include="OpenQuant\Projects\Xml\TesterSettingsXmlNode.cs" />
+    <Compile Include="OpenQuant\Properties\Resources.cs" />
+    <Compile Include="OpenQuant\Properties\Settings.cs" />
+    <Compile Include="OpenQuant\QuantBase\ConnectionPromptWindow.cs" />
+    <Compile Include="OpenQuant\QuantBase\ConnectionSettings.cs" />
+    <Compile Include="OpenQuant\QuantBase\CreateInstrumentsPromptWindow.cs" />
+    <Compile Include="OpenQuant\QuantBase\DataSeriesItem.cs" />
+    <Compile Include="OpenQuant\QuantBase\DataSeriesViewItem.cs" />
+    <Compile Include="OpenQuant\QuantBase\DataSeriesViewItemComparer.cs" />
+    <Compile Include="OpenQuant\QuantBase\DataTypeKey.cs" />
+    <Compile Include="OpenQuant\QuantBase\DataTypeKeyComparer.cs" />
+    <Compile Include="OpenQuant\QuantBase\DataTypeNode.cs" />
+    <Compile Include="OpenQuant\QuantBase\ImportMode.cs" />
+    <Compile Include="OpenQuant\QuantBase\ImportOptionsWindow.cs" />
+    <Compile Include="OpenQuant\QuantBase\ImportSettings.cs" />
+    <Compile Include="OpenQuant\QuantBase\ImportWindow.cs" />
+    <Compile Include="OpenQuant\QuantBase\QuantBaseExplorerWindow.cs" />
+    <Compile Include="OpenQuant\QuantTrader\ExportItemNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\ExportToQuantTraderForm.cs" />
+    <Compile Include="OpenQuant\QuantTrader\InstrumentNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\InstrumentsNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\MarketDataNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\MarketDataRequestNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\PropertiesNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\ReferenceNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\ReferencesNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\SolutionNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\StrategyProjectNode.cs" />
+    <Compile Include="OpenQuant\QuantTrader\StrategyPropertyNode.cs" />
+    <Compile Include="OpenQuant\Scripts\ScriptEditorKey.cs" />
+    <Compile Include="OpenQuant\Scripts\ScriptEditorWindow.cs" />
+    <Compile Include="OpenQuant\Scripts\ScriptExplorerWindow.cs" />
+    <Compile Include="OpenQuant\Scripts\ScriptManager.cs" />
+    <Compile Include="OpenQuant\Startup\AppDataInstaller.cs" />
+    <Compile Include="OpenQuant\Startup\DataInstaller.cs" />
+    <Compile Include="OpenQuant\Startup\SamplesInstaller.cs" />
+    <Compile Include="OpenQuant\Startup\SplashScreen.cs" />
+    <Compile Include="OpenQuant\Startup\StartPageWindow.cs" />
+    <Compile Include="OpenQuant\Startup\StartupAction.cs" />
+    <Compile Include="OpenQuant\TradingTools\QuoteMonitorWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenQuant\ExpandableTabControl.resx" />
+    <None Include="OpenQuant\IDE.resx" />
+    <None Include="OpenQuant\ReleaseNotesForm.resx" />
+    <None Include="OpenQuant\RepairConfigurationsForm.resx" />
+    <None Include="OpenQuant\WindowsForm.resx" />
+    <None Include="OpenQuant\BrokerInfo\BrokerInfoWindow.resx" />
+    <None Include="OpenQuant\Indicators\IndicatorListWindow.resx" />
+    <None Include="OpenQuant\Instruments\InstrumentListWindow.resx" />
+    <None Include="OpenQuant\Options\ConfigurationModeOptionsPanel.resx" />
+    <None Include="OpenQuant\Options\LayoutOptionsPanel.resx" />
+    <None Include="OpenQuant\Options\SolutionsOptionsPanel.resx" />
+    <None Include="OpenQuant\Options\StartupOptionsPanel.resx" />
+    <None Include="OpenQuant\Orders\ModifyOrderForm.resx" />
+    <None Include="OpenQuant\Orders\OrderManagerWindow.resx" />
+    <None Include="OpenQuant\Orders2\OrderManagerWindow.resx" />
+    <None Include="OpenQuant\Portfolios\PortfolioWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\BarChart.resx" />
+    <None Include="OpenQuant\Projects\UI\BarRequstPropertiesDialog.resx" />
+    <None Include="OpenQuant\Projects\UI\ErrorListWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\MarketScanerWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\NewProjectDialog.resx" />
+    <None Include="OpenQuant\Projects\UI\NewSolutionDialog.resx" />
+    <None Include="OpenQuant\Projects\UI\OptimizationWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\OptmizationDialog.resx" />
+    <None Include="OpenQuant\Projects\UI\PerformanceWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\ProjectErrorDialog.resx" />
+    <None Include="OpenQuant\Projects\UI\ResultsWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\SolutionExplorerWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\UserCommandsWindow.resx" />
+    <None Include="OpenQuant\Projects\UI\Tester\StatisticViewer.resx" />
+    <None Include="OpenQuant\Properties\Resources.resx" />
+    <None Include="OpenQuant\QuantBase\ConnectionPromptWindow.resx" />
+    <None Include="OpenQuant\QuantBase\CreateInstrumentsPromptWindow.resx" />
+    <None Include="OpenQuant\QuantBase\ImportOptionsWindow.resx" />
+    <None Include="OpenQuant\QuantBase\ImportWindow.resx" />
+    <None Include="OpenQuant\QuantBase\QuantBaseExplorerWindow.resx" />
+    <None Include="OpenQuant\QuantTrader\ExportToQuantTraderForm.resx" />
+    <None Include="OpenQuant\Startup\SplashScreen.resx" />
+    <None Include="OpenQuant\Startup\StartPageWindow.resx" />
+    <None Include="OpenQuant\TradingTools\QuoteMonitorWindow.resx" />
+    <None Include="OpenQuant\lib\SharpZipLib.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Charting.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Data.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Execution.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.FIX.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.FinChart.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Indicators.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Instruments.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Optimization.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Providers.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.QuantBaseLib.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Series.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Simulation.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Testing.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Trading.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.Xml.dll" />
+    <None Include="OpenQuant\lib\SmartQuant.dll" />
+  </ItemGroup>
+</Project>

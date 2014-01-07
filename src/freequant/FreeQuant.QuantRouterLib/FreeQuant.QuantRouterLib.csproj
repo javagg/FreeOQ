@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{599DEF44-71D4-44F0-BBAB-F9264EF681F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant.QuantRouterLib</RootNamespace>
+    <AssemblyName>FreeQuant.QuantRouterLib</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="ConnectionAcceptor.cs" />
+    <Compile Include="ConnectionAcceptorState.cs" />
+    <Compile Include="ConnectionEventArgs.cs" />
+    <Compile Include="ConnectionStringParser.cs" />
+    <Compile Include="ExceptionEventArgs.cs" />
+    <Compile Include="IConnection.cs" />
+    <Compile Include="IConnectionAcceptor.cs" />
+    <Compile Include="LogonEventArgs.cs" />
+    <Compile Include="LogoutEventArgs.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="TextEventArgs.cs" />
+    <Compile Include="Data\BrokerAccount.cs" />
+    <Compile Include="Data\BrokerAccountField.cs" />
+    <Compile Include="Data\BrokerAccountList.cs" />
+    <Compile Include="Data\BrokerInfo.cs" />
+    <Compile Include="Data\BrokerInfoEventArgs.cs" />
+    <Compile Include="Data\BrokerInfoField.cs" />
+    <Compile Include="Data\BrokerOrder.cs" />
+    <Compile Include="Data\BrokerOrderField.cs" />
+    <Compile Include="Data\BrokerPosition.cs" />
+    <Compile Include="Data\BrokerPositionField.cs" />
+    <Compile Include="Data\Command.cs" />
+    <Compile Include="Data\CommandType.cs" />
+    <Compile Include="Data\ExecutionReport.cs" />
+    <Compile Include="Data\ExecutionReportEventArgs.cs" />
+    <Compile Include="Data\Heartbeat.cs" />
+    <Compile Include="Data\HeartbeatEventArgs.cs" />
+    <Compile Include="Data\Instrument.cs" />
+    <Compile Include="Data\Level2.cs" />
+    <Compile Include="Data\Level2Action.cs" />
+    <Compile Include="Data\Level2Side.cs" />
+    <Compile Include="Data\Logon.cs" />
+    <Compile Include="Data\LogonStatus.cs" />
+    <Compile Include="Data\Order.cs" />
+    <Compile Include="Data\OrderCancelReject.cs" />
+    <Compile Include="Data\OrderCancelRejectEventArgs.cs" />
+    <Compile Include="Data\ProviderError.cs" />
+    <Compile Include="Data\ProviderErrorEventArgs.cs" />
+    <Compile Include="Data\ProviderErrorType.cs" />
+    <Compile Include="Data\Subscription.cs" />
+    <Compile Include="Data\SubscriptionStatus.cs" />
+    <Compile Include="Data\SubscriptionStatusEventArgs.cs" />
+    <Compile Include="Data\Tick.cs" />
+    <Compile Include="Data\TickEventArgs.cs" />
+    <Compile Include="Data\TickType.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Messages\MessageEventArgs.cs" />
+    <Compile Include="Messages\MessageType.cs" />
+    <Compile Include="Messages\MsgBrokerInfo.cs" />
+    <Compile Include="Messages\MsgCommand.cs" />
+    <Compile Include="Messages\MsgHeartbeat.cs" />
+    <Compile Include="Messages\MsgLevel2.cs" />
+    <Compile Include="Messages\MsgLogon.cs" />
+    <Compile Include="Messages\MsgLogonStatus.cs" />
+    <Compile Include="Messages\MsgOrderCancelReject.cs" />
+    <Compile Include="Messages\MsgProviderError.cs" />
+    <Compile Include="Messages\MsgReport.cs" />
+    <Compile Include="Messages\MsgSubscribe.cs" />
+    <Compile Include="Messages\MsgSubscriptionBase.cs" />
+    <Compile Include="Messages\MsgSubscriptionStatus.cs" />
+    <Compile Include="Messages\MsgTick.cs" />
+    <Compile Include="Messages\MsgUnknown.cs" />
+    <Compile Include="Messages\MsgUnsubscribe.cs" />
+    <Compile Include="Tcp\TcpConnection.cs" />
+    <Compile Include="Tcp\TcpConnectionAcceptor.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Messages\" />
+    <Folder Include="Tcp\" />
+  </ItemGroup>
+</Project>

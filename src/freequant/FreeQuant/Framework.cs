@@ -12,9 +12,8 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace SmartQuant
+namespace FreeQuant
 {
-  [LicenseProvider(typeof (A6mJqrm7oqdfvuwEFGG))]
   public class Framework
   {
     private static Configuration Jmtw8dmK6;

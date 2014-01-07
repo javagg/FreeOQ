@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09E01D16-88B6-4CC7-90D1-745B10130899}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant.Neural</RootNamespace>
+    <AssemblyName>FreeQuant.Neural</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EActivationMode.cs" />
+    <Compile Include="EKohonenKernel.cs" />
+    <Compile Include="EKohonenTopology.cs" />
+    <Compile Include="ELearningMethod.cs" />
+    <Compile Include="EStoppingMethod.cs" />
+    <Compile Include="EViewMode.cs" />
+    <Compile Include="EWeightInitMode.cs" />
+    <Compile Include="THiddenNeuralLayer.cs" />
+    <Compile Include="THiddenNeuron.cs" />
+    <Compile Include="TInputNeuralLayer.cs" />
+    <Compile Include="TInputNeuron.cs" />
+    <Compile Include="TKohonenData.cs" />
+    <Compile Include="TKohonenMap.cs" />
+    <Compile Include="TKohonenNeuron.cs" />
+    <Compile Include="TNeuralData.cs" />
+    <Compile Include="TNeuralDataSet.cs" />
+    <Compile Include="TNeuralLayer.cs" />
+    <Compile Include="TNeuralNetwork.cs" />
+    <Compile Include="TNeuralWeight.cs" />
+    <Compile Include="TNeuron.cs" />
+    <Compile Include="TOCRDataSet.cs" />
+    <Compile Include="TOutputNeuralLayer.cs" />
+    <Compile Include="TOutputNeuron.cs" />
+    <Compile Include="TPerceptron.cs" />
+    <Compile Include="TThresholdNeuron.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

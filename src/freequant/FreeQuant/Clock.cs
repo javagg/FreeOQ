@@ -10,14 +10,17 @@ using System.Timers;
 
 namespace FreeQuant
 {
-  [LicenseProvider(typeof (A6mJqrm7oqdfvuwEFGG))]
+	public enum ClockMode {	Realtime, Simulation }
+
   public class Clock
   {
     private static ClockMode zYbrCXBXY2;
     private static DateTime V43r8pGmVV;
     private static TimeSpan KLyrIGEWaU;
     private static SortedList PQDrlFHKP0;
-    private static Timer w8Sr2uMIbR;
+
+		private static Timer timer;
+	
     private static bool JIyr9VlLXh;
     private static EventHandler GW0rV1V0KZ;
 
@@ -34,7 +37,7 @@ namespace FreeQuant
 
     public static DateTime Now
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+    get
       {
         return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl2;
       }
@@ -60,30 +63,22 @@ namespace FreeQuant
       Clock.KLyrIGEWaU = TimeSpan.Zero;
       Clock.PQDrlFHKP0 = new SortedList();
       Clock.JIyr9VlLXh = false;
-      Clock.w8Sr2uMIbR = new Timer();
-      Clock.w8Sr2uMIbR.Interval = 1.0;
-      Clock.w8Sr2uMIbR.AutoReset = false;
-      Clock.w8Sr2uMIbR.Elapsed += new ElapsedEventHandler(Clock.SRjrGO4qdD);
-      Clock.w8Sr2uMIbR.Start();
+      Clock.timer = new Timer();
+      Clock.timer.Interval = 1.0;
+      Clock.timer.AutoReset = false;
+      Clock.timer.Elapsed += new ElapsedEventHandler(Clock.SRjrGO4qdD);
+      Clock.timer.Start();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Clock()
-    {
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static void SetDateTime(DateTime datetime)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static void AddReminder(ReminderEventHandler handler, DateTime datetime, object data)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static void RemoveReminder(ReminderEventHandler handler, DateTime datetime)
+   public static void RemoveReminder(ReminderEventHandler handler, DateTime datetime)
     {
     }
 

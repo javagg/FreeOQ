@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms.Design;
 using zWmpDbtlldCIky2Q1f;
 
-namespace SmartQuant.FIXApplication
+namespace FreeQuant.FIXApplication
 {
   public abstract class QuickFIX42CommonProvider : QuickFIX42Provider
   {
