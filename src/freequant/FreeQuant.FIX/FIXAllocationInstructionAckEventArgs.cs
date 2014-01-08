@@ -1,4 +1,3 @@
-﻿using QjaKfQ9Jr3AV8F2T87;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -10,22 +9,19 @@ namespace FreeQuant.FIX
 
     public FIXAllocationInstructionAck AllocationInstructionAck
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return this.WGXu3eqZ40;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.WGXu3eqZ40 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXAllocationInstructionAckEventArgs(FIXAllocationInstructionAck AllocationInstructionAck)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.WGXu3eqZ40 = AllocationInstructionAck;
     }
   }

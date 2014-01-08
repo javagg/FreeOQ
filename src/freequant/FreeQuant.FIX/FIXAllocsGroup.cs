@@ -1,4 +1,3 @@
-﻿using QjaKfQ9Jr3AV8F2T87;
 using System.Collections;
 using System.Runtime.CompilerServices;
 

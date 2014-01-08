@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Xml;
 using wOTnoM0h260SstC0xu;
 
-namespace SmartQuant.Xml
+namespace FreeQuant.Xml
 {
   public abstract class XmlNodeBase
   {

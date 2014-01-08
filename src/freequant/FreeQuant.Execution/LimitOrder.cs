@@ -10,7 +10,6 @@ namespace FreeQuant.Execution
 {
   public class LimitOrder : SingleOrder
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public LimitOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double price, string text)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -26,7 +25,6 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public LimitOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double price)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -41,7 +39,6 @@ namespace FreeQuant.Execution
       this.Price = price;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public LimitOrder(Instrument instrument, Side side, double qty, double price, string text)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -57,7 +54,6 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public LimitOrder(Instrument instrument, Side side, double qty, double price)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -72,7 +68,6 @@ namespace FreeQuant.Execution
       this.Price = price;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public LimitOrder(string symbol, Side side, double qty, double price, string text)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -90,7 +85,6 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public LimitOrder(string symbol, Side side, double qty, double price)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -107,7 +101,6 @@ namespace FreeQuant.Execution
       this.Price = price;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private LimitOrder()
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();

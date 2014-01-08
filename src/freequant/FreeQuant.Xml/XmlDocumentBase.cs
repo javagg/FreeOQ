@@ -12,7 +12,7 @@ using System.Text;
 using System.Xml;
 using wOTnoM0h260SstC0xu;
 
-namespace SmartQuant.Xml
+namespace FreeQuant.Xml
 {
   public class XmlDocumentBase : XmlDocument
   {

@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.FinChart.KagiBaView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class KagiBaView : SeriesView
   {

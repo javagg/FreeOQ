@@ -1,8 +1,8 @@
 using aX1YwCE8tvUgZCyfib;
 using QuickFix;
 using QuickFix42;
-using SmartQuant;
-using SmartQuant.FIX;
+using FreeQuant;
+using FreeQuant.FIX;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;

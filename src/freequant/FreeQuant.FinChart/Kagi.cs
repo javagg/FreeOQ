@@ -1,15 +1,14 @@
-﻿// Type: SmartQuant.FinChart.Kagi
+// Type: SmartQuant.FinChart.Kagi
 // Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
 // MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
 
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class Kagi : BarSeries
   {

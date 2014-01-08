@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Charting
+namespace FreeQuant.Charting
 {
   [Serializable]
   public class CanvasList : SortedList

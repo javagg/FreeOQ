@@ -1,17 +1,10 @@
-﻿// Type: SmartQuant.Optimization.SimulatedAnnealing
-// Assembly: SmartQuant.Optimization, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 1C417731-0514-4808-9329-6B635F19637E
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Optimization.dll
-
-using E32I8CMPFnk6XwkgnC;
-using oCwfgZHxO2ybCWH66L;
 using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
-namespace SmartQuant.Optimization
+namespace FreeQuant.Optimization
 {
   public class SimulatedAnnealing : Optimizer
   {
@@ -302,16 +295,11 @@ namespace SmartQuant.Optimization
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SimulatedAnnealing(IOptimizable Optimizable)
+	public SimulatedAnnealing(IOptimizable Optimizable) : base(Optimizable)
     {
-      C7bjlF4Ph208kGmVJO.IHdBTbCzDaa6o();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Optimizable);
       this.ieAakAK1q();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void ieAakAK1q()
     {
       this.TQQPjxObY = 0.1;
@@ -480,9 +468,9 @@ namespace SmartQuant.Optimization
       double dx;
       do
       {
-        dx = MinDisplacement + (MaxDisplacement - MinDisplacement) * SmartQuant.Quant.Random.Rndm();
+        dx = MinDisplacement + (MaxDisplacement - MinDisplacement) * FreeQuant.Quant.Random.Rndm();
       }
-      while (displacementDistribution * SmartQuant.Quant.Random.Rndm() > this.GetDisplacementDistribution(dx));
+      while (displacementDistribution * FreeQuant.Quant.Random.Rndm() > this.GetDisplacementDistribution(dx));
       return dx;
     }
 
@@ -518,7 +506,7 @@ namespace SmartQuant.Optimization
       bool flag;
       do
       {
-        int index1 = (int) ((double) this.fNParamSubset * SmartQuant.Quant.Random.Rndm());
+        int index1 = (int) ((double) this.fNParamSubset * FreeQuant.Quant.Random.Rndm());
         int NParam = this.HtK8IFwMA[index1];
         flag = this.GetParamType(NParam) == EParamType.Float;
         if (!this.IsParamFixed(NParam))
@@ -528,7 +516,7 @@ namespace SmartQuant.Optimization
           this.YtcAXD3F5[NParam] += this.GetDisplacement(MinDisplacement, MaxDisplacement);
           if (this.fNParamSubset != 0)
           {
-            this.YtcAXD3F5[NParam] = this.fLowerBound[NParam] + (this.fUpperBound[NParam] - this.fLowerBound[NParam]) * SmartQuant.Quant.Random.Rndm();
+            this.YtcAXD3F5[NParam] = this.fLowerBound[NParam] + (this.fUpperBound[NParam] - this.fLowerBound[NParam]) * FreeQuant.Quant.Random.Rndm();
             if (this.fNParamSubset < this.fNParam)
             {
               this.nBrYVCBGK = true;
@@ -536,7 +524,7 @@ namespace SmartQuant.Optimization
               do
               {
                 this.qHq1IhVHG = true;
-                num = (int) ((double) this.fNParam * SmartQuant.Quant.Random.Rndm());
+                num = (int) ((double) this.fNParam * FreeQuant.Quant.Random.Rndm());
                 for (int index2 = 0; index2 < this.fNParamSubset; ++index2)
                 {
                   if (num == this.HtK8IFwMA[index2])
@@ -603,7 +591,7 @@ namespace SmartQuant.Optimization
       else
       {
         ++this.d1gcW8ZAL;
-        if (SmartQuant.Quant.Random.Rndm() < this.GetAcceptanceProbability(dE))
+        if (FreeQuant.Quant.Random.Rndm() < this.GetAcceptanceProbability(dE))
         {
           this.SM4sEijmW = true;
           ++this.wM5hbXEF8;
@@ -690,8 +678,8 @@ namespace SmartQuant.Optimization
       for (int index = 0; index < this.fNParam; ++index)
       {
         this.YtcAXD3F5[index] = this.fParam[index];
-        this.fParam[index] = this.fLowerBound[index] + (this.fUpperBound[index] - this.fLowerBound[index]) * SmartQuant.Quant.Random.Rndm();
-        this.YtcAXD3F5[index] = this.fLowerBound[index] + (this.fUpperBound[index] - this.fLowerBound[index]) * SmartQuant.Quant.Random.Rndm();
+        this.fParam[index] = this.fLowerBound[index] + (this.fUpperBound[index] - this.fLowerBound[index]) * FreeQuant.Quant.Random.Rndm();
+        this.YtcAXD3F5[index] = this.fLowerBound[index] + (this.fUpperBound[index] - this.fLowerBound[index]) * FreeQuant.Quant.Random.Rndm();
         this.dKBTAaVeY[index] = this.fUpperBound[index] - this.fLowerBound[index];
       }
       for (int index = 0; index < this.fNParamSubset; ++index)

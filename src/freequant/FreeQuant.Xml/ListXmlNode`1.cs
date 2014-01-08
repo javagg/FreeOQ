@@ -7,7 +7,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using wOTnoM0h260SstC0xu;
 
-namespace SmartQuant.Xml
+namespace FreeQuant.Xml
 {
   public abstract class ListXmlNode<T> : XmlNodeBase, IEnumerable where T : XmlNodeBase, new()
   {

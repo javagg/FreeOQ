@@ -1,26 +1,14 @@
-﻿// Type: SmartQuant.Trading.StrategyBase
-// Assembly: SmartQuant.Trading, Version=1.0.5036.28355, Culture=neutral, PublicKeyToken=null
-// MVID: C5705820-2ED1-4F4A-8256-821635A4814B
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Trading.dll
-
-using C80OUTlO59SMK8pSMf;
-using FGi1Lg83X2hZQGNHP7;
-using hfCuV4IXYwXRuD5XiF;
-using l3Z5ZAp2dkqyZZDck9P;
-using Mm6yRCZTRPYOms3fjc;
-using OiroEMuJxAu5mVwsn1;
-using SlN8f6pWyHStvuMgWbM;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.FIXData;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
-using SmartQuant.Series;
-using SmartQuant.Services;
-using SmartQuant.Testing;
-using SmartQuant.Trading.Design;
+using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.FIXData;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
+using FreeQuant.Series;
+using FreeQuant.Services;
+using FreeQuant.Testing;
+using FreeQuant.Trading.Design;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,7 +18,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   public abstract class StrategyBase
   {

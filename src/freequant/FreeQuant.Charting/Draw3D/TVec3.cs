@@ -8,7 +8,7 @@ using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Charting.Draw3D
+namespace FreeQuant.Charting.Draw3D
 {
   public struct TVec3
   {

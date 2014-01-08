@@ -1,5 +1,4 @@
-﻿using QjaKfQ9Jr3AV8F2T87;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX

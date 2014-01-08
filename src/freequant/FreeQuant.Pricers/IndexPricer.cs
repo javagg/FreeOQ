@@ -1,4 +1,4 @@
-﻿// Type: SmartQuant.Pricers.IndexPricer
+// Type: SmartQuant.Pricers.IndexPricer
 // Assembly: SmartQuant.Pricers, Version=1.0.5036.28349, Culture=neutral, PublicKeyToken=null
 // MVID: B5619836-F92D-4F05-87FC-59ACDBEC6C4D
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Pricers.dll

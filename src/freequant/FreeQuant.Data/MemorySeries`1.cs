@@ -1,10 +1,3 @@
-﻿// Type: SmartQuant.Data.MemorySeries`1
-// Assembly: SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9
-// MVID: FAB3F3C9-6D4A-4391-AE43-0CE5E1C624DD
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Data.dll
-
-using oL6nXjcX2wYBRbhX2q;
-using RadDBE9P5I945u5gCE;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,33 +7,33 @@ namespace FreeQuant.Data
 {
   public class MemorySeries<TValue> : IDataSeries, IEnumerable
   {
-    private string vdBytHTTf;
-    private string qkTg3VC1k;
+    private string name;
+    private string description;
     private SortedList<DateTime, TValue> jy6GVFJfR;
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.vdBytHTTf;
+				return this.name; 
       }
     }
 
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.qkTg3VC1k;
+				return this.description; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.qkTg3VC1k = value;
+        this.description = value;
       }
     }
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jy6GVFJfR.Count;
       }
@@ -48,11 +41,11 @@ namespace FreeQuant.Data
 
     public object this[DateTime datetime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (object) this.jy6GVFJfR[datetime];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+        set
       {
         this.jy6GVFJfR[datetime] = (TValue) value;
       }
@@ -60,7 +53,7 @@ namespace FreeQuant.Data
 
     public object this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return (object) this.jy6GVFJfR.Values[index];
       }
@@ -68,7 +61,7 @@ namespace FreeQuant.Data
 
     public DateTime FirstDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jy6GVFJfR.Keys[0];
       }
@@ -76,24 +69,24 @@ namespace FreeQuant.Data
 
     public DateTime LastDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jy6GVFJfR.Keys[this.jy6GVFJfR.Count - 1];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public MemorySeries(string name, string description)
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
       // ISSUE: explicit constructor call
       base.\u002Ector();
-      this.vdBytHTTf = name;
-      this.qkTg3VC1k = description;
+      this.name = name;
+      this.description = description;
       this.jy6GVFJfR = new SortedList<DateTime, TValue>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public MemorySeries(string name)
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
@@ -101,7 +94,6 @@ namespace FreeQuant.Data
       this.\u002Ector(name, "");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MemorySeries()
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
@@ -109,37 +101,31 @@ namespace FreeQuant.Data
       this.\u002Ector(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(884));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(DateTime datetime, object obj)
     {
       this.jy6GVFJfR[datetime] = (TValue) obj;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Update(DateTime datetime, object obj)
     {
       this.Add(datetime, obj);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Update(int index, object obj)
     {
       this.Update(this.jy6GVFJfR.Keys[index], obj);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public bool Contains(DateTime datetime)
     {
       return this.jy6GVFJfR.ContainsKey(datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int IndexOf(DateTime datetime)
     {
       return this.jy6GVFJfR.IndexOfKey(datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int IndexOf(DateTime datetime, SearchOption option)
     {
       int index = 0;
@@ -210,36 +196,30 @@ namespace FreeQuant.Data
       return index;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public DateTime DateTimeAt(int index)
     {
       return this.jy6GVFJfR.Keys[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Remove(DateTime datetime)
     {
       this.jy6GVFJfR.Remove(datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void RemoveAt(int index)
     {
       this.jy6GVFJfR.RemoveAt(index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Clear()
     {
       this.jy6GVFJfR.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Flush()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public IEnumerator GetEnumerator()
     {
       return (IEnumerator) this.jy6GVFJfR.Values.GetEnumerator();

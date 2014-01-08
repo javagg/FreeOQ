@@ -1,4 +1,3 @@
-﻿using QjaKfQ9Jr3AV8F2T87;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -25,17 +24,13 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public ExecutionReportEventArgs(NewOrderSingle order, ExecutionReport report)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+ 
       this.KHOuJmbnBN = order;
       this.A0NurZyR7T = report;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public ExecutionReportEventArgs(ExecutionReport report)
     {
       v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();

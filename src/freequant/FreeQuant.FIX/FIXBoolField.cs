@@ -1,14 +1,8 @@
-﻿// Type: SmartQuant.FIX.FIXBoolField
-// Assembly: SmartQuant.FIX, Version=1.0.5036.28336, Culture=neutral, PublicKeyToken=null
-// MVID: 126ED788-A8C6-4224-A17F-6E9A67745D7C
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FIX.dll
-
-using QjaKfQ9Jr3AV8F2T87;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.FIX
+namespace FreeQuant.FIX
 {
   public class FIXBoolField : FIXField
   {
@@ -17,58 +11,43 @@ namespace SmartQuant.FIX
 
     public override FIXType FIXType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXType.Bool;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBoolField(int tag)
+	public FIXBoolField(int tag) : this(tag, false)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, false);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBoolField(int tag, bool value)
+	public FIXBoolField(int tag, bool value) : base(tag)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(tag);
+
       this.Value = value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBoolField(int tag, string value)
+	public FIXBoolField(int tag, string value) : this(tag, value, false)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, value, false);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBoolField(int tag, string value, bool invariantCulture)
+	public FIXBoolField(int tag, string value, bool invariantCulture) :  this(tag, invariantCulture ? bool.Parse(value) : bool.Parse(value))
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, invariantCulture ? bool.Parse(value) : bool.Parse(value));
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
       return this.Value.ToString();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToInvariantString()
     {
       return this.Value.ToString((IFormatProvider) CultureInfo.InvariantCulture);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override object GetValue()
     {
       return (object) (bool) (this.Value ? 1 : 0);

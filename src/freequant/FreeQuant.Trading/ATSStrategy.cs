@@ -1,19 +1,10 @@
-﻿// Type: SmartQuant.Trading.ATSStrategy
-// Assembly: SmartQuant.Trading, Version=1.0.5036.28355, Culture=neutral, PublicKeyToken=null
-// MVID: C5705820-2ED1-4F4A-8256-821635A4814B
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Trading.dll
-
-using cyZV8CsYGUklb9aPQG;
-using krhyTvox2mllssW6BB;
-using l3Z5ZAp2dkqyZZDck9P;
-using SlN8f6pWyHStvuMgWbM;
-using SmartQuant.Data;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.FIXData;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
-using SmartQuant.Trading.Design;
+using FreeQuant.Data;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.FIXData;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
+using FreeQuant.Trading.Design;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +13,7 @@ using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   public class ATSStrategy : StrategyBase
   {

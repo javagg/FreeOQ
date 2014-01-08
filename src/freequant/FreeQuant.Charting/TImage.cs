@@ -1,17 +1,10 @@
-﻿// Type: SmartQuant.Charting.TImage
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
-using gyr6NSGRxNZcTviJZk;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace SmartQuant.Charting
+namespace FreeQuant.Charting
 {
   public class TImage : IDrawable, IMovable
   {

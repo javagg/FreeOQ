@@ -34,7 +34,7 @@ namespace FreeQuant.Google
     [Category("Historical Data")]
     public HistoricalDataType DataType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return HistoricalDataType.Daily;
       }
@@ -43,7 +43,7 @@ namespace FreeQuant.Google
     [Category("Historical Data")]
     public HistoricalDataRange DataRange
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return HistoricalDataRange.DateTimeInterval;
       }
@@ -62,7 +62,7 @@ namespace FreeQuant.Google
     [Category("Historical Data")]
     public int MaxConcurrentRequests
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return -1;
       }
@@ -80,7 +80,7 @@ namespace FreeQuant.Google
     [Category("Information")]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return SbDbdFkjjUR5MmWTlj.fvNFD9DS2(412);
       }
@@ -144,19 +144,14 @@ namespace FreeQuant.Google
 
     public event ProviderErrorEventHandler Error;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public GoogleFinance()
     {
-      VYDq2n25qVC1N2xwYP.WqI6Jemz9QQ54();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.pxqdEt2GB = false;
       this.K4r2jjlJs = new Dictionary<string, WebRequest>();
       this.YZKOeBcIM = new ListDictionary();
       ProviderManager.Add((IProvider) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SendHistoricalDataRequest(HistoricalDataRequest request)
     {
       if (!this.pxqdEt2GB)
@@ -173,7 +168,6 @@ namespace FreeQuant.Google
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void CancelHistoricalDataRequest(string requestId)
     {
       if (!this.pxqdEt2GB)
@@ -190,7 +184,6 @@ namespace FreeQuant.Google
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void tm9qNM8Cd([In] IAsyncResult obj0)
     {
       HistoricalDataRequest historicalDataRequest = (HistoricalDataRequest) obj0.AsyncState;

@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,4 +61,10 @@
     <Compile Include="TThresholdNeuron.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

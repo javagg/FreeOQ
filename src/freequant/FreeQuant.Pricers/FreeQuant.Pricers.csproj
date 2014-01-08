@@ -36,4 +36,14 @@
     <Compile Include="IndexPricer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

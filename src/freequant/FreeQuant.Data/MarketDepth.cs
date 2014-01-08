@@ -1,11 +1,4 @@
-﻿// Type: SmartQuant.Data.MarketDepth
-// Assembly: SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9
-// MVID: FAB3F3C9-6D4A-4391-AE43-0CE5E1C624DD
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Data.dll
-
-using oL6nXjcX2wYBRbhX2q;
-using RadDBE9P5I945u5gCE;
-using System;
+﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 
@@ -15,8 +8,8 @@ namespace FreeQuant.Data
   public class MarketDepth : IComparable, IDataObject, ICloneable, ISeriesObject
   {
     private const byte sP4fptbej = (byte) 3;
-    private DateTime R3W3NAEij;
-    private byte wjav9oO6m;
+    private DateTime dateTime;
+    private byte providerId;
     private string JLOpfyh4y;
     private string eg7FZMr0F;
     private int Me1WkVtkG;
@@ -29,11 +22,11 @@ namespace FreeQuant.Data
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.wjav9oO6m;
+				return this.providerId; 
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
-        this.wjav9oO6m = value;
+        this.providerId = value;
       }
     }
 
@@ -41,11 +34,11 @@ namespace FreeQuant.Data
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.R3W3NAEij;
+				return this.dateTime; 
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
-        this.R3W3NAEij = value;
+        this.dateTime = value;
       }
     }
 
@@ -146,8 +139,8 @@ namespace FreeQuant.Data
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
       // ISSUE: explicit constructor call
       base.\u002Ector();
-      this.R3W3NAEij = datetime;
-      this.wjav9oO6m = providerId;
+      this.dateTime = datetime;
+      this.providerId = providerId;
       this.JLOpfyh4y = marketMaker;
       this.eg7FZMr0F = source;
       this.Me1WkVtkG = position;
@@ -170,7 +163,7 @@ namespace FreeQuant.Data
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
       // ISSUE: explicit constructor call
-      this.\u002Ector(marketDepth.R3W3NAEij, marketDepth.wjav9oO6m, marketDepth.JLOpfyh4y, marketDepth.eg7FZMr0F, marketDepth.Me1WkVtkG, marketDepth.jPJqD9uF9, marketDepth.B5WkwTEyx, marketDepth.G6iR5ebrL, marketDepth.zy1PMqcD3);
+      this.\u002Ector(marketDepth.dateTime, marketDepth.providerId, marketDepth.JLOpfyh4y, marketDepth.eg7FZMr0F, marketDepth.Me1WkVtkG, marketDepth.jPJqD9uF9, marketDepth.B5WkwTEyx, marketDepth.G6iR5ebrL, marketDepth.zy1PMqcD3);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -181,7 +174,6 @@ namespace FreeQuant.Data
       base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int CompareTo(object obj)
     {
       if (obj is MarketDepth)
@@ -190,17 +182,16 @@ namespace FreeQuant.Data
         throw new ArgumentException(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(900) + obj.GetType().ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void WriteTo(BinaryWriter writer)
     {
       writer.Write((byte) 3);
-      writer.Write(this.R3W3NAEij.Ticks);
+      writer.Write(this.dateTime.Ticks);
       writer.Write(this.JLOpfyh4y);
       writer.Write(this.eg7FZMr0F);
       writer.Write((byte) this.B5WkwTEyx);
       writer.Write(this.G6iR5ebrL);
       writer.Write(this.zy1PMqcD3);
-      writer.Write(this.wjav9oO6m);
+      writer.Write(this.providerId);
       writer.Write(this.Me1WkVtkG);
       writer.Write((byte) this.jPJqD9uF9);
     }
@@ -212,35 +203,35 @@ namespace FreeQuant.Data
       switch (num)
       {
         case (byte) 1:
-          this.R3W3NAEij = new DateTime(reader.ReadInt64());
+          this.dateTime = new DateTime(reader.ReadInt64());
           this.JLOpfyh4y = reader.ReadString();
           this.eg7FZMr0F = reader.ReadString();
           this.B5WkwTEyx = (MDSide) reader.ReadByte();
           this.G6iR5ebrL = Math.Round((double) reader.ReadSingle(), 4);
           this.zy1PMqcD3 = reader.ReadInt32();
-          this.wjav9oO6m = reader.ReadByte();
+          this.providerId = reader.ReadByte();
           this.Me1WkVtkG = -1;
           this.jPJqD9uF9 = MDOperation.Undefined;
           break;
         case (byte) 2:
-          this.R3W3NAEij = new DateTime(reader.ReadInt64());
+          this.dateTime = new DateTime(reader.ReadInt64());
           this.JLOpfyh4y = reader.ReadString();
           this.eg7FZMr0F = reader.ReadString();
           this.B5WkwTEyx = (MDSide) reader.ReadByte();
           this.G6iR5ebrL = Math.Round((double) reader.ReadSingle(), 4);
           this.zy1PMqcD3 = reader.ReadInt32();
-          this.wjav9oO6m = reader.ReadByte();
+          this.providerId = reader.ReadByte();
           this.Me1WkVtkG = reader.ReadInt32();
           this.jPJqD9uF9 = (MDOperation) reader.ReadByte();
           break;
         case (byte) 3:
-          this.R3W3NAEij = new DateTime(reader.ReadInt64());
+          this.dateTime = new DateTime(reader.ReadInt64());
           this.JLOpfyh4y = reader.ReadString();
           this.eg7FZMr0F = reader.ReadString();
           this.B5WkwTEyx = (MDSide) reader.ReadByte();
           this.G6iR5ebrL = reader.ReadDouble();
           this.zy1PMqcD3 = reader.ReadInt32();
-          this.wjav9oO6m = reader.ReadByte();
+          this.providerId = reader.ReadByte();
           this.Me1WkVtkG = reader.ReadInt32();
           this.jPJqD9uF9 = (MDOperation) reader.ReadByte();
           break;
@@ -249,22 +240,19 @@ namespace FreeQuant.Data
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual ISeriesObject NewInstance()
     {
       return (ISeriesObject) new MarketDepth();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual object Clone()
     {
       return (object) new MarketDepth(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
-      return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(1008), (object) this.R3W3NAEij, (object) this.B5WkwTEyx, (object) this.jPJqD9uF9, (object) this.Me1WkVtkG, (object) this.Price, (object) this.zy1PMqcD3);
+      return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(1008), (object) this.dateTime, (object) this.B5WkwTEyx, (object) this.jPJqD9uF9, (object) this.Me1WkVtkG, (object) this.Price, (object) this.zy1PMqcD3);
     }
   }
 }

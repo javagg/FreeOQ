@@ -142,4 +142,14 @@
     <Folder Include="Conditions\" />
     <Folder Include="Design\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

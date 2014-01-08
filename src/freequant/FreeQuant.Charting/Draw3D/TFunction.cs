@@ -10,7 +10,7 @@ using System.Drawing.Imaging;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Charting.Draw3D
+namespace FreeQuant.Charting.Draw3D
 {
   public abstract class TFunction
   {

@@ -1,11 +1,3 @@
-﻿// Type: SmartQuant.Framework
-// Assembly: SmartQuant, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=null
-// MVID: BC86C0EF-576E-453D-8BFD-FAB33B893C15
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.dll
-
-using aPqI2kmeVjWsoIHqc3F;
-using BoBSVVX0yGpEOB0Qj2;
-using oZ1IlQmSDifdcZke9oZ;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -25,7 +17,7 @@ namespace FreeQuant
 
     public static bool IsAlreadyRunning
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return true;
       }
@@ -33,7 +25,7 @@ namespace FreeQuant
 
     public static Configuration Configuration
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Configuration) null;
       }
@@ -41,7 +33,7 @@ namespace FreeQuant
 
     public static Installation Installation
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (Installation) null;
       }
@@ -49,7 +41,7 @@ namespace FreeQuant
 
     public static Storage Storage
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Storage) null;
       }
@@ -57,17 +49,15 @@ namespace FreeQuant
 
     public static Runtime Runtime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Runtime) null;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static Framework()
     {
-      GItcYDqSxj5aE60JeS.GRAroVBQNR();
-      U11BeMmYvqFIQ38CeV7.y89NYTfzAIJ6Q();
       Framework.mDOEiS9EL = new Mutex(false, Framework.Installation.QUANTAPP.FullName.Replace('\\', ':').Replace('/', ':'));
       Framework.mY0TnM837 = !Framework.mDOEiS9EL.WaitOne(0);
       if (Framework.mY0TnM837)
@@ -100,22 +90,18 @@ namespace FreeQuant
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private Framework()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static void Init()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static void LoadPlugins()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static void LoadPlugin(Plugin plugin)
     {
     }

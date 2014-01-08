@@ -32,7 +32,6 @@ namespace FreeQuant.Execution
       this.DX1Eba8GVl = new Hashtable();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Clear()
     {
       base.Clear();

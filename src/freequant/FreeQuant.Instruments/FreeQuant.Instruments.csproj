@@ -103,4 +103,10 @@
     <Compile Include="Underlying.cs" />
     <Compile Include="UnderlyingList.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Freequant.FIXData\FreeQuant.FIXData.csproj">
+      <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
+      <Name>FreeQuant.FIXData</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

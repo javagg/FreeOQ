@@ -1,5 +1,3 @@
-using CkC6gLogtoswXETFiV;
-using ee15rOC9NalRXxVUl2;
 using FreeQuant;
 using FreeQuant.Data;
 using FreeQuant.Instruments;

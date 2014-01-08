@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing.Design" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,5 +108,11 @@
   <ItemGroup>
     <Folder Include="Objects\" />
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Series\FreeQuant.Series.csproj">
+      <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
+      <Name>FreeQuant.Series</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

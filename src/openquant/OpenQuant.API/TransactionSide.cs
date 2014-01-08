@@ -1,8 +1,8 @@
 ﻿namespace OpenQuant.API
 {
-  public enum TransactionSide
-  {
-    Buy,
-    Sell
-  }
+	public enum TransactionSide
+	{
+		Buy,
+		Sell
+	}
 }

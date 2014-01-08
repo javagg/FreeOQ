@@ -1,5 +1,3 @@
-using aPqI2kmeVjWsoIHqc3F;
-using BoBSVVX0yGpEOB0Qj2;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -13,11 +11,6 @@ namespace FreeQuant
       {
         return (string) null;
       }
-    }
-
-    static CPUInfo()
-    {
-      GItcYDqSxj5aE60JeS.GRAroVBQNR();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

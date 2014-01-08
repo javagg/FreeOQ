@@ -6,13 +6,13 @@
 using aX1YwCE8tvUgZCyfib;
 using QuickFix;
 using QuickFix43;
-using SmartQuant.FIX;
+using FreeQuant.FIX;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using zWmpDbtlldCIky2Q1f;
 
-namespace SmartQuant.FIXApplication
+namespace FreeQuant.FIXApplication
 {
   public class QuickFIX43CommonApplication : QuickFIX43Application
   {

@@ -1,4 +1,4 @@
-﻿using FreeQuant.FIX;
+using FreeQuant.FIX;
 using System;
 
 namespace FreeQuant.Execution

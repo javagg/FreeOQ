@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.Trading.CrossEntry
-// Assembly: SmartQuant.Trading, Version=1.0.5036.28355, Culture=neutral, PublicKeyToken=null
-// MVID: C5705820-2ED1-4F4A-8256-821635A4814B
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Trading.dll
-
-using l3Z5ZAp2dkqyZZDck9P;
-using SlN8f6pWyHStvuMgWbM;
-using SmartQuant;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Simulation;
+using FreeQuant;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Simulation;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   [StrategyComponent("{664274F3-FDE1-46da-A84F-556E4A0EB170}", ComponentType.CrossEntry, Description = "", Name = "Default_CrossEntry")]
   public class CrossEntry : StrategyMultiComponent

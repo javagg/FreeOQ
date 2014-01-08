@@ -1,15 +1,15 @@
-﻿// Type: SmartQuant.FIXApplication.QuickFIX43Provider
+// Type: SmartQuant.FIXApplication.QuickFIX43Provider
 // Assembly: SmartQuant.FIXApplication, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
 // MVID: 44426555-807E-4D6E-87F0-79C6A497EF45
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FIXApplication.dll
 
 using aX1YwCE8tvUgZCyfib;
 using QuickFix;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
+using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -17,7 +17,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using zWmpDbtlldCIky2Q1f;
 
-namespace SmartQuant.FIXApplication
+namespace FreeQuant.FIXApplication
 {
   public class QuickFIX43Provider : IMarketDataProvider, IInstrumentProvider, IProvider, IExecutionProvider
   {

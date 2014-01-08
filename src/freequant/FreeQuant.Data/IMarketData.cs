@@ -1,6 +1,6 @@
-﻿namespace FreeQuant.Data
+namespace FreeQuant.Data
 {
-  public interface IMarketData : IDataObject
-  {
-  }
+	public interface IMarketData : IDataObject
+	{
+	}
 }

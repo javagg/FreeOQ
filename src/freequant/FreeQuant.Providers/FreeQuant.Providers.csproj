@@ -115,4 +115,14 @@
   <ItemGroup>
     <Folder Include="Design\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

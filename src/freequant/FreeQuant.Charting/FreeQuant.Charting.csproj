@@ -30,9 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZoomEventHandler.cs" />
     <Compile Include="ZoomEventArgs.cs" />
     <Compile Include="TTitleItem.cs" />
@@ -114,5 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Draw3D\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 </Project>

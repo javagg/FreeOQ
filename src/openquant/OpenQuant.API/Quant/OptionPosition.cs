@@ -1,9 +1,9 @@
 ﻿namespace OpenQuant.API.Quant
 {
-  public enum OptionPosition
-  {
-    InTheMoney,
-    AtTheMoney,
-    OutOfTheMoney,
-  }
+	public enum OptionPosition
+	{
+		InTheMoney,
+		AtTheMoney,
+		OutOfTheMoney,
+	}
 }

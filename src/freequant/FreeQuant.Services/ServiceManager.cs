@@ -1,23 +1,14 @@
-﻿// Type: SmartQuant.Services.ServiceManager
-// Assembly: SmartQuant.Services, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: BBD4879A-0902-4B9F-9A9A-214E03CD2FAE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Services.dll
-
-using h4fUjqVu3vlkX2ho2p;
-using nJWWheZ9X0DmMNUyVT;
-using SmartQuant;
-using SmartQuant.FIX;
-using SmartQuant.Xml;
+using FreeQuant;
+using FreeQuant.FIX;
+using FreeQuant.Xml;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Wi2JUWyWMFm8GPy4Jm;
-using yVXZ4JIJtSP6EX4fjq;
 
-namespace SmartQuant.Services
+namespace FreeQuant.Services
 {
   public class ServiceManager
   {

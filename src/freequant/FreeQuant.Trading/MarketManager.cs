@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.Trading.MarketManager
-// Assembly: SmartQuant.Trading, Version=1.0.5036.28355, Culture=neutral, PublicKeyToken=null
-// MVID: C5705820-2ED1-4F4A-8256-821635A4814B
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Trading.dll
-
-using l3Z5ZAp2dkqyZZDck9P;
-using SlN8f6pWyHStvuMgWbM;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   [StrategyComponent("{849E4CFE-C19E-4d1e-899D-0BB26DB12AAD}", ComponentType.MarketManager, Description = "", Name = "Default_MarketManager")]
   public class MarketManager : StrategyBaseMultiComponent

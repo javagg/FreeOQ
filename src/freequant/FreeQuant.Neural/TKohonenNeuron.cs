@@ -1,4 +1,4 @@
-﻿// Type: SmartQuant.Neural.TKohonenNeuron
+// Type: SmartQuant.Neural.TKohonenNeuron
 // Assembly: SmartQuant.Neural, Version=1.0.5036.28341, Culture=neutral, PublicKeyToken=null
 // MVID: E5DFC29A-4534-4F54-827A-AC305F5F2864
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Neural.dll
@@ -7,7 +7,7 @@ using aq250XLTtWVBJufbvY;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Neural
+namespace FreeQuant.Neural
 {
   [Serializable]
   public class TKohonenNeuron : TNeuron
@@ -110,7 +110,7 @@ namespace SmartQuant.Neural
     public void Update(TKohonenNeuron Neuron)
     {
       double neighborhoodFunction = this.GetNeighborhoodFunction(Neuron);
-      foreach (TNeuralWeight tneuralWeight in this.fWeight)
+      foreach (TNeuralWeight tneuralWeight in this.weights)
         tneuralWeight.Weight = tneuralWeight.Weight + this.vOHKkfFcp.LearningRate * neighborhoodFunction * (tneuralWeight.GetInput() - tneuralWeight.Weight);
     }
 
@@ -118,7 +118,7 @@ namespace SmartQuant.Neural
     public double GetError()
     {
       double d = 0.0;
-      foreach (TNeuralWeight tneuralWeight in this.fWeight)
+      foreach (TNeuralWeight tneuralWeight in this.weights)
         d += (tneuralWeight.Weight - tneuralWeight.GetInput()) * (tneuralWeight.Weight - tneuralWeight.GetInput());
       return Math.Sqrt(d);
     }

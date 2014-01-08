@@ -5,11 +5,11 @@
 
 using aX1YwCE8tvUgZCyfib;
 using QuickFix;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
+using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
 using System;
 using System.Collections;
 using System.ComponentModel;

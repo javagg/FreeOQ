@@ -30,6 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing.Design" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BidOfferPair.cs" />
@@ -85,4 +87,10 @@
     <None Include="Design\SessionDataForm.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\OpenQuant.API\OpenQuant.API.csproj">
+      <Project>{40E0C499-01D7-4D12-97C6-EBA1F605F756}</Project>
+      <Name>OpenQuant.API</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

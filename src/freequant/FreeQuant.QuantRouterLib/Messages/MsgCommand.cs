@@ -1,37 +1,24 @@
-﻿// Type: SmartQuant.QuantRouterLib.Messages.MsgCommand
-// Assembly: SmartQuant.QuantRouterLib, Version=1.0.5036.28341, Culture=neutral, PublicKeyToken=null
-// MVID: FDF277D6-C8FB-45C3-A0BD-1C1035F3B027
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.QuantRouterLib.dll
-
-using NI8YCE6tH4BIeIEcEy;
-using SmartQuant.QuantRouterLib.Data;
+using FreeQuant.QuantRouterLib.Data;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.QuantRouterLib.Messages
+namespace FreeQuant.QuantRouterLib.Messages
 {
   public class MsgCommand : Message
   {
-    public Command Data { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+		public Command Data { get;   private set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MsgCommand()
+		public MsgCommand() : base(1100)
     {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(new Command());
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MsgCommand(Command command)
+	public MsgCommand(Command command) :base(1100)
     {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(1100);
+
       this.Data = command;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected override void OnGetData(BinaryWriter writer)
     {
       writer.Write(this.Data.CommandId);
@@ -52,7 +39,6 @@ namespace SmartQuant.QuantRouterLib.Messages
       writer.Write((byte) this.Data.Order.TimeInForce);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected override void OnSetData(BinaryReader reader)
     {
       this.Data.CommandId = reader.ReadInt32();

@@ -6,7 +6,7 @@
 using cPAIWng0kq1SUTh6h4;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Charting.Draw3D
+namespace FreeQuant.Charting.Draw3D
 {
   public class TRotY : TMat3x3
   {

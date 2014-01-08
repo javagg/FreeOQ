@@ -276,7 +276,6 @@
     <Compile Include="Compression\TickBarCompressor.cs" />
     <Compile Include="Compression\CompressedBarEventArgs.cs" />
     <Compile Include="Compression\BarDataEnumerator.cs" />
-    <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Design\AltSourceForm.resx" />
@@ -290,6 +289,18 @@
     <ProjectReference Include="..\..\freequant\FreeQuant.Series\FreeQuant.Series.csproj">
       <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
       <Name>FreeQuant.Series</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Quant\FreeQuant.Quant.csproj">
+      <Project>{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}</Project>
+      <Name>FreeQuant.Quant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

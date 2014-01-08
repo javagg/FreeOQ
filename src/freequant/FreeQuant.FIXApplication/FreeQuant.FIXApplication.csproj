@@ -57,4 +57,10 @@
     <Compile Include="FIXLogonEventHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

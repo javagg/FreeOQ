@@ -1,13 +1,8 @@
-﻿// Type: SmartQuant.File.FileSeries
-// Assembly: SmartQuant.File, Version=2.1.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 800E5EC7-67A0-489F-9F8A-77FDD5BCC547
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.File.dll
-
 using ewT8148K2kiaMR21B7;
 using Gtas8GL6N1OOIFdIHW;
 using otVLQawybg6r6WuQ3i;
-using SmartQuant.Data;
-using SmartQuant.File.Indexing;
+using FreeQuant.Data;
+using FreeQuant.File.Indexing;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -15,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using XnjwSLRMyI3UA3fEbD;
 
-namespace SmartQuant.File
+namespace FreeQuant.File
 {
   public class FileSeries : IDataSeries, IEnumerable
   {
@@ -24,16 +19,16 @@ namespace SmartQuant.File
     internal long gJBOw3afc;
     internal long dC0L5SwaN;
     internal long hnKhMyEgT;
-    internal DateTime WNpN6XDK2;
-    internal DateTime DBX4Hgoww;
-    internal int mv6pc1QUO;
+    internal DateTime firstDateTime;
+    internal DateTime lastDateTime;
+    internal int count;
     internal long lyMkX4DEV;
-    private FRJ1FMOwU8CAwJuZZf FBmCPvV43;
-    private string oBkENyUF4;
-    private string k3F62jL6i;
-    private int Ha4oIKnrY;
-    private int M3ifyxP4m;
-    private Indexer aHdVYLTHp;
+    private FRJ1FMOwU8CAwJuZZf streamer;
+    private string name;
+    private string description;
+    private int maxBlockSize;
+    private int zipLevel;
+    private Indexer indexer;
 
     [Description("Gets the name of the series")]
     [Category("Naming")]
@@ -42,7 +37,7 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.oBkENyUF4;
+				return this.name; 
       }
     }
 
@@ -53,14 +48,14 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.k3F62jL6i;
+				return this.description 
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
         if (value.Length > (int) sbyte.MaxValue)
           throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(0), BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(120));
-        this.k3F62jL6i = value;
-        this.FBmCPvV43.VmKuLwiT3(this);
+        this.description = value;
+        this.streamer.VmKuLwiT3(this);
       }
     }
 
@@ -72,14 +67,14 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.Ha4oIKnrY;
+				return this.maxBlockSize; 
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
         if (value < 2)
           throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(146), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(174));
-        this.Ha4oIKnrY = value;
-        this.FBmCPvV43.VmKuLwiT3(this);
+				this.maxBlockSize = value; 
+				this.streamer.VmKuLwiT3(this); 
       }
     }
 
@@ -91,14 +86,14 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.M3ifyxP4m;
+				return this.zipLevel;  
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
         if (value < 0 || value > 9)
           throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(242), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(262));
-        this.M3ifyxP4m = value;
-        this.FBmCPvV43.VmKuLwiT3(this);
+        this.zipLevel = value;
+        this.streamer.VmKuLwiT3(this);
       }
     }
 
@@ -107,7 +102,7 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.aHdVYLTHp;
+				return this.indexer; 
       }
     }
 
@@ -116,7 +111,7 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        if (this.aHdVYLTHp == Indexer.None)
+        if (this.indexer == Indexer.None)
           return IndexStatus.None;
         return this.lyMkX4DEV == -1L ? IndexStatus.Old : IndexStatus.Valid;
       }
@@ -127,7 +122,7 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.mv6pc1QUO;
+				return this.count; 
       }
     }
 
@@ -136,10 +131,10 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        if (this.mv6pc1QUO == 0)
+        if (this.count == 0)
           throw new InvalidOperationException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(328));
         else
-          return this.WNpN6XDK2;
+					return this.firstDateTime; 
       }
     }
 
@@ -148,26 +143,26 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        if (this.mv6pc1QUO == 0)
+        if (this.count == 0)
           throw new InvalidOperationException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(370));
         else
-          return this.DBX4Hgoww;
+					return this.lastDateTime; 
       }
     }
 
     [Browsable(false)]
     public ISeriesObject this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return this.FBmCPvV43.mKEzFCE4r(this, index);
+        return this.streamer.mKEzFCE4r(this, index);
       }
     }
 
     [Browsable(false)]
     public ISeriesObject this[DateTime datetime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this[datetime, SearchOption.Exact];
       }
@@ -176,22 +171,22 @@ namespace SmartQuant.File
     [Browsable(false)]
     public ISeriesObject this[DateTime datetime, SearchOption option]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return this.FBmCPvV43.CTsxsPQA1A(this, datetime, option);
+        return this.streamer.CTsxsPQA1A(this, datetime, option);
       }
     }
 
     [Browsable(false)]
     public int Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
-        return this.FBmCPvV43.LIixxmGnRR(this);
+        return this.streamer.LIixxmGnRR(this);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.FBmCPvV43.fnHxdL12qe(this, value);
+        this.streamer.fnHxdL12qe(this, value);
       }
     }
 
@@ -202,17 +197,17 @@ namespace SmartQuant.File
       this.gJBOw3afc = -1L;
       this.dC0L5SwaN = -1L;
       this.hnKhMyEgT = -1L;
-      this.WNpN6XDK2 = DateTime.MaxValue;
-      this.DBX4Hgoww = DateTime.MinValue;
+      this.firstDateTime = DateTime.MaxValue;
+      this.lastDateTime = DateTime.MinValue;
       this.lyMkX4DEV = -1L;
-      // ISSUE: explicit constructor call
+			// ISSUE: explicit constructor call
       base.\u002Ector();
-      this.FBmCPvV43 = streamer;
-      this.oBkENyUF4 = name;
-      this.k3F62jL6i = description;
-      this.M3ifyxP4m = zipLevel;
-      this.Ha4oIKnrY = maxBlockSize;
-      this.aHdVYLTHp = indexer;
+			this.streamer = streamer; 
+			this.name = name; 
+      this.description = description;
+			this.zipLevel = zipLevel; 
+			this.maxBlockSize = maxBlockSize; 
+			this.indexer = indexer; 
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -238,25 +233,21 @@ namespace SmartQuant.File
       return this.GetArray(DateTime.MinValue, DateTime.MaxValue);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public ISeriesObject[] GetArray(DateTime start, DateTime end)
     {
-      return this.FBmCPvV43.TPxeRVXsG(this, start, end);
+      return this.streamer.TPxeRVXsG(this, start, end);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public ISeriesObject[] GetArray(int beginIndex, int endIndex)
     {
-      return this.FBmCPvV43.lcNUtVLQa(this, beginIndex, endIndex);
+      return this.streamer.lcNUtVLQa(this, beginIndex, endIndex);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(ISeriesObject obj)
     {
-      this.FBmCPvV43.jGN7PFamp(this, obj);
+      this.streamer.jGN7PFamp(this, obj);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(DateTime datetime, object obj)
     {
       if (!(obj is ISeriesObject))
@@ -264,19 +255,16 @@ namespace SmartQuant.File
       this.Add(obj as ISeriesObject);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Update(DateTime datetime, object obj)
     {
-      this.FBmCPvV43.mrranh0iN(this, obj as ISeriesObject);
+      this.streamer.mrranh0iN(this, obj as ISeriesObject);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Update(int index, object obj)
     {
-      this.FBmCPvV43.eb63Ogbkv(this, obj as ISeriesObject, index);
+      this.streamer.eb63Ogbkv(this, obj as ISeriesObject, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Flush()
     {
       this.Flush(false);
@@ -285,59 +273,50 @@ namespace SmartQuant.File
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void Flush(bool flushIndex)
     {
-      this.FBmCPvV43.Dbgg6r6Wu(this, flushIndex);
+      this.streamer.Dbgg6r6Wu(this, flushIndex);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Reindex(Indexer indexer)
     {
-      this.aHdVYLTHp = indexer;
-      this.FBmCPvV43.A3iIpmIeh(this);
+      this.indexer = indexer;
+      this.streamer.A3iIpmIeh(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public ISeriesObject Read()
     {
-      return this.FBmCPvV43.e7bxHVj446(this);
+      return this.streamer.e7bxHVj446(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int IndexOf(DateTime datetime, SearchOption option)
     {
-      return this.FBmCPvV43.Ry8jC7als(this, datetime, option);
+      return this.streamer.Ry8jC7als(this, datetime, option);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int IndexOf(DateTime datetime)
     {
       return this.IndexOf(datetime, SearchOption.Exact);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public bool Contains(DateTime datetime)
     {
       return this.IndexOf(datetime) != -1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Remove(DateTime datetime)
     {
-      this.FBmCPvV43.loZx5NFiaR(this, datetime);
+      this.streamer.loZx5NFiaR(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void RemoveAt(int index)
     {
-      this.FBmCPvV43.xZFxPvvctV(this, index);
+      this.streamer.xZFxPvvctV(this, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Clear()
     {
-      this.FBmCPvV43.POZxB2ZfIx(this);
+      this.streamer.POZxB2ZfIx(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void CopyTo(FileSeries dstSeries, ISeriesFilter filter)
     {
       if (dstSeries == this)
@@ -351,28 +330,24 @@ namespace SmartQuant.File
         filter.Copy(this, dstSeries);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public DateTime DateTimeAt(int index)
     {
       return this[index].DateTime;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public IEnumerator GetEnumerator()
     {
       return (IEnumerator) new LPr0ffVt3PxRVXsGbc(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void TaaFdlDDd([In] string obj0)
     {
-      this.oBkENyUF4 = obj0;
+      this.name = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void DbvJxJl8B()
     {
-      this.FBmCPvV43.YEAxNKIbiu(this);
+      this.streamer.YEAxNKIbiu(this);
     }
   }
 }

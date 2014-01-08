@@ -9,12 +9,12 @@ namespace FreeQuant.Execution
 {
   public class SellSideOrderList : ICollection, IEnumerable
   {
-    private Dictionary<string, SingleOrder> iX0Aocoro;
-    private List<SingleOrder> YCZoPZ1j9;
+		private Dictionary<string, SingleOrder> iX0Aocoro; 
+		private List<SingleOrder> YCZoPZ1j9; 
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.YCZoPZ1j9.Count;
       }
@@ -22,7 +22,7 @@ namespace FreeQuant.Execution
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return false;
       }
@@ -30,7 +30,7 @@ namespace FreeQuant.Execution
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (object) null;
       }

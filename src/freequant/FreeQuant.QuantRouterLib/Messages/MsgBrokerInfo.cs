@@ -1,40 +1,27 @@
-﻿// Type: SmartQuant.QuantRouterLib.Messages.MsgBrokerInfo
-// Assembly: SmartQuant.QuantRouterLib, Version=1.0.5036.28341, Culture=neutral, PublicKeyToken=null
-// MVID: FDF277D6-C8FB-45C3-A0BD-1C1035F3B027
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.QuantRouterLib.dll
-
-using NI8YCE6tH4BIeIEcEy;
-using SmartQuant.QuantRouterLib.Data;
+using FreeQuant.QuantRouterLib.Data;
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.QuantRouterLib.Messages
+namespace FreeQuant.QuantRouterLib.Messages
 {
   public class MsgBrokerInfo : Message
   {
-    public BrokerInfo Data { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public BrokerInfo Data { get; set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MsgBrokerInfo(BrokerInfo brokerInfo)
+	public MsgBrokerInfo(BrokerInfo brokerInfo):base(2001)
     {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(2001);
+
       this.Data = brokerInfo;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MsgBrokerInfo()
+	public MsgBrokerInfo() : base(2001)
     {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(2001);
+
       this.Data = new BrokerInfo();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected override void OnGetData(BinaryWriter writer)
     {
       writer.Write(this.Data.ProviderId);
@@ -43,7 +30,6 @@ namespace SmartQuant.QuantRouterLib.Messages
         this.H4vuEjxO1C(writer, brokerAccount);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void H4vuEjxO1C([In] BinaryWriter obj0, [In] BrokerAccount obj1)
     {
       obj0.Write(obj1.Name);
@@ -66,7 +52,6 @@ namespace SmartQuant.QuantRouterLib.Messages
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void oR3uofPPWO([In] BinaryWriter obj0, [In] BrokerPosition obj1)
     {
       obj0.Write(obj1.Currency);
@@ -88,7 +73,6 @@ namespace SmartQuant.QuantRouterLib.Messages
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void RoYu8jI0tu([In] BinaryWriter obj0, [In] BrokerOrder obj1)
     {
       obj0.Write(obj1.Currency);
@@ -111,7 +95,6 @@ namespace SmartQuant.QuantRouterLib.Messages
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected override void OnSetData(BinaryReader reader)
     {
       this.Data.ProviderId = reader.ReadByte();
@@ -120,7 +103,6 @@ namespace SmartQuant.QuantRouterLib.Messages
         this.Data.Accounts.Add(this.cKpu5qjmIn(reader));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private BrokerAccount cKpu5qjmIn([In] BinaryReader obj0)
     {
       string name1 = obj0.ReadString();
@@ -144,7 +126,6 @@ namespace SmartQuant.QuantRouterLib.Messages
       return brokerAccount;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private BrokerPosition lrvuzgJsBI([In] BinaryReader obj0)
     {
       BrokerPosition brokerPosition = new BrokerPosition();
@@ -168,7 +149,6 @@ namespace SmartQuant.QuantRouterLib.Messages
       return brokerPosition;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private BrokerOrder vHxhvWlydv([In] BinaryReader obj0)
     {
       BrokerOrder brokerOrder = new BrokerOrder();

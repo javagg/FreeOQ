@@ -6,7 +6,7 @@
 using System.Runtime.CompilerServices;
 using wOTnoM0h260SstC0xu;
 
-namespace SmartQuant.Xml
+namespace FreeQuant.Xml
 {
   public class Int16ValueXmlNode : ValueXmlNode
   {

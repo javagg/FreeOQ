@@ -1,4 +1,4 @@
-﻿// Type: SmartQuant.File.DataFile
+// Type: SmartQuant.File.DataFile
 // Assembly: SmartQuant.File, Version=2.1.5036.28340, Culture=neutral, PublicKeyToken=null
 // MVID: 800E5EC7-67A0-489F-9F8A-77FDD5BCC547
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.File.dll
@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 using We5uQhNvsdYws8n5By;
 using XnjwSLRMyI3UA3fEbD;
 
-namespace SmartQuant.File
+namespace FreeQuant.File
 {
   public class DataFile
   {
@@ -36,27 +36,27 @@ namespace SmartQuant.File
     private const string H2mxY8RfDl = "zip_level";
     private const string BWlxjFs2WR = "max_block_size";
     private const string FHyxzbKkrb = "indexer";
-    private SeriesCollection wDidsDjylP;
-    private int acUdx4uHTr;
-    private int MjCddp1NKA;
-    private string dqmdH9cPIJ;
-    private string yedd50xGBB;
-    private string oQpdPsxQIb;
-    private Indexer qH4dBBDYqN;
+    private SeriesCollection series;
+    private int defaultBlockSize;
+    private int defaultZipLevel;
+    private string name;
+    private string description;
+    private string location;
+    private Indexer defaultIndexer;
     private string T2CdqZ3S6a;
     private XKnrYnX3iyxP4mxHdY cZGdvu7wXe;
     private EQJFquhB2QLQLSaG0F UQAdA9yU8P;
     private FRJ1FMOwU8CAwJuZZf TGQdFvfQ8H;
-    private bool Uh5dJqNSkC;
+    private bool isOpen;
 
     [Browsable(true)]
     [Category("Names")]
     [Description("The name of the file")]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
-        return this.dqmdH9cPIJ;
+				return this.name; 
       }
     }
 
@@ -65,13 +65,13 @@ namespace SmartQuant.File
     [Category("Names")]
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return this.yedd50xGBB;
+				return this.description; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
-        this.yedd50xGBB = value;
+        this.description = value;
         this.DXbxTDioKH();
       }
     }
@@ -83,7 +83,7 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.oQpdPsxQIb;
+				return this.location; 
       }
     }
 
@@ -92,7 +92,7 @@ namespace SmartQuant.File
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.wDidsDjylP;
+				return this.series; 
       }
     }
 
@@ -102,15 +102,15 @@ namespace SmartQuant.File
     [Description("Gets or sets the default block's size for the new series")]
     public int DefaultBlockSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.acUdx4uHTr;
+				return this.defaultBlockSize; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value < 2)
           throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2540), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2576));
-        this.acUdx4uHTr = value;
+        this.defaultBlockSize = value;
         this.DXbxTDioKH();
       }
     }
@@ -121,15 +121,15 @@ namespace SmartQuant.File
     [Browsable(true)]
     public int DefaultZipLevel
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.MjCddp1NKA;
+				return this.defaultZipLevel; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+        set
       {
         if (value < 0 || value > 9)
           throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2644), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2678));
-        this.MjCddp1NKA = value;
+        this.defaultZipLevel = value;
         this.DXbxTDioKH();
       }
     }
@@ -139,13 +139,13 @@ namespace SmartQuant.File
     [Description("Gets or sets the indexing method for the new series")]
     public Indexer DefaultIndexer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return this.qH4dBBDYqN;
+				return this.defaultIndexer; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
-        this.qH4dBBDYqN = value;
+        this.defaultIndexer = value;
         this.DXbxTDioKH();
       }
     }
@@ -153,7 +153,7 @@ namespace SmartQuant.File
     [Browsable(false)]
     public IDictionary<Type, byte> RegisteredTypes
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.cZGdvu7wXe.Ss8QG6N1O();
       }
@@ -162,7 +162,7 @@ namespace SmartQuant.File
     [Browsable(false)]
     public long DataFileSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.TGQdFvfQ8H.B3hx4osn2A();
       }
@@ -189,9 +189,9 @@ namespace SmartQuant.File
     [Browsable(false)]
     public bool IsOpen
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.Uh5dJqNSkC;
+				return this.isOpen; 
       }
     }
 
@@ -201,53 +201,48 @@ namespace SmartQuant.File
 
     public event DefragmentCancelEventHandler DefragmentCancelRequest;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public DataFile(string name, string location)
     {
       F45ZyD1Qi4NklFUbBa.aTsHghczyNAhO();
       // ISSUE: explicit constructor call
       base.\u002Ector();
       BigSBZoK4tJGNPFamp.NmWdePCboZ();
-      this.oQpdPsxQIb = new DirectoryInfo(location).FullName;
-      this.dqmdH9cPIJ = name;
-      this.yedd50xGBB = "";
+      this.location = new DirectoryInfo(location).FullName;
+      this.name = name;
+      this.description = "";
       this.T2CdqZ3S6a = this.Location + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2506);
       this.Dewxid4agx();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static DataFile Open(string location)
     {
       return new DataFile(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2528), location);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void Dewxid4agx()
     {
       this.cZGdvu7wXe = new XKnrYnX3iyxP4mxHdY(this.Location);
       this.UQAdA9yU8P = new EQJFquhB2QLQLSaG0F(this.cZGdvu7wXe);
       this.TGQdFvfQ8H = new FRJ1FMOwU8CAwJuZZf(this.Location, (IFormatter) this.UQAdA9yU8P);
-      this.acUdx4uHTr = 1000;
-      this.MjCddp1NKA = 1;
+      this.defaultBlockSize = 1000;
+      this.defaultZipLevel = 1;
       this.cAgxmaSvP5();
-      this.wDidsDjylP = new SeriesCollection(this);
-      this.TGQdFvfQ8H.fg5iZaP12(this.wDidsDjylP);
-      this.Uh5dJqNSkC = true;
+      this.series = new SeriesCollection(this);
+      this.TGQdFvfQ8H.fg5iZaP12(this.series);
+      this.isOpen = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Close()
     {
-      if (!this.Uh5dJqNSkC)
+      if (!this.isOpen)
         return;
-      foreach (FileSeries fileSeries in this.wDidsDjylP)
+      foreach (FileSeries fileSeries in this.series)
         fileSeries.Flush();
       this.TGQdFvfQ8H.LCQ84w08t();
-      this.wDidsDjylP = new SeriesCollection(this);
-      this.Uh5dJqNSkC = false;
+      this.series = new SeriesCollection(this);
+      this.isOpen = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Defragment(int zipLevel, int maxBlockSize)
     {
       string path = this.Location + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2744);
@@ -256,14 +251,12 @@ namespace SmartQuant.File
       Directory.Delete(path, true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Defragment()
     {
-      this.Defragment(this.MjCddp1NKA, this.acUdx4uHTr);
+      this.Defragment(this.defaultZipLevel, this.defaultBlockSize);
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal FRJ1FMOwU8CAwJuZZf kBox0k2EsS()
     {
       return this.TGQdFvfQ8H;
@@ -277,7 +270,6 @@ namespace SmartQuant.File
       this.lIEdXL2Qo2(new SeriesEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void qoHxS5EmLT([In] FileSeries obj0)
     {
       if (this.KEEdbs3yRr == null)
@@ -285,7 +277,6 @@ namespace SmartQuant.File
       this.KEEdbs3yRr(new SeriesEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void IsTxnSj3Fr([In] DefragmentCancelEventArgs obj0)
     {
       if (this.k72dOZBJZA == null)
@@ -293,7 +284,6 @@ namespace SmartQuant.File
       this.k72dOZBJZA(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void cAgxmaSvP5()
     {
       try
@@ -308,10 +298,10 @@ namespace SmartQuant.File
           dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2878), typeof (Indexer));
           int num = (int) dataSet.ReadXml(this.T2CdqZ3S6a, XmlReadMode.IgnoreSchema);
           DataRow dataRow = dataSet.Tables[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2896)].Rows[0];
-          this.yedd50xGBB = (string) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2920)];
-          this.MjCddp1NKA = (int) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2946)];
-          this.acUdx4uHTr = (int) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2968)];
-          this.qH4dBBDYqN = (Indexer) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3000)];
+          this.description = (string) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2920)];
+          this.defaultZipLevel = (int) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2946)];
+          this.defaultBlockSize = (int) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2968)];
+          this.defaultIndexer = (Indexer) dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3000)];
         }
         else
           this.DXbxTDioKH();
@@ -321,7 +311,6 @@ namespace SmartQuant.File
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void DXbxTDioKH()
     {
       DataSet dataSet = new DataSet(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3018));
@@ -332,10 +321,10 @@ namespace SmartQuant.File
       dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3138), typeof (Indexer));
       DataRow row = dataTable.NewRow();
       dataTable.Rows.Add(row);
-      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3156)] = (object) this.yedd50xGBB;
-      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3182)] = (object) this.MjCddp1NKA;
-      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3204)] = (object) this.acUdx4uHTr;
-      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3236)] = (object) this.qH4dBBDYqN;
+      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3156)] = (object) this.description;
+      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3182)] = (object) this.defaultZipLevel;
+      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3204)] = (object) this.defaultBlockSize;
+      row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3236)] = (object) this.defaultIndexer;
       dataSet.WriteXml(this.T2CdqZ3S6a, XmlWriteMode.WriteSchema);
     }
   }

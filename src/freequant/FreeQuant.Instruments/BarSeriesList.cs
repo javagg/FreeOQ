@@ -1,16 +1,9 @@
-// Type: SmartQuant.Instruments.BarSeriesList
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using nlmLboft3R6jnhSDBs;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VFUvY5knK01pUIalDo;
 
 namespace FreeQuant.Instruments
 {
@@ -24,7 +17,7 @@ namespace FreeQuant.Instruments
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return this.a0SWypH8TX.IsSynchronized;
       }
@@ -32,7 +25,7 @@ namespace FreeQuant.Instruments
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return this.a0SWypH8TX.Count;
       }
@@ -40,7 +33,7 @@ namespace FreeQuant.Instruments
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.a0SWypH8TX.SyncRoot;
       }

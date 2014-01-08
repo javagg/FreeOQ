@@ -1,13 +1,6 @@
-// Type: SmartQuant.Instruments.AccountPositionList
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using nlmLboft3R6jnhSDBs;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
-using VFUvY5knK01pUIalDo;
 
 namespace FreeQuant.Instruments
 {
@@ -17,7 +10,7 @@ namespace FreeQuant.Instruments
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.e6HEudGaD6.Count;
       }
@@ -25,7 +18,7 @@ namespace FreeQuant.Instruments
 
     public AccountPosition this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.e6HEudGaD6.GetByIndex(index) as AccountPosition;
       }
@@ -33,19 +26,16 @@ namespace FreeQuant.Instruments
 
     public AccountPosition this[Currency currency]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.e6HEudGaD6[(object) currency.Code] as AccountPosition;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public AccountPositionList()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.e6HEudGaD6 = new SortedList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

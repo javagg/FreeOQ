@@ -59,4 +59,14 @@
     <Compile Include="ExecutionServiceEventArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Xml\FreeQuant.Xml.csproj">
+      <Project>{7225682B-5328-446F-8798-4E76B843D87E}</Project>
+      <Name>FreeQuant.Xml</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

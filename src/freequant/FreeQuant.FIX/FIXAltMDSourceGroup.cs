@@ -1,4 +1,3 @@
-﻿using QjaKfQ9Jr3AV8F2T87;
 using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX
@@ -18,12 +17,5 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAltMDSourceGroup()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
   }
 }

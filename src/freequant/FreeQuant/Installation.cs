@@ -1,10 +1,3 @@
-﻿// Type: SmartQuant.Installation
-// Assembly: SmartQuant, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=null
-// MVID: BC86C0EF-576E-453D-8BFD-FAB33B893C15
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.dll
-
-using aPqI2kmeVjWsoIHqc3F;
-using BoBSVVX0yGpEOB0Qj2;
 using Microsoft.Win32;
 using System;
 using System.ComponentModel;
@@ -12,9 +5,8 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant
+namespace FreeQuant
 {
-  [LicenseProvider(typeof (A6mJqrm7oqdfvuwEFGG))]
   public class Installation
   {
     private const string OsEB10mv7f = "QUANTSYS";
@@ -229,32 +221,27 @@ namespace SmartQuant
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal bool c7kBpxixDa()
     {
       return true;
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal bool i94BcvgC0K()
     {
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private string MR4BVNrLnA([In] RegistryKey obj0, [In] string obj1)
     {
       return (string) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private bool H3jBgrTW1C([In] RegistryKey obj0, [In] string obj1)
     {
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void XoMBb3l1md([In] RegistryKey obj0, [In] string obj1, [In] string obj2)
     {
     }

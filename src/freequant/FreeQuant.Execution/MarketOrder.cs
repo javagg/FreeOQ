@@ -10,7 +10,6 @@ namespace FreeQuant.Execution
 {
   public class MarketOrder : SingleOrder
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, string text)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -25,7 +24,6 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -39,7 +37,6 @@ namespace FreeQuant.Execution
       this.OrderQty = qty;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketOrder(Instrument instrument, Side side, double qty, string text)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -54,7 +51,6 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketOrder(Instrument instrument, Side side, double qty)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -68,7 +64,6 @@ namespace FreeQuant.Execution
       this.OrderQty = qty;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketOrder(string symbol, Side side, double qty, string text)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -85,7 +80,6 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketOrder(string symbol, Side side, double qty)
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
@@ -101,7 +95,6 @@ namespace FreeQuant.Execution
       this.OrderQty = qty;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private MarketOrder()
     {
       NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();

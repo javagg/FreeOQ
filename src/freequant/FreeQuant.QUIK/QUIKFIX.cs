@@ -1,5 +1,3 @@
-using m0njJaOATyghKuNrUx;
-using qkaElGt6k8WAL3MJDk;
 using QuickFix;
 using FreeQuant;
 using FreeQuant.FIX;
@@ -10,7 +8,6 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms.Design;
-using UYZN4krhQ8QrO8INWH;
 
 namespace FreeQuant.QUIK
 {

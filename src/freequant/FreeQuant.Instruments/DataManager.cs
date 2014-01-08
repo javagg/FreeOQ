@@ -1,26 +1,15 @@
-// Type: SmartQuant.Instruments.DataManager
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using aWcHF3l0l13UYjXN5n;
-using ccsRFN2rKKpSgOHwaG;
-using Ic1mvc4Orq8FHLSTQo;
-using K9mHqGmRlPiTWZgUNI;
-using nlmLboft3R6jnhSDBs;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.FIXData;
-using SmartQuant.Providers;
-using SmartQuant.Series;
+using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.FIXData;
+using FreeQuant.Providers;
+using FreeQuant.Series;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VFUvY5knK01pUIalDo;
 
 namespace FreeQuant.Instruments
 {

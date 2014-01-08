@@ -1,13 +1,7 @@
-﻿// Type: SmartQuant.Neural.TKohonenData
-// Assembly: SmartQuant.Neural, Version=1.0.5036.28341, Culture=neutral, PublicKeyToken=null
-// MVID: E5DFC29A-4534-4F54-827A-AC305F5F2864
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Neural.dll
-
-using aq250XLTtWVBJufbvY;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Neural
+namespace FreeQuant.Neural
 {
   [Serializable]
   public class TKohonenData : TNeuralData
@@ -42,7 +36,7 @@ namespace SmartQuant.Neural
 
     public int Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.Xoa2UGRFa;
       }
@@ -52,25 +46,12 @@ namespace SmartQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TKohonenData()
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TKohonenData(TKohonenData Data)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector((TNeuralData) Data);
       this.UWRwwoI3Y = Data.UWRwwoI3Y;
       this.Xoa2UGRFa = Data.Xoa2UGRFa;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TKohonenData(int NInput)
     {
       dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
@@ -80,7 +61,6 @@ namespace SmartQuant.Neural
       this.Xoa2UGRFa = 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TKohonenData(int NInput, double[] Input)
     {
       dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
@@ -100,7 +80,6 @@ namespace SmartQuant.Neural
       this.Xoa2UGRFa = 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TKohonenData(int NInput, int NOutput, double[] Input, double[] Output)
     {
       dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();

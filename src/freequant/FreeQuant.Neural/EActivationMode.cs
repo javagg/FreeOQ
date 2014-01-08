@@ -1,5 +1,4 @@
-﻿
-namespace SmartQuant.Neural
+namespace FreeQuant.Neural
 {
   public enum EActivationMode
   {

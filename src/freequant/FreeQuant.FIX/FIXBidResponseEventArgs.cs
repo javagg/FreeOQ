@@ -1,5 +1,4 @@
-﻿
-using QjaKfQ9Jr3AV8F2T87;
+
 using System;
 using System.Runtime.CompilerServices;
 
@@ -21,12 +20,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXBidResponseEventArgs(FIXBidResponse BidResponse)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.tGwyy1CtAC = BidResponse;
     }
   }

@@ -35,7 +35,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="BarRequest.cs" />
     <Compile Include="BarRequestItem.cs" />
     <Compile Include="BarSlice.cs" />

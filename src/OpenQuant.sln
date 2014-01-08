@@ -63,7 +63,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.QuantBaseLib", "f
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.QuantRouterLib", "freequant\FreeQuant.QuantRouterLib\FreeQuant.QuantRouterLib.csproj", "{599DEF44-71D4-44F0-BBAB-F9264EF681F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQ", "..\apps\SQ\SQ.csproj", "{0A46090D-980B-4AE0-827E-E117AF99C256}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Quant", "freequant\FreeQuant.Quant\FreeQuant.Quant.csproj", "{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +83,6 @@ Global
 		{09E01D16-88B6-4CC7-90D1-745B10130899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09E01D16-88B6-4CC7-90D1-745B10130899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09E01D16-88B6-4CC7-90D1-745B10130899}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Release|Any CPU.Build.0 = Release|Any CPU
 		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -147,6 +143,10 @@ Global
 		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F59047F-AED7-4550-B0D3-01768149FACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F59047F-AED7-4550-B0D3-01768149FACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F59047F-AED7-4550-B0D3-01768149FACF}.Release|Any CPU.ActiveCfg = Release|Any CPU

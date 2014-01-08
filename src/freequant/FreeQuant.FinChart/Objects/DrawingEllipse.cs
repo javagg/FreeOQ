@@ -6,9 +6,8 @@
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart.Objects
+namespace FreeQuant.FinChart.Objects
 {
   public class DrawingEllipse : IUpdatable
   {

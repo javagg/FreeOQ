@@ -1,10 +1,9 @@
-using NI8YCE6tH4BIeIEcEy;
-using SmartQuant.QuantRouterLib.Messages;
+using FreeQuant.QuantRouterLib.Messages;
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
-namespace SmartQuant.QuantRouterLib
+namespace FreeQuant.QuantRouterLib
 {
   public abstract class Connection : IConnection
   {
@@ -33,12 +32,8 @@ namespace SmartQuant.QuantRouterLib
 
     public event EventHandler<MessageEventArgs> MessageReceived;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected Connection()
+	protected Connection() : base()
     {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.pr5mw3rRZ = new ManualResetEventSlim(false);
     }
 
@@ -50,7 +45,6 @@ namespace SmartQuant.QuantRouterLib
 
     public abstract void Send(Message[] message);
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected void OnClosed()
     {
       this.pr5mw3rRZ.Wait();

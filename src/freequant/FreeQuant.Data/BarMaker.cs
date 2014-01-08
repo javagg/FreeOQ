@@ -1,28 +1,12 @@
-﻿// Type: SmartQuant.Data.BarMaker
-// Assembly: SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9
-// MVID: FAB3F3C9-6D4A-4391-AE43-0CE5E1C624DD
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Data.dll
-
-using oL6nXjcX2wYBRbhX2q;
-using RadDBE9P5I945u5gCE;
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Data
 {
   public class BarMaker
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    private BarMaker()
-    {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static void MakeBars(IDataSeries tradeSeries, IDataSeries barSeries, BarType barType, long barSize)
     {
       switch (barType)
@@ -166,7 +150,6 @@ namespace FreeQuant.Data
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private static DateTime qtghhEheM([In] DateTime obj0, [In] long obj1)
     {
       long num = (long) obj0.TimeOfDay.TotalSeconds / obj1 * obj1;

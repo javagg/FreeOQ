@@ -6,7 +6,7 @@
 using l3Z5ZAp2dkqyZZDck9P;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   public class ATSMetaStrategy : MetaStrategyBase
   {

@@ -1,10 +1,3 @@
-﻿// Type: SmartQuant.Data.OrderBook
-// Assembly: SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9
-// MVID: FAB3F3C9-6D4A-4391-AE43-0CE5E1C624DD
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Data.dll
-
-using oL6nXjcX2wYBRbhX2q;
-using RadDBE9P5I945u5gCE;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -14,14 +7,14 @@ namespace FreeQuant.Data
 {
   public class OrderBook
   {
-    private OrderBookEntryList C4Ju1ReVD;
-    private OrderBookEntryList tr1AfmP21;
+    private OrderBookEntryList bid;
+    private OrderBookEntryList ask;
 
     public OrderBookEntryList Bid
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.C4Ju1ReVD;
+				return this.bid; 
       }
     }
 
@@ -29,30 +22,27 @@ namespace FreeQuant.Data
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.tr1AfmP21;
+				return this.ask; 
       }
     }
 
     public event OrderBookEventHandler Changed;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public OrderBook()
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
       // ISSUE: explicit constructor call
       base.\u002Ector();
-      this.C4Ju1ReVD = new OrderBookEntryList();
-      this.tr1AfmP21 = new OrderBookEntryList();
+      this.bid = new OrderBookEntryList();
+      this.ask = new OrderBookEntryList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Clear()
     {
-      this.C4Ju1ReVD.EeBM3flam();
-      this.tr1AfmP21.EeBM3flam();
+      this.bid.EeBM3flam();
+      this.ask.EeBM3flam();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Add(MarketDepth marketDepth)
     {
       try
@@ -61,10 +51,10 @@ namespace FreeQuant.Data
         switch (marketDepth.Side)
         {
           case MDSide.Bid:
-            orderBookEntryList = this.C4Ju1ReVD;
+            orderBookEntryList = this.bid;
             break;
           case MDSide.Ask:
-            orderBookEntryList = this.tr1AfmP21;
+            orderBookEntryList = this.ask;
             break;
           default:
             throw new ArgumentException(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(806) + ((object) marketDepth.Side).ToString());
@@ -130,7 +120,6 @@ namespace FreeQuant.Data
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Quote GetQuote(int level)
     {
       DateTime datetime = DateTime.MinValue;
@@ -138,17 +127,17 @@ namespace FreeQuant.Data
       double ask = 0.0;
       int bidSize = 0;
       int askSize = 0;
-      if (level < this.C4Ju1ReVD.Count)
+      if (level < this.bid.Count)
       {
-        OrderBookEntry orderBookEntry = this.C4Ju1ReVD[level];
+        OrderBookEntry orderBookEntry = this.bid[level];
         bid = orderBookEntry.Price;
         bidSize = orderBookEntry.Size;
         if (orderBookEntry.DateTime > datetime)
           datetime = orderBookEntry.DateTime;
       }
-      if (level < this.tr1AfmP21.Count)
+      if (level < this.ask.Count)
       {
-        OrderBookEntry orderBookEntry = this.tr1AfmP21[level];
+        OrderBookEntry orderBookEntry = this.ask[level];
         ask = orderBookEntry.Price;
         askSize = orderBookEntry.Size;
         if (orderBookEntry.DateTime > datetime)
@@ -157,30 +146,27 @@ namespace FreeQuant.Data
       return new Quote(datetime, bid, bidSize, ask, askSize);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int GetBidVolume()
     {
       int num = 0;
-      foreach (OrderBookEntry orderBookEntry in this.C4Ju1ReVD)
+      foreach (OrderBookEntry orderBookEntry in this.bid)
         num += orderBookEntry.Size;
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int GetAskVolume()
     {
       int num = 0;
-      foreach (OrderBookEntry orderBookEntry in this.tr1AfmP21)
+      foreach (OrderBookEntry orderBookEntry in this.ask)
         num += orderBookEntry.Size;
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double GetAvgBidPrice()
     {
       double num1 = 0.0;
       double num2 = 0.0;
-      foreach (OrderBookEntry orderBookEntry in this.C4Ju1ReVD)
+      foreach (OrderBookEntry orderBookEntry in this.bid)
       {
         num1 += orderBookEntry.Price * (double) orderBookEntry.Size;
         num2 += (double) orderBookEntry.Size;
@@ -188,12 +174,11 @@ namespace FreeQuant.Data
       return num1 / num2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double GetAvgAskPrice()
     {
       double num1 = 0.0;
       double num2 = 0.0;
-      foreach (OrderBookEntry orderBookEntry in this.tr1AfmP21)
+      foreach (OrderBookEntry orderBookEntry in this.ask)
       {
         num1 += orderBookEntry.Price * (double) orderBookEntry.Size;
         num2 += (double) orderBookEntry.Size;
@@ -201,16 +186,15 @@ namespace FreeQuant.Data
       return num1 / num2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double GetAvgBidPrice(double qty)
     {
-      lock (this.C4Ju1ReVD.SyncRoot)
+      lock (this.bid.SyncRoot)
       {
-        if (this.C4Ju1ReVD.Count == 0)
+        if (this.bid.Count == 0)
           return 0.0;
         double local_0 = 0.0;
         double local_1 = qty;
-        foreach (OrderBookEntry item_0 in this.C4Ju1ReVD)
+        foreach (OrderBookEntry item_0 in this.bid)
         {
           if (local_1 >= (double) item_0.Size)
           {
@@ -226,21 +210,20 @@ namespace FreeQuant.Data
             break;
         }
         if (local_1 > 0.0)
-          local_0 += this.C4Ju1ReVD[this.C4Ju1ReVD.Count - 1].Price * local_1;
+          local_0 += this.bid[this.bid.Count - 1].Price * local_1;
         return local_0 / qty;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double GetAvgAskPrice(double qty)
     {
-      lock (this.tr1AfmP21.SyncRoot)
+      lock (this.ask.SyncRoot)
       {
-        if (this.tr1AfmP21.Count == 0)
+        if (this.ask.Count == 0)
           return 0.0;
         double local_0 = 0.0;
         double local_1 = qty;
-        foreach (OrderBookEntry item_0 in this.tr1AfmP21)
+        foreach (OrderBookEntry item_0 in this.ask)
         {
           if (local_1 >= (double) item_0.Size)
           {
@@ -256,12 +239,11 @@ namespace FreeQuant.Data
             break;
         }
         if (local_1 > 0.0)
-          local_0 += this.tr1AfmP21[this.tr1AfmP21.Count - 1].Price * local_1;
+          local_0 += this.ask[this.ask.Count - 1].Price * local_1;
         return local_0 / qty;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void UYB6RbhX2([In] MDSide obj0, [In] MDOperation obj1, [In] int obj2)
     {
       if (this.PBAs33WQb == null)

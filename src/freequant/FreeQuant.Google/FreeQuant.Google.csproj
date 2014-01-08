@@ -36,4 +36,18 @@
     <Compile Include="GoogleFinance.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

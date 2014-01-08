@@ -1,10 +1,3 @@
-﻿// Type: SmartQuant.Data.Quote
-// Assembly: SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9
-// MVID: FAB3F3C9-6D4A-4391-AE43-0CE5E1C624DD
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Data.dll
-
-using oL6nXjcX2wYBRbhX2q;
-using RadDBE9P5I945u5gCE;
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -24,11 +17,11 @@ namespace FreeQuant.Data
 
     public byte ProviderId
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.providerId;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.providerId = value;
       }
@@ -36,11 +29,11 @@ namespace FreeQuant.Data
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.datetime;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.datetime = value;
       }
@@ -49,11 +42,11 @@ namespace FreeQuant.Data
     [View]
     public int BidSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.bidSize;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.bidSize = value;
       }
@@ -62,11 +55,11 @@ namespace FreeQuant.Data
     [PriceView]
     public double Bid
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.bid;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.bid = value;
       }
@@ -75,11 +68,11 @@ namespace FreeQuant.Data
     [PriceView]
     public double Ask
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.ask;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.ask = value;
       }
@@ -88,22 +81,18 @@ namespace FreeQuant.Data
     [View]
     public int AskSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.askSize;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.askSize = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Quote(DateTime datetime, double bid, int bidSize, double ask, int askSize)
     {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.datetime = datetime;
       this.bid = bid;
       this.ask = ask;
@@ -112,7 +101,6 @@ namespace FreeQuant.Data
       this.providerId = (byte) 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Quote(Quote quote)
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
@@ -121,7 +109,6 @@ namespace FreeQuant.Data
       this.providerId = quote.providerId;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Quote()
     {
       G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
@@ -129,13 +116,11 @@ namespace FreeQuant.Data
       this.\u002Ector(DateTime.MinValue, 0.0, 0, 0.0, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
       return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(62), (object) this.datetime, (object) this.bidSize, (object) this.bid, (object) this.ask, (object) this.askSize);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void WriteTo(BinaryWriter writer)
     {
       writer.Write((byte) 2);
@@ -147,7 +132,6 @@ namespace FreeQuant.Data
       writer.Write(this.providerId);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void ReadFrom(BinaryReader reader)
     {
       byte num = reader.ReadByte();
@@ -174,13 +158,11 @@ namespace FreeQuant.Data
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual ISeriesObject NewInstance()
     {
       return (ISeriesObject) new Quote();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual object Clone()
     {
       return (object) new Quote(this);

@@ -1,12 +1,5 @@
-﻿// Type: SmartQuant.QuantRouterLib.Tcp.TcpConnection
-// Assembly: SmartQuant.QuantRouterLib, Version=1.0.5036.28341, Culture=neutral, PublicKeyToken=null
-// MVID: FDF277D6-C8FB-45C3-A0BD-1C1035F3B027
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.QuantRouterLib.dll
-
-using gc3CLjxQUQtGJeILmm;
-using NI8YCE6tH4BIeIEcEy;
-using SmartQuant.QuantRouterLib;
-using SmartQuant.QuantRouterLib.Messages;
+using FreeQuant.QuantRouterLib;
+using FreeQuant.QuantRouterLib.Messages;
 using System;
 using System.IO;
 using System.Net.Sockets;
@@ -14,31 +7,18 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace SmartQuant.QuantRouterLib.Tcp
+namespace FreeQuant.QuantRouterLib.Tcp
 {
   public class TcpConnection : Connection
   {
     private TcpClient RNl3aLUdD;
     private NetworkStream SlIRVIT0r;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TcpConnection()
-    {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TcpConnection(string connectionString)
     {
-      FsUk4MLSBO9D20pvmc.ecCbiMQzAUsLm();
-      // ISSUE: explicit constructor call
-      this.\u002Ector();
       this.ConnectionString = connectionString;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Open()
     {
       ConnectionStringParser connectionStringParser = new ConnectionStringParser(this.ConnectionString);
@@ -59,7 +39,6 @@ namespace SmartQuant.QuantRouterLib.Tcp
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Close()
     {
       try
@@ -77,7 +56,6 @@ namespace SmartQuant.QuantRouterLib.Tcp
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Send(Message message)
     {
       this.Send(new Message[1]
@@ -86,7 +64,6 @@ namespace SmartQuant.QuantRouterLib.Tcp
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Send(Message[] messages)
     {
       try
@@ -114,7 +91,6 @@ namespace SmartQuant.QuantRouterLib.Tcp
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void AOfaXfDTg([In] TcpClient obj0)
     {
       this.RNl3aLUdD = obj0;
@@ -128,7 +104,6 @@ namespace SmartQuant.QuantRouterLib.Tcp
       manualResetEventSlim.Wait();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void Yj7GgARTd([In] byte[] obj0)
     {
       MemoryStream memoryStream = new MemoryStream(obj0);
@@ -145,7 +120,6 @@ namespace SmartQuant.QuantRouterLib.Tcp
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void u6dkJQEvy([In] object obj0)
     {
       ((ManualResetEventSlim) obj0).Set();

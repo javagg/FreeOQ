@@ -1,13 +1,7 @@
-﻿// Type: SmartQuant.Neural.TInputNeuralLayer
-// Assembly: SmartQuant.Neural, Version=1.0.5036.28341, Culture=neutral, PublicKeyToken=null
-// MVID: E5DFC29A-4534-4F54-827A-AC305F5F2864
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Neural.dll
-
-using aq250XLTtWVBJufbvY;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Neural
+namespace FreeQuant.Neural
 {
   [Serializable]
   public class TInputNeuralLayer : TNeuralLayer
@@ -22,20 +16,8 @@ namespace SmartQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TInputNeuralLayer()
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TInputNeuralLayer(int NNeuron, bool AddThreshold)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       if (AddThreshold)
       {
         this.fNeuron.Add((object) new TThresholdNeuron());
@@ -53,7 +35,6 @@ namespace SmartQuant.Neural
       tinputNeuralLayer1.fNNeuron = num1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Connect(TInputNeuralLayer InputLayer)
     {
       int num1 = 0;
@@ -67,7 +48,6 @@ namespace SmartQuant.Neural
         this.GetNeuron(i).Connect(InputLayer.GetNeuron(i - num2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Connect(TOutputNeuralLayer OutputLayer)
     {
       int num1 = 0;
@@ -78,7 +58,6 @@ namespace SmartQuant.Neural
         this.GetNeuron(i).Connect(OutputLayer.GetNeuron(i));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void FeedInput(double[] InputPattern)
     {
       for (int index = 1; index < this.fNNeuron; ++index)

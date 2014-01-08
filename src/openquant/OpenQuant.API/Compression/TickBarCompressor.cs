@@ -4,13 +4,13 @@ namespace OpenQuant.API.Compression
 {
   internal class TickBarCompressor : BarCompressor
   {
-    private long tickCount;
+	private long tickCount = 0;
 
-    public TickBarCompressor()
-    {
-      this.tickCount = 0L;
-    }
-
+//    public TickBarCompressor()
+//    {
+//      this.tickCount = 0L;
+//    }
+//
     protected override void Add(DataEntry entry)
     {
       if (this.bar == null)

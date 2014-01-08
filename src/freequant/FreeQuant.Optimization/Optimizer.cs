@@ -1,16 +1,10 @@
-﻿// Type: SmartQuant.Optimization.Optimizer
-// Assembly: SmartQuant.Optimization, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 1C417731-0514-4808-9329-6B635F19637E
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Optimization.dll
-
-using E32I8CMPFnk6XwkgnC;
-using oCwfgZHxO2ybCWH66L;
+// Type: SmartQuant.Optimization.Optimizer
 using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Optimization
+namespace FreeQuant.Optimization
 {
   public abstract class Optimizer : ParamSet
   {
@@ -125,17 +119,13 @@ namespace SmartQuant.Optimization
 
     public event EventHandler BestObjectiveReceived;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Optimizer(IOptimizable Object)
+	public Optimizer(IOptimizable Object) : base()
     {
-      C7bjlF4Ph208kGmVJO.IHdBTbCzDaa6o();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fOptimizable = Object;
       this.a6dDUjNQ6();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void a6dDUjNQ6()
     {
       this.fType = EOptimizerType.Optimizer;
@@ -145,19 +135,16 @@ namespace SmartQuant.Optimization
       this.fLastObjective = 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int GetNParamSubset()
     {
       return this.fNParamSubset;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SetNParamSubset(int NParamSubset)
     {
       this.fNParamSubset = NParamSubset;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Optimize()
     {
       this.stopped = false;

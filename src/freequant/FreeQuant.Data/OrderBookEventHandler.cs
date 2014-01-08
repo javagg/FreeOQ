@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.Data
+namespace FreeQuant.Data
 {
-  public delegate void OrderBookEventHandler(object sender, OrderBookEventArgs args);
+	public delegate void OrderBookEventHandler(object sender,OrderBookEventArgs args);
 }

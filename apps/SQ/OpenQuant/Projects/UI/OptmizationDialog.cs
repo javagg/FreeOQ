@@ -7,7 +7,7 @@ using OpenQuant;
 using OpenQuant.Projects.UI.Items;
 using OpenQuant.Properties;
 using OpenQuant.Trading;
-using SmartQuant.Optimization;
+using FreeQuant.Optimization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

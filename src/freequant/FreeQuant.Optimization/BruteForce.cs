@@ -1,16 +1,9 @@
-﻿// Type: SmartQuant.Optimization.BruteForce
-// Assembly: SmartQuant.Optimization, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 1C417731-0514-4808-9329-6B635F19637E
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Optimization.dll
-
-using E32I8CMPFnk6XwkgnC;
-using oCwfgZHxO2ybCWH66L;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace SmartQuant.Optimization
+namespace FreeQuant.Optimization
 {
   public class BruteForce : Optimizer
   {
@@ -18,16 +11,11 @@ namespace SmartQuant.Optimization
     private double Acwl1WFnU;
     private double[] KN0nVxPcU;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BruteForce(IOptimizable Optimizable)
+	public BruteForce(IOptimizable Optimizable) : base(Optimizable)
     {
-      C7bjlF4Ph208kGmVJO.IHdBTbCzDaa6o();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Optimizable);
       this.fType = EOptimizerType.BruteForce;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void BCW4H66LP([In] int obj0)
     {
       if (this.stopped)
@@ -53,7 +41,6 @@ namespace SmartQuant.Optimization
         this.Step();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Step()
     {
       this.Update();
@@ -68,7 +55,6 @@ namespace SmartQuant.Optimization
       Application.DoEvents();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Optimize()
     {
       base.Optimize();

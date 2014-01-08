@@ -1,4 +1,4 @@
-﻿using LI7wYoxjcQSGYmaiNa;
+using LI7wYoxjcQSGYmaiNa;
 using RZ1j9O1DCcsDf19ge6;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
@@ -27,7 +27,6 @@ namespace FreeQuant.Execution
       this.t1OfD4U1U = new Dictionary<Type, int>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Open(Type connectionType, string connectionString)
     {
       this.cMOyAvus8 = (IDbConnection) Activator.CreateInstance(connectionType, true);
@@ -37,7 +36,6 @@ namespace FreeQuant.Execution
       this.zNagDpvUO();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddOrder(IOrder order)
     {
       if (order.Id != -1)
@@ -60,7 +58,6 @@ namespace FreeQuant.Execution
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddReport(IOrder order, FIXExecutionReport report)
     {
       lock (this)
@@ -80,7 +77,6 @@ namespace FreeQuant.Execution
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Remove(IOrder order)
     {
       lock (this)
@@ -93,13 +89,11 @@ namespace FreeQuant.Execution
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Close()
     {
       this.cMOyAvus8.Close();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void zNagDpvUO()
     {
       IDbCommand command = this.cMOyAvus8.CreateCommand();
@@ -116,7 +110,6 @@ namespace FreeQuant.Execution
       command.Dispose();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public OrderList Load()
     {
       lock (this)
@@ -163,7 +156,6 @@ namespace FreeQuant.Execution
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private int Hblu18jwZ([In] IOrder obj0)
     {
       Type type = obj0.GetType();
@@ -185,7 +177,6 @@ namespace FreeQuant.Execution
       return this.t1OfD4U1U[type];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void TQt5NviMg()
     {
       this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1874), p9eligYgcNHo8cieFV.RdvEpVlLR7(1890), p9eligYgcNHo8cieFV.RdvEpVlLR7(1920));
@@ -193,7 +184,6 @@ namespace FreeQuant.Execution
       this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1982), p9eligYgcNHo8cieFV.RdvEpVlLR7(1998), p9eligYgcNHo8cieFV.RdvEpVlLR7(2026));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void GvA89FjyZ([In] string obj0, [In] string obj1, [In] string obj2)
     {
     }

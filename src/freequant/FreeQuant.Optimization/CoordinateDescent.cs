@@ -1,15 +1,8 @@
-﻿// Type: SmartQuant.Optimization.CoordinateDescent
-// Assembly: SmartQuant.Optimization, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 1C417731-0514-4808-9329-6B635F19637E
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Optimization.dll
-
-using E32I8CMPFnk6XwkgnC;
-using oCwfgZHxO2ybCWH66L;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Optimization
+namespace FreeQuant.Optimization
 {
   public class CoordinateDescent : Optimizer
   {
@@ -19,7 +12,7 @@ namespace SmartQuant.Optimization
 
     public double DescentStepSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.rMbL3XWM4;
       }
@@ -29,29 +22,23 @@ namespace SmartQuant.Optimization
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public CoordinateDescent(IOptimizable Optimizable)
+	public CoordinateDescent(IOptimizable Optimizable) : base(Optimizable)
     {
-      C7bjlF4Ph208kGmVJO.IHdBTbCzDaa6o();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Optimizable);
+
       this.fType = EOptimizerType.CoordinateDescent;
       this.rMbL3XWM4 = 0.01;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double GetDescentStepSize()
     {
       return this.rMbL3XWM4;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SetDescentStepSize(double DescentStepSize)
     {
       this.rMbL3XWM4 = DescentStepSize;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private bool ytt95IRFu([In] int obj0)
     {
       double num1 = this.fParam[obj0];
@@ -91,7 +78,6 @@ namespace SmartQuant.Optimization
       return flag2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Optimize()
     {
       base.Optimize();
@@ -107,7 +93,6 @@ namespace SmartQuant.Optimization
       while (!flag);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Print()
     {
       base.Print();

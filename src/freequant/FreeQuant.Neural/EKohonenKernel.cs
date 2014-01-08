@@ -3,7 +3,7 @@
 // MVID: E5DFC29A-4534-4F54-827A-AC305F5F2864
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Neural.dll
 
-namespace SmartQuant.Neural
+namespace FreeQuant.Neural
 {
   public enum EKohonenKernel
   {

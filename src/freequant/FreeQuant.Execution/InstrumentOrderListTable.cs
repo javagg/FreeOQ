@@ -1,4 +1,4 @@
-﻿using RZ1j9O1DCcsDf19ge6;
+using RZ1j9O1DCcsDf19ge6;
 using FreeQuant.FIX;
 using System.Runtime.CompilerServices;
 

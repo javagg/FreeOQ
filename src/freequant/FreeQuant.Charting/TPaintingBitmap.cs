@@ -1,4 +1,4 @@
-﻿// Type: SmartQuant.Charting.TPaintingBitmap
+// Type: SmartQuant.Charting.TPaintingBitmap
 // Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
 // MVID: 31D4C736-04FD-420E-87A7-219DB548155F
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
@@ -23,7 +23,7 @@ namespace SmartQuant.Charting
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.LF5CHsppRm;
       }
@@ -31,7 +31,7 @@ namespace SmartQuant.Charting
 
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.tNWCv5YncG;
       }
@@ -39,30 +39,17 @@ namespace SmartQuant.Charting
 
     public bool Valid
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.HgMCE3F1vm != null;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TPaintingBitmap()
-    {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public TPaintingBitmap(int W, int H)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.BeginDrawing(W, H);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public bool BeginDrawing(int W, int H)
     {
       this.LF5CHsppRm = W;
@@ -72,7 +59,6 @@ namespace SmartQuant.Charting
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Bitmap Get()
     {
       Bitmap bitmap = new Bitmap(this.LF5CHsppRm, this.tNWCv5YncG, PixelFormat.Format32bppRgb);
@@ -83,44 +69,37 @@ namespace SmartQuant.Charting
       return bitmap;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public int intGetPixel(int x, int y)
     {
       return this.HgMCE3F1vm[this.LF5CHsppRm * y + x];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Color ColorGetPixel(int x, int y)
     {
       return Color.FromArgb(this.HgMCE3F1vm[this.LF5CHsppRm * y + x]);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SetPixel(int x, int y, int c)
     {
       this.HgMCE3F1vm[this.LF5CHsppRm * y + x] = c;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SetPixel(int x, int y, Color c)
     {
       this.HgMCE3F1vm[this.LF5CHsppRm * y + x] = c.ToArgb();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Fill(int c)
     {
       for (int index = 0; index < this.hZqCU3rUEJ; ++index)
         this.HgMCE3F1vm[index] = c;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Fill(Color c)
     {
       this.Fill(c.ToArgb());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public unsafe void FillRectangle(int c, int x, int y, int w, int h)
     {
       if (x + w > this.LF5CHsppRm)
@@ -152,7 +131,6 @@ namespace SmartQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void FillRectangle(Color c, int x, int y, int w, int h)
     {
       this.FillRectangle(c.ToArgb(), x, y, w, h);

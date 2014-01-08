@@ -1,19 +1,19 @@
-﻿// Type: SmartQuant.Trading.ATSCrossComponent
+// Type: SmartQuant.Trading.ATSCrossComponent
 // Assembly: SmartQuant.Trading, Version=1.0.5036.28355, Culture=neutral, PublicKeyToken=null
 // MVID: C5705820-2ED1-4F4A-8256-821635A4814B
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Trading.dll
 
 using l3Z5ZAp2dkqyZZDck9P;
-using SmartQuant;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
+using FreeQuant;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   [StrategyComponent("{E70A6417-E7FA-4ec1-BC16-B03DE53C6E85}", ComponentType.ATSCrossComponent, Description = "", Name = "Default_ATSCrossComponent")]
   public class ATSCrossComponent : ATSStrategyMultiComponent

@@ -30,10 +30,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing.Design" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QUIKFIX.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIXApplication\FreeQuant.FIXApplication.csproj">
+      <Project>{3D4F9F19-9481-41E6-9FBB-1560E5CFC345}</Project>
+      <Name>FreeQuant.FIXApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

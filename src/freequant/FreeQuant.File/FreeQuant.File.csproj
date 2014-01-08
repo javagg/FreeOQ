@@ -30,9 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataFile.cs" />
     <Compile Include="DefragmentCancelEventArgs.cs" />
     <Compile Include="DefragmentCancelEventHandler.cs" />
@@ -47,5 +47,12 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Indexing\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

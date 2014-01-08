@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.Execution
+namespace FreeQuant.Execution
 {
-  public delegate void OrderEventHandler(OrderEventArgs args);
+	public delegate void OrderEventHandler(OrderEventArgs args);
 }
