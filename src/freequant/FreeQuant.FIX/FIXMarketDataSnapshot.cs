@@ -1068,9 +1068,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataSnapshot()
+    public FIXMarketDataSnapshot():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.w6RtvjSq7P = new ArrayList();
       this.nJrtd8TnPs = new ArrayList();
       this.ytytaFo0H5 = new ArrayList();
@@ -1078,14 +1078,11 @@ namespace FreeQuant.FIX
       this.WcttKmvHIu = new ArrayList();
       this.SMYt0fhpdC = new ArrayList();
       this.IuYtDCxTCh = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataSnapshot(int NoMDEntries)
+
+    public FIXMarketDataSnapshot(int NoMDEntries):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.w6RtvjSq7P = new ArrayList();
       this.nJrtd8TnPs = new ArrayList();
       this.ytytaFo0H5 = new ArrayList();
@@ -1093,12 +1090,11 @@ namespace FreeQuant.FIX
       this.WcttKmvHIu = new ArrayList();
       this.SMYt0fhpdC = new ArrayList();
       this.IuYtDCxTCh = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.NoMDEntries = NoMDEntries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.w6RtvjSq7P[i];

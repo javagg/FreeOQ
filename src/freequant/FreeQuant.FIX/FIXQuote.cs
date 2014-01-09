@@ -2019,9 +2019,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuote()
+    public FIXQuote():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.iwuZEwh7JJ = new ArrayList();
       this.cByZ3e2Tev = new ArrayList();
       this.X3eZFCmovj = new ArrayList();
@@ -2031,14 +2030,12 @@ namespace FreeQuant.FIX
       this.YHiZc08WeX = new ArrayList();
       this.zWtZzWsHMl = new ArrayList();
       this.KNauSBVopc = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuote(string QuoteID)
+
+    public FIXQuote(string QuoteID):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.iwuZEwh7JJ = new ArrayList();
       this.cByZ3e2Tev = new ArrayList();
       this.X3eZFCmovj = new ArrayList();
@@ -2048,8 +2045,7 @@ namespace FreeQuant.FIX
       this.YHiZc08WeX = new ArrayList();
       this.zWtZzWsHMl = new ArrayList();
       this.KNauSBVopc = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.QuoteID = QuoteID;
     }
 

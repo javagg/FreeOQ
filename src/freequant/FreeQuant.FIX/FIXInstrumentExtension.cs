@@ -47,12 +47,11 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXInstrumentExtension()
+    public FIXInstrumentExtension(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.hGw8TMaSJI = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

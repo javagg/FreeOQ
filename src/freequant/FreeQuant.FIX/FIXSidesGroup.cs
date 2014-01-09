@@ -820,36 +820,30 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSidesGroup()
+    public FIXSidesGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.vPG8C11oa0 = new ArrayList();
       this.iRW82mr2MB = new ArrayList();
       this.ag28cie8Ob = new ArrayList();
       this.QYa8zWVPHw = new ArrayList();
       this.M2sZSfWcqo = new ArrayList();
       this.efTZUgCCCC = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSidesGroup(char Side, string OrderID)
+    public FIXSidesGroup(char Side, string OrderID):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.vPG8C11oa0 = new ArrayList();
       this.iRW82mr2MB = new ArrayList();
       this.ag28cie8Ob = new ArrayList();
       this.QYa8zWVPHw = new ArrayList();
       this.M2sZSfWcqo = new ArrayList();
       this.efTZUgCCCC = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Side = Side;
       this.OrderID = OrderID;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXPartyIDsGroup GetPartyIDsGroup(int i)
     {
       if (i < this.NoPartyIDs)

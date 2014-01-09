@@ -121,13 +121,5 @@ namespace FreeQuant.FIX
         this.AddDoubleField(898, value);
       }
     }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXFinancingDetails()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
   }
 }

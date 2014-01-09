@@ -19,12 +19,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralRequestEventArgs(FIXCollateralRequest CollateralRequest)
+    public FIXCollateralRequestEventArgs(FIXCollateralRequest CollateralRequest):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Mwi85UHN0j = CollateralRequest;
     }
   }

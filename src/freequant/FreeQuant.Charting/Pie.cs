@@ -125,30 +125,21 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Pie()
+    public Pie():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Xa6CkQ4RMs();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Pie(string Name)
+    public Pie(string Name):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Jn8CarsXXa = Name;
       this.Xa6CkQ4RMs();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Pie(string Name, string Title)
+    public Pie(string Name, string Title):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Jn8CarsXXa = Name;
       this.zy6CTP4pXG = Title;
       this.Xa6CkQ4RMs();

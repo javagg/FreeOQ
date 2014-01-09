@@ -340,16 +340,15 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double Y)
+
+    public TMarker(double X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
@@ -388,16 +387,15 @@ namespace FreeQuant.Charting
       this.syl3vbh6Kv();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double Y, Color Color)
+
+    public TMarker(double X, double Y, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
@@ -405,16 +403,15 @@ namespace FreeQuant.Charting
       this.fColor = Color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double Y, EMarkerStyle Style)
+
+    public TMarker(double X, double Y, EMarkerStyle Style):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
@@ -425,16 +422,15 @@ namespace FreeQuant.Charting
       this.fSize = 10;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(DateTime X, double Y, EMarkerStyle Style)
+
+    public TMarker(DateTime X, double Y, EMarkerStyle Style):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = (double) X.Ticks;
       this.fY = Y;
       this.fZ = 0.0;
@@ -445,16 +441,15 @@ namespace FreeQuant.Charting
       this.fSize = 10;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(string X, double Y, EMarkerStyle Style)
+
+    public TMarker(string X, double Y, EMarkerStyle Style):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = (double) DateTime.Parse(X).Ticks;
       this.fY = Y;
       this.fZ = 0.0;
@@ -465,32 +460,30 @@ namespace FreeQuant.Charting
       this.fSize = 10;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double Y, double Z)
+
+    public TMarker(double X, double Y, double Z):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+ 
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+ 
       this.fX = X;
       this.fY = Y;
       this.fZ = Z;
       this.syl3vbh6Kv();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double Y, double Z, Color Color)
+
+    public TMarker(double X, double Y, double Z, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = Y;
       this.fZ = Z;
@@ -498,16 +491,15 @@ namespace FreeQuant.Charting
       this.fColor = Color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double High, double Low, double Open, double Close)
+
+    public TMarker(double X, double High, double Low, double Open, double Close):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+     
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = 0.0;
       this.fZ = 0.0;
@@ -518,16 +510,15 @@ namespace FreeQuant.Charting
       this.syl3vbh6Kv();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMarker(double X, double High, double Low, double Open, double Close, Color Color)
+
+    public TMarker(double X, double High, double Low, double Open, double Close, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = 0.0;
       this.fZ = 0.0;

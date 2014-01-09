@@ -30,20 +30,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBeginSeqNoGroup()
+    public FIXBeginSeqNoGroup(int BeginSeqNo, int EndSeqNo):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBeginSeqNoGroup(int BeginSeqNo, int EndSeqNo)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.BeginSeqNo = BeginSeqNo;
       this.EndSeqNo = EndSeqNo;
     }

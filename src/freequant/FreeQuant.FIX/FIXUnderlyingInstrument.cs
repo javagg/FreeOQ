@@ -607,14 +607,10 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUnderlyingInstrument()
+    public FIXUnderlyingInstrument(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.gKmtA9fvHt = new ArrayList();
       this.nAat8HYJxy = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

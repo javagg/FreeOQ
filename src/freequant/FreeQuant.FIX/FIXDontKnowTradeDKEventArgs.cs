@@ -19,12 +19,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDontKnowTradeDKEventArgs(FIXDontKnowTradeDK DontKnowTradeDK)
+    public FIXDontKnowTradeDKEventArgs(FIXDontKnowTradeDK DontKnowTradeDK):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.DXUuAFPKBG = DontKnowTradeDK;
     }
   }

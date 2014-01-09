@@ -20,16 +20,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPositionQty()
+    public FIXPositionQty() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.pvdZmZLRBD = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXPositionsGroup GetPositionsGroup(int i)
     {
       if (i < this.NoPositions)
@@ -38,7 +34,6 @@ namespace FreeQuant.FIX
         return (FIXPositionsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXPositionsGroup group)
     {
       this.pvdZmZLRBD.Add((object) group);

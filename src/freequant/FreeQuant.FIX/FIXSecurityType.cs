@@ -104,12 +104,10 @@ namespace FreeQuant.FIX
     public const string NoSecurityType = "NONE";
     public const string Wildcard = "?";
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityType(string val)
+
+    public FIXSecurityType(string val):base(167, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(167, val);
+
     }
   }
 }

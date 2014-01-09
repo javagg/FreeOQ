@@ -570,25 +570,19 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXConfirmationRequest()
+    public FIXConfirmationRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.CG6ZfrYi4X = new ArrayList();
       this.EnxZ6m46JI = new ArrayList();
       this.qXlZq7RfDQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXConfirmationRequest(string ConfirmReqID, int ConfirmType, DateTime TransactTime)
+    public FIXConfirmationRequest(string ConfirmReqID, int ConfirmType, DateTime TransactTime):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.CG6ZfrYi4X = new ArrayList();
       this.EnxZ6m46JI = new ArrayList();
       this.qXlZq7RfDQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ConfirmReqID = ConfirmReqID;
       this.ConfirmType = ConfirmType;
       this.TransactTime = TransactTime;

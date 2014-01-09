@@ -2045,10 +2045,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteResponse()
+    public FIXQuoteResponse():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.KdQZLDZO4b = new ArrayList();
+       this.KdQZLDZO4b = new ArrayList();
       this.lD9ZK4AnWw = new ArrayList();
       this.estZ0v9ZfO = new ArrayList();
       this.tDSZDNIUZO = new ArrayList();
@@ -2057,14 +2056,12 @@ namespace FreeQuant.FIX
       this.kQZZHPUGL8 = new ArrayList();
       this.XuxZW0sy5M = new ArrayList();
       this.K1QZTnBspe = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteResponse(string QuoteRespID, int QuoteRespType)
+    public FIXQuoteResponse(string QuoteRespID, int QuoteRespType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.KdQZLDZO4b = new ArrayList();
       this.lD9ZK4AnWw = new ArrayList();
       this.estZ0v9ZfO = new ArrayList();
@@ -2074,8 +2071,6 @@ namespace FreeQuant.FIX
       this.kQZZHPUGL8 = new ArrayList();
       this.XuxZW0sy5M = new ArrayList();
       this.K1QZTnBspe = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.QuoteRespID = QuoteRespID;
       this.QuoteRespType = QuoteRespType;
     }

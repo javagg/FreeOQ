@@ -401,14 +401,12 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTestRequest()
+    public FIXTestRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.d2m7OTQRsV = new ArrayList();
       this.hc17xvKklH = new ArrayList();
       this.XS075ZJg53 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

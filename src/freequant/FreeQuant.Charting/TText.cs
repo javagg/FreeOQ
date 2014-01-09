@@ -143,12 +143,8 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TText(string Text, double X, double Y)
+    public TText(string Text, double X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
@@ -156,12 +152,10 @@ namespace FreeQuant.Charting
       this.aBfTaltcp();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TText(string Text, double X, double Y, Color Color)
+
+    public TText(string Text, double X, double Y, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
@@ -170,12 +164,8 @@ namespace FreeQuant.Charting
       this.fColor = Color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TText(string Text, DateTime X, double Y)
+    public TText(string Text, DateTime X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fX = (double) X.Ticks;
       this.fY = Y;
       this.fZ = 0.0;
@@ -183,12 +173,8 @@ namespace FreeQuant.Charting
       this.aBfTaltcp();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TText(string Text, DateTime X, double Y, Color Color)
+    public TText(string Text, DateTime X, double Y, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fX = (double) X.Ticks;
       this.fY = Y;
       this.fZ = 0.0;

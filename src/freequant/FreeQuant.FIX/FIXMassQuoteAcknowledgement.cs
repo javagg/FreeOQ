@@ -584,27 +584,21 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMassQuoteAcknowledgement()
+    public FIXMassQuoteAcknowledgement():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.GaVuRV4Wao = new ArrayList();
       this.LeEu4vPBR2 = new ArrayList();
       this.iH4ueZqiT7 = new ArrayList();
       this.p5guGGYMj7 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMassQuoteAcknowledgement(int QuoteStatus)
+    public FIXMassQuoteAcknowledgement(int QuoteStatus):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.GaVuRV4Wao = new ArrayList();
       this.LeEu4vPBR2 = new ArrayList();
       this.iH4ueZqiT7 = new ArrayList();
       this.p5guGGYMj7 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.QuoteStatus = QuoteStatus;
     }
 

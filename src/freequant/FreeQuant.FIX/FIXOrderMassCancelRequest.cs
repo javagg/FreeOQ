@@ -1677,32 +1677,30 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderMassCancelRequest()
+    public FIXOrderMassCancelRequest() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.XjF8r7Tmbo = new ArrayList();
       this.L378pFWHcw = new ArrayList();
       this.Rec8MK2iIw = new ArrayList();
       this.Csk8vjAmoD = new ArrayList();
       this.h698d91xPA = new ArrayList();
       this.fKP8aMJdkR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXOrderMassCancelRequest(string ClOrdID, char MassCancelRequestType, DateTime TransactTime)
+        : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.XjF8r7Tmbo = new ArrayList();
       this.L378pFWHcw = new ArrayList();
       this.Rec8MK2iIw = new ArrayList();
       this.Csk8vjAmoD = new ArrayList();
       this.h698d91xPA = new ArrayList();
       this.fKP8aMJdkR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ClOrdID = ClOrdID;
       this.MassCancelRequestType = MassCancelRequestType;
       this.TransactTime = TransactTime;

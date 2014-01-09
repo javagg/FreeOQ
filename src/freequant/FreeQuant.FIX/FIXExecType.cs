@@ -25,15 +25,10 @@ namespace FreeQuant.FIX
     public const char TradeCancel = 'H';
     public const char OrderStatus = 'I';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXExecType(char val)
+    public FIXExecType(char val):base(150, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(150, val);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(char c)
     {
       switch (c)
@@ -81,7 +76,6 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static ExecType FromFIX(char execType)
     {
       switch (execType)

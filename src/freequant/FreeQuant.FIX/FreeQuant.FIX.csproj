@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,7 +30,14 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="quickfix_net">
+      <HintPath>..\..\..\..\..\..\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\quickfix_net.dll</HintPath>
+    </Reference>
+    <Reference Include="quickfix_net_messages">
+      <HintPath>..\..\..\..\..\..\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\quickfix_net_messages.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing.Design" />
@@ -443,7 +450,5 @@
     <Compile Include="TimeInForce.cs" />
     <Compile Include="Design\FIXGroupListEditor.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Design\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

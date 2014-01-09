@@ -1170,32 +1170,24 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDontKnowTradeDK()
+    public FIXDontKnowTradeDK():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.Ogcu8IXCFm = new ArrayList();
       this.iyQuZKYuN1 = new ArrayList();
       this.AKPuuMa84a = new ArrayList();
       this.HauutuZwql = new ArrayList();
       this.ESIuQvk2LT = new ArrayList();
       this.oAWu7Rfr7f = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDontKnowTradeDK(string OrderID, string ExecID, char DKReason, char Side)
+    public FIXDontKnowTradeDK(string OrderID, string ExecID, char DKReason, char Side):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.Ogcu8IXCFm = new ArrayList();
       this.iyQuZKYuN1 = new ArrayList();
       this.AKPuuMa84a = new ArrayList();
       this.HauutuZwql = new ArrayList();
       this.ESIuQvk2LT = new ArrayList();
       this.oAWu7Rfr7f = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrderID = OrderID;
       this.ExecID = ExecID;
       this.DKReason = DKReason;

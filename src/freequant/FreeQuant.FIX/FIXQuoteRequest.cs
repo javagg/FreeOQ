@@ -504,31 +504,25 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteRequest()
+    public FIXQuoteRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.BGCUq0LinJ = new ArrayList();
       this.amMUXL0LCW = new ArrayList();
       this.EcMUJTqSCk = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteRequest(string QuoteReqID, int NoRelatedSym)
+    public FIXQuoteRequest(string QuoteReqID, int NoRelatedSym):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.BGCUq0LinJ = new ArrayList();
       this.amMUXL0LCW = new ArrayList();
       this.EcMUJTqSCk = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.QuoteReqID = QuoteReqID;
       this.NoRelatedSym = NoRelatedSym;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.BGCUq0LinJ[i];

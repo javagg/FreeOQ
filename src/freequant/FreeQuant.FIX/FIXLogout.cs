@@ -439,13 +439,10 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXLogout()
+    public FIXLogout(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.O7g8Ivv2cs = new ArrayList();
       this.AWT8HVKFSu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

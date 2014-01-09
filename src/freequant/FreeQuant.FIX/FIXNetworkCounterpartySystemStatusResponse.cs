@@ -466,25 +466,22 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNetworkCounterpartySystemStatusResponse()
+    public FIXNetworkCounterpartySystemStatusResponse():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.HC5LOjfZr = new ArrayList();
       this.xE5KtPqdw = new ArrayList();
       this.t2T0p5f4x = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNetworkCounterpartySystemStatusResponse(int NetworkStatusResponseType, string NetworkResponseID, int NoCompIDs)
+    public FIXNetworkCounterpartySystemStatusResponse(int NetworkStatusResponseType, string NetworkResponseID, int NoCompIDs):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.HC5LOjfZr = new ArrayList();
       this.xE5KtPqdw = new ArrayList();
       this.t2T0p5f4x = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.NetworkStatusResponseType = NetworkStatusResponseType;
       this.NetworkResponseID = NetworkResponseID;
       this.NoCompIDs = NoCompIDs;

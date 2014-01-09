@@ -479,25 +479,18 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityList()
+    public FIXSecurityList(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.YJEycOQFab = new ArrayList();
       this.uhVyzW0LrR = new ArrayList();
       this.wMshSsQU99 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityList(string SecurityReqID, string SecurityResponseID, int SecurityRequestResult)
+    public FIXSecurityList(string SecurityReqID, string SecurityResponseID, int SecurityRequestResult): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.YJEycOQFab = new ArrayList();
       this.uhVyzW0LrR = new ArrayList();
       this.wMshSsQU99 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SecurityReqID = SecurityReqID;
       this.SecurityResponseID = SecurityResponseID;
       this.SecurityRequestResult = SecurityRequestResult;

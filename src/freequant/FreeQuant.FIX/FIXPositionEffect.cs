@@ -10,14 +10,11 @@ namespace FreeQuant.FIX
     public const char FIFO = 'F';
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPositionEffect(char val)
+    public FIXPositionEffect(char val):base(77, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(77, val);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static char Value(string Name)
     {
       if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4224))

@@ -2100,9 +2100,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAllocationReport()
+    public FIXAllocationReport():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+  
       this.zGEHWh7Wq = new ArrayList();
       this.U3PW4C2rL = new ArrayList();
       this.cZFTnGO10 = new ArrayList();
@@ -2115,14 +2115,14 @@ namespace FreeQuant.FIX
       this.TOplh0Hok = new ArrayList();
       this.iAOBbuh9U = new ArrayList();
       this.WClO9lu5i = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXAllocationReport(string AllocReportID, char AllocTransType, int AllocReportType, int AllocStatus, int AllocNoOrdersType, char Side, double Quantity, double AvgPx, DateTime TradeDate)
+        : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.zGEHWh7Wq = new ArrayList();
       this.U3PW4C2rL = new ArrayList();
       this.cZFTnGO10 = new ArrayList();
@@ -2135,8 +2135,7 @@ namespace FreeQuant.FIX
       this.TOplh0Hok = new ArrayList();
       this.iAOBbuh9U = new ArrayList();
       this.WClO9lu5i = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.AllocReportID = AllocReportID;
       this.AllocTransType = AllocTransType;
       this.AllocReportType = AllocReportType;

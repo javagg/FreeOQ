@@ -17,40 +17,24 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDoubleField(int tag)
+    public FIXDoubleField(int tag) : this(tag, 0.0)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, 0.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDoubleField(int tag, double value)
+    public FIXDoubleField(int tag, double value):base(tag)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(tag);
+
       this.Value = value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDoubleField(int tag, string value)
+    public FIXDoubleField(int tag, string value): this(tag, value, false)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, value, false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDoubleField(int tag, string value, bool invariantCulture)
+    public FIXDoubleField(int tag, string value, bool invariantCulture):  this(tag, invariantCulture ? double.Parse(value, (IFormatProvider) CultureInfo.InvariantCulture) : double.Parse(value))
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, invariantCulture ? double.Parse(value, (IFormatProvider) CultureInfo.InvariantCulture) : double.Parse(value));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
       return this.Value.ToString();

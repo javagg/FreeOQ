@@ -18,12 +18,8 @@ namespace FreeQuant.FIX
     public const char AsDefined = 'B';
     public const char Opposite = 'C';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSide(char val)
+    public FIXSide(char val):base(54, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(54, val);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

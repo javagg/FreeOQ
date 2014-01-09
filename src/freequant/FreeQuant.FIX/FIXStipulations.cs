@@ -20,13 +20,9 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXStipulations()
+    public FIXStipulations() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.DDFuaVuZbM = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

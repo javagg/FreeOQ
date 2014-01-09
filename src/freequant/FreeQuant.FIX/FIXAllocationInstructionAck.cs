@@ -610,27 +610,26 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAllocationInstructionAck()
+    public FIXAllocationInstructionAck():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Sr4uF6IwcY = new ArrayList();
       this.JsMuwo6Fsf = new ArrayList();
       this.vVduCyTLjj = new ArrayList();
       this.Autu2ScN8L = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXAllocationInstructionAck(string AllocID, DateTime TransactTime, int AllocStatus)
+        : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Sr4uF6IwcY = new ArrayList();
       this.JsMuwo6Fsf = new ArrayList();
       this.vVduCyTLjj = new ArrayList();
       this.Autu2ScN8L = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.AllocID = AllocID;
       this.TransactTime = TransactTime;
       this.AllocStatus = AllocStatus;

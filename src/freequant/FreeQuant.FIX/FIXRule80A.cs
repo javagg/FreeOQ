@@ -28,12 +28,8 @@ namespace FreeQuant.FIX
     public const char ProgramOrderNonIndexArbForOtherAgency = 'Y';
     public const char ShortExemptTransactionForNonMemberCompetingMarketMakerAAndRTypes = 'Z';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRule80A(char val)
+    public FIXRule80A(char val):base(47, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(47, val);
     }
   }
 }

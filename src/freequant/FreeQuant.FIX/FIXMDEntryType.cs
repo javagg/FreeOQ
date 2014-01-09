@@ -17,15 +17,10 @@ namespace FreeQuant.FIX
     public const char VWAP = '9';
     public const char Imbalance = 'A';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMDEntryType(char val)
+    public FIXMDEntryType(char val) : base(269, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(269, val);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(char c)
     {
       switch (c)

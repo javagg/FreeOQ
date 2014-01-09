@@ -467,27 +467,25 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListStrikePrice()
+    public FIXListStrikePrice() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.wLr7YpDwsi = new ArrayList();
       this.IyW7yTGBiV = new ArrayList();
       this.Nyo7hLKp3h = new ArrayList();
       this.RuY7Nem2Z6 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListStrikePrice(string ListID, int TotNoStrikes, int NoStrikes)
+    public FIXListStrikePrice(string ListID, int TotNoStrikes, int NoStrikes):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.wLr7YpDwsi = new ArrayList();
       this.IyW7yTGBiV = new ArrayList();
       this.Nyo7hLKp3h = new ArrayList();
       this.RuY7Nem2Z6 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ListID = ListID;
       this.TotNoStrikes = TotNoStrikes;
       this.NoStrikes = NoStrikes;

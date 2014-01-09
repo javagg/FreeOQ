@@ -140,22 +140,18 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitle(Pad Pad)
+    public TTitle(Pad Pad):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.zeN3moyxtg = Pad;
       this.keq3T1dEAX = "";
       this.Rgq3k0SxCt();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitle(Pad Pad, string Text)
+    public TTitle(Pad Pad, string Text):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.zeN3moyxtg = Pad;
       this.keq3T1dEAX = Text;
       this.Rgq3k0SxCt();

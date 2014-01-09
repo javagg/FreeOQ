@@ -1184,10 +1184,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRequestForPositionsAck()
+    public FIXRequestForPositionsAck(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.GdUt9sQDJC = new ArrayList();
       this.maltsblMHI = new ArrayList();
       this.Fe5tbmWZTa = new ArrayList();
@@ -1195,14 +1193,11 @@ namespace FreeQuant.FIX
       this.HyKtEUGH4O = new ArrayList();
       this.tXft34EY7x = new ArrayList();
       this.AkftFpNvh4 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXRequestForPositionsAck(string PosMaintRptID, int PosReqResult, int PosReqStatus, string Account, int AccountType)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
       this.GdUt9sQDJC = new ArrayList();
       this.maltsblMHI = new ArrayList();
       this.Fe5tbmWZTa = new ArrayList();
@@ -1210,8 +1205,6 @@ namespace FreeQuant.FIX
       this.HyKtEUGH4O = new ArrayList();
       this.tXft34EY7x = new ArrayList();
       this.AkftFpNvh4 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.PosMaintRptID = PosMaintRptID;
       this.PosReqResult = PosReqResult;
       this.PosReqStatus = PosReqStatus;

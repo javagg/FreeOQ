@@ -72,13 +72,5 @@ namespace FreeQuant.FIX
     public const string QuoteRequestReject = "AG";
     public const string RFQRequest = "AH";
     public const string QuoteStatusReport = "AI";
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMsgType(string val)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(35, val);
-    }
   }
 }

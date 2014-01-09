@@ -1196,32 +1196,30 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderStatusRequest()
+
+    public FIXOrderStatusRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.c84JYt900 = new ArrayList();
       this.jJwrJ9WyI = new ArrayList();
       this.eZapcJB3J = new ArrayList();
       this.PwiM5D9w1 = new ArrayList();
       this.sfhvlkiDC = new ArrayList();
       this.dXsd6ZadN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderStatusRequest(string ClOrdID, char Side)
+    public FIXOrderStatusRequest(string ClOrdID, char Side):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.c84JYt900 = new ArrayList();
       this.jJwrJ9WyI = new ArrayList();
       this.eZapcJB3J = new ArrayList();
       this.PwiM5D9w1 = new ArrayList();
       this.sfhvlkiDC = new ArrayList();
       this.dXsd6ZadN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ClOrdID = ClOrdID;
       this.Side = Side;
     }

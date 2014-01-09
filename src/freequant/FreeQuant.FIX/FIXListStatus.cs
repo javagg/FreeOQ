@@ -557,25 +557,21 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListStatus()
+    public FIXListStatus(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.NPRUDlPhcL = new ArrayList();
       this.qqkUPHN9iO = new ArrayList();
       this.aZGUITbNgm = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXListStatus(string ListID, int ListStatusType, int NoRpts, int ListOrderStatus, int RptSeq, int TotNoOrders, int NoOrders)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    : base(){
+
       this.NPRUDlPhcL = new ArrayList();
       this.qqkUPHN9iO = new ArrayList();
       this.aZGUITbNgm = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ListID = ListID;
       this.ListStatusType = ListStatusType;
       this.NoRpts = NoRpts;
@@ -585,19 +581,17 @@ namespace FreeQuant.FIX
       this.NoOrders = NoOrders;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXHopRefIDGroup GetHopRefIDGroup(int i)
+      public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.NPRUDlPhcL[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.NPRUDlPhcL.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -606,7 +600,6 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopsGroup group)
     {
       this.qqkUPHN9iO.Add((object) group);

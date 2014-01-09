@@ -594,38 +594,28 @@ namespace FreeQuant.FIX
         this.AddIntField(93, value);
       }
     }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlementInstructionRequest()
+  
+    public FIXSettlementInstructionRequest() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.vxyUuAgQZx = new ArrayList();
       this.eFQUtna8qN = new ArrayList();
       this.HynUQQ8O6j = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlementInstructionRequest(string SettlInstReqID, DateTime TransactTime)
+    public FIXSettlementInstructionRequest(string SettlInstReqID, DateTime TransactTime): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.vxyUuAgQZx = new ArrayList();
       this.eFQUtna8qN = new ArrayList();
       this.HynUQQ8O6j = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SettlInstReqID = SettlInstReqID;
       this.TransactTime = TransactTime;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.vxyUuAgQZx[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.vxyUuAgQZx.Add((object) group);

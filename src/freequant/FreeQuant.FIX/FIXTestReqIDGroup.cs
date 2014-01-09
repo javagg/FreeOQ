@@ -17,20 +17,9 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTestReqIDGroup()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTestReqIDGroup(string TestReqID)
+    public FIXTestReqIDGroup(string TestReqID) :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.TestReqID = TestReqID;
     }
   }

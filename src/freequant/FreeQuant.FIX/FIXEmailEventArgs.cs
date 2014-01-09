@@ -20,11 +20,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXEmailEventArgs(FIXEmail Email)
+    public FIXEmailEventArgs(FIXEmail Email): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.mnGQ7PEsVN = Email;
     }
   }

@@ -35,31 +35,23 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitleItem()
+    public TTitleItem():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.IXv0bEUjj = "";
       this.RGgaNDXfm = Color.Black;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitleItem(string Text)
+    public TTitleItem(string Text):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.IXv0bEUjj = Text;
       this.RGgaNDXfm = Color.Black;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitleItem(string Text, Color Color)
+    public TTitleItem(string Text, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.IXv0bEUjj = Text;
       this.RGgaNDXfm = Color;
     }

@@ -13,11 +13,8 @@ namespace FreeQuant.FIX
     public const int SpinOff = 7;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCorporateActionType(int val)
+    public FIXCorporateActionType(int val):base(10200, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(10200, val);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

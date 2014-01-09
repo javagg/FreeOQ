@@ -1366,31 +1366,26 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderCancelRequest()
+    public FIXOrderCancelRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.hfmtC4siS9 = new ArrayList();
       this.qrwt2VawNg = new ArrayList();
       this.WDrtcPF3A7 = new ArrayList();
       this.qiMtzZLgcI = new ArrayList();
       this.WYpQSbmcnC = new ArrayList();
       this.JJnQU746Iq = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderCancelRequest(string OrigClOrdID, string ClOrdID, char Side, DateTime TransactTime)
+    public FIXOrderCancelRequest(string OrigClOrdID, string ClOrdID, char Side, DateTime TransactTime):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.hfmtC4siS9 = new ArrayList();
       this.qrwt2VawNg = new ArrayList();
       this.WDrtcPF3A7 = new ArrayList();
       this.qiMtzZLgcI = new ArrayList();
       this.WYpQSbmcnC = new ArrayList();
       this.JJnQU746Iq = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.OrigClOrdID = OrigClOrdID;
       this.ClOrdID = ClOrdID;
       this.Side = Side;

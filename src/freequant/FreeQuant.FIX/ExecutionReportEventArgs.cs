@@ -31,11 +31,9 @@ namespace FreeQuant.FIX
       this.A0NurZyR7T = report;
     }
 
-    public ExecutionReportEventArgs(ExecutionReport report)
+    public ExecutionReportEventArgs(ExecutionReport report): this((NewOrderSingle) null, report)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector((NewOrderSingle) null, report);
+     
     }
   }
 }

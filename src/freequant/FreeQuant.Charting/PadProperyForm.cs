@@ -15,11 +15,9 @@ namespace FreeQuant.Charting
     private Container ahN3WtCyLA;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public PadProperyForm(object Object, Pad Pad)
+    public PadProperyForm(object Object, Pad Pad):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.nev3U8bfUe();
       this.KtO3rBrbaI = Object;
       this.evD3c4dHMV = Pad;

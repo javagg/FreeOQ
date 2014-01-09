@@ -452,23 +452,19 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListStatusRequest()
+    public FIXListStatusRequest() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.OcHULRraYs = new ArrayList();
       this.H1BUKhYFX4 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListStatusRequest(string ListID)
+
+    public FIXListStatusRequest(string ListID): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.OcHULRraYs = new ArrayList();
       this.H1BUKhYFX4 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ListID = ListID;
     }
 

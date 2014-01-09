@@ -599,12 +599,9 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Axis(Pad Pad)
+    public Axis(Pad Pad):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.G5v68auRhU = Pad;
       this.gck6XUIeCg = EAxisPosition.None;
       this.jiR6jl13Bb = 0.0;
@@ -614,12 +611,10 @@ namespace FreeQuant.Charting
       this.zNh621NQso();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Axis(Pad Pad, EAxisPosition Position)
+ 
+    public Axis(Pad Pad, EAxisPosition Position):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.G5v68auRhU = Pad;
       this.gck6XUIeCg = Position;
       this.jiR6jl13Bb = 0.0;
@@ -629,12 +624,10 @@ namespace FreeQuant.Charting
       this.zNh621NQso();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Axis(Pad Pad, double X1, double Y1, double X2, double Y2)
+
+    public Axis(Pad Pad, double X1, double Y1, double X2, double Y2):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.G5v68auRhU = Pad;
       this.gck6XUIeCg = EAxisPosition.None;
       this.jiR6jl13Bb = X1;

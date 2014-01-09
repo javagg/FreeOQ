@@ -20,16 +20,11 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXLegStipulations()
+    public FIXLegStipulations(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.RrQZhV6g8c = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXLegStipulationsGroup GetLegStipulationsGroup(int i)
     {
       if (i < this.NoLegStipulations)
@@ -38,7 +33,6 @@ namespace FreeQuant.FIX
         return (FIXLegStipulationsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXLegStipulationsGroup group)
     {
       this.RrQZhV6g8c.Add((object) group);

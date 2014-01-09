@@ -8,12 +8,8 @@ namespace FreeQuant.FIX
     public const int Put = 0;
     public const int Call = 1;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPutOrCall(int val)
+    public FIXPutOrCall(int val):base(201, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(201, val);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

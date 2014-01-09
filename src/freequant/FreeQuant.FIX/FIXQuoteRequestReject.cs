@@ -492,25 +492,18 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteRequestReject()
+    public FIXQuoteRequestReject():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.MVqApGIA1P = new ArrayList();
       this.D05AMRnA8n = new ArrayList();
       this.R0vAvFIYW5 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteRequestReject(string QuoteReqID, int QuoteRequestRejectReason, int NoRelatedSym)
+    public FIXQuoteRequestReject(string QuoteReqID, int QuoteRequestRejectReason, int NoRelatedSym):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.MVqApGIA1P = new ArrayList();
       this.D05AMRnA8n = new ArrayList();
       this.R0vAvFIYW5 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.QuoteReqID = QuoteReqID;
       this.QuoteRequestRejectReason = QuoteRequestRejectReason;
       this.NoRelatedSym = NoRelatedSym;

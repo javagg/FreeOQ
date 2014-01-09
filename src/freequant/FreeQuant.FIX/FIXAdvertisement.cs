@@ -1197,31 +1197,29 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAdvertisement()
+    public FIXAdvertisement():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.rilANGbTuy = new ArrayList();
       this.IC7AfLVruf = new ArrayList();
       this.Dn1A6xcG2M = new ArrayList();
       this.pciAqm75IL = new ArrayList();
       this.S6yAX2FwfJ = new ArrayList();
       this.pF5AJmqSQw = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAdvertisement(string AdvId, string AdvTransType, char AdvSide, double Quantity)
+    public FIXAdvertisement(string AdvId, string AdvTransType, char AdvSide, double Quantity) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+ 
       this.rilANGbTuy = new ArrayList();
       this.IC7AfLVruf = new ArrayList();
       this.Dn1A6xcG2M = new ArrayList();
       this.pciAqm75IL = new ArrayList();
       this.S6yAX2FwfJ = new ArrayList();
       this.pF5AJmqSQw = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.AdvId = AdvId;
       this.AdvTransType = AdvTransType;
       this.AdvSide = AdvSide;

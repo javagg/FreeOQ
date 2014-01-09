@@ -434,20 +434,10 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMDEntriesGroup()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMDEntriesGroup(char MDEntryType)
+
+    public FIXMDEntriesGroup(char MDEntryType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.MDEntryType = MDEntryType;
     }
   }

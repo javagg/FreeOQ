@@ -2445,10 +2445,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderCancelReplaceRequest()
+    public FIXOrderCancelReplaceRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.zNXxaM6Xu = new ArrayList();
       this.qP155eNm9 = new ArrayList();
       this.THJgABKWo = new ArrayList();
@@ -2457,14 +2455,12 @@ namespace FreeQuant.FIX
       this.H1Q4SNW22 = new ArrayList();
       this.TosenlNhM = new ArrayList();
       this.ilEGkYXNu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXOrderCancelReplaceRequest(string OrigClOrdID, string ClOrdID, char Side, DateTime TransactTime, char OrdType)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
+
       this.zNXxaM6Xu = new ArrayList();
       this.qP155eNm9 = new ArrayList();
       this.THJgABKWo = new ArrayList();
@@ -2473,8 +2469,7 @@ namespace FreeQuant.FIX
       this.H1Q4SNW22 = new ArrayList();
       this.TosenlNhM = new ArrayList();
       this.ilEGkYXNu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.OrigClOrdID = OrigClOrdID;
       this.ClOrdID = ClOrdID;
       this.Side = Side;

@@ -2048,9 +2048,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAllocationInstruction()
+    public FIXAllocationInstruction(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.gNvQ4Kp4fp = new ArrayList();
       this.P5oQekQ1Iq = new ArrayList();
       this.nWyQGOv07S = new ArrayList();
@@ -2063,14 +2063,13 @@ namespace FreeQuant.FIX
       this.mV8QFUe6Pr = new ArrayList();
       this.MJ8Qw0pblT = new ArrayList();
       this.KGvQCoSUkn = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXAllocationInstruction(string AllocID, char AllocTransType, int AllocType, int AllocNoOrdersType, char Side, double Quantity, double AvgPx, DateTime TradeDate)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    : base(){
+   
       this.gNvQ4Kp4fp = new ArrayList();
       this.P5oQekQ1Iq = new ArrayList();
       this.nWyQGOv07S = new ArrayList();
@@ -2083,8 +2082,7 @@ namespace FreeQuant.FIX
       this.mV8QFUe6Pr = new ArrayList();
       this.MJ8Qw0pblT = new ArrayList();
       this.KGvQCoSUkn = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.AllocID = AllocID;
       this.AllocTransType = AllocTransType;
       this.AllocType = AllocType;

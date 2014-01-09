@@ -9,11 +9,8 @@ namespace FreeQuant.FIX
     public const char CancelReplaceRequest = '2';
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCxlRejResponseTo(char value)
+    public FIXCxlRejResponseTo(char value):base(434, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(434, value);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

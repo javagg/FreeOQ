@@ -39,19 +39,14 @@ namespace FreeQuant.FIX
     [Browsable(false)]
     public FIXGroupTable Groups { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXGroup()
+    public FIXGroup() :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.d1F8MdRGd = new Dictionary<int, FIXField>();
       this.oncZo3Ix5 = new object();
       this.Id = -1;
       this.Groups = new FIXGroupTable();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public bool ContainsField(int tag)
     {
       lock (this.oncZo3Ix5)

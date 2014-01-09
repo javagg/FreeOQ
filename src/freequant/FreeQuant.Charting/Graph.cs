@@ -276,36 +276,29 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Graph()
+    public Graph():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ITuYxYXJ3();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Graph(string Name)
+    public Graph(string Name):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CFyB7PnIL = Name;
       this.ITuYxYXJ3();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Graph(string Name, string Title)
+    public Graph(string Name, string Title):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CFyB7PnIL = Name;
       this.ts4lgt9JG = Title;
       this.ITuYxYXJ3();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     private void UX36ku1gb([In] double obj0, [In] double obj1)
     {
       this.XD92QjcMc = Math.Min(this.XD92QjcMc, obj0);

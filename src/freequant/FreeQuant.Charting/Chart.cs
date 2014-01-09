@@ -363,35 +363,20 @@ namespace FreeQuant.Charting
 
     public event EventHandler PadSplitMouseUp;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Chart()
+    public Chart():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Init();
       this.Name = "";
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Chart(string Name)
+    public Chart(string Name):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.Init();
       this.Name = Name;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Chart(DateTime date)
-    {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected virtual void Init()
     {
       this.InitializeComponent();
@@ -418,7 +403,6 @@ namespace FreeQuant.Charting
       this.fSessionGridColor = Color.Blue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Pad cd(int padIndex)
     {
       if (padIndex < 1)

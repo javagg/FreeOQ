@@ -152,11 +152,8 @@ namespace FreeQuant.Charting.Draw3D
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TMat3x3(double a, double b, double c, double d, double e, double f, double g, double h, double i)
+    public TMat3x3(double a, double b, double c, double d, double e, double f, double g, double h, double i):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      this.\u002Ector();
       this.a7ECjWrecf[0, 0] = a;
       this.a7ECjWrecf[0, 1] = b;
       this.a7ECjWrecf[0, 2] = c;
@@ -168,7 +165,6 @@ namespace FreeQuant.Charting.Draw3D
       this.a7ECjWrecf[2, 2] = i;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static bool operator ==(TMat3x3 b, TMat3x3 a)
     {
       if (b.xx == a.xx && b.xy == a.xy && (b.xz == a.xz && b.yx == a.yx) && (b.yy == a.yy && b.yz == a.xz && (b.zx == a.zx && b.zy == a.zy)))
@@ -183,13 +179,11 @@ namespace FreeQuant.Charting.Draw3D
       return !(b == a);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static TMat3x3 operator -(TMat3x3 m)
     {
       return new TMat3x3(-m.xx, -m.xy, -m.xz, -m.yx, -m.yy, -m.yz, -m.zx, -m.zy, -m.zz);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static TMat3x3 operator *(TMat3x3 b, TMat3x3 a)
     {
       TMat3x3 tmat3x3 = new TMat3x3();
@@ -204,7 +198,6 @@ namespace FreeQuant.Charting.Draw3D
       return tmat3x3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static TMat3x3 operator *(double k, TMat3x3 m)
     {
       TMat3x3 tmat3x3 = new TMat3x3();
@@ -216,13 +209,11 @@ namespace FreeQuant.Charting.Draw3D
       return tmat3x3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static TMat3x3 operator *(TMat3x3 m, double k)
     {
       return k * m;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static TVec3 operator *(TMat3x3 m, TVec3 v)
     {
       TVec3 tvec3 = new TVec3();
@@ -234,7 +225,6 @@ namespace FreeQuant.Charting.Draw3D
       return tvec3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static TVec3 operator *(TVec3 v, TMat3x3 m)
     {
       TVec3 tvec3 = new TVec3();
@@ -246,7 +236,6 @@ namespace FreeQuant.Charting.Draw3D
       return tvec3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SetZero()
     {
       for (int index1 = 0; index1 < 3; ++index1)
@@ -256,7 +245,6 @@ namespace FreeQuant.Charting.Draw3D
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void SetNumber(double k)
     {
       this.SetZero();

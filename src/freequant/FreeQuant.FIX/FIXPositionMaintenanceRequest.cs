@@ -1277,10 +1277,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPositionMaintenanceRequest()
+    public FIXPositionMaintenanceRequest() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.sK87EDJ2i6 = new ArrayList();
       this.sWs7315wWk = new ArrayList();
       this.mR97FYHgyv = new ArrayList();
@@ -1290,14 +1288,11 @@ namespace FreeQuant.FIX
       this.qud7ccLnZy = new ArrayList();
       this.QQo7z1d5YB = new ArrayList();
       this.ldEYSqPA2w = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXPositionMaintenanceRequest(string PosReqID, int PosTransType, int PosMaintAction, DateTime ClearingBusinessDate, string Account, int AccountType, DateTime TransactTime)
+    : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.sK87EDJ2i6 = new ArrayList();
       this.sWs7315wWk = new ArrayList();
       this.mR97FYHgyv = new ArrayList();
@@ -1307,8 +1302,7 @@ namespace FreeQuant.FIX
       this.qud7ccLnZy = new ArrayList();
       this.QQo7z1d5YB = new ArrayList();
       this.ldEYSqPA2w = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.PosReqID = PosReqID;
       this.PosTransType = PosTransType;
       this.PosMaintAction = PosMaintAction;

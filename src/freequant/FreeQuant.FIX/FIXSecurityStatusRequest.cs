@@ -1080,10 +1080,9 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityStatusRequest()
+    public FIXSecurityStatusRequest(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.cgJZRxynZ2 = new ArrayList();
       this.P0rZ4XsHBW = new ArrayList();
       this.nqHZetlt4l = new ArrayList();
@@ -1091,14 +1090,11 @@ namespace FreeQuant.FIX
       this.opQZ93MJei = new ArrayList();
       this.FxFZsk48SA = new ArrayList();
       this.TxiZbE8CLQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityStatusRequest(string SecurityStatusReqID, char SubscriptionRequestType)
+    public FIXSecurityStatusRequest(string SecurityStatusReqID, char SubscriptionRequestType): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.cgJZRxynZ2 = new ArrayList();
       this.P0rZ4XsHBW = new ArrayList();
       this.nqHZetlt4l = new ArrayList();
@@ -1106,25 +1102,23 @@ namespace FreeQuant.FIX
       this.opQZ93MJei = new ArrayList();
       this.FxFZsk48SA = new ArrayList();
       this.TxiZbE8CLQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.SecurityStatusReqID = SecurityStatusReqID;
       this.SubscriptionRequestType = SubscriptionRequestType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.cgJZRxynZ2[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.cgJZRxynZ2.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -1133,14 +1127,12 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopsGroup group)
     {
       this.P0rZ4XsHBW.Add((object) group);
       ++this.NoHops;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXSecurityAltIDGroup GetSecurityAltIDGroup(int i)
     {
       if (i < this.NoSecurityAltID)

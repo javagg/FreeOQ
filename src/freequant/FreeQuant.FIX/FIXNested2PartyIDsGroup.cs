@@ -59,16 +59,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNested2PartyIDsGroup()
+    public FIXNested2PartyIDsGroup(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.EoU7iJrCH8 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXNested2PartySubIDsGroup GetNested2PartySubIDsGroup(int i)
     {
       if (i < this.NoNested2PartySubIDs)

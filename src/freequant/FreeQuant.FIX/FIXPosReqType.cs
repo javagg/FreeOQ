@@ -11,14 +11,6 @@ namespace FreeQuant.FIX
     public const int Assignments = 3;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPosReqType(int value)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(724, value);
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static PosReqType FromFIX(int value)
     {
       switch (value)

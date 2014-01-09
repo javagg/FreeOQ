@@ -20,16 +20,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTrdRegTimestamps()
+    public FIXTrdRegTimestamps():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.nl7tuH2vqb = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXTrdRegTimestampsGroup GetTrdRegTimestampsGroup(int i)
     {
       if (i < this.NoTrdRegTimestamps)

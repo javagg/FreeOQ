@@ -543,29 +543,21 @@ namespace FreeQuant.FIX
         this.AddIntField(93, value);
       }
     }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMassQuote()
+    public FIXMassQuote(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.DX4Yf0or4i = new ArrayList();
+        this.DX4Yf0or4i = new ArrayList();
       this.SY3Y6yqPJd = new ArrayList();
       this.DDDYqsWF4F = new ArrayList();
       this.FcVYXWVOng = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMassQuote(string QuoteID, int NoQuoteSets)
+
+    public FIXMassQuote(string QuoteID, int NoQuoteSets): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.DX4Yf0or4i = new ArrayList();
       this.SY3Y6yqPJd = new ArrayList();
       this.DDDYqsWF4F = new ArrayList();
       this.FcVYXWVOng = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.QuoteID = QuoteID;
       this.NoQuoteSets = NoQuoteSets;
     }

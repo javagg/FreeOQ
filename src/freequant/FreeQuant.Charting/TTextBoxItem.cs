@@ -46,22 +46,17 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTextBoxItem(string Text, Color Color, Font Font)
+    public TTextBoxItem(string Text, Color Color, Font Font) :base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.aGsoVk3Bc = Text;
       this.kP83TXqlQ = Color;
       this.jLCCwmdU2 = Font;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTextBoxItem(string Text, Color Color)
+
+    public TTextBoxItem(string Text, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.aGsoVk3Bc = Text;
       this.kP83TXqlQ = Color;
       this.jLCCwmdU2 = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(0), 8f);

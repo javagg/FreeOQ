@@ -478,23 +478,16 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradingSessionStatusRequest()
+    public FIXTradingSessionStatusRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.WkwZ8mRO2H = new ArrayList();
       this.nqBZZjopZP = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradingSessionStatusRequest(string TradSesReqID, char SubscriptionRequestType)
+    public FIXTradingSessionStatusRequest(string TradSesReqID, char SubscriptionRequestType) :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.WkwZ8mRO2H = new ArrayList();
       this.nqBZZjopZP = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.TradSesReqID = TradSesReqID;
       this.SubscriptionRequestType = SubscriptionRequestType;
     }

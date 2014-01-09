@@ -623,27 +623,22 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAllocationReportAck()
+    public FIXAllocationReportAck() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.Akwho0uIbB = new ArrayList();
       this.WwhhRsWHQa = new ArrayList();
       this.N5yh4QG7gn = new ArrayList();
       this.PpghewMKSC = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAllocationReportAck(string AllocReportID, string AllocID, DateTime TransactTime, int AllocStatus)
+  
+    public FIXAllocationReportAck(string AllocReportID, string AllocID, DateTime TransactTime, int AllocStatus) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Akwho0uIbB = new ArrayList();
       this.WwhhRsWHQa = new ArrayList();
       this.N5yh4QG7gn = new ArrayList();
       this.PpghewMKSC = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.AllocReportID = AllocReportID;
       this.AllocID = AllocID;
       this.TransactTime = TransactTime;

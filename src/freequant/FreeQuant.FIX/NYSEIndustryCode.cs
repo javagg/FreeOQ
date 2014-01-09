@@ -147,12 +147,10 @@ namespace FreeQuant.FIX
     public const string OilRoyaltyTrust = "412B";
     public const string OtherTrusts = "412C";
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public NYSEIndustryCode(string val)
+
+    public NYSEIndustryCode(string val):base(10100, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(10100, val);
+
     }
   }
 }

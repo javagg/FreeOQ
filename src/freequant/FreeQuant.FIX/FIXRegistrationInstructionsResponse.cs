@@ -531,25 +531,19 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRegistrationInstructionsResponse()
+    public FIXRegistrationInstructionsResponse():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.eck7u1qXUQ = new ArrayList();
       this.Bn17t15hg2 = new ArrayList();
       this.uap7Q3KNyo = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRegistrationInstructionsResponse(string RegistID, char RegistTransType, string RegistRefID, char RegistStatus)
+    public FIXRegistrationInstructionsResponse(string RegistID, char RegistTransType, string RegistRefID, char RegistStatus):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.eck7u1qXUQ = new ArrayList();
       this.Bn17t15hg2 = new ArrayList();
       this.uap7Q3KNyo = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.RegistID = RegistID;
       this.RegistTransType = RegistTransType;
       this.RegistRefID = RegistRefID;

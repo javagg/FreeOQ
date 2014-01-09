@@ -574,9 +574,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNews()
+    public FIXNews(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.MH4hyXIUDJ = new ArrayList();
       this.JbRhh7XBIs = new ArrayList();
       this.XiIhNDmNOZ = new ArrayList();
@@ -584,14 +584,13 @@ namespace FreeQuant.FIX
       this.aEkh6BMR7t = new ArrayList();
       this.sqDhql9Ewp = new ArrayList();
       this.pjghXuYheN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNews(string Headline, int NoLinesOfText)
+
+    public FIXNews(string Headline, int NoLinesOfText): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.MH4hyXIUDJ = new ArrayList();
       this.JbRhh7XBIs = new ArrayList();
       this.XiIhNDmNOZ = new ArrayList();
@@ -599,8 +598,7 @@ namespace FreeQuant.FIX
       this.aEkh6BMR7t = new ArrayList();
       this.sqDhql9Ewp = new ArrayList();
       this.pjghXuYheN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.Headline = Headline;
       this.NoLinesOfText = NoLinesOfText;
     }

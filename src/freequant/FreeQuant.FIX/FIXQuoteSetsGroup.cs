@@ -660,13 +660,12 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteSetsGroup()
+    public FIXQuoteSetsGroup(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.sWMy6Q8LX7 = new ArrayList();
       this.Ql0yqqBwS0 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

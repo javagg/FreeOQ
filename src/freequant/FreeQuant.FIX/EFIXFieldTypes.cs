@@ -959,13 +959,6 @@ namespace FreeQuant.FIX
     public const FIXType LegContractSettlMonth = FIXType.String;
     public const FIXType LegInterestAccrualDate = FIXType.DateTime;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    private EFIXFieldTypes()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static FIXType GetFIXType(int tag)

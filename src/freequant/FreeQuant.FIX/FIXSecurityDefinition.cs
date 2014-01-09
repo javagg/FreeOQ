@@ -1236,10 +1236,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityDefinition()
+    public FIXSecurityDefinition():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.TNnhAUrlZl = new ArrayList();
       this.Fp4h8idM0f = new ArrayList();
       this.vEmhZY71aP = new ArrayList();
@@ -1247,14 +1245,12 @@ namespace FreeQuant.FIX
       this.K8Jhty08cX = new ArrayList();
       this.ILjhQppWJR = new ArrayList();
       this.qgZh733VX0 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityDefinition(string SecurityReqID, string SecurityResponseID, int SecurityResponseType)
+    public FIXSecurityDefinition(string SecurityReqID, string SecurityResponseID, int SecurityResponseType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.TNnhAUrlZl = new ArrayList();
       this.Fp4h8idM0f = new ArrayList();
       this.vEmhZY71aP = new ArrayList();
@@ -1262,8 +1258,7 @@ namespace FreeQuant.FIX
       this.K8Jhty08cX = new ArrayList();
       this.ILjhQppWJR = new ArrayList();
       this.qgZh733VX0 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.SecurityReqID = SecurityReqID;
       this.SecurityResponseID = SecurityResponseID;
       this.SecurityResponseType = SecurityResponseType;

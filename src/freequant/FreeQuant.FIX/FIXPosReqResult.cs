@@ -12,15 +12,10 @@ namespace FreeQuant.FIX
     public const int RequestForPositionNotSupported = 4;
     public const int Other = 99;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPosReqResult(int value)
+    public FIXPosReqResult(int value) : base(728, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(728, value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static int ToFIX(PosReqResult value)
     {
       switch (value)

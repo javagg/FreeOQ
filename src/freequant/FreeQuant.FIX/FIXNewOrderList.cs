@@ -648,32 +648,25 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderList()
+    public FIXNewOrderList():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.iH3Q8wvDD9 = new ArrayList();
       this.TRFQZSUjR0 = new ArrayList();
       this.fynQuBMdFQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderList(string ListID, int BidType, int TotNoOrders, int NoOrders)
+    public FIXNewOrderList(string ListID, int BidType, int TotNoOrders, int NoOrders):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.iH3Q8wvDD9 = new ArrayList();
       this.TRFQZSUjR0 = new ArrayList();
       this.fynQuBMdFQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ListID = ListID;
       this.BidType = BidType;
       this.TotNoOrders = TotNoOrders;
       this.NoOrders = NoOrders;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.iH3Q8wvDD9[i];

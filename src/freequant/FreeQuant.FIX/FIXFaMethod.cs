@@ -10,15 +10,13 @@ namespace FreeQuant.FIX
     public const string NetLiq = "NetLiq";
     public const string EqualQuantity = "EqualQuantity";
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXFaMethod(string value)
+
+    public FIXFaMethod(string value):base(10710, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(10710, value);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public static string ToFIX(FaMethod value)
     {
       switch (value)

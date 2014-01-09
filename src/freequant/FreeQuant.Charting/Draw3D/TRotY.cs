@@ -11,11 +11,8 @@ namespace FreeQuant.Charting.Draw3D
   public class TRotY : TMat3x3
   {
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TRotY(double Angle)
+    public TRotY(double Angle):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SetRotY(Angle);
     }
   }

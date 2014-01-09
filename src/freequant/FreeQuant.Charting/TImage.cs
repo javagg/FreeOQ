@@ -71,23 +71,19 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TImage(Image Image, double X, double Y)
+    public TImage(Image Image, double X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.jOZ39kecDV = Image;
       this.wPV3e4U3q3 = X;
       this.cnj378aqIs = Y;
       this.yee3w4ff2w();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TImage(Image Image, DateTime X, double Y)
+
+    public TImage(Image Image, DateTime X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.jOZ39kecDV = Image;
       this.wPV3e4U3q3 = (double) X.Ticks;
       this.cnj378aqIs = Y;
@@ -95,11 +91,9 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TImage(string FileName, double X, double Y)
+    public TImage(string FileName, double X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.jOZ39kecDV = Image.FromFile(FileName);
       this.wPV3e4U3q3 = X;
       this.cnj378aqIs = Y;
@@ -107,11 +101,8 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TImage(string FileName, DateTime X, double Y)
+    public TImage(string FileName, DateTime X, double Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.jOZ39kecDV = Image.FromFile(FileName);
       this.wPV3e4U3q3 = (double) X.Ticks;
       this.cnj378aqIs = Y;

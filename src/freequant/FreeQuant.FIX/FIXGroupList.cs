@@ -57,14 +57,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXGroupList()
+
+    public FIXGroupList():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.fList = new ArrayList();
       this.fId = new Hashtable();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     object IList.get_Item(int index)
@@ -72,7 +70,6 @@ namespace FreeQuant.FIX
       return this.fList[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     void IList.set_Item(int index, object value)
     {
     }

@@ -51,12 +51,8 @@ namespace FreeQuant.FIX
     public const string RealEstate = "414";
     public const string DiversifiedFinancialServices = "416";
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public NYSEIndustryGroup(string val)
+    public NYSEIndustryGroup(string val):base(10102, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(10102, val);
     }
   }
 }

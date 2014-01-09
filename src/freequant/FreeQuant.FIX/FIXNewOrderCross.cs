@@ -1823,10 +1823,9 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderCross()
+    public FIXNewOrderCross() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.tdlthqL7Aw = new ArrayList();
       this.oSstNxnHLo = new ArrayList();
       this.Y4ytfHn262 = new ArrayList();
@@ -1836,14 +1835,12 @@ namespace FreeQuant.FIX
       this.pxftJW0te2 = new ArrayList();
       this.NiQtrF0dZU = new ArrayList();
       this.kDgtp3TOC7 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXNewOrderCross(string CrossID, int CrossType, int CrossPrioritization, int NoSides, DateTime TransactTime, char OrdType)
+    :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.tdlthqL7Aw = new ArrayList();
       this.oSstNxnHLo = new ArrayList();
       this.Y4ytfHn262 = new ArrayList();
@@ -1853,9 +1850,8 @@ namespace FreeQuant.FIX
       this.pxftJW0te2 = new ArrayList();
       this.NiQtrF0dZU = new ArrayList();
       this.kDgtp3TOC7 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.CrossID = CrossID;
+
+        this.CrossID = CrossID;
       this.CrossType = CrossType;
       this.CrossPrioritization = CrossPrioritization;
       this.NoSides = NoSides;
@@ -1863,19 +1859,16 @@ namespace FreeQuant.FIX
       this.OrdType = OrdType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.tdlthqL7Aw[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.tdlthqL7Aw.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -1884,14 +1877,12 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopsGroup group)
     {
       this.oSstNxnHLo.Add((object) group);
       ++this.NoHops;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXSidesGroup GetSidesGroup(int i)
     {
       if (i < this.NoSides)

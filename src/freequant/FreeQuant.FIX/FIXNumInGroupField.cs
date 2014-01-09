@@ -16,36 +16,26 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNumInGroupField(int tag)
+
+    public FIXNumInGroupField(int tag) : this(tag, 0)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNumInGroupField(int tag, int value)
+    public FIXNumInGroupField(int tag, int value): base(tag)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(tag);
       this.Value = value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
       return this.Value.ToString();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToInvariantString()
     {
       return this.Value.ToString((IFormatProvider) CultureInfo.InvariantCulture);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override object GetValue()
     {
       return (object) this.Value;

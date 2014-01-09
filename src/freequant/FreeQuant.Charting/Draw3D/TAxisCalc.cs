@@ -23,12 +23,11 @@ namespace FreeQuant.Charting.Draw3D
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TAxisCalc(TVec3 Origin, TVec3 End, double ValO, double ValEnd, int nTicks)
+    public TAxisCalc(TVec3 Origin, TVec3 End, double ValO, double ValEnd, int nTicks):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.BTvciJZkJ = new TAxisCalc.TTick[0];
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.FO4HKfjf8 = Origin;
       this.BHevbMLA7 = End;
       this.J7AUgXK5a = ValO;

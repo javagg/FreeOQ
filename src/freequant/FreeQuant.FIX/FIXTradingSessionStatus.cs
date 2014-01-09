@@ -609,25 +609,22 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradingSessionStatus()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    public FIXTradingSessionStatus() :base()
+    { 
+
       this.IMT7UTJxO5 = new ArrayList();
       this.ume7AfO5fM = new ArrayList();
       this.p8O78ESLLR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradingSessionStatus(string TradingSessionID, int TradSesStatus)
+    public FIXTradingSessionStatus(string TradingSessionID, int TradSesStatus):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.IMT7UTJxO5 = new ArrayList();
       this.ume7AfO5fM = new ArrayList();
       this.p8O78ESLLR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.TradingSessionID = TradingSessionID;
       this.TradSesStatus = TradSesStatus;
     }

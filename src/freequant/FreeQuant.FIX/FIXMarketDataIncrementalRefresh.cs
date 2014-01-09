@@ -452,30 +452,26 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataIncrementalRefresh()
+
+    public FIXMarketDataIncrementalRefresh(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.r88Aas4oYT = new ArrayList();
       this.iFtALvd3BK = new ArrayList();
       this.kdNAKBZaO2 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataIncrementalRefresh(int NoMDEntries)
+    public FIXMarketDataIncrementalRefresh(int NoMDEntries): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.r88Aas4oYT = new ArrayList();
       this.iFtALvd3BK = new ArrayList();
       this.kdNAKBZaO2 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.NoMDEntries = NoMDEntries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.r88Aas4oYT[i];

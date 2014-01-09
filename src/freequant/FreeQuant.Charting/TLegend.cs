@@ -134,12 +134,10 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLegend(Pad Pad)
+
+    public TLegend(Pad Pad):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.TKBs3XOfS = Pad;
       this.Ua2WEbOVG();
     }

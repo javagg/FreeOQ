@@ -1131,32 +1131,28 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradeCaptureReportRequestAck()
+
+    public FIXTradeCaptureReportRequestAck(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.vNCyMT14tB = new ArrayList();
       this.hXHyvKcwx5 = new ArrayList();
       this.XuwydVvSoR = new ArrayList();
       this.tG4yadq5se = new ArrayList();
       this.webyLjlKyA = new ArrayList();
       this.zEryKLjPPO = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXTradeCaptureReportRequestAck(string TradeRequestID, int TradeRequestType, int TradeRequestResult, int TradeRequestStatus)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    : base(){
+
       this.vNCyMT14tB = new ArrayList();
       this.hXHyvKcwx5 = new ArrayList();
       this.XuwydVvSoR = new ArrayList();
       this.tG4yadq5se = new ArrayList();
       this.webyLjlKyA = new ArrayList();
       this.zEryKLjPPO = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.TradeRequestID = TradeRequestID;
       this.TradeRequestType = TradeRequestType;
       this.TradeRequestResult = TradeRequestResult;

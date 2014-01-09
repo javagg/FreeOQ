@@ -15,15 +15,14 @@ namespace FreeQuant.Charting.Draw3D
     public TColor GridDiffuse;
     public TColor Specular;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TSurface()
+
+    public TSurface():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.Diffuse = new TColor(Color.White);
       this.GridDiffuse = new TColor(Color.Orange);
       this.Specular = new TColor(Color.White);
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
   }
 }

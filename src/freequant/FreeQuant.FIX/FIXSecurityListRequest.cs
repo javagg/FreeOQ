@@ -1249,10 +1249,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityListRequest()
+    public FIXSecurityListRequest(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.nCi7oVx2qn = new ArrayList();
       this.me47RDvtrG = new ArrayList();
       this.HvP74JPWIJ = new ArrayList();
@@ -1260,14 +1258,10 @@ namespace FreeQuant.FIX
       this.Jl47GDu0d2 = new ArrayList();
       this.kG279pE0Om = new ArrayList();
       this.arI7sVNWKL = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityListRequest(string SecurityReqID, int SecurityListRequestType)
+    public FIXSecurityListRequest(string SecurityReqID, int SecurityListRequestType): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.nCi7oVx2qn = new ArrayList();
       this.me47RDvtrG = new ArrayList();
       this.HvP74JPWIJ = new ArrayList();
@@ -1275,8 +1269,6 @@ namespace FreeQuant.FIX
       this.Jl47GDu0d2 = new ArrayList();
       this.kG279pE0Om = new ArrayList();
       this.arI7sVNWKL = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SecurityReqID = SecurityReqID;
       this.SecurityListRequestType = SecurityListRequestType;
     }

@@ -607,17 +607,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUnderlyingsGroup()
+    public FIXUnderlyingsGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.jGPucy4iiH = new ArrayList();
       this.hEjuzYXQZJ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXUnderlyingSecurityAltIDGroup GetUnderlyingSecurityAltIDGroup(int i)
     {
       if (i < this.NoUnderlyingSecurityAltID)
@@ -626,14 +621,12 @@ namespace FreeQuant.FIX
         return (FIXUnderlyingSecurityAltIDGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXUnderlyingSecurityAltIDGroup group)
     {
       this.jGPucy4iiH.Add((object) group);
       ++this.NoUnderlyingSecurityAltID;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXUnderlyingStipsGroup GetUnderlyingStipsGroup(int i)
     {
       if (i < this.NoUnderlyingStips)

@@ -12,12 +12,9 @@ namespace FreeQuant.FIX
     public const char PctWaivedEnUnits = '5';
     public const char PerBond = '6';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCommType(char val)
+
+    public FIXCommType(char val):  base(13, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(13, val);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

@@ -545,27 +545,22 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteCancel()
+    public FIXQuoteCancel():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.OYA8favN7l = new ArrayList();
       this.Q1l86NKSSD = new ArrayList();
       this.ofw8q4DIK6 = new ArrayList();
       this.Upe8XN1V9Q = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteCancel(string QuoteID, int QuoteCancelType)
+    public FIXQuoteCancel(string QuoteID, int QuoteCancelType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.OYA8favN7l = new ArrayList();
       this.Q1l86NKSSD = new ArrayList();
       this.ofw8q4DIK6 = new ArrayList();
       this.Upe8XN1V9Q = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.QuoteID = QuoteID;
       this.QuoteCancelType = QuoteCancelType;
     }

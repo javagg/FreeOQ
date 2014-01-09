@@ -778,28 +778,26 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBidRequest()
+
+    public FIXBidRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.TGgZJWr2Pl = new ArrayList();
       this.NKtZrFqd29 = new ArrayList();
       this.oLcZpLiYQl = new ArrayList();
       this.EwvZM6Eg3n = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXBidRequest(string ClientBidID, char BidRequestTransType, int TotNoRelatedSym, int BidType, char BidTradeType, char BasisPxType)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
+
       this.TGgZJWr2Pl = new ArrayList();
       this.NKtZrFqd29 = new ArrayList();
       this.oLcZpLiYQl = new ArrayList();
       this.EwvZM6Eg3n = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ClientBidID = ClientBidID;
       this.BidRequestTransType = BidRequestTransType;
       this.TotNoRelatedSym = TotNoRelatedSym;

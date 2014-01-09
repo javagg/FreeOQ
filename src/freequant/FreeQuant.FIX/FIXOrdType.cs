@@ -31,12 +31,8 @@ namespace FreeQuant.FIX
     public const char TrailingStop = 'T';
     public const char TrailingStopLimit = 'S';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrdType(char val)
+    public FIXOrdType(char val):base(40, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(40, val);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

@@ -479,25 +479,22 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataRequestReject()
+    public FIXMarketDataRequestReject():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.P3nZnKHvkq = new ArrayList();
       this.fkQZ1F8VGm = new ArrayList();
       this.DTuZiGAfIo = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataRequestReject(string MDReqID)
+    public FIXMarketDataRequestReject(string MDReqID):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.P3nZnKHvkq = new ArrayList();
       this.fkQZ1F8VGm = new ArrayList();
       this.DTuZiGAfIo = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.MDReqID = MDReqID;
     }
 

@@ -361,23 +361,20 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXStandardHeader()
+    public FIXStandardHeader():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.KoE8tjSAaa = new ArrayList();
       this.CvK8QNR42p = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXStandardHeader(int BodyLength, string MsgType, string SenderCompID, string TargetCompID, int MsgSeqNum, string BeginString)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
+
       this.KoE8tjSAaa = new ArrayList();
       this.CvK8QNR42p = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.BodyLength = BodyLength;
       this.MsgType = MsgType;
       this.SenderCompID = SenderCompID;

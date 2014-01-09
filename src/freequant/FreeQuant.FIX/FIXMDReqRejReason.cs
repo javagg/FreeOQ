@@ -20,11 +20,8 @@ namespace FreeQuant.FIX
     public const char UnsupportedMDImplicitDelete = 'C';
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMDReqRejReason(char value)
+    public FIXMDReqRejReason(char value) : base(281, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(281, value);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

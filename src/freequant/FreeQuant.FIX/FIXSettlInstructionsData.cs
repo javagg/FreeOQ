@@ -72,16 +72,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlInstructionsData()
+    public FIXSettlInstructionsData(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.SZvZYfTgiZ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXDlvyInstGroup GetDlvyInstGroup(int i)
     {
       if (i < this.NoDlvyInst)
@@ -90,7 +86,6 @@ namespace FreeQuant.FIX
         return (FIXDlvyInstGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXDlvyInstGroup group)
     {
       this.SZvZYfTgiZ.Add((object) group);

@@ -1653,9 +1653,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderMassStatusRequest()
+    public FIXOrderMassStatusRequest(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+     
       this.pGiQVFZS9h = new ArrayList();
       this.ijhQmXXAUZ = new ArrayList();
       this.NMEQkj9tB9 = new ArrayList();
@@ -1663,23 +1663,18 @@ namespace FreeQuant.FIX
       this.FHgQ1P1fNs = new ArrayList();
       this.eGoQiUlqWG = new ArrayList();
       this.fDgQlyXnff = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderMassStatusRequest(string MassStatusReqID, int MassStatusReqType)
+    public FIXOrderMassStatusRequest(string MassStatusReqID, int MassStatusReqType): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.pGiQVFZS9h = new ArrayList();
+       this.pGiQVFZS9h = new ArrayList();
       this.ijhQmXXAUZ = new ArrayList();
       this.NMEQkj9tB9 = new ArrayList();
       this.aqHQnke3dV = new ArrayList();
       this.FHgQ1P1fNs = new ArrayList();
       this.eGoQiUlqWG = new ArrayList();
       this.fDgQlyXnff = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.MassStatusReqID = MassStatusReqID;
       this.MassStatusReqType = MassStatusReqType;
     }

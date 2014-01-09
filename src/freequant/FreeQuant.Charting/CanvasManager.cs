@@ -28,13 +28,7 @@ namespace FreeQuant.Charting
       CanvasManager.sPUCznywUB = new CanvasList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public CanvasManager()
-    {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
+
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static void Add(Canvas canvas)

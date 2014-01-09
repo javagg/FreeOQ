@@ -43,20 +43,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCapacitiesGroup()
+    public FIXCapacitiesGroup(char OrderCapacity, double OrderCapacityQty) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCapacitiesGroup(char OrderCapacity, double OrderCapacityQty)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrderCapacity = OrderCapacity;
       this.OrderCapacityQty = OrderCapacityQty;
     }

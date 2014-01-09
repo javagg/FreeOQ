@@ -440,25 +440,19 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNetworkCounterpartySystemStatusRequest()
+    public FIXNetworkCounterpartySystemStatusRequest() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.ndR8KbXFoH = new ArrayList();
       this.EBE80pBXqq = new ArrayList();
       this.eX48DyyQoR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNetworkCounterpartySystemStatusRequest(int NetworkRequestType, string NetworkRequestID)
+    public FIXNetworkCounterpartySystemStatusRequest(int NetworkRequestType, string NetworkRequestID): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.ndR8KbXFoH = new ArrayList();
       this.EBE80pBXqq = new ArrayList();
       this.eX48DyyQoR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.NetworkRequestType = NetworkRequestType;
       this.NetworkRequestID = NetworkRequestID;
     }

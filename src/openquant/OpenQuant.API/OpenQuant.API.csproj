@@ -226,7 +226,9 @@
     <Compile Include="Indicators\BBU.cs" />
     <Compile Include="Indicators\ADX.cs" />
     <Compile Include="Indicators\KCL.cs" />
-    <Compile Include="Design\AltSourceForm.cs" />
+    <Compile Include="Design\AltSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Design\IBExTypeConverter.cs" />
     <Compile Include="Design\AltIDGroupTypeConverter.cs" />
     <Compile Include="Design\AltIDGroupListTypeConverter.cs" />

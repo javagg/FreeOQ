@@ -1603,9 +1603,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXIOI()
+    public FIXIOI():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.AP5hLhZbQG = new ArrayList();
       this.gs0hK6jGbW = new ArrayList();
       this.O2Hh0f2ayN = new ArrayList();
@@ -1615,14 +1615,11 @@ namespace FreeQuant.FIX
       this.YRyhHffwk1 = new ArrayList();
       this.WojhWdPVI4 = new ArrayList();
       this.HmjhTadI20 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXIOI(string IOIID, char IOITransType, char Side, string IOIQty)
+    public FIXIOI(string IOIID, char IOITransType, char Side, string IOIQty):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.AP5hLhZbQG = new ArrayList();
       this.gs0hK6jGbW = new ArrayList();
       this.O2Hh0f2ayN = new ArrayList();
@@ -1632,8 +1629,6 @@ namespace FreeQuant.FIX
       this.YRyhHffwk1 = new ArrayList();
       this.WojhWdPVI4 = new ArrayList();
       this.HmjhTadI20 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.IOIID = IOIID;
       this.IOITransType = IOITransType;
       this.Side = Side;

@@ -21,12 +21,9 @@ namespace FreeQuant.FIX
     public const char Belgian = 'F';
     public const char Common = 'G';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityIDSource(char val)
+    public FIXSecurityIDSource(char val):base(22, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(22, val);
+
     }
   }
 }

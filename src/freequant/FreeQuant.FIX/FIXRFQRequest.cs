@@ -440,25 +440,23 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRFQRequest()
+    public FIXRFQRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.KGStRhnIHl = new ArrayList();
       this.iPZt4Wbb1F = new ArrayList();
       this.Nu3te8VJKu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRFQRequest(string RFQReqID, int NoRelatedSym)
+    public FIXRFQRequest(string RFQReqID, int NoRelatedSym):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.KGStRhnIHl = new ArrayList();
       this.iPZt4Wbb1F = new ArrayList();
       this.Nu3te8VJKu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.RFQReqID = RFQReqID;
       this.NoRelatedSym = NoRelatedSym;
     }

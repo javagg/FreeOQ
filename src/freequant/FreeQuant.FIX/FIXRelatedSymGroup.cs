@@ -1086,17 +1086,13 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRelatedSymGroup()
+    public FIXRelatedSymGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.fSecurityAltIDGroup = new FIXSecurityAltIDGroupList();
+       this.fSecurityAltIDGroup = new FIXSecurityAltIDGroupList();
       this.ddNyEJFyHZ = new ArrayList();
       this.ogFy3hrLkR = new ArrayList();
       this.PDZyFNicDm = new ArrayList();
       this.pD4ywFka4o = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

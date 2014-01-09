@@ -1211,9 +1211,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteStatusRequest()
+    public FIXQuoteStatusRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Ya8Quj7XX = new ArrayList();
       this.cs07PpfhN = new ArrayList();
       this.QPMYOI6cu = new ArrayList();
@@ -1221,11 +1221,9 @@ namespace FreeQuant.FIX
       this.JY9haFIdG = new ArrayList();
       this.FGKNJyP8K = new ArrayList();
       this.utUfcoPfk = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.Ya8Quj7XX[i];

@@ -1316,10 +1316,10 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXPositionReport()
+
+    public FIXPositionReport(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.JtI7DrnWXK = new ArrayList();
       this.VI47PXXkyl = new ArrayList();
       this.g8f7I4Rspn = new ArrayList();
@@ -1329,14 +1329,11 @@ namespace FreeQuant.FIX
       this.hKC7V4Cqha = new ArrayList();
       this.AEU7mopKKd = new ArrayList();
       this.cWd7kFLQCv = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXPositionReport(string PosMaintRptID, int PosReqResult, DateTime ClearingBusinessDate, string Account, int AccountType, double SettlPrice, int SettlPriceType, double PriorSettlPrice)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    : base(){
+   
       this.JtI7DrnWXK = new ArrayList();
       this.VI47PXXkyl = new ArrayList();
       this.g8f7I4Rspn = new ArrayList();
@@ -1346,8 +1343,7 @@ namespace FreeQuant.FIX
       this.hKC7V4Cqha = new ArrayList();
       this.AEU7mopKKd = new ArrayList();
       this.cWd7kFLQCv = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.PosMaintRptID = PosMaintRptID;
       this.PosReqResult = PosReqResult;
       this.ClearingBusinessDate = ClearingBusinessDate;

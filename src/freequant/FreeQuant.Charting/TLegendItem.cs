@@ -48,22 +48,16 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLegendItem(string Text, Color Color, Font Font)
+    public TLegendItem(string Text, Color Color, Font Font):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.xCiCPTiFh5 = Text;
       this.yQbCG11LAA = Color;
       this.vEiCRZq66V = Font;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLegendItem(string Text, Color Color)
+
+    public TLegendItem(string Text, Color Color):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.xCiCPTiFh5 = Text;
       this.yQbCG11LAA = Color;
       this.vEiCRZq66V = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(752), 8f);

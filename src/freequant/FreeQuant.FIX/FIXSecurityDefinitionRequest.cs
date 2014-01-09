@@ -1146,9 +1146,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityDefinitionRequest()
+    public FIXSecurityDefinitionRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.cB2Y1whD9h = new ArrayList();
       this.CA9YisUZaG = new ArrayList();
       this.z3OYlnlrT6 = new ArrayList();
@@ -1156,14 +1155,10 @@ namespace FreeQuant.FIX
       this.I6SYO2C1Cg = new ArrayList();
       this.RVOYxcVm75 = new ArrayList();
       this.xoyY5FZekd = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityDefinitionRequest(string SecurityReqID, int SecurityRequestType)
+    public FIXSecurityDefinitionRequest(string SecurityReqID, int SecurityRequestType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.cB2Y1whD9h = new ArrayList();
       this.CA9YisUZaG = new ArrayList();
       this.z3OYlnlrT6 = new ArrayList();
@@ -1171,8 +1166,6 @@ namespace FreeQuant.FIX
       this.I6SYO2C1Cg = new ArrayList();
       this.RVOYxcVm75 = new ArrayList();
       this.xoyY5FZekd = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SecurityReqID = SecurityReqID;
       this.SecurityRequestType = SecurityRequestType;
     }

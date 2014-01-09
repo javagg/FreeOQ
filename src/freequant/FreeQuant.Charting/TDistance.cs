@@ -73,11 +73,9 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TDistance()
+    public TDistance():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.mAI5Wn0kq = double.MaxValue;
       this.WSULTh6h4 = double.MaxValue;
       this.stawPUnjw = (string) null;

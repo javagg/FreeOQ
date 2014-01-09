@@ -491,23 +491,17 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListCancelRequest()
+    public FIXListCancelRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.EHuQgDPRIb = new ArrayList();
       this.zvMQoyBxHE = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXListCancelRequest(string ListID, DateTime TransactTime)
+    public FIXListCancelRequest(string ListID, DateTime TransactTime):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.EHuQgDPRIb = new ArrayList();
       this.zvMQoyBxHE = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ListID = ListID;
       this.TransactTime = TransactTime;
     }

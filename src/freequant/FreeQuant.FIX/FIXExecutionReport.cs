@@ -3281,9 +3281,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXExecutionReport()
+    public FIXExecutionReport():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.iADABECM4i = new ArrayList();
       this.pqRAOkoVel = new ArrayList();
       this.mY8Axsd8qp = new ArrayList();
@@ -3295,15 +3294,12 @@ namespace FreeQuant.FIX
       this.umtAedLrbr = new ArrayList();
       this.EheAGhxEpM = new ArrayList();
       this.CmrA91dGNA = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ExecTransType = '0';
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXExecutionReport(string OrderID, string ExecID, char ExecType, char OrdStatus, char Side, double LeavesQty, double CumQty, double AvgPx)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
       this.iADABECM4i = new ArrayList();
       this.pqRAOkoVel = new ArrayList();
       this.mY8Axsd8qp = new ArrayList();
@@ -3315,8 +3311,7 @@ namespace FreeQuant.FIX
       this.umtAedLrbr = new ArrayList();
       this.EheAGhxEpM = new ArrayList();
       this.CmrA91dGNA = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.OrderID = OrderID;
       this.ExecID = ExecID;
       this.ExecType = ExecType;

@@ -1696,10 +1696,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralRequest()
+    public FIXCollateralRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.FhB8gVMCSB = new ArrayList();
       this.iKB8ocDq8G = new ArrayList();
       this.A718RnQ5Vt = new ArrayList();
@@ -1712,14 +1710,12 @@ namespace FreeQuant.FIX
       this.u5N8jAFUMx = new ArrayList();
       this.tgc8EbYXDa = new ArrayList();
       this.sKu83tlNQQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXCollateralRequest(string CollReqID, int CollAsgnReason, DateTime TransactTime)
+        : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.FhB8gVMCSB = new ArrayList();
       this.iKB8ocDq8G = new ArrayList();
       this.A718RnQ5Vt = new ArrayList();
@@ -1732,8 +1728,7 @@ namespace FreeQuant.FIX
       this.u5N8jAFUMx = new ArrayList();
       this.tgc8EbYXDa = new ArrayList();
       this.sKu83tlNQQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CollReqID = CollReqID;
       this.CollAsgnReason = CollAsgnReason;
       this.TransactTime = TransactTime;

@@ -1008,17 +1008,8 @@ namespace FreeQuant.FIX
     public const int Route = 10900;
     public const int TradeVolumeDelay = 11000;
     public const int ManualOrderIndicator = 1028;
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    private EFIXField()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static string ToString(int tag)
+      
+     public static string ToString(int tag)
     {
       switch (tag)
       {

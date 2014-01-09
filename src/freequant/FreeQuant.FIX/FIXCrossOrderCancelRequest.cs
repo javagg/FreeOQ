@@ -1068,9 +1068,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCrossOrderCancelRequest()
+    public FIXCrossOrderCancelRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.GbuQJmlaJg = new ArrayList();
       this.r3ZQroTPIE = new ArrayList();
       this.FqLQpBjg4W = new ArrayList();
@@ -1078,14 +1078,12 @@ namespace FreeQuant.FIX
       this.M4cQvXTHIH = new ArrayList();
       this.pnNQdEfhY8 = new ArrayList();
       this.JadQa1XBDd = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXCrossOrderCancelRequest(string CrossID, string OrigCrossID, int CrossType, int CrossPrioritization, int NoSides, DateTime TransactTime)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
+
       this.GbuQJmlaJg = new ArrayList();
       this.r3ZQroTPIE = new ArrayList();
       this.FqLQpBjg4W = new ArrayList();
@@ -1093,8 +1091,7 @@ namespace FreeQuant.FIX
       this.M4cQvXTHIH = new ArrayList();
       this.pnNQdEfhY8 = new ArrayList();
       this.JadQa1XBDd = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CrossID = CrossID;
       this.OrigCrossID = OrigCrossID;
       this.CrossType = CrossType;

@@ -112,13 +112,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXRegistDtlsGroup()
+    public FIXRegistDtlsGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.W6VZvlQljA = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

@@ -571,31 +571,26 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXMarketDataRequest()
+    public FIXMarketDataRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.DQehr3BXSn = new ArrayList();
       this.w06hpr4a3K = new ArrayList();
       this.t4nhMyJTee = new ArrayList();
       this.e29hvGfn75 = new ArrayList();
       this.tcehdiDknj = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.NoRelatedSym = 0;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXMarketDataRequest(string MDReqID, char SubscriptionRequestType, int MarketDepth, int NoMDEntryTypes, int NoRelatedSym)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
+
       this.DQehr3BXSn = new ArrayList();
       this.w06hpr4a3K = new ArrayList();
       this.t4nhMyJTee = new ArrayList();
       this.e29hvGfn75 = new ArrayList();
       this.tcehdiDknj = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.MDReqID = MDReqID;
       this.SubscriptionRequestType = SubscriptionRequestType;
       this.MarketDepth = MarketDepth;

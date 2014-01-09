@@ -271,12 +271,10 @@ namespace FreeQuant.Charting
       ((Control) this).Show();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas(string Name, string Title)
+
+    public Canvas(string Name, string Title):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CNA6nGRr44();
       this.Name = Name;
       this.Text = Title;
@@ -288,11 +286,9 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas(string name)
+    public Canvas(string name):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CNA6nGRr44();
       this.Name = name;
       this.Text = name;
@@ -304,11 +300,9 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas(string Name, string Title, string FileName)
+    public Canvas(string Name, string Title, string FileName):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CNA6nGRr44();
       this.Name = Name;
       this.Text = Title;
@@ -318,11 +312,8 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas(string Name, string Title, int Width, int Height)
+    public Canvas(string Name, string Title, int Width, int Height):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CNA6nGRr44();
       this.Name = Name;
       this.Text = Title;
@@ -336,11 +327,8 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas(string Name, int Width, int Height)
+    public Canvas(string Name, int Width, int Height):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CNA6nGRr44();
       this.Name = Name;
       this.Text = Name;
@@ -353,12 +341,8 @@ namespace FreeQuant.Charting
       ((Control) this).Show();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas(string Name, string Title, string FileName, int Width, int Height)
+    public Canvas(string Name, string Title, string FileName, int Width, int Height):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CNA6nGRr44();
       this.Name = Name;
       this.Text = Title;
@@ -369,7 +353,7 @@ namespace FreeQuant.Charting
       this.Height = Height;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     private void CNA6nGRr44()
     {
       this.drh63ZfGFV();

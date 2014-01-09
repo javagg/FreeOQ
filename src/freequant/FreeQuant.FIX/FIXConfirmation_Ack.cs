@@ -516,24 +516,19 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXConfirmation_Ack()
+    public FIXConfirmation_Ack() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.YDfZBqCKvM = new ArrayList();
       this.sV1ZOqOh97 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXConfirmation_Ack(string ConfirmID, DateTime TradeDate, DateTime TransactTime, int AffirmStatus)
+    :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.YDfZBqCKvM = new ArrayList();
       this.sV1ZOqOh97 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ConfirmID = ConfirmID;
       this.TradeDate = TradeDate;
       this.TransactTime = TransactTime;

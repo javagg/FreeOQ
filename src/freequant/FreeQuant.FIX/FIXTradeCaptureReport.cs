@@ -1982,21 +1982,19 @@ namespace FreeQuant.FIX
     [FIXField("93", EFieldOption.Optional)]
     public int SignatureLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.GetIntField(93).Value;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.AddIntField(93, value);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradeCaptureReport()
+    public FIXTradeCaptureReport() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.f7ZAC6g4DL = new ArrayList();
+       this.f7ZAC6g4DL = new ArrayList();
       this.CTDA21AVEd = new ArrayList();
       this.wCLAcaZ2RA = new ArrayList();
       this.hwZAzM4ODk = new ArrayList();
@@ -2005,14 +2003,11 @@ namespace FreeQuant.FIX
       this.TYQ8ARIL1M = new ArrayList();
       this.OQ788ftQSH = new ArrayList();
       this.zgq8ZloVJX = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXTradeCaptureReport(string TradeReportID, bool PreviouslyReported, double LastQty, double LastPx, DateTime TradeDate, DateTime TransactTime, int NoSides)
+    :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.f7ZAC6g4DL = new ArrayList();
       this.CTDA21AVEd = new ArrayList();
       this.wCLAcaZ2RA = new ArrayList();
@@ -2022,8 +2017,7 @@ namespace FreeQuant.FIX
       this.TYQ8ARIL1M = new ArrayList();
       this.OQ788ftQSH = new ArrayList();
       this.zgq8ZloVJX = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.TradeReportID = TradeReportID;
       this.PreviouslyReported = PreviouslyReported;
       this.LastQty = LastQty;

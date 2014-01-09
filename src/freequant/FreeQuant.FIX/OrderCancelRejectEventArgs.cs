@@ -18,28 +18,20 @@ namespace FreeQuant.FIX
 
     public OrderCancelReject OrderCancelReject
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return this.UJYQc8UigN;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OrderCancelRejectEventArgs(NewOrderSingle order, OrderCancelReject reject)
+    public OrderCancelRejectEventArgs(NewOrderSingle order, OrderCancelReject reject) :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.q7HQ2ja0mq = order;
       this.UJYQc8UigN = reject;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OrderCancelRejectEventArgs(OrderCancelReject reject)
+    public OrderCancelRejectEventArgs(OrderCancelReject reject): this((NewOrderSingle) null, reject)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector((NewOrderSingle) null, reject);
     }
   }
 }

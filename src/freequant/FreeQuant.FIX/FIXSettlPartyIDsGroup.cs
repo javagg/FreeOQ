@@ -60,15 +60,14 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlPartyIDsGroup()
+    public FIXSettlPartyIDsGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.rTwtW5j0d5 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+  
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXSettlPartySubIDsGroup GetSettlPartySubIDsGroup(int i)
     {
       if (i < this.NoSettlPartySubIDs)

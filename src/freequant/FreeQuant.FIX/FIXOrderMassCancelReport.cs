@@ -1757,9 +1757,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderMassCancelReport()
+    public FIXOrderMassCancelReport():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Q9muiyDsoT = new ArrayList();
       this.H2YuljlT7e = new ArrayList();
       this.LbsuBPVg7s = new ArrayList();
@@ -1767,14 +1767,11 @@ namespace FreeQuant.FIX
       this.a1auxuiNfi = new ArrayList();
       this.oc9u5ITyPp = new ArrayList();
       this.zomugSSfxR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderMassCancelReport(string OrderID, char MassCancelRequestType, char MassCancelResponse)
+    public FIXOrderMassCancelReport(string OrderID, char MassCancelRequestType, char MassCancelResponse):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Q9muiyDsoT = new ArrayList();
       this.H2YuljlT7e = new ArrayList();
       this.LbsuBPVg7s = new ArrayList();
@@ -1782,8 +1779,7 @@ namespace FreeQuant.FIX
       this.a1auxuiNfi = new ArrayList();
       this.oc9u5ITyPp = new ArrayList();
       this.zomugSSfxR = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.OrderID = OrderID;
       this.MassCancelRequestType = MassCancelRequestType;
       this.MassCancelResponse = MassCancelResponse;

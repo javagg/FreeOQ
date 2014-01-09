@@ -1289,9 +1289,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityStatus()
+    public FIXSecurityStatus():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.wrLtiMFZmp = new ArrayList();
       this.EdBtlMbJ9o = new ArrayList();
       this.GfKtBcv0is = new ArrayList();
@@ -1299,8 +1298,6 @@ namespace FreeQuant.FIX
       this.lGLtxMIgcv = new ArrayList();
       this.S8Ft5v5034 = new ArrayList();
       this.aRltgs3ZRQ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

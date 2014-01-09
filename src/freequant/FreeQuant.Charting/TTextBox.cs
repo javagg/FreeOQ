@@ -147,22 +147,17 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTextBox()
+    public TTextBox():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.S0doaOsoSA = 10;
       this.itEoTyggr4 = 10;
       this.xehokEEu0B();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTextBox(int X, int Y)
+    public TTextBox(int X, int Y):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.S0doaOsoSA = X;
       this.itEoTyggr4 = Y;
       this.xehokEEu0B();

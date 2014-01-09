@@ -491,27 +491,25 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXReject()
+    public FIXReject():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.YMhURurwMI = new ArrayList();
       this.vl4U4ZGmU7 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXReject(int RefSeqNum)
+    public FIXReject(int RefSeqNum):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.YMhURurwMI = new ArrayList();
       this.vl4U4ZGmU7 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.RefSeqNum = RefSeqNum;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.YMhURurwMI[i];

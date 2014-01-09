@@ -16,17 +16,16 @@ namespace FreeQuant.Charting.Draw3D
     public TLight.TSource[] NearSources;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLight()
+    public TLight():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+    
       this.Ambient = new TColor(Color.PaleTurquoise);
       this.ParallelBeams = new TLight.TSource[1]
       {
         new TLight.TSource(new TVec3(3.0, -2.0, 2.0), (TColor) Color.LightYellow)
       };
       this.NearSources = new TLight.TSource[0];
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.SetSfumatoDay();
       this.SetShadowSources(0.25);
     }

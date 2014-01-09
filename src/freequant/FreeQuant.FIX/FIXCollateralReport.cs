@@ -1776,10 +1776,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralReport()
+    public FIXCollateralReport() :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.WsAUcTvobS = new ArrayList();
+        this.WsAUcTvobS = new ArrayList();
       this.M2ZUzm9ml0 = new ArrayList();
       this.qLvAS54bAn = new ArrayList();
       this.NNdAUno2MQ = new ArrayList();
@@ -1792,14 +1791,11 @@ namespace FreeQuant.FIX
       this.cp6A7hgCjU = new ArrayList();
       this.uJBAYycAMI = new ArrayList();
       this.INtAyDr2fY = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralReport(string CollRptID, int CollStatus)
+    public FIXCollateralReport(string CollRptID, int CollStatus):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.WsAUcTvobS = new ArrayList();
       this.M2ZUzm9ml0 = new ArrayList();
       this.qLvAS54bAn = new ArrayList();
@@ -1813,8 +1809,6 @@ namespace FreeQuant.FIX
       this.cp6A7hgCjU = new ArrayList();
       this.uJBAYycAMI = new ArrayList();
       this.INtAyDr2fY = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CollRptID = CollRptID;
       this.CollStatus = CollStatus;
     }

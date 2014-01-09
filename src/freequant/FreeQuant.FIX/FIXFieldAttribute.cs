@@ -11,11 +11,11 @@ namespace FreeQuant.FIX
 
     public int Tag
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTag;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fTag = value;
       }
@@ -33,21 +33,13 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXFieldAttribute(int tag)
+    public FIXFieldAttribute(int tag):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fTag = tag;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXFieldAttribute(string Tag, EFieldOption Required)
+    public FIXFieldAttribute(string Tag, EFieldOption Required):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fTag = int.Parse(Tag);
       if (Required != EFieldOption.Required)
         return;

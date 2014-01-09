@@ -10,15 +10,12 @@ namespace FreeQuant.FIX
     public const int BrokerOption = 2;
     public const int AlreadyPending = 3;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCxlRejReason(int value)
+
+    public FIXCxlRejReason(int value):base(102, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(102, value);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static CxlRejReason FromFIX(int value)
     {
       switch (value)

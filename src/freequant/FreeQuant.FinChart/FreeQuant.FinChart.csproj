@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,9 +41,13 @@
     <Compile Include="AxisRight.cs" />
     <Compile Include="BSStyle.cs" />
     <Compile Include="BSView.cs" />
-    <Compile Include="Chart.cs" />
+    <Compile Include="Chart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ChartActionType.cs" />
-    <Compile Include="ChartToolStrip.cs" />
+    <Compile Include="ChartToolStrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ChartUpdateStyle.cs" />
     <Compile Include="ColorSeries.cs" />
     <Compile Include="Distance.cs" />
@@ -66,7 +70,9 @@
     <Compile Include="PadRange.cs" />
     <Compile Include="PadScaleStyle.cs" />
     <Compile Include="PnFBSView.cs" />
-    <Compile Include="PropertyForm.cs" />
+    <Compile Include="PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ranko.cs" />
     <Compile Include="RankoBSView.cs" />
     <Compile Include="SeriesView.cs" />
@@ -76,7 +82,9 @@
     <Compile Include="SimpleDSStyle.cs" />
     <Compile Include="SortedRangeList.cs" />
     <Compile Include="StopView.cs" />
-    <Compile Include="ToolBar.cs" />
+    <Compile Include="ToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="TransactionView.cs" />
     <Compile Include="TriggerView.cs" />
     <Compile Include="VolumeBSView.cs" />
@@ -105,10 +113,7 @@
     <None Include="ToolBar.resx" />
     <None Include="Properties\Resources.resx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Objects\" />
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FreeQuant.Series\FreeQuant.Series.csproj">
       <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>

@@ -1892,30 +1892,21 @@ namespace FreeQuant.Charting
     public event ZoomEventHandler Zoom;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Pad()
+    public Pad():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Pad(Chart Chart)
+
+    public Pad(Chart Chart):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fChart = Chart;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Pad(Chart Chart, double X1, double Y1, double X2, double Y2)
+
+    public Pad(Chart Chart, double X1, double Y1, double X2, double Y2):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fChart = Chart;
       this.fCanvasX1 = X1;
       this.fCanvasX2 = X2;
@@ -1924,7 +1915,7 @@ namespace FreeQuant.Charting
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public void ResetLastTickTime()
     {
       this.fLastTickTime = 0;

@@ -600,9 +600,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXEmail()
+    public FIXEmail():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.rdgQY3jtor = new ArrayList();
       this.FEjQyLnD7C = new ArrayList();
       this.eb4Qh0stSg = new ArrayList();
@@ -610,14 +610,13 @@ namespace FreeQuant.FIX
       this.afVQfP7ZuD = new ArrayList();
       this.M3yQ6RreNN = new ArrayList();
       this.QXmQqDrbsN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXEmail(string EmailThreadID, char EmailType, string Subject, int NoLinesOfText)
+    public FIXEmail(string EmailThreadID, char EmailType, string Subject, int NoLinesOfText): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.rdgQY3jtor = new ArrayList();
       this.FEjQyLnD7C = new ArrayList();
       this.eb4Qh0stSg = new ArrayList();
@@ -625,8 +624,7 @@ namespace FreeQuant.FIX
       this.afVQfP7ZuD = new ArrayList();
       this.M3yQ6RreNN = new ArrayList();
       this.QXmQqDrbsN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.EmailThreadID = EmailThreadID;
       this.EmailType = EmailType;
       this.Subject = Subject;

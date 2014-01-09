@@ -490,24 +490,18 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUserRequest()
+    public FIXUserRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.DQTAjheR9b = new ArrayList();
-      this.FPwAEh5PZt = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUserRequest(string UserRequestID, int UserRequestType, string Username)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.DQTAjheR9b = new ArrayList();
       this.FPwAEh5PZt = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+            }
+
+
+    public FIXUserRequest(string UserRequestID, int UserRequestType, string Username):base()
+    {
+      this.DQTAjheR9b = new ArrayList();
+      this.FPwAEh5PZt = new ArrayList();
       this.UserRequestID = UserRequestID;
       this.UserRequestType = UserRequestType;
       this.Username = Username;

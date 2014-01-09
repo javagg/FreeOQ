@@ -440,25 +440,21 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBidResponse()
+    public FIXBidResponse(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.nWjyhJRCn8 = new ArrayList();
       this.QVHyNriqZ6 = new ArrayList();
       this.fuDyfcs6Mu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBidResponse(int NoBidComponents)
+    public FIXBidResponse(int NoBidComponents): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.nWjyhJRCn8 = new ArrayList();
       this.QVHyNriqZ6 = new ArrayList();
       this.fuDyfcs6Mu = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.NoBidComponents = NoBidComponents;
     }
 

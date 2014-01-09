@@ -1291,9 +1291,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAssignmentReport()
+    public FIXAssignmentReport(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.iBNYr6wxPr = new ArrayList();
       this.acXYpWU8j9 = new ArrayList();
       this.sFqYMPgTq0 = new ArrayList();
@@ -1303,14 +1303,12 @@ namespace FreeQuant.FIX
       this.kuJYLruLA1 = new ArrayList();
       this.RWxYKboqTN = new ArrayList();
       this.KgCY0x4RC5 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXAssignmentReport(string AsgnRptID, int AccountType, double SettlPrice, int SettlPriceType, double UnderlyingSettlPrice, char AssignmentMethod, double OpenInterest, char ExerciseMethod, string SettlSessID, string SettlSessSubID, DateTime ClearingBusinessDate)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    : base(){
+
       this.iBNYr6wxPr = new ArrayList();
       this.acXYpWU8j9 = new ArrayList();
       this.sFqYMPgTq0 = new ArrayList();
@@ -1320,8 +1318,7 @@ namespace FreeQuant.FIX
       this.kuJYLruLA1 = new ArrayList();
       this.RWxYKboqTN = new ArrayList();
       this.KgCY0x4RC5 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.AsgnRptID = AsgnRptID;
       this.AccountType = AccountType;
       this.SettlPrice = SettlPrice;

@@ -18,15 +18,10 @@ namespace FreeQuant.FIX
     public const int SendingTimeAccuracyProblem = 10;
     public const int InvalidMsgType = 11;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSessionRejectReason(int value)
+    public FIXSessionRejectReason(int value):base(373, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(373, value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static SessionRejectReason FromFIX(int value)
     {
       switch (value)
@@ -60,7 +55,6 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static int ToFIX(SessionRejectReason value)
     {
       switch (value)

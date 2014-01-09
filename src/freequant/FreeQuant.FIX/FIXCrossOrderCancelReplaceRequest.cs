@@ -1850,9 +1850,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCrossOrderCancelReplaceRequest()
+    public FIXCrossOrderCancelReplaceRequest(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.gIU8m0F1AN = new ArrayList();
       this.BV18kOoao8 = new ArrayList();
       this.y4e8ncGVo4 = new ArrayList();
@@ -1862,14 +1861,11 @@ namespace FreeQuant.FIX
       this.Jg48BYW4ji = new ArrayList();
       this.cFf8Ooirwo = new ArrayList();
       this.M2Y8xVHfhN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXCrossOrderCancelReplaceRequest(string CrossID, string OrigCrossID, int CrossType, int CrossPrioritization, int NoSides, DateTime TransactTime, char OrdType)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    : base(){
+
       this.gIU8m0F1AN = new ArrayList();
       this.BV18kOoao8 = new ArrayList();
       this.y4e8ncGVo4 = new ArrayList();
@@ -1879,8 +1875,7 @@ namespace FreeQuant.FIX
       this.Jg48BYW4ji = new ArrayList();
       this.cFf8Ooirwo = new ArrayList();
       this.M2Y8xVHfhN = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CrossID = CrossID;
       this.OrigCrossID = OrigCrossID;
       this.CrossType = CrossType;
@@ -1890,19 +1885,16 @@ namespace FreeQuant.FIX
       this.OrdType = OrdType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.gIU8m0F1AN[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.gIU8m0F1AN.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -1911,14 +1903,13 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopsGroup group)
     {
       this.BV18kOoao8.Add((object) group);
       ++this.NoHops;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXSidesGroup GetSidesGroup(int i)
     {
       if (i < this.NoSides)
@@ -1927,7 +1918,6 @@ namespace FreeQuant.FIX
         return (FIXSidesGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXSidesGroup group)
     {
       this.y4e8ncGVo4.Add((object) group);
@@ -1943,7 +1933,6 @@ namespace FreeQuant.FIX
         return (FIXSecurityAltIDGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXSecurityAltIDGroup group)
     {
       this.aQc81UXdAf.Add((object) group);

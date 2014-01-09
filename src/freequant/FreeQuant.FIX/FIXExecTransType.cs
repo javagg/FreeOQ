@@ -10,15 +10,10 @@ namespace FreeQuant.FIX
     public const char Correct = '2';
     public const char Status = '3';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXExecTransType(char value)
+    public FIXExecTransType(char value) : base(20, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(20, value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static ExecTransType FromFIX(char value)
     {
       switch (value)

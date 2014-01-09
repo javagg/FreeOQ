@@ -1462,8 +1462,9 @@ namespace FreeQuant.FIX
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXCollateralInquiryAck()
+        : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.PXNhmVj1Rj = new ArrayList();
       this.p2DhkRZaOs = new ArrayList();
       this.upLhnLNOJc = new ArrayList();
@@ -1474,14 +1475,13 @@ namespace FreeQuant.FIX
       this.f1ghOIe3EV = new ArrayList();
       this.VLOhxJ3TLr = new ArrayList();
       this.P93h5ulH7m = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralInquiryAck(string CollInquiryID, int CollInquiryStatus)
+    public FIXCollateralInquiryAck(string CollInquiryID, int CollInquiryStatus):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.PXNhmVj1Rj = new ArrayList();
       this.p2DhkRZaOs = new ArrayList();
       this.upLhnLNOJc = new ArrayList();
@@ -1492,8 +1492,7 @@ namespace FreeQuant.FIX
       this.f1ghOIe3EV = new ArrayList();
       this.VLOhxJ3TLr = new ArrayList();
       this.P93h5ulH7m = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.CollInquiryID = CollInquiryID;
       this.CollInquiryStatus = CollInquiryStatus;
     }

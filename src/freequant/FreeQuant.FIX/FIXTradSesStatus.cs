@@ -10,15 +10,10 @@ namespace FreeQuant.FIX
     public const int PreOpen = 4;
     public const int PreClose = 5;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradSesStatus(int value)
+    public FIXTradSesStatus(int value):base(340, value)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(340, value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(int value)
     {
       switch (value)

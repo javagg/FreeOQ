@@ -9,40 +9,32 @@ namespace FreeQuant.FIX
 
     public virtual FIXType FIXType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXType.Unknown;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected FIXField(int tag)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Tag = tag;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
       return "";
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual string ToInvariantString()
     {
       return "";
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual object GetValue()
     {
       return (object) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static FIXField Field(FIXType type, int tag)
     {
       switch (type)

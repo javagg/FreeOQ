@@ -1130,32 +1130,26 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDerivativeSecurityListRequest()
+    public FIXDerivativeSecurityListRequest():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.cUSusIjhJd = new ArrayList();
+           this.cUSusIjhJd = new ArrayList();
       this.ihpubOIQ8s = new ArrayList();
       this.vBeujneRJu = new ArrayList();
       this.lKpuEkm087 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+  
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDerivativeSecurityListRequest(string SecurityReqID, int SecurityListRequestType)
+
+    public FIXDerivativeSecurityListRequest(string SecurityReqID, int SecurityListRequestType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.cUSusIjhJd = new ArrayList();
       this.ihpubOIQ8s = new ArrayList();
       this.vBeujneRJu = new ArrayList();
       this.lKpuEkm087 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SecurityReqID = SecurityReqID;
       this.SecurityListRequestType = SecurityListRequestType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.cUSusIjhJd[i];

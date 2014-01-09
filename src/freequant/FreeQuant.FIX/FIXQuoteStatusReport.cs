@@ -2044,10 +2044,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteStatusReport()
+    public FIXQuoteStatusReport() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.jmvuPkXaKX = new ArrayList();
       this.WepuIjaNm0 = new ArrayList();
       this.HpYuH4BErM = new ArrayList();
@@ -2057,14 +2055,11 @@ namespace FreeQuant.FIX
       this.LPhum3q0kx = new ArrayList();
       this.DRTukUN305 = new ArrayList();
       this.qBpunUTKgp = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXQuoteStatusReport(string QuoteID)
+    public FIXQuoteStatusReport(string QuoteID): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.jmvuPkXaKX = new ArrayList();
       this.WepuIjaNm0 = new ArrayList();
       this.HpYuH4BErM = new ArrayList();
@@ -2074,8 +2069,7 @@ namespace FreeQuant.FIX
       this.LPhum3q0kx = new ArrayList();
       this.DRTukUN305 = new ArrayList();
       this.qBpunUTKgp = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.QuoteID = QuoteID;
     }
 

@@ -452,23 +452,18 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUserResponse()
+    public FIXUserResponse():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.jV0yJaEIWa = new ArrayList();
       this.UPKyrVKyla = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUserResponse(string UserRequestID, string Username)
+    public FIXUserResponse(string UserRequestID, string Username):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.jV0yJaEIWa = new ArrayList();
       this.UPKyrVKyla = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.UserRequestID = UserRequestID;
       this.Username = Username;
     }

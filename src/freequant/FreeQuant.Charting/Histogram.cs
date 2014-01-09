@@ -106,33 +106,27 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Histogram(string Name, string Title, int NBins, double XMin, double XMax)
+
+    public Histogram(string Name, string Title, int NBins, double XMin, double XMax):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.P6F6OEmA1G = Name;
       this.fcj6JIiZTq = Title;
       this.aVo6FRVaPQ(NBins, XMin, XMax);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public Histogram(string Name, int NBins, double XMin, double XMax)
+    public Histogram(string Name, int NBins, double XMin, double XMax):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.P6F6OEmA1G = Name;
       this.aVo6FRVaPQ(NBins, XMin, XMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Histogram(int NBins, double XMin, double XMax)
+
+    public Histogram(int NBins, double XMin, double XMax):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.aVo6FRVaPQ(NBins, XMin, XMax);
     }
 

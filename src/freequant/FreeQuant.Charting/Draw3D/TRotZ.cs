@@ -11,11 +11,8 @@ namespace FreeQuant.Charting.Draw3D
   public class TRotZ : TMat3x3
   {
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TRotZ(double Angle)
+    public TRotZ(double Angle):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SetRotZ(Angle);
     }
   }

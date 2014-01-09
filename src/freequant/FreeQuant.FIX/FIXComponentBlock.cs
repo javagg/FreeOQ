@@ -4,13 +4,7 @@ namespace FreeQuant.FIX
 {
   public class FIXComponentBlock
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXComponentBlock()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
+
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static void Copy(IFIXInstrument from, IFIXInstrument to)

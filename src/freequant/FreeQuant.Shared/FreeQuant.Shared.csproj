@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -134,7 +134,9 @@
     <Compile Include="Controls\GotoForm.cs" />
     <Compile Include="Controls\IconCollection.cs" />
     <Compile Include="Controls\IconCollectionEditor.cs" />
-    <Compile Include="Controls\IconList.cs" />
+    <Compile Include="Controls\IconList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ImageMenuItem.cs" />
     <Compile Include="Controls\NewBarForm.cs" />
     <Compile Include="Controls\NewDailyForm.cs" />
@@ -150,12 +152,7 @@
     <Compile Include="Configuration\ReferenceViewItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Properties\" />
-    <Folder Include="Data\" />
-    <Folder Include="Controls\" />
-    <Folder Include="Configuration\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Properties\Resources.resx" />
     <None Include="Data\Export\CSV\ExportSeriesForm.resx" />

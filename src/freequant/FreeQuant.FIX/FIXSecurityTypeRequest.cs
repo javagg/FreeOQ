@@ -516,24 +516,19 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityTypeRequest()
+    public FIXSecurityTypeRequest() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.FSYuKSMkw2 = new ArrayList();
       this.zXHu0tXJtF = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityTypeRequest(string SecurityReqID)
+      
+    public FIXSecurityTypeRequest(string SecurityReqID) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.FSYuKSMkw2 = new ArrayList();
       this.zXHu0tXJtF = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.SecurityReqID = SecurityReqID;
     }
 

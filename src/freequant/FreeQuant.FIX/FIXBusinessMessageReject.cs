@@ -491,40 +491,35 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBusinessMessageReject()
+    public FIXBusinessMessageReject() :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.gNvUnunc0L = new ArrayList();
       this.ktQU1yK4ty = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXBusinessMessageReject(string RefMsgType, int BusinessRejectReason)
+    public FIXBusinessMessageReject(string RefMsgType, int BusinessRejectReason) :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.gNvUnunc0L = new ArrayList();
       this.ktQU1yK4ty = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.RefMsgType = RefMsgType;
       this.BusinessRejectReason = BusinessRejectReason;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.gNvUnunc0L[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public void AddGroup(FIXHopRefIDGroup group)
+      public void AddGroup(FIXHopRefIDGroup group)
     {
       this.gNvUnunc0L.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -533,7 +528,6 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopsGroup group)
     {
       this.ktQU1yK4ty.Add((object) group);

@@ -8,12 +8,8 @@ namespace FreeQuant.FIX
     public const char Flash = '1';
     public const char Background = '2';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXUrgency(char val)
+    public FIXUrgency(char val) : base(10200, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(61, val);
     }
   }
 }

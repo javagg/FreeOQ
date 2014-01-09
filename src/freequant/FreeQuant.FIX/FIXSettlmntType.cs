@@ -17,11 +17,9 @@ namespace FreeQuant.FIX
     public const char Tplus1 = 'A';
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlmntType(char val)
+    public FIXSettlmntType(char val):base(63, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(63, val);
+ 
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

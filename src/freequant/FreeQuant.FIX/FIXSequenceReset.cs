@@ -425,40 +425,29 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSequenceReset()
+    public FIXSequenceReset() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.gQu8y5Ecjf = new ArrayList();
       this.odx8h11ooy = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSequenceReset(int NewSeqNo)
+    public FIXSequenceReset(int NewSeqNo) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.gQu8y5Ecjf = new ArrayList();
       this.odx8h11ooy = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.NewSeqNo = NewSeqNo;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.gQu8y5Ecjf[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.gQu8y5Ecjf.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -467,8 +456,7 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public void AddGroup(FIXHopsGroup group)
+     public void AddGroup(FIXHopsGroup group)
     {
       this.odx8h11ooy.Add((object) group);
       ++this.NoHops;

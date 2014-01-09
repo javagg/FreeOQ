@@ -1418,10 +1418,10 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradeCaptureReportAck()
+
+    public FIXTradeCaptureReportAck():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.GJ6QKGT4fl = new ArrayList();
       this.eDuQ0IDmr8 = new ArrayList();
       this.KnxQDTEJFy = new ArrayList();
@@ -1429,14 +1429,12 @@ namespace FreeQuant.FIX
       this.IwYQIVkCHt = new ArrayList();
       this.a1kQH4lmlW = new ArrayList();
       this.LWXQWUYOnD = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradeCaptureReportAck(string TradeReportID, char ExecType)
+    public FIXTradeCaptureReportAck(string TradeReportID, char ExecType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.GJ6QKGT4fl = new ArrayList();
       this.eDuQ0IDmr8 = new ArrayList();
       this.KnxQDTEJFy = new ArrayList();
@@ -1444,8 +1442,7 @@ namespace FreeQuant.FIX
       this.IwYQIVkCHt = new ArrayList();
       this.a1kQH4lmlW = new ArrayList();
       this.LWXQWUYOnD = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.TradeReportID = TradeReportID;
       this.ExecType = ExecType;
     }

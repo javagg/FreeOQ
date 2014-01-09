@@ -1079,35 +1079,33 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDerivativeSecurityList()
+    public FIXDerivativeSecurityList(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.J2KymlQM35 = new ArrayList();
       this.FBcykcyfpa = new ArrayList();
       this.EYgynHHppe = new ArrayList();
       this.XsPy1kTjxC = new ArrayList();
       this.R77yiRKrQm = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXDerivativeSecurityList(string SecurityReqID, string SecurityResponseID, int SecurityRequestResult)
+
+    public FIXDerivativeSecurityList(string SecurityReqID, string SecurityResponseID, int SecurityRequestResult): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.J2KymlQM35 = new ArrayList();
       this.FBcykcyfpa = new ArrayList();
       this.EYgynHHppe = new ArrayList();
       this.XsPy1kTjxC = new ArrayList();
       this.R77yiRKrQm = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.SecurityReqID = SecurityReqID;
       this.SecurityResponseID = SecurityResponseID;
       this.SecurityRequestResult = SecurityRequestResult;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.J2KymlQM35[i];

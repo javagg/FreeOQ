@@ -1802,9 +1802,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralAssignment()
+    public FIXCollateralAssignment():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.zQ6yBAxbHd = new ArrayList();
       this.A15yO1ijB6 = new ArrayList();
       this.Tn1yxAkXrf = new ArrayList();
@@ -1818,14 +1817,11 @@ namespace FreeQuant.FIX
       this.yO2y9amCf1 = new ArrayList();
       this.sK8ysXShmc = new ArrayList();
       this.hVkybKdmlI = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralAssignment(string CollAsgnID, int CollAsgnReason, int CollAsgnTransType, DateTime TransactTime)
+    public FIXCollateralAssignment(string CollAsgnID, int CollAsgnReason, int CollAsgnTransType, DateTime TransactTime):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.zQ6yBAxbHd = new ArrayList();
       this.A15yO1ijB6 = new ArrayList();
       this.Tn1yxAkXrf = new ArrayList();
@@ -1839,8 +1835,6 @@ namespace FreeQuant.FIX
       this.yO2y9amCf1 = new ArrayList();
       this.sK8ysXShmc = new ArrayList();
       this.hVkybKdmlI = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CollAsgnID = CollAsgnID;
       this.CollAsgnReason = CollAsgnReason;
       this.CollAsgnTransType = CollAsgnTransType;

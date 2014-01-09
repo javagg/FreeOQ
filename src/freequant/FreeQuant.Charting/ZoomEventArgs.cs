@@ -35,12 +35,8 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ZoomEventArgs(double XMin, double XMax, double YMin, double YMax, bool ZoomUnzoom)
+    public ZoomEventArgs(double XMin, double XMax, double YMin, double YMax, bool ZoomUnzoom):base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fXMin = XMin;
       this.fXMax = XMax;
       this.fYMin = YMin;

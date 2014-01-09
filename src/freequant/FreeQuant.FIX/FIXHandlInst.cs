@@ -8,12 +8,8 @@ namespace FreeQuant.FIX
     public const char AutomatedExecutionOrderPublic = '2';
     public const char ManualOrderBestExecution = '3';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXHandlInst(char val)
+    public FIXHandlInst(char val): base(21, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(21, val);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

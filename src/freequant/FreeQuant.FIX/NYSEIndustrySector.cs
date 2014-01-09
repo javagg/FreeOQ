@@ -9,12 +9,8 @@ namespace FreeQuant.FIX
     public const string Utilities = "300";
     public const string FinanceRealEstate = "400";
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public NYSEIndustrySector(string val)
+    public NYSEIndustrySector(string val) :base(10101, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(10101, val);
     }
   }
 }

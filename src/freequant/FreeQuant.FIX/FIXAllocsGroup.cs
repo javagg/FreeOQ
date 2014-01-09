@@ -85,16 +85,12 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXAllocsGroup()
+    public FIXAllocsGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.knUUgb6Axa = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXNested2PartyIDsGroup GetNested2PartyIDsGroup(int i)
     {
       if (i < this.NoNested2PartyIDs)

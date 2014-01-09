@@ -22,11 +22,9 @@ namespace FreeQuant.FIX
     public const char PendingReplace = 'E';
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrdStatus(char val)
+    public FIXOrdStatus(char val):base(39, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(39, val);
+ 
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

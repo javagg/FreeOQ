@@ -758,13 +758,6 @@ namespace FreeQuant.Charting
 
     private class XD9QjcfMcOLK0nS6xp : Histogram2D.a8pjE1K8r7B62oxStB
     {
-      [MethodImpl(MethodImplOptions.NoInlining)]
-      public XD9QjcfMcOLK0nS6xp()
-      {
-        Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
-      }
 
       [MethodImpl(MethodImplOptions.NoInlining)]
       public override double f([In] double obj0, [In] double obj1)

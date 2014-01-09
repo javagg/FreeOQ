@@ -2618,9 +2618,8 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderSingle()
+    public FIXNewOrderSingle():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.Gk8YDuogVw = new ArrayList();
       this.mi3YPSTqEN = new ArrayList();
       this.kb9YIAFtAE = new ArrayList();
@@ -2630,14 +2629,11 @@ namespace FreeQuant.FIX
       this.SgbYVisdm5 = new ArrayList();
       this.AxxYmvV7Zg = new ArrayList();
       this.q6GYkjkFaA = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderSingle(string ClOrdID, char Side, DateTime TransactTime, char OrdType)
+    public FIXNewOrderSingle(string ClOrdID, char Side, DateTime TransactTime, char OrdType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.Gk8YDuogVw = new ArrayList();
       this.mi3YPSTqEN = new ArrayList();
       this.kb9YIAFtAE = new ArrayList();
@@ -2647,8 +2643,6 @@ namespace FreeQuant.FIX
       this.SgbYVisdm5 = new ArrayList();
       this.AxxYmvV7Zg = new ArrayList();
       this.q6GYkjkFaA = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ClOrdID = ClOrdID;
       this.Side = Side;
       this.TransactTime = TransactTime;

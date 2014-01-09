@@ -672,24 +672,17 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrderCancelReject()
+    public FIXOrderCancelReject():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Gck8FaUt8P = new ArrayList();
       this.V718wW8Hnp = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXOrderCancelReject(string OrderID, string ClOrdID, string OrigClOrdID, char OrdStatus, char CxlRejResponseTo)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+    :base(){
       this.Gck8FaUt8P = new ArrayList();
       this.V718wW8Hnp = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrderID = OrderID;
       this.ClOrdID = ClOrdID;
       this.OrigClOrdID = OrigClOrdID;

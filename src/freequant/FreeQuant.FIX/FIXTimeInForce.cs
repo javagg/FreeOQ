@@ -15,15 +15,10 @@ namespace FreeQuant.FIX
     public const char AtTheClose = '7';
     public const char GoodForSeconds = 'X';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTimeInForce(char val)
+    public FIXTimeInForce(char val):base(59, val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(59, val);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static char Value(string Name)
     {
       if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3766))

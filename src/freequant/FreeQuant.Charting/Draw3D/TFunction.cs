@@ -36,15 +36,14 @@ namespace FreeQuant.Charting.Draw3D
     private bool hH1321Stt8;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TFunction()
+    public TFunction():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.MaxX = 1.0;
       this.MaxY = 1.0;
       this.Surface = new TSurface();
       this.hH1321Stt8 = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+  
       this.Surface.Diffuse = 0.59 * new TColor(0.5, 0.7, 1.0);
     }
 

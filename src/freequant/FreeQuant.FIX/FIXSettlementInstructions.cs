@@ -531,25 +531,23 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlementInstructions()
+    public FIXSettlementInstructions():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.B9XUU7XbUv = new ArrayList();
       this.L4hUAjufHw = new ArrayList();
       this.DVxU8kiQJt = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSettlementInstructions(string SettlInstMsgID, char SettlInstMode, DateTime TransactTime)
+    public FIXSettlementInstructions(string SettlInstMsgID, char SettlInstMode, DateTime TransactTime):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.B9XUU7XbUv = new ArrayList();
       this.L4hUAjufHw = new ArrayList();
       this.DVxU8kiQJt = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.SettlInstMsgID = SettlInstMsgID;
       this.SettlInstMode = SettlInstMode;
       this.TransactTime = TransactTime;

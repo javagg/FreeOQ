@@ -1911,32 +1911,25 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrdersGroup()
+    public FIXOrdersGroup():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.hDUUiNXQor = new ArrayList();
       this.zOaUl4gw1I = new ArrayList();
       this.hxBUBt8PY1 = new ArrayList();
       this.qgwUOpCCGl = new ArrayList();
       this.upwUxtBFiq = new ArrayList();
       this.rebU5r5Gnt = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXOrdersGroup(string ClOrdID, int ListSeqNo, char Side)
+    public FIXOrdersGroup(string ClOrdID, int ListSeqNo, char Side) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.hDUUiNXQor = new ArrayList();
       this.zOaUl4gw1I = new ArrayList();
       this.hxBUBt8PY1 = new ArrayList();
       this.qgwUOpCCGl = new ArrayList();
       this.upwUxtBFiq = new ArrayList();
       this.rebU5r5Gnt = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ClOrdID = ClOrdID;
       this.ListSeqNo = ListSeqNo;
       this.Side = Side;

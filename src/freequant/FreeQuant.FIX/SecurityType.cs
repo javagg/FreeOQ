@@ -4,12 +4,10 @@ namespace FreeQuant.FIX
 {
   public class SecurityType : FIXSecurityType
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SecurityType(string val)
+
+    public SecurityType(string val):base(val)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(val);
+
     }
   }
 }

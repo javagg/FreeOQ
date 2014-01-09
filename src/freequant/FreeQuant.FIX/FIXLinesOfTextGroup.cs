@@ -43,20 +43,11 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXLinesOfTextGroup()
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXLinesOfTextGroup(string Text)
+    public FIXLinesOfTextGroup(string Text):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.Text = Text;
     }
   }

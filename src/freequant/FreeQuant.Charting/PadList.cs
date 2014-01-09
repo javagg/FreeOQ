@@ -58,12 +58,11 @@ namespace FreeQuant.Charting
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public PadList()
+    public PadList():base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
+
       this.WTQm1qtT9 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

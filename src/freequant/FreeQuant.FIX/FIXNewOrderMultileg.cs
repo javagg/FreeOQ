@@ -2096,10 +2096,10 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderMultileg()
+
+    public FIXNewOrderMultileg(): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.zWBYRh65dt = new ArrayList();
       this.DJ1Y4INvDc = new ArrayList();
       this.lLcYeWXG4B = new ArrayList();
@@ -2109,14 +2109,13 @@ namespace FreeQuant.FIX
       this.xCVYbAWKf2 = new ArrayList();
       this.zlXYjvYIgt = new ArrayList();
       this.rGvYEHwCCk = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXNewOrderMultileg(string ClOrdID, char Side, int NoLegs, DateTime TransactTime, char OrdType)
+    public FIXNewOrderMultileg(string ClOrdID, char Side, int NoLegs, DateTime TransactTime, char OrdType): base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.zWBYRh65dt = new ArrayList();
       this.DJ1Y4INvDc = new ArrayList();
       this.lLcYeWXG4B = new ArrayList();
@@ -2126,8 +2125,7 @@ namespace FreeQuant.FIX
       this.xCVYbAWKf2 = new ArrayList();
       this.zlXYjvYIgt = new ArrayList();
       this.rGvYEHwCCk = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.ClOrdID = ClOrdID;
       this.Side = Side;
       this.NoLegs = NoLegs;

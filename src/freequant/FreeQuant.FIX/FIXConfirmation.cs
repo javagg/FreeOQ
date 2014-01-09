@@ -2167,31 +2167,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXConfirmation()
+    public FIXConfirmation():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      this.dwvYCRtlco = new ArrayList();
-      this.lh2Y2g6XX9 = new ArrayList();
-      this.JigYcpJwQf = new ArrayList();
-      this.GfJYzJfYgP = new ArrayList();
-      this.y9kySg96dQ = new ArrayList();
-      this.cRxyUTNebQ = new ArrayList();
-      this.JqVyAkx4gI = new ArrayList();
-      this.nphy88In3E = new ArrayList();
-      this.fEZyZQpmsQ = new ArrayList();
-      this.vFVyuPa8h0 = new ArrayList();
-      this.uDGytRb6pC = new ArrayList();
-      this.u1AyQ5QFul = new ArrayList();
-      this.Y4Ky7k5DvH = new ArrayList();
-      this.tCwyYytEZF = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXConfirmation(string ConfirmID, int ConfirmTransType, int ConfirmType, int ConfirmStatus, DateTime TransactTime, DateTime TradeDate, int NoUnderlyings, int NoLegs, double AllocQty, char Side, int NoCapacities, string AllocAccount, double AvgPx, double GrossTradeAmt, double NetMoney)
-    {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.dwvYCRtlco = new ArrayList();
       this.lh2Y2g6XX9 = new ArrayList();
       this.JigYcpJwQf = new ArrayList();
@@ -2206,8 +2184,26 @@ namespace FreeQuant.FIX
       this.u1AyQ5QFul = new ArrayList();
       this.Y4Ky7k5DvH = new ArrayList();
       this.tCwyYytEZF = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+     }
+
+
+    public FIXConfirmation(string ConfirmID, int ConfirmTransType, int ConfirmType, int ConfirmStatus, DateTime TransactTime, DateTime TradeDate, int NoUnderlyings, int NoLegs, double AllocQty, char Side, int NoCapacities, string AllocAccount, double AvgPx, double GrossTradeAmt, double NetMoney)
+    :base(){
+
+      this.dwvYCRtlco = new ArrayList();
+      this.lh2Y2g6XX9 = new ArrayList();
+      this.JigYcpJwQf = new ArrayList();
+      this.GfJYzJfYgP = new ArrayList();
+      this.y9kySg96dQ = new ArrayList();
+      this.cRxyUTNebQ = new ArrayList();
+      this.JqVyAkx4gI = new ArrayList();
+      this.nphy88In3E = new ArrayList();
+      this.fEZyZQpmsQ = new ArrayList();
+      this.vFVyuPa8h0 = new ArrayList();
+      this.uDGytRb6pC = new ArrayList();
+      this.u1AyQ5QFul = new ArrayList();
+      this.Y4Ky7k5DvH = new ArrayList();
+      this.tCwyYytEZF = new ArrayList();
       this.ConfirmID = ConfirmID;
       this.ConfirmTransType = ConfirmTransType;
       this.ConfirmType = ConfirmType;
@@ -2225,19 +2221,16 @@ namespace FreeQuant.FIX
       this.NetMoney = NetMoney;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.dwvYCRtlco[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.dwvYCRtlco.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)

@@ -99,32 +99,23 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLabel(string Text, double X, double Y)
+
+    public TLabel(string Text, double X, double Y):base(X,Y)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(X, Y);
+
       this.OFU3pa8K6e = Text;
       this.I9m3s0VaOK();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLabel(string Text, double X, double Y, Color MarkerColor)
+    public TLabel(string Text, double X, double Y, Color MarkerColor): base(X, Y, MarkerColor)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(X, Y, MarkerColor);
       this.OFU3pa8K6e = Text;
       this.I9m3s0VaOK();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TLabel(string Text, double X, double Y, Color MarkerColor, Color TextColor)
+    public TLabel(string Text, double X, double Y, Color MarkerColor, Color TextColor) :base(X, Y, MarkerColor)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(X, Y, MarkerColor);
       this.OFU3pa8K6e = Text;
       this.I9m3s0VaOK();
       this.PmN3IBiixN = TextColor;

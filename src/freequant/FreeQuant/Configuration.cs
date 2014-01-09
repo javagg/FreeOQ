@@ -56,11 +56,11 @@ namespace FreeQuant
     [Category("Trace")]
     public System.Diagnostics.TraceLevel TraceLevel
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }

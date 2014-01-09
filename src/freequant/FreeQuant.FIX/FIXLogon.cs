@@ -543,43 +543,32 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXLogon()
+    public FIXLogon() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.UafUM7Krqa = new ArrayList();
       this.AZvUvLH7qn = new ArrayList();
       this.NcUUdWOpnf = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXLogon(int EncryptMethod, int HeartBtInt)
+    public FIXLogon(int EncryptMethod, int HeartBtInt) : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.UafUM7Krqa = new ArrayList();
       this.AZvUvLH7qn = new ArrayList();
       this.NcUUdWOpnf = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.EncryptMethod = EncryptMethod;
       this.HeartBtInt = HeartBtInt;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXHopRefIDGroup GetHopRefIDGroup(int i)
+     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.UafUM7Krqa[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.UafUM7Krqa.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)

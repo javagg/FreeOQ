@@ -1763,9 +1763,9 @@ namespace FreeQuant.FIX
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXCollateralInquiry()
+    public FIXCollateralInquiry():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.Yd5ADRMyit = new ArrayList();
       this.GP2APV7vl9 = new ArrayList();
       this.zqoAI9eIlm = new ArrayList();
@@ -1779,8 +1779,7 @@ namespace FreeQuant.FIX
       this.L2sA16JESZ = new ArrayList();
       this.rEBAi3fg19 = new ArrayList();
       this.VuCAlbeyu4 = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

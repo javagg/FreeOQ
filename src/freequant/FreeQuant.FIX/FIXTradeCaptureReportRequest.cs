@@ -1537,10 +1537,8 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradeCaptureReportRequest()
+      public FIXTradeCaptureReportRequest() :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.iJnjsX25u = new ArrayList();
       this.iA8EOPjMt = new ArrayList();
       this.yK335YZdU = new ArrayList();
@@ -1550,14 +1548,10 @@ namespace FreeQuant.FIX
       this.Cb62AvP85 = new ArrayList();
       this.w9Gce2HtA = new ArrayList();
       this.hYAzfreJT = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXTradeCaptureReportRequest(string TradeRequestID, int TradeRequestType)
+    public FIXTradeCaptureReportRequest(string TradeRequestID, int TradeRequestType)  :base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.iJnjsX25u = new ArrayList();
       this.iA8EOPjMt = new ArrayList();
       this.yK335YZdU = new ArrayList();
@@ -1567,25 +1561,21 @@ namespace FreeQuant.FIX
       this.Cb62AvP85 = new ArrayList();
       this.w9Gce2HtA = new ArrayList();
       this.hYAzfreJT = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.TradeRequestID = TradeRequestID;
       this.TradeRequestType = TradeRequestType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXHopRefIDGroup GetHopRefIDGroup(int i)
+      public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.iJnjsX25u[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.iJnjsX25u.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
@@ -1594,7 +1584,6 @@ namespace FreeQuant.FIX
         return (FIXHopsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopsGroup group)
     {
       this.iA8EOPjMt.Add((object) group);

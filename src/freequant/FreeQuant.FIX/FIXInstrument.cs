@@ -691,17 +691,13 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXInstrument()
+
+    public FIXInstrument() : base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.fSecurityAltIDGroup = new FIXSecurityAltIDGroupList();
       this.CvJtSUh8gZ = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXSecurityAltIDGroup GetSecurityAltIDGroup(int i)
     {
       if (i < this.NoSecurityAltID)
@@ -710,7 +706,6 @@ namespace FreeQuant.FIX
         return (FIXSecurityAltIDGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXSecurityAltIDGroup GetSecurityAltIDGroup(string source)
     {
       foreach (FIXSecurityAltIDGroup securityAltIdGroup in (FIXGroupList) this.fSecurityAltIDGroup)

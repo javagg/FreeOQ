@@ -15,44 +15,29 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXStringField(int tag)
+    public FIXStringField(int tag):this(tag, "")
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, "");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXStringField(int tag, string value)
+    public FIXStringField(int tag, string value):this(tag, value, false)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(tag, value, false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXStringField(int tag, string value, bool invariantCulture)
+    public FIXStringField(int tag, string value, bool invariantCulture):base(tag)
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(tag);
       this.Value = invariantCulture ? value : value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToString()
     {
       return ((object) this.Value).ToString();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override string ToInvariantString()
     {
       return this.ToString();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override object GetValue()
     {
       return (object) this.Value;

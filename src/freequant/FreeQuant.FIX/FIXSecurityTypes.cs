@@ -556,44 +556,36 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityTypes()
+
+    public FIXSecurityTypes():base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
       this.tdstmRqKiv = new ArrayList();
       this.ob9tkuYppG = new ArrayList();
       this.uoqtnJWy2e = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public FIXSecurityTypes(string SecurityReqID, string SecurityResponseID, int SecurityResponseType)
+
+    public FIXSecurityTypes(string SecurityReqID, string SecurityResponseID, int SecurityResponseType):base()
     {
-      v09p8g7rbqSJwrIsGb.qk7PgoFzKVMdL();
+
       this.tdstmRqKiv = new ArrayList();
       this.ob9tkuYppG = new ArrayList();
       this.uoqtnJWy2e = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SecurityReqID = SecurityReqID;
       this.SecurityResponseID = SecurityResponseID;
       this.SecurityResponseType = SecurityResponseType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopRefIDGroup GetHopRefIDGroup(int i)
     {
       return (FIXHopRefIDGroup) this.tdstmRqKiv[i];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddGroup(FIXHopRefIDGroup group)
     {
       this.tdstmRqKiv.Add((object) group);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXHopsGroup GetHopsGroup(int i)
     {
       if (i < this.NoHops)
