@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.QuantRouterLib", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Quant", "freequant\FreeQuant.Quant\FreeQuant.Quant.csproj", "{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFix", "..\deps\QuickFIXn\QuickFix.csproj", "{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,10 @@ Global
 		{C030F710-A0F5-4F95-9103-881CE82D8B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C030F710-A0F5-4F95-9103-881CE82D8B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C030F710-A0F5-4F95-9103-881CE82D8B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D71862B4-8E16-4C62-9926-9AA7425BE972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D71862B4-8E16-4C62-9926-9AA7425BE972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D71862B4-8E16-4C62-9926-9AA7425BE972}.Release|Any CPU.ActiveCfg = Release|Any CPU
