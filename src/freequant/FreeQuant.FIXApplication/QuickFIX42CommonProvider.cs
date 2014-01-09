@@ -1,16 +1,9 @@
-﻿// Type: SmartQuant.FIXApplication.QuickFIX42CommonProvider
-// Assembly: SmartQuant.FIXApplication, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 44426555-807E-4D6E-87F0-79C6A497EF45
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FIXApplication.dll
-
-using aX1YwCE8tvUgZCyfib;
 using QuickFix;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms.Design;
-using zWmpDbtlldCIky2Q1f;
 
 namespace FreeQuant.FIXApplication
 {
@@ -69,161 +62,158 @@ namespace FreeQuant.FIXApplication
     [Category("Session Settings (Defaults)")]
     [Description("Heartbeat interval in seconds")]
     [DefaultValue(20)]
-    public int HeartBtInt { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public int HeartBtInt { get; set; }
 
     [Description("Time of day that this FIX session becomes activated")]
     [DefaultValue(typeof (TimeSpan), "0")]
     [Category("Session Settings (Defaults)")]
-    public TimeSpan StartTime { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public TimeSpan StartTime {   get; set; }
 
     [Description("Time of day that this FIX session becomes deactivated")]
     [Category("Session Settings (Defaults)")]
     [DefaultValue(typeof (TimeSpan), "0")]
-    public TimeSpan EndTime { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan EndTime { get;  set; }
 
     [DefaultValue(30)]
     [Description("Time between reconnection attempts in seconds")]
     [Category("Session Settings (Defaults)")]
-    public int ReconnectInterval { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public int ReconnectInterval { get;  set; }
 
     [DefaultValue("FIX.4.2")]
     [Category("Session Settings (Defaults)")]
     [Description("Version of FIX this session should use")]
-    public string BeginString { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public string BeginString { get; set; }
 
     [Description("XML definition file for validating incoming FIX messages. If no DataDictionary is supplied, only basic message validation will be done")]
     [DefaultValue("FIX42.xml")]
     [Category("Session Settings (Defaults)")]
     [Editor(typeof (FileNameEditor), typeof (UITypeEditor))]
-    public string DataDictionary { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public string DataDictionary {  get; set; }
 
     [DefaultValue("")]
     [Category("Session Settings (Defaults)")]
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
     [Description("Directory to store sequence number and message files. Only used with FileStoreFactory.")]
-    public string FileStorePath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public string FileStorePath {   get;  set; }
 
     [Description("Directory to store logs. Only used with FileLogFactory.")]
     [Category("Session Settings (Defaults)")]
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
     [DefaultValue("")]
-    public string FileLogPath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public string FileLogPath {  get;  set; }
 
     [Description("If set to TRUE, messages must be received from the counterparty within a defined number of seconds (see MaxLatency). It is useful to turn this off if a system uses localtime for it's timestamps instead of GMT")]
     [DefaultValue(false)]
     [Category("Session Settings (Defaults)")]
-    public bool CheckLatency { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public bool CheckLatency {   get;   set; }
 
     [Description("If CheckLatency is set to Y, this defines the number of seconds latency allowed for a message to be processed")]
     [DefaultValue(120)]
     [Category("Session Settings (Defaults)")]
-    public int MaxLatency { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public int MaxLatency {  get;  set; }
 
     [Description("If set to true, QuickFIX will send all necessary resend requests, even if they appear redundant")]
     [DefaultValue(false)]
     [Category("Session Settings (Defaults)")]
-    public bool SendRedundantResendRequests { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool SendRedundantResendRequests {  get;  set; }
 
     [Description("Determines if sequence numbers should be reset to 1 after a normal logout termination")]
     [Category("Session Settings (Defaults)")]
     [DefaultValue(false)]
-    public bool ResetOnLogout { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool ResetOnLogout {  get;  set; }
 
     [Category("Session Settings (Defaults)")]
     [Description("Determines if sequence numbers should be reset to 1 after an abnormal termination")]
     [DefaultValue(false)]
-    public bool ResetOnDisconnect { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool ResetOnDisconnect {  get;  set; }
 
     [DefaultValue(false)]
     [Category("Session Settings (Defaults)")]
     [Description("Determines if session state should be restored from persistence layer when logging on")]
-    public bool RefreshOnLogon { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool RefreshOnLogon {  get;  set; }
 
     [Description("Determines if a socket should be created with TCP_NODELAY")]
     [Category("Session Settings (Defaults)")]
     [DefaultValue(false)]
-    public bool TcpNoDelay { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool TcpNoDelay {  get;  set; }
 
     [DefaultValue(true)]
     [DisplayName("Enabled")]
     [Description("Enable or disable this session")]
     [Category("Session Settings (Price)")]
-    public bool PriceSessionEnabled { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool PriceSessionEnabled {  get;  set; }
 
     [Category("Session Settings (Price)")]
     [DefaultValue("")]
     [DisplayName("SenderCompID")]
     [Description("Your ID as associated with this FIX session")]
-    public string PriceSenderCompID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string PriceSenderCompID {  get;  set; }
 
     [DisplayName("TargetCompID")]
     [Description("Counter parties ID as associated with this FIX session")]
     [Category("Session Settings (Price)")]
     [DefaultValue("")]
-    public string PriceTargetCompID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string PriceTargetCompID {  get;  set; }
 
     [Description("Host to connect to")]
     [Category("Session Settings (Price)")]
     [DisplayName("SocketConnectHost")]
     [DefaultValue("localhost")]
-    public string PriceSocketConnectHost { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string PriceSocketConnectHost {  get;  set; }
 
     [Category("Session Settings (Price)")]
     [DisplayName("SocketConnectPort")]
     [Description("Socket port for connecting to a session")]
     [DefaultValue(0)]
-    public int PriceSocketConnectPort { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public int PriceSocketConnectPort {  get;  set; }
 
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
     [Description("Directory to store sequence number and message files. Only used with FileStoreFactory.")]
     [Category("Session Settings (Price)")]
     [DefaultValue("")]
     [DisplayName("FileStorePath")]
-    public string PriceFileStorePath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string PriceFileStorePath {  get;  set; }
 
     [Category("Session Settings (Order)")]
     [Description("Enable or disable this session")]
     [DefaultValue(true)]
     [DisplayName("Enabled")]
-    public bool OrderSessionEnabled { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool OrderSessionEnabled {  get;  set; }
 
     [DefaultValue("")]
     [DisplayName("SenderCompID")]
     [Category("Session Settings (Order)")]
     [Description("Your ID as associated with this FIX session")]
-    public string OrderSenderCompID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string OrderSenderCompID {  get;  set; }
 
     [DisplayName("TargetCompID")]
     [Description("Counter parties ID as associated with this FIX session")]
     [DefaultValue("")]
     [Category("Session Settings (Order)")]
-    public string OrderTargetCompID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string OrderTargetCompID {  get;  set; }
 
     [DisplayName("SocketConnectHost")]
     [DefaultValue("localhost")]
     [Category("Session Settings (Order)")]
     [Description("Host to connect to")]
-    public string OrderSocketConnectHost { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string OrderSocketConnectHost {  get;  set; }
 
     [DisplayName("SocketConnectPort")]
     [DefaultValue(0)]
     [Category("Session Settings (Order)")]
     [Description("Socket port for connecting to a session")]
-    public int OrderSocketConnectPort { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public int OrderSocketConnectPort {  get;  set; }
 
     [DisplayName("FileStorePath")]
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
     [Description("Directory to store sequence number and message files. Only used with FileStoreFactory.")]
     [DefaultValue("")]
     [Category("Session Settings (Order)")]
-    public string OrderFileStorePath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string OrderFileStorePath {  get;  set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected QuickFIX42CommonProvider()
+    
+	protected QuickFIX42CommonProvider() : base()
     {
-      Ni0n2nNTxpPQwXYoJS.cvl3IaMzFxY5E();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.HeartBtInt = 20;
       this.StartTime = TimeSpan.Parse(BeAEwTZGlZaeOmY5cm.J00weU3cM6(2724));
       this.EndTime = TimeSpan.Parse(BeAEwTZGlZaeOmY5cm.J00weU3cM6(2730));
@@ -254,22 +244,22 @@ namespace FreeQuant.FIXApplication
 
     protected abstract QuickFIX42CommonApplication CreateApplicationInstance();
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void OnDefaultsSessionSettingsCreated(Dictionary settings)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void OnPriceSessionSettingsCreated(Dictionary settings)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void OnOrderSessionSettingsCreated(Dictionary settings)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Init()
     {
       this.application = (QuickFIX42Application) this.CreateApplicationInstance();

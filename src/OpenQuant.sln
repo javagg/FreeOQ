@@ -207,6 +207,6 @@ Global
 		{FC5FB8FE-7F5F-463B-AE43-8FDE00522977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = openquant\OpenQuant.API\OpenQuant.API.csproj
+		StartupItem = ..\deps\QuickFIXn\QuickFix.csproj
 	EndGlobalSection
 EndGlobal

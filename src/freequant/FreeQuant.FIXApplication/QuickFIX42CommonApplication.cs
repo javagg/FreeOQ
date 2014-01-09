@@ -16,31 +16,24 @@ namespace FreeQuant.FIXApplication
     protected QuickFIX42CommonProvider provider;
     protected SessionID priceSessionID;
     protected SessionID orderSessionID;
-    private LogFile xGDen0EA1;
+	private LogFile logFile; 
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected QuickFIX42CommonApplication(QuickFIX42CommonProvider provider, string logFilePreffix)
+		protected QuickFIX42CommonApplication(QuickFIX42CommonProvider provider, string logFilePreffix) :base()
     {
-      Ni0n2nNTxpPQwXYoJS.cvl3IaMzFxY5E();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.provider = provider;
-      this.xGDen0EA1 = new LogFile(logFilePreffix);
+      this.logFile = new LogFile(logFilePreffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void adf1ZbrcY([In] SessionID obj0, [In] SessionID obj1)
     {
       this.priceSessionID = obj0;
       this.orderSessionID = obj1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onCreate(SessionID sessionID)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onLogon(SessionID sessionID)
     {
       bool flag1;
@@ -68,7 +61,6 @@ namespace FreeQuant.FIXApplication
       this.EmitLogon((SessionID) null);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onLogout(SessionID sessionID)
     {
       bool flag1;
@@ -96,7 +88,6 @@ namespace FreeQuant.FIXApplication
       this.EmitLogout((SessionID) null);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void fromAdmin(QuickFix.Message message, SessionID sessionID)
     {
       if (!(message is QuickFix42.Reject))
@@ -104,7 +95,6 @@ namespace FreeQuant.FIXApplication
       this.crack(message, sessionID);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void toAdmin(QuickFix.Message message, SessionID sessionID)
     {
       if (!(message is QuickFix42.Reject))
@@ -112,19 +102,16 @@ namespace FreeQuant.FIXApplication
       this.crack(message, sessionID);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void fromApp(QuickFix.Message message, SessionID sessionID)
     {
       this.crack(message, sessionID);
       message.Dispose();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void toApp(QuickFix.Message message, SessionID sessionID)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Connect()
     {
       if (this.priceSessionID != null)
@@ -141,7 +128,6 @@ namespace FreeQuant.FIXApplication
       session1.logon();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void Disconnect()
     {
       if (this.priceSessionID != null)
@@ -158,30 +144,25 @@ namespace FreeQuant.FIXApplication
       session1.logout();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public override void onMessage(MarketDataSnapshotFullRefresh message, SessionID sessionID)
+   public override void onMessage(MarketDataSnapshotFullRefresh message, SessionID sessionID)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(MarketDataIncrementalRefresh message, SessionID sessionID)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(QuickFix42.MarketDataRequestReject reject, SessionID sessionID)
     {
       string str = reject.isSetText() ? reject.getText().getValue() : "";
       this.provider.EmitError(string.Format(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1356), (object) reject.getMDReqID().getValue(), (object) str));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(QuickFix42.Reject message, SessionID session)
     {
       this.provider.EmitError(string.Format(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1450), (object) message.ToString()));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(SecurityDefinition definition, SessionID sessionID)
     {
       FIXSecurityDefinition definition1 = new FIXSecurityDefinition();
@@ -189,23 +170,19 @@ namespace FreeQuant.FIXApplication
       this.EmitSecurityDefinition(definition1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(QuickFix42.ExecutionReport message, SessionID sessionID)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(QuickFix42.OrderCancelReject message, SessionID sessionID)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(BusinessMessageReject message, SessionID sessionID)
     {
       this.provider.EmitError(string.Format(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1476), (object) message.ToString()));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public override void onMessage(TradingSessionStatus message, SessionID sessionID)
     {
       List<string> list = new List<string>();
@@ -233,8 +210,7 @@ namespace FreeQuant.FIXApplication
         return sessionID1.ToString() == sessionID2.ToString();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected void ConvertMessage(QuickFix.Message srcMessage, FIXMessage dstMessage)
+   protected void ConvertMessage(QuickFix.Message srcMessage, FIXMessage dstMessage)
     {
       foreach (Field field1 in srcMessage)
       {

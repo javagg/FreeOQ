@@ -30,12 +30,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="quickfix_net">
-      <HintPath>..\..\..\..\..\..\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\quickfix_net.dll</HintPath>
-    </Reference>
-    <Reference Include="quickfix_net_messages">
-      <HintPath>..\..\..\..\..\..\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\quickfix_net_messages.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Windows.Forms" />

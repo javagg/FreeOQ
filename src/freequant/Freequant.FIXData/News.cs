@@ -48,22 +48,16 @@ namespace FreeQuant.FIXData
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public News()
     {
-      aHVXF4EQTqOeMK8FH8.jYIb1Y6zBfgK8();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.ovPuBurpw = (byte) 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public ISeriesObject NewInstance()
     {
       return (ISeriesObject) new News();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void WriteTo(BinaryWriter writer)
     {
       writer.Write((byte) 1);
@@ -72,7 +66,6 @@ namespace FreeQuant.FIXData
       FIXGroupStreamer.WriteTo(writer, (FIXGroup) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void ReadFrom(BinaryReader reader)
     {
       int num = (int) reader.ReadByte();
@@ -81,7 +74,6 @@ namespace FreeQuant.FIXData
       FIXGroupStreamer.ReadFrom(reader, (FIXGroup) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public object Clone()
     {
       return (object) this;

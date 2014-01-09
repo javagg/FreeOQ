@@ -1,9 +1,3 @@
-// Type: SmartQuant.FIXApplication.QuickFIX43Provider
-// Assembly: SmartQuant.FIXApplication, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 44426555-807E-4D6E-87F0-79C6A497EF45
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FIXApplication.dll
-
-using aX1YwCE8tvUgZCyfib;
 using QuickFix;
 using FreeQuant;
 using FreeQuant.Data;
@@ -15,7 +9,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using zWmpDbtlldCIky2Q1f;
 
 namespace FreeQuant.FIXApplication
 {
@@ -47,7 +40,7 @@ namespace FreeQuant.FIXApplication
     [Category("Information")]
     public virtual byte Id
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return (byte) 3;
       }
@@ -87,7 +80,7 @@ namespace FreeQuant.FIXApplication
     [Category("Status")]
     public bool IsConnected
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+	 get
       {
         return this.isConnected;
       }
@@ -97,7 +90,7 @@ namespace FreeQuant.FIXApplication
     [Description("Current connection status of this provider")]
     public ProviderStatus Status
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return this.status;
       }

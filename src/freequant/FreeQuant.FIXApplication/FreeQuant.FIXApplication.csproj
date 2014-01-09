@@ -21,7 +21,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -61,6 +61,10 @@
     <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
       <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
       <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\deps\QuickFIXn\QuickFix.csproj">
+      <Project>{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}</Project>
+      <Name>QuickFix</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

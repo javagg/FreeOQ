@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.FIXData
+namespace FreeQuant.FIXData
 {
   public class FIXGroupStreamer
   {

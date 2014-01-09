@@ -6,7 +6,7 @@ namespace FreeQuant.FIXApplication
 {
 	public class FIXSessionIDEventArgs : EventArgs
 	{
-		public SessionID SessionID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+		public SessionID SessionID { get;  private set; }
 
 		public FIXSessionIDEventArgs(SessionID sessionID)
 		{

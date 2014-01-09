@@ -1,4 +1,8 @@
 namespace FreeQuant.FIXApplication
 {
-  public enum InitiatorMode { Single, Threaded }
+	public enum InitiatorMode
+	{
+		Single,
+		Threaded
+	}
 }

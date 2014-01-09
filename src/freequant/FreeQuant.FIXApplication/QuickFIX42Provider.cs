@@ -1,10 +1,4 @@
-﻿// Type: SmartQuant.FIXApplication.QuickFIX42Provider
-// Assembly: SmartQuant.FIXApplication, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 44426555-807E-4D6E-87F0-79C6A497EF45
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FIXApplication.dll
-
-using aX1YwCE8tvUgZCyfib;
-using QuickFix;
+﻿using QuickFix;
 using FreeQuant;
 using FreeQuant.Data;
 using FreeQuant.FIX;
@@ -15,7 +9,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using zWmpDbtlldCIky2Q1f;
 
 namespace FreeQuant.FIXApplication
 {
@@ -126,11 +119,11 @@ namespace FreeQuant.FIXApplication
     [Description("Bar factory of this market data provider")]
     public IBarFactory BarFactory
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return this.lI2B1F18m;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         if (this.lI2B1F18m != null)
         {
@@ -188,20 +181,16 @@ namespace FreeQuant.FIXApplication
 
     public event OrderCancelRejectEventHandler OrderCancelReject;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected QuickFIX42Provider()
     {
-      Ni0n2nNTxpPQwXYoJS.cvl3IaMzFxY5E();
       this.mdRequests = new Hashtable();
       this.nWHTWovCn = new Hashtable();
       this.ojqxnwuNv = new Hashtable();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.BarFactory = (IBarFactory) new BarFactory();
       this.InitiatorMode = InitiatorMode.Single;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected virtual void Init()
     {
       this.application = new QuickFIX42Application();
@@ -211,7 +200,6 @@ namespace FreeQuant.FIXApplication
       this.messageFactory = (MessageFactory) new DefaultMessageFactory();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Connect()
     {
       if (this.isConnected)
@@ -240,14 +228,12 @@ namespace FreeQuant.FIXApplication
       this.application.Connect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Connect(int timeout)
     {
       this.Connect();
       ProviderManager.WaitConnected((IProvider) this, timeout);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Disconnect()
     {
       if (!this.isConnected)
@@ -255,13 +241,11 @@ namespace FreeQuant.FIXApplication
       this.application.Disconnect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void Shutdown()
     {
       this.Disconnect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual void SendSecurityDefinitionRequest(FIXSecurityDefinitionRequest request)
     {
       if (this.IsConnected)
@@ -276,7 +260,6 @@ namespace FreeQuant.FIXApplication
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void CLc6DHRyV([In] object obj0, [In] BarEventArgs obj1)
     {
       Bar bar = obj1.Bar;
@@ -287,7 +270,6 @@ namespace FreeQuant.FIXApplication
       this.MXBVM8t2I((object) this, new BarEventArgs(bar, obj1.Instrument, (IMarketDataProvider) this));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private void PiIiF8bRq([In] object obj0, [In] BarEventArgs obj1)
     {
       Bar bar = obj1.Bar;

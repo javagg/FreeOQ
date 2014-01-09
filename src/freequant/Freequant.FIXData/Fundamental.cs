@@ -26,11 +26,11 @@ namespace FreeQuant.FIXData
 
     public double CashPerShare
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.GetDoubleValue(10302);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.SetDoubleValue(10302, value);
       }
