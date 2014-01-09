@@ -2,36 +2,38 @@
 using FreeQuant.Data;
 using System;
 
-namespace OpenQuant.API.Compression
+namespace OpenQuant.API
+{
+namespace Compression
 {
 	internal abstract class BarCompressor
 	{
 		protected long oldBarSize;
 		protected long newBarSize;
-		protected OpenQuant.API.Bar bar;
+		protected Bar bar;
 
 		private event CompressedBarEventHandler NewCompressedBar;
 
 		protected BarCompressor()
 		{
-			this.bar = (OpenQuant.API.Bar)null;
+			this.bar = (Bar)null;
 		}
 
-		public static BarCompressor GetCompressor(OpenQuant.API.BarType barType, long oldBarSize, long newBarSize)
+		public static BarCompressor GetCompressor(BarType barType, long oldBarSize, long newBarSize)
 		{
 			BarCompressor barCompressor;
 			switch (barType)
 			{
-				case OpenQuant.API.BarType.Time:
+					case BarType.Time:
 					barCompressor = (BarCompressor)new TimeBarCompressor();
 					break;
-				case OpenQuant.API.BarType.Tick:
+					case  BarType.Tick:
 					barCompressor = (BarCompressor)new TickBarCompressor();
 					break;
-				case OpenQuant.API.BarType.Volume:
+					case  BarType.Volume:
 					barCompressor = (BarCompressor)new VolumeBarCompressor();
 					break;
-				case OpenQuant.API.BarType.Range:
+					case BarType.Range:
 					barCompressor = (BarCompressor)new RangeBarCompressor();
 					break;
 				default:
@@ -43,19 +45,18 @@ namespace OpenQuant.API.Compression
 		}
 
 		protected abstract void Add(DataEntry entry);
-
 		protected void AddItemsToBar(PriceSizeItem[] items)
 		{
 			foreach (PriceSizeItem priceSizeItem in items)
 				this.AddItemToBar(priceSizeItem);
 		}
 
-		protected void CreateNewBar(OpenQuant.API.BarType barType, DateTime beginTime, DateTime endTime, double price)
+		protected void CreateNewBar(BarType barType, DateTime beginTime, DateTime endTime, double price)
 		{
-			if (barType == OpenQuant.API.BarType.Time && this.newBarSize == 86400L)
-				this.bar = new OpenQuant.API.Bar((SmartQuant.Data.Bar)new Daily(beginTime, price, price, price, price, 0L));
+			if (barType == BarType.Time && this.newBarSize == 86400L)
+					this.bar = new Bar((FreeQuant.Data.Bar)new Daily(beginTime, price, price, price, price, 0L));
 			else
-				this.bar = new OpenQuant.API.Bar(new SmartQuant.Data.Bar(EnumConverter.Convert(barType), this.newBarSize, beginTime, endTime, price, price, price, price, 0L, 0L));
+					this.bar = new Bar(new FreeQuant.Data.Bar(EnumConverter.Convert(barType), this.newBarSize, beginTime, endTime, price, price, price, price, 0L, 0L));
 		}
 
 		protected void EmitNewCompressedBar()
@@ -91,5 +92,6 @@ namespace OpenQuant.API.Compression
 				return;
 			this.EmitNewCompressedBar();
 		}
+	}
 	}
 }

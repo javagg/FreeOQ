@@ -1,12 +1,5 @@
-﻿// Type: SmartQuant.Xml.PropertyXmlNode
-// Assembly: SmartQuant.Xml, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 4C8F4348-49D3-4BAF-ACAF-1FA08F95BF23
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Xml.dll
-
-using naygH2hw2me9oFIyF5;
 using System;
 using System.Runtime.CompilerServices;
-using wOTnoM0h260SstC0xu;
 
 namespace FreeQuant.Xml
 {
@@ -17,9 +10,9 @@ namespace FreeQuant.Xml
 
     public override string NodeName
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return adDoDiJH1mdTdOllhW.JY4ws5fy8(40);
+			return YISEWI7PD;
       }
     }
 
@@ -27,11 +20,11 @@ namespace FreeQuant.Xml
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.GetStringAttribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(60));
+				return this.GetStringAttribute(YISEWI7PD);
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
-        this.SetAttribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(72), value);
+				this.SetAttribute(YISEWI7PD, value);
       }
     }
 
@@ -39,11 +32,11 @@ namespace FreeQuant.Xml
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.GetTypeAttribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(84));
+				return this.GetTypeAttribute(f5FJf7ixS);
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
-        this.SetAttribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(96), value);
+				this.SetAttribute(f5FJf7ixS, value);
       }
     }
 
@@ -59,12 +52,8 @@ namespace FreeQuant.Xml
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public PropertyXmlNode()
+	public PropertyXmlNode() : base()
     {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

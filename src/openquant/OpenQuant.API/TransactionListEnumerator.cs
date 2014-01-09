@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FreeQuant.Instruments;
+using System.Collections;
 
 namespace OpenQuant.API
 {

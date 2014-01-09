@@ -304,5 +304,9 @@
       <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
       <Name>FreeQuant.Providers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

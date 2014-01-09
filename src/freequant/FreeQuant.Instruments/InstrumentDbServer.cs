@@ -1,16 +1,9 @@
-﻿// Type: SmartQuant.Instruments.InstrumentDbServer
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using nlmLboft3R6jnhSDBs;
-using SmartQuant.FIX;
+﻿using FreeQuant.FIX;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VFUvY5knK01pUIalDo;
 
 namespace FreeQuant.Instruments
 {
@@ -22,19 +15,15 @@ namespace FreeQuant.Instruments
     private Dictionary<int, Type> BuYdCExFpF;
     private Dictionary<Type, int> UXKdMsMyXN;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public InstrumentDbServer()
+	public InstrumentDbServer()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.aKpdKBGUfP = new Dictionary<int, Type>();
       this.cVFd9nJe3b = new Dictionary<Type, int>();
       this.BuYdCExFpF = new Dictionary<int, Type>();
       this.UXKdMsMyXN = new Dictionary<Type, int>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Open(Type connectionType, string connectionString)
     {
       this.FUwdOuHiol = (IDbConnection) Activator.CreateInstance(connectionType);
@@ -42,13 +31,11 @@ namespace FreeQuant.Instruments
       this.FUwdOuHiol.Open();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void CreateDataBase()
     {
       throw new InvalidOperationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(11312));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Save(Instrument instrument)
     {
       if (instrument.Id == -1)

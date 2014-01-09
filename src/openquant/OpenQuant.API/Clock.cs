@@ -4,8 +4,10 @@ namespace OpenQuant.API
 {
 	public class Clock
 	{
-		public static DateTime Now {
-			get {
+		public static DateTime Now
+		{
+			get
+			{
 				return FreeQuant.Clock.Now;
 			}
 		}

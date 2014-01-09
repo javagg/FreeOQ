@@ -1,6 +1,3 @@
-using ewT8148K2kiaMR21B7;
-using Gtas8GL6N1OOIFdIHW;
-using otVLQawybg6r6WuQ3i;
 using FreeQuant.Data;
 using FreeQuant.File.Indexing;
 using System;
@@ -8,7 +5,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using XnjwSLRMyI3UA3fEbD;
 
 namespace FreeQuant.File
 {
@@ -46,9 +42,9 @@ namespace FreeQuant.File
     [Description("Gets or sets the description")]
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-				return this.description 
+				return this.description; 
       }
       [MethodImpl(MethodImplOptions.NoInlining)] set
       {
@@ -190,7 +186,6 @@ namespace FreeQuant.File
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal FileSeries(FRJ1FMOwU8CAwJuZZf streamer, string name, string description, int zipLevel, int maxBlockSize, Indexer indexer)
     {
       F45ZyD1Qi4NklFUbBa.aTsHghczyNAhO();
@@ -210,22 +205,19 @@ namespace FreeQuant.File
 			this.indexer = indexer; 
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     object IDataSeries.get_Item(int index)
     {
       return (object) this[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     object IDataSeries.get_Item(DateTime datetime)
     {
       return (object) this[datetime];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    void IDataSeries.set_Item(DateTime datetime, object value)
-    {
-    }
+//    void IDataSeries.set_Item(DateTime datetime, object value)
+//    {
+//    }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public ISeriesObject[] GetArray()

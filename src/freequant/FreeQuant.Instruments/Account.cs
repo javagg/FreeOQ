@@ -8,7 +8,7 @@ namespace FreeQuant.Instruments
   [Serializable]
   public class Account
   {
-    private string DgS6XFeLsB;
+    private string name;
     private string description;
 	private Currency currency; 
     private AccountTransactionList transactions;
@@ -16,23 +16,23 @@ namespace FreeQuant.Instruments
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.DgS6XFeLsB;
+				return this.name; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+        set
       {
-        this.DgS6XFeLsB = value;
+        this.name = value;
       }
     }
 
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
 				return this.description; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.description = value;
       }
@@ -90,7 +90,7 @@ namespace FreeQuant.Instruments
       this.positions = new AccountPositionList();
       // ISSUE: explicit constructor call
       base.\u002Ector();
-      this.DgS6XFeLsB = name;
+      this.name = name;
       this.description = description;
       this.currency = currency;
     }
@@ -177,7 +177,7 @@ namespace FreeQuant.Instruments
       }
       this.transactions.Add(transaction);
       this.ciP6G6y5gB(transaction);
-      position.y1ms0plk33 += transaction.Value;
+      position.value += transaction.Value;
       this.tom6YJohef();
     }
 

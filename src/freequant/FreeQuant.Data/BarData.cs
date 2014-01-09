@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.Data
+namespace FreeQuant.Data
 {
 	public enum BarData
 	{

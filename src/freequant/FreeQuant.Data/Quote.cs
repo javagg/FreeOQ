@@ -91,6 +91,8 @@ namespace FreeQuant.Data
       }
     }
 
+		public Quote(){
+		}
     public Quote(DateTime datetime, double bid, int bidSize, double ask, int askSize)
     {
       this.datetime = datetime;
@@ -98,27 +100,11 @@ namespace FreeQuant.Data
       this.ask = ask;
       this.bidSize = bidSize;
       this.askSize = askSize;
-      this.providerId = (byte) 0;
     }
 
-    public Quote(Quote quote)
+	public Quote(Quote quote) : this(quote.datetime, quote.bid, quote.bidSize, quote.ask, quote.askSize)
     {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(quote.datetime, quote.bid, quote.bidSize, quote.ask, quote.askSize);
       this.providerId = quote.providerId;
-    }
-
-    public Quote()
-    {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(DateTime.MinValue, 0.0, 0, 0.0, 0);
-    }
-
-    public override string ToString()
-    {
-      return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(62), (object) this.datetime, (object) this.bidSize, (object) this.bid, (object) this.ask, (object) this.askSize);
     }
 
     public virtual void WriteTo(BinaryWriter writer)
@@ -154,7 +140,7 @@ namespace FreeQuant.Data
           this.providerId = reader.ReadByte();
           break;
         default:
-          throw new Exception(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(152) + (object) num);
+					throw new Exception("" + (object) num);
       }
     }
 

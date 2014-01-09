@@ -351,10 +351,6 @@ namespace FreeQuant.Quant
 
 		public static double Percentile(double Level, double[] Data)
 		{
-			if (Level < 0.0 || Level > 100.0)
-				throw new ArgumentException(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2418));
-			if (Data == null)
-				throw new ArgumentException(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2570));
 			int length = Data.Length;
 			double[] array = new double[length];
 			Data.CopyTo((Array)array, 0);

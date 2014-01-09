@@ -1,5 +1,4 @@
 using System.Runtime.CompilerServices;
-using wOTnoM0h260SstC0xu;
 
 namespace FreeQuant.Xml
 {
@@ -17,12 +16,8 @@ namespace FreeQuant.Xml
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BooleanValueXmlNode()
-    {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+	public BooleanValueXmlNode() :  base()
+	{ 
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

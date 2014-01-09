@@ -1,14 +1,7 @@
-// Type: SmartQuant.Google.GoogleFinance
-// Assembly: SmartQuant.Google, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 5548D0DC-9B3D-44D8-B20A-ED7BD81AEA14
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Google.dll
-
-using OMUxqEwt2GBC4rjjlJ;
 using FreeQuant.Data;
 using FreeQuant.Instruments;
 using FreeQuant.Providers;
 using FreeQuant.Providers.Design;
-using sRyOKFOecYRjxLUCme;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -89,7 +82,7 @@ namespace FreeQuant.Google
     [Category("Information")]
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return SbDbdFkjjUR5MmWTlj.fvNFD9DS2(428);
       }

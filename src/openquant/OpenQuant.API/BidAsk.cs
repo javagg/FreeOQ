@@ -1,8 +1,8 @@
 ﻿namespace OpenQuant.API
 {
-  public enum BidAsk
-  {
-    Bid,
-    Ask
-  }
+	public enum BidAsk
+	{
+		Bid,
+		Ask
+	}
 }

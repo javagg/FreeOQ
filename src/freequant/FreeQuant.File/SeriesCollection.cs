@@ -1,15 +1,9 @@
-// Type: SmartQuant.File.SeriesCollection
-// Assembly: SmartQuant.File, Version=2.1.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 800E5EC7-67A0-489F-9F8A-77FDD5BCC547
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.File.dll
-
-using ewT8148K2kiaMR21B7;
-using SmartQuant.File.Indexing;
+using FreeQuant.File.Indexing;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using XnjwSLRMyI3UA3fEbD;
+
 
 namespace FreeQuant.File
 {
@@ -52,9 +46,6 @@ namespace FreeQuant.File
 
     internal SeriesCollection(DataFile file)
     {
-      F45ZyD1Qi4NklFUbBa.aTsHghczyNAhO();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.dataFile = file;
       this.fE3x1KvvUM = new SortedList();
     }
@@ -73,8 +64,6 @@ namespace FreeQuant.File
 
     public FileSeries Add(string name)
     {
-      if (name.Length == 0 || name.Length > (int) sbyte.MaxValue)
-        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2104), BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2228));
       FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), name, "", this.dataFile.DefaultZipLevel, this.dataFile.DefaultBlockSize, this.dataFile.DefaultIndexer);
       this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
       this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
@@ -83,12 +72,6 @@ namespace FreeQuant.File
 
     public void Rename(string oldName, string newName)
     {
-      if (oldName == null)
-        throw new ArgumentNullException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2240));
-      if (newName == null)
-        throw new ArgumentNullException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2258));
-      if (newName.Length == 0 || newName.Length > (int) sbyte.MaxValue)
-        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2276));
       FileSeries fileSeries = this[oldName];
       if (fileSeries == null)
         throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2392) + oldName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2418));

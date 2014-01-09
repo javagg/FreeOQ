@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 
@@ -20,11 +20,11 @@ namespace FreeQuant.Data
 
     public byte ProviderId
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
 				return this.providerId; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.providerId = value;
       }
@@ -32,11 +32,11 @@ namespace FreeQuant.Data
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return this.dateTime; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+        set
       {
         this.dateTime = value;
       }
@@ -45,11 +45,11 @@ namespace FreeQuant.Data
     [View]
     public string MarketMaker
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.JLOpfyh4y;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.JLOpfyh4y = value;
       }
@@ -58,11 +58,11 @@ namespace FreeQuant.Data
     [View]
     public string Source
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return this.eg7FZMr0F;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.eg7FZMr0F = value;
       }
@@ -71,11 +71,11 @@ namespace FreeQuant.Data
     [View]
     public int Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.Me1WkVtkG;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Me1WkVtkG = value;
       }
@@ -84,11 +84,11 @@ namespace FreeQuant.Data
     [View]
     public MDOperation Operation
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.jPJqD9uF9;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+     set
       {
         this.jPJqD9uF9 = value;
       }
@@ -97,7 +97,7 @@ namespace FreeQuant.Data
     [View]
     public MDSide Side
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.B5WkwTEyx;
       }
@@ -136,9 +136,6 @@ namespace FreeQuant.Data
     [MethodImpl(MethodImplOptions.NoInlining)]
     public MarketDepth(DateTime datetime, byte providerId, string marketMaker, string source, int position, MDOperation operation, MDSide side, double price, int size)
     {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.dateTime = datetime;
       this.providerId = providerId;
       this.JLOpfyh4y = marketMaker;
@@ -150,28 +147,15 @@ namespace FreeQuant.Data
       this.zy1PMqcD3 = size;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MarketDepth(DateTime datetime, string marketMaker, int position, MDOperation operation, MDSide side, double price, int size)
+	public MarketDepth() {}
+
+	public MarketDepth(DateTime datetime, string marketMaker, int position, MDOperation operation, MDSide side, double price, int size):this(datetime, (byte) 0, marketMaker, "", position, operation, side, price, size)
     {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(datetime, (byte) 0, marketMaker, "", position, operation, side, price, size);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MarketDepth(MarketDepth marketDepth)
+		public MarketDepth(MarketDepth marketDepth):  this(marketDepth.dateTime, marketDepth.providerId, marketDepth.JLOpfyh4y, marketDepth.eg7FZMr0F, marketDepth.Me1WkVtkG, marketDepth.jPJqD9uF9, marketDepth.B5WkwTEyx, marketDepth.G6iR5ebrL, marketDepth.zy1PMqcD3)
     {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(marketDepth.dateTime, marketDepth.providerId, marketDepth.JLOpfyh4y, marketDepth.eg7FZMr0F, marketDepth.Me1WkVtkG, marketDepth.jPJqD9uF9, marketDepth.B5WkwTEyx, marketDepth.G6iR5ebrL, marketDepth.zy1PMqcD3);
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MarketDepth()
-    {
-      G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     public int CompareTo(object obj)
@@ -179,7 +163,7 @@ namespace FreeQuant.Data
       if (obj is MarketDepth)
         return this.G6iR5ebrL.CompareTo((obj as MarketDepth).G6iR5ebrL);
       else
-        throw new ArgumentException(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(900) + obj.GetType().ToString());
+			throw new ArgumentException("" + obj.GetType().ToString());
     }
 
     public virtual void WriteTo(BinaryWriter writer)
@@ -236,7 +220,7 @@ namespace FreeQuant.Data
           this.jPJqD9uF9 = (MDOperation) reader.ReadByte();
           break;
         default:
-          throw new Exception(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(968) + (object) num);
+			throw new Exception(""+ (object) num);
       }
     }
 
@@ -250,9 +234,5 @@ namespace FreeQuant.Data
       return (object) new MarketDepth(this);
     }
 
-    public override string ToString()
-    {
-      return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(1008), (object) this.dateTime, (object) this.B5WkwTEyx, (object) this.jPJqD9uF9, (object) this.Me1WkVtkG, (object) this.Price, (object) this.zy1PMqcD3);
-    }
   }
 }

@@ -24,13 +24,13 @@ namespace FreeQuant.Data
 			}
 			set
 			{
-				throw new NotSupportedException(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(486));
+				throw new NotSupportedException();
 			}
 		}
 
 		public DateTime BeginTime
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get
 			{
 				return this.beginTime;
 			}
@@ -39,11 +39,11 @@ namespace FreeQuant.Data
 		[View]
 		public virtual DateTime EndTime
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get
 			{
 				return this.endTime;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			set
 			{
 				this.endTime = value;
 			}
@@ -52,7 +52,7 @@ namespace FreeQuant.Data
 		[View]
 		public TimeSpan Duration
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get
 			{
 				return this.endTime - this.beginTime;
 			}
@@ -235,11 +235,8 @@ namespace FreeQuant.Data
 			this.openInt = openInt;
 		}
 
-		public PnF(PnF pnF)
+		public PnF(PnF pnF) : this(pnF.BoxSize, pnF.beginTime, pnF.endTime, pnF.open, pnF.high, pnF.low, pnF.close, pnF.volume, pnF.openInt)
 		{
-			G6i5ebBrLpy1MqcD3T.h6SXMcqzRIE7j();
-			// ISSUE: explicit constructor call
-			this.\u002Ector(pnF.BoxSize, pnF.beginTime, pnF.endTime, pnF.open, pnF.high, pnF.low, pnF.close, pnF.volume, pnF.openInt);
 		}
 
 		public double GetPrice(BarPrice option)
@@ -270,11 +267,6 @@ namespace FreeQuant.Data
 					break;
 			}
 			return num;
-		}
-
-		public override string ToString()
-		{
-			return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(556), (object)(this.beginTime.ToShortDateString() + SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(746) + this.beginTime.ToLongTimeString()), (object)(this.endTime.ToShortDateString() + SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(752) + this.endTime.ToLongTimeString()), (object)this.boxSize, (object)this.open, (object)this.high, (object)this.low, (object)this.close, (object)this.volume, (object)this.openInt, (object)this.Kind);
 		}
 	}
 }

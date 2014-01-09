@@ -1,16 +1,9 @@
-﻿// Type: SmartQuant.Xml.XmlDocumentBase
-// Assembly: SmartQuant.Xml, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 4C8F4348-49D3-4BAF-ACAF-1FA08F95BF23
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Xml.dll
-
-using naygH2hw2me9oFIyF5;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Xml;
-using wOTnoM0h260SstC0xu;
 
 namespace FreeQuant.Xml
 {
@@ -21,53 +14,36 @@ namespace FreeQuant.Xml
 
     public int SchemaVersion
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
-        if (!this.DocumentElement.HasAttribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(198)))
+				if (!this.DocumentElement.HasAttribute(Ognhwwmqi))
           return 1;
         else
-          return this.GetInt32Attribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(228));
+			return this.GetInt32Attribute(Ognhwwmqi);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected XmlDocumentBase(string name, string description, int schemaVersion)
+ 	protected XmlDocumentBase(string name, string description, int schemaVersion) :base()
     {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.LoadXml(string.Format(adDoDiJH1mdTdOllhW.JY4ws5fy8(132), (object) name));
-      this.InsertBefore((XmlNode) this.CreateXmlDeclaration(adDoDiJH1mdTdOllhW.JY4ws5fy8(158), Encoding.Unicode.HeaderName, (string) null), (XmlNode) this.DocumentElement);
+	this.LoadXml(name);
+	this.InsertBefore((XmlNode) this.CreateXmlDeclaration("", Encoding.Unicode.HeaderName, (string) null), (XmlNode) this.DocumentElement);
       if (description != null)
         this.InsertBefore((XmlNode) this.CreateComment(description), (XmlNode) this.DocumentElement);
-      this.SetAttribute(adDoDiJH1mdTdOllhW.JY4ws5fy8(168), schemaVersion);
+			this.SetAttribute(Ognhwwmqi, schemaVersion);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected XmlDocumentBase(string name, string description)
+	protected XmlDocumentBase(string name, string description) : this(name, description, 1)
     {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, description, 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected XmlDocumentBase(string name, int schemaVersion)
+	protected XmlDocumentBase(string name, int schemaVersion) : this(name, (string) null, schemaVersion)
     {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, (string) null, schemaVersion);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected XmlDocumentBase(string name)
+	protected XmlDocumentBase(string name) :  this(name, 1)
     {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected T GetChildNode<T>() where T : XmlNodeBase, new()
     {
       string nodeName = Activator.CreateInstance<T>().NodeName;
@@ -94,13 +70,11 @@ namespace FreeQuant.Xml
       return list;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected bool ContainsAttribute(string name)
     {
       return this.DocumentElement.Attributes[name] != null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected string GetStringAttribute(string name)
     {
       XmlAttribute xmlAttribute = this.DocumentElement.Attributes[name];
@@ -110,13 +84,11 @@ namespace FreeQuant.Xml
         return (string) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected int GetInt32Attribute(string name)
     {
       return int.Parse(this.GetStringAttribute(name), (IFormatProvider) CultureInfo.InvariantCulture);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected uint GetUInt32Attribute(string name)
     {
       return uint.Parse(this.GetStringAttribute(name), (IFormatProvider) CultureInfo.InvariantCulture);
@@ -140,7 +112,6 @@ namespace FreeQuant.Xml
       return short.Parse(this.GetStringAttribute(name), (IFormatProvider) CultureInfo.InvariantCulture);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected ushort GetUInt16Attribute(string name)
     {
       return ushort.Parse(this.GetStringAttribute(name), (IFormatProvider) CultureInfo.InvariantCulture);
@@ -290,25 +261,22 @@ namespace FreeQuant.Xml
       this.SetAttribute(name, value.ToString((IFormatProvider) CultureInfo.InvariantCulture));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected void SetAttribute(string name, bool value)
     {
       this.SetAttribute(name, value.ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected void SetAttribute(string name, Enum value)
     {
       this.SetAttribute(name, ((object) value).ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected void SetAttribute(string name, Type value)
     {
       if (value.Assembly.GlobalAssemblyCache)
         this.SetAttribute(name, value.AssemblyQualifiedName);
       else
-        this.SetAttribute(name, string.Format(adDoDiJH1mdTdOllhW.JY4ws5fy8(258), (object) value.FullName, (object) value.Assembly.GetName().Name));
+				this.SetAttribute(name, string.Format("", (object) value.FullName, (object) value.Assembly.GetName().Name));
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

@@ -1,16 +1,9 @@
-// Type: SmartQuant.Instruments.InstrumentManager
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using nlmLboft3R6jnhSDBs;
-using SmartQuant;
-using SmartQuant.FIX;
+using FreeQuant;
+using FreeQuant.FIX;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VFUvY5knK01pUIalDo;
 
 namespace FreeQuant.Instruments
 {
@@ -22,7 +15,7 @@ namespace FreeQuant.Instruments
 
     public static InstrumentList Instruments
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return InstrumentManager.axGEqcNulf;
       }
@@ -30,11 +23,11 @@ namespace FreeQuant.Instruments
 
     public static IInstrumentServer Server
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return InstrumentManager.st7EyF8wLV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         InstrumentManager.st7EyF8wLV = value;
       }
@@ -44,7 +37,7 @@ namespace FreeQuant.Instruments
 
     public static event InstrumentEventHandler InstrumentRemoved;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+     
     static InstrumentManager()
     {
       Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
@@ -70,21 +63,18 @@ namespace FreeQuant.Instruments
         InstrumentManager.axGEqcNulf.Add(instrument);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public InstrumentManager()
+     public InstrumentManager()
     {
       Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       // ISSUE: explicit constructor call
       base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static void Init()
+     public static void Init()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static void Remove(Instrument instrument)
+     public static void Remove(Instrument instrument)
     {
       InstrumentManager.st7EyF8wLV.Remove(instrument);
       InstrumentManager.axGEqcNulf.Remove(instrument);
@@ -93,8 +83,7 @@ namespace FreeQuant.Instruments
       InstrumentManager.KmpEvph5v6(new InstrumentEventArgs(instrument));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static void Remove(string symbol)
+     public static void Remove(string symbol)
     {
       Instrument instrument = InstrumentManager.axGEqcNulf[symbol];
       if (instrument == null)
@@ -102,28 +91,24 @@ namespace FreeQuant.Instruments
       InstrumentManager.Remove(instrument);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static void AddList(InstrumentList list)
+     public static void AddList(InstrumentList list)
     {
       if (InstrumentManager.fQ3Efwxl5A.Contains((object) list.Name))
         InstrumentManager.RemoveList(list.Name);
       InstrumentManager.fQ3Efwxl5A.Add((object) list.Name, (object) list);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static void RemoveList(string name)
+     public static void RemoveList(string name)
     {
       InstrumentManager.fQ3Efwxl5A.Remove((object) name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static InstrumentList GetList(string name)
+     public static InstrumentList GetList(string name)
     {
       return InstrumentManager.fQ3Efwxl5A[(object) name] as InstrumentList;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    internal static void VljEVFlVHf([In] Instrument obj0)
+     internal static void VljEVFlVHf([In] Instrument obj0)
     {
       InstrumentManager.axGEqcNulf.Add(obj0);
       if (InstrumentManager.FN9EpXCpRx == null)
@@ -131,8 +116,7 @@ namespace FreeQuant.Instruments
       InstrumentManager.FN9EpXCpRx(new InstrumentEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    internal static void DdbEFF4dAg([In] Instrument obj0)
+     internal static void DdbEFF4dAg([In] Instrument obj0)
     {
       InstrumentManager.st7EyF8wLV.Save(obj0);
       if (((FIXGroupList) InstrumentManager.axGEqcNulf).Contains(obj0.Id))

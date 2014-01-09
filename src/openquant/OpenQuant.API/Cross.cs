@@ -1,9 +1,9 @@
 ﻿namespace OpenQuant.API
 {
-  public enum Cross
-  {
-    Above,
-    Below,
-    None
-  }
+	public enum Cross
+	{
+		Above,
+		Below,
+		None
+	}
 }

@@ -15,7 +15,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public BarRequest this [int index]
+		public BarRequest this[int index]
 		{
 			get
 			{
@@ -25,7 +25,7 @@ namespace OpenQuant.API
 
 		public IEnumerator GetEnumerator()
 		{
-			return (IEnumerator)this.list.GetEnumerator();
+			return this.list.GetEnumerator();
 		}
 
 		public bool Contains(BarRequest barRequest)

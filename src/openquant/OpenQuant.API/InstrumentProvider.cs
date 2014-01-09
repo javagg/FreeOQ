@@ -2,11 +2,11 @@
 
 namespace OpenQuant.API
 {
-  public class InstrumentProvider : Provider
-  {
-    internal InstrumentProvider(IInstrumentProvider provider)
-      : base((IProvider) provider)
-    {
-    }
-  }
+	public class InstrumentProvider : Provider
+	{
+		internal InstrumentProvider(IInstrumentProvider provider)
+      : base((IProvider)provider)
+		{
+		}
+	}
 }

@@ -38,7 +38,6 @@
     <Compile Include="AccountPosition.cs" />
     <Compile Include="AccountPositionList.cs" />
     <Compile Include="AccountTransaction.cs" />
-    <Compile Include="AccountTransactionEventArgs.cs" />
     <Compile Include="AccountTransactionEventHandler.cs" />
     <Compile Include="AccountTransactionList.cs" />
     <Compile Include="BarSeriesEventArgs.cs" />
@@ -107,6 +106,22 @@
     <ProjectReference Include="..\Freequant.FIXData\FreeQuant.FIXData.csproj">
       <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
       <Name>FreeQuant.FIXData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Series\FreeQuant.Series.csproj">
+      <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
+      <Name>FreeQuant.Series</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

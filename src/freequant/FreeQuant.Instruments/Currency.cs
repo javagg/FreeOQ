@@ -3,159 +3,146 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-  public class Currency
-  {
-    private string PE3E8vFZXB;
-    private string qVFElPRVJK;
-    private static ICurrencyConverter d8hEYqYEya;
-    public static Currency ARS;
-    public static Currency ATS;
-    public static Currency AUD;
-    public static Currency BEF;
-    public static Currency BRL;
-    public static Currency CAD;
-    public static Currency CHF;
-    public static Currency DEM;
-    public static Currency ESP;
-    public static Currency EUR;
-    public static Currency FRF;
-    public static Currency GBP;
-    public static Currency HKD;
-    public static Currency INR;
-    public static Currency ITL;
-    public static Currency JPY;
-    public static Currency KRW;
-    public static Currency NLG;
-    public static Currency PTE;
-    public static Currency RUR;
-    public static Currency SGD;
-    public static Currency USD;
-    public static Currency XBA;
-    public static Currency XEU;
-    public static Currency PLN;
-    public static Currency NOK;
-    public static Currency DKK;
-    public static Currency SEK;
+	public class Currency
+	{
+		private string code;
+		private string description;
+		private static ICurrencyConverter converter;
 
-    public string Code
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.PE3E8vFZXB;
-      }
-    }
+		public static Currency ARS;
+		public static Currency ATS;
+		public static Currency AUD;
+		public static Currency BEF;
+		public static Currency BRL;
+		public static Currency CAD;
+		public static Currency CHF;
+		public static Currency DEM;
+		public static Currency ESP;
+		public static Currency EUR;
+		public static Currency FRF;
+		public static Currency GBP;
+		public static Currency HKD;
+		public static Currency INR;
+		public static Currency ITL;
+		public static Currency JPY;
+		public static Currency KRW;
+		public static Currency NLG;
+		public static Currency PTE;
+		public static Currency RUR;
+		public static Currency SGD;
+		public static Currency USD;
+		public static Currency XBA;
+		public static Currency XEU;
+		public static Currency PLN;
+		public static Currency NOK;
+		public static Currency DKK;
+		public static Currency SEK;
+		public static Currency CNY;
 
-    public string Description
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.qVFElPRVJK;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.qVFElPRVJK = value;
-      }
-    }
+		public string Code
+		{
+			get
+			{
+				return this.code; 
+			}
+		}
 
-    public static ICurrencyConverter Converter
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return Currency.d8hEYqYEya;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        Currency.d8hEYqYEya = value;
-      }
-    }
+		public string Description
+		{
+			get
+			{
+				return this.description; 
+			}
+			set
+			{
+				this.description = value;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    static Currency()
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      Currency.d8hEYqYEya = (ICurrencyConverter) new CurrencyConverter();
-      Currency.ARS = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4074), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4084));
-      Currency.ATS = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4116), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4126));
-      Currency.AUD = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4166), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4176));
-      Currency.BEF = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4214), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4224));
-      Currency.BRL = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4254), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4264));
-      Currency.CAD = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4296), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4306));
-      Currency.CHF = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4340), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4350));
-      Currency.DEM = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4376), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4386));
-      Currency.ESP = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4416), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4426));
-      Currency.EUR = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4458), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4468));
-      Currency.FRF = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4480), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4490));
-      Currency.GBP = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4518), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4528));
-      Currency.HKD = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4558), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4568));
-      Currency.INR = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4604), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4614));
-      Currency.ITL = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4642), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4652));
-      Currency.JPY = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4680), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4690));
-      Currency.KRW = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4718), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4728));
-      Currency.NLG = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4768), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4778));
-      Currency.PTE = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4818), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4828));
-      Currency.RUR = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4866), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4876));
-      Currency.SGD = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4906), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4916));
-      Currency.USD = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4952), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4962));
-      Currency.XBA = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4984), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4994));
-      Currency.XEU = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5044), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5054));
-      Currency.PLN = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5102), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5112));
-      Currency.NOK = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5140), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5150));
-      Currency.DKK = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5184), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5194));
-      Currency.SEK = new Currency(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5222), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5232));
-    }
+		public static ICurrencyConverter Converter
+		{
+			get
+			{
+				return Currency.converter;
+			}
+			set
+			{
+				Currency.converter = value;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Currency(string code)
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(code, "");
-    }
+		static Currency()
+		{
+			Currency.converter = (ICurrencyConverter)new CurrencyConverter();
+			Currency.ARS = new Currency("ARS", "Argentine peso");
+			Currency.ATS = new Currency("ATS", "Austrian Schilling");
+			Currency.AUD = new Currency("AUD", "Australian dollar");
+			Currency.BEF = new Currency("BEF", "Belgian Francs");
+			Currency.BRL = new Currency("BRL", "Brazilian real");
+			Currency.CAD = new Currency("CAD", "Canadian dollar");
+			Currency.CHF = new Currency("CHF", "Swiss franc");
+			Currency.DEM = new Currency("DEM", "German Mark");
+			Currency.ESP = new Currency("ESP", "Spanish Peseta");
+			Currency.EUR = new Currency("EUR", "EU euro");
+			Currency.FRF = new Currency("FRF", "French Franc");
+			Currency.GBP = new Currency("GBP", "British pound");
+			Currency.HKD = new Currency("HKD", "Hong Kong SAR dollar");
+			Currency.INR = new Currency("INR", "Indian rupee");
+			Currency.ITL = new Currency("ITL", "Italian Lira");
+			Currency.JPY = new Currency("JPY", "Japanese yen");
+			Currency.KRW = new Currency("KRW", "South Korean won");
+			Currency.NLG = new Currency("NLG", "Dutch Guilder");
+			Currency.PTE = new Currency("PTE", "Portuguese Escudo");
+			Currency.RUR = new Currency("RUR", "Russian Ruble");
+			Currency.SGD = new Currency("SGD", "Singapore dollar");
+			Currency.USD = new Currency("USD", "US dollar");
+			Currency.XBA = new Currency("XBA", "European Composite Unit");
+			Currency.XEU = new Currency("XEU", "European Currency Unit");
+			Currency.PLN = new Currency("PLN", "Polish zloty");
+			Currency.NOK = new Currency("NOK", "Norwegian krone");
+			Currency.DKK = new Currency("DKK", "Danish krone");
+			Currency.SEK = new Currency("SEK", "Swedish krona");
+			Currency.CNY = new Currency("CNY", "Chinese yuan renminbi");
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Currency(string code, string description)
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.PE3E8vFZXB = code;
-      this.qVFElPRVJK = description;
-      CurrencyManager.Currencies.Add(this);
-    }
+		public Currency(string code) : this(code, String.Empty)
+		{
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    internal static void vTnE26EIAD()
-    {
-    }
+		public Currency(string code, string description)
+		{
+			this.code = code;
+			this.description = description;
+			CurrencyManager.Currencies.Add(this);
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static double Convert(double amount, Currency fromCurrency, Currency toCurrency)
-    {
-      return Currency.d8hEYqYEya.Convert(amount, fromCurrency, toCurrency);
-    }
+		internal static void vTnE26EIAD()
+		{
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static double Convert(double amount, Currency fromCurrency, Currency toCurrency, DateTime dateTime)
-    {
-      return Currency.d8hEYqYEya.Convert(amount, fromCurrency, toCurrency, dateTime);
-    }
+		public static double Convert(double amount, Currency fromCurrency, Currency toCurrency)
+		{
+			return Currency.converter.Convert(amount, fromCurrency, toCurrency);
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public double Convert(double amount, Currency toCurrency)
-    {
-      return Currency.d8hEYqYEya.Convert(amount, this, toCurrency);
-    }
+		public static double Convert(double amount, Currency fromCurrency, Currency toCurrency, DateTime dateTime)
+		{
+			return Currency.converter.Convert(amount, fromCurrency, toCurrency, dateTime);
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public double Convert(double amount, Currency toCurrency, DateTime dateTime)
-    {
-      return Currency.d8hEYqYEya.Convert(amount, this, toCurrency, dateTime);
-    }
+		public double Convert(double amount, Currency toCurrency)
+		{
+			return Currency.converter.Convert(amount, this, toCurrency);
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public override string ToString()
-    {
-      return this.PE3E8vFZXB;
-    }
-  }
+		public double Convert(double amount, Currency toCurrency, DateTime dateTime)
+		{
+			return Currency.converter.Convert(amount, this, toCurrency, dateTime);
+		}
+
+		public override string ToString()
+		{
+			return this.code;
+		}
+	}
 }

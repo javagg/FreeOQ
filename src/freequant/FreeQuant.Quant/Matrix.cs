@@ -109,20 +109,13 @@ namespace FreeQuant.Quant
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Matrix()
-    {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
+	public Matrix()
+	{
+	}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Matrix(Matrix matrix)
     {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.elements = new double[matrix.M, matrix.N];
       this.diagonal = new MatrixDiag(this);
       this.m = matrix.m;
@@ -134,36 +127,28 @@ namespace FreeQuant.Quant
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public Matrix(int m, int n)
     {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.m = m;
       this.n = n;
       this.elements = new double[m, n];
       this.diagonal = new MatrixDiag(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Matrix(int Size)
     {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.m = Size;
       this.n = Size;
       this.elements = new double[Size, Size];
       this.diagonal = new MatrixDiag(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Matrix(int m, int n, double val)
     {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.m = m;
       this.n = n;
       this.elements = new double[m, n];
@@ -175,12 +160,8 @@ namespace FreeQuant.Quant
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Matrix(double[] values)
     {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.m = 1;
       this.n = values.Length;
       this.elements = new double[this.M, this.N];
@@ -189,12 +170,9 @@ namespace FreeQuant.Quant
         this.elements[0, index] = values[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+
     public Matrix(double[,] values)
     {
-      xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.m = values.GetLength(0);
       this.n = values.GetLength(1);
       this.elements = new double[this.M, this.N];
@@ -206,7 +184,6 @@ namespace FreeQuant.Quant
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static Matrix operator +(Matrix Matrix1, Matrix Matrix2)
     {
       if (Matrix1.M != Matrix2.M || Matrix1.N != Matrix2.N)
@@ -391,7 +368,6 @@ namespace FreeQuant.Quant
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static bool operator >(Matrix matrix, double Scalar)
     {
       for (int index1 = 0; index1 < matrix.m; ++index1)
@@ -405,7 +381,6 @@ namespace FreeQuant.Quant
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static bool operator >=(Matrix matrix, double Scalar)
     {
       for (int index1 = 0; index1 < matrix.m; ++index1)
@@ -419,7 +394,6 @@ namespace FreeQuant.Quant
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void MakeEigenVectors(Vector d, Vector e, Matrix z)
     {
       int rows = z.Rows;
@@ -447,7 +421,7 @@ namespace FreeQuant.Quant
           {
             if (num1++ == 30)
             {
-              this.Error(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(1676), Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(1712));
+							this.Error("","");
               return;
             }
             else
@@ -503,7 +477,6 @@ namespace FreeQuant.Quant
         z.Elements[index / rows, index % rows] = numArray[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void EigenSort(Matrix eigenVectors, Vector eigenValues)
     {
       int rows = eigenVectors.Rows;
@@ -539,11 +512,8 @@ namespace FreeQuant.Quant
         eigenVectors.Elements[index / rows, index % rows] = numArray[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Matrix EigenVectors(Vector eigenValues)
     {
-      if (!this.IsSymmetric)
-        throw new ApplicationException(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(1756));
       Matrix matrix = new Matrix(this.Rows, this.Cols);
       for (int index1 = 0; index1 < this.Rows; ++index1)
       {
@@ -558,14 +528,10 @@ namespace FreeQuant.Quant
       return matrix;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void MakeTridiagonal(Matrix a, Vector d, Vector e)
     {
       int num1 = a.m;
-      if (a.m != a.n)
-        throw new ApplicationException(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(1848));
-      if (!a.IsSymmetric)
-        throw new ApplicationException(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(1930));
+
       double[] numArray = new double[this.M * this.N];
       for (int index = 0; index < this.M * this.N; ++index)
         numArray[index] = a.Elements[index / this.M, index % this.N];
@@ -755,7 +721,7 @@ namespace FreeQuant.Quant
     {
       if (this.m != this.n)
       {
-        this.Error(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2014), Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2038));
+				this.Error("", "");
         return this;
       }
       else
@@ -766,8 +732,8 @@ namespace FreeQuant.Quant
           numArray[index] = this.Diagonal[index];
           if (numArray[index] == 0.0)
           {
-            this.Error(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2062), Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2086));
-            return this;
+						this.Error("", "");
+		            return this;
           }
         }
         for (int index1 = 0; index1 < this.m; ++index1)
@@ -807,7 +773,7 @@ namespace FreeQuant.Quant
     {
       det = 1.0;
       if (this.Rows != this.Cols)
-        this.Error(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2124), Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2140));
+				this.Error("", "");
       int rows = this.Rows;
       Matrix matrix = new Matrix(rows, 2 * rows);
       for (int index1 = 0; index1 < rows; ++index1)
@@ -832,8 +798,7 @@ namespace FreeQuant.Quant
             index2 = index3;
           }
         }
-        if (num1 < 1E-35)
-          throw new ApplicationException(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2178));
+
         if (index2 != index1)
         {
           for (int index3 = index1; index3 < 2 * rows; ++index3)
@@ -871,8 +836,8 @@ namespace FreeQuant.Quant
     {
       if (this.n != this.m)
       {
-        this.Error(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2272), Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2300));
-        return this;
+				this.Error("", "");
+				        return this;
       }
       else
       {
@@ -927,10 +892,9 @@ namespace FreeQuant.Quant
       return this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Print()
     {
-      this.Print(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2374));
+			this.Print(String.Empty);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -939,7 +903,7 @@ namespace FreeQuant.Quant
       for (int index1 = 0; index1 < this.M; ++index1)
       {
         for (int index2 = 0; index2 < this.N; ++index2)
-          Console.Write(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2382) + this[index1, index2].ToString(Format));
+          Console.Write(this[index1, index2].ToString(Format));
         Console.WriteLine("");
       }
     }
@@ -962,23 +926,13 @@ namespace FreeQuant.Quant
       return base.ToString();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected void Error(string Where, string What)
     {
-      Console.WriteLine(Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2388) + Where + Cu7kFnKYoLS7VpKgGV.TFnpYoLS7(2408) + What);
+      Console.WriteLine(Where + What);
     }
 
     public class TElementPosAction
     {
-      [MethodImpl(MethodImplOptions.NoInlining)]
-      public TElementPosAction()
-      {
-        xD5tUhTqkMWaoU2QXj.oXSRIlMzpvkq6();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
-      }
-
-      [MethodImpl(MethodImplOptions.NoInlining)]
       public virtual double Operation(double Element)
       {
         return Element;

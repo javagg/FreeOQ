@@ -58,10 +58,7 @@
     <Compile Include="MDSide.cs" />
     <Compile Include="MemorySeries`1.cs" />
     <Compile Include="OrderBook.cs" />
-    <Compile Include="OrderBookEntry.cs" />
     <Compile Include="OrderBookEntryList.cs" />
-    <Compile Include="OrderBookEventArgs.cs" />
-    <Compile Include="OrderBookEventHandler.cs" />
     <Compile Include="PnF.cs" />
     <Compile Include="PnFKind.cs" />
     <Compile Include="PriceViewAttribute.cs" />

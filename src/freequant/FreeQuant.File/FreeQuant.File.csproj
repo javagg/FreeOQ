@@ -34,12 +34,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataFile.cs" />
-    <Compile Include="DefragmentCancelEventArgs.cs" />
     <Compile Include="DefragmentCancelEventHandler.cs" />
     <Compile Include="FileSeries.cs" />
     <Compile Include="ISeriesFilter.cs" />
     <Compile Include="SeriesCollection.cs" />
-    <Compile Include="SeriesEventArgs.cs" />
     <Compile Include="SeriesEventHandler.cs" />
     <Compile Include="Indexing\IndexStatus.cs" />
     <Compile Include="Indexing\Indexer.cs" />

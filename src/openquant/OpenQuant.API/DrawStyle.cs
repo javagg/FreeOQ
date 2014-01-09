@@ -1,9 +1,9 @@
 ﻿namespace OpenQuant.API
 {
-  public enum DrawStyle
-  {
-    Line,
-    Histogram,
-    Circles
-  }
+	public enum DrawStyle
+	{
+		Line,
+		Histogram,
+		Circles
+	}
 }

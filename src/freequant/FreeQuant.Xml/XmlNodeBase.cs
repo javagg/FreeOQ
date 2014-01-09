@@ -1,16 +1,9 @@
-﻿// Type: SmartQuant.Xml.XmlNodeBase
-// Assembly: SmartQuant.Xml, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 4C8F4348-49D3-4BAF-ACAF-1FA08F95BF23
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Xml.dll
-
-using naygH2hw2me9oFIyF5;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Xml;
-using wOTnoM0h260SstC0xu;
 
 namespace FreeQuant.Xml
 {
@@ -20,21 +13,11 @@ namespace FreeQuant.Xml
 
     public abstract string NodeName { get; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected XmlNodeBase()
-    {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static implicit operator XmlNode(XmlNodeBase xmlNodeBase)
     {
       return xmlNodeBase.An8ZGJdGe;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal static T YJKde7XAt<T>([In] XmlNode obj0) where T : XmlNodeBase, new()
     {
       T instance = Activator.CreateInstance<T>();
@@ -42,7 +25,6 @@ namespace FreeQuant.Xml
       return instance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal static T FwCxuX4sF<T>([In] XmlNode obj0, [In] string obj1) where T : ValueXmlNode, new()
     {
       T instance = Activator.CreateInstance<T>();
@@ -51,13 +33,11 @@ namespace FreeQuant.Xml
       return instance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected bool ContainsAttribute(string name)
     {
       return this.An8ZGJdGe.Attributes[name] != null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected string GetStringAttribute(string name)
     {
       XmlAttribute xmlAttribute = this.An8ZGJdGe.Attributes[name];
@@ -259,13 +239,12 @@ namespace FreeQuant.Xml
       this.SetAttribute(name, ((object) value).ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     protected void SetAttribute(string name, Type value)
     {
       if (value.Assembly.GlobalAssemblyCache)
         this.SetAttribute(name, value.AssemblyQualifiedName);
       else
-        this.SetAttribute(name, string.Format(adDoDiJH1mdTdOllhW.JY4ws5fy8(0), (object) value.FullName, (object) value.Assembly.GetName().Name));
+				this.SetAttribute(name, string.Format("", (object) value.FullName, (object) value.Assembly.GetName().Name));
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -622,7 +601,7 @@ namespace FreeQuant.Xml
       if (value.Assembly.GlobalAssemblyCache)
         this.SetValue(value.AssemblyQualifiedName);
       else
-        this.SetValue(string.Format(adDoDiJH1mdTdOllhW.JY4ws5fy8(20), (object) value.FullName, (object) value.Assembly.GetName().Name));
+				this.SetValue(string.Format("", (object) value.FullName, (object) value.Assembly.GetName().Name));
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

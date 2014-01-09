@@ -4,31 +4,30 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-  public class CurrencyManager : MarshalByRefObject
-  {
-    private static CurrencyList Y9aWDcxadZ;
+	public class CurrencyManager : MarshalByRefObject
+	{
+		private static CurrencyList currencies;
 
-    public static CurrencyList Currencies
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return CurrencyManager.Y9aWDcxadZ;
-      }
-    }
+		public static CurrencyList Currencies
+		{
+			get
+			{
+				return CurrencyManager.currencies;
+			}
+		}
 
-    public static Currency DefaultCurrency
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return CurrencyManager.Y9aWDcxadZ[Framework.Configuration.DefaultCurrency];
-      }
-    }
+		public static Currency DefaultCurrency
+		{
+			get
+			{
+				return CurrencyManager.currencies[Framework.Configuration.DefaultCurrency];
+			}
+		}
 
-    static CurrencyManager()
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      CurrencyManager.Y9aWDcxadZ = new CurrencyList();
-      Currency.vTnE26EIAD();
-    }
-  }
+		static CurrencyManager()
+		{
+			CurrencyManager.currencies = new CurrencyList();
+			Currency.vTnE26EIAD();
+		}
+	}
 }

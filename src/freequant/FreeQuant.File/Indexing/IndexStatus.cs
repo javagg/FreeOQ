@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.File.Indexing
+namespace FreeQuant.File.Indexing
 {
 	public enum IndexStatus
 	{

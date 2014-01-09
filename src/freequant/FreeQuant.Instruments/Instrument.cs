@@ -1,23 +1,14 @@
-﻿// Type: SmartQuant.Instruments.Instrument
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using ExV3wMPI8E8ZvKR845;
-using nlmLboft3R6jnhSDBs;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.FIXData;
-using SmartQuant.Providers;
-using SmartQuant.Series;
+﻿using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.FIXData;
+using FreeQuant.Providers;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VFUvY5knK01pUIalDo;
-using x4kjQFrrfpZvQx9QMP;
 
 namespace FreeQuant.Instruments
 {
@@ -28,12 +19,12 @@ namespace FreeQuant.Instruments
     private Exchange TNc6pL8cK3;
     private LegList uIJ6vbhTOX;
     private UnderlyingList JAT65L3WwQ;
-    private IPricer wZe6uJJRdy;
-    private Quote r7n6IuAJ2g;
-    private Trade Ful6LEXQOc;
-    private Bar rph6b90s4W;
-    private MarketDepth SIo6REcuQ6;
-    private Fundamental JjI6aa64P4;
+    private IPricer pricer;
+    private Quote quote;
+    private Trade trade;
+    private Bar bar;
+    private MarketDepth marketDepth;
+    private Fundamental fundamental;
     private CorporateAction mLj6n4gDEd;
     private OrderBook Dvj6i1WTmP;
     private double cAF6h0NHaN;
@@ -42,11 +33,11 @@ namespace FreeQuant.Instruments
     [Category("Derivative")]
     public PutOrCall PutOrCall
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXPutOrCall.FromFIX(base.PutOrCall);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+        set
       {
         base.PutOrCall = FIXPutOrCall.ToFIX(value);
       }
@@ -90,13 +81,13 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public IPricer Pricer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.wZe6uJJRdy;
+				return this.pricer; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.wZe6uJJRdy = value;
+        this.pricer = value;
       }
     }
 
@@ -320,7 +311,7 @@ namespace FreeQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.r7n6IuAJ2g;
+        return this.quote;
       }
     }
 
@@ -329,7 +320,7 @@ namespace FreeQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.Ful6LEXQOc;
+        return this.trade;
       }
     }
 
@@ -338,7 +329,7 @@ namespace FreeQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.rph6b90s4W;
+        return this.bar;
       }
     }
 
@@ -347,7 +338,7 @@ namespace FreeQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.SIo6REcuQ6;
+        return this.marketDepth;
       }
     }
 
@@ -356,7 +347,7 @@ namespace FreeQuant.Instruments
     {
       [MethodImpl(MethodImplOptions.NoInlining)] get
       {
-        return this.JjI6aa64P4;
+        return this.fundamental;
       }
     }
 
@@ -428,45 +419,36 @@ namespace FreeQuant.Instruments
 
     public event CorporateActionEventHandler NewCorporateAction;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected Instrument()
+		protected Instrument() : base()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.uIJ6vbhTOX = new LegList();
       this.JAT65L3WwQ = new UnderlyingList();
-      this.wZe6uJJRdy = (IPricer) new Pricer();
-      this.r7n6IuAJ2g = new Quote();
-      this.Ful6LEXQOc = new Trade();
-      this.rph6b90s4W = new Bar();
-      this.SIo6REcuQ6 = new MarketDepth();
-      this.JjI6aa64P4 = new Fundamental();
+      this.pricer = (IPricer) new Pricer();
+      this.quote = new Quote();
+      this.trade = new Trade();
+      this.bar = new Bar();
+      this.marketDepth = new MarketDepth();
+      this.fundamental = new Fundamental();
       this.mLj6n4gDEd = new CorporateAction();
       this.Dvj6i1WTmP = new OrderBook();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.PriceDisplay = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3196);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Instrument(string symbol)
+	public Instrument(string symbol) : this(symbol, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3204))
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(symbol, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3204));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Instrument(string symbol, string securityType)
     {
       Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.uIJ6vbhTOX = new LegList();
       this.JAT65L3WwQ = new UnderlyingList();
-      this.wZe6uJJRdy = (IPricer) new Pricer();
-      this.r7n6IuAJ2g = new Quote();
-      this.Ful6LEXQOc = new Trade();
-      this.rph6b90s4W = new Bar();
-      this.SIo6REcuQ6 = new MarketDepth();
-      this.JjI6aa64P4 = new Fundamental();
+      this.pricer = (IPricer) new Pricer();
+      this.quote = new Quote();
+      this.trade = new Trade();
+      this.bar = new Bar();
+      this.marketDepth = new MarketDepth();
+      this.fundamental = new Fundamental();
       this.mLj6n4gDEd = new CorporateAction();
       this.Dvj6i1WTmP = new OrderBook();
       // ISSUE: explicit constructor call
@@ -477,7 +459,6 @@ namespace FreeQuant.Instruments
       InstrumentManager.VljEVFlVHf(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public Currency GetCurrency()
     {
       if (this.mEf6f8TGiq != null)
@@ -488,7 +469,6 @@ namespace FreeQuant.Instruments
       return this.mEf6f8TGiq;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public string GetSymbol(string source)
     {
       if (this.SecurityIDSource == source)
@@ -522,7 +502,6 @@ namespace FreeQuant.Instruments
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public string GetSecurityExchange(string source)
     {
       foreach (FIXSecurityAltIDGroup securityAltIdGroup in (FIXGroupList) this.fSecurityAltIDGroup)
@@ -533,156 +512,100 @@ namespace FreeQuant.Instruments
       return this.SecurityExchange;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Save()
     {
       InstrumentManager.DdbEFF4dAg(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Price()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3238));
-      else
-        return this.wZe6uJJRdy.Price(this);
+ 		this.pricer.Price(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Price(DateTime datetime)
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3292));
-      else
-        return this.wZe6uJJRdy.Price(this, datetime);
+		this.pricer.Price(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public virtual double Volatility()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3346));
-      else
-        return this.wZe6uJJRdy.Volatility(this);
+   		this.pricer.Volatility(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Delta()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3398));
-      else
-        return this.wZe6uJJRdy.Delta(this);
+      	this.pricer.Delta(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Delta(DateTime datetime)
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3452));
-      else
-        return this.wZe6uJJRdy.Delta(this, datetime);
+     	this.pricer.Delta(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Gamma()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3506));
-      else
-        return this.wZe6uJJRdy.Gamma(this);
+      	this.pricer.Gamma(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Gamma(DateTime datetime)
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3560));
-      else
-        return this.wZe6uJJRdy.Gamma(this, datetime);
+		this.pricer.Gamma(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Theta()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3614));
-      else
-        return this.wZe6uJJRdy.Theta(this);
+		this.pricer.Theta(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Theta(DateTime datetime)
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3668));
-      else
-        return this.wZe6uJJRdy.Theta(this, datetime);
+		this.pricer.Theta(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Rho()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3722));
-      else
-        return this.wZe6uJJRdy.Rho(this);
+      	this.pricer.Rho(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Rho(DateTime datetime)
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3776));
-      else
-        return this.wZe6uJJRdy.Rho(this, datetime);
+     	this.pricer.Rho(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Vega()
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3830));
-      else
-        return this.wZe6uJJRdy.Vega(this);
+      	this.pricer.Vega(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public double Vega(DateTime datetime)
     {
-      if (this.wZe6uJJRdy == null)
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3884));
-      else
-        return this.wZe6uJJRdy.Vega(this, datetime);
+     	this.pricer.Vega(this, datetime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Reset()
     {
-      this.rph6b90s4W = new Bar();
-      this.r7n6IuAJ2g = new Quote();
-      this.Ful6LEXQOc = new Trade();
-      this.SIo6REcuQ6 = new MarketDepth();
-      this.JjI6aa64P4 = new Fundamental();
-      this.mLj6n4gDEd = new CorporateAction();
-      this.cAF6h0NHaN = 0.0;
+			this.bar = new Bar(); 
+			this.quote = new Quote(); 
+			this.trade = new Trade(); 
+			this.marketDepth = new MarketDepth(); 
+			this.fundamental = new Fundamental(); 
+			this.mLj6n4gDEd = new CorporateAction(); 
+			this.cAF6h0NHaN = 0.0; 
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void JLw6D59Mxc([In] QuoteEventArgs obj0)
     {
-      this.r7n6IuAJ2g = obj0.Quote;
+      this.quote = obj0.Quote;
       if (this.TdT6S1usZL == null)
         return;
       this.TdT6S1usZL((object) this, obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     internal void akq60u3HYf([In] TradeEventArgs obj0)
     {
-      if (this.Ful6LEXQOc.Price != 0.0 && this.Ful6LEXQOc.Price != obj0.Trade.Price)
-        this.cAF6h0NHaN = obj0.Trade.Price - this.Ful6LEXQOc.Price;
-      this.Ful6LEXQOc = obj0.Trade;
+      if (this.trade.Price != 0.0 && this.trade.Price != obj0.Trade.Price)
+        this.cAF6h0NHaN = obj0.Trade.Price - this.trade.Price;
+      this.trade = obj0.Trade;
       if (this.Uyq6ZtLUjA == null)
         return;
       this.Uyq6ZtLUjA((object) this, obj0);
@@ -691,14 +614,14 @@ namespace FreeQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     internal void trS6Hr1Wkt([In] BarEventArgs obj0)
     {
-      this.rph6b90s4W = obj0.Bar;
+      this.bar = obj0.Bar;
       if (Trace.IsLevelEnabled(TraceLevel.Verbose))
         Trace.WriteLine(string.Concat(new object[4]
         {
           (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3938),
           (object) this.Symbol,
           (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3988),
-          (object) this.rph6b90s4W
+          (object) this.bar
         }));
       if (this.LGt6AP0Acf == null)
         return;
@@ -708,14 +631,14 @@ namespace FreeQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     internal void ami6cstOZQ([In] BarEventArgs obj0)
     {
-      this.rph6b90s4W = obj0.Bar;
+      this.bar = obj0.Bar;
       if (Trace.IsLevelEnabled(TraceLevel.Verbose))
         Trace.WriteLine(string.Concat(new object[4]
         {
           (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3994),
           (object) this.Symbol,
           (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4052),
-          (object) this.rph6b90s4W
+          (object) this.bar
         }));
       if (this.iPM6grNm2V == null)
         return;
@@ -725,7 +648,7 @@ namespace FreeQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     internal void aSE6VetHfX([In] MarketDepthEventArgs obj0)
     {
-      this.SIo6REcuQ6 = obj0.MarketDepth;
+      this.marketDepth = obj0.MarketDepth;
       if (this.apm61EO0je != null)
         this.apm61EO0je((object) this, obj0);
       this.Dvj6i1WTmP.Add(obj0.MarketDepth);
@@ -734,7 +657,7 @@ namespace FreeQuant.Instruments
     [MethodImpl(MethodImplOptions.NoInlining)]
     internal void a1w6FaBIwx([In] FundamentalEventArgs obj0)
     {
-      this.JjI6aa64P4 = obj0.Fundamental;
+      this.fundamental = obj0.Fundamental;
       if (this.fYq6oMJm1K == null)
         return;
       this.fYq6oMJm1K((object) this, obj0);

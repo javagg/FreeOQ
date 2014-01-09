@@ -12,12 +12,12 @@ namespace OpenQuant.API
 
 		double this [int index, BarData barData] { get; }
 
-		bool Contains (DateTime dateTime);
+		bool Contains(DateTime dateTime);
 
-		DateTime GetDateTime (int index);
+		DateTime GetDateTime(int index);
 
-		int GetIndex (DateTime dateTime);
+		int GetIndex(DateTime dateTime);
 
-		double Ago (int n);
+		double Ago(int n);
 	}
 }

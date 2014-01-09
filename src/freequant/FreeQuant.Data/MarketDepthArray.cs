@@ -2,13 +2,13 @@ namespace FreeQuant.Data
 {
   public class MarketDepthArray : DataArray
   {
-    public MarketDepth this[int index]
-    {
-       get
-      {
-        return this.fList[index] as MarketDepth;
-      }
-    }
+//    public MarketDepth this[int index]
+//    {
+//       get
+//      {
+//        return this.fList[index] as MarketDepth;
+//      }
+//    }
 
     public bool AddReplaceItem(MarketDepth item)
     {

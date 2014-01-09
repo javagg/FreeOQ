@@ -65,14 +65,14 @@ namespace FreeQuant.FIX
       this.fId = new Hashtable();
     }
 
-    object IList.get_Item(int index)
-    {
-      return this.fList[index];
-    }
-
-    void IList.set_Item(int index, object value)
-    {
-    }
+//    object IList.get_Item(int index)
+//    {
+//      return this.fList[index];
+//    }
+//
+//    void IList.set_Item(int index, object value)
+//    {
+//    }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void RemoveAt(int index)

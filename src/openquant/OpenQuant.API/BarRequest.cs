@@ -41,11 +41,6 @@
 			this.isBarFactoryRequest = isBarFactoryRequest;
 		}
 
-		private BarRequest(FreeQuant.Data.BarType barType, long barSize, bool isBarFactoryRequest)
-      : this(EnumConverter.Convert(barType), barSize, isBarFactoryRequest)
-		{
-		}
-
 		public override bool Equals(object obj)
 		{
 			BarRequest barRequest = obj as BarRequest;
@@ -55,6 +50,11 @@
 		public override int GetHashCode()
 		{
 			return base.GetHashCode();
+		}
+
+		private BarRequest(FreeQuant.Data.BarType barType, long barSize, bool isBarFactoryRequest)
+			: this(EnumConverter.Convert(barType), barSize, isBarFactoryRequest)
+		{
 		}
 	}
 }

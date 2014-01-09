@@ -142,7 +142,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public double this [BarData barData]
+		public double this[BarData barData]
 		{
 			get
 			{

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using wOTnoM0h260SstC0xu;
 
 namespace FreeQuant.Xml
 {
@@ -13,22 +12,14 @@ namespace FreeQuant.Xml
   {
     public Type Value
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.GetTypeValue();
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+        set
       {
         this.SetValue(value);
       }
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TypeValueXmlNode()
-    {
-      wCdHLSBd0jEmbylf8M.oiA62Aizl0hxD();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }
