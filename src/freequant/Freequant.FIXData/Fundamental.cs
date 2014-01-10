@@ -2,7 +2,6 @@ using FreeQuant.Data;
 using FreeQuant.FIX;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIXData
 {
@@ -14,11 +13,11 @@ namespace FreeQuant.FIXData
 
     public double EarningsPerShare
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10300);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10300, value);
       }
@@ -38,11 +37,11 @@ namespace FreeQuant.FIXData
 
     public double RevenuePerShare
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10303);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10303, value);
       }
@@ -50,11 +49,11 @@ namespace FreeQuant.FIXData
 
     public double DebtPerShare
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10304);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10304, value);
       }
@@ -62,11 +61,11 @@ namespace FreeQuant.FIXData
 
     public double CashFlowPerShare
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10305);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10305, value);
       }
@@ -74,11 +73,11 @@ namespace FreeQuant.FIXData
 
     public double InterestPaymentPerShare
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10306);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10306, value);
       }
@@ -86,11 +85,11 @@ namespace FreeQuant.FIXData
 
     public byte ProviderId
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ITfawAy72;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ITfawAy72 = value;
       }
@@ -98,31 +97,23 @@ namespace FreeQuant.FIXData
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.v4ZFuDIqA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.v4ZFuDIqA = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Fundamental()
-    {
-      aHVXF4EQTqOeMK8FH8.jYIb1Y6zBfgK8();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public ISeriesObject NewInstance()
     {
       return (ISeriesObject) new Fundamental();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void WriteTo(BinaryWriter writer)
     {
       writer.Write((byte) 1);
@@ -131,7 +122,7 @@ namespace FreeQuant.FIXData
       FIXGroupStreamer.WriteTo(writer, (FIXGroup) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ReadFrom(BinaryReader reader)
     {
       int num = (int) reader.ReadByte();
@@ -140,7 +131,7 @@ namespace FreeQuant.FIXData
       FIXGroupStreamer.ReadFrom(reader, (FIXGroup) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public object Clone()
     {
       return (object) this;

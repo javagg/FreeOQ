@@ -1,10 +1,4 @@
-﻿// Type: SmartQuant.Charting.Draw3D.TFunction
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
-using SmartQuant.Charting;
+using FreeQuant.Charting;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.CompilerServices;
@@ -35,7 +29,7 @@ namespace FreeQuant.Charting.Draw3D
     private TVec3 gcU3NtonPe;
     private bool hH1321Stt8;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TFunction():base()
     {
 
@@ -49,13 +43,13 @@ namespace FreeQuant.Charting.Draw3D
 
     public abstract double f(double x, double y);
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TColor color0(double x, double y)
     {
       return this.Surface.Diffuse;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public unsafe void Paint(Pad Pad)
     {
       TView tview = TView.View(Pad);
@@ -81,14 +75,14 @@ namespace FreeQuant.Charting.Draw3D
       Pad.Graphics.DrawImage((Image) bitmap, this.uq63OYZaax, this.FP43FHdtWy);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private TColor E0C3BMxUWS([In] double obj0, [In] double obj1, [In] double obj2, [In] double obj3, [In] TColor obj4)
     {
       TVec3 n = new TVec3(obj2, 0.0, this.f(obj0 + obj2, obj1) - this.f(obj0, obj1)) ^ new TVec3(0.0, obj3, this.f(obj0, obj1 + obj3) - this.f(obj0, obj1));
       return this.trP3fdnMpS.Result(new TVec3(obj0, obj1, this.f(obj0, obj1)), n, obj4);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void qDx3lDiW7U([In] Pad obj0, [In] Bitmap obj1)
     {
       if (this.Look != EChartLook.SurfaceOnly)
@@ -97,7 +91,7 @@ namespace FreeQuant.Charting.Draw3D
       TView.View(obj0).PaintAxes(g, obj0, 0, 0, this.C843M1JDuK);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private unsafe void Pnx3KTVZoc([In] int* obj0)
     {
       int[,] numArray = new int[this.Jm23JdRAV2, this.C843M1JDuK];

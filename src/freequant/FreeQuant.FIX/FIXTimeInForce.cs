@@ -21,50 +21,49 @@ namespace FreeQuant.FIX
 
     public static char Value(string Name)
     {
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3766))
+			if (Name == "Day")
         return '0';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3776))
+			if (Name == "GTC")
         return '1';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3786))
+			if (Name == "OPG")
         return '2';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3796))
+			if (Name == "IOC")
         return '3';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3806))
+			if (Name == "FOK")
         return '4';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3816))
+			if (Name == "GTX")
         return '5';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3826))
+			if (Name == "GoodTillDate")
         return '6';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3854))
+			if (Name == "AtTheClose")
         return '7';
-      return Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3878) ? 'X' : char.MinValue;
+			return Name == "GoodForSeconds" ? 'X' : char.MinValue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(char c)
     {
       switch (c)
       {
         case '0':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3910);
+					return "Day";
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3920);
+					return "GTC";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3930);
+					return "OPG";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3940);
+					return "IOC";
         case '4':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3950);
+					return "FOK";
         case '5':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3960);
+					return "GTX";
         case '6':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3970);
+					return "GoodTillDate";
         case '7':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3998);
+					return "AtTheClose";
         case 'X':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4022);
+					return "GoodForSeconds";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4054);
+					return "Unknown";
       }
     }
 
@@ -94,7 +93,7 @@ namespace FreeQuant.FIX
         case 'X':
           return TimeInForce.GoodForSeconds;
         default:
-          throw new ArgumentException(Ugjylcah9mCMM4kO7N.tLah92SpBQ(4072) + (object) timeInForce);
+					throw new ArgumentException("" + (object) timeInForce);
       }
     }
 
@@ -124,7 +123,7 @@ namespace FreeQuant.FIX
         case TimeInForce.GoodForSeconds:
           return 'X';
         default:
-          throw new ArgumentException(Ugjylcah9mCMM4kO7N.tLah92SpBQ(4124) + ((object) timeInForce).ToString());
+					throw new ArgumentException("" + ((object) timeInForce).ToString());
       }
     }
   }

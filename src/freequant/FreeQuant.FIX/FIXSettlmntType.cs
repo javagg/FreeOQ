@@ -16,36 +16,35 @@ namespace FreeQuant.FIX
     public const char Tplus5 = '9';
     public const char Tplus1 = 'A';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXSettlmntType(char val):base(63, val)
     {
  
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static char Value(string Name)
     {
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2840))
+			if (Name == "Regular")
         return '0';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2858))
+			if (Name == "Cash")
         return '1';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2870))
+			if (Name == "NextDay")
         return '2';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2888) || Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2904))
+			if (Name == "Tplus1" || Name == "T+1")
         return 'A';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2914) || Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2930))
+			if (Name == "Tplus2" || Name == "T+2")
         return '3';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2940) || Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2956))
+			if (Name == "Tplus3" || Name == "T+3")
         return '4';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2966) || Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2982))
+			if (Name == "Tplus4" || Name == "T+4")
         return '5';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2992) || Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3008))
+			if (Name == "Tplus5" || Name == "T+5")
         return '9';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3018))
+			if (Name == "Future")
         return '6';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3034))
+			if (Name == "WhenAndIfIssued")
         return '7';
-      return Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(3068) ? '8' : char.MinValue;
+
+			return Name == "SellersOption" ? '8' : char.MinValue;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -54,29 +53,29 @@ namespace FreeQuant.FIX
       switch (c)
       {
         case '0':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3098);
+					return "Regular";
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3116);
+					return "Cash";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3128);
+					return "NextDay";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3156);
+					return "Tplus2";
         case '4':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3166);
+					return "Tplus3";
         case '5':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3176);
+					return "Tplus4";
         case '6':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3196);
+					return "Future";
         case '7':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3212);
+					return "WhenAndIfIssued";
         case '8':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3246);
+					return "SellersOption";
         case '9':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3186);
+					return "Tplus5";
         case 'A':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3146);
+					return "Tplus1";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3276);
+					return "invalid";
       }
     }
   }

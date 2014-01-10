@@ -2,7 +2,6 @@ using FreeQuant.Data;
 using FreeQuant.FIX;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIXData
 {
@@ -13,11 +12,11 @@ namespace FreeQuant.FIXData
 
     public byte ProviderId
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ovPuBurpw;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ovPuBurpw = value;
       }
@@ -25,11 +24,11 @@ namespace FreeQuant.FIXData
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.OrigTime;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.OrigTime = value;
       }
@@ -38,11 +37,11 @@ namespace FreeQuant.FIXData
     [View]
     public override string Headline
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return base.Headline;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.Headline = value;
       }
@@ -50,7 +49,7 @@ namespace FreeQuant.FIXData
 
     public News()
     {
-      this.ovPuBurpw = (byte) 0;
+			this.ovPuBurpw =   0;
     }
 
     public ISeriesObject NewInstance()

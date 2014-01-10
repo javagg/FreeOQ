@@ -19,7 +19,7 @@ namespace FreeQuant.Charting
     private bool fmn6HKQKNH;
     private Color ViX6vvvcDs;
     private bool lD76USPYGZ;
-    private string Xyp64AQCph;
+    private string title;
     private Font Ghn6r0AUf4;
     private Color tAw6cjrLwr;
     private int MU36yJxSD6;
@@ -63,11 +63,11 @@ namespace FreeQuant.Charting
 
     public double X1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jiR6jl13Bb;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.jiR6jl13Bb = value;
       }
@@ -75,11 +75,11 @@ namespace FreeQuant.Charting
 
     public double Y1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Eo969HTsnQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Eo969HTsnQ = value;
       }
@@ -87,11 +87,11 @@ namespace FreeQuant.Charting
 
     public double X2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WvY61ob0Xo;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WvY61ob0Xo = value;
       }
@@ -99,11 +99,11 @@ namespace FreeQuant.Charting
 
     public double Y2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ied6e07F0D;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ied6e07F0D = value;
       }
@@ -111,11 +111,11 @@ namespace FreeQuant.Charting
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ViX6vvvcDs;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ViX6vvvcDs = value;
       }
@@ -123,11 +123,11 @@ namespace FreeQuant.Charting
 
     public EAxisType Type
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jF56ZqlDUA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.jF56ZqlDUA = value;
       }
@@ -135,11 +135,11 @@ namespace FreeQuant.Charting
 
     public EAxisPosition Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.gck6XUIeCg;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.gck6XUIeCg = value;
       }
@@ -147,11 +147,11 @@ namespace FreeQuant.Charting
 
     public EVerticalGridStyle VerticalGridStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.QeC6bMjpbe;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.QeC6bMjpbe = value;
       }
@@ -159,11 +159,11 @@ namespace FreeQuant.Charting
 
     public bool MajorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.zU26hHtq00;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.zU26hHtq00 = value;
       }
@@ -171,11 +171,11 @@ namespace FreeQuant.Charting
 
     public Color MajorTicksColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.G1A6VJnjGW;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.G1A6VJnjGW = value;
       }
@@ -183,11 +183,11 @@ namespace FreeQuant.Charting
 
     public float MajorTicksWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ovt65ky7fn;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ovt65ky7fn = value;
       }
@@ -195,11 +195,11 @@ namespace FreeQuant.Charting
 
     public int MajorTicksLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kfw6LStExd;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.kfw6LStExd = value;
       }
@@ -207,11 +207,11 @@ namespace FreeQuant.Charting
 
     public bool MinorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.raP6AFh3ta;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.raP6AFh3ta = value;
       }
@@ -219,11 +219,11 @@ namespace FreeQuant.Charting
 
     public Color MinorTicksColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.oua6QvZpsu;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.oua6QvZpsu = value;
       }
@@ -231,11 +231,11 @@ namespace FreeQuant.Charting
 
     public float MinorTicksWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.zte6w2XVbU;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.zte6w2XVbU = value;
       }
@@ -243,11 +243,11 @@ namespace FreeQuant.Charting
 
     public int MinorTicksLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.BXj6SnOZlQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.BXj6SnOZlQ = value;
       }
@@ -255,11 +255,11 @@ namespace FreeQuant.Charting
 
     public EAxisTitlePosition TitlePosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ejS6gv5Ug7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ejS6gv5Ug7 = value;
       }
@@ -267,11 +267,11 @@ namespace FreeQuant.Charting
 
     public Font TitleFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Ghn6r0AUf4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Ghn6r0AUf4 = value;
       }
@@ -279,11 +279,11 @@ namespace FreeQuant.Charting
 
     public Color TitleColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.tAw6cjrLwr;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.tAw6cjrLwr = value;
       }
@@ -291,11 +291,11 @@ namespace FreeQuant.Charting
 
     public int TitleOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.MU36yJxSD6;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.MU36yJxSD6 = value;
       }
@@ -303,11 +303,11 @@ namespace FreeQuant.Charting
 
     public double Min
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.CJf67aSqFG;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.CJf67aSqFG = value;
       }
@@ -315,11 +315,11 @@ namespace FreeQuant.Charting
 
     public double Max
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.gDw6zAT8dQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.gDw6zAT8dQ = value;
       }
@@ -327,11 +327,11 @@ namespace FreeQuant.Charting
 
     public bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.MbS6EH3Dtx;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.MbS6EH3Dtx = value;
       }
@@ -339,11 +339,11 @@ namespace FreeQuant.Charting
 
     public bool Zoomed
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fmn6HKQKNH;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fmn6HKQKNH = value;
       }
@@ -351,11 +351,11 @@ namespace FreeQuant.Charting
 
     public bool GridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.TRd6qNDWBJ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.TRd6qNDWBJ = value;
       }
@@ -363,11 +363,11 @@ namespace FreeQuant.Charting
 
     public Color GridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.dpi6tMHwuH;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.dpi6tMHwuH = value;
       }
@@ -375,11 +375,11 @@ namespace FreeQuant.Charting
 
     public float GridWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.tVA6k6gEgN;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.tVA6k6gEgN = value;
       }
@@ -387,11 +387,11 @@ namespace FreeQuant.Charting
 
     public DashStyle GridDashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.j8m6uWqvkw;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.j8m6uWqvkw = value;
       }
@@ -399,11 +399,11 @@ namespace FreeQuant.Charting
 
     public bool MinorGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nYl6mPBuBs;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nYl6mPBuBs = value;
       }
@@ -411,11 +411,11 @@ namespace FreeQuant.Charting
 
     public Color MinorGridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.gPe60TWLJ7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.gPe60TWLJ7 = value;
       }
@@ -423,11 +423,11 @@ namespace FreeQuant.Charting
 
     public float MinorGridWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.YOf6a5UipH;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.YOf6a5UipH = value;
       }
@@ -435,11 +435,11 @@ namespace FreeQuant.Charting
 
     public DashStyle MinorGridDashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Vel6TAhiZ3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Vel6TAhiZ3 = value;
       }
@@ -447,11 +447,11 @@ namespace FreeQuant.Charting
 
     public bool TitleEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.lD76USPYGZ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.lD76USPYGZ = value;
       }
@@ -459,11 +459,11 @@ namespace FreeQuant.Charting
 
     public bool LabelEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fri6W8mFh9;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fri6W8mFh9 = value;
       }
@@ -471,11 +471,11 @@ namespace FreeQuant.Charting
 
     public Font LabelFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Lju6sLD21e;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Lju6sLD21e = value;
       }
@@ -483,11 +483,11 @@ namespace FreeQuant.Charting
 
     public Color LabelColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.h4w6pXqlP6;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.h4w6pXqlP6 = value;
       }
@@ -495,11 +495,11 @@ namespace FreeQuant.Charting
 
     public int LabelOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.QvE6d9RSdV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.QvE6d9RSdV = value;
       }
@@ -507,11 +507,11 @@ namespace FreeQuant.Charting
 
     public string LabelFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.oD26x77nAl;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.oD26x77nAl = value;
       }
@@ -519,11 +519,11 @@ namespace FreeQuant.Charting
 
     public EAxisLabelAlignment LabelAlignment
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.H786I1r5BA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.H786I1r5BA = value;
       }
@@ -531,7 +531,7 @@ namespace FreeQuant.Charting
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (!this.MbS6EH3Dtx)
           return 0;
@@ -547,7 +547,7 @@ namespace FreeQuant.Charting
         this.zQVYBFCR4C = num2 + num1 + 2;
         return num2 + num1 + 2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ndOYlqa0xS = value;
       }
@@ -555,11 +555,11 @@ namespace FreeQuant.Charting
 
     public int LastValidAxisWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.zQVYBFCR4C;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.zQVYBFCR4C = value;
       }
@@ -567,7 +567,7 @@ namespace FreeQuant.Charting
 
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (!this.MbS6EH3Dtx)
           return 0;
@@ -581,7 +581,7 @@ namespace FreeQuant.Charting
           num2 = (int) ((double) this.QvE6d9RSdV + (double) this.G5v68auRhU.Graphics.MeasureString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1300), this.Lju6sLD21e).Height);
         return num2 + num1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ljAYKLwBlc = value;
       }
@@ -589,13 +589,13 @@ namespace FreeQuant.Charting
 
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.Xyp64AQCph;
+				return this.title; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.Xyp64AQCph = value;
+        this.title = value;
       }
     }
 
@@ -637,13 +637,13 @@ namespace FreeQuant.Charting
       this.zNh621NQso();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void zNh621NQso()
     {
       this.MbS6EH3Dtx = true;
       this.fmn6HKQKNH = false;
       this.ViX6vvvcDs = Color.Black;
-      this.Xyp64AQCph = "";
+      this.title = "";
       this.lD76USPYGZ = true;
       this.ejS6gv5Ug7 = EAxisTitlePosition.Centre;
       this.Ghn6r0AUf4 = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1318), 8f);
@@ -683,7 +683,7 @@ namespace FreeQuant.Charting
       this.ljAYKLwBlc = -1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetLocation(double X1, double Y1, double X2, double Y2)
     {
       this.jiR6jl13Bb = X1;
@@ -692,14 +692,14 @@ namespace FreeQuant.Charting
       this.ied6e07F0D = Y2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRange(double Min, double Max)
     {
       this.CJf67aSqFG = Min;
       this.gDw6zAT8dQ = Max;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Zoom(double Min, double Max)
     {
       this.CJf67aSqFG = Min;
@@ -711,19 +711,19 @@ namespace FreeQuant.Charting
       this.G5v68auRhU.Update();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Zoom(DateTime Min, DateTime Max)
     {
       this.Zoom((double) Min.Ticks, (double) Max.Ticks);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Zoom(string Min, string Max)
     {
       this.Zoom(DateTime.Parse(Min), DateTime.Parse(Max));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnZoom()
     {
       switch (this.gck6XUIeCg)
@@ -742,7 +742,7 @@ namespace FreeQuant.Charting
       this.G5v68auRhU.Update();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static long GetNextMajor(long PrevMajor, EGridSize GridSize)
     {
       long num;
@@ -791,7 +791,7 @@ namespace FreeQuant.Charting
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static EGridSize CalculateSize(double ticks)
     {
       int num1 = 10;
@@ -890,7 +890,7 @@ namespace FreeQuant.Charting
       return num33 >= (double) num2 && num33 <= (double) num1 ? EGridSize.year20 : EGridSize.year20;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void PaintWithDates()
     {
       if (!this.MbS6EH3Dtx)
@@ -989,7 +989,7 @@ namespace FreeQuant.Charting
           DateTime dateTime14 = new DateTime(FirstDateTime.Year, FirstDateTime.Month, FirstDateTime.Day);
           // ISSUE: explicit reference operation
           // ISSUE: variable of a reference type
-          DateTime& local1 = @dateTime14;
+//          DateTime& local1 = @dateTime14;
           double num3 = 8.0 - (double) FirstDateTime.DayOfWeek;
           int num4 = 7;
           int num5 = 1;
@@ -999,7 +999,9 @@ namespace FreeQuant.Charting
           double num8 = (double) (num4 * num7);
           double num9 = num3 + num8;
           // ISSUE: explicit reference operation
-          num2 = (double) (^local1).AddDays(num9).Ticks;
+//          num2 = (double) (^local1).AddDays(num9).Ticks;
+		num2 = (double) dateTime14.AddDays(num9).Ticks;
+
           break;
         case EGridSize.day3:
           num2 = (double) new DateTime(FirstDateTime.Year, FirstDateTime.Month, FirstDateTime.Day).AddDays((double) (1 + (2 - (int) new TimeSpan(FirstDateTime.Ticks).TotalDays % 3))).Ticks;
@@ -1054,7 +1056,7 @@ namespace FreeQuant.Charting
           DateTime dateTime16 = new DateTime(FirstDateTime.Year, FirstDateTime.Month, FirstDateTime.Day, FirstDateTime.Hour, FirstDateTime.Minute, 0);
           // ISSUE: explicit reference operation
           // ISSUE: variable of a reference type
-          DateTime& local2 = @dateTime16;
+//          DateTime& local2 = @dateTime16;
           int num10 = 1;
           int num11 = 1;
           timeSpan = new TimeSpan(FirstDateTime.Ticks);
@@ -1062,8 +1064,10 @@ namespace FreeQuant.Charting
           int num13 = num11 - num12;
           double num14 = (double) (num10 + num13);
           // ISSUE: explicit reference operation
-          num2 = (double) (^local2).AddMinutes(num14).Ticks;
-          break;
+//          num2 = (double) (^local2).AddMinutes(num14).Ticks;
+		num2 = (double) dateTime16.AddMinutes(num14).Ticks;
+          
+		break;
         case EGridSize.min5:
           num2 = (double) new DateTime(FirstDateTime.Year, FirstDateTime.Month, FirstDateTime.Day, FirstDateTime.Hour, FirstDateTime.Minute, 0).AddMinutes((double) (1 + (4 - (int) new TimeSpan(FirstDateTime.Ticks).TotalMinutes % 5))).Ticks;
           break;
@@ -1261,20 +1265,20 @@ label_47:
         return;
       int num25 = (int) this.G5v68auRhU.Graphics.MeasureString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1594), this.Lju6sLD21e).Height;
       int num26 = (int) this.G5v68auRhU.Graphics.MeasureString(this.gDw6zAT8dQ.ToString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1612)), this.Lju6sLD21e).Width;
-      int num27 = (int) this.G5v68auRhU.Graphics.MeasureString(this.Xyp64AQCph, this.Ghn6r0AUf4).Height;
-      int num28 = (int) this.G5v68auRhU.Graphics.MeasureString(this.Xyp64AQCph, this.Ghn6r0AUf4).Width;
+      int num27 = (int) this.G5v68auRhU.Graphics.MeasureString(this.title, this.Ghn6r0AUf4).Height;
+      int num28 = (int) this.G5v68auRhU.Graphics.MeasureString(this.title, this.Ghn6r0AUf4).Width;
       if (this.gck6XUIeCg == EAxisPosition.Bottom)
       {
         if (this.ejS6gv5Ug7 == EAxisTitlePosition.Left)
-          this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) this.jiR6jl13Bb, (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
+          this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) this.jiR6jl13Bb, (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
         if (this.ejS6gv5Ug7 == EAxisTitlePosition.Right)
-          this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) ((int) this.WvY61ob0Xo - num28), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
+          this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) ((int) this.WvY61ob0Xo - num28), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
         if (this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
-          this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb + (this.WvY61ob0Xo - this.jiR6jl13Bb - (double) num28) / 2.0), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
+          this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb + (this.WvY61ob0Xo - this.jiR6jl13Bb - (double) num28) / 2.0), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
       }
       if (this.gck6XUIeCg != EAxisPosition.Left || this.ejS6gv5Ug7 != EAxisTitlePosition.Centre)
         return;
-      this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb - (double) this.QvE6d9RSdV - (double) num26 - (double) this.MU36yJxSD6 - (double) num27), (float) (int) (this.Eo969HTsnQ + (this.ied6e07F0D - this.Eo969HTsnQ - (double) num28) / 2.0), new StringFormat()
+      this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb - (double) this.QvE6d9RSdV - (double) num26 - (double) this.MU36yJxSD6 - (double) num27), (float) (int) (this.Eo969HTsnQ + (this.ied6e07F0D - this.Eo969HTsnQ - (double) num28) / 2.0), new StringFormat()
       {
         FormatFlags = StringFormatFlags.DirectionRightToLeft | StringFormatFlags.DirectionVertical,
         FormatFlags = StringFormatFlags.DirectionVertical
@@ -1282,7 +1286,7 @@ label_47:
       this.G5v68auRhU.Graphics.ResetTransform();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint()
     {
       try
@@ -1502,20 +1506,20 @@ label_47:
           {
             int num13 = (int) this.G5v68auRhU.Graphics.MeasureString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1656), this.Lju6sLD21e).Height;
             int num14 = (int) this.G5v68auRhU.Graphics.MeasureString(this.gDw6zAT8dQ.ToString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1674)), this.Lju6sLD21e).Width;
-            int num15 = (int) this.G5v68auRhU.Graphics.MeasureString(this.Xyp64AQCph, this.Ghn6r0AUf4).Height;
-            int num16 = (int) this.G5v68auRhU.Graphics.MeasureString(this.Xyp64AQCph, this.Ghn6r0AUf4).Width;
+            int num15 = (int) this.G5v68auRhU.Graphics.MeasureString(this.title, this.Ghn6r0AUf4).Height;
+            int num16 = (int) this.G5v68auRhU.Graphics.MeasureString(this.title, this.Ghn6r0AUf4).Width;
             if (this.gck6XUIeCg == EAxisPosition.Bottom)
             {
               if (this.ejS6gv5Ug7 == EAxisTitlePosition.Left)
-                this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) this.jiR6jl13Bb, (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
+                this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) this.jiR6jl13Bb, (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
               if (this.ejS6gv5Ug7 == EAxisTitlePosition.Right)
-                this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) ((int) this.WvY61ob0Xo - num16), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
+                this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) ((int) this.WvY61ob0Xo - num16), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
               if (this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
-                this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb + (this.WvY61ob0Xo - this.jiR6jl13Bb - (double) num16) / 2.0), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
+                this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb + (this.WvY61ob0Xo - this.jiR6jl13Bb - (double) num16) / 2.0), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
             }
             if (this.gck6XUIeCg == EAxisPosition.Left && this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
             {
-              this.G5v68auRhU.Graphics.DrawString(this.Xyp64AQCph, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb - (double) this.QvE6d9RSdV - (double) num14 - (double) this.MU36yJxSD6 - (double) num15), (float) (int) (this.Eo969HTsnQ + (this.ied6e07F0D - this.Eo969HTsnQ - (double) num16) / 2.0), new StringFormat()
+              this.G5v68auRhU.Graphics.DrawString(this.title, this.Ghn6r0AUf4, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb - (double) this.QvE6d9RSdV - (double) num14 - (double) this.MU36yJxSD6 - (double) num15), (float) (int) (this.Eo969HTsnQ + (this.ied6e07F0D - this.Eo969HTsnQ - (double) num16) / 2.0), new StringFormat()
               {
                 FormatFlags = StringFormatFlags.DirectionRightToLeft | StringFormatFlags.DirectionVertical,
                 FormatFlags = StringFormatFlags.DirectionVertical
@@ -1534,7 +1538,7 @@ label_47:
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseMove(MouseEventArgs Event)
     {
       if (!this.abOYnyZNZl)
@@ -1556,7 +1560,7 @@ label_47:
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseDown(MouseEventArgs Event)
     {
       if (Event.Button != MouseButtons.Left)
@@ -1584,7 +1588,7 @@ label_47:
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseUp(MouseEventArgs Event)
     {
       this.J2nYCsqgZK = false;
@@ -1655,7 +1659,7 @@ label_47:
       this.abOYnyZNZl = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static double sVI6ietQib([In] double obj0)
     {
       double num1 = obj0 > 0.0 ? 1.0 : -1.0;
@@ -1668,7 +1672,7 @@ label_47:
       return num1 * num3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static double iIt6DXx2ZI([In] double obj0)
     {
       double num1 = obj0 > 0.0 ? 1.0 : -1.0;

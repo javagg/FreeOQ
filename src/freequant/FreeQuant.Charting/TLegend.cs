@@ -20,11 +20,11 @@ namespace FreeQuant.Charting
 
     public Pad Pad
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.TKBs3XOfS;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.TKBs3XOfS = value;
       }
@@ -32,11 +32,11 @@ namespace FreeQuant.Charting
 
     public int X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.qKrdFkULm;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.qKrdFkULm = value;
       }
@@ -44,11 +44,11 @@ namespace FreeQuant.Charting
 
     public int Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.LHfxtJBYE;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.LHfxtJBYE = value;
       }
@@ -56,7 +56,7 @@ namespace FreeQuant.Charting
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.m6TIS8v1N = 0;
         foreach (TLegendItem tlegendItem in this.QubpfK7Qg)
@@ -68,7 +68,7 @@ namespace FreeQuant.Charting
         this.m6TIS8v1N += 12;
         return this.m6TIS8v1N;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.m6TIS8v1N = value;
       }
@@ -76,7 +76,7 @@ namespace FreeQuant.Charting
 
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.SMTqvOxUh = 0;
         foreach (TLegendItem tlegendItem in this.QubpfK7Qg)
@@ -84,7 +84,7 @@ namespace FreeQuant.Charting
         this.SMTqvOxUh += 2;
         return this.SMTqvOxUh;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SMTqvOxUh = value;
       }
@@ -92,11 +92,11 @@ namespace FreeQuant.Charting
 
     public bool BorderEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.STlt0BS6v;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.STlt0BS6v = value;
       }
@@ -104,11 +104,11 @@ namespace FreeQuant.Charting
 
     public Color BorderColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Ohok8A9LK;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Ohok8A9LK = value;
       }
@@ -116,11 +116,11 @@ namespace FreeQuant.Charting
 
     public Color BackColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WsMu1f61r;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WsMu1f61r = value;
       }
@@ -128,7 +128,7 @@ namespace FreeQuant.Charting
 
     public ArrayList Items
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.QubpfK7Qg;
       }
@@ -142,7 +142,7 @@ namespace FreeQuant.Charting
       this.Ua2WEbOVG();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Ua2WEbOVG()
     {
       this.STlt0BS6v = true;
@@ -151,25 +151,25 @@ namespace FreeQuant.Charting
       this.QubpfK7Qg = new ArrayList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string Text, Color Color)
     {
       this.QubpfK7Qg.Add((object) new TLegendItem(Text, Color));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string Text, Color Color, Font Font)
     {
       this.QubpfK7Qg.Add((object) new TLegendItem(Text, Color, Font));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(TLegendItem Item)
     {
       this.QubpfK7Qg.Add((object) Item);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint()
     {
       this.TKBs3XOfS.Graphics.FillRectangle((Brush) new SolidBrush(this.WsMu1f61r), this.qKrdFkULm, this.LHfxtJBYE, this.Width, this.Height);

@@ -52,15 +52,14 @@ namespace FreeQuant.FIX
     }
 
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public override string ToString()
-    {
-      if (this.SecurityAltID == "")
-        return Ugjylcah9mCMM4kO7N.tLah92SpBQ(38688);
-      if (this.SecurityAltExchange == "")
-        return string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38714), (object) this.SecurityAltIDSource, (object) this.SecurityAltID);
-      else
-        return string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38736), (object) this.SecurityAltIDSource, (object) this.SecurityAltID, (object) this.SecurityAltExchange);
-    }
+//    public override string ToString()
+//    {
+//      if (this.SecurityAltID == "")
+//        return Ugjylcah9mCMM4kO7N.tLah92SpBQ(38688);
+//      if (this.SecurityAltExchange == "")
+//        return string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38714), (object) this.SecurityAltIDSource, (object) this.SecurityAltID);
+//      else
+//        return string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38736), (object) this.SecurityAltIDSource, (object) this.SecurityAltID, (object) this.SecurityAltExchange);
+//    }
   }
 }

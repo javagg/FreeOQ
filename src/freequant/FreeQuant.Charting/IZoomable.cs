@@ -1,13 +1,13 @@
 namespace FreeQuant.Charting
 {
-  public interface IZoomable
-  {
-    bool IsPadRangeX();
+	public interface IZoomable
+	{
+		bool IsPadRangeX();
 
-    bool IsPadRangeY();
+		bool IsPadRangeY();
 
-    PadRange GetPadRangeX(Pad pad);
+		PadRange GetPadRangeX(Pad pad);
 
-    PadRange GetPadRangeY(Pad pad);
-  }
+		PadRange GetPadRangeY(Pad pad);
+	}
 }

@@ -51,7 +51,7 @@ namespace FreeQuant.FIX
         case 11:
           return SessionRejectReason.InvalidMsgType;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38540), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
 
@@ -84,7 +84,7 @@ namespace FreeQuant.FIX
         case SessionRejectReason.InvalidMsgType:
           return 11;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38614), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
   }

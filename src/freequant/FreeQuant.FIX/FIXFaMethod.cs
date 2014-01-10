@@ -16,37 +16,35 @@ namespace FreeQuant.FIX
 
     }
 
-
     public static string ToFIX(FaMethod value)
     {
       switch (value)
       {
         case FaMethod.PctChange:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2038);
+					return "PctChange";
         case FaMethod.AvailableEquity:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(1958);
+					return "AvailableEquity";
         case FaMethod.NetLiq:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2022);
+					return "NetLiq";
         case FaMethod.EqualQuantity:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(1992);
+					return "EqualQuantity";
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(2060), (object) value));
+					throw new ArgumentException(string.Format("Error: ", (object) value));
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static FaMethod FromFIX(string value)
     {
       string str;
       if ((str = value) != null)
       {
-        if (str == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2126))
+				if (str == "PctChange")
           return FaMethod.AvailableEquity;
-        if (str == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2160))
+				if (str == "AvailableEquity")
           return FaMethod.EqualQuantity;
-        if (str == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2190))
+				if (str == "NetLiq")
           return FaMethod.NetLiq;
-        if (str == Ugjylcah9mCMM4kO7N.tLah92SpBQ(2206))
+				if (str == "EqualQuantity")
           return FaMethod.PctChange;
       }
       return FaMethod.Undefined;

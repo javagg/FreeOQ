@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FreeQuant.Charting
@@ -18,11 +17,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.wPV3e4U3q3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.wPV3e4U3q3 = value;
       }
@@ -32,11 +31,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cnj378aqIs;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.cnj378aqIs = value;
       }
@@ -46,11 +45,11 @@ namespace FreeQuant.Charting
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.KWs3zs7q7q;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.KWs3zs7q7q = value;
       }
@@ -60,17 +59,17 @@ namespace FreeQuant.Charting
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ARXCnXs0bV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ARXCnXs0bV = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TImage(Image Image, double X, double Y):base()
     {
 
@@ -90,7 +89,7 @@ namespace FreeQuant.Charting
       this.yee3w4ff2w();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TImage(string FileName, double X, double Y):base()
     {
 
@@ -100,7 +99,7 @@ namespace FreeQuant.Charting
       this.yee3w4ff2w();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TImage(string FileName, DateTime X, double Y):base()
     {
       this.jOZ39kecDV = Image.FromFile(FileName);
@@ -110,27 +109,27 @@ namespace FreeQuant.Charting
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private Image T343SKhwwY()
     {
       return this.jOZ39kecDV;
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void uYZ3jN1m5i(Image value)
     {
       this.jOZ39kecDV = value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void yee3w4ff2w()
     {
       this.KWs3zs7q7q = true;
       this.ARXCnXs0bV = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(642);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
       if (Chart.Pad == null)
@@ -140,7 +139,7 @@ namespace FreeQuant.Charting
       Chart.Pad.Add((IDrawable) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
     {
       int x = Pad.ClientX(this.wPV3e4U3q3);
@@ -148,7 +147,7 @@ namespace FreeQuant.Charting
       Pad.Graphics.DrawImage(this.jOZ39kecDV, x, y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       TDistance tdistance = new TDistance();
@@ -162,7 +161,7 @@ namespace FreeQuant.Charting
       return tdistance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Move(double X, double Y, double dX, double dY)
     {
       this.wPV3e4U3q3 += dX;

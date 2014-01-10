@@ -8,12 +8,12 @@ namespace FreeQuant
 
 		protected string GetStringValue(string propertyName)
 		{
-			return (string)null;
+			return null;
 		}
 
 		protected long GetInt64Value(string propertyName)
 		{
-			return 0L;
+			return 0;
 		}
 	}
 }

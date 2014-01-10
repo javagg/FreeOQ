@@ -1,5 +1,3 @@
-﻿using dW79p7NPlS6ZxObcx3;
-using Obgh2s3A3GOOarwj6c;
 using FreeQuant.Data;
 using FreeQuant.FIX;
 using System;
@@ -18,12 +16,12 @@ namespace FreeQuant.Providers
     private Dictionary<IFIXInstrument, Quote> ALv6cyCmM;
 
     [DefaultValue(true)]
-    public bool Enabled { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool Enabled {  get;  set; }
 
     [DefaultValue(BarFactoryInput.Trade)]
-    public BarFactoryInput Input { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public BarFactoryInput Input {  get;  set; }
 
-    public BarFactoryItemList Items { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+    public BarFactoryItemList Items {  get;  private set; }
 
     public event BarEventHandler NewBar;
 
@@ -31,12 +29,9 @@ namespace FreeQuant.Providers
 
     public event BarSliceEventHandler NewBarSlice;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OfflineBarFactory()
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Enabled = true;
       this.Input = BarFactoryInput.Trade;
       this.Items = new BarFactoryItemList();
@@ -44,7 +39,7 @@ namespace FreeQuant.Providers
       this.ALv6cyCmM = new Dictionary<IFIXInstrument, Quote>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnNewTrade(IFIXInstrument instrument, Trade trade)
     {
       if (!this.Enabled || this.Input != BarFactoryInput.Trade)
@@ -52,7 +47,7 @@ namespace FreeQuant.Providers
       this.WJWi7M4Wg(instrument, trade.DateTime, trade.Price, trade.Size);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnNewQuote(IFIXInstrument instrument, Quote quote)
     {
       if (!this.Enabled)
@@ -114,14 +109,14 @@ namespace FreeQuant.Providers
       quote1.BidSize = quote.BidSize;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Reset()
     {
       this.ReSeeRRAl.Clear();
       this.ALv6cyCmM.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void WJWi7M4Wg([In] IFIXInstrument obj0, [In] DateTime obj1, [In] double obj2, [In] int obj3)
     {
       foreach (BarFactoryItem barFactoryItem in this.Items)
@@ -194,7 +189,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void jtf8pUBX1([In] Bar obj0, [In] double obj1, [In] int obj2)
     {
       if (obj1 > obj0.High)
@@ -205,13 +200,13 @@ namespace FreeQuant.Providers
       obj0.Volume += (long) obj2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private Bar ssgZj9bjo([In] BarType obj0, [In] long obj1, [In] DateTime obj2, [In] DateTime obj3, [In] double obj4)
     {
       return new Bar(obj0, obj1, obj2, obj3, obj4, obj4, obj4, obj4, 0L, 0L);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void iYlXRwvKS([In] DateTime obj0, [In] long obj1, out DateTime _param3, out DateTime _param4)
     {
       long num = (long) obj0.TimeOfDay.TotalSeconds / obj1 * obj1;
@@ -219,7 +214,7 @@ namespace FreeQuant.Providers
       param3 = param2.AddSeconds((double) obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void CgiTKf5gQ([In] IFIXInstrument obj0, [In] Bar obj1)
     {
       if (this.JL8oPByHO == null)
@@ -227,7 +222,7 @@ namespace FreeQuant.Providers
       this.JL8oPByHO((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) null));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void M28GqE2S2([In] IFIXInstrument obj0, [In] Bar obj1)
     {
       if (this.CSbm1wLhQ == null)
@@ -235,7 +230,7 @@ namespace FreeQuant.Providers
       this.CSbm1wLhQ((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) null));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void jsgfiCe1q([In] IFIXInstrument obj0, [In] long obj1)
     {
       if (this.W79MPhgAi == null)
@@ -243,7 +238,7 @@ namespace FreeQuant.Providers
       this.W79MPhgAi((object) this, new BarSliceEventArgs(obj1, (IMarketDataProvider) null));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
       return GojrKtfk5NMi1fou68.a17L2Y7Wnd(400);
@@ -254,7 +249,7 @@ namespace FreeQuant.Providers
       public Bar rwG1TvUU0;
       public int WWlIn4O0w;
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public PVGcuMn6TQoRUEfhwr()
       {
         Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();

@@ -1,9 +1,5 @@
-﻿using dW79p7NPlS6ZxObcx3;
-using Obgh2s3A3GOOarwj6c;
 using FreeQuant.FIX;
 using System;
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Providers
 {
   public class HistoricalDataRequest
@@ -20,7 +16,7 @@ namespace FreeQuant.Providers
 
     public string RequestId
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.H5ygRPXX3V;
       }
@@ -28,11 +24,11 @@ namespace FreeQuant.Providers
 
     public IFIXInstrument Instrument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.HpSg99FMLB;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.HpSg99FMLB = value;
       }
@@ -40,11 +36,11 @@ namespace FreeQuant.Providers
 
     public HistoricalDataType DataType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.FZdgYFaSe5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.FZdgYFaSe5 = value;
       }
@@ -52,11 +48,11 @@ namespace FreeQuant.Providers
 
     public DateTime BeginDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.DhGgsoa2Jr;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.DhGgsoa2Jr = value;
       }
@@ -64,11 +60,11 @@ namespace FreeQuant.Providers
 
     public DateTime EndDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.vFigbZop99;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.vFigbZop99 = value;
       }
@@ -76,11 +72,11 @@ namespace FreeQuant.Providers
 
     public int DaysAgo
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.mjRgd5sOrY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.mjRgd5sOrY = value;
       }
@@ -88,11 +84,11 @@ namespace FreeQuant.Providers
 
     public int BarsAgo
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.HDbgrnSn2C;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.HDbgrnSn2C = value;
       }
@@ -100,24 +96,24 @@ namespace FreeQuant.Providers
 
     public long BarSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.f85gKJ2B79;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.f85gKJ2B79 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static HistoricalDataRequest()
     {
       Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
       HistoricalDataRequest.ScTgOyCwNp = 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public HistoricalDataRequest()
     {
       Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();

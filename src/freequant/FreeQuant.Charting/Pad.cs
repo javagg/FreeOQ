@@ -106,11 +106,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public bool For3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VN5zSfcsG.uRWofxiHHl();
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.VN5zSfcsG.jYkoFPyqxe(value);
       }
@@ -119,11 +119,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public object View3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VN5zSfcsG.NHloRxNAlb;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.VN5zSfcsG.NHloRxNAlb = value;
       }
@@ -132,7 +132,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis[] Axes3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VN5zSfcsG.K7qoPqVA9V;
       }
@@ -141,7 +141,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisX3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VN5zSfcsG.K7qoPqVA9V[0];
       }
@@ -150,7 +150,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisY3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VN5zSfcsG.K7qoPqVA9V[1];
       }
@@ -159,7 +159,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisZ3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VN5zSfcsG.K7qoPqVA9V[2];
       }
@@ -168,11 +168,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Chart Chart
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fChart;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fChart = value;
       }
@@ -182,11 +182,11 @@ namespace FreeQuant.Charting
     [Category("Appearance")]
     public bool DoubleBufferingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fChart.DoubleBufferingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fChart.DoubleBufferingEnabled = value;
       }
@@ -196,11 +196,11 @@ namespace FreeQuant.Charting
     [Category("Appearance")]
     public bool SmoothingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fChart.SmoothingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fChart.SmoothingEnabled = value;
       }
@@ -210,11 +210,11 @@ namespace FreeQuant.Charting
     [Description("Enable or disable antialiasing")]
     public bool AntiAliasingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fChart.AntiAliasingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fChart.AntiAliasingEnabled = value;
       }
@@ -224,11 +224,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double CanvasX1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCanvasX1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fCanvasX1 = value;
       }
@@ -238,11 +238,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double CanvasX2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCanvasX2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fCanvasX2 = value;
       }
@@ -252,11 +252,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double CanvasY1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCanvasY1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fCanvasY1 = value;
       }
@@ -266,11 +266,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public double CanvasY2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCanvasY2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fCanvasY2 = value;
       }
@@ -279,7 +279,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double CanvasWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Math.Abs(this.fCanvasX2 - this.fCanvasX1);
       }
@@ -288,7 +288,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double CanvasHeight
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Math.Abs(this.fCanvasY2 - this.fCanvasY1);
       }
@@ -297,11 +297,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public virtual int X1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fX1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fX1 = value;
         this.fWidth = this.fX2 - this.fX1;
@@ -311,11 +311,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public virtual int X2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fX2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fX2 = value;
         this.fWidth = this.fX2 - this.fX1;
@@ -325,11 +325,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public int Y1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fY1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fY1 = value;
         this.fHeight = this.fY2 - this.fY1;
@@ -339,11 +339,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public int Y2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fY2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fY2 = value;
         this.fHeight = this.fY2 - this.fY1;
@@ -353,11 +353,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fWidth = value;
         this.fX2 = this.fX1 + this.fWidth;
@@ -367,11 +367,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fHeight;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fHeight = value;
         this.fY2 = this.fY1 + this.fHeight;
@@ -381,14 +381,14 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double XMin
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fAxisBottom.Enabled && this.fAxisBottom.Zoomed)
           return this.fAxisBottom.Min;
         else
           return this.fXMin;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fXMin = value;
       }
@@ -397,14 +397,14 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double XMax
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fAxisBottom.Enabled && this.fAxisBottom.Zoomed)
           return this.fAxisBottom.Max;
         else
           return this.fXMax;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fXMax = value;
       }
@@ -413,14 +413,14 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double YMin
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fAxisLeft.Enabled && this.fAxisLeft.Zoomed)
           return this.fAxisLeft.Min;
         else
           return this.fYMin;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fYMin = value;
       }
@@ -429,14 +429,14 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double YMax
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fAxisLeft.Enabled && this.fAxisLeft.Zoomed)
           return this.fAxisLeft.Max;
         else
           return this.fYMax;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fYMax = value;
       }
@@ -445,11 +445,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double XRangeMin
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fXMin;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fXMin = value;
       }
@@ -458,11 +458,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double XRangeMax
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fXMax;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fXMax = value;
       }
@@ -471,11 +471,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double YRangeMin
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fYMin;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fYMin = value;
       }
@@ -484,11 +484,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double YRangeMax
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fYMax;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fYMax = value;
       }
@@ -498,11 +498,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public int MarginLeft
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMarginLeft;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMarginLeft = value;
       }
@@ -512,11 +512,11 @@ namespace FreeQuant.Charting
     [Category("Margin")]
     public int MarginRight
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMarginRight;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMarginRight = value;
       }
@@ -526,11 +526,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public int MarginTop
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMarginTop;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMarginTop = value;
       }
@@ -540,11 +540,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public int MarginBottom
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMarginBottom;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMarginBottom = value;
       }
@@ -552,11 +552,11 @@ namespace FreeQuant.Charting
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fName;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fName = value;
       }
@@ -565,11 +565,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public TTitle Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle = value;
       }
@@ -579,11 +579,11 @@ namespace FreeQuant.Charting
     [Category("Title")]
     public bool TitleEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitleEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitleEnabled = value;
       }
@@ -593,7 +593,7 @@ namespace FreeQuant.Charting
     [Description("")]
     public ArrayList TitleItems
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.Items;
       }
@@ -603,11 +603,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool TitleItemsEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.ItemsEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle.ItemsEnabled = value;
       }
@@ -617,11 +617,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public string TitleText
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.Text;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle.Text = value;
       }
@@ -631,11 +631,11 @@ namespace FreeQuant.Charting
     [Category("Title")]
     public Font TitleFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.Font;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle.Font = value;
       }
@@ -645,11 +645,11 @@ namespace FreeQuant.Charting
     [Category("Title")]
     public Color TitleColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.Color;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle.Color = value;
       }
@@ -659,11 +659,11 @@ namespace FreeQuant.Charting
     [Description("Title offset alone X axis")]
     public int TitleOffsetX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitleOffsetX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitleOffsetX = value;
       }
@@ -673,11 +673,11 @@ namespace FreeQuant.Charting
     [Category("Title")]
     public int TitleOffsetY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitleOffsetY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitleOffsetY = value;
       }
@@ -687,11 +687,11 @@ namespace FreeQuant.Charting
     [Category("Title")]
     public ETitlePosition TitlePosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.Position;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle.Position = value;
       }
@@ -701,11 +701,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public ETitleStrategy TitleStrategy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle.Strategy;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle.Strategy = value;
       }
@@ -715,11 +715,11 @@ namespace FreeQuant.Charting
     [Category("Color")]
     public Color BackColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fBackColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fBackColor = value;
       }
@@ -729,11 +729,11 @@ namespace FreeQuant.Charting
     [Category("Color")]
     public Color ForeColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fForeColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fForeColor = value;
       }
@@ -742,11 +742,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public ArrayList Primitives
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrimitives;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrimitives = value;
       }
@@ -755,11 +755,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Graphics Graphics
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fGraphics;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fGraphics = value;
       }
@@ -768,7 +768,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisLeft
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft;
       }
@@ -777,7 +777,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisRight
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisRight;
       }
@@ -786,7 +786,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisTop
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisTop;
       }
@@ -795,7 +795,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public Axis AxisBottom
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom;
       }
@@ -805,11 +805,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool XGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.GridEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.GridEnabled = value;
       }
@@ -819,11 +819,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool YGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.GridEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.GridEnabled = value;
       }
@@ -833,11 +833,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public float XGridWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.GridWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.GridWidth = value;
       }
@@ -847,11 +847,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public float YGridWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.GridWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.GridWidth = value;
       }
@@ -861,11 +861,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Color XGridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.GridColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.GridColor = value;
       }
@@ -875,11 +875,11 @@ namespace FreeQuant.Charting
     [Category("Grid")]
     public Color YGridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.GridColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.GridColor = value;
       }
@@ -889,11 +889,11 @@ namespace FreeQuant.Charting
     [Category("Grid")]
     public DashStyle XGridDashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.GridDashStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.GridDashStyle = value;
       }
@@ -903,11 +903,11 @@ namespace FreeQuant.Charting
     [Category("Grid")]
     public DashStyle YGridDashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.GridDashStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.GridDashStyle = value;
       }
@@ -917,11 +917,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public EAxisType XAxisType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.Type;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.Type = value;
       }
@@ -931,11 +931,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public EAxisPosition XAxisPosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.Position;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.Position = value;
       }
@@ -945,11 +945,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public bool XAxisMajorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.MajorTicksEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.MajorTicksEnabled = value;
       }
@@ -959,11 +959,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public bool XAxisMinorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.MinorTicksEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.MinorTicksEnabled = value;
       }
@@ -973,11 +973,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool XAxisTitleEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.TitleEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.TitleEnabled = value;
       }
@@ -987,11 +987,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public string XAxisTitle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.Title;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.Title = value;
       }
@@ -1001,11 +1001,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Font XAxisTitleFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.TitleFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.TitleFont = value;
       }
@@ -1015,11 +1015,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public Color XAxisTitleColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.TitleColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.TitleColor = value;
       }
@@ -1029,11 +1029,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public int XAxisTitleOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.TitleOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.TitleOffset = value;
       }
@@ -1043,11 +1043,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public EAxisTitlePosition XAxisTitlePosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.TitlePosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.TitlePosition = value;
       }
@@ -1057,11 +1057,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool XAxisLabelEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.LabelEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.LabelEnabled = value;
       }
@@ -1071,11 +1071,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public Font XAxisLabelFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.LabelFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.LabelFont = value;
       }
@@ -1085,11 +1085,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public Color XAxisLabelColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.LabelColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.LabelColor = value;
       }
@@ -1099,11 +1099,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public int XAxisLabelOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.LabelOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.LabelOffset = value;
       }
@@ -1113,11 +1113,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public string XAxisLabelFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.LabelFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.LabelFormat = value;
       }
@@ -1127,11 +1127,11 @@ namespace FreeQuant.Charting
     [Category("XAxis")]
     public EAxisLabelAlignment XAxisLabelAlignment
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisBottom.LabelAlignment;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisBottom.LabelAlignment = value;
       }
@@ -1141,11 +1141,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public EAxisType YAxisType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.Type;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.Type = value;
         this.fAxisRight.Type = value;
@@ -1156,11 +1156,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public EAxisPosition YAxisPosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.Position;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.Position = value;
       }
@@ -1170,11 +1170,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool YAxisMajorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.MajorTicksEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.MajorTicksEnabled = value;
         this.fAxisRight.MajorTicksEnabled = value;
@@ -1185,11 +1185,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool YAxisMinorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.MinorTicksEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.MinorTicksEnabled = value;
         this.fAxisRight.MinorTicksEnabled = value;
@@ -1200,11 +1200,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public bool YAxisTitleEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.TitleEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.TitleEnabled = value;
       }
@@ -1214,11 +1214,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public string YAxisTitle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.Title;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.Title = value;
         this.fAxisRight.Title = value;
@@ -1229,11 +1229,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public Font YAxisTitleFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.TitleFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.TitleFont = value;
         this.fAxisRight.TitleFont = value;
@@ -1244,11 +1244,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Color YAxisTitleColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.TitleColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.TitleColor = value;
         this.fAxisRight.TitleColor = value;
@@ -1259,11 +1259,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public int YAxisTitleOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.TitleOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.TitleOffset = value;
         this.fAxisRight.TitleOffset = value;
@@ -1274,11 +1274,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public EAxisTitlePosition YAxisTitlePosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.TitlePosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.TitlePosition = value;
         this.fAxisRight.TitlePosition = value;
@@ -1289,11 +1289,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public bool YAxisLabelEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.LabelEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.LabelEnabled = value;
       }
@@ -1303,11 +1303,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public Font YAxisLabelFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.LabelFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.LabelFont = value;
         this.fAxisRight.LabelFont = value;
@@ -1318,11 +1318,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Color YAxisLabelColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.LabelColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.LabelColor = value;
         this.fAxisRight.LabelColor = value;
@@ -1333,11 +1333,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public int YAxisLabelOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.LabelOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.LabelOffset = value;
         this.fAxisRight.LabelOffset = value;
@@ -1348,11 +1348,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public string YAxisLabelFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.LabelFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.LabelFormat = value;
         this.fAxisRight.LabelFormat = value;
@@ -1363,11 +1363,11 @@ namespace FreeQuant.Charting
     [Category("YAxis")]
     public EAxisLabelAlignment YAxisLabelAlignment
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAxisLeft.LabelAlignment;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAxisLeft.LabelAlignment = value;
         this.fAxisRight.LabelAlignment = value;
@@ -1377,7 +1377,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public TLegend Legend
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegend;
       }
@@ -1387,11 +1387,11 @@ namespace FreeQuant.Charting
     [Category("Legend")]
     public bool LegendEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegendEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegendEnabled = value;
       }
@@ -1401,11 +1401,11 @@ namespace FreeQuant.Charting
     [Category("Legend")]
     public ELegendPosition LegendPosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegendPosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegendPosition = value;
       }
@@ -1415,11 +1415,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public int LegendOffsetX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegendOffsetX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegendOffsetX = value;
       }
@@ -1429,11 +1429,11 @@ namespace FreeQuant.Charting
     [Category("Legend")]
     public int LegendOffsetY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegendOffsetY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegendOffsetY = value;
       }
@@ -1443,11 +1443,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool LegendBorderEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegend.BorderEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegend.BorderEnabled = value;
       }
@@ -1457,11 +1457,11 @@ namespace FreeQuant.Charting
     [Category("Legend")]
     public Color LegendBorderColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegend.BorderColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegend.BorderColor = value;
       }
@@ -1471,11 +1471,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Color LegendBackColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLegend.BackColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLegend.BackColor = value;
       }
@@ -1485,11 +1485,11 @@ namespace FreeQuant.Charting
     [Category("Border")]
     public bool BorderEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fBorderEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fBorderEnabled = value;
       }
@@ -1499,11 +1499,11 @@ namespace FreeQuant.Charting
     [Category("Border")]
     public Color BorderColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fBorderColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fBorderColor = value;
       }
@@ -1513,11 +1513,11 @@ namespace FreeQuant.Charting
     [Category("Border")]
     public int BorderWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fBorderWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fBorderWidth = value;
       }
@@ -1527,11 +1527,11 @@ namespace FreeQuant.Charting
     [Category("Mouse")]
     public bool MouseZoomEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseZoomEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseZoomEnabled = value;
       }
@@ -1541,11 +1541,11 @@ namespace FreeQuant.Charting
     [Category("Mouse")]
     public bool MouseZoomXAxisEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseZoomXAxisEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseZoomXAxisEnabled = value;
       }
@@ -1555,11 +1555,11 @@ namespace FreeQuant.Charting
     [Category("Mouse")]
     public bool MouseZoomYAxisEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseZoomYAxisEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseZoomYAxisEnabled = value;
       }
@@ -1569,11 +1569,11 @@ namespace FreeQuant.Charting
     [Category("Mouse")]
     public bool MouseUnzoomEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseUnzoomEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseUnzoomEnabled = value;
       }
@@ -1583,11 +1583,11 @@ namespace FreeQuant.Charting
     [Category("Mouse")]
     public bool MouseUnzoomXAxisEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseUnzoomXAxisEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseUnzoomXAxisEnabled = value;
       }
@@ -1597,11 +1597,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MouseUnzoomYAxisEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseUnzoomYAxisEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseUnzoomYAxisEnabled = value;
       }
@@ -1611,11 +1611,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MouseMoveContentEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseMoveContentEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseMoveContentEnabled = value;
       }
@@ -1625,11 +1625,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MouseMovePrimitiveEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseMovePrimitiveEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseMovePrimitiveEnabled = value;
       }
@@ -1639,11 +1639,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MouseDeletePrimitiveEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseDeletePrimitiveEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseDeletePrimitiveEnabled = value;
       }
@@ -1653,11 +1653,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MousePadPropertiesEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMousePadPropertiesEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMousePadPropertiesEnabled = value;
       }
@@ -1667,11 +1667,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MousePrimitivePropertiesEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMousePrimitivePropertiesEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMousePrimitivePropertiesEnabled = value;
       }
@@ -1681,11 +1681,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool MouseContextMenuEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseContextMenuEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseContextMenuEnabled = value;
       }
@@ -1695,11 +1695,11 @@ namespace FreeQuant.Charting
     [Description("Enable or disable mouse wheel")]
     public bool MouseWheelEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseWheelEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseWheelEnabled = value;
       }
@@ -1709,11 +1709,11 @@ namespace FreeQuant.Charting
     [Category("Mouse")]
     public double MouseWheelSensitivity
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseWheelSensitivity;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseWheelSensitivity = value;
       }
@@ -1723,11 +1723,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public EMouseWheelMode MouseWheelMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMouseWheelMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMouseWheelMode = value;
       }
@@ -1736,7 +1736,7 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public IChartTransformation Transformation
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTransformation;
       }
@@ -1746,11 +1746,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public ETransformationType TransformationType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTransformationType;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTransformationType = value;
         double Y1 = this.fXMin + this.CalculateRealQuantityOfTicks_Right(this.fXMin, this.fXMax);
@@ -1769,14 +1769,14 @@ namespace FreeQuant.Charting
     [Category("Transformation")]
     public bool SessionGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fTransformationType == ETransformationType.Intraday)
           return ((TIntradayTransformation) this.Transformation).SessionGridEnabled;
         else
           return false;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (this.fTransformationType != ETransformationType.Intraday)
           return;
@@ -1788,11 +1788,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Color SessionGridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSessionGridColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSessionGridColor = value;
       }
@@ -1802,14 +1802,14 @@ namespace FreeQuant.Charting
     [Description("")]
     public TimeSpan SessionStart
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fTransformationType == ETransformationType.Intraday)
           return new TimeSpan(((TIntradayTransformation) this.fTransformation).FirstSessionTick);
         else
           return new TimeSpan(0, 0, 0, 0);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         double Y1 = this.fXMin + this.CalculateRealQuantityOfTicks_Right(this.fXMin, this.fXMax);
         double Y2 = this.fAxisBottom.Min + this.CalculateRealQuantityOfTicks_Right(this.fAxisBottom.Min, this.fAxisBottom.Max);
@@ -1825,14 +1825,14 @@ namespace FreeQuant.Charting
     [Category("Transformation")]
     public TimeSpan SessionEnd
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fTransformationType == ETransformationType.Intraday)
           return new TimeSpan(((TIntradayTransformation) this.fTransformation).LastSessionTick);
         else
           return new TimeSpan(0, 24, 0, 0);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         double Y1 = this.fXMin + this.CalculateRealQuantityOfTicks_Right(this.fXMin, this.fXMax);
         double Y2 = this.fAxisBottom.Min + this.CalculateRealQuantityOfTicks_Right(this.fAxisBottom.Min, this.fAxisBottom.Max);
@@ -1847,11 +1847,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public bool Monitored
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMonitored;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMonitored = value;
         if (this.fMonitored)
@@ -1864,11 +1864,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public int WindowSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fWindowSize;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fWindowSize = value;
       }
@@ -1877,11 +1877,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public int UpdateInterval
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fUpdateInterval;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fUpdateInterval = value;
       }
@@ -1891,7 +1891,7 @@ namespace FreeQuant.Charting
 
     public event ZoomEventHandler Zoom;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Pad():base()
     {
       this.Init();
@@ -1921,7 +1921,7 @@ namespace FreeQuant.Charting
       this.fLastTickTime = 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Init()
     {
       this.fPrimitives = new ArrayList();
@@ -1997,7 +1997,7 @@ namespace FreeQuant.Charting
       this.fMouseWheelMode = EMouseWheelMode.ZoomX;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void yxJj9CwXy()
     {
       if (this.KtXo3eo8yY != null)
@@ -2022,7 +2022,7 @@ namespace FreeQuant.Charting
       this.kpXo6pj5Cs.Click += new EventHandler(this.hMr7kanRQ);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void SetCanvas(double X1, double Y1, double X2, double Y2, int Width, int Height)
     {
       this.fCanvasX1 = X1;
@@ -2032,7 +2032,7 @@ namespace FreeQuant.Charting
       this.SetCanvas(Width, Height);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void SetCanvas(double X1, double Y1, double X2, double Y2)
     {
       this.fCanvasX1 = X1;
@@ -2041,7 +2041,7 @@ namespace FreeQuant.Charting
       this.fCanvasY2 = Y2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void SetCanvas(int Width, int Height)
     {
       this.fX1 = (int) ((double) Width * this.fCanvasX1);
@@ -2052,7 +2052,7 @@ namespace FreeQuant.Charting
       this.fHeight = this.fY2 - this.fY1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRangeX(double XMin, double XMax)
     {
       this.fXMin = XMin;
@@ -2062,13 +2062,13 @@ namespace FreeQuant.Charting
       this.VN5zSfcsG.DmboYWaZgW(this.fXMin, this.fXMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRangeX(DateTime XMin, DateTime XMax)
     {
       this.SetRangeX((double) XMin.Ticks, (double) XMax.Ticks);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRangeY(double YMin, double YMax)
     {
       this.fYMin = YMin;
@@ -2078,7 +2078,7 @@ namespace FreeQuant.Charting
       this.VN5zSfcsG.ebUoB1tdv8(this.fYMin, this.fYMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRange(double XMin, double XMax, double YMin, double YMax)
     {
       this.fXMin = XMin;
@@ -2092,39 +2092,39 @@ namespace FreeQuant.Charting
       this.VN5zSfcsG.iGDoKyjUVx(this.fXMin, this.fXMax, this.fYMin, this.fYMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRange(DateTime XMin, DateTime XMax, double YMin, double YMax)
     {
       this.SetRange((double) XMin.Ticks, (double) XMax.Ticks, YMin, YMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRange(string XMin, string XMax, double YMin, double YMax)
     {
       this.SetRange((double) DateTime.Parse(XMin).Ticks, (double) DateTime.Parse(XMax).Ticks, YMin, YMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsInRange(double X, double Y)
     {
       return X >= this.XMin && X <= this.XMin + this.CalculateRealQuantityOfTicks_Right(this.XMin, this.XMax) && (Y >= this.YMin && Y <= this.YMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnZoomX()
     {
       this.fAxisBottom.UnZoom();
       this.fAxisTop.UnZoom();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnZoomY()
     {
       this.fAxisLeft.UnZoom();
       this.fAxisRight.UnZoom();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnZoom()
     {
       this.fAxisBottom.SetRange(this.fXMin, this.fXMax);
@@ -2140,104 +2140,104 @@ namespace FreeQuant.Charting
       this.Update();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetNextGridDivision(double FirstTick, double PrevMajor, int MajorCount, EGridSize GridSize)
     {
       return this.fTransformation.GetNextGridDivision(FirstTick, PrevMajor, MajorCount, GridSize);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CalculateRealQuantityOfTicks_Right(double X, double Y)
     {
       return this.fTransformation.CalculateRealQuantityOfTicks_Right(X, Y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CalculateRealQuantityOfTicks_Left(double X, double Y)
     {
       return this.fTransformation.CalculateRealQuantityOfTicks_Left(X, Y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void GetFirstGridDivision(ref EGridSize GridSize, ref double Min, ref double Max, ref DateTime FirstDateTime)
     {
       this.fTransformation.GetFirstGridDivision(ref GridSize, ref Min, ref Max, ref FirstDateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CalculateNotInSessionTicks(double X, double Y)
     {
       return this.fTransformation.CalculateNotInSessionTicks(X, Y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int ClientX(double WorldX)
     {
       return (int) ((double) this.fClientX + (WorldX - this.XMin - this.CalculateNotInSessionTicks(this.XMin, WorldX)) * ((double) this.fClientWidth / (this.XMax - this.XMin)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int ClientY(double WorldY)
     {
       return (int) ((double) this.fClientY + (double) this.fClientHeight * (1.0 - (WorldY - this.YMin) / (this.YMax - this.YMin)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int ClientX()
     {
       return this.fClientX;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int ClientY()
     {
       return this.fClientY;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int ClientHeight()
     {
       return this.fClientHeight;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int ClientWidth()
     {
       return this.fClientWidth;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double WorldX(int ClientX)
     {
       return this.fAxisBottom.Min + this.CalculateRealQuantityOfTicks_Right(this.fAxisBottom.Min, this.XMin + (double) (ClientX - this.fClientX) / (double) this.fClientWidth * (this.XMax - this.XMin));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double WorldY(int ClientY)
     {
       return this.YMin + (1.0 - (double) (ClientY - this.fClientY) / (double) this.fClientHeight) * (this.YMax - this.YMin);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(IDrawable Primitive)
     {
       this.fPrimitives.Add((object) Primitive);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Remove(IDrawable Primitive)
     {
       this.fPrimitives.Remove((object) Primitive);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.fPrimitives.Clear();
       this.fLegend.Items.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static Graphics GetGraphics()
     {
       if (Chart.Pad != null)
@@ -2246,7 +2246,7 @@ namespace FreeQuant.Charting
         return (Graphics) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Update()
     {
       if (this.fUpdating)
@@ -2256,7 +2256,7 @@ namespace FreeQuant.Charting
       this.fUpdating = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Update(Graphics Graphics)
     {
       double val1_1 = double.MaxValue;
@@ -2461,7 +2461,7 @@ namespace FreeQuant.Charting
       this.fLegend.Paint();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawLine(Pen Pen, double X1, double Y1, double X2, double Y2, bool DoTransform)
     {
       if (DoTransform)
@@ -2470,7 +2470,7 @@ namespace FreeQuant.Charting
         this.fGraphics.DrawLine(Pen, (int) X1, (int) Y1, (int) X2, (int) Y2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawVerticalTick(Pen Pen, double X, double Y, int Length)
     {
       try
@@ -2482,7 +2482,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawHorizontalTick(Pen Pen, double X, double Y, int Length)
     {
       try
@@ -2494,37 +2494,37 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawVerticalGrid(Pen Pen, double X)
     {
       this.fGraphics.DrawLine(Pen, this.ClientX(X), this.fClientY, this.ClientX(X), this.fClientY + this.fClientHeight);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawHorizontalGrid(Pen Pen, double Y)
     {
       this.fGraphics.DrawLine(Pen, this.fClientX, this.ClientY(Y), this.fClientX + this.fClientWidth, this.ClientY(Y));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawLine(Pen Pen, double X1, double Y1, double X2, double Y2)
     {
       this.DrawLine(Pen, X1, Y1, X2, Y2, true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawRectangle(Pen Pen, double X, double Y, int Width, int Height)
     {
       this.fGraphics.DrawRectangle(Pen, this.ClientX(X), this.ClientY(Y), Width, Height);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawEllipse(Pen Pen, double X, double Y, int Width, int Height)
     {
       this.fGraphics.DrawEllipse(Pen, this.ClientX(X), this.ClientY(Y), Width, Height);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawBeziers(Pen Pen, PointF[] Points)
     {
       Point[] points = new Point[Points.Length];
@@ -2536,13 +2536,13 @@ namespace FreeQuant.Charting
       this.fGraphics.DrawBeziers(Pen, points);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawText(string Text, Font Font, Brush Brush, int X, int Y)
     {
       this.fGraphics.DrawString(Text, Font, Brush, (float) X, (float) Y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private bool RUo1ChdWx([In] int obj0, [In] int obj1)
     {
       if (obj0 > this.fClientX && obj0 < this.fClientX + this.fClientWidth && obj1 > this.fClientY)
@@ -2551,7 +2551,7 @@ namespace FreeQuant.Charting
         return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseMove(MouseEventArgs Event)
     {
       try
@@ -2661,7 +2661,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseWheel(MouseEventArgs Event)
     {
       if (!this.fMouseWheelEnabled)
@@ -2733,7 +2733,7 @@ namespace FreeQuant.Charting
       this.Update();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseDown(MouseEventArgs Event)
     {
       if (this.RUo1ChdWx(Event.X, Event.Y))
@@ -2755,7 +2755,7 @@ namespace FreeQuant.Charting
       this.fAxisBottom.MouseDown(Event);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void MouseUp(MouseEventArgs Event)
     {
       if (this.fMouseZoomEnabled && this.fMouseDown && (this.fMouseDownButton == MouseButtons.Left && !this.fOnPrimitive))
@@ -2814,7 +2814,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void DoubleClick(int X, int Y)
     {
       if (this.RUo1ChdWx(X, Y))
@@ -2844,7 +2844,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void EmitNewTick(DateTime datetime)
     {
       if (Pad.LFkonyUD7i == null)
@@ -2852,7 +2852,7 @@ namespace FreeQuant.Charting
       Pad.LFkonyUD7i((object) null, new NewTickEventArgs(datetime));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void H0Y9o0pgX([In] object obj0, [In] NewTickEventArgs obj1)
     {
       if (!this.fMonitored)
@@ -2874,7 +2874,7 @@ namespace FreeQuant.Charting
       this.fLastTickTime = num1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitZoom(bool zoom)
     {
       if (this.EEZoo0ML5l == null)
@@ -2882,14 +2882,14 @@ namespace FreeQuant.Charting
       this.EEZoo0ML5l((object) null, new ZoomEventArgs(this.XMin, this.XMax, this.YMin, this.YMax, zoom));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void ruLesQ5Xv([In] object obj0, [In] EventArgs obj1)
     {
       this.fPrimitives.Remove((object) this.fSelectedPrimitive);
       this.Update();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void hMr7kanRQ([In] object obj0, [In] EventArgs obj1)
     {
       int num = (int) new PadProperyForm((object) this.fSelectedPrimitive, this).ShowDialog();
@@ -2904,7 +2904,7 @@ namespace FreeQuant.Charting
       private bool om3oGeDKrb;
       public object NHloRxNAlb;
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public ut9JGY6223LcaEWEIv([In] Pad obj0)
       {
         Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -2926,14 +2926,14 @@ namespace FreeQuant.Charting
       }
 
       [SpecialName]
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public bool uRWofxiHHl()
       {
         return this.om3oGeDKrb;
       }
 
       [SpecialName]
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void jYkoFPyqxe([In] bool obj0)
       {
         this.om3oGeDKrb = obj0;
@@ -2947,25 +2947,25 @@ namespace FreeQuant.Charting
           this.z7ooMblc8S.DXRo8T6EZV();
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void DmboYWaZgW([In] double obj0, [In] double obj1)
       {
         this.K7qoPqVA9V[0].SetRange(obj0, obj1);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void ebUoB1tdv8([In] double obj0, [In] double obj1)
       {
         this.K7qoPqVA9V[1].SetRange(obj0, obj1);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void YKPolLFPSm([In] double obj0, [In] double obj1)
       {
         this.K7qoPqVA9V[2].SetRange(obj0, obj1);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void iGDoKyjUVx([In] double obj0, [In] double obj1, [In] double obj2, [In] double obj3)
       {
         this.DmboYWaZgW(obj0, obj1);
@@ -2982,7 +2982,7 @@ namespace FreeQuant.Charting
         private Axis WvtoESv7Qa;
         private Axis MsZoH8cva0;
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
+        
         public joI5FOYuNJBoRabUZ0([In] Pad obj0)
         {
           Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -2995,7 +2995,7 @@ namespace FreeQuant.Charting
           this.MsZoH8cva0 = new Axis(obj0);
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
+        
         private void LPYoNcQSe0([In] Axis obj0, [In] Axis obj1)
         {
           obj0.LabelEnabled = obj1.LabelEnabled;
@@ -3007,7 +3007,7 @@ namespace FreeQuant.Charting
           obj0.Enabled = obj1.Enabled;
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
+        
         private void FGko2VPp2g([In] Axis obj0)
         {
           obj0.LabelEnabled = false;
@@ -3019,7 +3019,7 @@ namespace FreeQuant.Charting
           obj0.Enabled = false;
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
+        
         public void fGloiQPWIx()
         {
           this.LPYoNcQSe0(this.a32og8iTgD, this.Tk3oZwwj0J.fAxisTop);
@@ -3029,7 +3029,7 @@ namespace FreeQuant.Charting
           this.g1aoXGuoJh = true;
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
+        
         public void PmGoDE5hSO()
         {
           this.fGloiQPWIx();
@@ -3039,7 +3039,7 @@ namespace FreeQuant.Charting
           this.FGko2VPp2g(this.Tk3oZwwj0J.AxisRight);
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
+        
         public void DXRo8T6EZV()
         {
           if (!this.g1aoXGuoJh)

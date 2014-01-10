@@ -41,11 +41,11 @@ namespace FreeQuant.Charting
 
     public Color BuyColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fBuyColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fBuyColor = value;
       }
@@ -53,11 +53,11 @@ namespace FreeQuant.Charting
 
     public Color SellColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSellColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSellColor = value;
       }
@@ -65,11 +65,11 @@ namespace FreeQuant.Charting
 
     public Color BuyShortColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fBuyShortColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fBuyShortColor = value;
       }
@@ -77,11 +77,11 @@ namespace FreeQuant.Charting
 
     public Color SellShortColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSellShortColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSellShortColor = value;
       }
@@ -91,11 +91,11 @@ namespace FreeQuant.Charting
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fToolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fToolTipEnabled = value;
       }
@@ -105,11 +105,11 @@ namespace FreeQuant.Charting
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fToolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fToolTipFormat = value;
       }
@@ -119,11 +119,11 @@ namespace FreeQuant.Charting
     [Description("X position of this marker on the pad. (World coordinate system)")]
     public double X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fX = value;
       }
@@ -133,11 +133,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fY = value;
       }
@@ -146,11 +146,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double Z
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fZ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fZ = value;
       }
@@ -160,11 +160,11 @@ namespace FreeQuant.Charting
     [Category("Marker")]
     public EMarkerStyle Style
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fStyle = value;
       }
@@ -174,11 +174,11 @@ namespace FreeQuant.Charting
     [Category("Marker")]
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fColor = value;
       }
@@ -188,11 +188,11 @@ namespace FreeQuant.Charting
     [Description("Marker size in pixels")]
     public int Size
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSize;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSize = value;
       }
@@ -202,11 +202,11 @@ namespace FreeQuant.Charting
     [Description("Marker interior will be filled if this propery is set to true, otherwise it will be transparent")]
     public bool Filled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fFilled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fFilled = value;
       }
@@ -216,11 +216,11 @@ namespace FreeQuant.Charting
     [Category("Value")]
     public double High
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fHigh;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fHigh = value;
       }
@@ -230,11 +230,11 @@ namespace FreeQuant.Charting
     [Description("Low of bar marker")]
     public double Low
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLow;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLow = value;
       }
@@ -244,11 +244,11 @@ namespace FreeQuant.Charting
     [Description("Open of bar marker")]
     public double Open
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOpen;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOpen = value;
       }
@@ -258,11 +258,11 @@ namespace FreeQuant.Charting
     [Category("Value")]
     public double Close
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fClose;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fClose = value;
       }
@@ -270,11 +270,11 @@ namespace FreeQuant.Charting
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fText;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fText = value;
       }
@@ -282,11 +282,11 @@ namespace FreeQuant.Charting
 
     public bool TextEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTextEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTextEnabled = value;
       }
@@ -294,11 +294,11 @@ namespace FreeQuant.Charting
 
     public EMarkerTextPosition TextPosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTextPosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTextPosition = value;
       }
@@ -306,11 +306,11 @@ namespace FreeQuant.Charting
 
     public int TextOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTextOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTextOffset = value;
       }
@@ -318,11 +318,11 @@ namespace FreeQuant.Charting
 
     public Color TextColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTextColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTextColor = value;
       }
@@ -330,11 +330,11 @@ namespace FreeQuant.Charting
 
     public Font TextFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTextFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTextFont = value;
       }
@@ -355,32 +355,28 @@ namespace FreeQuant.Charting
       this.syl3vbh6Kv();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TMarker(DateTime X, double Y)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = (double) X.Ticks;
       this.fY = Y;
       this.fZ = 0.0;
       this.syl3vbh6Kv();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TMarker(string X, double Y)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
       this.fBuyShortColor = Color.Green;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fX = (double) DateTime.Parse(X).Ticks;
       this.fY = Y;
       this.fZ = 0.0;
@@ -530,7 +526,7 @@ namespace FreeQuant.Charting
       this.fColor = Color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void syl3vbh6Kv()
     {
       this.fStyle = EMarkerStyle.Rectangle;
@@ -540,23 +536,23 @@ namespace FreeQuant.Charting
       this.fTextEnabled = true;
       this.fTextOffset = 2;
       this.fTextPosition = EMarkerTextPosition.Bottom;
-      this.fTextFont = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(338), 8f);
+			this.fTextFont = new Font("Times New Roman", 8);
       this.fTextColor = Color.Black;
       this.fToolTipEnabled = true;
-      this.fToolTipFormat = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(352);
+			this.fToolTipFormat = "";
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(398), RA7k7APgXK5aSsnmA9.qBCYFXVOKp(414));
+				Canvas canvas = new Canvas("CNAme", "CText");
       }
       Chart.Pad.Add((IDrawable) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
     {
       int num1 = Pad.ClientX(this.fX);
@@ -686,7 +682,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TDistance Distance(double X, double Y)
     {
       TDistance tdistance = new TDistance();
@@ -700,7 +696,7 @@ namespace FreeQuant.Charting
       return tdistance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Move(double X, double Y, double dX, double dY)
     {
       this.fX += dX;

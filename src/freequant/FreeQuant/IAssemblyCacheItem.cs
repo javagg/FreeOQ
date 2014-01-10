@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace SmartQuant
+namespace FreeQuant
 {
   [Guid("9E3AAEB4-D1CD-11D2-BAB9-00C04F8ECEAE")]
   [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]

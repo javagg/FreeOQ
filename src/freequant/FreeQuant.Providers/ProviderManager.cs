@@ -1,9 +1,3 @@
-﻿using dW79p7NPlS6ZxObcx3;
-using GUBX1u5sgj9bjojYlR;
-using i0eSeRYRAl7LvcyCmM;
-using i6Ws9TSsrEw5WGORfa;
-using nZi7vTcQmWAr4x9X4G;
-using Obgh2s3A3GOOarwj6c;
 using FreeQuant;
 using FreeQuant.FIX;
 using System;
@@ -12,7 +6,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
-using YS2DsgRiCe1qDb6nZV;
 
 namespace FreeQuant.Providers
 {
@@ -32,7 +25,7 @@ namespace FreeQuant.Providers
 
     public static ProviderList Providers
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.rVCt6TF5nk;
       }
@@ -40,7 +33,7 @@ namespace FreeQuant.Providers
 
     public static ExecutionProviderList ExecutionProviders
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.KGXtmeVerO;
       }
@@ -48,7 +41,7 @@ namespace FreeQuant.Providers
 
     public static MarketDataProviderList MarketDataProviders
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.nOmtoMmG6Q;
       }
@@ -56,7 +49,7 @@ namespace FreeQuant.Providers
 
     public static InstrumentProviderList InstrumentProviders
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.ljbtMTjldy;
       }
@@ -64,7 +57,7 @@ namespace FreeQuant.Providers
 
     public static HistoricalDataProviderList HistoricalDataProviders
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.rlMtpT1jXx;
       }
@@ -72,11 +65,11 @@ namespace FreeQuant.Providers
 
     public static IExecutionProvider DefaultExecutionProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.KGXtmeVerO[Framework.Configuration.DefaultExecutionProvider];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value == null)
           Framework.Configuration.DefaultExecutionProvider = "";
@@ -87,11 +80,11 @@ namespace FreeQuant.Providers
 
     public static IMarketDataProvider DefaultMarketDataProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.nOmtoMmG6Q[Framework.Configuration.DefaultMarketDataProvider];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value == null)
           Framework.Configuration.DefaultMarketDataProvider = "";
@@ -102,11 +95,11 @@ namespace FreeQuant.Providers
 
     public static IMarketDataProvider MarketDataSimulator
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.mi7tNm4m7F;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         ProviderManager.mi7tNm4m7F = value;
       }
@@ -114,11 +107,11 @@ namespace FreeQuant.Providers
 
     public static IExecutionProvider ExecutionSimulator
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.KmPtyC3sWf;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         ProviderManager.KmPtyC3sWf = value;
       }
@@ -126,7 +119,7 @@ namespace FreeQuant.Providers
 
     public static ProviderErrorCollection Errors
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ProviderManager.cIXt1Sv2ZR;
       }
@@ -164,10 +157,9 @@ namespace FreeQuant.Providers
 
     public static event OrderCancelRejectEventHandler OrderCancelReject;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static ProviderManager()
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
       ProviderManager.Qcht7lAgti = new object();
       ProviderManager.XwWte6RY39 = false;
       ProviderManager.rVCt6TF5nk = new ProviderList();
@@ -179,16 +171,7 @@ namespace FreeQuant.Providers
       ProviderManager.KmPtyC3sWf = (IExecutionProvider) null;
       ProviderManager.cIXt1Sv2ZR = new ProviderErrorCollection();
     }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ProviderManager()
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public static void Add(IProvider provider)
     {
       if (Framework.Installation.Edition == Edition.Research)
@@ -243,21 +226,21 @@ namespace FreeQuant.Providers
       ProviderManager.LoadProviderProperties(provider);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Disconnect()
     {
       foreach (IProvider provider in ProviderManager.rVCt6TF5nk)
         provider.Disconnect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Shutdown()
     {
       foreach (IProvider provider in ProviderManager.rVCt6TF5nk)
         provider.Shutdown();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void WaitConnected(IProvider provider, int timeout)
     {
       long ticks = DateTime.Now.Ticks;
@@ -269,7 +252,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void SaveProviderProperties()
     {
       CUsHnTDPJW7M4WgDtf cusHnTdpjW7M4WgDtf = new CUsHnTDPJW7M4WgDtf();
@@ -312,7 +295,7 @@ namespace FreeQuant.Providers
       cusHnTdpjW7M4WgDtf.Save(Framework.Installation.IniDir.FullName + GojrKtfk5NMi1fou68.a17L2Y7Wnd(614));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void LoadProviderProperties(IProvider provider)
     {
       FileInfo fileInfo = new FileInfo(Framework.Installation.IniDir.FullName + GojrKtfk5NMi1fou68.a17L2Y7Wnd(666));
@@ -371,7 +354,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void BKTt94mLeK([In] IProvider obj0)
     {
       if (ProviderManager.XhMtIJlEEx == null)
@@ -379,7 +362,7 @@ namespace FreeQuant.Providers
       ProviderManager.XhMtIJlEEx(new ProviderEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void HZ5tYOBVvY([In] object obj0, [In] EventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -397,7 +380,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void gaItsrWC8h([In] object obj0, [In] EventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -415,7 +398,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void IGntb6qhyP([In] object obj0, [In] EventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -433,7 +416,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void lT2tdDDwWW([In] ProviderErrorEventArgs obj0)
     {
       if (ProviderManager.XwWte6RY39)
@@ -454,7 +437,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void A9ptr7PlS6([In] object obj0, [In] MarketDataRequestRejectEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -472,7 +455,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void vxOtKbcx3K([In] object obj0, [In] BarEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -490,7 +473,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void x7ptud5DXG([In] object obj0, [In] BarEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -508,7 +491,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void rcRtiseEP5([In] object obj0, [In] BarSliceEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -526,7 +509,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void Xayt8ev6DF([In] object obj0, [In] TradeEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -544,7 +527,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void sNEtZMdMtX([In] object obj0, [In] QuoteEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -562,7 +545,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void DS3tXKrAL8([In] object obj0, [In] MarketDepthEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -580,7 +563,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void eSctT3jM8B([In] object obj0, [In] FundamentalEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -598,7 +581,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void Ev1tGOgRhf([In] object obj0, [In] CorporateActionEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -616,7 +599,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void w6qtfBxe26([In] object obj0, [In] ExecutionReportEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)
@@ -634,7 +617,7 @@ namespace FreeQuant.Providers
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void SLKt3RqewM([In] object obj0, [In] OrderCancelRejectEventArgs obj1)
     {
       if (ProviderManager.XwWte6RY39)

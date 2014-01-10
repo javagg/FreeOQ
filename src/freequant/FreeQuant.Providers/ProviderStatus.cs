@@ -1,12 +1,12 @@
-﻿namespace FreeQuant.Providers
+namespace FreeQuant.Providers
 {
-  public enum ProviderStatus
-  {
-    Disconnected,
-    Connecting,
-    Connected,
-    LoggingIn,
-    LoggedIn,
-    Unknown,
-  }
+	public enum ProviderStatus
+	{
+		Disconnected,
+		Connecting,
+		Connected,
+		LoggingIn,
+		LoggedIn,
+		Unknown,
+	}
 }

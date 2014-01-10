@@ -1,32 +1,26 @@
-﻿using dW79p7NPlS6ZxObcx3;
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Providers
 {
-  public class ExecutionProviderList : ProviderList
-  {
-    public IExecutionProvider this[string name]
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return base[name] as IExecutionProvider;
-      }
-    }
+	public class ExecutionProviderList : ProviderList
+	{
+		public IExecutionProvider this [string name]
+		{
+			get
+			{
+				return base[name] as IExecutionProvider;
+			}
+		}
 
-    public IExecutionProvider this[byte id]
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return base[id] as IExecutionProvider;
-      }
-    }
+		public IExecutionProvider this [byte id]
+		{
+			get
+			{
+				return base[id] as IExecutionProvider;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    internal ExecutionProviderList()
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
-  }
+		internal ExecutionProviderList() : base()
+		{
+
+		}
+	}
 }

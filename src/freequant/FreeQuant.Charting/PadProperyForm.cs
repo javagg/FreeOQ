@@ -14,7 +14,7 @@ namespace FreeQuant.Charting
     private PropertyGrid RwF3yvcan6;
     private Container ahN3WtCyLA;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadProperyForm(object Object, Pad Pad):base()
     {
 
@@ -25,7 +25,7 @@ namespace FreeQuant.Charting
       this.RwF3yvcan6.SelectedObject = Object;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Dispose(bool disposing)
     {
       if (disposing && this.ahN3WtCyLA != null)
@@ -33,7 +33,7 @@ namespace FreeQuant.Charting
       base.Dispose(disposing);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void nev3U8bfUe()
     {
       ResourceManager resourceManager = new ResourceManager(typeof (PadProperyForm));
@@ -61,7 +61,7 @@ namespace FreeQuant.Charting
       this.ResumeLayout(false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void mV134Z7kpS([In] object obj0, [In] PropertyValueChangedEventArgs obj1)
     {
       this.evD3c4dHMV.Update();

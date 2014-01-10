@@ -1,51 +1,46 @@
-﻿using dW79p7NPlS6ZxObcx3;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
   public class BrokerAccount
   {
-    private string yWkLGkkFsH;
+    private string name;
     private SortedList<string, SortedList<string, string>> eIBLfHO4iH;
-    private List<BrokerPosition> FPPL3slcLK;
-    private List<BrokerOrder> r8qLlVxuc0;
-    private double nwHL7l8nv8;
+    private List<BrokerPosition> positions;
+    private List<BrokerOrder> orders;
+    private double buyingPower;
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.yWkLGkkFsH;
+				return this.name; 
       }
     }
 
     public double BuyingPower
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.nwHL7l8nv8;
+				return this.buyingPower; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.nwHL7l8nv8 = value;
+        this.buyingPower = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BrokerAccount(string name)
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.yWkLGkkFsH = name;
+      this.name = name;
       this.eIBLfHO4iH = new SortedList<string, SortedList<string, string>>();
-      this.FPPL3slcLK = new List<BrokerPosition>();
-      this.r8qLlVxuc0 = new List<BrokerOrder>();
-      this.nwHL7l8nv8 = 0.0;
+      this.positions = new List<BrokerPosition>();
+      this.orders = new List<BrokerOrder>();
+      this.buyingPower = 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddField(string name, string currency, string value)
     {
       SortedList<string, string> sortedList;
@@ -57,47 +52,45 @@ namespace FreeQuant.Providers
       sortedList.Add(currency, value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public void AddField(string name, string value)
     {
       this.AddField(name, "", value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public BrokerAccountField[] GetFields()
     {
-      List<BrokerAccountField> list = new List<BrokerAccountField>();
+			List<BrokerAccountField>  fields = new List<BrokerAccountField>();
       foreach (KeyValuePair<string, SortedList<string, string>> keyValuePair1 in this.eIBLfHO4iH)
       {
         string key = keyValuePair1.Key;
         foreach (KeyValuePair<string, string> keyValuePair2 in keyValuePair1.Value)
-          list.Add(new BrokerAccountField(key, keyValuePair2.Key, keyValuePair2.Value));
+          fields.Add(new BrokerAccountField(key, keyValuePair2.Key, keyValuePair2.Value));
       }
-      return list.ToArray();
+      return fields.ToArray();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddPosition(BrokerPosition position)
     {
-      this.FPPL3slcLK.Add(position);
+			this.positions.Add(position); 
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BrokerPosition[] GetPositions()
     {
-      return this.FPPL3slcLK.ToArray();
+      return this.positions.ToArray();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddOrder(BrokerOrder order)
     {
-      this.r8qLlVxuc0.Add(order);
+			this.orders.Add(order); 
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BrokerOrder[] GetOrders()
     {
-      return this.r8qLlVxuc0.ToArray();
+      return this.orders.ToArray();
     }
   }
 }

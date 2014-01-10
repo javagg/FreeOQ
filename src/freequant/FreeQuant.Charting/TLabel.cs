@@ -19,11 +19,11 @@ namespace FreeQuant.Charting
     [Description("Text that this label displays")]
     public new string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.OFU3pa8K6e;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.OFU3pa8K6e = value;
       }
@@ -33,11 +33,11 @@ namespace FreeQuant.Charting
     [Category("Text")]
     public ETextPosition TextPosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.q4G3dlxqU0;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.q4G3dlxqU0 = value;
       }
@@ -47,11 +47,11 @@ namespace FreeQuant.Charting
     [Category("Text")]
     public new Font TextFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.EQW3xMCkiW;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.EQW3xMCkiW = value;
       }
@@ -61,11 +61,11 @@ namespace FreeQuant.Charting
     [Category("Text")]
     public new Color TextColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.PmN3IBiixN;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.PmN3IBiixN = value;
       }
@@ -75,11 +75,11 @@ namespace FreeQuant.Charting
     [Category("Text")]
     public int TextOffsetX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ikB3qmd6of;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ikB3qmd6of = value;
       }
@@ -89,11 +89,11 @@ namespace FreeQuant.Charting
     [Description("Text offset in pixels alone Y coordinate")]
     public int TextOffsetY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WrF3tEwXpB;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WrF3tEwXpB = value;
       }
@@ -107,7 +107,7 @@ namespace FreeQuant.Charting
       this.I9m3s0VaOK();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TLabel(string Text, double X, double Y, Color MarkerColor): base(X, Y, MarkerColor)
     {
       this.OFU3pa8K6e = Text;
@@ -121,7 +121,7 @@ namespace FreeQuant.Charting
       this.PmN3IBiixN = TextColor;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void I9m3s0VaOK()
     {
       this.EQW3xMCkiW = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(602), 8f);
@@ -131,7 +131,7 @@ namespace FreeQuant.Charting
       this.WrF3tEwXpB = 2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY)
     {
       base.Paint(Pad, MinX, MaxX, MinY, MaxY);

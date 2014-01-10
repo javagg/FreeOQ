@@ -56,7 +56,7 @@ namespace FreeQuant.FIX
         case 'C':
           return MDReqRejReason.UnsupportedMDImplicitDelete;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39070), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
 
@@ -92,7 +92,7 @@ namespace FreeQuant.FIX
         case MDReqRejReason.UnsupportedMDImplicitDelete:
           return 'C';
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39114), (object) reason));
+					throw new ArgumentException(string.Format("", (object) reason));
       }
     }
   }

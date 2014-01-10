@@ -29,11 +29,10 @@ namespace FreeQuant.FIX
         case 3:
           return CxlRejReason.AlreadyPending;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(2752), (object) value));
+					throw new ArgumentException(string.Format("Error: ", (object) value));
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static int ToFIX(CxlRejReason reason)
     {
       switch (reason)
@@ -47,7 +46,7 @@ namespace FreeQuant.FIX
         case CxlRejReason.AlreadyPending:
           return 3;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(2796), (object) reason));
+					throw new ArgumentException(string.Format("Error: ", (object) reason));
       }
     }
   }

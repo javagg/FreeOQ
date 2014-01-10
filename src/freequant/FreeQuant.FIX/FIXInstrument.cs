@@ -86,7 +86,7 @@ namespace FreeQuant.FIX
       }
     }
 
-    [Editor(typeof (YeW5DMVLWLPd3kaNu3), typeof (UITypeEditor))]
+//    [Editor(typeof (YeW5DMVLWLPd3kaNu3), typeof (UITypeEditor))]
     [Description("")]
     [Category("Appearance")]
     public FIXSecurityAltIDGroupList SecurityAltIDGroup

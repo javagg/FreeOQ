@@ -1,59 +1,54 @@
-﻿using dW79p7NPlS6ZxObcx3;
 using FreeQuant.FIX;
 using System;
 using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
-  public class HistoricalDataEventArgs : EventArgs
-  {
-    private string H9ltj3TryK;
-    private IFIXInstrument NButDmKUgp;
-    private IHistoricalDataProvider vout5BdExI;
-    private int DTstOgqTvw;
+	public class HistoricalDataEventArgs : EventArgs
+	{
+		private string requestId;
+		private IFIXInstrument instrument;
+		private IHistoricalDataProvider provider;
+		private int dataLength;
 
-    public string RequestId
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.H9ltj3TryK;
-      }
-    }
+		public string RequestId
+		{
+			get
+			{
+				return this.requestId; 
+			}
+		}
 
-    public IFIXInstrument Instrument
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.NButDmKUgp;
-      }
-    }
+		public IFIXInstrument Instrument
+		{
+			get
+			{
+				return this.instrument; 
+			}
+		}
 
-    public IHistoricalDataProvider Provider
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.vout5BdExI;
-      }
-    }
+		public IHistoricalDataProvider Provider
+		{
+			get
+			{
+				return this.provider; 
+			}
+		}
 
-    public int DataLength
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.DTstOgqTvw;
-      }
-    }
+		public int DataLength
+		{
+			get
+			{
+				return this.dataLength; 
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public HistoricalDataEventArgs(string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength)
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.H9ltj3TryK = requestId;
-      this.NButDmKUgp = instrument;
-      this.vout5BdExI = provider;
-      this.DTstOgqTvw = dataLength;
-    }
-  }
+		public HistoricalDataEventArgs(string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength) : base()
+		{
+			this.requestId = requestId;
+			this.instrument = instrument;
+			this.provider = provider;
+			this.dataLength = dataLength;
+		}
+	}
 }

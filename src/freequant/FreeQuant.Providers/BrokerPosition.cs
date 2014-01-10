@@ -1,177 +1,169 @@
-﻿using dW79p7NPlS6ZxObcx3;
 using FreeQuant.FIX;
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
-  public class BrokerPosition
-  {
-    private string jRxx0BXt1;
-    private string dFWE8WPjx;
-    private string Tw4Hxt2Cq;
-    private string cS7A3TaAk;
-    private DateTime wwNacbMO9;
-    private PutOrCall VS64GROvE;
-    private double H77FCo1R9;
-    private double Q5OUEr8NS;
-    private double DCpksBxeD;
-    private double yPi0BmEIj;
-    private SortedList<string, string> j7IhoCdXp;
+	public class BrokerPosition
+	{
+		private string symbol;
+		private string securityType;
+		private string securityExchange;
+		private string currency;
+		private DateTime maturityDate;
+		private PutOrCall putOrcall;
+		private double strike;
+		private double qty;
+		private double longQty;
+		private double shortQty;
+		private SortedList<string, string> customFields;
 
-    public string Symbol
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.jRxx0BXt1;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.jRxx0BXt1 = value;
-      }
-    }
+		public string Symbol
+		{
+			get
+			{
+				return this.symbol; 
+			}
+			set
+			{
+				this.symbol = value;
+			}
+		}
 
-    public string SecurityType
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.dFWE8WPjx;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.dFWE8WPjx = value;
-      }
-    }
+		public string SecurityType
+		{
+			get
+			{
+				return this.securityType; 
+			}
+			set
+			{
+				this.securityType = value;
+			}
+		}
 
-    public string SecurityExchange
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.Tw4Hxt2Cq;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.Tw4Hxt2Cq = value;
-      }
-    }
+		public string SecurityExchange
+		{
+			get
+			{
+				return this.securityExchange; 
+			}
+			set
+			{
+				this.securityExchange = value;
+			}
+		}
 
-    public string Currency
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.cS7A3TaAk;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.cS7A3TaAk = value;
-      }
-    }
+		public string Currency
+		{
+			get
+			{
+				return this.currency; 
+			}
+			set
+			{
+				this.currency = value;
+			}
+		}
 
-    public DateTime MaturityDate
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.wwNacbMO9;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.wwNacbMO9 = value;
-      }
-    }
+		public DateTime MaturityDate
+		{
+			get
+			{
+				return this.maturityDate; 
+			}
+			set
+			{
+				this.maturityDate = value;
+			}
+		}
 
-    public PutOrCall PutOrCall
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.VS64GROvE;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.VS64GROvE = value;
-      }
-    }
+		public PutOrCall PutOrCall
+		{
+			get
+			{
+				return this.putOrcall; 
+			}
+			set
+			{
+				this.putOrcall = value;
+			}
+		}
 
-    public double Strike
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.H77FCo1R9;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.H77FCo1R9 = value;
-      }
-    }
+		public double Strike
+		{
+			get
+			{
+				return this.strike; 
+			}
+			set
+			{
+				this.strike = value;
+			}
+		}
 
-    public double Qty
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.Q5OUEr8NS;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.Q5OUEr8NS = value;
-      }
-    }
+		public double Qty
+		{
+			get
+			{
+				return this.qty; 
+			}
+			set
+			{
+				this.qty = value;
+			}
+		}
 
-    public double LongQty
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.DCpksBxeD;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.DCpksBxeD = value;
-      }
-    }
+		public double LongQty
+		{
+			get
+			{
+				return this.longQty; 
+			}
+			set
+			{
+				this.longQty = value;
+			}
+		}
 
-    public double ShortQty
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.yPi0BmEIj;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.yPi0BmEIj = value;
-      }
-    }
+		public double ShortQty
+		{
+			get
+			{
+				return this.shortQty; 
+			}
+			set
+			{
+				this.shortQty = value;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BrokerPosition()
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.jRxx0BXt1 = string.Empty;
-      this.dFWE8WPjx = string.Empty;
-      this.Tw4Hxt2Cq = string.Empty;
-      this.cS7A3TaAk = string.Empty;
-      this.wwNacbMO9 = DateTime.MinValue;
-      this.VS64GROvE = PutOrCall.Put;
-      this.H77FCo1R9 = 0.0;
-      this.Q5OUEr8NS = 0.0;
-      this.DCpksBxeD = 0.0;
-      this.yPi0BmEIj = 0.0;
-      this.j7IhoCdXp = new SortedList<string, string>();
-    }
+		public BrokerPosition()
+		{
+			this.symbol = string.Empty;
+			this.securityType = string.Empty;
+			this.securityExchange = string.Empty;
+			this.currency = string.Empty;
+			this.maturityDate = DateTime.MinValue;
+			this.putOrcall = PutOrCall.Put;
+			this.strike = 0.0;
+			this.qty = 0.0;
+			this.longQty = 0.0;
+			this.shortQty = 0.0;
+			this.customFields = new SortedList<string, string>(); 
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public void AddCustomField(string name, string value)
-    {
-      this.j7IhoCdXp.Add(name, value);
-    }
+		public void AddCustomField(string name, string value)
+		{
+			this.customFields.Add(name, value); 
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BrokerPositionField[] GetCustomFields()
-    {
-      List<BrokerPositionField> list = new List<BrokerPositionField>();
-      foreach (KeyValuePair<string, string> keyValuePair in this.j7IhoCdXp)
-        list.Add(new BrokerPositionField(keyValuePair.Key, keyValuePair.Value));
-      return list.ToArray();
-    }
-  }
+		public BrokerPositionField[] GetCustomFields()
+		{
+			List<BrokerPositionField> list = new List<BrokerPositionField>();
+			foreach (KeyValuePair<string, string> keyValuePair in this.customFields)
+				list.Add(new BrokerPositionField(keyValuePair.Key, keyValuePair.Value));
+			return list.ToArray();
+		}
+	}
 }

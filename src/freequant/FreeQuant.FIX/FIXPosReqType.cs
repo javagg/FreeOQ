@@ -10,7 +10,6 @@ namespace FreeQuant.FIX
     public const int Exercises = 2;
     public const int Assignments = 3;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static PosReqType FromFIX(int value)
     {
       switch (value)
@@ -24,11 +23,10 @@ namespace FreeQuant.FIX
         case 3:
           return PosReqType.Assignments;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38766), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static int ToFIX(PosReqType value)
     {
       switch (value)
@@ -42,7 +40,7 @@ namespace FreeQuant.FIX
         case PosReqType.Assignments:
           return 3;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38840), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
   }

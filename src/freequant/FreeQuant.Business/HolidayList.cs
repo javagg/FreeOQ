@@ -42,7 +42,7 @@ namespace FreeQuant.Business
     public void Add(Holiday holiday)
     {
       if (this.pn3aaRDhM.Contains((object) holiday.Date))
-        throw new ApplicationException(Bp1OJhHwbtYbnWGfIR.LusDYddli(0) + (object) holiday.Date);
+				throw new ApplicationException("" + (object) holiday.Date);
       this.pn3aaRDhM.Add((object) holiday.Date, (object) holiday);
     }
 

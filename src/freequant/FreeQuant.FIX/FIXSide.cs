@@ -22,69 +22,66 @@ namespace FreeQuant.FIX
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static char Value(string Name)
     {
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4526))
+			if (Name == "Buy")
         return '1';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4536))
+			if (Name == "Sell")
         return '2';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4548))
+			if (Name == "BuyMinus")
         return '3';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4568))
+			if (Name == "SellPlus")
         return '4';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4588))
+			if (Name == "SellShort")
         return '5';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4610))
+			if (Name == "SellShortExempt")
         return '6';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4644))
+			if (Name == "Undisclosed")
         return '7';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4670))
+			if (Name == "Cross")
         return '8';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4684))
+			if (Name == "CrossShort")
         return '9';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4708))
+			if (Name == "CrossShortExempt")
         return 'A';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4744))
+			if (Name == "AsDefined")
         return 'B';
-      return Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4766) ? 'C' : char.MinValue;
+			return Name == "Opposite" ? 'C' : char.MinValue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(char c)
     {
       switch (c)
       {
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4786);
+					return "Buy";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4796);
+					return "Sell";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4808);
+					return "BuyMinus";
         case '4':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4828);
+					return "SellPlus";
         case '5':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4848);
+					return "SellShort";
         case '6':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4870);
+					return "SellShortExempt";
         case '7':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4904);
+					return "Undisclosed";
         case '8':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4930);
+					return "Cross";
         case '9':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4944);
+					return "CrossShort";
         case 'A':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4968);
+					return "CrossShortExempt";
         case 'B':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(5004);
+					return "AsDefined";
         case 'C':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(5026);
+					return "Opposite";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(5046);
+					return "unknown";
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static Side FromFIX(char side)
     {
       switch (side)
@@ -114,11 +111,10 @@ namespace FreeQuant.FIX
         case 'C':
           return Side.Opposite;
         default:
-          throw new Exception(Ugjylcah9mCMM4kO7N.tLah92SpBQ(5064) + (object) side);
+					throw new Exception("Error: " + (object) side);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static char ToFIX(Side side)
     {
       switch (side)
@@ -148,7 +144,7 @@ namespace FreeQuant.FIX
         case Side.Opposite:
           return 'C';
         default:
-          throw new Exception(Ugjylcah9mCMM4kO7N.tLah92SpBQ(5098) + ((object) side).ToString());
+					throw new Exception("Error: "+ ((object) side).ToString());
       }
     }
   }

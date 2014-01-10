@@ -1,37 +1,26 @@
-﻿using FreeQuant.FIX;
+using FreeQuant.FIX;
 
 namespace FreeQuant.Providers
 {
-  public interface IMarketDataProvider : IProvider
-  {
-    IBarFactory BarFactory { get; set; }
+	public interface IMarketDataProvider : IProvider
+	{
+		IBarFactory BarFactory { get; set; }
 
-    IMarketDataFilter MarketDataFilter { get; set; }
+		IMarketDataFilter MarketDataFilter { get; set; }
 
-    event MarketDataRequestRejectEventHandler MarketDataRequestReject;
+		event MarketDataRequestRejectEventHandler MarketDataRequestReject;
+		event MarketDataSnapshotEventHandler MarketDataSnapshot;
+		event MarketDataEventHandler NewMarketData;
+		event QuoteEventHandler NewQuote;
+		event TradeEventHandler NewTrade;
+		event BarEventHandler NewBar;
+		event BarEventHandler NewBarOpen;
+		event BarSliceEventHandler NewBarSlice;
+		event BarEventHandler NewMarketBar;
+		event MarketDepthEventHandler NewMarketDepth;
+		event FundamentalEventHandler NewFundamental;
+		event CorporateActionEventHandler NewCorporateAction;
 
-    event MarketDataSnapshotEventHandler MarketDataSnapshot;
-
-    event MarketDataEventHandler NewMarketData;
-
-    event QuoteEventHandler NewQuote;
-
-    event TradeEventHandler NewTrade;
-
-    event BarEventHandler NewBar;
-
-    event BarEventHandler NewBarOpen;
-
-    event BarSliceEventHandler NewBarSlice;
-
-    event BarEventHandler NewMarketBar;
-
-    event MarketDepthEventHandler NewMarketDepth;
-
-    event FundamentalEventHandler NewFundamental;
-
-    event CorporateActionEventHandler NewCorporateAction;
-
-    void SendMarketDataRequest(FIXMarketDataRequest request);
-  }
+		void SendMarketDataRequest(FIXMarketDataRequest request);
+	}
 }

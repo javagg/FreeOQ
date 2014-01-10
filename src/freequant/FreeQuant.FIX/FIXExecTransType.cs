@@ -27,11 +27,10 @@ namespace FreeQuant.FIX
         case '3':
           return ExecTransType.Status;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39458), (object) value));
+					throw new ArgumentException(string.Format("Not Supported", (object) value));
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static char ToFIX(ExecTransType value)
     {
       switch (value)
@@ -45,25 +44,24 @@ namespace FreeQuant.FIX
         case ExecTransType.Status:
           return '3';
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39520), (object) value));
+					throw new ArgumentException(string.Format("Not Supported", (object) value));
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(char c)
     {
       switch (c)
       {
         case '0':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39582);
+					return "New";
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39592);
+					return "Cancel";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39608);
+					return "Correct";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39626);
+					return "Status";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39642);
+					return "unknown";
       }
     }
   }

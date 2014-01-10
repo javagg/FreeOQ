@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -14,7 +14,7 @@ namespace FreeQuant
 
     public AssemblyName AssemblyName
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (AssemblyName) null;
       }
@@ -22,7 +22,7 @@ namespace FreeQuant
 
     public ReferenceType ReferenceType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl3;
       }
@@ -31,18 +31,18 @@ namespace FreeQuant
     [Browsable(false)]
     public bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return true;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
       }
     }
 
     public bool Valid
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return true;
       }
@@ -50,7 +50,7 @@ namespace FreeQuant
 
     public virtual string Path
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (string) null;
       }

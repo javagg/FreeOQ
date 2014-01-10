@@ -17,6 +17,9 @@ namespace FreeQuant.FIX
       }
     }
 
+		public FIXIntField()  {
+		}
+
     public FIXIntField(int tag) : this(tag, 0)
     {
     }

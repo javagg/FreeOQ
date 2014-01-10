@@ -36,7 +36,7 @@ namespace FreeQuant
     [Browsable(false)]
     public ReferenceList References
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (ReferenceList) null;
       }
@@ -45,7 +45,7 @@ namespace FreeQuant
     [Browsable(false)]
     public PluginList Plugins
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (PluginList) null;
       }
@@ -70,11 +70,11 @@ namespace FreeQuant
     [DefaultValue(true)]
     public bool RuntimeErrorManagerEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return true;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -84,11 +84,11 @@ namespace FreeQuant
     [DefaultValue(RuntimeErrorOutputTarget.PopupWindow)]
     public RuntimeErrorOutputTarget RuntimeErrorOutputTarget
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -97,11 +97,11 @@ namespace FreeQuant
     [Category("Defaults")]
     public string DefaultCurrency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -110,11 +110,11 @@ namespace FreeQuant
     [Category("Defaults")]
     public string DefaultExchange
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -123,11 +123,11 @@ namespace FreeQuant
     [Category("Defaults")]
     public string DefaultExecutionProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -136,11 +136,11 @@ namespace FreeQuant
     [Description("Gets or sets default market data provider")]
     public string DefaultMarketDataProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -149,81 +149,81 @@ namespace FreeQuant
     [Category("Defaults")]
     public string DefaultPortfolio
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
 
     public event ReferenceEventHandler ReferenceAdded
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
 
     public event ReferenceEventHandler ReferenceRemoved
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
 
     public event ReferenceEventHandler ReferenceEnabledChanged
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
 
     public event PluginEventHandler PluginAdded
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
 
     public event PluginEventHandler PluginRemoved
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
 
     public event PluginEventHandler PluginEnabledChanged
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
 
     public event EventHandler TraceLevelChanged
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] add
+       add
       {
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] remove
+       remove
       {
       }
     }
@@ -233,72 +233,72 @@ namespace FreeQuant
       GItcYDqSxj5aE60JeS.GRAroVBQNR();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal Configuration()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void MKvmw0X4h6()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddReference(Reference reference)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RemoveReference(Reference reference)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddPlugin(Plugin plugin)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RemovePlugin(Plugin plugin)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void r4omhfJxrr([In] Reference obj0)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void i7WmspOSjr([In] Reference obj0)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void iVCmyqqsve([In] Reference obj0)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void cTdmESFHjc([In] Plugin obj0)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void rRLmTCXR6E([In] Plugin obj0)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void S6RmWfq0Ij([In] Plugin obj0)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void L7GmG9IG7M()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void XQDm0HUSTN()
     {
     }

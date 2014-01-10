@@ -35,12 +35,12 @@ namespace FreeQuant.FIXData
             writer.Write(((FIXDateTimeField) fixField).Value.Ticks);
             break;
           default:
-            throw new ArgumentException(lM8JZ634QZnRu7hfEw.vt70XMgdJ(0) + ((object) fixField.FIXType).ToString());
+						throw new ArgumentException("" + ((object) fixField.FIXType).ToString());
         }
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void ReadFrom(BinaryReader reader, FIXGroup group)
     {
       int num = reader.ReadInt32();
@@ -69,7 +69,7 @@ namespace FreeQuant.FIXData
             group.AddDateTimeField(tag, new DateTime(reader.ReadInt64()));
             break;
           default:
-            throw new ArgumentException(lM8JZ634QZnRu7hfEw.vt70XMgdJ(42) + ((object) fixType).ToString());
+						throw new ArgumentException("" + ((object) fixType).ToString());
         }
       }
     }

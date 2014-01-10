@@ -13,11 +13,11 @@ namespace FreeQuant.Charting
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.xCiCPTiFh5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.xCiCPTiFh5 = value;
       }
@@ -25,11 +25,11 @@ namespace FreeQuant.Charting
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.yQbCG11LAA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yQbCG11LAA = value;
       }
@@ -37,17 +37,17 @@ namespace FreeQuant.Charting
 
     public Font Font
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.vEiCRZq66V;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.vEiCRZq66V = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TLegendItem(string Text, Color Color, Font Font):base()
     {
       this.xCiCPTiFh5 = Text;

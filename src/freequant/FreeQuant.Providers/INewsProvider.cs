@@ -1,11 +1,11 @@
-﻿namespace FreeQuant.Providers
+namespace FreeQuant.Providers
 {
-  public interface INewsProvider : IProvider
-  {
-    event NewsEventHandler News;
+	public interface INewsProvider : IProvider
+	{
+		event NewsEventHandler News;
 
-    void SendNewsRequest();
+		void SendNewsRequest();
 
-    void SendNewsCancelRequest();
-  }
+		void SendNewsCancelRequest();
+	}
 }

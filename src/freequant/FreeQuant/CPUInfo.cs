@@ -7,13 +7,13 @@ namespace FreeQuant
   {
     public string NameString
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal CPUInfo()
     {
     }

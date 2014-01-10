@@ -9,7 +9,6 @@ namespace FreeQuant.FIX
     public const char Rolled = 'R';
     public const char FIFO = 'F';
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public FIXPositionEffect(char val):base(77, val)
     {
 
@@ -17,30 +16,29 @@ namespace FreeQuant.FIX
 
     public static char Value(string Name)
     {
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4224))
+			if (Name == "Open")
         return 'O';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4236))
+			if (Name == "Close")
         return 'C';
-      if (Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4250))
+			if (Name == "Rolled")
         return 'R';
-      return Name == Ugjylcah9mCMM4kO7N.tLah92SpBQ(4266) ? 'F' : char.MinValue;
+			return Name == "FIFO" ? 'F' : char.MinValue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(char c)
     {
       switch (c)
       {
         case 'O':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4278);
+					return "Open";
         case 'R':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4304);
+					return "Rolled";
         case 'C':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4290);
+					return "Close";
         case 'F':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4320);
+					return "FIFO";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(4332);
+					return "[unknown]";
       }
     }
   }

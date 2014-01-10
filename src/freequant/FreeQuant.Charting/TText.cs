@@ -22,11 +22,11 @@ namespace FreeQuant.Charting
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Lqfh3BySh;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Lqfh3BySh = value;
       }
@@ -36,11 +36,11 @@ namespace FreeQuant.Charting
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.UL8VcPCS3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.UL8VcPCS3 = value;
       }
@@ -50,11 +50,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public double X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fX = value;
       }
@@ -64,11 +64,11 @@ namespace FreeQuant.Charting
     [Category("Position")]
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fY = value;
       }
@@ -77,11 +77,11 @@ namespace FreeQuant.Charting
     [Browsable(false)]
     public double Z
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fZ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fZ = value;
       }
@@ -91,11 +91,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fText;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fText = value;
       }
@@ -105,11 +105,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public ETextPosition Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPosition = value;
       }
@@ -119,11 +119,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Font Font
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fFont = value;
       }
@@ -133,11 +133,11 @@ namespace FreeQuant.Charting
     [Category("Text")]
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fColor = value;
       }
@@ -183,25 +183,25 @@ namespace FreeQuant.Charting
       this.fColor = Color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void aBfTaltcp()
     {
       this.fPosition = ETextPosition.RightBottom;
-      this.fFont = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(106), 8f);
+	this.fFont = new Font("Times New Roman", 8);
       this.fColor = Color.Black;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(120), RA7k7APgXK5aSsnmA9.qBCYFXVOKp(136));
+				Canvas canvas = new Canvas("CName", "CTEXt");
       }
       Chart.Pad.Add((IDrawable) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY)
     {
       if (this.fText == null)
@@ -222,7 +222,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       return (TDistance) null;

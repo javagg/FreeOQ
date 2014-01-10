@@ -1,7 +1,7 @@
-﻿namespace FreeQuant.Providers
+namespace FreeQuant.Providers
 {
-  public interface IMultiRouteExecutionProvider : IExecutionProvider, IProvider
-  {
-    BrokerInfo GetBrokerInfo(byte providerId);
-  }
+	public interface IMultiRouteExecutionProvider : IExecutionProvider, IProvider
+	{
+		BrokerInfo GetBrokerInfo(byte providerId);
+	}
 }

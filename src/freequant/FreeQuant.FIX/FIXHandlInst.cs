@@ -18,13 +18,13 @@ namespace FreeQuant.FIX
       switch (c)
       {
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3570);
+					return "AutomatedExecutionOrderPrivate";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3634);
+					return "AutomatedExecutionOrderPublic";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3696);
+					return "ManualOrderBestExecution";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3748);
+					return "[unknow]";
       }
     }
   }

@@ -1,4 +1,3 @@
-﻿using dW79p7NPlS6ZxObcx3;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +12,7 @@ namespace FreeQuant.Providers
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.gXQgVvIuK4.Count;
       }
@@ -21,7 +20,7 @@ namespace FreeQuant.Providers
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return false;
       }
@@ -29,7 +28,7 @@ namespace FreeQuant.Providers
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (object) null;
       }
@@ -37,7 +36,7 @@ namespace FreeQuant.Providers
 
     public BrokerAccount this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.gXQgVvIuK4[index];
       }
@@ -45,13 +44,13 @@ namespace FreeQuant.Providers
 
     public BrokerAccount this[string name]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.hr2ghYQhPV[name];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal BrokerAccountList()
     {
       Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
@@ -61,19 +60,19 @@ namespace FreeQuant.Providers
       this.gXQgVvIuK4 = new List<BrokerAccount>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.gXQgVvIuK4.ToArray().CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return (IEnumerator) this.gXQgVvIuK4.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(BrokerAccount account)
     {
       this.hr2ghYQhPV.Add(account.Name, account);

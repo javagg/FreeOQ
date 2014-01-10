@@ -1,11 +1,10 @@
 namespace FreeQuant
 {
-
-  public enum Edition
-  {
-    Demo,
-    Research,
-    Professional,
-    Enterprise,
-  }
+	public enum Edition
+	{
+		Demo,
+		Research,
+		Professional,
+		Enterprise,
+	}
 }

@@ -20,11 +20,11 @@ namespace FreeQuant.Charting
 
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.HrpCJRNn2N;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.HrpCJRNn2N = value;
       }
@@ -32,11 +32,11 @@ namespace FreeQuant.Charting
 
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.QC5CM77ORT;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.QC5CM77ORT = value;
       }
@@ -44,11 +44,11 @@ namespace FreeQuant.Charting
 
     public double X1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.sJtCYICQXO;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.sJtCYICQXO = value;
       }
@@ -56,11 +56,11 @@ namespace FreeQuant.Charting
 
     public double Y1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.h5GCBxGygl;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.h5GCBxGygl = value;
       }
@@ -68,11 +68,11 @@ namespace FreeQuant.Charting
 
     public double X2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.PufClO5avv;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.PufClO5avv = value;
       }
@@ -80,11 +80,11 @@ namespace FreeQuant.Charting
 
     public double Y2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ow8CKw3ueB;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ow8CKw3ueB = value;
       }
@@ -92,11 +92,11 @@ namespace FreeQuant.Charting
 
     public DashStyle DashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.EbYCO1lcN4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.EbYCO1lcN4 = value;
       }
@@ -104,11 +104,11 @@ namespace FreeQuant.Charting
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.esOCfcSMpP;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.esOCfcSMpP = value;
       }
@@ -116,22 +116,19 @@ namespace FreeQuant.Charting
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.RbYCFcVuCb;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.RbYCFcVuCb = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TLine(double X1, double Y1, double X2, double Y2)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.sJtCYICQXO = X1;
       this.h5GCBxGygl = Y1;
       this.PufClO5avv = X2;
@@ -141,12 +138,9 @@ namespace FreeQuant.Charting
       this.RbYCFcVuCb = 1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TLine(DateTime X1, double Y1, DateTime X2, double Y2)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.sJtCYICQXO = (double) X1.Ticks;
       this.h5GCBxGygl = Y1;
       this.PufClO5avv = (double) X2.Ticks;
@@ -156,17 +150,17 @@ namespace FreeQuant.Charting
       this.RbYCFcVuCb = 1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(720), RA7k7APgXK5aSsnmA9.qBCYFXVOKp(736));
+				Canvas canvas = new Canvas("d", "d");
       }
       Chart.Pad.Add((IDrawable) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
     {
       Pad.DrawLine(new Pen(this.esOCfcSMpP)
@@ -176,7 +170,7 @@ namespace FreeQuant.Charting
       }, this.sJtCYICQXO, this.h5GCBxGygl, this.PufClO5avv, this.ow8CKw3ueB);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       return (TDistance) null;

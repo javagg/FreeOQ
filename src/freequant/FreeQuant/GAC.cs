@@ -1,6 +1,5 @@
 using System.ComponentModel;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant
@@ -36,7 +35,6 @@ namespace FreeQuant
       return (string) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     private static string Bvrrsgbgvu([In] byte[] obj0)
     {
       return (string) null;

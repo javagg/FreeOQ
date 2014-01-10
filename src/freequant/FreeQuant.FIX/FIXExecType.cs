@@ -34,43 +34,43 @@ namespace FreeQuant.FIX
       switch (c)
       {
         case '0':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2228);
+					return "New";
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2238);
+					return "PartialFill";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2264);
+					return "Fill";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2276);
+					return "DoneForDay";
         case '4':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2300);
+					return "Cancelled";
         case '5':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2322);
+					return "Replace";
         case '6':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2340);
+					return "PendingCancel";
         case '7':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2370);
+					return "Stopped";
         case '8':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2388);
+					return "Rejected";
         case '9':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2408);
+					return "Suspended";
         case 'A':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2430);
+					return "PendingNew";
         case 'B':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2454);
+					return "Calculated";
         case 'C':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2478);
+					return "Expired";
         case 'D':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2496);
+					return "Restarted";
         case 'E':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2518);
+					return "PendingReplace";
         case 'F':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2550);
+					return "Trade";
         case 'G':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2564);
+					return "TradeCorrect";
         case 'H':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2592);
+					return "TradeCancel";
         case 'I':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(2618);
+					return "OrderStatus";
         default:
           return (string) null;
       }
@@ -121,7 +121,7 @@ namespace FreeQuant.FIX
         case 'I':
           return ExecType.OrderStatus;
         default:
-          throw new ArgumentException(Ugjylcah9mCMM4kO7N.tLah92SpBQ(2644) + (object) execType);
+					throw new ArgumentException("unsupported"+ (object) execType);
       }
     }
 
@@ -169,7 +169,7 @@ namespace FreeQuant.FIX
         case ExecType.OrderStatus:
           return 'I';
         default:
-          throw new ArgumentException(Ugjylcah9mCMM4kO7N.tLah92SpBQ(2698) + ((object) execType).ToString());
+					throw new ArgumentException("unknown: " + ((object) execType).ToString());
       }
     }
   }

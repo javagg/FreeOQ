@@ -72,5 +72,9 @@ namespace FreeQuant.FIX
     public const string QuoteRequestReject = "AG";
     public const string RFQRequest = "AH";
     public const string QuoteStatusReport = "AI";
+
+
+//		public FIXMsgType() {
+//		}
   }
 }

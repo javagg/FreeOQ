@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Charting
@@ -15,11 +14,11 @@ namespace FreeQuant.Charting
 
     public long FirstSessionTick
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GjZC82n8Jj;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GjZC82n8Jj = value;
         this.dthCXcGNNp = this.J4aCZhipID - this.GjZC82n8Jj;
@@ -28,11 +27,11 @@ namespace FreeQuant.Charting
 
     public long LastSessionTick
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.J4aCZhipID;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.J4aCZhipID = value;
         this.dthCXcGNNp = this.J4aCZhipID - this.GjZC82n8Jj;
@@ -41,7 +40,7 @@ namespace FreeQuant.Charting
 
     public long Session
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.dthCXcGNNp;
       }
@@ -49,17 +48,17 @@ namespace FreeQuant.Charting
 
     public bool SessionGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kQZCbKa8jb;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.kQZCbKa8jb = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TIntradayTransformation()
     {
       Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -69,7 +68,7 @@ namespace FreeQuant.Charting
       this.SetSessionBounds(0L, 864000000000L);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TIntradayTransformation(long FirstSessionTick, long LastSessionTick)
     {
       Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -79,7 +78,7 @@ namespace FreeQuant.Charting
       this.SetSessionBounds(FirstSessionTick, LastSessionTick);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetSessionBounds(long FirstSessionTick, long LastSessionTick)
     {
       this.GjZC82n8Jj = FirstSessionTick;
@@ -87,7 +86,7 @@ namespace FreeQuant.Charting
       this.dthCXcGNNp = this.J4aCZhipID - this.GjZC82n8Jj;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void GetFirstGridDivision(ref EGridSize GridSize, ref double Min, ref double Max, ref DateTime FirstDateTime)
     {
       if ((Max - Min) / (double) this.dthCXcGNNp <= 10.0)
@@ -112,13 +111,13 @@ namespace FreeQuant.Charting
         this.gWjCgJN3TA = -this.GjZC82n8Jj;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetNextGridDivision(double FirstTick, double PrevMajor, int MajorCount, EGridSize GridSize)
     {
       return MajorCount != 0 ? (GridSize >= (EGridSize) 576000000000 ? (double) Axis.GetNextMajor((long) PrevMajor, GridSize) : this.x4KCNJAMeJ(PrevMajor, (long) GridSize)) : (double) this.B63C22nX2q((long) FirstTick - this.gWjCgJN3TA);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private double x4KCNJAMeJ([In] double obj0, [In] long obj1)
     {
       double num1 = 0.0;
@@ -135,7 +134,7 @@ namespace FreeQuant.Charting
       return num1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private long B63C22nX2q([In] long obj0)
     {
       long num = 0L;
@@ -144,7 +143,7 @@ namespace FreeQuant.Charting
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CalculateRealQuantityOfTicks_Right(double X, double Y)
     {
       long num1 = (long) (Y - X) / this.dthCXcGNNp * 864000000000L;
@@ -152,7 +151,7 @@ namespace FreeQuant.Charting
       return (double) ((long) (X + (double) num1) / 864000000000L * 864000000000L + this.J4aCZhipID) - (X + (double) num1) < (double) num2 ? (double) (num1 + num2 + 864000000000L - this.dthCXcGNNp) : (double) (num1 + num2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CalculateRealQuantityOfTicks_Left(double X, double Y)
     {
       long num1 = (long) (X - Y) / this.dthCXcGNNp * 864000000000L;
@@ -161,14 +160,14 @@ namespace FreeQuant.Charting
       return (double) -(X - (double) num1 - (double) num3 < (double) num2 ? num1 + num2 + 864000000000L - this.dthCXcGNNp : num1 + num2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private long af0CimWcds([In] long obj0, [In] long obj1)
     {
       obj0 = obj0 / 864000000000L * 864000000000L + this.GjZC82n8Jj;
       return -((obj0 - this.GjZC82n8Jj) / 864000000000L) * ((864000000000L - this.dthCXcGNNp) % obj1) % obj1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private long BOvCDY6BLq([In] long obj0, [In] long obj1)
     {
       if ((obj0 + obj1) / 864000000000L - obj0 / 864000000000L > 0L && (obj0 + obj1) % 864000000000L > this.GjZC82n8Jj && obj1 < 576000000000L)
@@ -177,7 +176,7 @@ namespace FreeQuant.Charting
         return 0L;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CalculateNotInSessionTicks(double X, double Y)
     {
       if (Y <= 10000.0)

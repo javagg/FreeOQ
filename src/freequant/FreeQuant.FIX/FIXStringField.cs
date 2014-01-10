@@ -9,11 +9,15 @@ namespace FreeQuant.FIX
 
     public override FIXType FIXType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXType.String;
       }
     }
+
+		public FIXStringField()
+		{
+		}
 
     public FIXStringField(int tag):this(tag, "")
     {

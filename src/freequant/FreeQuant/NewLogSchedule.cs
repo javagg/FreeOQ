@@ -1,4 +1,4 @@
-﻿namespace FreeQuant
+namespace FreeQuant
 {
 	public enum NewLogSchedule { Hourly, Daily, Monthly }
 }

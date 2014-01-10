@@ -1,35 +1,32 @@
-﻿using System;
+using System;
 
 namespace FreeQuant.Providers
 {
-  public interface IProvider
-  {
-    byte Id { get; }
+	public interface IProvider
+	{
+		byte Id { get; }
 
-    string Name { get; }
+		string Name { get; }
 
-    string Title { get; }
+		string Title { get; }
 
-    string URL { get; }
+		string URL { get; }
 
-    bool IsConnected { get; }
+		bool IsConnected { get; }
 
-    ProviderStatus Status { get; }
+		ProviderStatus Status { get; }
 
-    event EventHandler StatusChanged;
+		event EventHandler StatusChanged;
+		event EventHandler Connected;
+		event EventHandler Disconnected;
+		event ProviderErrorEventHandler Error;
 
-    event EventHandler Connected;
+		void Connect();
 
-    event EventHandler Disconnected;
+		void Connect(int timeout);
 
-    event ProviderErrorEventHandler Error;
+		void Disconnect();
 
-    void Connect();
-
-    void Connect(int timeout);
-
-    void Disconnect();
-
-    void Shutdown();
-  }
+		void Shutdown();
+	}
 }

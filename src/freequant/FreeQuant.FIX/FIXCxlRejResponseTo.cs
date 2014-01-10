@@ -23,7 +23,7 @@ namespace FreeQuant.FIX
         case '2':
           return CxlRejResponseTo.CancelReplaceRequest;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39362), (object) value));
+					throw new ArgumentException(string.Format("Error: ", (object) value));
       }
     }
 
@@ -37,7 +37,7 @@ namespace FreeQuant.FIX
         case CxlRejResponseTo.CancelReplaceRequest:
           return '2';
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39410), (object) response));
+					throw new ArgumentException(string.Format("Error: ", (object) response));
       }
     }
   }

@@ -1,10 +1,3 @@
-// Type: SmartQuant.Charting.Chart
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
-using gyr6NSGRxNZcTviJZk;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -51,11 +44,11 @@ namespace FreeQuant.Charting
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public PadList Pads
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPads;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPads = value;
       }
@@ -63,11 +56,11 @@ namespace FreeQuant.Charting
 
     public bool GroupLeftMarginEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fGroupLeftMarginEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fGroupLeftMarginEnabled = value;
       }
@@ -75,11 +68,11 @@ namespace FreeQuant.Charting
 
     public bool GroupRightMarginEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fGroupRightMarginEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fGroupRightMarginEnabled = value;
       }
@@ -87,11 +80,11 @@ namespace FreeQuant.Charting
 
     public bool GroupZoomEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fGroupZoomEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fGroupZoomEnabled = value;
       }
@@ -99,11 +92,11 @@ namespace FreeQuant.Charting
 
     public bool DoubleBufferingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fDoubleBufferingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fDoubleBufferingEnabled = value;
       }
@@ -111,11 +104,11 @@ namespace FreeQuant.Charting
 
     public bool SmoothingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSmoothingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSmoothingEnabled = value;
       }
@@ -123,11 +116,11 @@ namespace FreeQuant.Charting
 
     public bool AntiAliasingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fAntiAliasingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fAntiAliasingEnabled = value;
       }
@@ -135,11 +128,11 @@ namespace FreeQuant.Charting
 
     public static Pad Pad
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Chart.fPad;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Chart.fPad = value;
       }
@@ -147,7 +140,7 @@ namespace FreeQuant.Charting
 
     public ToolTip ToolTip
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fToolTip;
       }
@@ -155,7 +148,7 @@ namespace FreeQuant.Charting
 
     public PrintDocument PrintDocument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.fPrintDocument == null)
         {
@@ -165,7 +158,7 @@ namespace FreeQuant.Charting
         }
         return this.fPrintDocument;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (this.fPrintDocument != null)
           this.fPrintDocument.PrintPage -= new PrintPageEventHandler(this.DrZCe67Y7d);
@@ -176,11 +169,11 @@ namespace FreeQuant.Charting
 
     public int PrintX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrintX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrintX = value;
       }
@@ -188,11 +181,11 @@ namespace FreeQuant.Charting
 
     public int PrintY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrintY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrintY = value;
       }
@@ -200,11 +193,11 @@ namespace FreeQuant.Charting
 
     public int PrintWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrintWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrintWidth = value;
       }
@@ -212,11 +205,11 @@ namespace FreeQuant.Charting
 
     public int PrintHeight
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrintHeight;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrintHeight = value;
       }
@@ -224,11 +217,11 @@ namespace FreeQuant.Charting
 
     public EPrintAlign PrintAlign
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrintAlign;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrintAlign = value;
       }
@@ -236,11 +229,11 @@ namespace FreeQuant.Charting
 
     public EPrintLayout PrintLayout
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPrintLayout;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPrintLayout = value;
         if (this.fPrintDocument == null)
@@ -254,11 +247,11 @@ namespace FreeQuant.Charting
 
     public string FileName
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fFileName;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fFileName = value;
       }
@@ -266,11 +259,11 @@ namespace FreeQuant.Charting
 
     public Color PadsForeColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPadsForeColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fPadsForeColor = value;
         foreach (Pad pad in this.fPads)
@@ -283,11 +276,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public ETransformationType TransformationType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTransformationType;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTransformationType = value;
         this.fSessionStart = new TimeSpan(0, 0, 0, 0);
@@ -301,11 +294,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool SessionGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSessionGridEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSessionGridEnabled = value;
         foreach (Pad pad in this.fPads)
@@ -317,11 +310,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public Color SessionGridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSessionGridColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSessionGridColor = value;
         foreach (Pad pad in this.fPads)
@@ -333,11 +326,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public TimeSpan SessionStart
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSessionStart;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSessionStart = value;
         foreach (Pad pad in this.fPads)
@@ -349,11 +342,11 @@ namespace FreeQuant.Charting
     [Category("Transformation")]
     public TimeSpan SessionEnd
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSessionEnd;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fSessionEnd = value;
         foreach (Pad pad in this.fPads)
@@ -413,34 +406,34 @@ namespace FreeQuant.Charting
       return Chart.fPad;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.fPads.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRangeX(double Min, double Max)
     {
       foreach (Pad pad in this.fPads)
         pad.SetRangeX(Min, Max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRangeX(DateTime Min, DateTime Max)
     {
       foreach (Pad pad in this.fPads)
         pad.SetRangeX(Min, Max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRangeY(double Min, double Max)
     {
       foreach (Pad pad in this.fPads)
         pad.SetRangeY(Min, Max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual Pad AddPad(double X1, double Y1, double X2, double Y2)
     {
       Chart.fPad = new Pad(this, X1, Y1, X2, Y2);
@@ -451,21 +444,21 @@ namespace FreeQuant.Charting
       return Chart.fPad;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Connect()
     {
       foreach (Pad pad in this.fPads)
         pad.Zoom += new ZoomEventHandler(this.ZoomChanged);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Disconnect()
     {
       foreach (Pad pad in this.fPads)
         pad.Zoom -= new ZoomEventHandler(this.ZoomChanged);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void ZoomChanged(object sender, ZoomEventArgs e)
     {
       if (!this.GroupZoomEnabled)
@@ -485,7 +478,7 @@ namespace FreeQuant.Charting
       this.UpdatePads();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void iLkC1B5ln0()
     {
       int val1 = 0;
@@ -495,7 +488,7 @@ namespace FreeQuant.Charting
         pad.MarginLeft = val1 - pad.AxisLeft.LastValidAxisWidth;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void MCCC9wTn5m()
     {
       int val1 = 0;
@@ -505,7 +498,7 @@ namespace FreeQuant.Charting
         pad.MarginRight = val1 - pad.AxisRight.LastValidAxisWidth;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Divide(int X, int Y)
     {
       this.fPads.Clear();
@@ -524,7 +517,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Divide(int X, int Y, double[] Widths, double[] Heights)
     {
       this.fPads.Clear();
@@ -547,7 +540,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UpdatePads(Graphics PadGraphics, int X, int Y, int Width, int Height)
     {
       PadGraphics.Clear(this.BackColor);
@@ -570,13 +563,13 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bitmap GetBitmap()
     {
       return new Bitmap((Image) this.GetMetafile(EmfType.EmfPlusOnly));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bitmap GetBitmap(float Dpi)
     {
       Graphics graphics = this.CreateGraphics();
@@ -603,7 +596,7 @@ namespace FreeQuant.Charting
       return bitmap;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Metafile GetMetafile(EmfType type)
     {
       int width = this.ClientRectangle.Width;
@@ -632,7 +625,7 @@ namespace FreeQuant.Charting
       return metafile;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SaveImage(string filename, ImageFormat format)
     {
       Metafile metafile = this.GetMetafile(EmfType.EmfPlusOnly);
@@ -640,14 +633,14 @@ namespace FreeQuant.Charting
       metafile.Dispose();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UpdatePads()
     {
       this.Invalidate();
       Application.DoEvents();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UpdatePads(Graphics g)
     {
       if (this.Disposing || this.fIsUpdating)
@@ -711,13 +704,13 @@ namespace FreeQuant.Charting
       this.fIsUpdating = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Print()
     {
       this.PrintDocument.Print();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrintPreview()
     {
       ((Control) new PrintPreviewDialog()
@@ -726,7 +719,7 @@ namespace FreeQuant.Charting
       }).Show();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrintSetup()
     {
       int num = (int) new PrintDialog()
@@ -735,7 +728,7 @@ namespace FreeQuant.Charting
       }.ShowDialog();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrintPageSetup()
     {
       int num = (int) new PageSetupDialog()
@@ -744,7 +737,7 @@ namespace FreeQuant.Charting
       }.ShowDialog();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void DrZCe67Y7d([In] object obj0, [In] PrintPageEventArgs obj1)
     {
       int X = this.fPrintX;
@@ -765,25 +758,25 @@ namespace FreeQuant.Charting
       this.UpdatePads(obj1.Graphics, X, Y, this.fPrintWidth, this.fPrintHeight);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void InitializeComponent()
     {
       this.Size = new Size(272, 168);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnPaint(PaintEventArgs pe)
     {
       this.UpdatePads(pe.Graphics);
       base.OnPaint(pe);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnPaintBackground(PaintEventArgs e)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnMouseMove(MouseEventArgs e)
     {
       if (this.fPadSplit)
@@ -818,7 +811,7 @@ namespace FreeQuant.Charting
       base.OnMouseMove(e);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnMouseWheel(MouseEventArgs e)
     {
       foreach (Pad pad in this.fPads)
@@ -829,7 +822,7 @@ namespace FreeQuant.Charting
       base.OnMouseWheel(e);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnMouseDown(MouseEventArgs e)
     {
       foreach (Pad pad in this.fPads)
@@ -849,7 +842,7 @@ namespace FreeQuant.Charting
       base.OnMouseDown(e);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnMouseUp(MouseEventArgs e)
     {
       if (this.fPadSplit)
@@ -867,7 +860,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void OnDoubleClick(EventArgs e)
     {
       Point point = this.PointToClient(Cursor.Position);
@@ -879,7 +872,7 @@ namespace FreeQuant.Charting
       base.OnDoubleClick(e);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Dispose(bool disposing)
     {
       foreach (Pad pad in this.fPads)

@@ -12,21 +12,19 @@ namespace FreeQuant.FIX
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static string ToString(int i)
     {
       switch (i)
       {
         case 0:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3398);
+					return "Put";
         case 1:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3408);
+					return "Call";
         default:
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(3420);
+					return "[invalid]";
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static PutOrCall FromFIX(int value)
     {
       switch (value)
@@ -36,7 +34,7 @@ namespace FreeQuant.FIX
         case 1:
           return PutOrCall.Call;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(3438), (object) value));
+					throw new ArgumentException(string.Format("err: ", (object) value));
       }
     }
 
@@ -50,7 +48,7 @@ namespace FreeQuant.FIX
         case PutOrCall.Call:
           return 1;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(3504), (object) value));
+					throw new ArgumentException(string.Format("err: ", (object) value));
       }
     }
   }

@@ -1,4 +1,3 @@
-using cPAIWng0kq1SUTh6h4;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -16,13 +15,13 @@ namespace FreeQuant.Charting.Draw3D
 
     public int nTicks
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.z6NrSRxNZ;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TAxisCalc(TVec3 Origin, TVec3 End, double ValO, double ValEnd, int nTicks):base()
     {
 
@@ -37,19 +36,19 @@ namespace FreeQuant.Charting.Draw3D
       this.CKSEVIHa4();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double TickVal(int i)
     {
       return this.BTvciJZkJ[i].Value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TVec3 TickPos(int i)
     {
       return new TVec3(this.BTvciJZkJ[i].Position);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool TickPassed(ref TAxisCalc.TTick Tick, double Val)
     {
       foreach (TAxisCalc.TTick ttick in this.BTvciJZkJ)
@@ -65,7 +64,7 @@ namespace FreeQuant.Charting.Draw3D
       return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool TickPassed(double Val)
     {
       foreach (TAxisCalc.TTick ttick in this.BTvciJZkJ)
@@ -80,13 +79,13 @@ namespace FreeQuant.Charting.Draw3D
       return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Round(double x)
     {
       return Math.Pow(10.0, Math.Round(Math.Log10(x)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Ceiling(double x, double d)
     {
       if (x < 0.0)
@@ -95,7 +94,7 @@ namespace FreeQuant.Charting.Draw3D
         return d * Math.Ceiling(x / d);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void mXvbWEhZj()
     {
       double d = TAxisCalc.Round(Math.Abs(this.Usn4mA9ly - this.J7AUgXK5a) / (double) this.z6NrSRxNZ);
@@ -125,7 +124,7 @@ namespace FreeQuant.Charting.Draw3D
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void CKSEVIHa4()
     {
       for (int index = 0; index < this.BTvciJZkJ.Length; ++index)

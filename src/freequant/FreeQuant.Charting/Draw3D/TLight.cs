@@ -1,9 +1,3 @@
-﻿// Type: SmartQuant.Charting.Draw3D.TLight
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 
@@ -15,7 +9,7 @@ namespace FreeQuant.Charting.Draw3D
     public TLight.TSource[] ParallelBeams;
     public TLight.TSource[] NearSources;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TLight():base()
     {
     
@@ -30,14 +24,14 @@ namespace FreeQuant.Charting.Draw3D
       this.SetShadowSources(0.25);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetSfumatoDay()
     {
       this.Ambient = new TColor(0.55, 0.55, 0.7);
       this.ParallelBeams[0].c = 2.05 * new TColor(1.0, 1.0, 0.55);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetNormalDay()
     {
       this.SetSfumatoDay();
@@ -45,7 +39,7 @@ namespace FreeQuant.Charting.Draw3D
       this.ParallelBeams[0].c *= 1.1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetVeryBrightDay()
     {
       this.SetSfumatoDay();
@@ -53,7 +47,7 @@ namespace FreeQuant.Charting.Draw3D
       this.ParallelBeams[0].c *= 1.2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetShadowSources(double K)
     {
       TLight.TSource[] tsourceArray = new TLight.TSource[2 * this.ParallelBeams.Length];
@@ -67,7 +61,7 @@ namespace FreeQuant.Charting.Draw3D
       this.ParallelBeams = tsourceArray;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TColor Result(TVec3 r, TVec3 n, TColor Diffuse)
     {
       TColor tcolor = this.Ambient;
@@ -99,7 +93,7 @@ namespace FreeQuant.Charting.Draw3D
       public TVec3 o;
       public TColor c;
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public TSource(TVec3 o, TColor c)
       {
         Apmqf3XByShSL8cPCS.GHkILmVzKt7va();

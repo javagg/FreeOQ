@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
@@ -50,7 +50,7 @@ namespace FreeQuant.FIX
 
     public override object GetValue()
     {
-      return (object) (bool) (this.Value ? 1 : 0);
+			return (object) (this.Value);
     }
   }
 }

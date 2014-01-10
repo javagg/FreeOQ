@@ -11,11 +11,14 @@ namespace FreeQuant.FIX
 
     public override FIXType FIXType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return FIXType.Double;
       }
     }
+
+		public	FIXDoubleField (){
+		}
 
     public FIXDoubleField(int tag) : this(tag, 0.0)
     {

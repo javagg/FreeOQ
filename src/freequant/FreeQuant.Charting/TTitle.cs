@@ -9,11 +9,11 @@ namespace FreeQuant.Charting
   public class TTitle
   {
     private Pad zeN3moyxtg;
-    private ArrayList rZ630y2ajd;
-    private bool RsC3aSxwHb;
-    private string keq3T1dEAX;
-    private Font OcB3h59UM9;
-    private Color mrl3VHn0gx;
+    private ArrayList items;
+    private bool itemsEnabled;
+    private string text;
+    private Font font;
+    private Color color;
     private ETitlePosition qiA358ZZi0;
     private int f5e3L6gA5t;
     private int GYu3Ak0B6x;
@@ -21,67 +21,67 @@ namespace FreeQuant.Charting
 
     public ArrayList Items
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.rZ630y2ajd;
+				return this.items; 
       }
     }
 
     public bool ItemsEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.RsC3aSxwHb;
+				return this.itemsEnabled; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.RsC3aSxwHb = value;
+        this.itemsEnabled = value;
       }
     }
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.keq3T1dEAX;
+				return this.text; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.keq3T1dEAX = value;
+        this.text = value;
       }
     }
 
     public Font Font
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.OcB3h59UM9;
+				return this.font; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.OcB3h59UM9 = value;
+        this.font = value;
       }
     }
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.mrl3VHn0gx;
+				return this.color; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.mrl3VHn0gx = value;
+        this.color = value;
       }
     }
 
     public ETitlePosition Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.qiA358ZZi0;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.qiA358ZZi0 = value;
       }
@@ -89,11 +89,11 @@ namespace FreeQuant.Charting
 
     public int X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.f5e3L6gA5t;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.f5e3L6gA5t = value;
       }
@@ -101,11 +101,11 @@ namespace FreeQuant.Charting
 
     public int Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GYu3Ak0B6x;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GYu3Ak0B6x = value;
       }
@@ -113,96 +113,96 @@ namespace FreeQuant.Charting
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return (int) this.zeN3moyxtg.Graphics.MeasureString(this.vsC3u6p1dQ(), this.OcB3h59UM9).Width;
+        return (int) this.zeN3moyxtg.Graphics.MeasureString(this.vsC3u6p1dQ(), this.font).Width;
       }
     }
 
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return (int) this.zeN3moyxtg.Graphics.MeasureString(this.vsC3u6p1dQ(), this.OcB3h59UM9).Height;
+        return (int) this.zeN3moyxtg.Graphics.MeasureString(this.vsC3u6p1dQ(), this.font).Height;
       }
     }
 
     public ETitleStrategy Strategy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GT83QjlMJ1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GT83QjlMJ1 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TTitle(Pad Pad):base()
     {
 
       this.zeN3moyxtg = Pad;
-      this.keq3T1dEAX = "";
+      this.text = "";
       this.Rgq3k0SxCt();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TTitle(Pad Pad, string Text):base()
     {
 
       this.zeN3moyxtg = Pad;
-      this.keq3T1dEAX = Text;
+      this.text = Text;
       this.Rgq3k0SxCt();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Rgq3k0SxCt()
     {
-      this.rZ630y2ajd = new ArrayList();
-      this.RsC3aSxwHb = false;
-      this.keq3T1dEAX = "";
-      this.OcB3h59UM9 = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(616), 8f);
-      this.mrl3VHn0gx = Color.Black;
+      this.items = new ArrayList();
+      this.itemsEnabled = false;
+      this.text = "";
+		this.font = new Font("Times New Roman", 8);
+      this.color = Color.Black;
       this.qiA358ZZi0 = ETitlePosition.Left;
       this.GT83QjlMJ1 = ETitleStrategy.Smart;
       this.f5e3L6gA5t = 0;
       this.GYu3Ak0B6x = 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string Text, Color Color)
     {
-      this.rZ630y2ajd.Add((object) new TTitleItem(Text, Color));
+      this.items.Add((object) new TTitleItem(Text, Color));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private string vsC3u6p1dQ()
     {
-      string str = this.keq3T1dEAX;
-      foreach (TTitleItem ttitleItem in this.rZ630y2ajd)
-        str = str + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(630) + ttitleItem.Text;
+      string str = this.text;
+      foreach (TTitleItem ttitleItem in this.items)
+				str = str + "" + ttitleItem.Text;
       return str;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
-      SolidBrush solidBrush1 = new SolidBrush(this.mrl3VHn0gx);
-      if (this.keq3T1dEAX != "")
-        this.zeN3moyxtg.Graphics.DrawString(this.keq3T1dEAX, this.OcB3h59UM9, (Brush) solidBrush1, (float) this.f5e3L6gA5t, (float) this.GYu3Ak0B6x);
-      if (this.GT83QjlMJ1 == ETitleStrategy.Smart && this.keq3T1dEAX == "" && (!this.RsC3aSxwHb && this.rZ630y2ajd.Count != 0))
-        this.zeN3moyxtg.Graphics.DrawString(((TTitleItem) this.rZ630y2ajd[0]).Text, this.OcB3h59UM9, (Brush) new SolidBrush(this.mrl3VHn0gx), (float) this.f5e3L6gA5t, (float) this.GYu3Ak0B6x);
-      if (!this.RsC3aSxwHb)
+      SolidBrush solidBrush1 = new SolidBrush(this.color);
+      if (this.text != "")
+        this.zeN3moyxtg.Graphics.DrawString(this.text, this.font, (Brush) solidBrush1, (float) this.f5e3L6gA5t, (float) this.GYu3Ak0B6x);
+      if (this.GT83QjlMJ1 == ETitleStrategy.Smart && this.text == "" && (!this.itemsEnabled && this.items.Count != 0))
+        this.zeN3moyxtg.Graphics.DrawString(((TTitleItem) this.items[0]).Text, this.font, (Brush) new SolidBrush(this.color), (float) this.f5e3L6gA5t, (float) this.GYu3Ak0B6x);
+      if (!this.itemsEnabled)
         return;
-      string str = this.keq3T1dEAX;
-      foreach (TTitleItem ttitleItem in this.rZ630y2ajd)
+      string str = this.text;
+      foreach (TTitleItem ttitleItem in this.items)
       {
         SolidBrush solidBrush2 = new SolidBrush(ttitleItem.Color);
-        string text = str + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(636);
-        int num = this.f5e3L6gA5t + (int) this.zeN3moyxtg.Graphics.MeasureString(text, this.OcB3h59UM9).Width;
-        this.zeN3moyxtg.Graphics.DrawString(ttitleItem.Text, this.OcB3h59UM9, (Brush) solidBrush2, (float) num, (float) this.GYu3Ak0B6x);
+				string text = str + "";
+        int num = this.f5e3L6gA5t + (int) this.zeN3moyxtg.Graphics.MeasureString(text, this.font).Width;
+        this.zeN3moyxtg.Graphics.DrawString(ttitleItem.Text, this.font, (Brush) solidBrush2, (float) num, (float) this.GYu3Ak0B6x);
         str = text + ttitleItem.Text;
       }
     }

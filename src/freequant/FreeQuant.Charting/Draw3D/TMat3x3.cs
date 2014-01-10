@@ -1,9 +1,3 @@
-﻿// Type: SmartQuant.Charting.Draw3D.TMat3x3
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -15,11 +9,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double this[int i, int j]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[i, j];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[i, j] = value;
       }
@@ -27,11 +21,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double xx
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[0, 0];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[0, 0] = value;
       }
@@ -39,11 +33,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double xy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[0, 1];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[0, 0] = value;
       }
@@ -51,11 +45,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double xz
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[0, 2];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[0, 0] = value;
       }
@@ -63,11 +57,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double yx
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[1, 0];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[1, 0] = value;
       }
@@ -75,11 +69,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double yy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[1, 1];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[1, 1] = value;
       }
@@ -87,11 +81,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double yz
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[1, 2];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[1, 2] = value;
       }
@@ -99,11 +93,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double zx
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[2, 0];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[2, 0] = value;
       }
@@ -111,11 +105,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double zy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[2, 1];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[2, 1] = value;
       }
@@ -123,11 +117,11 @@ namespace FreeQuant.Charting.Draw3D
 
     public double zz
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.a7ECjWrecf[2, 2];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.a7ECjWrecf[2, 2] = value;
       }

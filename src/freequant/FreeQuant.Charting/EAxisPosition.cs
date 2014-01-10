@@ -1,11 +1,11 @@
 namespace FreeQuant.Charting
 {
-  public enum EAxisPosition
-  {
-    Left,
-    Right,
-    Top,
-    Bottom,
-    None,
-  }
+	public enum EAxisPosition
+	{
+		Left,
+		Right,
+		Top,
+		Bottom,
+		None,
+	}
 }

@@ -1,9 +1,6 @@
-﻿using dW79p7NPlS6ZxObcx3;
-using Obgh2s3A3GOOarwj6c;
 using FreeQuant.Data;
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
@@ -19,11 +16,11 @@ namespace FreeQuant.Providers
     [DefaultValue(BarType.Time)]
     public BarType BarType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WdOgLDv873;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WdOgLDv873 = value;
       }
@@ -32,11 +29,11 @@ namespace FreeQuant.Providers
     [DefaultValue(60L)]
     public long BarSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.peigWZAUss;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.peigWZAUss = value;
       }
@@ -45,17 +42,17 @@ namespace FreeQuant.Providers
     [DefaultValue(true)]
     public bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.pKNgSFEXfx;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.pKNgSFEXfx = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarFactoryItem(BarType barType, long barSize, bool enabled)
     {
       Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
@@ -66,7 +63,7 @@ namespace FreeQuant.Providers
       this.pKNgSFEXfx = enabled;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarFactoryItem()
     {
       Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
@@ -74,7 +71,7 @@ namespace FreeQuant.Providers
       this.\u002Ector(BarType.Time, 60L, true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int CompareTo(object obj)
     {
       BarFactoryItem barFactoryItem = obj as BarFactoryItem;
@@ -88,7 +85,7 @@ namespace FreeQuant.Providers
       return 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
       return string.Format(GojrKtfk5NMi1fou68.a17L2Y7Wnd(718), (object) this.WdOgLDv873, (object) this.peigWZAUss, (object) (bool) (this.pKNgSFEXfx ? 1 : 0));

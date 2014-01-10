@@ -1,4 +1,3 @@
-﻿using dW79p7NPlS6ZxObcx3;
 using FreeQuant.Data;
 using FreeQuant.FIX;
 using System;
@@ -6,26 +5,23 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
-  [Serializable]
-  public class QuoteEventArgs : IntradayEventArgs
-  {
-    private Quote jrhtC26GMY;
+	[Serializable]
+	public class QuoteEventArgs : IntradayEventArgs
+	{
+		private Quote quote;
 
-    public Quote Quote
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.jrhtC26GMY;
-      }
-    }
+		public Quote Quote
+		{
+			get
+			{
+				return this.quote; 
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public QuoteEventArgs(Quote quote, IFIXInstrument instrument, IMarketDataProvider provider)
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(instrument, provider);
-      this.jrhtC26GMY = quote;
-    }
-  }
+		public QuoteEventArgs(Quote quote, IFIXInstrument instrument, IMarketDataProvider provider)
+			: base(instrument, provider)
+		{
+			this.quote = quote;
+		}
+	}
 }

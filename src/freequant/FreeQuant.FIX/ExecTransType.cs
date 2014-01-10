@@ -1,10 +1,10 @@
-﻿namespace FreeQuant.FIX
+namespace FreeQuant.FIX
 {
-  public enum ExecTransType
-  {
-    New,
-    Cancel,
-    Correct,
-    Status,
-  }
+	public enum ExecTransType
+	{
+		New,
+		Cancel,
+		Correct,
+		Status,
+	}
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Quant
 {
@@ -12,7 +11,6 @@ namespace FreeQuant.Quant
 			get
 			{
 				return this.matrix.elements[i, i];
-
 			}
 			set
 			{

@@ -26,11 +26,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.JHRowdiilF;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.JHRowdiilF = value;
       }
@@ -40,11 +40,11 @@ namespace FreeQuant.Charting
     [Description("")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.g4boSZRHqq;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.g4boSZRHqq = value;
       }
@@ -52,11 +52,11 @@ namespace FreeQuant.Charting
 
     public ETextBoxPosition Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Dx9o5oDbau;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Dx9o5oDbau = value;
       }
@@ -64,11 +64,11 @@ namespace FreeQuant.Charting
 
     public int X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.S0doaOsoSA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.S0doaOsoSA = value;
       }
@@ -76,11 +76,11 @@ namespace FreeQuant.Charting
 
     public int Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.itEoTyggr4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.itEoTyggr4 = value;
       }
@@ -88,7 +88,7 @@ namespace FreeQuant.Charting
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.FCtohwnDhn;
       }
@@ -96,7 +96,7 @@ namespace FreeQuant.Charting
 
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.LsdoV2Ci3r;
       }
@@ -104,11 +104,11 @@ namespace FreeQuant.Charting
 
     public bool BorderEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GcooLeuTP3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GcooLeuTP3 = value;
       }
@@ -116,11 +116,11 @@ namespace FreeQuant.Charting
 
     public Color BorderColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ansoA5YErY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ansoA5YErY = value;
       }
@@ -128,11 +128,11 @@ namespace FreeQuant.Charting
 
     public Color BackColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WTnoQQ66Ib;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WTnoQQ66Ib = value;
       }
@@ -140,13 +140,13 @@ namespace FreeQuant.Charting
 
     public ArrayList Items
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.MiCo0cVdT4;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TTextBox():base()
     {
       this.S0doaOsoSA = 10;
@@ -154,7 +154,7 @@ namespace FreeQuant.Charting
       this.xehokEEu0B();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TTextBox(int X, int Y):base()
     {
 
@@ -163,7 +163,7 @@ namespace FreeQuant.Charting
       this.xehokEEu0B();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void xehokEEu0B()
     {
       this.FCtohwnDhn = -1;
@@ -175,41 +175,41 @@ namespace FreeQuant.Charting
       this.MiCo0cVdT4 = new ArrayList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string Text, Color Color)
     {
       this.MiCo0cVdT4.Add((object) new TTextBoxItem(Text, Color));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string Text, Color Color, Font Font)
     {
       this.MiCo0cVdT4.Add((object) new TTextBoxItem(Text, Color, Font));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(TTextBoxItem Item)
     {
       this.MiCo0cVdT4.Add((object) Item);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.MiCo0cVdT4.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(224), RA7k7APgXK5aSsnmA9.qBCYFXVOKp(240));
+				Canvas canvas = new Canvas("CName", "CText");
       }
       Chart.Pad.Add((IDrawable) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private float MhmouvgBhg([In] Pad obj0)
     {
       this.FCtohwnDhn = 0;
@@ -223,7 +223,7 @@ namespace FreeQuant.Charting
       return (float) this.FCtohwnDhn;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private float qUZomVYuoh([In] Pad obj0)
     {
       this.LsdoV2Ci3r = 0;
@@ -233,7 +233,7 @@ namespace FreeQuant.Charting
       return (float) this.LsdoV2Ci3r;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY)
     {
       float height = this.qUZomVYuoh(Pad);
@@ -270,7 +270,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       return (TDistance) null;

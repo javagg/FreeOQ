@@ -1,5 +1,3 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
-using mTh3qhZ0lnTdfaGms5;
 using FreeQuant;
 using FreeQuant.Execution;
 using FreeQuant.FIX;
@@ -14,8 +12,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using WL48KKjholiRoHZ0FY;
-using Y9kGLiKILMabFE38T3;
 
 namespace FreeQuant.Simulation
 {
@@ -31,7 +27,7 @@ namespace FreeQuant.Simulation
     [Category("Settings")]
     public OrderEntryList Entries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.RfIejmtUHA;
       }
@@ -40,7 +36,7 @@ namespace FreeQuant.Simulation
     [Category("Information")]
     public override byte Id
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (byte) 1;
       }
@@ -49,7 +45,7 @@ namespace FreeQuant.Simulation
     [Category("Information")]
     public override string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1688);
       }
@@ -58,7 +54,7 @@ namespace FreeQuant.Simulation
     [Category("Information")]
     public override string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1732);
       }
@@ -67,7 +63,7 @@ namespace FreeQuant.Simulation
     [Category("Status")]
     public override ServiceStatus Status
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return base.Status;
       }
@@ -83,7 +79,7 @@ namespace FreeQuant.Simulation
 
     public event FIXLogoutEventHandler Logout;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public SimulationExecutionService()
     {
       eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
@@ -96,7 +92,7 @@ namespace FreeQuant.Simulation
       ServiceManager.ExecutionSimulator = (IExecutionService) this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Start()
     {
       if (this.status != ServiceStatus.Stopped)
@@ -107,7 +103,7 @@ namespace FreeQuant.Simulation
       this.SetServiceStatus(ServiceStatus.Started);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Stop()
     {
       if (this.status != ServiceStatus.Started)
@@ -118,30 +114,30 @@ namespace FreeQuant.Simulation
       this.SetServiceStatus(ServiceStatus.Stopped);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Send(FIXExecutionReport message)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Send(FIXOrderCancelReject message)
     {
       throw new Exception(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1792));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Send(FIXLogon message)
     {
       throw new Exception(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1882));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Send(FIXLogout message)
     {
       throw new Exception(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1972));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void dXSeJAw0dn([In] object obj0, [In] EventArgs obj1)
     {
       switch (((SimulationDataProvider) ProviderManager.MarketDataSimulator).Simulator.CurrentState)
@@ -171,7 +167,7 @@ namespace FreeQuant.Simulation
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void To9e7FASSf([In] SeriesObjectEventArgs obj0)
     {
       while (this.yQseuHHKll.Count > 0)
@@ -184,7 +180,7 @@ namespace FreeQuant.Simulation
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void j7FeG7ltt3([In] OrderEntry obj0)
     {
       SingleOrder singleOrder = new SingleOrder();
@@ -201,7 +197,7 @@ namespace FreeQuant.Simulation
       this.VOQeTqxjH5((object) this, new FIXNewOrderSingleEventArgs((FIXNewOrderSingle) singleOrder));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void vSoeaZ8DfK()
     {
       jHlkoKNvYKqUEkgu3D hlkoKnvYkqUekgu3D = new jHlkoKNvYKqUEkgu3D();
@@ -210,7 +206,7 @@ namespace FreeQuant.Simulation
       hlkoKnvYkqUekgu3D.Save(this.jLCe4X7YLp());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void zpaevs5ZvV()
     {
       string str = this.jLCe4X7YLp();
@@ -233,7 +229,7 @@ namespace FreeQuant.Simulation
         });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private string jLCe4X7YLp()
     {
       return string.Format(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(2062), (object) Framework.Installation.IniDir.FullName, (object) v6F3C32VVUpp2OYb5n.VVyFVqM4b6(2080));

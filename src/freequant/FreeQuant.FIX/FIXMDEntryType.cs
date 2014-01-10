@@ -26,29 +26,29 @@ namespace FreeQuant.FIX
       switch (c)
       {
         case '0':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39158);
+					return "Bid";
         case '1':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39168);
+					return "Offer";
         case '2':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39182);
+					return "Trade";
         case '3':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39196);
+					return "Index";
         case '4':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39210);
+					return "Open";
         case '5':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39222);
+					return "Close";
         case '6':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39236);
+					return "Settlement";
         case '7':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39260);
+					return "High";
         case '8':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39272);
+					return "Low";
         case '9':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39282);
+					return "VWAP";
         case 'A':
-          return Ugjylcah9mCMM4kO7N.tLah92SpBQ(39294);
+					return "Imbalance";
         default:
-          throw new ArgumentException(Ugjylcah9mCMM4kO7N.tLah92SpBQ(39316) + (object) c);
+					throw new ArgumentException("error: " + (object) c);
       }
     }
   }

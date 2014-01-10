@@ -1,8 +1,8 @@
-﻿namespace FreeQuant.FIX
+namespace FreeQuant.FIX
 {
-  public enum EFieldOption
-  {
-    Optional,
-    Required,
-  }
+	public enum EFieldOption
+	{
+		Optional,
+		Required,
+	}
 }

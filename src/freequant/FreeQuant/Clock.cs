@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Timers;
 
@@ -11,12 +10,11 @@ namespace FreeQuant
 	{
 		Realtime,
 		Simulation
-
 	}
 
 	public class Clock
 	{
-		private static ClockMode zYbrCXBXY2;
+		private static ClockMode clockMode; 
 		private static DateTime V43r8pGmVV;
 		private static TimeSpan KLyrIGEWaU;
 		private static SortedList PQDrlFHKP0;
@@ -45,10 +43,10 @@ namespace FreeQuant
 
 		public static event EventHandler ClockModeChanged
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] add
+			 add
 			{
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] remove
+			 remove
 			{
 			}
 		}
@@ -57,7 +55,7 @@ namespace FreeQuant
 		{
 			GItcYDqSxj5aE60JeS.GRAroVBQNR();
 			U11BeMmYvqFIQ38CeV7.y89NYTfzAIJ6Q();
-			Clock.zYbrCXBXY2 = ClockMode.Realtime;
+			Clock.clockMode = ClockMode.Realtime;
 			Clock.V43r8pGmVV = DateTime.Now;
 			Clock.KLyrIGEWaU = TimeSpan.Zero;
 			Clock.PQDrlFHKP0 = new SortedList();
@@ -81,32 +79,32 @@ namespace FreeQuant
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public static void RemoveReminder(ReminderEventHandler handler)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public static void FireAllReminders()
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private static void w9brTOhgdW([In] ArrayList obj0, [In] ReminderEventHandler obj1)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private static void UoLrWKXhTR([In] DateTime obj0)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private static void SRjrGO4qdD([In] object obj0, [In] ElapsedEventArgs obj1)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private static void N1ur0QBmvI()
 		{
 		}

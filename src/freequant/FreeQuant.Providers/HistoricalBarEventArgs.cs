@@ -1,29 +1,24 @@
-﻿using dW79p7NPlS6ZxObcx3;
 using FreeQuant.Data;
 using FreeQuant.FIX;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
-  public class HistoricalBarEventArgs : HistoricalDataEventArgs
-  {
-    private Bar yOoLKNvoEU;
+	public class HistoricalBarEventArgs : HistoricalDataEventArgs
+	{
+		private FreeQuant.Data.Bar bar;
 
-    public Bar Bar
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.yOoLKNvoEU;
-      }
-    }
+		public FreeQuant.Data.Bar Bar
+		{
+			get
+			{
+				return this.bar;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public HistoricalBarEventArgs(Bar bar, string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength)
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(requestId, instrument, provider, dataLength);
-      this.yOoLKNvoEU = bar;
-    }
-  }
+		public HistoricalBarEventArgs(FreeQuant.Data.Bar bar, string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength) : base(requestId, instrument, provider, dataLength)
+		{
+
+			this.bar = bar; 
+		}
+	}
 }

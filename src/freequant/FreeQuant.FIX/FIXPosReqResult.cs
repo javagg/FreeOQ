@@ -33,11 +33,10 @@ namespace FreeQuant.FIX
         case PosReqResult.Other:
           return 99;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38914), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static PosReqResult FromFIX(int value)
     {
       switch (value)
@@ -55,7 +54,7 @@ namespace FreeQuant.FIX
         case 99:
           return PosReqResult.Other;
         default:
-          throw new ArgumentException(string.Format(Ugjylcah9mCMM4kO7N.tLah92SpBQ(38992), (object) value));
+					throw new ArgumentException(string.Format("", (object) value));
       }
     }
   }

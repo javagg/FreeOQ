@@ -1,15 +1,7 @@
-﻿// Type: SmartQuant.Shared.Data.Import.HistoricalData.DownloadForm
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using nT6GFx5wdMRGU6NHjk;
-using nVdlGsRc4Eoe16hBIc;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
+﻿using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +10,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using WsA6FqfPhLOkrslGEv;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Import.HistoricalData
+namespace FreeQuant.Shared.Data.Import.HistoricalData
 {
   public class DownloadForm : Form
   {

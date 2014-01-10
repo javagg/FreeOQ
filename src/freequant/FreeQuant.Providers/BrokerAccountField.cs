@@ -1,19 +1,12 @@
-﻿using dW79p7NPlS6ZxObcx3;
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Providers
 {
-  public class BrokerAccountField : BrokerInfoField
-  {
-    public string Currency { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+	public class BrokerAccountField : BrokerInfoField
+	{
+		public string Currency { get; private set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BrokerAccountField(string name, string currency, string value)
-    {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, value);
-      this.Currency = currency;
-    }
-  }
+		public BrokerAccountField(string name, string currency, string value) : base(name, value)
+		{
+			this.Currency = currency;
+		}
+	}
 }

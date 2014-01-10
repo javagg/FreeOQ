@@ -16,7 +16,7 @@ namespace FreeQuant.FIX
       }
     }
 
-    public FIXDateTimeField(int tag) : base(tag, DateTime.MinValue)
+		public FIXDateTimeField(int tag) : this(tag, DateTime.MinValue)
     {
     }
 
@@ -25,11 +25,11 @@ namespace FreeQuant.FIX
       this.Value = value;
     }
 
-    public FIXDateTimeField(int tag, string value)  :  base(tag, value, false)
+		public FIXDateTimeField(int tag, string value)  :  this(tag, value, false)
   {
     }
 
-    public FIXDateTimeField(int tag, string value, bool invariantCulture) : base(tag, invariantCulture ? DateTime.Parse(value, (IFormatProvider) CultureInfo.InvariantCulture) : DateTime.Parse(value))
+		public FIXDateTimeField(int tag, string value, bool invariantCulture) : this(tag, invariantCulture ? DateTime.Parse(value, (IFormatProvider) CultureInfo.InvariantCulture) : DateTime.Parse(value))
     {
     }
 

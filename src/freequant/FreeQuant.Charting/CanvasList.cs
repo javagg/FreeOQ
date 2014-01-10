@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting
 {
@@ -9,7 +8,7 @@ namespace FreeQuant.Charting
   {
     public Canvas this[string name]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return base[(object) name] as Canvas;
       }
@@ -26,7 +25,7 @@ namespace FreeQuant.Charting
       base.Remove((object) canvas.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Print()
     {
       foreach (Canvas canvas in (SortedList) this)

@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX
 {
-  public class FIXMessage : FIXGroup
-  {
-  }
+	public class FIXMessage : FIXGroup
+	{
+	}
 }

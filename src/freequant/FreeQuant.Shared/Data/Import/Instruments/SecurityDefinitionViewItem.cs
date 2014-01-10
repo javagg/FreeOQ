@@ -1,14 +1,7 @@
-﻿// Type: SmartQuant.Shared.Data.Import.Instruments.SecurityDefinitionViewItem
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using SmartQuant.FIX;
-using System.Runtime.CompilerServices;
+﻿using FreeQuant.FIX;
 using System.Windows.Forms;
 
-namespace SmartQuant.Shared.Data.Import.Instruments
+namespace FreeQuant.Shared.Data.Import.Instruments
 {
   public class SecurityDefinitionViewItem : ListViewItem
   {
@@ -16,13 +9,13 @@ namespace SmartQuant.Shared.Data.Import.Instruments
 
     public FIXSecurityDefinition SecurityDefinition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+        get
       {
         return this.spCHSgVpLT;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public SecurityDefinitionViewItem(string symbol, FIXSecurityDefinition securityDefinition)
     {
       eX4XcIhHpDXt70u2x3N.k8isAcYzkUOGF();

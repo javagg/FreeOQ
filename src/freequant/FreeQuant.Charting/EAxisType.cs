@@ -1,8 +1,8 @@
 namespace FreeQuant.Charting
 {
-  public enum EAxisType
-  {
-    Numeric,
-    DateTime,
-  }
+	public enum EAxisType
+	{
+		Numeric,
+		DateTime,
+	}
 }

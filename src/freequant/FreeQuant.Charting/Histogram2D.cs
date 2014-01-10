@@ -1,11 +1,4 @@
-﻿// Type: SmartQuant.Charting.Histogram2D
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
-using gyr6NSGRxNZcTviJZk;
-using SmartQuant.Charting.Draw3D;
+using FreeQuant.Charting.Draw3D;
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
@@ -48,11 +41,11 @@ namespace FreeQuant.Charting
 
     public EChartLook Look
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kG6oz8rvGU.Look;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.MUK33qPZeB.Look = this.l303o6TYVf.Look = this.U4Z3nPEiRp.Look = this.kG6oz8rvGU.Look = value;
       }
@@ -60,11 +53,11 @@ namespace FreeQuant.Charting
 
     public TSurface Surface3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kG6oz8rvGU.Surface;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.U4Z3nPEiRp.Surface = this.kG6oz8rvGU.Surface = value;
       }
@@ -72,11 +65,11 @@ namespace FreeQuant.Charting
 
     public bool Grid3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kG6oz8rvGU.Grid;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.MUK33qPZeB.Grid = this.l303o6TYVf.Grid = this.U4Z3nPEiRp.Grid = this.kG6oz8rvGU.Grid = value;
       }
@@ -84,11 +77,11 @@ namespace FreeQuant.Charting
 
     public bool LevelLines3D
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kG6oz8rvGU.LevelLines;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.MUK33qPZeB.LevelLines = this.l303o6TYVf.LevelLines = this.U4Z3nPEiRp.LevelLines = this.kG6oz8rvGU.LevelLines = value;
       }
@@ -96,11 +89,11 @@ namespace FreeQuant.Charting
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fName;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fName = value;
       }
@@ -108,11 +101,11 @@ namespace FreeQuant.Charting
 
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle = value;
       }
@@ -120,11 +113,11 @@ namespace FreeQuant.Charting
 
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.NZs361RjTx;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.NZs361RjTx = value;
       }
@@ -132,11 +125,11 @@ namespace FreeQuant.Charting
 
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.iP93YhTalh;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.iP93YhTalh = value;
       }
@@ -144,7 +137,7 @@ namespace FreeQuant.Charting
 
     public double dX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (this.fXMax - this.fXMin) / (double) this.fNBinsX;
       }
@@ -152,13 +145,13 @@ namespace FreeQuant.Charting
 
     public double dY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (this.fYMax - this.fYMin) / (double) this.fNBinsY;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Histogram2D(string Name, string Title, int NBinsX, double XMin, double XMax, int NBinsY, double YMin, double YMax)
     {
       Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -173,7 +166,7 @@ namespace FreeQuant.Charting
       this.uBuojBImWt(NBinsX, XMin, XMax, NBinsY, YMin, YMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Histogram2D(string Name, int NBinsX, double XMin, double XMax, int NBinsY, double YMin, double YMax)
     {
       Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -187,7 +180,7 @@ namespace FreeQuant.Charting
       this.uBuojBImWt(NBinsX, XMin, XMax, NBinsY, YMin, YMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Histogram2D(int NBinsX, double XMin, double XMax, int NBinsY, double YMin, double YMax)
     {
       Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -200,7 +193,7 @@ namespace FreeQuant.Charting
       this.uBuojBImWt(NBinsX, XMin, XMax, NBinsY, YMin, YMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void uBuojBImWt([In] int obj0, [In] double obj1, [In] double obj2, [In] int obj3, [In] double obj4, [In] double obj5)
     {
       this.fNBinsX = obj0;
@@ -240,25 +233,25 @@ namespace FreeQuant.Charting
       this.SetPalette(EPalette.Rainbow);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private int W5Lo1oxP5B([In] double obj0, [In] double obj1, [In] double obj2)
     {
       return (int) (obj2 * (obj0 - obj1) + 1E-09);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private int QfQo9YbNWy([In] double obj0)
     {
       return this.W5Lo1oxP5B(obj0, this.fXMin, this.Kx);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private int RgcoeI8LA0([In] double obj0)
     {
       return this.W5Lo1oxP5B(obj0, this.fYMin, this.Ky);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(double X, double Y)
     {
       if (X < this.fXMin || X >= this.fXMax || (Y < this.fYMin || Y >= this.fYMax))
@@ -273,7 +266,7 @@ namespace FreeQuant.Charting
       this.fBinMin = this.fBins[index1, index2];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Set(double X, double Y, double Value)
     {
       if (X < this.fXMin || X >= this.fXMax || (Y < this.fYMin || Y >= this.fYMax))
@@ -288,7 +281,7 @@ namespace FreeQuant.Charting
       this.fBinMin = this.fBins[index1, index2];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double Get(double X, double Y)
     {
       if (X < this.fXMin || X >= this.fXMax || (Y < this.fYMin || Y >= this.fYMax))
@@ -297,55 +290,55 @@ namespace FreeQuant.Charting
         return this.fBins[this.QfQo9YbNWy(X), this.RgcoeI8LA0(Y)];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinSizeX()
     {
       return this.fBinSizeX;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinSizeY()
     {
       return this.fBinSizeY;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinMinX(int Index)
     {
       return this.fXMin + this.fBinSizeX * (double) Index;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinMinY(int Index)
     {
       return this.fYMin + this.fBinSizeY * (double) Index;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinMaxX(int Index)
     {
       return this.fXMin + this.fBinSizeX * (double) (Index + 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinMaxY(int Index)
     {
       return this.fYMin + this.fBinSizeY * (double) (Index + 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinCentreX(int Index)
     {
       return this.fXMin + this.fBinSizeX * ((double) Index + 0.5);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetBinCentreY(int Index)
     {
       return this.fYMin + this.fBinSizeY * ((double) Index + 0.5);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetSum()
     {
       double num = 0.0;
@@ -357,7 +350,7 @@ namespace FreeQuant.Charting
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetSumSqr()
     {
       double num = 0.0;
@@ -369,73 +362,73 @@ namespace FreeQuant.Charting
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMin()
     {
       return this.fBinMin;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMax()
     {
       return this.fBinMax;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowMaxZ(double MaxZ)
     {
       this.fShowMaxZ = MaxZ;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowUnnormalizedZ()
     {
       this.ShowMaxZ(this.GetMax());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsNormalized()
     {
       return this.fShowMaxZ != this.GetMax();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowNormalizedByMax()
     {
       this.ShowMaxZ(1.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowNormalizedBySum()
     {
       this.ShowMaxZ(this.GetMax() / this.GetSum());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowDensityUnnormalized()
     {
       this.ShowMaxZ(this.GetMax() / (this.dX * this.dY));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsDensityNormalized()
     {
       return this.fShowMaxZ != this.GetMax() / (this.dX * this.dY);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowDensityNormalizedByMax()
     {
       this.ShowMaxZ(1.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ShowDensityNormalizedBySum()
     {
       this.ShowMaxZ(this.GetMax() / (this.GetSum() * this.dX * this.dY));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Print()
     {
       for (int Index1 = 0; Index1 < this.fNBinsX; ++Index1)
@@ -448,13 +441,13 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
       this.Draw("");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw(string Option)
     {
       if (Chart.Pad == null)
@@ -473,7 +466,7 @@ namespace FreeQuant.Charting
       Chart.Pad.SetRange(this.fXMin, this.fXMax, this.fYMin, this.fYMax);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Color[] CreatePalette(Color LowColor, Color HighColor, int NColors)
     {
       Color[] colorArray = new Color[NColors];
@@ -494,21 +487,21 @@ namespace FreeQuant.Charting
       return colorArray;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetPalette(Color LowColor, Color HighColor, int NColors)
     {
       this.fNColors = NColors;
       this.fPalette = this.CreatePalette(LowColor, HighColor, NColors);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetPalette(Color[] Colors, int NColors)
     {
       this.fNColors = NColors;
       this.fPalette = Colors;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetPalette(EPalette Palette)
     {
       switch (Palette)
@@ -537,7 +530,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void EWno7H6yQR()
     {
       this.rd83CuHQyb = new Brush[this.fNColors];
@@ -545,7 +538,7 @@ namespace FreeQuant.Charting
         this.rd83CuHQyb[index] = (Brush) new SolidBrush(this.fPalette[index]);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
     {
       if (Pad.For3D)
@@ -639,7 +632,7 @@ namespace FreeQuant.Charting
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       return (TDistance) null;
@@ -653,7 +646,7 @@ namespace FreeQuant.Charting
       protected double drs3Z0OsMo;
       protected double DQY3XkBEnm;
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public FZPRsSBmTaNrPqwljR()
       {
         Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -661,7 +654,7 @@ namespace FreeQuant.Charting
         base.\u002Ector();
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public virtual void umVNE9P5cO([In] Pad obj0, [In] double[,] obj1, [In] int obj2, [In] int obj3, [In] double obj4, [In] double obj5, [In] double obj6, [In] double obj7, [In] double obj8)
       {
         this.pwU3ia0tgu = obj1;
@@ -677,7 +670,7 @@ namespace FreeQuant.Charting
         this.DQY3XkBEnm = TView.View(obj0).Lz.NormInf / this.aqv3D4FyQP;
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public override double f([In] double obj0, [In] double obj1)
       {
         if (obj0 < this.MinX || obj0 >= this.MaxX || (obj1 < this.MinY || obj1 >= this.MaxY))
@@ -689,7 +682,7 @@ namespace FreeQuant.Charting
 
     private class jCAh8vlcna2K6CJfbh : Histogram2D.FZPRsSBmTaNrPqwljR
     {
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public jCAh8vlcna2K6CJfbh()
       {
         Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -697,7 +690,7 @@ namespace FreeQuant.Charting
         base.\u002Ector();
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public override double f([In] double obj0, [In] double obj1)
       {
         double num1 = this.YGZ38gIuF2 * (obj0 - this.MinX) - 0.5;
@@ -730,7 +723,7 @@ namespace FreeQuant.Charting
       private double jaO3EZAeXk;
       private double LSr3HnRJss;
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public a8pjE1K8r7B62oxStB()
       {
         Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
@@ -738,13 +731,13 @@ namespace FreeQuant.Charting
         base.\u002Ector();
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public override TColor color0([In] double obj0, [In] double obj1)
       {
         return this.EbV3bis37P[(int) (this.LSr3HnRJss * (this.f(obj0, obj1) - this.jaO3EZAeXk))];
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void uDx3gBDtTM([In] Pad obj0, [In] double[,] obj1, [In] int obj2, [In] int obj3, [In] double obj4, [In] double obj5, [In] double obj6, [In] double obj7, [In] double obj8, [In] double obj9, [In] Color[] obj10)
       {
         this.umVNE9P5cO(obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj9);
@@ -759,7 +752,7 @@ namespace FreeQuant.Charting
     private class XD9QjcfMcOLK0nS6xp : Histogram2D.a8pjE1K8r7B62oxStB
     {
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public override double f([In] double obj0, [In] double obj1)
       {
         double num1 = this.YGZ38gIuF2 * (obj0 - this.MinX) - 0.5;

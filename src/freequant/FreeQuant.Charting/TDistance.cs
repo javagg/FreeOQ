@@ -14,11 +14,11 @@ namespace FreeQuant.Charting
 
     public double dX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.mAI5Wn0kq;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.mAI5Wn0kq = value;
       }
@@ -26,11 +26,11 @@ namespace FreeQuant.Charting
 
     public double dY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WSULTh6h4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WSULTh6h4 = value;
       }
@@ -38,11 +38,11 @@ namespace FreeQuant.Charting
 
     public double X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.umeA8iTdG;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.umeA8iTdG = value;
       }
@@ -50,11 +50,11 @@ namespace FreeQuant.Charting
 
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.F0EQwfcIT;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.F0EQwfcIT = value;
       }
@@ -62,17 +62,17 @@ namespace FreeQuant.Charting
 
     public string ToolTipText
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.stawPUnjw;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.stawPUnjw = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance():base()
     {
 

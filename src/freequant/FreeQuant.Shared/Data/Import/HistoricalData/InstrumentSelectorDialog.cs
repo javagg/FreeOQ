@@ -1,20 +1,13 @@
-﻿// Type: SmartQuant.Shared.Data.Import.HistoricalData.InstrumentSelectorDialog
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Import.HistoricalData
+namespace FreeQuant.Shared.Data.Import.HistoricalData
 {
   public class InstrumentSelectorDialog : Form
   {

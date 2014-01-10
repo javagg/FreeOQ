@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FreeQuant
 {
-  [Guid("CD193BC0-B4BC-11d2-9833-00C04FC31D2E")]
+//  [Guid("CD193BC0-B4BC-11d2-9833-00C04FC31D2E")]
   [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
   [ComImport]
   internal interface IAssemblyName
@@ -17,7 +17,7 @@ namespace FreeQuant
 
     int Finalize();
 
-    int GetDisplayName([MarshalAs(UnmanagedType.LPWStr), Out] StringBuilder szDisplayName, ref uint pccDisplayName, mZrfxQHjhOfJWyjsZT dwDisplayFlags);
+		int GetDisplayName([MarshalAs(UnmanagedType.LPWStr), Out] StringBuilder szDisplayName, ref uint pccDisplayName, uint dwDisplayFlags);
 
     int BindToObject(ref Guid refIID, [MarshalAs(UnmanagedType.IUnknown)] object pUnkSink, [MarshalAs(UnmanagedType.IUnknown)] object pUnkContext, [MarshalAs(UnmanagedType.LPWStr)] string szCodeBase, long llFlags, IntPtr pvReserved, uint cbReserved, out IntPtr ppv);
 
@@ -25,7 +25,7 @@ namespace FreeQuant
 
     int GetVersion(out uint pdwVersionHi, out uint pdwVersionLow);
 
-    int IsEqual(IAssemblyName pName, By9un7wrTLM3ii1rYI dwCmpFlags);
+		int IsEqual(IAssemblyName pName, uint dwCmpFlags);
 
     int Clone(out IAssemblyName pName);
   }

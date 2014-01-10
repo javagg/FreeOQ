@@ -1,31 +1,25 @@
-﻿namespace FreeQuant.Providers
+namespace FreeQuant.Providers
 {
-  public interface IHistoricalDataProvider : IProvider
-  {
-    HistoricalDataType DataType { get; }
+	public interface IHistoricalDataProvider : IProvider
+	{
+		HistoricalDataType DataType { get; }
 
-    HistoricalDataRange DataRange { get; }
+		HistoricalDataRange DataRange { get; }
 
-    int[] BarSizes { get; }
+		int[] BarSizes { get; }
 
-    int MaxConcurrentRequests { get; }
+		int MaxConcurrentRequests { get; }
 
-    event HistoricalTradeEventHandler NewHistoricalTrade;
+		event HistoricalTradeEventHandler NewHistoricalTrade;
+		event HistoricalQuoteEventHandler NewHistoricalQuote;
+		event HistoricalBarEventHandler NewHistoricalBar;
+		event HistoricalMarketDepthEventHandler NewHistoricalMarketDepth;
+		event HistoricalDataEventHandler HistoricalDataRequestCompleted;
+		event HistoricalDataEventHandler HistoricalDataRequestCancelled;
+		event HistoricalDataErrorEventHandler HistoricalDataRequestError;
 
-    event HistoricalQuoteEventHandler NewHistoricalQuote;
+		void SendHistoricalDataRequest(HistoricalDataRequest request);
 
-    event HistoricalBarEventHandler NewHistoricalBar;
-
-    event HistoricalMarketDepthEventHandler NewHistoricalMarketDepth;
-
-    event HistoricalDataEventHandler HistoricalDataRequestCompleted;
-
-    event HistoricalDataEventHandler HistoricalDataRequestCancelled;
-
-    event HistoricalDataErrorEventHandler HistoricalDataRequestError;
-
-    void SendHistoricalDataRequest(HistoricalDataRequest request);
-
-    void CancelHistoricalDataRequest(string requestId);
-  }
+		void CancelHistoricalDataRequest(string requestId);
+	}
 }

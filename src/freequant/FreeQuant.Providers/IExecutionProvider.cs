@@ -1,23 +1,22 @@
-﻿using FreeQuant.FIX;
+using FreeQuant.FIX;
 
 namespace FreeQuant.Providers
 {
-  public interface IExecutionProvider : IProvider
-  {
-    event ExecutionReportEventHandler ExecutionReport;
+	public interface IExecutionProvider : IProvider
+	{
+		event ExecutionReportEventHandler ExecutionReport;
+		event OrderCancelRejectEventHandler OrderCancelReject;
 
-    event OrderCancelRejectEventHandler OrderCancelReject;
+		void SendNewOrderSingle(NewOrderSingle order);
 
-    void SendNewOrderSingle(NewOrderSingle order);
+		void SendOrderCancelRequest(OrderCancelRequest request);
 
-    void SendOrderCancelRequest(OrderCancelRequest request);
+		void SendOrderCancelReplaceRequest(OrderCancelReplaceRequest request);
 
-    void SendOrderCancelReplaceRequest(OrderCancelReplaceRequest request);
+		void SendOrderStatusRequest(OrderStatusRequest request);
 
-    void SendOrderStatusRequest(OrderStatusRequest request);
+		BrokerInfo GetBrokerInfo();
 
-    BrokerInfo GetBrokerInfo();
-
-    void RegisterOrder(NewOrderSingle order);
-  }
+		void RegisterOrder(NewOrderSingle order);
+	}
 }

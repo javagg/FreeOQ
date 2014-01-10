@@ -1,10 +1,3 @@
-// Type: SmartQuant.Charting.Canvas
-// Assembly: SmartQuant.Charting, Version=1.0.5036.28338, Culture=neutral, PublicKeyToken=null
-// MVID: 31D4C736-04FD-420E-87A7-219DB548155F
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Charting.dll
-
-using cPAIWng0kq1SUTh6h4;
-using gyr6NSGRxNZcTviJZk;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -27,7 +20,7 @@ namespace FreeQuant.Charting
 
     public Pad Pad
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Chart.Pad;
       }
@@ -35,11 +28,11 @@ namespace FreeQuant.Charting
 
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Text;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Text = value;
       }
@@ -47,11 +40,11 @@ namespace FreeQuant.Charting
 
     public static bool FileEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Canvas.ppm6BPFcVg;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Canvas.ppm6BPFcVg = value;
       }
@@ -59,11 +52,11 @@ namespace FreeQuant.Charting
 
     public static string FileDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Canvas.CJy6CmouJG;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Canvas.CJy6CmouJG = value;
       }
@@ -71,11 +64,11 @@ namespace FreeQuant.Charting
 
     public static string FileNamePrefix
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Canvas.ANH66vA6dt;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Canvas.ANH66vA6dt = value;
       }
@@ -83,11 +76,11 @@ namespace FreeQuant.Charting
 
     public static string FileNameSuffix
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Canvas.i4P6YLI4vV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Canvas.i4P6YLI4vV = value;
       }
@@ -95,11 +88,11 @@ namespace FreeQuant.Charting
 
     public bool GroupZoomEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.GroupZoomEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.GroupZoomEnabled = value;
       }
@@ -107,11 +100,11 @@ namespace FreeQuant.Charting
 
     public bool GroupLeftMarginEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.GroupLeftMarginEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.GroupLeftMarginEnabled = value;
       }
@@ -119,11 +112,11 @@ namespace FreeQuant.Charting
 
     public bool DoubleBufferingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.DoubleBufferingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.DoubleBufferingEnabled = value;
       }
@@ -131,11 +124,11 @@ namespace FreeQuant.Charting
 
     public bool SmoothingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.SmoothingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.SmoothingEnabled = value;
       }
@@ -143,11 +136,11 @@ namespace FreeQuant.Charting
 
     public bool AntiAliasingEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.AntiAliasingEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.AntiAliasingEnabled = value;
       }
@@ -155,11 +148,11 @@ namespace FreeQuant.Charting
 
     public PrintDocument PrintDocument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintDocument;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintDocument = value;
       }
@@ -167,11 +160,11 @@ namespace FreeQuant.Charting
 
     public int PrintX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintX = value;
       }
@@ -179,11 +172,11 @@ namespace FreeQuant.Charting
 
     public int PrintY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintY = value;
       }
@@ -191,11 +184,11 @@ namespace FreeQuant.Charting
 
     public int PrintWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintWidth = value;
       }
@@ -203,11 +196,11 @@ namespace FreeQuant.Charting
 
     public int PrintHeight
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintHeight;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintHeight = value;
       }
@@ -215,11 +208,11 @@ namespace FreeQuant.Charting
 
     public EPrintAlign PrintAlign
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintAlign;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintAlign = value;
       }
@@ -227,11 +220,11 @@ namespace FreeQuant.Charting
 
     public EPrintLayout PrintLayout
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV.PrintLayout;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nvt6KwgxYV.PrintLayout = value;
       }
@@ -239,31 +232,27 @@ namespace FreeQuant.Charting
 
     public Chart Chart
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nvt6KwgxYV;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static Canvas()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       Canvas.CJy6CmouJG = "";
       Canvas.ANH66vA6dt = "";
       Canvas.i4P6YLI4vV = "";
       Canvas.ppm6BPFcVg = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Canvas()
+    
+		public Canvas() : base()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.CNA6nGRr44();
-      this.Name = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(898);
-      this.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(914);
+		this.Name = "CanvasName";
+		this.Text = "CanvasText";
       this.Wnm6oPv8qu();
       CanvasManager.Add(this);
       if (Canvas.ppm6BPFcVg)
@@ -285,7 +274,7 @@ namespace FreeQuant.Charting
       ((Control) this).Show();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Canvas(string name):base()
     {
 
@@ -299,7 +288,7 @@ namespace FreeQuant.Charting
       ((Control) this).Show();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Canvas(string Name, string Title, string FileName):base()
     {
 
@@ -311,7 +300,7 @@ namespace FreeQuant.Charting
       CanvasManager.Add(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Canvas(string Name, string Title, int Width, int Height):base()
     {
       this.CNA6nGRr44();
@@ -326,7 +315,7 @@ namespace FreeQuant.Charting
       ((Control) this).Show();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Canvas(string Name, int Width, int Height):base()
     {
       this.CNA6nGRr44();
@@ -359,7 +348,7 @@ namespace FreeQuant.Charting
       this.drh63ZfGFV();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Wnm6oPv8qu()
     {
       if (!Canvas.ppm6BPFcVg)
@@ -367,50 +356,50 @@ namespace FreeQuant.Charting
       this.nvt6KwgxYV.FileName = Canvas.CJy6CmouJG + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(848) + Canvas.ANH66vA6dt + this.Name + DateTime.Now.ToString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(856)) + Canvas.i4P6YLI4vV + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(886);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Pad cd(int pad)
     {
       return this.nvt6KwgxYV.cd(pad);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.nvt6KwgxYV.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UpdateChart()
     {
       this.nvt6KwgxYV.UpdatePads();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public new void Update()
     {
       base.Update();
       this.UpdateChart();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Pad AddPad(double x1, double y1, double x2, double y2)
     {
       return this.nvt6KwgxYV.AddPad(x1, y1, x2, y2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Divide(int x, int y)
     {
       this.nvt6KwgxYV.Divide(x, y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Divide(int x, int y, double[] widths, double[] heights)
     {
       this.nvt6KwgxYV.Divide(x, y, widths, heights);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Dispose(bool disposing)
     {
       CanvasManager.Remove(this);
@@ -419,31 +408,31 @@ namespace FreeQuant.Charting
       base.Dispose(disposing);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Print()
     {
       this.nvt6KwgxYV.Print();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrintPreview()
     {
       this.nvt6KwgxYV.PrintPreview();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrintSetup()
     {
       this.nvt6KwgxYV.PrintSetup();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrintPageSetup()
     {
       this.nvt6KwgxYV.PrintPageSetup();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void drh63ZfGFV()
     {
       this.OkJ6lpo8hb = new HelpProvider();
@@ -457,7 +446,7 @@ namespace FreeQuant.Charting
       this.nvt6KwgxYV.GroupZoomEnabled = false;
       this.nvt6KwgxYV.ImeMode = ImeMode.Off;
       this.nvt6KwgxYV.Location = new Point(0, 0);
-      this.nvt6KwgxYV.Name = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(952);
+			this.nvt6KwgxYV.Name = "Text11w1";
       this.nvt6KwgxYV.PrintAlign = EPrintAlign.None;
       this.nvt6KwgxYV.PrintHeight = 400;
       this.nvt6KwgxYV.PrintLayout = EPrintLayout.Portrait;
@@ -470,8 +459,8 @@ namespace FreeQuant.Charting
       this.AutoScaleBaseSize = new Size(5, 13);
       this.ClientSize = new Size(488, 293);
       this.Controls.Add((Control) this.nvt6KwgxYV);
-      this.Name = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(968);
-      this.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(986);
+			this.Name = "Name";
+			this.Text = "Text111";
       this.ResumeLayout(false);
     }
   }

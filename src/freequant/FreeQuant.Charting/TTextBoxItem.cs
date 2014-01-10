@@ -11,11 +11,11 @@ namespace FreeQuant.Charting
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aGsoVk3Bc;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.aGsoVk3Bc = value;
       }
@@ -23,11 +23,11 @@ namespace FreeQuant.Charting
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kP83TXqlQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.kP83TXqlQ = value;
       }
@@ -35,17 +35,17 @@ namespace FreeQuant.Charting
 
     public Font Font
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jLCCwmdU2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.jLCCwmdU2 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TTextBoxItem(string Text, Color Color, Font Font) :base()
     {
 
@@ -59,7 +59,7 @@ namespace FreeQuant.Charting
     {
       this.aGsoVk3Bc = Text;
       this.kP83TXqlQ = Color;
-      this.jLCCwmdU2 = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(0), 8f);
+	this.jLCCwmdU2 = new Font("Times New Roman", 8);
     }
   }
 }

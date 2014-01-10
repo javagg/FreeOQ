@@ -1,49 +1,48 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX
 {
-  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true)]
-  public class FIXFieldAttribute : Attribute
-  {
-    protected int fTag;
-    protected bool fRequired;
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true)]
+	public class FIXFieldAttribute : Attribute
+	{
+		protected int tag;
+		protected bool required;
 
-    public int Tag
-    {
-       get
-      {
-        return this.fTag;
-      }
-      set
-      {
-        this.fTag = value;
-      }
-    }
+		public int Tag
+		{
+			get
+			{
+				return this.tag;
+			}
+			set
+			{
+				this.tag = value;
+			}
+		}
 
-    public bool Required
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.fRequired;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.fRequired = value;
-      }
-    }
+		public bool Required
+		{
+			get
+			{
+				return this.required;
+			}
+			set
+			{
+				this.required = value;
+			}
+		}
 
-    public FIXFieldAttribute(int tag):base()
-    {
-      this.fTag = tag;
-    }
+		public FIXFieldAttribute(int tag) : base()
+		{
+			this.tag = tag;
+		}
 
-    public FIXFieldAttribute(string Tag, EFieldOption Required):base()
-    {
-      this.fTag = int.Parse(Tag);
-      if (Required != EFieldOption.Required)
-        return;
-      this.fRequired = true;
-    }
-  }
+		public FIXFieldAttribute(string tag, EFieldOption required) : base()
+		{
+			this.tag = int.Parse(tag);
+			if (required != EFieldOption.Required)
+				return;
+			this.required = true;
+		}
+	}
 }
