@@ -1,238 +1,228 @@
-// Type: SmartQuant.Instruments.Performance
-// Assembly: SmartQuant.Instruments, Version=1.0.5036.28343, Culture=neutral, PublicKeyToken=null
-// MVID: FEB2224D-772C-409E-AF2C-0F179BA2AEB6
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Instruments.dll
-
-using nlmLboft3R6jnhSDBs;
 using FreeQuant;
 using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VFUvY5knK01pUIalDo;
 
 namespace FreeQuant.Instruments
 {
   public class Performance
   {
-    private Portfolio NPSBOUwFDk;
-    private bool QKEBKpYxOj;
-    private DoubleSeries kwuB9pCYms;
-    private DoubleSeries GxxBC3VDvh;
-    private DoubleSeries QlUBMCgZct;
-    private DoubleSeries V03BmvEDCW;
-    private DoubleSeries s2mBUXprxR;
-    private double YMfB7h2Hrs;
-    private double jrkBj5BwCg;
-    private double XN7Bk4NMYL;
-    private double KcnBDlRCyB;
-    private double O1gB0VTS3X;
-    private double B4LBHyMafx;
-    private double xvBBcSNnMs;
-    private double RqgBVpPUJn;
-    private double fnBBFqgONw;
+		private Portfolio portfolio; 
+    private bool enabled;
+    private DoubleSeries equitySeries;
+    private DoubleSeries coreEquitySeries;
+    private DoubleSeries pnlSeries;
+    private DoubleSeries drawdownSeries;
+		private DoubleSeries drawdownPercentSeries; 
+    private double equity;
+    private double coreEquity;
+    private double lowEquity;
+    private double highEquity;
+    private double pnl;
+    private double drawdown;
+    private double drawdownPercent;
+    private double currentDrawdown;
+    private double currentRunUp;
     private double InjBy1lkoo;
     private double MrYBqYV87G;
 
     [Browsable(false)]
     public Portfolio Portfolio
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.NPSBOUwFDk;
+        return this.portfolio;
       }
     }
 
     public bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.QKEBKpYxOj;
+				return this.enabled; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.QKEBKpYxOj = value;
+        this.enabled = value;
       }
     }
 
-    public bool CalculatePnL { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool CalculatePnL {  get;  set; }
 
-    public bool CalculateDrawdown { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool CalculateDrawdown {  get;  set; }
 
-    public TimeSpan UpdateInterval { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan UpdateInterval {  get;  set; }
 
-    public bool UpdateOnIntervalEnabled { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool UpdateOnIntervalEnabled {  get;  set; }
 
     [Browsable(false)]
     public DoubleSeries EquitySeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.kwuB9pCYms;
+				return this.equitySeries; 
       }
     }
 
     [Browsable(false)]
     public DoubleSeries CoreEquitySeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.GxxBC3VDvh;
+				return this.coreEquitySeries; 
       }
     }
 
     [Browsable(false)]
     public DoubleSeries PnLSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.QlUBMCgZct;
+				return this.pnlSeries; 
       }
     }
 
     [Browsable(false)]
     public DoubleSeries DrawdownSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.V03BmvEDCW;
+				return this.drawdownSeries; 
       }
     }
 
     [Browsable(false)]
     public DoubleSeries DrawdownPercentSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.s2mBUXprxR;
+				return this.drawdownPercentSeries;   
       }
     }
 
     [Browsable(false)]
     public double Equity
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.YMfB7h2Hrs;
+				return this.equity;  
       }
     }
 
     [Browsable(false)]
     public double CoreEquity
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.jrkBj5BwCg;
+				return this.coreEquity; 
       }
     }
 
     [Browsable(false)]
     public double PnL
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.O1gB0VTS3X;
+				return this.pnl; 
       }
     }
 
     [Browsable(false)]
     public double HighEquity
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.KcnBDlRCyB;
+				return this.highEquity; 
       }
     }
 
     [Browsable(false)]
     public double LowEquity
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.XN7Bk4NMYL;
+				return this.lowEquity; 
       }
     }
 
     [Browsable(false)]
     public double Drawdown
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.B4LBHyMafx;
+				return this.drawdown; 
       }
     }
 
     [Browsable(false)]
     public double DrawdownPercent
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.xvBBcSNnMs;
+				return this.drawdownPercent; 
       }
     }
 
     [Browsable(false)]
     public double CurrentDrawdown
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.RqgBVpPUJn;
+				return this.currentDrawdown;  
       }
     }
 
     [Browsable(false)]
     public double CurrentRunUp
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.fnBBFqgONw;
+				return this.currentRunUp; 
       }
     }
 
     public event EventHandler EquityChanged;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Performance(Portfolio portfolio)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      this.QKEBKpYxOj = true;
-      this.kwuB9pCYms = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2378));
-      this.GxxBC3VDvh = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2394));
-      this.QlUBMCgZct = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2420));
-      this.V03BmvEDCW = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2430));
-      this.s2mBUXprxR = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2450));
+      this.enabled = true;
+      this.equitySeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2378));
+      this.coreEquitySeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2394));
+      this.pnlSeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2420));
+      this.drawdownSeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2430));
+      this.drawdownPercentSeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2450));
       this.InjBy1lkoo = double.NaN;
       this.MrYBqYV87G = double.NaN;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.NPSBOUwFDk = portfolio;
+      this.portfolio = portfolio;
       this.CalculatePnL = true;
       this.CalculateDrawdown = true;
-      this.NPSBOUwFDk.ValueChanged += new PositionEventHandler(this.RLrBXT2waX);
+      this.portfolio.ValueChanged += new PositionEventHandler(this.RLrBXT2waX);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void GcxBG7nv0L()
     {
-      this.kwuB9pCYms.Clear();
-      this.GxxBC3VDvh.Clear();
-      this.QlUBMCgZct.Clear();
-      this.V03BmvEDCW.Clear();
-      this.s2mBUXprxR.Clear();
-      this.YMfB7h2Hrs = 0.0;
-      this.jrkBj5BwCg = 0.0;
-      this.XN7Bk4NMYL = 0.0;
-      this.KcnBDlRCyB = 0.0;
-      this.O1gB0VTS3X = 0.0;
-      this.B4LBHyMafx = 0.0;
-      this.xvBBcSNnMs = 0.0;
+      this.equitySeries.Clear();
+      this.coreEquitySeries.Clear();
+      this.pnlSeries.Clear();
+      this.drawdownSeries.Clear();
+      this.drawdownPercentSeries.Clear();
+      this.equity = 0.0;
+      this.coreEquity = 0.0;
+      this.lowEquity = 0.0;
+      this.highEquity = 0.0;
+      this.pnl = 0.0;
+      this.drawdown = 0.0;
+      this.drawdownPercent = 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void RLrBXT2waX([In] object obj0, [In] PositionEventArgs obj1)
     {
-      if (!this.QKEBKpYxOj)
+      if (!this.enabled)
         return;
       DateTime dateTime = Clock.Now;
       if (this.UpdateOnIntervalEnabled)
@@ -245,13 +235,13 @@ namespace FreeQuant.Instruments
       this.VIABfp2hVw((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void faxB4aWy0q([In] object obj0, [In] EventArgs obj1)
     {
       this.GcxBG7nv0L();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void FZABJ7ZbGj([In] DateTime obj0)
     {
       if (!double.IsNaN(this.MrYBqYV87G))
@@ -260,66 +250,68 @@ namespace FreeQuant.Instruments
         this.InjBy1lkoo = double.NaN;
         this.MrYBqYV87G = double.NaN;
       }
-      this.jrkBj5BwCg = this.NPSBOUwFDk.GetCoreEquity();
-      this.YMfB7h2Hrs = this.NPSBOUwFDk.GetTotalEquity();
-      this.FnhBrkOUJ3(obj0, this.YMfB7h2Hrs, this.jrkBj5BwCg);
+      this.coreEquity = this.portfolio.GetCoreEquity();
+      this.equity = this.portfolio.GetTotalEquity();
+      this.FnhBrkOUJ3(obj0, this.equity, this.coreEquity);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void FnhBrkOUJ3([In] DateTime obj0, [In] double obj1, [In] double obj2)
     {
-      this.GxxBC3VDvh[obj0] = obj2;
-      this.kwuB9pCYms[obj0] = obj1;
-      if (this.kwuB9pCYms.Count == 1)
+      this.coreEquitySeries[obj0] = obj2;
+      this.equitySeries[obj0] = obj1;
+      if (this.equitySeries.Count == 1)
       {
-        this.XN7Bk4NMYL = obj1;
-        this.KcnBDlRCyB = obj1;
+        this.lowEquity = obj1;
+        this.highEquity = obj1;
       }
       else
       {
-        if (this.YMfB7h2Hrs > this.KcnBDlRCyB)
+        if (this.equity > this.highEquity)
         {
-          this.KcnBDlRCyB = obj1;
-          this.XN7Bk4NMYL = obj1;
-          this.RqgBVpPUJn = 0.0;
+          this.highEquity = obj1;
+          this.lowEquity = obj1;
+          this.VpPUJn; 
+  = 0.0;
         }
-        if (this.YMfB7h2Hrs < this.XN7Bk4NMYL)
+        if (this.equity < this.lowEquity)
         {
-          this.XN7Bk4NMYL = obj1;
-          this.fnBBFqgONw = 0.0;
+          this.lowEquity = obj1;
+          this.currentRunUp = 0.0;
         }
-        if (obj1 <= this.XN7Bk4NMYL || obj1 >= this.KcnBDlRCyB)
+        if (obj1 <= this.lowEquity || obj1 >= this.highEquity)
           return;
-        this.RqgBVpPUJn = 1.0 - obj1 / this.KcnBDlRCyB;
-        this.fnBBFqgONw = obj1 / this.XN7Bk4NMYL - 1.0;
+        this.VpPUJn; 
+  = 1.0 - obj1 / this.highEquity;
+        this.currentRunUp = obj1 / this.lowEquity - 1.0;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void SijB3EsC7m([In] DateTime obj0)
     {
-      if (!this.CalculatePnL || this.kwuB9pCYms.Count < 2)
+      if (!this.CalculatePnL || this.equitySeries.Count < 2)
         return;
-      int lastIndex = this.kwuB9pCYms.LastIndex;
+      int lastIndex = this.equitySeries.LastIndex;
       int index = lastIndex - 1;
-      this.O1gB0VTS3X = this.kwuB9pCYms[lastIndex] - this.kwuB9pCYms[index];
-      this.QlUBMCgZct[obj0] = this.O1gB0VTS3X;
+      this.pnl = this.equitySeries[lastIndex] - this.equitySeries[index];
+      this.pnlSeries[obj0] = this.pnl;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void PSxBNlvv0d([In] DateTime obj0)
     {
-      if (!this.CalculateDrawdown || this.kwuB9pCYms.Count < 2)
+      if (!this.CalculateDrawdown || this.equitySeries.Count < 2)
         return;
-      this.B4LBHyMafx = this.YMfB7h2Hrs - this.KcnBDlRCyB;
-      this.V03BmvEDCW[obj0] = this.B4LBHyMafx;
-      if (this.KcnBDlRCyB == 0.0)
+      this.drawdown = this.equity - this.highEquity;
+      this.drawdownSeries[obj0] = this.drawdown;
+      if (this.highEquity == 0.0)
         return;
-      this.xvBBcSNnMs = Math.Abs(this.B4LBHyMafx / this.KcnBDlRCyB);
-      this.s2mBUXprxR[obj0] = this.xvBBcSNnMs;
+      this.drawdownPercent = Math.Abs(this.drawdown / this.highEquity);
+      this.drawdownPercentSeries[obj0] = this.drawdownPercent;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Init()
     {
       this.MrYBqYV87G = this.Portfolio.GetCoreEquity();

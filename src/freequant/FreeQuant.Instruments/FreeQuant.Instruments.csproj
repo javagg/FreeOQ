@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -122,6 +125,14 @@
     <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
       <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
       <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.File\FreeQuant.File.csproj">
+      <Project>{5A995BBE-5233-4509-8BF9-E9A2C67CD629}</Project>
+      <Name>FreeQuant.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

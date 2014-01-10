@@ -1,5 +1,3 @@
-﻿using mXqpVnllGuXP6crdfN;
-using NEVPmg8vBnJoRISXwf;
 using FreeQuant.Charting;
 using FreeQuant.Data;
 using System;
@@ -31,11 +29,11 @@ namespace FreeQuant.Series
     [IndicatorParameter(1000001)]
     public EDrawStyle DrawStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fDrawStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fDrawStyle = value;
       }
@@ -46,11 +44,11 @@ namespace FreeQuant.Series
     [Description("")]
     public int DrawWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fDrawWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fDrawWidth = value;
       }
@@ -60,11 +58,11 @@ namespace FreeQuant.Series
     [Category("Zoom")]
     public virtual bool AutoZoom
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fAutoZoom;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fAutoZoom = value;
       }
@@ -72,7 +70,7 @@ namespace FreeQuant.Series
 
     public double First
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4316));
@@ -83,7 +81,7 @@ namespace FreeQuant.Series
 
     public double Last
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4362));
@@ -94,11 +92,11 @@ namespace FreeQuant.Series
 
     public Color SecondColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.secondColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.secondColor = value;
       }
@@ -106,11 +104,11 @@ namespace FreeQuant.Series
 
     public DateTime SplitDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.splitDate;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.splitDate = value;
       }
@@ -118,7 +116,7 @@ namespace FreeQuant.Series
 
     public double this[int Index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (double) base[Index];
       }
@@ -126,7 +124,7 @@ namespace FreeQuant.Series
 
     public double this[DateTime DateTime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         object obj = base[DateTime];
         if (obj == null)
@@ -134,7 +132,7 @@ namespace FreeQuant.Series
         else
           return (double) obj;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.Add(DateTime, value);
       }
@@ -142,7 +140,7 @@ namespace FreeQuant.Series
 
     public double this[DateTime DateTime, EIndexOption Option]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         object obj = base[DateTime, Option];
         if (obj != null)
@@ -153,7 +151,7 @@ namespace FreeQuant.Series
 
     public override double this[int Col, int row]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this[Col];
       }
@@ -163,11 +161,11 @@ namespace FreeQuant.Series
     [Description("")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fToolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fToolTipEnabled = value;
       }
@@ -177,11 +175,11 @@ namespace FreeQuant.Series
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fToolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fToolTipFormat = value;
       }
@@ -191,11 +189,11 @@ namespace FreeQuant.Series
     [Description("")]
     public string ToolTipDateTimeFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fToolTipDateTimeFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fToolTipDateTimeFormat = value;
       }

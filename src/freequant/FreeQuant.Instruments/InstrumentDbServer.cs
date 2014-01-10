@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
@@ -128,7 +127,7 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Remove(Instrument instrument)
     {
       IDbCommand command = this.FUwdOuHiol.CreateCommand();
@@ -138,13 +137,13 @@ namespace FreeQuant.Instruments
       command.Dispose();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Close()
     {
       this.FUwdOuHiol.Close();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public InstrumentList Load()
     {
       IDbCommand command1 = this.FUwdOuHiol.CreateCommand();
@@ -245,7 +244,7 @@ namespace FreeQuant.Instruments
       return instrumentList;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private int nHGd3u0DoR([In] Instrument obj0)
     {
       Type type = obj0.GetType();
@@ -267,7 +266,7 @@ namespace FreeQuant.Instruments
       return this.cVFd9nJe3b[type];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private int tyvdN5fb3r([In] IPricer obj0)
     {
       Type type = obj0.GetType();

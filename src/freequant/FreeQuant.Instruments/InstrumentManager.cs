@@ -9,15 +9,15 @@ namespace FreeQuant.Instruments
 {
   public class InstrumentManager
   {
-    private static IInstrumentServer st7EyF8wLV;
-    private static InstrumentList axGEqcNulf;
+    private static IInstrumentServer server;
+    private static InstrumentList instruments;
     private static Hashtable fQ3Efwxl5A;
 
     public static InstrumentList Instruments
     {
        get
       {
-        return InstrumentManager.axGEqcNulf;
+				return InstrumentManager.instruments; 
       }
     }
 
@@ -25,11 +25,11 @@ namespace FreeQuant.Instruments
     {
         get
       {
-        return InstrumentManager.st7EyF8wLV;
+				return InstrumentManager.server; 
       }
        set
       {
-        InstrumentManager.st7EyF8wLV = value;
+        InstrumentManager.server = value;
       }
     }
 
@@ -40,9 +40,8 @@ namespace FreeQuant.Instruments
      
     static InstrumentManager()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      InstrumentManager.st7EyF8wLV = (IInstrumentServer) new InstrumentDbServer();
-      InstrumentManager.axGEqcNulf = new InstrumentList();
+      InstrumentManager.server = (IInstrumentServer) new InstrumentDbServer();
+      InstrumentManager.instruments = new InstrumentList();
       InstrumentManager.fQ3Efwxl5A = new Hashtable();
       Type connectionType = (Type) null;
       string connectionString = string.Empty;
@@ -57,17 +56,10 @@ namespace FreeQuant.Instruments
           connectionString = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6280), (object) Framework.Installation.DataDir.FullName);
           break;
       }
-      InstrumentManager.st7EyF8wLV.Open(connectionType, connectionString);
-      InstrumentManager.axGEqcNulf.Clear();
-      foreach (Instrument instrument in (FIXGroupList) InstrumentManager.st7EyF8wLV.Load())
-        InstrumentManager.axGEqcNulf.Add(instrument);
-    }
-
-     public InstrumentManager()
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+      InstrumentManager.server.Open(connectionType, connectionString);
+      InstrumentManager.instruments.Clear();
+      foreach (Instrument instrument in (FIXGroupList) InstrumentManager.server.Load())
+        InstrumentManager.instruments.Add(instrument);
     }
 
      public static void Init()
@@ -76,8 +68,8 @@ namespace FreeQuant.Instruments
 
      public static void Remove(Instrument instrument)
     {
-      InstrumentManager.st7EyF8wLV.Remove(instrument);
-      InstrumentManager.axGEqcNulf.Remove(instrument);
+      InstrumentManager.server.Remove(instrument);
+      InstrumentManager.instruments.Remove(instrument);
       if (InstrumentManager.KmpEvph5v6 == null)
         return;
       InstrumentManager.KmpEvph5v6(new InstrumentEventArgs(instrument));
@@ -85,7 +77,7 @@ namespace FreeQuant.Instruments
 
      public static void Remove(string symbol)
     {
-      Instrument instrument = InstrumentManager.axGEqcNulf[symbol];
+      Instrument instrument = InstrumentManager.instruments[symbol];
       if (instrument == null)
         return;
       InstrumentManager.Remove(instrument);
@@ -110,7 +102,7 @@ namespace FreeQuant.Instruments
 
      internal static void VljEVFlVHf([In] Instrument obj0)
     {
-      InstrumentManager.axGEqcNulf.Add(obj0);
+      InstrumentManager.instruments.Add(obj0);
       if (InstrumentManager.FN9EpXCpRx == null)
         return;
       InstrumentManager.FN9EpXCpRx(new InstrumentEventArgs(obj0));
@@ -118,10 +110,10 @@ namespace FreeQuant.Instruments
 
      internal static void DdbEFF4dAg([In] Instrument obj0)
     {
-      InstrumentManager.st7EyF8wLV.Save(obj0);
-      if (((FIXGroupList) InstrumentManager.axGEqcNulf).Contains(obj0.Id))
+      InstrumentManager.server.Save(obj0);
+      if (((FIXGroupList) InstrumentManager.instruments).Contains(obj0.Id))
         return;
-      InstrumentManager.axGEqcNulf.RegisterById((FIXGroup) obj0);
+      InstrumentManager.instruments.RegisterById((FIXGroup) obj0);
     }
   }
 }

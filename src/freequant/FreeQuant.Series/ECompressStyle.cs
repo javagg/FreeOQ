@@ -1,9 +1,9 @@
-﻿namespace FreeQuant.Series
+namespace FreeQuant.Series
 {
-  public enum ECompressStyle
-  {
-    First,
-    Last,
-    Previous,
-  }
+	public enum ECompressStyle
+	{
+		First,
+		Last,
+		Previous,
+	}
 }

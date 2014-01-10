@@ -1,9 +1,9 @@
-﻿namespace FreeQuant.Series
+namespace FreeQuant.Series
 {
-  public enum EDrawStyle
-  {
-    Line,
-    Bar,
-    Circle,
-  }
+	public enum EDrawStyle
+	{
+		Line,
+		Bar,
+		Circle,
+	}
 }

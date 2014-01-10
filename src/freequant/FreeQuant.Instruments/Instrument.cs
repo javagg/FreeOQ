@@ -1,4 +1,4 @@
-﻿using FreeQuant;
+using FreeQuant;
 using FreeQuant.Data;
 using FreeQuant.FIX;
 using FreeQuant.FIXData;
@@ -46,11 +46,11 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public Exchange Exchange
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.TNc6pL8cK3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.TNc6pL8cK3 = value;
       }
@@ -61,7 +61,7 @@ namespace FreeQuant.Instruments
     [Category("Attributes")]
     public LegList Legs
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.uIJ6vbhTOX;
       }
@@ -72,7 +72,7 @@ namespace FreeQuant.Instruments
     [Editor(typeof (eHiaMMJnVTTEAxAjWe), typeof (UITypeEditor))]
     public UnderlyingList Underlyings
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.JAT65L3WwQ;
       }
@@ -96,11 +96,11 @@ namespace FreeQuant.Instruments
     [FIXField("668", EFieldOption.Optional)]
     public int DeliveryForm
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(668);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(668, value);
       }
@@ -111,11 +111,11 @@ namespace FreeQuant.Instruments
     [Description("Percent at risk due to lowest possible call.")]
     public double PctAtRisk
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(869);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(869, value);
       }
@@ -126,11 +126,11 @@ namespace FreeQuant.Instruments
     [Description("Identifies currency used for price. Absence of this field is interpreted as the default for the security.  It is recommended that systems provide the currency value whenever possible.")]
     public string Currency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(15);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(15, value);
         this.mEf6f8TGiq = CurrencyManager.Currencies[value];
@@ -145,11 +145,11 @@ namespace FreeQuant.Instruments
     [Category("Trade")]
     public string TradingSessionID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(336);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(336, value);
       }
@@ -160,11 +160,11 @@ namespace FreeQuant.Instruments
     [FIXField("625", EFieldOption.Optional)]
     public string TradingSessionSubID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(625);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(625, value);
       }
@@ -175,11 +175,11 @@ namespace FreeQuant.Instruments
     [Description("Part of trading cycle when an instrument expires. Field is applicable for derivatives.")]
     public int ExpirationCycle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(827);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(827, value);
       }
@@ -190,11 +190,11 @@ namespace FreeQuant.Instruments
     [FIXField("561", EFieldOption.Optional)]
     public double RoundLot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(561);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(561, value);
       }
@@ -205,11 +205,11 @@ namespace FreeQuant.Instruments
     [Category("Trade")]
     public double MinTradeVol
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(562);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(562, value);
       }
@@ -220,11 +220,11 @@ namespace FreeQuant.Instruments
     [Description("Industry code")]
     public string IndustryCode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(10100);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(10100, value);
       }
@@ -235,11 +235,11 @@ namespace FreeQuant.Instruments
     [Category("Industry")]
     public string IndustrySector
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(10101);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(10101, value);
       }
@@ -250,11 +250,11 @@ namespace FreeQuant.Instruments
     [Category("Industry")]
     public string IndustryGroup
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(10102);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(10102, value);
       }
@@ -265,11 +265,11 @@ namespace FreeQuant.Instruments
     [FIXField("10103", EFieldOption.Optional)]
     public string IndustrySubGroup
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(10103);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(10103, value);
       }
@@ -281,11 +281,11 @@ namespace FreeQuant.Instruments
     [DefaultValue("F2")]
     public string PriceDisplay
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(11105);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(11105, value);
       }
@@ -296,11 +296,11 @@ namespace FreeQuant.Instruments
     [Description("Initial margin")]
     public double Margin
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10600);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10600, value);
       }
@@ -309,7 +309,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public Quote Quote
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.quote;
       }
@@ -318,7 +318,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public Trade Trade
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.trade;
       }
@@ -327,7 +327,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public Bar Bar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.bar;
       }
@@ -336,7 +336,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public MarketDepth MarketDepth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.marketDepth;
       }
@@ -345,7 +345,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public Fundamental Fundamental
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fundamental;
       }
@@ -354,7 +354,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public CorporateAction CorporateAction
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.mLj6n4gDEd;
       }
@@ -363,7 +363,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public OrderBook OrderBook
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Dvj6i1WTmP;
       }
@@ -372,7 +372,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public double Change
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cAF6h0NHaN;
       }
@@ -381,7 +381,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public QuoteArray Quotes
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.Quotes[this];
       }
@@ -390,7 +390,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public TradeArray Trades
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.Trades[this];
       }
@@ -399,7 +399,7 @@ namespace FreeQuant.Instruments
     [Browsable(false)]
     public BarSeries Bars
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.Bars[this];
       }
@@ -481,7 +481,7 @@ namespace FreeQuant.Instruments
       return this.Symbol;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddSymbol(string symbol, string source)
     {
       this.AddGroup(new FIXSecurityAltIDGroup()
@@ -491,7 +491,7 @@ namespace FreeQuant.Instruments
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddSymbol(string symbol, string securityExchange, string source)
     {
       this.AddGroup(new FIXSecurityAltIDGroup()
@@ -611,7 +611,7 @@ namespace FreeQuant.Instruments
       this.Uyq6ZtLUjA((object) this, obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void trS6Hr1Wkt([In] BarEventArgs obj0)
     {
       this.bar = obj0.Bar;
@@ -628,7 +628,7 @@ namespace FreeQuant.Instruments
       this.LGt6AP0Acf((object) this, obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void ami6cstOZQ([In] BarEventArgs obj0)
     {
       this.bar = obj0.Bar;
@@ -645,7 +645,7 @@ namespace FreeQuant.Instruments
       this.iPM6grNm2V((object) this, obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void aSE6VetHfX([In] MarketDepthEventArgs obj0)
     {
       this.marketDepth = obj0.MarketDepth;
@@ -654,7 +654,7 @@ namespace FreeQuant.Instruments
       this.Dvj6i1WTmP.Add(obj0.MarketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void a1w6FaBIwx([In] FundamentalEventArgs obj0)
     {
       this.fundamental = obj0.Fundamental;
@@ -663,7 +663,7 @@ namespace FreeQuant.Instruments
       this.fYq6oMJm1K((object) this, obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void KPy6yCSTBZ([In] CorporateActionEventArgs obj0)
     {
       this.mLj6n4gDEd = obj0.CorporateAction;
@@ -672,181 +672,181 @@ namespace FreeQuant.Instruments
       this.Nhy6xRMm7T((object) this, obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string series, Trade trade)
     {
       DataManager.Add(this, series, trade);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Trade trade)
     {
       DataManager.Add(this, trade);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string series, Quote quote)
     {
       DataManager.Add(this, series, quote);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Quote quote)
     {
       DataManager.Add(this, quote);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string series, Bar bar)
     {
       DataManager.Add(this, series, bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Bar bar)
     {
       DataManager.Add(this, bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Daily daily)
     {
       DataManager.Add(this, daily);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(string series, MarketDepth marketDepth)
     {
       DataManager.Add(this, series, marketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(MarketDepth marketDepth)
     {
       DataManager.Add(this, marketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TradeArray GetTradeArray(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetTradeArray(this, series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TradeArray GetTradeArray(DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetTradeArray(this, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public QuoteArray GetQuoteArray(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetQuoteArray(this, series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public QuoteArray GetQuoteArray(DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetQuoteArray(this, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public MarketDepthArray GetMarketDepthArray(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetMarketDepthArray(this, series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public MarketDepthArray GetMarketDepthArray(DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetMarketDepthArray(this, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries GetBarSeries(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetBarSeries(this, series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries GetBarSeries(DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetBarSeries(this, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries GetBarSeries(DateTime datetime1, DateTime datetime2, BarType barType, long barSize)
     {
       return DataManager.GetBarSeries(this, datetime1, datetime2, barType, barSize);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DailySeries GetDailySeries(DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetDailySeries(this, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DailySeries GetDailySeries()
     {
       return DataManager.GetDailySeries(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IDataSeries GetDataSeries(string series)
     {
       return DataManager.GetDataSeries(this, series);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IDataSeries GetDataSeries(DataManager.EDataSeries series)
     {
       return DataManager.GetDataSeries(this, series);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IDataSeries AddDataSeries(string series)
     {
       return DataManager.AddDataSeries(this, series);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DataSeriesList GetDataSeries()
     {
       return DataManager.GetDataSeries(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RequestMarketData(IMarketDataProvider provider, MarketDataType mdType, string seriesSuffix)
     {
       DataManager.RequestMarketData(provider, this, mdType, seriesSuffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RequestMarketData(IMarketDataProvider provider, MarketDataType mdType)
     {
       this.RequestMarketData(provider, mdType, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4058));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CancelMarketData(IMarketDataProvider provider, MarketDataType mdType, string seriesSuffix)
     {
       DataManager.CancelMarketData(provider, this, mdType, seriesSuffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CancelMarketData(IMarketDataProvider provider, MarketDataType mdType)
     {
       this.CancelMarketData(provider, mdType, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4066));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsSubscribed(IMarketDataProvider provider, MarketDataType mdType)
     {
       return DataManager.IsSubscribed(provider, this, mdType);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
       return this.Symbol;

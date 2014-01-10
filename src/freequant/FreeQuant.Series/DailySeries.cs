@@ -1,5 +1,3 @@
-﻿using mXqpVnllGuXP6crdfN;
-using NEVPmg8vBnJoRISXwf;
 using FreeQuant.Data;
 using System;
 using System.Runtime.CompilerServices;
@@ -11,29 +9,23 @@ namespace FreeQuant.Series
   {
     public Daily First
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        if (this.fArray.Count <= 0)
-          throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(13400));
-        else
           return this[0];
       }
     }
 
     public Daily Last
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        if (this.fArray.Count <= 0)
-          return (Daily) null;
-        else
           return this[this.Count - 1];
       }
     }
 
     public Daily this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Daily) base[index];
       }
@@ -41,7 +33,7 @@ namespace FreeQuant.Series
 
     public Daily this[DateTime date]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Daily) base[date];
       }
@@ -49,56 +41,48 @@ namespace FreeQuant.Series
 
     public Daily this[DateTime date, EIndexOption option]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ((TimeSeries) this)[date, option] as Daily;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public DailySeries(string name, string title)
+    
+		public DailySeries(string name, string title): base(name, title)
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, title);
       this.fArray = (IDataSeries) new MemorySeries<Daily>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public DailySeries(string name)
+    
+		public DailySeries(string name): base(name, "")
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, "");
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public DailySeries()
+    
+		public DailySeries():base("")
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      this.\u002Ector("");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DailySeries Clone()
     {
       return base.Clone() as DailySeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DailySeries Clone(int index1, int index2)
     {
       return base.Clone(index1, index2) as DailySeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DailySeries Clone(DateTime dateTime1, DateTime dateTime2)
     {
       return base.Clone(dateTime1, dateTime2) as DailySeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DailySeries Shift(int offset)
     {
       DailySeries dailySeries = new DailySeries(this.Name, this.Title);
@@ -122,14 +106,11 @@ namespace FreeQuant.Series
       return dailySeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Daily Ago(int n)
     {
       int index = this.Count - 1 - n;
-      if (index < 0)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(13446) + (object) n + oK6F3TB73XXXGhdieP.wF6SgrNUO(13492));
-      else
-        return this[index];
+      return this[index];
     }
   }
 }

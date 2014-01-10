@@ -4,6 +4,7 @@ using FreeQuant.File;
 using FreeQuant.Series;
 using System;
 using System.Runtime.CompilerServices;
+using FreeQuant.File;
 
 namespace FreeQuant.Instruments
 {

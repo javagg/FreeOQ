@@ -1,5 +1,3 @@
-﻿using mXqpVnllGuXP6crdfN;
-using NEVPmg8vBnJoRISXwf;
 using FreeQuant.Data;
 using System;
 using System.Collections;
@@ -29,11 +27,11 @@ namespace FreeQuant.Series
     [Category("Description")]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fName;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fName = value;
       }
@@ -43,11 +41,11 @@ namespace FreeQuant.Series
     [Description("")]
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTitle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTitle = value;
       }
@@ -58,11 +56,11 @@ namespace FreeQuant.Series
     [IndicatorParameter(1000000)]
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fColor = value;
       }
@@ -71,7 +69,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fArray.Count;
       }
@@ -80,7 +78,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual DateTime FirstDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(360));
@@ -92,7 +90,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual DateTime LastDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(406));
@@ -104,7 +102,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual DateTime FirstDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.FirstDateTime.Date;
       }
@@ -113,7 +111,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual DateTime LastDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.LastDateTime.Date;
       }
@@ -122,7 +120,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual int FirstIndex
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return 0;
       }
@@ -131,7 +129,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual int LastIndex
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Count - 1;
       }
@@ -139,7 +137,7 @@ namespace FreeQuant.Series
 
     public virtual object First
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(452));
@@ -150,7 +148,7 @@ namespace FreeQuant.Series
 
     public virtual object Last
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(498));
@@ -162,7 +160,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public virtual int RealCount
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Count;
       }
@@ -171,7 +169,7 @@ namespace FreeQuant.Series
     [Browsable(false)]
     public ArrayList Children
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fChildren;
       }
@@ -179,11 +177,11 @@ namespace FreeQuant.Series
 
     public IDataSeries DataSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fArray;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fArray = value;
       }
@@ -191,7 +189,7 @@ namespace FreeQuant.Series
 
     public virtual object this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fArray[index];
       }
@@ -199,7 +197,7 @@ namespace FreeQuant.Series
 
     public virtual double this[int index, int row]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (double) this.fArray[index];
       }
@@ -207,7 +205,7 @@ namespace FreeQuant.Series
 
     public virtual double this[int index, BarData barData]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this[index, (int) barData];
       }
@@ -215,7 +213,7 @@ namespace FreeQuant.Series
 
     public object this[DateTime dateTime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         int index = this.GetIndex(dateTime);
         if (index != -1)
@@ -227,7 +225,7 @@ namespace FreeQuant.Series
 
     public object this[DateTime dateTime, EIndexOption option]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         int index = this.GetIndex(dateTime, option);
         if (index != -1)
@@ -241,13 +239,13 @@ namespace FreeQuant.Series
 
     public event EventHandler Cleared;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static TimeSeries()
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TimeSeries(string name, string title)
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
@@ -264,7 +262,7 @@ namespace FreeQuant.Series
       this.fArray = (IDataSeries) new MemorySeries<object>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TimeSeries(string name)
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
@@ -272,7 +270,7 @@ namespace FreeQuant.Series
       this.\u002Ector(name, "");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TimeSeries()
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
@@ -280,13 +278,13 @@ namespace FreeQuant.Series
       this.\u002Ector("");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TimeSeries Clone()
     {
       return this.Clone(0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TimeSeries Clone(int index1, int index2)
     {
       TimeSeries timeSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as TimeSeries;
@@ -297,7 +295,7 @@ namespace FreeQuant.Series
       return timeSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TimeSeries Clone(DateTime dateTime1, DateTime dateTime2)
     {
       int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
@@ -309,7 +307,7 @@ namespace FreeQuant.Series
       return this.Clone(index1, index2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Clear()
     {
       this.fArray.Clear();
@@ -319,19 +317,19 @@ namespace FreeQuant.Series
       this.LsHOoevK6((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual bool Contains(DateTime dateTime)
     {
       return this.fArray.Contains(dateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual bool Contains(int index)
     {
       return index >= 0 && index <= this.Count - 1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(DateTime dateTime, object obj)
     {
       if (this.fArray.Contains(dateTime))
@@ -340,33 +338,33 @@ namespace FreeQuant.Series
       this.fChanged = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Remove(DateTime dateTime)
     {
       this.fArray.Remove(dateTime);
       this.fChanged = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Remove(int index)
     {
       this.fArray.RemoveAt(index);
       this.fChanged = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual DateTime GetDateTime(int index)
     {
       return this.fArray.DateTimeAt(index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetIndex(DateTime dateTime)
     {
       return this.GetIndex(dateTime, this.fIndexOption);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetIndex(DateTime dateTime, EIndexOption option)
     {
       int num = this.fArray.IndexOf(dateTime);
@@ -385,139 +383,139 @@ namespace FreeQuant.Series
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin()
     {
       return this.GetMin(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax()
     {
       return this.GetMax(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex()
     {
       return this.GetMinIndex(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex()
     {
       return this.GetMaxIndex(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual DateTime GetMinDateTime()
     {
       return this.GetDateTime(this.GetMinIndex());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual DateTime GetMaxDateTime()
     {
       return this.GetDateTime(this.GetMaxIndex());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(int index1, int index2)
     {
       return this.GetMin(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(int index1, int index2)
     {
       return this.GetMax(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(int index1, int index2)
     {
       return this.GetMinIndex(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(int index1, int index2)
     {
       return this.GetMaxIndex(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMin(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMax(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMinIndex(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMaxIndex(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(int row)
     {
       return this.GetMin(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(int row)
     {
       return this.GetMax(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(int row)
     {
       return this.GetMinIndex(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(int row)
     {
       return this.GetMaxIndex(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(int index1, int index2, int row)
     {
       return -1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(int index1, int index2, int row)
     {
       return -1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -534,7 +532,7 @@ namespace FreeQuant.Series
         return this.GetMin(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -551,7 +549,7 @@ namespace FreeQuant.Series
         return this.GetMax(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -568,7 +566,7 @@ namespace FreeQuant.Series
         return this.GetMinIndex(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -585,109 +583,109 @@ namespace FreeQuant.Series
         return this.GetMaxIndex(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(BarData barData)
     {
       return this.GetMin((int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(BarData barData)
     {
       return this.GetMax((int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(BarData barData)
     {
       return this.GetMinIndex((int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(BarData barData)
     {
       return this.GetMaxIndex((int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(int index1, int index2, BarData barData)
     {
       return this.GetMin(index1, index2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(int index1, int index2, BarData barData)
     {
       return this.GetMax(index1, index2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(int index1, int index2, BarData barData)
     {
       return this.GetMinIndex(index1, index2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(int index1, int index2, BarData barData)
     {
       return this.GetMaxIndex(index1, index2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMin(DateTime dateTime1, DateTime dateTime2, BarData barData)
     {
       return this.GetMin(dateTime1, dateTime2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMax(DateTime dateTime1, DateTime dateTime2, BarData barData)
     {
       return this.GetMax(dateTime1, dateTime2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMinIndex(DateTime dateTime1, DateTime dateTime2, BarData barData)
     {
       return this.GetMinIndex(dateTime1, dateTime2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual int GetMaxIndex(DateTime dateTime1, DateTime dateTime2, BarData barData)
     {
       return this.GetMaxIndex(dateTime1, dateTime2, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetSum()
     {
       return this.GetSum(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetSum(int index1, int index2)
     {
       return this.GetSum(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetSum(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetSum(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetSum(int row)
     {
       return this.GetSum(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetSum(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetSum(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (dateTime1 >= dateTime2)
@@ -702,37 +700,37 @@ namespace FreeQuant.Series
         return this.GetSum(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMean()
     {
       return this.GetMean(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMean(int index1, int index2)
     {
       return this.GetMean(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMean(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMean(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMean(int row)
     {
       return this.GetMean(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMean(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMean(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -749,37 +747,37 @@ namespace FreeQuant.Series
         return this.GetMean(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMedian()
     {
       return this.GetMedian(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMedian(int index1, int index2)
     {
       return this.GetMedian(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMedian(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMedian(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMedian(int row)
     {
       return this.GetMedian(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMedian(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMedian(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -796,37 +794,37 @@ namespace FreeQuant.Series
         return this.GetMedian(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetVariance()
     {
       return this.GetVariance(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetVariance(int index1, int index2)
     {
       return this.GetVariance(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetVariance(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetVariance(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetVariance(int row)
     {
       return this.GetVariance(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetVariance(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetVariance(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 1)
@@ -843,37 +841,37 @@ namespace FreeQuant.Series
         return this.GetVariance(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveVariance()
     {
       return this.GetPositiveVariance(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveVariance(int index1, int index2)
     {
       return this.GetPositiveVariance(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveVariance(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetPositiveVariance(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveVariance(int row)
     {
       return this.GetPositiveVariance(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveVariance(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveVariance(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 1)
@@ -890,37 +888,37 @@ namespace FreeQuant.Series
         return this.GetPositiveVariance(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeVariance()
     {
       return this.GetNegativeVariance(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeVariance(int index1, int index2)
     {
       return this.GetNegativeVariance(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeVariance(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetNegativeVariance(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeVariance(int row)
     {
       return this.GetNegativeVariance(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeVariance(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeVariance(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 1)
@@ -937,145 +935,145 @@ namespace FreeQuant.Series
         return this.GetNegativeVariance(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetStdDev()
     {
       return Math.Sqrt(this.GetVariance());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetStdDev(int index1, int index2)
     {
       return Math.Sqrt(this.GetVariance(index1, index2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetStdDev(DateTime dateTime1, DateTime dateTime2)
     {
       return Math.Sqrt(this.GetVariance(dateTime1, dateTime2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetStdDev(int row)
     {
       return Math.Sqrt(this.GetVariance(row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetStdDev(int index1, int index2, int row)
     {
       return Math.Sqrt(this.GetVariance(index1, index2, row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetStdDev(DateTime dateTime1, DateTime dateTime2, int row)
     {
       return Math.Sqrt(this.GetVariance(dateTime1, dateTime2, row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveStdDev()
     {
       return Math.Sqrt(this.GetPositiveVariance());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveStdDev(int index1, int index2)
     {
       return Math.Sqrt(this.GetPositiveVariance(index1, index2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveStdDev(DateTime dateTime1, DateTime dateTime2)
     {
       return Math.Sqrt(this.GetPositiveVariance(dateTime1, dateTime2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveStdDev(int row)
     {
       return Math.Sqrt(this.GetPositiveVariance(row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveStdDev(int index1, int index2, int row)
     {
       return Math.Sqrt(this.GetPositiveVariance(index1, index2, row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositiveStdDev(DateTime dateTime1, DateTime dateTime2, int row)
     {
       return Math.Sqrt(this.GetPositiveVariance(dateTime1, dateTime2, row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeStdDev()
     {
       return Math.Sqrt(this.GetNegativeVariance());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeStdDev(int index1, int index2)
     {
       return Math.Sqrt(this.GetNegativeVariance(index1, index2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeStdDev(DateTime dateTime1, DateTime dateTime2)
     {
       return Math.Sqrt(this.GetNegativeVariance(dateTime1, dateTime2));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeStdDev(int row)
     {
       return Math.Sqrt(this.GetNegativeVariance(row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeStdDev(int index1, int index2, int row)
     {
       return Math.Sqrt(this.GetNegativeVariance(index1, index2, row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetNegativeStdDev(DateTime dateTime1, DateTime dateTime2, int row)
     {
       return Math.Sqrt(this.GetNegativeVariance(dateTime1, dateTime2, row));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMoment(int k)
     {
       return this.GetMoment(k, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMoment(int k, int index1, int index2)
     {
       return this.GetMoment(k, index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMoment(int k, DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetMoment(k, dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMoment(int k, int row)
     {
       return this.GetMoment(k, 0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetMoment(int k, int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMoment(int k, DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -1092,37 +1090,37 @@ namespace FreeQuant.Series
         return this.GetMoment(k, index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetAsymmetry()
     {
       return this.GetAsymmetry(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetAsymmetry(int index1, int index2)
     {
       return this.GetAsymmetry(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetAsymmetry(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetAsymmetry(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetAsymmetry(int row)
     {
       return this.GetAsymmetry(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetAsymmetry(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetAsymmetry(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -1139,37 +1137,37 @@ namespace FreeQuant.Series
         return this.GetAsymmetry(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExcess()
     {
       return this.GetExcess(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExcess(int index1, int index2)
     {
       return this.GetExcess(index1, index2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExcess(DateTime dateTime1, DateTime dateTime2)
     {
       return this.GetExcess(dateTime1, dateTime2, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExcess(int row)
     {
       return this.GetExcess(0, this.Count - 1, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExcess(int index1, int index2, int row)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetExcess(DateTime dateTime1, DateTime dateTime2, int row)
     {
       if (this.Count <= 0)
@@ -1186,92 +1184,92 @@ namespace FreeQuant.Series
         return this.GetExcess(index1, index2, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCovariance(int row1, int row2)
     {
       return this.GetCovariance(row1, row2, 0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCovariance(int row1, int row2, int index1, int index2)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCorrelation(int row1, int row2, int index1, int index2)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCorrelation(int row1, int row2)
     {
       return this.GetCorrelation(row1, row2, 0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCovariance(TimeSeries series)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCorrelation(TimeSeries series)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCovariance(TimeSeries series, DateTime dateTime1, DateTime dateTime2)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetCorrelation(TimeSeries series, DateTime dateTime1, DateTime dateTime2)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual TimeSeries Shift(int offset)
     {
       throw new NotSupportedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Print()
     {
       for (int index = 0; index < this.Count; ++index)
         Console.WriteLine((string) (object) this.GetDateTime(index) + (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(4310) + (string) this[index]);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw(string option)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw(Color color)
     {
       this.fColor = color;
       this.Draw();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Draw(string option, Color color)
     {
       this.fColor = color;
       this.Draw(option);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(double level, int index, int row)
     {
       if (index <= 0 || index > this.Count - 1)
@@ -1281,19 +1279,19 @@ namespace FreeQuant.Series
       return this[index - 1, row] >= level && this[index, row] < level ? ECross.Below : ECross.None;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(double level, int index, BarData barData)
     {
       return this.Crosses(level, index, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(double level, int index)
     {
       return this.Crosses(level, index, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(TimeSeries series, DateTime dateTime, int row)
     {
       int index1 = this.GetIndex(dateTime);
@@ -1333,145 +1331,145 @@ namespace FreeQuant.Series
       return ECross.None;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(TimeSeries series, DateTime dateTime, BarData barData)
     {
       return this.Crosses(series, dateTime, (int) barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(TimeSeries series, DateTime dateTime)
     {
       return this.Crosses(series, dateTime, 0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(TimeSeries series, Bar bar, int row)
     {
       return this.Crosses(series, bar.DateTime, row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(TimeSeries series, Bar bar, BarData barData)
     {
       return this.Crosses(series, bar.DateTime, barData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ECross Crosses(TimeSeries series, Bar bar)
     {
       return this.Crosses(series, bar.DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(double level, int index, int row)
     {
       return this.Crosses(level, index, row) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(double level, int index, BarData barData)
     {
       return this.Crosses(level, index, barData) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(double level, int index)
     {
       return this.Crosses(level, index) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(TimeSeries series, DateTime dateTime, int row)
     {
       return this.Crosses(series, dateTime, row) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(TimeSeries series, DateTime dateTime, BarData barData)
     {
       return this.Crosses(series, dateTime, barData) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(TimeSeries series, DateTime dateTime)
     {
       return this.Crosses(series, dateTime) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(TimeSeries series, Bar bar, int row)
     {
       return this.Crosses(series, bar.DateTime, row) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(TimeSeries series, Bar bar, BarData barData)
     {
       return this.Crosses(series, bar.DateTime, barData) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesBelow(TimeSeries series, Bar bar)
     {
       return this.Crosses(series, bar.DateTime) == ECross.Below;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(double level, int index, int row)
     {
       return this.Crosses(level, index, row) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(double level, int index, BarData barData)
     {
       return this.Crosses(level, index, barData) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(double level, int index)
     {
       return this.Crosses(level, index) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(TimeSeries series, DateTime dateTime, int row)
     {
       return this.Crosses(series, dateTime, row) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(TimeSeries series, DateTime dateTime, BarData barData)
     {
       return this.Crosses(series, dateTime, barData) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(TimeSeries series, DateTime dateTime)
     {
       return this.Crosses(series, dateTime) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(TimeSeries series, Bar bar, int row)
     {
       return this.Crosses(series, bar.DateTime, row) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(TimeSeries series, Bar bar, BarData barData)
     {
       return this.Crosses(series, bar.DateTime, barData) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool CrossesAbove(TimeSeries series, Bar bar)
     {
       return this.Crosses(series, bar.DateTime) == ECross.Above;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void EmitItemAdded(DateTime dateTime)
     {
       if (this.JQFFlkZRZ == null)
@@ -1479,7 +1477,7 @@ namespace FreeQuant.Series
       this.JQFFlkZRZ((object) this, new DateTimeEventArgs(dateTime));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return this.fArray.GetEnumerator();

@@ -7,17 +7,17 @@ namespace FreeQuant.Instruments
   public class AccountTransaction
   {
     internal int pJ6B1pDREG;
-    internal DateTime A1pBoCkFfC;
-    internal Currency C8eBxkx3Lf;
-    internal double wXsBIY4l30;
-    internal Transaction ftTBL1sOMg;
-    internal string xWfBbRh100;
+    internal DateTime dateTime;
+    internal Currency currency;
+    internal double value;
+    internal Transaction transaction;
+    internal string text;
 
     public AccountAction Action
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.wXsBIY4l30 < 0.0 ? AccountAction.Withdraw : AccountAction.Deposit;
+        return this.value < 0.0 ? AccountAction.Withdraw : AccountAction.Deposit;
       }
     }
 
@@ -26,11 +26,11 @@ namespace FreeQuant.Instruments
     {
         get
       {
-        return this.wXsBIY4l30;
+				return this.value; 
       }
        set
       {
-        this.wXsBIY4l30 = value;
+        this.value = value;
       }
     }
 
@@ -38,11 +38,11 @@ namespace FreeQuant.Instruments
     {
       get
       {
-        return this.C8eBxkx3Lf;
+				return this.currency; 
       }
       set
       {
-        this.C8eBxkx3Lf = value;
+        this.currency = value;
       }
     }
 
@@ -51,11 +51,11 @@ namespace FreeQuant.Instruments
     {
       get
       {
-        return this.A1pBoCkFfC;
+				return this.dateTime; 
       }
       set
       {
-        this.A1pBoCkFfC = value;
+        this.dateTime = value;
       }
     }
 
@@ -64,88 +64,73 @@ namespace FreeQuant.Instruments
     {
       get
       {
-        return this.ftTBL1sOMg;
+				return this.transaction; 
       }
     }
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.xWfBbRh100;
+				return this.text; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.xWfBbRh100 = value;
+        this.text = value;
       }
     }
 
     public AccountTransaction()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
+
       this.pJ6B1pDREG = -1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     public AccountTransaction(double val, Currency currency, DateTime dateTime, string text)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.pJ6B1pDREG = -1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.wXsBIY4l30 = val;
-      this.C8eBxkx3Lf = currency;
-      this.A1pBoCkFfC = dateTime;
-      this.xWfBbRh100 = text;
+      this.value = val;
+      this.currency = currency;
+      this.dateTime = dateTime;
+      this.text = text;
     }
 
     public AccountTransaction(double val, Currency currency, DateTime dateTime)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.pJ6B1pDREG = -1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.wXsBIY4l30 = val;
-      this.C8eBxkx3Lf = currency;
-      this.A1pBoCkFfC = dateTime;
+      this.value = val;
+      this.currency = currency;
+      this.dateTime = dateTime;
     }
 
     public AccountTransaction(double val, Currency currency, string text)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.pJ6B1pDREG = -1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.wXsBIY4l30 = val;
-      this.C8eBxkx3Lf = currency;
-      this.A1pBoCkFfC = Clock.Now;
-      this.xWfBbRh100 = text;
+      this.value = val;
+      this.currency = currency;
+      this.dateTime = Clock.Now;
+      this.text = text;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public AccountTransaction(double val, Currency currency)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
+
       this.pJ6B1pDREG = -1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.wXsBIY4l30 = val;
-      this.C8eBxkx3Lf = currency;
-      this.A1pBoCkFfC = Clock.Now;
+      this.value = val;
+      this.currency = currency;
+      this.dateTime = Clock.Now;
     }
 
     public AccountTransaction(Transaction transaction)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
+
       this.pJ6B1pDREG = -1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.wXsBIY4l30 = transaction.CashFlow;
-      this.C8eBxkx3Lf = transaction.Currency;
-      this.A1pBoCkFfC = transaction.DateTime;
-      this.xWfBbRh100 = transaction.Text;
-      this.ftTBL1sOMg = transaction;
+      this.value = transaction.CashFlow;
+      this.currency = transaction.Currency;
+      this.dateTime = transaction.DateTime;
+      this.text = transaction.Text;
+      this.transaction = transaction;
     }
 
     [SpecialName]
@@ -165,17 +150,12 @@ namespace FreeQuant.Instruments
       switch (this.Action)
       {
         case AccountAction.Withdraw:
-          return gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2478);
+					return "Withdraw";
         case AccountAction.Deposit:
-          return gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2498);
+					return "Deposit";
         default:
-          return gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2516);
+					return "NoWithdraw";
       }
-    }
-
-    public override string ToString()
-    {
-      return (string) (object) this.A1pBoCkFfC + (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2538) + this.ActionToString() + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2544) + (string) (object) Math.Abs(this.wXsBIY4l30) + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2550) + this.C8eBxkx3Lf.Code + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2556);
     }
   }
 }

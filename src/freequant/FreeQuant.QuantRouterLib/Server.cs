@@ -1,18 +1,17 @@
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.QuantRouterLib
 {
   public class Server
   {
-    private IConnectionAcceptor hpehZXQdk6;
+    private IConnectionAcceptor acceptor;
 
     public ConnectionAcceptorState AcceptorState
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.hpehZXQdk6.State;
+        return this.acceptor.State;
       }
     }
 
@@ -20,21 +19,21 @@ namespace FreeQuant.QuantRouterLib
 
     public event EventHandler<ConnectionEventArgs> ConnectionAccepted;
 
-    public Server(IConnectionAcceptor acceptor)
+		public Server(IConnectionAcceptor acceptor)
     {
-      this.hpehZXQdk6 = acceptor;
+			this.acceptor = acceptor; 
       acceptor.StateChanged += new EventHandler(this.vPChQclbed);
       acceptor.ConnectionAccepted += new EventHandler<ConnectionEventArgs>(this.eakhiQJEUE);
     }
 
     public void Start(string connectionString)
     {
-      this.hpehZXQdk6.Start(connectionString);
+      this.acceptor.Start(connectionString);
     }
 
     public void Stop()
     {
-      this.hpehZXQdk6.Stop();
+      this.acceptor.Stop();
     }
 
     private void vPChQclbed([In] object obj0, [In] EventArgs obj1)

@@ -9,15 +9,15 @@ namespace FreeQuant.QuantRouterLib
   {
     private ManualResetEventSlim pr5mw3rRZ;
 
-    public string ConnectionString { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string ConnectionString {  get;  set; }
 
     public bool RaiseEvents
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.pr5mw3rRZ.IsSet;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value)
           this.pr5mw3rRZ.Set();
@@ -53,7 +53,7 @@ namespace FreeQuant.QuantRouterLib
       this.NLrcRQrxc((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void OnError(Exception exception)
     {
       this.pr5mw3rRZ.Wait();
@@ -62,7 +62,7 @@ namespace FreeQuant.QuantRouterLib
       this.qCL1jQUQt((object) this, new ExceptionEventArgs(exception));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void OnMessageReceived(Message message)
     {
       this.pr5mw3rRZ.Wait();
@@ -71,7 +71,7 @@ namespace FreeQuant.QuantRouterLib
       this.pJeLILmmI((object) this, new MessageEventArgs(message));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected Message CreateMessage(int type)
     {
       Message message;

@@ -52,11 +52,11 @@ namespace FreeQuant.Instruments
 
     public static int BarArrayLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.QboW3t3R6j;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value < -1)
           throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(0), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(14));
@@ -67,11 +67,11 @@ namespace FreeQuant.Instruments
 
     public static int QuoteArrayLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.UhSWNDBsKq;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value < -1)
           throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(104), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(118));
@@ -82,11 +82,11 @@ namespace FreeQuant.Instruments
 
     public static int TradeArrayLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.du8WObUg6P;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value < -1)
           throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(208), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(222));
@@ -97,11 +97,11 @@ namespace FreeQuant.Instruments
 
     public static int FundamentalArrayLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.pMXWKXcgvW;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value < -1)
           throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(312), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(326));
@@ -112,11 +112,11 @@ namespace FreeQuant.Instruments
 
     public static int CorporateActionArrayLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.V9WW9pFkc0;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value < -1)
           throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(416), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(430));
@@ -127,11 +127,11 @@ namespace FreeQuant.Instruments
 
     public static BarType DefaultBarType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.TrxWldYDwK;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         DataManager.TrxWldYDwK = value;
         DataManager.QalWQDolkg();
@@ -140,11 +140,11 @@ namespace FreeQuant.Instruments
 
     public static long DefaultBarSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.AK2WYmbanY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value <= 0L)
           throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(520), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(534));
@@ -155,7 +155,7 @@ namespace FreeQuant.Instruments
 
     public static BarSeriesList Bars
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.hrOWG3cp4W;
       }
@@ -163,7 +163,7 @@ namespace FreeQuant.Instruments
 
     public static TradeArrayList Trades
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.Pq8W4hxx7g;
       }
@@ -171,7 +171,7 @@ namespace FreeQuant.Instruments
 
     public static QuoteArrayList Quotes
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.LEcWXtrN5d;
       }
@@ -179,7 +179,7 @@ namespace FreeQuant.Instruments
 
     public static FundamentalArrayList Fundamentals
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.w09WJiICvf;
       }
@@ -187,7 +187,7 @@ namespace FreeQuant.Instruments
 
     public static CorporateActionArrayList CorporateActions
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.A9YWr91Jlm;
       }
@@ -195,17 +195,17 @@ namespace FreeQuant.Instruments
 
     public static IDataServer Server
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return DataManager.BWRW8rkUGO;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         DataManager.BWRW8rkUGO = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static DataManager()
     {
       Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
@@ -221,7 +221,7 @@ namespace FreeQuant.Instruments
       DataManager.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DataManager()
     {
       Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
@@ -229,7 +229,7 @@ namespace FreeQuant.Instruments
       base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void ClearDataArrays()
     {
       DataManager.hrOWG3cp4W.oohW0girCj();
@@ -239,7 +239,7 @@ namespace FreeQuant.Instruments
       DataManager.A9YWr91Jlm.Clear(true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Init()
     {
       if (DataManager.hpDW23fP88)
@@ -266,201 +266,201 @@ namespace FreeQuant.Instruments
       DataManager.hpDW23fP88 = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(string series, Trade trade)
     {
       DataManager.BWRW8rkUGO.Add(series, (IDataObject) trade);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(string series, Quote quote)
     {
       DataManager.BWRW8rkUGO.Add(series, (IDataObject) quote);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(string series, Bar bar)
     {
       DataManager.BWRW8rkUGO.Update(series, (IDataObject) bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(string series, MarketDepth marketDepth)
     {
       DataManager.BWRW8rkUGO.Add(series, (IDataObject) marketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(string series, Fundamental fundamental)
     {
       DataManager.BWRW8rkUGO.Add(series, (IDataObject) fundamental);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(string series, CorporateAction corporateAction)
     {
       DataManager.BWRW8rkUGO.Add(series, (IDataObject) corporateAction);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, string suffix, Trade trade)
     {
       DataManager.Add(instrument.Symbol + (object) '.' + suffix, trade);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, string suffix, Quote quote)
     {
       DataManager.Add(instrument.Symbol + (object) '.' + suffix, quote);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, string suffix, Bar bar)
     {
       DataManager.Add(instrument.Symbol + (object) '.' + suffix, bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, string suffix, MarketDepth marketDepth)
     {
       DataManager.Add(instrument.Symbol + (object) '.' + suffix, marketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, string suffix, Fundamental fundamental)
     {
       DataManager.Add(instrument.Symbol + (object) '.' + suffix, fundamental);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, string suffix, CorporateAction corporateAction)
     {
       DataManager.Add(instrument.Symbol + (object) '.' + suffix, corporateAction);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, Trade trade)
     {
       DataManager.Add(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(662), trade);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, Quote quote)
     {
       DataManager.Add(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(676), quote);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, Bar bar)
     {
       string suffix = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(690) + (object) '.' + ((object) bar.BarType).ToString() + (string) (object) '.' + bar.Size.ToString();
       DataManager.Add(instrument, suffix, bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, Daily daily)
     {
       DataManager.Add(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(700), (Bar) daily);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, MarketDepth marketDepth)
     {
       DataManager.Add(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(714), marketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, Fundamental fundamental)
     {
       DataManager.Add(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(728), fundamental);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Add(Instrument instrument, CorporateAction corporateAction)
     {
       DataManager.Add(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(740), corporateAction);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static TradeArray GetTradeArray(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.BWRW8rkUGO.GetTradeArray(series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static TradeArray GetTradeArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetTradeArray(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static TradeArray GetTradeArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetTradeArray(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(752), datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static QuoteArray GetQuoteArray(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.BWRW8rkUGO.GetQuoteArray(series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static QuoteArray GetQuoteArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetQuoteArray(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static QuoteArray GetQuoteArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetQuoteArray(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(766), datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static MarketDepthArray GetMarketDepthArray(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.BWRW8rkUGO.GetMarketDepthArray(series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static MarketDepthArray GetMarketDepthArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetMarketDepthArray(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static MarketDepthArray GetMarketDepthArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetMarketDepthArray(instrument, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(780), datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static BarSeries GetBarSeries(string series, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.BWRW8rkUGO.GetBarSeries(series, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static BarSeries GetBarSeries(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetBarSeries(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static BarSeries GetBarSeries(Instrument instrument, DateTime datetime1, DateTime datetime2, BarType barType, long barSize)
     {
       string suffix = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(794), (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(828), (object) '.', (object) barType, (object) '.', (object) barSize);
       return DataManager.GetBarSeries(instrument, suffix, datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static BarSeries GetBarSeries(Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetBarSeries(instrument, datetime1, datetime2, DataManager.TrxWldYDwK, DataManager.AK2WYmbanY);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static DailySeries GetDailySeries(Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       string series = instrument.Symbol + (object) '.' + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(838);
@@ -469,37 +469,37 @@ namespace FreeQuant.Instruments
       return dailySeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static DailySeries GetDailySeries(Instrument instrument)
     {
       return DataManager.GetDailySeries(instrument, DateTime.MinValue, DateTime.MaxValue);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static IDataSeries GetDataSeries(Instrument instrument, string suffix)
     {
       return DataManager.BWRW8rkUGO.GetDataSeries(instrument.Symbol + (object) '.' + suffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static IDataSeries AddDataSeries(Instrument instrument, string suffix)
     {
       return DataManager.BWRW8rkUGO.AddDataSeries(instrument.Symbol + (object) '.' + suffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void DeleteDataSeries(string series)
     {
       DataManager.BWRW8rkUGO.Delete(series);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void ClearDataSeries(string series)
     {
       DataManager.BWRW8rkUGO.Clear(series);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static IDataSeries GetDataSeries(Instrument instrument, DataManager.EDataSeries series)
     {
       string str;
@@ -532,7 +532,7 @@ namespace FreeQuant.Instruments
       return DataManager.BWRW8rkUGO.GetDataSeries(instrument.Symbol + (object) '.' + str);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static DataSeriesList GetDataSeries(Instrument instrument)
     {
       DataSeriesList dataSeriesList = new DataSeriesList();
@@ -544,37 +544,37 @@ namespace FreeQuant.Instruments
       return dataSeriesList;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Close()
     {
       DataManager.BWRW8rkUGO.Close();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void RequestMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string suffix)
     {
       DataManager.HpD15hKZM(provider, instrument, mdType, '1', suffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void RequestMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
     {
       DataManager.RequestMarketData(provider, instrument, mdType, (string) (object) '.' + (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1000));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void CancelMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string suffix)
     {
       DataManager.HpD15hKZM(provider, instrument, mdType, '2', suffix);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void CancelMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
     {
       DataManager.CancelMarketData(provider, instrument, mdType, (string) (object) '.' + (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1006));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static bool IsSubscribed(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
     {
       lock (DataManager.XySWClVlg5)
@@ -590,7 +590,7 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static MarketDataSubscription[] GetSubscriptions()
     {
       List<MarketDataSubscription> list = new List<MarketDataSubscription>();
@@ -611,7 +611,7 @@ namespace FreeQuant.Instruments
       return list.ToArray();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void HpD15hKZM([In] IMarketDataProvider obj0, [In] Instrument obj1, [In] MarketDataType obj2, [In] char obj3, [In] string obj4)
     {
       if ((obj2 & MarketDataType.Trade) == MarketDataType.Trade)
@@ -623,7 +623,7 @@ namespace FreeQuant.Instruments
       DataManager.C0ToJgPp5(obj0, obj1, MarketDataType.MarketDepth, obj3, obj4);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void C0ToJgPp5([In] IMarketDataProvider obj0, [In] Instrument obj1, [In] MarketDataType obj2, [In] char obj3, [In] string obj4)
     {
       FIXMarketDataRequest request = new FIXMarketDataRequest();
@@ -749,7 +749,7 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void vp2xg93Co([In] IMarketDataProvider obj0, [In] Instrument obj1, [In] MarketDataType obj2, [In] string obj3)
     {
       if (!Trace.IsLevelEnabled(TraceLevel.Warning))
@@ -757,13 +757,13 @@ namespace FreeQuant.Instruments
       Trace.WriteLine(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1230) + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1310) + obj0.Name + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1334) + obj1.Symbol + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1362) + ((object) obj2).ToString() + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1398) + obj3);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static string PcrIhiIAi()
     {
       return string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1420), (object) Clock.Now, (object) DataManager.mdJWM0c8IB++);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void LVdLQ0af5([In] object obj0, [In] QuoteEventArgs obj1)
     {
       Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
@@ -780,7 +780,7 @@ namespace FreeQuant.Instruments
       index.JLw6D59Mxc(new QuoteEventArgs(quote, (IFIXInstrument) index, obj1.Provider));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void K9mbHqGRl([In] object obj0, [In] TradeEventArgs obj1)
     {
       Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
@@ -797,7 +797,7 @@ namespace FreeQuant.Instruments
       index.akq60u3HYf(new TradeEventArgs(trade, (IFIXInstrument) index, obj1.Provider));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void giTRWZgUN([In] object obj0, [In] BarEventArgs obj1)
     {
       if (Trace.IsLevelEnabled(TraceLevel.Verbose))
@@ -812,7 +812,7 @@ namespace FreeQuant.Instruments
       index.trS6Hr1Wkt(obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void QcGaW9SYm([In] object obj0, [In] BarEventArgs obj1)
     {
       if (Trace.IsLevelEnabled(TraceLevel.Verbose))
@@ -823,7 +823,7 @@ namespace FreeQuant.Instruments
       instrument.ami6cstOZQ(obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void EhnnldeA1([In] object obj0, [In] MarketDepthEventArgs obj1)
     {
       Instrument instrument = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
@@ -832,7 +832,7 @@ namespace FreeQuant.Instruments
       instrument.aSE6VetHfX(obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void V84iPq8QC([In] object obj0, [In] FundamentalEventArgs obj1)
     {
       Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
@@ -845,7 +845,7 @@ namespace FreeQuant.Instruments
       index.a1w6FaBIwx(obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void GGJh4dIeb([In] object obj0, [In] CorporateActionEventArgs obj1)
     {
       Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
@@ -858,12 +858,12 @@ namespace FreeQuant.Instruments
       index.KPy6yCSTBZ(obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void NxfteUqQb([In] object obj0, [In] MarketDataRequestRejectEventArgs obj1)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void a9pwYGI8t([In] ProviderEventArgs obj0)
     {
       IMarketDataProvider marketDataProvider = obj0.Provider as IMarketDataProvider;
@@ -879,7 +879,7 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static BarSeries GetHistoricalBars(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2, long barSize)
     {
       ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Bar, datetime1, datetime2, barSize);
@@ -889,13 +889,13 @@ namespace FreeQuant.Instruments
       return barSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static BarSeries GetHistoricalBars(string providerName, string symbol, DateTime datetime1, DateTime datetime2, long barSize)
     {
       return DataManager.GetHistoricalBars(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2, barSize);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static DailySeries GetHistoricalDailies(IHistoricalDataProvider provider, Instrument instrument, DateTime date1, DateTime date2)
     {
       ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Daily, date1, date2, -1L);
@@ -905,13 +905,13 @@ namespace FreeQuant.Instruments
       return dailySeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static DailySeries GetHistoricalDailies(string providerName, string symbol, DateTime date1, DateTime date2)
     {
       return DataManager.GetHistoricalDailies(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], date1, date2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static TradeArray GetHistoricalTrades(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Trade, datetime1, datetime2, -1L);
@@ -921,13 +921,13 @@ namespace FreeQuant.Instruments
       return tradeArray;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static TradeArray GetHistoricalTrades(string providerName, string symbol, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetHistoricalTrades(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static QuoteArray GetHistoricalQuotes(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2)
     {
       ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Quote, datetime1, datetime2, -1L);
@@ -937,13 +937,13 @@ namespace FreeQuant.Instruments
       return quoteArray;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static QuoteArray GetHistoricalQuotes(string providerName, string symbol, DateTime datetime1, DateTime datetime2)
     {
       return DataManager.GetHistoricalQuotes(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static ArrayList r6ZT8iFUv([In] IHistoricalDataProvider obj0, [In] Instrument obj1, [In] DataManager.EDataSeries obj2, [In] DateTime obj3, [In] DateTime obj4, [In] long obj5)
     {
       if (obj0 == null)
@@ -979,7 +979,7 @@ namespace FreeQuant.Instruments
       return new GO3uho8c9KuFsJTfrm(obj0, historicalDataRequest).Jnd6t3ebcp();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void k5nzK01pU()
     {
       FileInfo fileInfo = new FileInfo(Framework.Installation.IniDir.FullName + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1674));
@@ -1009,7 +1009,7 @@ namespace FreeQuant.Instruments
         DataManager.QalWQDolkg();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void QalWQDolkg()
     {
       puiniRe7DJLOfflhEJ puiniRe7DjlOfflhEj = new puiniRe7DJLOfflhEJ();

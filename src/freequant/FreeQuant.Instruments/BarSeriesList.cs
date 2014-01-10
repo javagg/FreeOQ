@@ -41,7 +41,7 @@ namespace FreeQuant.Instruments
 
     public BarSeries this[Instrument instrument, BarType barType, long barSize]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.MSDWvxa7A1)
         {
@@ -83,7 +83,7 @@ namespace FreeQuant.Instruments
 
     public BarSeries this[Instrument instrument]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.MSDWvxa7A1)
           return this[instrument, this.o4gWf6UiaB, this.MrWWpP4XKI];
@@ -103,12 +103,9 @@ namespace FreeQuant.Instruments
 
     public event BarSeriesEventHandler BarSeriesRenamed;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal BarSeriesList()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.a0SWypH8TX = new Hashtable();
       this.ET8WqOYmDx = new Hashtable();
       this.o4gWf6UiaB = BarType.Time;
@@ -116,13 +113,13 @@ namespace FreeQuant.Instruments
       this.MSDWvxa7A1 = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.a0SWypH8TX.CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       Hashtable hashtable = new Hashtable();
@@ -155,7 +152,7 @@ namespace FreeQuant.Instruments
       return (IEnumerator) hashtable.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void oohW0girCj()
     {
       this.a0SWypH8TX.Clear();
@@ -163,13 +160,13 @@ namespace FreeQuant.Instruments
       this.MSDWvxa7A1 = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void J4qWHe7JIm([In] Instrument obj0, [In] Bar obj1)
     {
       this[obj0, obj1.BarType, obj1.Size].Add(obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private Hashtable JqsWcXm11r([In] Instrument obj0, [In] BarType obj1)
     {
       Hashtable hashtable1 = this.a0SWypH8TX[(object) obj0] as Hashtable;

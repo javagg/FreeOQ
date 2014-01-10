@@ -1,10 +1,10 @@
-﻿namespace FreeQuant.QuantRouterLib
+namespace FreeQuant.QuantRouterLib
 {
-  public enum ConnectionAcceptorState
-  {
-    Starting,
-    Started,
-    Stopping,
-    Stopped,
-  }
+	public enum ConnectionAcceptorState
+	{
+		Starting,
+		Started,
+		Stopping,
+		Stopped
+	}
 }

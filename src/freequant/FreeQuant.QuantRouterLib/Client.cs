@@ -8,7 +8,7 @@ namespace FreeQuant.QuantRouterLib
 {
   public class Client
   {
-    private IConnection Nfth4l1wDN;
+    private IConnection connection;
     private int poehyR6pN0;
 
     public event EventHandler<MessageEventArgs> MessageOut;
@@ -40,17 +40,17 @@ namespace FreeQuant.QuantRouterLib
       this.poehyR6pN0 = 1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int GetNextRequestId()
     {
       lock (this)
         return this.poehyR6pN0++;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Logon(IConnection connection, string username, string password)
-    {
-      this.Nfth4l1wDN = connection;
+		{
+			this.connection = connection; 
       connection.Closed += new EventHandler(this.TD6hRMPEQL);
       connection.Error += new EventHandler<ExceptionEventArgs>(this.zKKhfpYRJc);
       connection.MessageReceived += new EventHandler<MessageEventArgs>(this.nSCh0Xk10a);
@@ -74,13 +74,13 @@ namespace FreeQuant.QuantRouterLib
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Logout()
     {
-      this.Nfth4l1wDN.Close();
+      this.connection.Close();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Subscribe(int requestId, string symbol, string formula)
     {
       MsgSubscribe msgSubscribe = new MsgSubscribe();
@@ -90,7 +90,7 @@ namespace FreeQuant.QuantRouterLib
       this.Yt1h37vmGL((Message) msgSubscribe);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Unsubscribe(int requestId)
     {
       MsgUnsubscribe msgUnsubscribe = new MsgUnsubscribe();
@@ -98,26 +98,26 @@ namespace FreeQuant.QuantRouterLib
       this.Yt1h37vmGL((Message) msgUnsubscribe);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SendCommand(Command command)
     {
       this.Yt1h37vmGL((Message) new MsgCommand(command));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SendHearbeat(Heartbeat heartbeat)
     {
       this.Yt1h37vmGL((Message) new MsgHeartbeat(heartbeat));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Yt1h37vmGL([In] Message obj0)
     {
       try
       {
         if (this.YcRhnQT4C8 != null)
           this.YcRhnQT4C8((object) this, new MessageEventArgs(obj0));
-        this.Nfth4l1wDN.Send(obj0);
+        this.connection.Send(obj0);
       }
       catch (Exception ex)
       {
@@ -126,19 +126,19 @@ namespace FreeQuant.QuantRouterLib
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void TD6hRMPEQL([In] object obj0, [In] EventArgs obj1)
     {
       this.SZ1h9kcG47((string) null);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void zKKhfpYRJc([In] object obj0, [In] ExceptionEventArgs obj1)
     {
       this.DAPhUsKCGx(obj1.Exception);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void nSCh0Xk10a([In] object obj0, [In] MessageEventArgs obj1)
     {
       Message message = obj1.Message;
@@ -202,7 +202,7 @@ namespace FreeQuant.QuantRouterLib
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void DAPhUsKCGx([In] Exception obj0)
     {
       if (this.pwphSCWZOX == null)
@@ -210,7 +210,7 @@ namespace FreeQuant.QuantRouterLib
       this.pwphSCWZOX((object) this, new ExceptionEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void TMghOXRuZ9([In] string obj0)
     {
       if (this.JP9hW8Heyy == null)
@@ -218,7 +218,7 @@ namespace FreeQuant.QuantRouterLib
       this.JP9hW8Heyy((object) this, new LogonEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void SZ1h9kcG47([In] string obj0)
     {
       if (this.nPWhtUCW0t == null)

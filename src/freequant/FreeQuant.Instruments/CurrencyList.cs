@@ -4,77 +4,75 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-  public class CurrencyList : IEnumerable
-  {
-    private SortedList u8YEidR9Sv;
+	public class CurrencyList : IEnumerable
+	{
+		private SortedList currencies;
 
-    public int Count
-    {
-       get
-      {
-        return this.u8YEidR9Sv.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.currencies.Count;
+			}
+		}
 
-    public Currency this[int index]
-    {
-      get
-      {
-        return this.u8YEidR9Sv.GetByIndex(index) as Currency;
-      }
-    }
+		public Currency this [int index]
+		{
+			get
+			{
+				return this.currencies.GetByIndex(index) as Currency;
+			}
+		}
 
-    public Currency this[string code]
-    {
-      get
-      {
-        return this.u8YEidR9Sv[(object) code] as Currency;
-      }
-    }
+		public Currency this [string code]
+		{
+			get
+			{
+				return this.currencies[(object)code] as Currency;
+			}
+		}
 
-    public CurrencyList()
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      this.u8YEidR9Sv = new SortedList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-    }
+		public CurrencyList()
+		{
 
-    public void Add(Currency currency)
-    {
-      if (this.u8YEidR9Sv.Contains((object) currency.Code))
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9682) + currency.Code);
-      this.u8YEidR9Sv.Add((object) currency.Code, (object) currency);
-    }
+			this.currencies = new SortedList();
+		}
 
-    public void Remove(Currency currency)
-    {
-      this.u8YEidR9Sv.Remove((object) currency.Code);
-    }
+		public void Add(Currency currency)
+		{
+			if (this.currencies.Contains((object)currency.Code))
+				throw new ApplicationException("" + currency.Code);
+			this.currencies.Add((object)currency.Code, (object)currency);
+		}
 
-    public void RemoveAt(int index)
-    {
-      this.Remove(this[index]);
-    }
+		public void Remove(Currency currency)
+		{
+			this.currencies.Remove((object)currency.Code);
+		}
 
-    public void Clear()
-    {
-      this.u8YEidR9Sv.Clear();
-    }
+		public void RemoveAt(int index)
+		{
+			this.Remove(this[index]);
+		}
 
-    public bool Contains(string code)
-    {
-      return this.u8YEidR9Sv.Contains((object) code);
-    }
+		public void Clear()
+		{
+			this.currencies.Clear();
+		}
 
-    public bool Contains(Currency currency)
-    {
-      return this.u8YEidR9Sv.ContainsValue((object) currency);
-    }
+		public bool Contains(string code)
+		{
+			return this.currencies.Contains((object)code);
+		}
 
-    public IEnumerator GetEnumerator()
-    {
-      return this.u8YEidR9Sv.Values.GetEnumerator();
-    }
-  }
+		public bool Contains(Currency currency)
+		{
+			return this.currencies.ContainsValue((object)currency);
+		}
+
+		public IEnumerator GetEnumerator()
+		{
+			return this.currencies.Values.GetEnumerator();
+		}
+	}
 }

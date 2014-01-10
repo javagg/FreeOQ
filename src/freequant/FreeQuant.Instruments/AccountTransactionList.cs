@@ -4,80 +4,72 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-  public class AccountTransactionList : ICollection, IEnumerable
-  {
-    private ArrayList Jprdm2XcHq;
+	public class AccountTransactionList : ICollection, IEnumerable
+	{
+		private ArrayList transactions;
 
-    public bool IsSynchronized
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.Jprdm2XcHq.IsSynchronized;
-      }
-    }
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.transactions.IsSynchronized;
+			}
+		}
 
-    public int Count
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.Jprdm2XcHq.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.transactions.Count;
+			}
+		}
 
-    public object SyncRoot
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.Jprdm2XcHq.SyncRoot;
-      }
-    }
+		public object SyncRoot
+		{
+			get
+			{
+				return this.transactions.SyncRoot;
+			}
+		}
 
-    public AccountTransaction this[int index]
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.Jprdm2XcHq[index] as AccountTransaction;
-      }
-    }
+		public AccountTransaction this [int index]
+		{
+			get
+			{
+				return this.transactions[index] as AccountTransaction;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public AccountTransactionList()
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.Jprdm2XcHq = new ArrayList();
-    }
+		public AccountTransactionList()
+		{
+			this.transactions = new ArrayList();
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public void CopyTo(Array array, int index)
-    {
-      this.Jprdm2XcHq.CopyTo(array, index);
-    }
+		public void CopyTo(Array array, int index)
+		{
+			this.transactions.CopyTo(array, index);
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public IEnumerator GetEnumerator()
-    {
-      return this.Jprdm2XcHq.GetEnumerator();
-    }
+		public IEnumerator GetEnumerator()
+		{
+			return this.transactions.GetEnumerator();
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public void Clear()
-    {
-      this.Jprdm2XcHq.Clear();
-    }
+		public void Clear()
+		{
+			this.transactions.Clear();
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public void Add(AccountTransaction transaction)
-    {
-      int count;
-      for (count = this.Jprdm2XcHq.Count; count > 0; --count)
-      {
-        AccountTransaction accountTransaction = this[count - 1];
-        if (transaction.DateTime >= accountTransaction.DateTime)
-          break;
-      }
-      this.Jprdm2XcHq.Insert(count, (object) transaction);
-    }
-  }
+		public void Add(AccountTransaction transaction)
+		{
+			int count;
+			for (count = this.transactions.Count; count > 0; --count)
+			{
+				AccountTransaction accountTransaction = this[count - 1];
+				if (transaction.DateTime >= accountTransaction.DateTime)
+					break;
+			}
+			this.transactions.Insert(count, (object)transaction);
+		}
+	}
 }

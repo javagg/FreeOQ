@@ -1,9 +1,5 @@
-using System;
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Instruments
 {
-	[Serializable]
 	public class AccountPosition
 	{
 		internal Currency currency;

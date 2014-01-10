@@ -3,24 +3,22 @@ using System;
 
 namespace FreeQuant.QuantRouterLib
 {
-  public interface IConnection
-  {
-    string ConnectionString { get; set; }
+	public interface IConnection
+	{
+		string ConnectionString { get; set; }
 
-    bool RaiseEvents { get; set; }
+		bool RaiseEvents { get; set; }
 
-    event EventHandler Closed;
+		event EventHandler Closed;
+		event EventHandler<ExceptionEventArgs> Error;
+		event EventHandler<MessageEventArgs> MessageReceived;
 
-    event EventHandler<ExceptionEventArgs> Error;
+		void Open();
 
-    event EventHandler<MessageEventArgs> MessageReceived;
+		void Close();
 
-    void Open();
+		void Send(Message message);
 
-    void Close();
-
-    void Send(Message message);
-
-    void Send(Message[] message);
-  }
+		void Send(Message[] message);
+	}
 }

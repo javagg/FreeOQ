@@ -1,16 +1,9 @@
-﻿// Type: SmartQuant.Services.ServiceList
-// Assembly: SmartQuant.Services, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: BBD4879A-0902-4B9F-9A9A-214E03CD2FAE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Services.dll
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using yVXZ4JIJtSP6EX4fjq;
 
-namespace SmartQuant.Services
+namespace FreeQuant.Services
 {
   public class ServiceList : ICollection, IEnumerable
   {
@@ -20,15 +13,15 @@ namespace SmartQuant.Services
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.Vag5R41WI.Count;
+				return this.Vag5R41WI.Count; 
       }
     }
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return false;
       }
@@ -36,7 +29,7 @@ namespace SmartQuant.Services
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (object) null;
       }
@@ -44,7 +37,7 @@ namespace SmartQuant.Services
 
     public IService this[string name]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         IService service;
         if (this.l6LAy7BYb.TryGetValue(name, out service))
@@ -56,7 +49,7 @@ namespace SmartQuant.Services
 
     public IService this[byte id]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         IService service;
         if (this.wsSykLPBq.TryGetValue(id, out service))
@@ -66,30 +59,27 @@ namespace SmartQuant.Services
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal ServiceList()
     {
-      BjOiEgGuG7SsSXTumY.w07s1ndzACihi();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.l6LAy7BYb = new SortedList<string, IService>();
       this.wsSykLPBq = new SortedList<byte, IService>();
       this.Vag5R41WI = new List<IService>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.Vag5R41WI.ToArray().CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return (IEnumerator) this.Vag5R41WI.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void jLl6RmfZp([In] IService obj0)
     {
       this.l6LAy7BYb.Add(obj0.Name, obj0);
@@ -97,7 +87,7 @@ namespace SmartQuant.Services
       this.k7BVcoadr();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void k7BVcoadr()
     {
       this.Vag5R41WI.Clear();

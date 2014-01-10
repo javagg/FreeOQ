@@ -1,5 +1,3 @@
-﻿using mXqpVnllGuXP6crdfN;
-using NEVPmg8vBnJoRISXwf;
 using FreeQuant.Charting;
 using System;
 using System.Runtime.CompilerServices;
@@ -11,75 +9,69 @@ namespace FreeQuant.Series
     private DoubleSeries mCPIoPBIV;
     private DoubleSeries COjwFOKjx;
     private DoubleSeries rYJrndpjL;
-    private double XvUJ6WIPv;
-    private double lQ1tJYPYu;
+    private double alpha;
+    private double beta;
     private bool qSDcrlxsM;
-    private Graph n0Qatvnka;
+    private Graph graph;
 
     public Graph Graph
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
-        return this.n0Qatvnka;
+				return this.graph; 
       }
     }
 
     public double Alpha
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
-        return this.XvUJ6WIPv;
+				return this.alpha; 
       }
     }
 
     public double Beta
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
-        return this.lQ1tJYPYu;
+				return this.beta; 
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Regression(DoubleSeries series1, DoubleSeries series2)
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      this.n0Qatvnka = new Graph();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+      this.graph = new Graph();
       this.mCPIoPBIV = series1;
       this.COjwFOKjx = series2;
-      this.n0Qatvnka.LineEnabled = false;
-      this.n0Qatvnka.MarkerSize = 1;
+      this.graph.LineEnabled = false;
+      this.graph.MarkerSize = 1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Regression(DoubleSeries series1, DoubleSeries series2, double alpha, double beta)
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      this.n0Qatvnka = new Graph();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+      this.graph = new Graph();
       this.mCPIoPBIV = series1;
       this.COjwFOKjx = series2;
-      this.n0Qatvnka.LineEnabled = false;
-      this.n0Qatvnka.MarkerSize = 1;
+      this.graph.LineEnabled = false;
+      this.graph.MarkerSize = 1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate()
     {
       if (this.qSDcrlxsM)
         return;
-      this.lQ1tJYPYu = this.mCPIoPBIV.GetCovariance((TimeSeries) this.COjwFOKjx) / this.mCPIoPBIV.GetVariance();
-      this.XvUJ6WIPv = this.COjwFOKjx.GetMean() - this.lQ1tJYPYu * this.mCPIoPBIV.GetMean();
+      this.beta = this.mCPIoPBIV.GetCovariance((TimeSeries) this.COjwFOKjx) / this.mCPIoPBIV.GetVariance();
+      this.alpha = this.COjwFOKjx.GetMean() - this.beta * this.mCPIoPBIV.GetMean();
       this.qSDcrlxsM = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate(bool force)
     {
       if (force)
@@ -87,14 +79,14 @@ namespace FreeQuant.Series
       this.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetRegression(double X)
     {
       this.Calculate();
-      return this.XvUJ6WIPv + this.lQ1tJYPYu * X;
+      return this.alpha + this.beta * X;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetResidualSeries()
     {
       this.Calculate();
@@ -114,7 +106,7 @@ namespace FreeQuant.Series
       return this.rYJrndpjL;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw(string Option)
     {
       this.Calculate();
@@ -126,9 +118,9 @@ namespace FreeQuant.Series
         {
           DateTime dateTime = this.mCPIoPBIV.GetDateTime(index);
           if (this.COjwFOKjx.Contains(dateTime))
-            this.n0Qatvnka.Add(this.mCPIoPBIV[dateTime], this.COjwFOKjx[dateTime]);
+            this.graph.Add(this.mCPIoPBIV[dateTime], this.COjwFOKjx[dateTime]);
         }
-        this.n0Qatvnka.Draw();
+        this.graph.Draw();
       }
       if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(13386)) == -1)
         return;
@@ -139,7 +131,7 @@ namespace FreeQuant.Series
       new TLine(min, regression1, max, regression2).Draw();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw()
     {
       this.Draw(oK6F3TB73XXXGhdieP.wF6SgrNUO(13392));

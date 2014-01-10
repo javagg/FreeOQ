@@ -1,37 +1,34 @@
 using System;
 using System.Runtime.CompilerServices;
+using FreeQuant.Series;
 
 namespace FreeQuant.Instruments
 {
-  public class BarSeriesEventArgs : EventArgs
-  {
-    private BarSeries SuWdUPLAuU;
-    private Instrument DKVd7SZWBS;
+	public class BarSeriesEventArgs : EventArgs
+	{
+		private BarSeries barSeries;
+		private Instrument instrument;
 
-    public BarSeries BarSeries
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.SuWdUPLAuU;
-      }
-    }
+		public BarSeries BarSeries
+		{
+			get
+			{
+				return this.barSeries;
+			}
+		}
 
-    public Instrument Instrument
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.DKVd7SZWBS;
-      }
-    }
+		public Instrument Instrument
+		{
+			get
+			{
+				return this.instrument; 
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BarSeriesEventArgs(BarSeries barSeries, Instrument instrument)
-    {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.SuWdUPLAuU = barSeries;
-      this.DKVd7SZWBS = instrument;
-    }
-  }
+		public BarSeriesEventArgs(BarSeries barSeries, Instrument instrument) : base()
+		{
+			this.barSeries = barSeries;
+			this.instrument = instrument;
+		}
+	}
 }

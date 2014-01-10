@@ -1,7 +1,7 @@
-﻿namespace FreeQuant.Instruments
+namespace FreeQuant.Instruments
 {
-  public interface IPortfolioPricer
-  {
-    double Price(Position position);
-  }
+	public interface IPortfolioPricer
+	{
+		double Price(Position position);
+	}
 }

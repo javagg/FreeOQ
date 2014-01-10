@@ -17,11 +17,11 @@ namespace FreeQuant.FIX
     [FIXField("55", EFieldOption.Optional)]
     public string Symbol
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(55);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(55, value);
       }
@@ -32,11 +32,11 @@ namespace FreeQuant.FIX
     [Description("Additional information about the security (e.g. preferred, warrants, etc.). Note also see SecurityType (167)")]
     public string SymbolSfx
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(65);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(65, value);
       }
@@ -47,11 +47,11 @@ namespace FreeQuant.FIX
     [Description("Security identifier value of SecurityIDSource (22) type (e.g. CUSIP, SEDOL, ISIN, etc).  Requires SecurityIDSource.")]
     public string SecurityID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(48);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(48, value);
       }
@@ -62,11 +62,11 @@ namespace FreeQuant.FIX
     [Description("Identifies class or source of the SecurityID (48) value.  Required if SecurityID is specified.")]
     public string SecurityIDSource
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(22);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(22, value);
       }
@@ -76,11 +76,11 @@ namespace FreeQuant.FIX
     [Browsable(false)]
     public int NoSecurityAltID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(454);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(454, value);
       }
@@ -91,7 +91,7 @@ namespace FreeQuant.FIX
     [Category("Appearance")]
     public FIXSecurityAltIDGroupList SecurityAltIDGroup
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSecurityAltIDGroup;
       }
@@ -102,11 +102,11 @@ namespace FreeQuant.FIX
     [FIXField("460", EFieldOption.Optional)]
     public int Product
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(460);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(460, value);
       }
@@ -117,11 +117,11 @@ namespace FreeQuant.FIX
     [Category("Appearance")]
     public string CFICode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(461);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(461, value);
       }
@@ -132,11 +132,11 @@ namespace FreeQuant.FIX
     [FIXField("167", EFieldOption.Optional)]
     public string SecurityType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(167);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(167, value);
       }
@@ -147,11 +147,11 @@ namespace FreeQuant.FIX
     [Description("Sub-type qualification/identification of the SecurityType (e.g. for SecurityType=REPO).")]
     public string SecuritySubType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(762);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(762, value);
       }
@@ -162,11 +162,11 @@ namespace FreeQuant.FIX
     [Category("Derivative")]
     public string MaturityMonthYear
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(200);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(200, value);
       }
@@ -177,11 +177,11 @@ namespace FreeQuant.FIX
     [Category("Derivative")]
     public string MaturityDay
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(205);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(205, value);
       }
@@ -192,11 +192,11 @@ namespace FreeQuant.FIX
     [Description("Date of maturity.")]
     public DateTime MaturityDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDateTimeValue(541);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDateTimeValue(541, value);
       }
@@ -207,11 +207,11 @@ namespace FreeQuant.FIX
     [Category("Fixed income")]
     public DateTime CouponPaymentDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDateTimeValue(224);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDateTimeValue(224, value);
       }
@@ -222,11 +222,11 @@ namespace FreeQuant.FIX
     [Category("Issue")]
     public DateTime IssueDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDateTimeValue(225);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDateTimeValue(225, value);
       }
@@ -237,11 +237,11 @@ namespace FreeQuant.FIX
     [Category("Repo")]
     public int RepoCollateralSecurityType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(239);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(239, value);
       }
@@ -252,11 +252,11 @@ namespace FreeQuant.FIX
     [Description("Number of business days before repurchase of a repo.")]
     public int RepurchaseTerm
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(226);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(226, value);
       }
@@ -267,11 +267,11 @@ namespace FreeQuant.FIX
     [FIXField("227", EFieldOption.Optional)]
     public double RepurchaseRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(227);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(227, value);
       }
@@ -282,11 +282,11 @@ namespace FreeQuant.FIX
     [FIXField("228", EFieldOption.Optional)]
     public double Factor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(228);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(228, value);
       }
@@ -297,11 +297,11 @@ namespace FreeQuant.FIX
     [Category("Issue")]
     public string CreditRating
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue((int) byte.MaxValue);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField((int) byte.MaxValue, value);
       }
@@ -312,11 +312,11 @@ namespace FreeQuant.FIX
     [FIXField("543", EFieldOption.Optional)]
     public string InstrRegistry
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(543);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(543, value);
       }
@@ -327,11 +327,11 @@ namespace FreeQuant.FIX
     [Description("ISO Country code of instrument issue (e.g. the country portion typically used in ISIN).  Can be used in conjunction with non-ISIN SecurityID (48) (e.g. CUSIP for Municipal Bonds without ISIN) to provide uniqueness.")]
     public string CountryOfIssue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(470);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(470, value);
       }
@@ -342,11 +342,11 @@ namespace FreeQuant.FIX
     [Category("Issue")]
     public string StateOrProvinceOfIssue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(471);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(471, value);
       }
@@ -357,11 +357,11 @@ namespace FreeQuant.FIX
     [Description("Identifies the locale. For Municipal Security Issuers other than state or province.")]
     public string LocaleOfIssue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(472);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(472, value);
       }
@@ -372,11 +372,11 @@ namespace FreeQuant.FIX
     [FIXField("240", EFieldOption.Optional)]
     public DateTime RedemptionDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDateTimeValue(240);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDateTimeValue(240, value);
       }
@@ -387,11 +387,11 @@ namespace FreeQuant.FIX
     [Category("Derivative")]
     public double StrikePrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(202);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(202, value);
       }
@@ -402,11 +402,11 @@ namespace FreeQuant.FIX
     [Category("Derivative")]
     public string StrikeCurrency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(947);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetStringValue(947, value);
       }
@@ -417,11 +417,11 @@ namespace FreeQuant.FIX
     [FIXField("206", EFieldOption.Optional)]
     public char OptAttribute
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetCharValue(206);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetCharValue(206, value);
       }
@@ -432,11 +432,11 @@ namespace FreeQuant.FIX
     [FIXField("201", EFieldOption.Optional)]
     public int PutOrCall
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(201);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(201, value);
       }
@@ -447,11 +447,11 @@ namespace FreeQuant.FIX
     [FIXField("231", EFieldOption.Optional)]
     public double ContractMultiplier
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(231);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(231, value);
       }
@@ -462,11 +462,11 @@ namespace FreeQuant.FIX
     [Description("The rate of interest that, when multiplied by the principal, par value, or face value of a bond, provides the currency amount of the periodic interest payment.  The coupon is always cited, along with maturity, in any quotation of a bond's price.")]
     public double CouponRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(223);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(223, value);
       }
@@ -477,11 +477,11 @@ namespace FreeQuant.FIX
     [Category("Appearance")]
     public string SecurityExchange
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(207);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(207, value);
       }
@@ -492,11 +492,11 @@ namespace FreeQuant.FIX
     [Description("Name of security issuer (e.g. International Business Machines, GNMA).")]
     public string Issuer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(106);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(106, value);
       }
@@ -506,11 +506,11 @@ namespace FreeQuant.FIX
     [FIXField("348", EFieldOption.Optional)]
     public int EncodedIssuerLen
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(348);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(348, value);
       }
@@ -520,11 +520,11 @@ namespace FreeQuant.FIX
     [Browsable(false)]
     public string EncodedIssuer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(349);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(349, value);
       }
@@ -535,11 +535,11 @@ namespace FreeQuant.FIX
     [FIXField("107", EFieldOption.Optional)]
     public string SecurityDesc
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(107);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(107, value);
       }
@@ -549,11 +549,11 @@ namespace FreeQuant.FIX
     [Browsable(false)]
     public int EncodedSecurityDescLen
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(350);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(350, value);
       }
@@ -563,11 +563,11 @@ namespace FreeQuant.FIX
     [Browsable(false)]
     public string EncodedSecurityDesc
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(351);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(351, value);
       }
@@ -578,11 +578,11 @@ namespace FreeQuant.FIX
     [Description("For Fixed Income, identifies MBS/ABS pool.")]
     public string Pool
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(691);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(691, value);
       }
@@ -593,11 +593,11 @@ namespace FreeQuant.FIX
     [Category("Fixed income")]
     public string ContractSettlMonth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(667);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(667, value);
       }
@@ -608,11 +608,11 @@ namespace FreeQuant.FIX
     [Category("Issue")]
     public int CPProgram
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(875);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(875, value);
       }
@@ -623,11 +623,11 @@ namespace FreeQuant.FIX
     [FIXField("876", EFieldOption.Optional)]
     public string CPRegType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetStringValue(876);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AddStringField(876, value);
       }
@@ -637,11 +637,11 @@ namespace FreeQuant.FIX
     [FIXField("864", EFieldOption.Optional)]
     public int NoEvents
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetIntValue(864);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetIntValue(864, value);
       }
@@ -652,11 +652,11 @@ namespace FreeQuant.FIX
     [FIXField("873", EFieldOption.Optional)]
     public DateTime DatedDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDateTimeValue(873);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDateTimeValue(873, value);
       }
@@ -667,11 +667,11 @@ namespace FreeQuant.FIX
     [Description("The start date used for calculating accrued interest on debt instruments which are being sold between interest payment dates. Often but not always the same as the Issue Date and the Dated Date")]
     public DateTime InterestAccrualDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDateTimeValue(874);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDateTimeValue(874, value);
       }
@@ -681,11 +681,11 @@ namespace FreeQuant.FIX
     [Category("Trade")]
     public double TickSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GetDoubleValue(10400);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.SetDoubleValue(10400, value);
       }
@@ -716,7 +716,7 @@ namespace FreeQuant.FIX
       return (FIXSecurityAltIDGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddGroup(FIXSecurityAltIDGroup group)
     {
       this.fSecurityAltIDGroup.Add((FIXGroup) group);
@@ -724,7 +724,7 @@ namespace FreeQuant.FIX
       ++this.NoSecurityAltID;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public FIXEventsGroup GetEventsGroup(int i)
     {
       if (i < this.NoEvents)
@@ -733,7 +733,7 @@ namespace FreeQuant.FIX
         return (FIXEventsGroup) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddGroup(FIXEventsGroup group)
     {
       this.CvJtSUh8gZ.Add((object) group);

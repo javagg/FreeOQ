@@ -1,5 +1,3 @@
-﻿using mXqpVnllGuXP6crdfN;
-using NEVPmg8vBnJoRISXwf;
 using FreeQuant.Charting;
 using FreeQuant.Data;
 using System;
@@ -11,14 +9,14 @@ namespace FreeQuant.Series
 {
   public class TradeArray : DataArray, IDrawable, IZoomable
   {
-    private bool dCFo8eqJB;
-    private string C093NgyJ4;
-    private string XLRCXedfC;
-    private Color wkT7OjPPk;
+    private bool toolTipEnabled;
+    private string toolTipFormat;
+    private string toolTipDateTimeFormat;
+    private Color color;
 
     public Trade this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fList[index] as Trade;
       }
@@ -26,65 +24,62 @@ namespace FreeQuant.Series
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.wkT7OjPPk;
+				return this.color; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.wkT7OjPPk = value;
+        this.color = value;
       }
     }
 
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.C093NgyJ4;
+				return this.toolTipFormat; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.C093NgyJ4 = value;
+        this.toolTipFormat = value;
       }
     }
 
     public string ToolTipDateTimeFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.XLRCXedfC;
+				return this.toolTipDateTimeFormat; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.XLRCXedfC = value;
+        this.toolTipDateTimeFormat = value;
       }
     }
 
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.dCFo8eqJB;
+				return this.toolTipEnabled; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.dCFo8eqJB = value;
+        this.toolTipEnabled = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TradeArray()
+    
+		public TradeArray() : base()
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.dCFo8eqJB = true;
-      this.C093NgyJ4 = oK6F3TB73XXXGhdieP.wF6SgrNUO(0);
-      this.XLRCXedfC = oK6F3TB73XXXGhdieP.wF6SgrNUO(36);
-      this.wkT7OjPPk = Color.Black;
+      this.toolTipEnabled = true;
+      this.toolTipFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(0);
+      this.toolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(36);
+      this.color = Color.Black;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMinPrice()
     {
       if (this.Count == 0)
@@ -98,7 +93,7 @@ namespace FreeQuant.Series
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMaxPrice()
     {
       if (this.Count == 0)
@@ -112,10 +107,10 @@ namespace FreeQuant.Series
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint(Pad pad, double MinX, double MaxX, double MinY, double MaxY)
     {
-      Pen pen = new Pen(this.wkT7OjPPk);
+      Pen pen = new Pen(this.color);
       int num1 = 0;
       double num2 = 0.0;
       double num3 = 0.0;
@@ -157,7 +152,7 @@ namespace FreeQuant.Series
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       TDistance tdistance = new TDistance();
@@ -177,12 +172,12 @@ namespace FreeQuant.Series
         return (TDistance) null;
       DateTime dateTime = new DateTime((long) tdistance.X);
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.C093NgyJ4, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(60), (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(84), (object) dateTime.ToString(this.XLRCXedfC), (object) tdistance.Y);
+      stringBuilder.AppendFormat(this.toolTipFormat, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(60), (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(84), (object) dateTime.ToString(this.toolTipDateTimeFormat), (object) tdistance.Y);
       tdistance.ToolTipText = ((object) stringBuilder).ToString();
       return tdistance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw()
     {
       if (Chart.Pad == null)
@@ -199,13 +194,13 @@ namespace FreeQuant.Series
       Chart.Pad.SetRange(num1 - (num2 - num1) / 20.0, num2 + (num2 - num1) / 20.0, minPrice - (maxPrice - minPrice) / 20.0, maxPrice + (maxPrice - minPrice) / 20.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsPadRangeY()
     {
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeY(Pad pad)
     {
       if (this.Count == 0)
@@ -232,13 +227,13 @@ namespace FreeQuant.Series
       return new PadRange(min, max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsPadRangeX()
     {
       return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeX(Pad pad)
     {
       return (PadRange) null;

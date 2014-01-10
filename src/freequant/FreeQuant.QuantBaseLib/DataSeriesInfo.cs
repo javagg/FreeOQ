@@ -1,32 +1,27 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.QuantBaseLib
 {
-  [Serializable]
-  public class DataSeriesInfo
-  {
-    public string Name { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+	[Serializable]
+	public class DataSeriesInfo
+	{
+		public string Name { get; set; }
 
-    public string Description { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public string Description { get; set; }
 
-    public int Count { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public int Count { get; set; }
 
-    public DateTime? Begin { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public DateTime? Begin { get; set; }
 
-    public DateTime? End { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+		public DateTime? End { get; set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public DataSeriesInfo()
-    {
-      eqv8L4m3VQyMGRLykq.UXAt7k5zdpi3d();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.Name = string.Empty;
-      this.Description = string.Empty;
-      this.Count = 0;
-      this.Begin = new DateTime?();
-      this.End = new DateTime?();
-    }
-  }
+		public DataSeriesInfo()
+		{
+			this.Name = string.Empty;
+			this.Description = string.Empty;
+			this.Count = 0;
+			this.Begin = new DateTime?();
+			this.End = new DateTime?();
+		}
+	}
 }

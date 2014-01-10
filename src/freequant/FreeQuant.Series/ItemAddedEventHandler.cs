@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.Series
+namespace FreeQuant.Series
 {
-  public delegate void ItemAddedEventHandler(object sender, DateTimeEventArgs e);
+	public delegate void ItemAddedEventHandler(object sender,DateTimeEventArgs e);
 }

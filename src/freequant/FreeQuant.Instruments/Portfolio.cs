@@ -16,26 +16,26 @@ namespace FreeQuant.Instruments
     private const bool RjashrZH84 = true;
     private const bool rSjstETkMn = false;
     private int zbcddHYChn;
-    private string lvrdPnsoMs;
-    private string WlbdegClB5;
-    private TransactionList dvdd2kT4al;
-    private PositionList P09d8aTdqt;
-    private Account d1XdlJjBqU;
-    private bool UYydYjfW5Z;
-    private bool nKjdGEyCXa;
+    private string name;
+    private string description;
+    private TransactionList transactions;
+    private PositionList positions;
+    private Account account;
+    private bool monitored;
+    private bool persistent;
     private MarginManager rTVdXwFwmG;
-    private Performance NRUd4uRimv;
+    private Performance performance;
     private bool Mk5dJuOhmC;
     private object ux7drmUmHV;
 
     [Browsable(false)]
     public int Id
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.zbcddHYChn;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.zbcddHYChn = value;
       }
@@ -45,99 +45,99 @@ namespace FreeQuant.Instruments
     [ReadOnly(true)]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.lvrdPnsoMs;
+				return this.name; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.lvrdPnsoMs = value;
+        this.name = value;
       }
     }
 
     [Category("Naming")]
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.WlbdegClB5;
+				return this.description; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.WlbdegClB5 = value;
+        this.description = value;
       }
     }
 
     [Browsable(false)]
     public PositionList Positions
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.P09d8aTdqt;
+				return this.positions; 
       }
     }
 
     [Browsable(false)]
     public TransactionList Transactions
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.dvdd2kT4al;
+				return this.transactions;  
       }
     }
 
     [Browsable(false)]
     public Account Account
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.d1XdlJjBqU;
+				return this.account;  
       }
     }
 
     [Browsable(false)]
     public Performance Performance
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.NRUd4uRimv;
+				return this.performance; 
       }
     }
 
     [DefaultValue(true)]
     public bool Monitored
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.UYydYjfW5Z;
+				return this.monitored; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value)
         {
-          if (!this.UYydYjfW5Z)
+          if (!this.monitored)
             this.G7UsvA9nvQ();
         }
-        else if (this.UYydYjfW5Z)
+        else if (this.monitored)
           this.Cats5kfBGV();
-        this.UYydYjfW5Z = value;
+        this.monitored = value;
       }
     }
 
     [DefaultValue(false)]
     public bool Persistent
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.nKjdGEyCXa;
+				return this.persistent; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        if (this.nKjdGEyCXa == value)
+        if (this.persistent == value)
           return;
         if (value)
           this.Save();
-        this.nKjdGEyCXa = value;
+        this.persistent = value;
         PortfolioManager.IDgsP9flDf(this);
       }
     }
@@ -160,57 +160,48 @@ namespace FreeQuant.Instruments
 
     public event EventHandler ConsolidationFinished;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Portfolio()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.zbcddHYChn = -1;
-      this.dvdd2kT4al = new TransactionList();
-      this.P09d8aTdqt = new PositionList();
-      this.d1XdlJjBqU = new Account();
-      this.d1XdlJjBqU.TransactionAdded += new AccountTransactionEventHandler(this.O3KsaYYaRC);
-      this.UYydYjfW5Z = true;
-      this.nKjdGEyCXa = false;
+      this.transactions = new TransactionList();
+      this.positions = new PositionList();
+      this.account = new Account();
+      this.account.TransactionAdded += new AccountTransactionEventHandler(this.O3KsaYYaRC);
+      this.monitored = true;
+      this.persistent = false;
       this.rTVdXwFwmG = new MarginManager();
       this.rTVdXwFwmG.Enabled = false;
-      this.NRUd4uRimv = new Performance(this);
+      this.performance = new Performance(this);
       this.ux7drmUmHV = new object();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Portfolio(string name, string description)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      this.\u002Ector();
-      this.lvrdPnsoMs = name;
-      this.WlbdegClB5 = description;
+      this.name = name;
+      this.description = description;
       PortfolioManager.j2wssyCvhK(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Portfolio(string name)
+    
+		public Portfolio(string name):this(name, "")
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, "");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(DateTime datetime, Side side, double qty, Instrument instrument, double price, double commission, CommType commType)
     {
       this.Add(new Transaction(datetime, side, qty, instrument, price, commission, commType));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(DateTime datetime, Side side, double qty, Instrument instrument, double price)
     {
       this.Add(new Transaction(datetime, side, qty, instrument, price));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(DateTime datetime, Side side, double qty, string symbol, double price, double commission, CommType commType)
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];
@@ -220,7 +211,7 @@ namespace FreeQuant.Instruments
         this.Add(new Transaction(datetime, side, qty, instrument, price, commission, commType));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(DateTime datetime, Side side, double qty, string symbol, double price)
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];
@@ -230,7 +221,7 @@ namespace FreeQuant.Instruments
         this.Add(new Transaction(datetime, side, qty, instrument, price));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Transaction transaction)
     {
       lock (this.ux7drmUmHV)
@@ -238,15 +229,15 @@ namespace FreeQuant.Instruments
         bool local_0 = false;
         bool local_1 = true;
         bool local_2 = false;
-        Position local_3 = this.P09d8aTdqt[transaction.Instrument];
+        Position local_3 = this.positions[transaction.Instrument];
         double local_4 = 0.0;
         double local_5 = 0.0;
         double local_6 = 0.0;
         if (local_3 == null)
         {
           local_3 = new Position(this, transaction);
-          this.P09d8aTdqt.Add(local_3);
-          if (this.UYydYjfW5Z)
+          this.positions.Add(local_3);
+          if (this.monitored)
             this.yaesuiSHoR(local_3);
           if (transaction.Margin != 0.0)
           {
@@ -308,18 +299,18 @@ namespace FreeQuant.Instruments
           local_3.Add(transaction);
           if (local_3.Qty == 0.0)
           {
-            this.P09d8aTdqt.Remove(local_3);
-            if (this.UYydYjfW5Z)
+            this.positions.Remove(local_3);
+            if (this.monitored)
               this.McUsSP483C(local_3);
             local_2 = true;
           }
         }
-        this.dvdd2kT4al.Add(transaction);
-        if (!this.Mk5dJuOhmC && this.nKjdGEyCXa)
+        this.transactions.Add(transaction);
+        if (!this.Mk5dJuOhmC && this.persistent)
           PortfolioManager.LfnseafCc7(this, transaction);
         this.lmWsxlDsUD(transaction);
         if (!this.Mk5dJuOhmC)
-          this.d1XdlJjBqU.Add(transaction.CashFlow + local_5 - local_6, transaction.Currency, transaction.DateTime, transaction.Text);
+          this.account.Add(transaction.CashFlow + local_5 - local_6, transaction.Currency, transaction.DateTime, transaction.Text);
         if (local_0)
           this.Ui2sg7ghMJ(local_3);
         if (local_1)
@@ -333,17 +324,17 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Portfolio Reconstruct(DateTime dateTime)
     {
       Portfolio portfolio = new Portfolio();
-      foreach (Transaction transaction in this.dvdd2kT4al)
+      foreach (Transaction transaction in this.transactions)
       {
         if (transaction.DateTime <= dateTime)
           portfolio.Add(transaction);
       }
       portfolio.Account.Clear();
-      foreach (AccountTransaction transaction in this.d1XdlJjBqU.Transactions)
+      foreach (AccountTransaction transaction in this.account.Transactions)
       {
         if (transaction.DateTime <= dateTime)
           portfolio.Account.Add(transaction);
@@ -351,7 +342,7 @@ namespace FreeQuant.Instruments
       return portfolio;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Portfolio Consolidate(Portfolio portfolio)
     {
       TransactionList transactionList = new TransactionList();
@@ -374,19 +365,19 @@ namespace FreeQuant.Instruments
       return portfolio1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool Contains(Instrument instrument)
     {
-      return this.P09d8aTdqt.Contains(instrument);
+      return this.positions.Contains(instrument);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetPositionValue(DateTime dateTime)
     {
-      if (this.dvdd2kT4al.Count == 0)
+      if (this.transactions.Count == 0)
         return 0.0;
       bool flag = false;
-      if (this.dvdd2kT4al.Count != 0 && this.dvdd2kT4al.Last.DateTime > dateTime)
+      if (this.transactions.Count != 0 && this.transactions.Last.DateTime > dateTime)
         flag = true;
       Portfolio portfolio = !flag ? this : this.Reconstruct(dateTime);
       double num = 0.0;
@@ -395,55 +386,55 @@ namespace FreeQuant.Instruments
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetPositionValue()
     {
       double num = 0.0;
-      foreach (Position position in (IEnumerable) this.P09d8aTdqt.Clone())
+      foreach (Position position in (IEnumerable) this.positions.Clone())
         num += this.zEhsnQPotQ(position.GetValue(), position.Currency);
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetAccountValue()
     {
-      return this.d1XdlJjBqU.GetValue();
+      return this.account.GetValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetAccountValue(DateTime dateTime)
     {
-      return this.d1XdlJjBqU.GetValue(dateTime);
+      return this.account.GetValue(dateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetValue()
     {
-      return this.d1XdlJjBqU.GetValue() + this.GetPositionValue();
+      return this.account.GetValue() + this.GetPositionValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetValue(DateTime dateTime)
     {
-      return this.d1XdlJjBqU.GetValue(dateTime) + this.GetPositionValue(dateTime);
+      return this.account.GetValue(dateTime) + this.GetPositionValue(dateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMarginValue()
     {
       double num = 0.0;
-      foreach (Position position in (IEnumerable) this.P09d8aTdqt.Clone())
+      foreach (Position position in (IEnumerable) this.positions.Clone())
         num += this.zEhsnQPotQ(position.GetMarginValue(), position.Currency);
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMarginValue(DateTime dateTime)
     {
-      if (this.dvdd2kT4al.Count == 0)
+      if (this.transactions.Count == 0)
         return 0.0;
       bool flag = false;
-      if (this.dvdd2kT4al.Count != 0 && this.dvdd2kT4al.Last.DateTime > dateTime)
+      if (this.transactions.Count != 0 && this.transactions.Last.DateTime > dateTime)
         flag = true;
       Portfolio portfolio = !flag ? this : this.Reconstruct(dateTime);
       double num = 0.0;
@@ -452,22 +443,22 @@ namespace FreeQuant.Instruments
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetDebtValue()
     {
       double num = 0.0;
-      foreach (Position position in this.P09d8aTdqt)
+      foreach (Position position in this.positions)
         num += this.zEhsnQPotQ(position.GetDebtValue(), position.Currency);
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetDebtValue(DateTime dateTime)
     {
-      if (this.dvdd2kT4al.Count == 0)
+      if (this.transactions.Count == 0)
         return 0.0;
       bool flag = false;
-      if (this.dvdd2kT4al.Count != 0 && this.dvdd2kT4al.Last.DateTime > dateTime)
+      if (this.transactions.Count != 0 && this.transactions.Last.DateTime > dateTime)
         flag = true;
       Portfolio portfolio = !flag ? this : this.Reconstruct(dateTime);
       double num = 0.0;
@@ -476,31 +467,31 @@ namespace FreeQuant.Instruments
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetCoreEquity()
     {
       return this.GetAccountValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetCoreEquity(DateTime DateTime)
     {
       return this.GetAccountValue(DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetTotalEquity()
     {
       return this.GetValue() - this.GetDebtValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetTotalEquity(DateTime DateTime)
     {
       return this.GetValue(DateTime) - this.GetDebtValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetLeverage()
     {
       double marginValue = this.GetMarginValue();
@@ -510,7 +501,7 @@ namespace FreeQuant.Instruments
         return this.GetValue() / marginValue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetDebtEquityRatio()
     {
       double totalEquity = this.GetTotalEquity();
@@ -520,29 +511,29 @@ namespace FreeQuant.Instruments
         return this.GetDebtValue() / totalEquity;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetCashFlow()
     {
       double num = 0.0;
-      foreach (Position position in this.P09d8aTdqt)
+      foreach (Position position in this.positions)
         num += this.zEhsnQPotQ(position.GetCashFlow(), position.Currency);
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetNetCashFlow()
     {
       double num = 0.0;
-      foreach (Position position in (IEnumerable) this.P09d8aTdqt.Clone())
+      foreach (Position position in (IEnumerable) this.positions.Clone())
         num += this.zEhsnQPotQ(position.GetNetCashFlow(), position.Currency);
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExposure(int tag, string val, PositionSide side)
     {
       double num = 0.0;
-      foreach (Position position in (IEnumerable) this.P09d8aTdqt.Clone())
+      foreach (Position position in (IEnumerable) this.positions.Clone())
       {
         if (position.Side == side && position.Instrument.GetStringField(tag).Value == val)
           num += position.GetValue();
@@ -550,11 +541,11 @@ namespace FreeQuant.Instruments
       return num / this.GetPositionValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetExposure(int tag, string val)
     {
       double num = 0.0;
-      foreach (Position position in (IEnumerable) this.P09d8aTdqt.Clone())
+      foreach (Position position in (IEnumerable) this.positions.Clone())
       {
         if (position.Instrument.GetStringField(tag).Value == val)
           num += this.zEhsnQPotQ(position.GetValue(), position.Currency);
@@ -562,70 +553,70 @@ namespace FreeQuant.Instruments
       return num / this.GetPositionValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.Clear(true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear(bool clearPerformance)
     {
       this.Cats5kfBGV();
-      this.P09d8aTdqt.Clear();
-      this.dvdd2kT4al.Clear();
-      this.d1XdlJjBqU.Clear();
-      if (clearPerformance && this.NRUd4uRimv != null)
-        this.NRUd4uRimv.GcxBG7nv0L();
-      if (this.nKjdGEyCXa)
+      this.positions.Clear();
+      this.transactions.Clear();
+      this.account.Clear();
+      if (clearPerformance && this.performance != null)
+        this.performance.GcxBG7nv0L();
+      if (this.persistent)
         PortfolioManager.iY2s8gqb4S(this);
       if (this.S6KdBSfi4y == null)
         return;
       this.S6KdBSfi4y((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Save()
     {
-      if (this.nKjdGEyCXa)
+      if (this.persistent)
         return;
       PortfolioManager.HLQsd4XEGK(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void G7UsvA9nvQ()
     {
-      foreach (Position position in this.P09d8aTdqt)
+      foreach (Position position in this.positions)
         this.yaesuiSHoR(position);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Cats5kfBGV()
     {
-      foreach (Position position in this.P09d8aTdqt)
+      foreach (Position position in this.positions)
         this.McUsSP483C(position);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void yaesuiSHoR([In] Position obj0)
     {
       obj0.Instrument.NewBar += new BarEventHandler(this.naPsZDs2w9);
       obj0.Instrument.NewTrade += new TradeEventHandler(this.LptsANECjj);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void McUsSP483C([In] Position obj0)
     {
       obj0.Instrument.NewBar -= new BarEventHandler(this.naPsZDs2w9);
       obj0.Instrument.NewTrade -= new TradeEventHandler(this.LptsANECjj);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void naPsZDs2w9([In] object obj0, [In] BarEventArgs obj1)
     {
       lock (this.ux7drmUmHV)
       {
-        Position local_0 = this.P09d8aTdqt[(Instrument) obj1.Instrument];
+        Position local_0 = this.positions[(Instrument) obj1.Instrument];
         if (local_0 == null)
           return;
         local_0.s7dBtZ7nOw();
@@ -633,12 +624,12 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void LptsANECjj([In] object obj0, [In] TradeEventArgs obj1)
     {
       lock (this.ux7drmUmHV)
       {
-        Position local_0 = this.P09d8aTdqt[(Instrument) obj1.Instrument];
+        Position local_0 = this.positions[(Instrument) obj1.Instrument];
         if (local_0 == null)
           return;
         local_0.s7dBtZ7nOw();
@@ -646,25 +637,25 @@ namespace FreeQuant.Instruments
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool TrySuspendUpdates()
     {
       return Monitor.TryEnter(this.ux7drmUmHV);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SuspendUpdates()
     {
       Monitor.Enter(this.ux7drmUmHV);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ResumeUpdates()
     {
       Monitor.Exit(this.ux7drmUmHV);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Ui2sg7ghMJ([In] Position obj0)
     {
       if (this.cJcsTZRIto == null)
@@ -672,7 +663,7 @@ namespace FreeQuant.Instruments
       this.cJcsTZRIto((object) this, new PositionEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void W88s1d36mE([In] Position obj0)
     {
       if (this.PXHszRqJsA == null)
@@ -680,7 +671,7 @@ namespace FreeQuant.Instruments
       this.PXHszRqJsA((object) this, new PositionEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void eY6sogNFDu([In] Position obj0)
     {
       if (this.oXpdQAbGCD == null)
@@ -688,7 +679,7 @@ namespace FreeQuant.Instruments
       this.oXpdQAbGCD((object) this, new PositionEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void lmWsxlDsUD([In] Transaction obj0)
     {
       if (this.oYlswngCFy == null)
@@ -696,7 +687,7 @@ namespace FreeQuant.Instruments
       this.oYlswngCFy((object) this, new TransactionEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void gJYsIOGcWf([In] Position obj0)
     {
       if (this.HJ6dWyfgm9 == null)
@@ -704,7 +695,7 @@ namespace FreeQuant.Instruments
       this.HJ6dWyfgm9((object) this, new PositionEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void AYIsLEwh9x()
     {
       if (this.Aj9d6OW7UW == null)
@@ -712,25 +703,25 @@ namespace FreeQuant.Instruments
       this.Aj9d6OW7UW((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
-      return this.lvrdPnsoMs;
+      return this.name;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool HasPosition(Instrument instrument)
     {
-      return this.P09d8aTdqt[instrument] != null;
+      return this.positions[instrument] != null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ConsolidateFrom(Portfolio[] portfolioList)
     {
       this.ConsolidateFrom(portfolioList, false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ConsolidateFrom(Portfolio[] portfolioList, bool cloneTransactions)
     {
       if (this.e2sdEWgJbD != null)
@@ -762,7 +753,7 @@ namespace FreeQuant.Instruments
         }
         Transaction transaction = cloneTransactions ? (Transaction) list1[index1].Transactions[list2[index1]].Clone() : list1[index1].Transactions[list2[index1]];
         this.Add(transaction);
-        this.d1XdlJjBqU.Add(transaction.CashFlow, transaction.Currency, transaction.DateTime, transaction.Text);
+        this.account.Add(transaction.CashFlow, transaction.Currency, transaction.DateTime, transaction.Text);
         List<int> list3;
         int index3;
         (list3 = list2)[index3 = index1] = list3[index3] + 1;
@@ -778,31 +769,31 @@ namespace FreeQuant.Instruments
       this.PcjdsX4HQ2((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void LwTsbC870d([In] bool obj0)
     {
       this.Mk5dJuOhmC = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void U70sR7lQYS([In] bool obj0)
     {
-      this.nKjdGEyCXa = obj0;
+      this.persistent = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void O3KsaYYaRC([In] object obj0, [In] AccountTransactionEventArgs obj1)
     {
-      if (this.Mk5dJuOhmC || !this.nKjdGEyCXa)
+      if (this.Mk5dJuOhmC || !this.persistent)
         return;
       PortfolioManager.vwIs2WhnRQ(this, obj1.Transaction);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private double zEhsnQPotQ([In] double obj0, [In] Currency obj1)
     {
-      if (obj1 != null && this.d1XdlJjBqU.Currency != null && obj1 != this.d1XdlJjBqU.Currency)
-        return obj1.Convert(obj0, this.d1XdlJjBqU.Currency);
+      if (obj1 != null && this.account.Currency != null && obj1 != this.account.Currency)
+        return obj1.Convert(obj0, this.account.Currency);
       else
         return obj0;
     }

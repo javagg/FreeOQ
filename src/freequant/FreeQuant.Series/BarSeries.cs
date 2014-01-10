@@ -3,7 +3,6 @@ using FreeQuant.Data;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FreeQuant.Series
@@ -26,11 +25,11 @@ namespace FreeQuant.Series
     [Category("Chart Style")]
     public ChartStyle ChartStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.uhdhiePNX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.uhdhiePNX = value;
       }
@@ -40,11 +39,11 @@ namespace FreeQuant.Series
     [Category("Bar")]
     public Color BarColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.OpVNnlGuX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.OpVNnlGuX = value;
       }
@@ -54,11 +53,11 @@ namespace FreeQuant.Series
     [Description("Bar width")]
     public int BarWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.X6cDrdfNL;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.X6cDrdfNL = value;
       }
@@ -68,11 +67,11 @@ namespace FreeQuant.Series
     [Category("Bar")]
     public EWidthStyle BarWidthStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.zO38ddk50;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.zO38ddk50 = value;
       }
@@ -82,11 +81,11 @@ namespace FreeQuant.Series
     [Description("Candle color")]
     public Color CandleColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.akqmISyaZ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.akqmISyaZ = value;
       }
@@ -96,11 +95,11 @@ namespace FreeQuant.Series
     [Category("Candle")]
     public Color CandleBlackColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.uguQD88G4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.uguQD88G4 = value;
       }
@@ -110,11 +109,11 @@ namespace FreeQuant.Series
     [Description("White candle color on the chart")]
     public Color CandleWhiteColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.L0hs9FwV4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.L0hs9FwV4 = value;
       }
@@ -124,11 +123,11 @@ namespace FreeQuant.Series
     [Description("Candle width")]
     public int CandleWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.c8Ev5W247;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.c8Ev5W247 = value;
       }
@@ -138,11 +137,11 @@ namespace FreeQuant.Series
     [Category("Candle")]
     public EWidthStyle CandleWidthStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.je6AmJnLt;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.je6AmJnLt = value;
       }
@@ -152,11 +151,11 @@ namespace FreeQuant.Series
     [Category("Candle")]
     public Color CandleBorderColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.f9xTLL17Y;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.f9xTLL17Y = value;
       }
@@ -164,7 +163,7 @@ namespace FreeQuant.Series
 
     public Bar First
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10508));
@@ -175,7 +174,7 @@ namespace FreeQuant.Series
 
     public Bar Last
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.Count <= 0)
           throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10554));
@@ -186,7 +185,7 @@ namespace FreeQuant.Series
 
     public Bar this[int i]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ((TimeSeries) this)[i] as Bar;
       }
@@ -194,7 +193,7 @@ namespace FreeQuant.Series
 
     public Bar this[DateTime DateTime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ((TimeSeries) this)[DateTime] as Bar;
       }
@@ -202,7 +201,7 @@ namespace FreeQuant.Series
 
     public Bar this[DateTime DateTime, EIndexOption Option]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return ((TimeSeries) this)[DateTime, Option] as Bar;
       }
@@ -210,7 +209,7 @@ namespace FreeQuant.Series
 
     public override double this[int Index, int BarData]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this[Index][BarData];
       }
@@ -218,13 +217,13 @@ namespace FreeQuant.Series
 
     public override double this[int Index, BarData BarData]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this[Index][BarData];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries(string name, string title)
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
@@ -244,7 +243,7 @@ namespace FreeQuant.Series
       this.fArray = (IDataSeries) new MemorySeries<Bar>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries(string name)
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
@@ -252,7 +251,7 @@ namespace FreeQuant.Series
       this.\u002Ector(name, "");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries()
     {
       rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
@@ -261,7 +260,7 @@ namespace FreeQuant.Series
       this.fName = oK6F3TB73XXXGhdieP.wF6SgrNUO(10766);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void j3Tk73XXX()
     {
       this.fToolTipEnabled = true;
@@ -269,44 +268,44 @@ namespace FreeQuant.Series
       this.fToolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10724);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries Clone()
     {
       return base.Clone() as BarSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries Clone(int Index1, int Index2)
     {
       return base.Clone(Index1, Index2) as BarSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries Clone(DateTime DateTime1, DateTime DateTime2)
     {
       return base.Clone(DateTime1, DateTime2) as BarSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool Contains(Bar Bar)
     {
       return base.Contains(Bar.DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Bar bar)
     {
       this.fArray[bar.DateTime] = (object) bar;
       this.EmitItemAdded(bar.DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Remove(Bar Bar)
     {
       this.fArray.Remove(Bar.DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarSeries Shift(int offset)
     {
       BarSeries barSeries = new BarSeries(this.Name, this.Title);
@@ -330,7 +329,7 @@ namespace FreeQuant.Series
       return barSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar Ago(int n)
     {
       int index = this.Count - 1 - n;
@@ -340,13 +339,13 @@ namespace FreeQuant.Series
         return this[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetArray(BarData BarData)
     {
       return this.GetArray(0, this.Count - 1, BarData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetArray(int Index1, int Index2, BarData BarData)
     {
       DoubleSeries doubleSeries = new DoubleSeries();
@@ -355,13 +354,13 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetArray(DateTime DateTime1, DateTime DateTime2, BarData BarData)
     {
       return this.GetArray(this.GetIndex(DateTime1, EIndexOption.Next), this.GetIndex(DateTime2, EIndexOption.Prev), BarData);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetHighSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10896));
@@ -370,7 +369,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetLowSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10910));
@@ -379,7 +378,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetOpenSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10922));
@@ -388,7 +387,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetCloseSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10936));
@@ -397,7 +396,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetVolumeSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10952));
@@ -406,7 +405,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetOpenIntSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10970));
@@ -415,7 +414,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetHighSeries(DateTime date1, DateTime date2)
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10990));
@@ -427,7 +426,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetLowSeries(DateTime date1, DateTime date2)
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11004));
@@ -439,7 +438,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetOpenSeries(DateTime date1, DateTime date2)
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11016));
@@ -451,7 +450,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetCloseSeries(DateTime date1, DateTime date2)
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11030));
@@ -463,7 +462,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetVolumeSeries(DateTime date1, DateTime date2)
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11046));
@@ -475,7 +474,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleSeries GetOpenIntSeries(DateTime date1, DateTime date2)
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11064));
@@ -487,7 +486,7 @@ namespace FreeQuant.Series
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar HighestHighBar(int Index1, int Index2)
     {
       if (this.Count <= 0)
@@ -507,19 +506,19 @@ namespace FreeQuant.Series
       return bar;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar HighestHighBar(DateTime DateTime1, DateTime DateTime2)
     {
       return this.HighestHighBar(this.GetIndex(DateTime1, EIndexOption.Next), this.GetIndex(DateTime2, EIndexOption.Prev));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar HighestHighBar()
     {
       return this.HighestHighBar(0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar LowestLowBar(int Index1, int Index2)
     {
       if (this.Count <= 0)
@@ -539,31 +538,31 @@ namespace FreeQuant.Series
       return bar;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar LowestLowBar(DateTime DateTime1, DateTime DateTime2)
     {
       return this.LowestLowBar(this.GetIndex(DateTime1, EIndexOption.Next), this.GetIndex(DateTime2, EIndexOption.Prev));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar LowestLowBar(int nBars)
     {
       return this.LowestLowBar(this.LastIndex - nBars + 1, this.LastIndex);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar HighestHighBar(int nBars)
     {
       return this.HighestHighBar(this.LastIndex - nBars + 1, this.LastIndex);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Bar LowestLowBar()
     {
       return this.LowestLowBar(0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighestHigh(int index1, int index2)
     {
       Bar bar = this.HighestHighBar(index1, index2);
@@ -573,7 +572,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowestLow(int index1, int index2)
     {
       Bar bar = this.LowestLowBar(index1, index2);
@@ -583,7 +582,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighestHigh(DateTime dateTime1, DateTime dateTime2)
     {
       Bar bar = this.HighestHighBar(dateTime1, dateTime2);
@@ -593,7 +592,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowestLow(DateTime dateTime1, DateTime dateTime2)
     {
       Bar bar = this.LowestLowBar(dateTime1, dateTime2);
@@ -603,7 +602,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighestHigh(int nBars)
     {
       Bar bar = this.HighestHighBar(nBars);
@@ -613,7 +612,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowestLow(int nBars)
     {
       Bar bar = this.LowestLowBar(nBars);
@@ -623,7 +622,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighestHigh()
     {
       Bar bar = this.HighestHighBar();
@@ -633,7 +632,7 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowestLow()
     {
       Bar bar = this.LowestLowBar();
@@ -643,31 +642,31 @@ namespace FreeQuant.Series
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMin(int index1, int index2)
     {
       return this.LowestLowBar(index1, index2).Low;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMax(int index1, int index2)
     {
       return this.HighestHighBar(index1, index2).High;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMin()
     {
       return this.GetMin(0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMax()
     {
       return this.GetMax(0, this.Count - 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseD(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
@@ -685,7 +684,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseW(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
@@ -703,7 +702,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseM(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, 1);
@@ -721,7 +720,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseY(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, 1, 1);
@@ -738,103 +737,103 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseD(int index, int daysAgo)
     {
       return this.CloseD(this.GetDateTime(index), daysAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseW(int index, int weeksAgo)
     {
       return this.CloseW(this.GetDateTime(index), weeksAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseM(int index, int monthsAgo)
     {
       return this.CloseM(this.GetDateTime(index), monthsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseY(int index, int yearsAgo)
     {
       return this.CloseY(this.GetDateTime(index), yearsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseD(DateTime dateTime, int daysAgo)
     {
       return this.CloseD(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseW(DateTime dateTime, int weeksAgo)
     {
       return this.CloseW(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseM(DateTime dateTime, int monthsAgo)
     {
       return this.CloseM(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseY(DateTime dateTime, int yearsAgo)
     {
       return this.CloseY(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddYears(-yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseD(Bar bar, int daysAgo)
     {
       return this.CloseD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseW(Bar bar, int weeksAgo)
     {
       return this.CloseW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseM(Bar bar, int monthsAgo)
     {
       return this.CloseM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseY(Bar bar, int yearsAgo)
     {
       return this.CloseY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseD(Bar bar)
     {
       return this.CloseD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseW(Bar bar)
     {
       return this.CloseW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseM(Bar bar)
     {
       return this.CloseM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double CloseY(Bar bar)
     {
       return this.CloseY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenD(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
@@ -852,7 +851,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenW(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
@@ -870,7 +869,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenM(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, 1);
@@ -888,7 +887,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenY(DateTime dateTime)
     {
       DateTime dateTime1 = new DateTime(dateTime.Year, 1, 1);
@@ -905,103 +904,103 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenD(int index, int daysAgo)
     {
       return this.OpenD(this.GetDateTime(index), daysAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenW(int index, int weeksAgo)
     {
       return this.OpenW(this.GetDateTime(index), weeksAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenM(int index, int monthsAgo)
     {
       return this.OpenM(this.GetDateTime(index), monthsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenY(int index, int yearsAgo)
     {
       return this.OpenY(this.GetDateTime(index), yearsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenD(DateTime dateTime, int daysAgo)
     {
       return this.OpenD(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenW(DateTime dateTime, int weeksAgo)
     {
       return this.OpenW(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenM(DateTime dateTime, int monthsAgo)
     {
       return this.OpenM(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenY(DateTime dateTime, int yearsAgo)
     {
       return this.OpenY(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddYears(-yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenD(Bar bar, int daysAgo)
     {
       return this.OpenD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenW(Bar bar, int weeksAgo)
     {
       return this.OpenW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenM(Bar bar, int monthsAgo)
     {
       return this.OpenM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenY(Bar bar, int yearsAgo)
     {
       return this.OpenY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenD(Bar bar)
     {
       return this.OpenD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenW(Bar bar)
     {
       return this.OpenW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenM(Bar bar)
     {
       return this.OpenM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double OpenY(Bar bar)
     {
       return this.OpenY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighD(DateTime dateTime)
     {
       DateTime DateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
@@ -1013,7 +1012,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighW(DateTime dateTime)
     {
       DateTime DateTime1 = dateTime.AddDays((double) (7 - dateTime.DayOfWeek)).Subtract(new TimeSpan(7, 0, 0, 0));
@@ -1025,7 +1024,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighM(DateTime dateTime)
     {
       DateTime DateTime1 = new DateTime(dateTime.Year, dateTime.Month, 1);
@@ -1037,7 +1036,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighY(DateTime dateTime)
     {
       DateTime DateTime1 = new DateTime(dateTime.Year, 1, 1);
@@ -1049,103 +1048,103 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighD(int index, int daysAgo)
     {
       return this.HighD(this.GetDateTime(index), daysAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighW(int index, int weeksAgo)
     {
       return this.HighW(this.GetDateTime(index), weeksAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighM(int index, int monthsAgo)
     {
       return this.HighM(this.GetDateTime(index), monthsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighY(int index, int yearsAgo)
     {
       return this.HighY(this.GetDateTime(index), yearsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighD(DateTime dateTime, int daysAgo)
     {
       return this.HighD(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighW(DateTime dateTime, int weeksAgo)
     {
       return this.HighW(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighM(DateTime dateTime, int monthsAgo)
     {
       return this.HighM(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighY(DateTime dateTime, int yearsAgo)
     {
       return this.HighY(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddYears(-yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighD(Bar bar, int daysAgo)
     {
       return this.HighD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighW(Bar bar, int weeksAgo)
     {
       return this.HighW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighM(Bar bar, int monthsAgo)
     {
       return this.HighM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighY(Bar bar, int yearsAgo)
     {
       return this.HighY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighD(Bar bar)
     {
       return this.HighD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighW(Bar bar)
     {
       return this.HighW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighM(Bar bar)
     {
       return this.HighM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double HighY(Bar bar)
     {
       return this.HighY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowD(DateTime dateTime)
     {
       DateTime DateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
@@ -1157,7 +1156,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowW(DateTime dateTime)
     {
       DateTime DateTime1 = dateTime.AddDays((double) (7 - dateTime.DayOfWeek)).Subtract(new TimeSpan(7, 0, 0, 0));
@@ -1169,7 +1168,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowM(DateTime dateTime)
     {
       DateTime DateTime1 = new DateTime(dateTime.Year, dateTime.Month, 1);
@@ -1181,7 +1180,7 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowY(DateTime dateTime)
     {
       DateTime DateTime1 = new DateTime(dateTime.Year, 1, 1);
@@ -1193,103 +1192,103 @@ namespace FreeQuant.Series
         return -1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowD(int index, int daysAgo)
     {
       return this.LowD(this.GetDateTime(index), daysAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowW(int index, int weeksAgo)
     {
       return this.LowW(this.GetDateTime(index), weeksAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowM(int index, int monthsAgo)
     {
       return this.LowM(this.GetDateTime(index), monthsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowY(int index, int yearsAgo)
     {
       return this.LowY(this.GetDateTime(index), yearsAgo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowD(DateTime dateTime, int daysAgo)
     {
       return this.LowD(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowW(DateTime dateTime, int weeksAgo)
     {
       return this.LowW(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowM(DateTime dateTime, int monthsAgo)
     {
       return this.LowM(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowY(DateTime dateTime, int yearsAgo)
     {
       return this.LowY(new DateTime(dateTime.Year, dateTime.Month, dateTime.Day).AddYears(-yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowD(Bar bar, int daysAgo)
     {
       return this.LowD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -daysAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowW(Bar bar, int weeksAgo)
     {
       return this.LowW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) (-weeksAgo * 7)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowM(Bar bar, int monthsAgo)
     {
       return this.LowM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddMonths(-monthsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowY(Bar bar, int yearsAgo)
     {
       return this.LowY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day).AddDays((double) -yearsAgo));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowD(Bar bar)
     {
       return this.LowD(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowW(Bar bar)
     {
       return this.LowW(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowM(Bar bar)
     {
       return this.LowM(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double LowY(Bar bar)
     {
       return this.LowY(new DateTime(bar.DateTime.Year, bar.DateTime.Month, bar.DateTime.Day));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual BarSeries Compress(long NewBarSize)
     {
       BarSeries barSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as BarSeries;
@@ -1373,19 +1372,19 @@ namespace FreeQuant.Series
       return barSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual BarSeries Compress(long newBarSize, TimeSpan sessionStart, TimeSpan sessionEnd)
     {
       return this.Compress(newBarSize, sessionStart, sessionEnd, BarSlycing.Equally);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual BarSeries Compress(long newBarSize, TimeSpan sessionStart, TimeSpan sessionEnd, BarSlycing mode)
     {
       return this.Compress(newBarSize, sessionStart, sessionEnd, mode, true, true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual BarSeries Compress(long newBarSize, TimeSpan sessionStart, TimeSpan sessionEnd, BarSlycing mode, bool weeklySlicingEnabled, bool clubWithPrevBar)
     {
       BarSeries barSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as BarSeries;
@@ -1491,13 +1490,13 @@ namespace FreeQuant.Series
       return barSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeX(Pad pad)
     {
       return (PadRange) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad pad)
     {
       double min = 0.0;
@@ -1521,7 +1520,7 @@ namespace FreeQuant.Series
       return new PadRange(min, max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Draw(string Option)
     {
       if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12194)) != -1)
@@ -1561,13 +1560,13 @@ namespace FreeQuant.Series
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Draw()
     {
       this.Draw("");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
     {
       Pen pen1 = new Pen(this.fColor);
@@ -1707,7 +1706,7 @@ namespace FreeQuant.Series
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override TDistance Distance(double X, double Y)
     {
       TDistance tdistance = new TDistance();

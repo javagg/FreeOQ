@@ -1,9 +1,9 @@
-﻿namespace FreeQuant.Series
+namespace FreeQuant.Series
 {
-  public enum ECross
-  {
-    Above,
-    Below,
-    None,
-  }
+	public enum ECross
+	{
+		Above,
+		Below,
+		None,
+	}
 }

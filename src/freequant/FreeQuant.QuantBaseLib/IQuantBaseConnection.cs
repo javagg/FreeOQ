@@ -2,16 +2,16 @@ using System;
 
 namespace FreeQuant.QuantBaseLib
 {
-  public interface IQuantBaseConnection
-  {
-    event EventHandler Closed;
+	public interface IQuantBaseConnection
+	{
+		event EventHandler Closed;
 
-    void Close();
+		void Close();
 
-    DataSeriesInfo[] GetDataSeries();
+		DataSeriesInfo[] GetDataSeries();
 
-    IDataSeriesReader GetReader(ReaderParameters parameters);
+		IDataSeriesReader GetReader(ReaderParameters parameters);
 
-    Instrument[] GetInstruments(InstrumentFilter filter);
-  }
+		Instrument[] GetInstruments(InstrumentFilter filter);
+	}
 }

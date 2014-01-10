@@ -1,28 +1,22 @@
-﻿using NEVPmg8vBnJoRISXwf;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Series
 {
-  public class TradeArrayEventArgs : EventArgs
-  {
-    private TradeArray KtCfE3eL0;
+	public class TradeArrayEventArgs : EventArgs
+	{
+		private TradeArray tradeArray;
 
-    public TradeArray TradeArray
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.KtCfE3eL0;
-      }
-    }
+		public TradeArray TradeArray
+		{
+			get
+			{
+				return this.tradeArray; 
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TradeArrayEventArgs(TradeArray array)
-    {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.KtCfE3eL0 = array;
-    }
-  }
+		public TradeArrayEventArgs(TradeArray array) : base()
+		{
+			this.tradeArray = array;
+		}
+	}
 }

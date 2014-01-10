@@ -5,13 +5,13 @@ namespace FreeQuant.QuantRouterLib
 {
   public abstract class ConnectionAcceptor : IConnectionAcceptor
   {
-    public ConnectionAcceptorState State { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] protected set; }
+    public ConnectionAcceptorState State {  get;  protected set; }
 
     public event EventHandler<ConnectionEventArgs> ConnectionAccepted;
 
     public event EventHandler StateChanged;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
 		protected ConnectionAcceptor() : base()
     {
 

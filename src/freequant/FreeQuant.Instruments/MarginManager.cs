@@ -27,7 +27,7 @@ namespace FreeQuant.Instruments
 
     public virtual double GetInitialMargin(double Value, Instrument instrument, Side side, DateTime dateTime)
     {
-      if (!this.enabled || !(instrument.SecurityType == gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2470)))
+			if (!this.enabled || !(instrument.SecurityType == "FIXTYEEEEE"))
         return 0.0;
       switch (side)
       {
