@@ -223,10 +223,8 @@ namespace FreeQuant.Series
       }
     }
 
-    
-    public BarSeries(string name, string title)
+		public BarSeries(string name, string title) : base(name, title)
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
       this.uhdhiePNX = ChartStyle.Bar;
       this.OpVNnlGuX = Color.Black;
       this.X6cDrdfNL = 5;
@@ -237,26 +235,18 @@ namespace FreeQuant.Series
       this.uguQD88G4 = Color.Black;
       this.L0hs9FwV4 = Color.White;
       this.f9xTLL17Y = Color.Black;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, title);
       this.j3Tk73XXX();
       this.fArray = (IDataSeries) new MemorySeries<Bar>();
     }
 
     
-    public BarSeries(string name)
+	public BarSeries(string name) :  this(name, "")
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, "");
     }
 
     
-    public BarSeries()
+	public BarSeries() :  this("")
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      // ISSUE: explicit constructor call
-      this.\u002Ector("");
       this.fName = oK6F3TB73XXXGhdieP.wF6SgrNUO(10766);
     }
 

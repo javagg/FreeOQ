@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace OpenQuant.API
 {
-	internal class BarSeriesEnumerator : IEnumerator
+	class BarSeriesEnumerator : IEnumerator
 	{
 		private FreeQuant.Series.BarSeries series;
 		private IEnumerator enumerator;

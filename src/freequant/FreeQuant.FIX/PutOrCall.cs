@@ -1,8 +1,8 @@
 namespace FreeQuant.FIX
 {
-  public enum PutOrCall
-  {
-    Put,
-    Call,
-  }
+	public enum PutOrCall
+	{
+		Put,
+		Call,
+	}
 }

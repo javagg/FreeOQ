@@ -2,49 +2,51 @@
 {
 	public class BarRequest
 	{
-		private long barSize;
-		private BarType barType;
-		private bool isBarFactoryRequest;
+//		private long barSize;
+//		private BarType barType;
+//		private bool isBarFactoryRequest;
 
 		public long BarSize
 		{
-			get
-			{
-				return this.barSize;
-			}
+			get;
+//			{
+//				return this.barSize;
+//			}
+			private set;
 		}
 
 		public BarType BarType
 		{
-			get
-			{
-				return this.barType;
-			}
+			get;
+//			{
+//				return this.barType;
+//			}
+			private set;
 		}
 
 		public bool IsBarFactoryRequest
 		{
-			get
-			{
-				return this.isBarFactoryRequest;
-			}
-			set
-			{
-				this.isBarFactoryRequest = value;
-			}
+			get;
+//			{
+//				return this.isBarFactoryRequest;
+//			}
+			set;
+//			{
+//				this.isBarFactoryRequest = value;
+//			}
 		}
 
 		public BarRequest(BarType barType, long barSize, bool isBarFactoryRequest)
 		{
-			this.barType = barType;
-			this.barSize = barSize;
-			this.isBarFactoryRequest = isBarFactoryRequest;
+			this.BarType = barType;
+			this.BarSize = barSize;
+			this.IsBarFactoryRequest = isBarFactoryRequest;
 		}
 
 		public override bool Equals(object obj)
 		{
 			BarRequest barRequest = obj as BarRequest;
-			return barRequest != null && barRequest.BarType == this.barType && barRequest.BarSize == this.barSize;
+			return barRequest != null && barRequest.BarType == this.BarType && barRequest.BarSize == this.BarSize;
 		}
 
 		public override int GetHashCode()

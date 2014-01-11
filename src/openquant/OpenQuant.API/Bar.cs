@@ -184,6 +184,9 @@ namespace OpenQuant.API
 			this.bar = bar;
 		}
 
+		///<summary>
+		///  Returns string representing this bar 
+		///</summary>
 		public override string ToString()
 		{
 			return this.bar.ToString();

@@ -308,5 +308,13 @@
       <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
       <Name>FreeQuant.Instruments</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Indicators\FreeQuant.Indicators.csproj">
+      <Project>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</Project>
+      <Name>FreeQuant.Indicators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Trading\FreeQuant.Trading.csproj">
+      <Project>{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}</Project>
+      <Name>FreeQuant.Trading</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

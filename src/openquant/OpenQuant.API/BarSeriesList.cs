@@ -2,8 +2,19 @@
 
 namespace OpenQuant.API
 {
+	///<summary>
+	///  A list of bar series 
+	///</summary>
 	public class BarSeriesList
 	{
+		///<summary>
+		///  Initializes a new instance of this class
+		///</summary>
+		public BarSeriesList() {}
+
+		///<summary>
+		///  Gets bar series by instrument, bar type and bar size
+		///</summary>
 		public BarSeries this [Instrument instrument, BarType barType, long barSize]
 		{
 			get
@@ -12,6 +23,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Returns bar series by instrument 
+		///</summary>
 		public BarSeries this [Instrument instrument]
 		{
 			get

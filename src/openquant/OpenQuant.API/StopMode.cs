@@ -1,8 +1,8 @@
 ﻿namespace OpenQuant.API
 {
-  public enum StopMode
-  {
-    Absolute,
-    Percent
-  }
+	public enum StopMode
+	{
+		Absolute,
+		Percent
+	}
 }

@@ -1,9 +1,9 @@
 ﻿namespace OpenQuant.API
 {
-  public enum StopType
-  {
-    Fixed,
-    Trailing,
-    Time
-  }
+	public enum StopType
+	{
+		Fixed,
+		Trailing,
+		Time
+	}
 }

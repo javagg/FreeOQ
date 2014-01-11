@@ -19,7 +19,7 @@ namespace OpenQuant.API
 				case Side.Sell:
 					return OrderSide.Sell;
 				default:
-					throw new ArgumentException(string.Format("Side is not supported - {0}", (object)side));
+					throw new ArgumentException(string.Format("Side is not supported - {0}", side));
 			}
 		}
 
@@ -32,7 +32,7 @@ namespace OpenQuant.API
 				case OrderSide.Sell:
 					return Side.Sell;
 				default:
-					throw new ArgumentException(string.Format("Unsupported OrderSide - {0}", (object)side));
+					throw new ArgumentException(string.Format("Unsupported OrderSide - {0}", side));
 			}
 		}
 
@@ -55,7 +55,7 @@ namespace OpenQuant.API
 				case OrdType.TrailingStopLimit:
 					return OrderType.TrailLimit;
 				default:
-					throw new ArgumentException(string.Format("OrdType is not supported - {0}", (object)type));
+					throw new ArgumentException(string.Format("OrdType is not supported - {0}", type));
 			}
 		}
 
@@ -78,7 +78,7 @@ namespace OpenQuant.API
 				case OrderType.MarketOnClose:
 					return OrdType.MarketOnClose;
 				default:
-					throw new ArgumentException(string.Format("Unsupported OrderType - {0}", (object)type));
+					throw new ArgumentException(string.Format("Unsupported OrderType - {0}", type));
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace OpenQuant.API
 				case OrdStatus.PendingReplace:
 					return OrderStatus.PendingReplace;
 				default:
-					throw new NotImplementedException("OrderStatus is not supported : " + (object)status);
+					throw new ArgumentException(string.Format("Unsupported OrdStatus - {0}", status));
 			}
 		}
 
@@ -122,7 +122,7 @@ namespace OpenQuant.API
 				case CommissionType.Absolute:
 					return CommType.Absolute;
 				default:
-					throw new NotImplementedException("CommissionType is not supported : " + (object)commissionType);
+					throw new ArgumentException(string.Format("Unsupported CommissionType - {0}", commissionType));
 			}
 		}
 
@@ -151,7 +151,7 @@ namespace OpenQuant.API
 				case OrderStatus.Rejected:
 					return OrdStatus.Rejected;
 				default:
-					throw new NotImplementedException("OrderStatus is not supported : " + (object)status);
+					throw new ArgumentException(string.Format("Unsupported OrderStatus - {0}", status));
 			}
 		}
 
@@ -209,11 +209,11 @@ namespace OpenQuant.API
 				case InstrumentType.Commodity:
 					return "CMDTY";
 				default:
-					throw new NotImplementedException("SecurityType is not supported : " + (object)instrumentType);
+					throw new ArgumentException(string.Format("Unsupported InstrumentType - {0}", instrumentType));
 			}
 		}
 
-		internal static BarType Convert(SmartQuant.Data.BarType barType)
+		internal static BarType Convert(FreeQuant.Data.BarType barType)
 		{
 			switch (barType)
 			{
@@ -226,7 +226,7 @@ namespace OpenQuant.API
 				case FreeQuant.Data.BarType.Range:
 					return BarType.Range;
 				default:
-					throw new NotImplementedException("BarType is not supported : " + (object)barType);
+					throw new ArgumentException(string.Format("Unsupported BarType - {0}", barType));
 			}
 		}
 
@@ -243,35 +243,36 @@ namespace OpenQuant.API
 				case BarType.Range:
 					return FreeQuant.Data.BarType.Range;
 				default:
-					throw new NotImplementedException("BarType is not supported : " + (object)barType);
+					throw new ArgumentException(string.Format("Unsupported BarType - {0}", barType));
 			}
 		}
 
 		internal static RegressionDistanceMode Convert(RegressionDistanceMode mode)
 		{
-			switch ((int)mode)
-			{
-				case 0:
-					return RegressionDistanceMode.Time;
-				case 1:
-					return RegressionDistanceMode.Index;
-				default:
-					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
-			}
+			return mode;
+//			switch ((int)mode)
+//			{
+//				case 0:
+//					return RegressionDistanceMode.Time;
+//				case 1:
+//					return RegressionDistanceMode.Index;
+//				default:
+//					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
+//			}
 		}
 
-		internal static RegressionDistanceMode Convert(RegressionDistanceMode mode)
-		{
-			switch (mode)
-			{
-				case RegressionDistanceMode.Time:
-					return (RegressionDistanceMode)0;
-				case RegressionDistanceMode.Index:
-					return (RegressionDistanceMode)1;
-				default:
-					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
-			}
-		}
+//		internal static RegressionDistanceMode Convert(RegressionDistanceMode mode)
+//		{
+//			switch (mode)
+//			{
+//				case RegressionDistanceMode.Time:
+//					return (RegressionDistanceMode)0;
+//				case RegressionDistanceMode.Index:
+//					return (RegressionDistanceMode)1;
+//				default:
+//					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
+//			}
+//		}
 
 		internal static FreeQuant.Data.BarData Convert(BarData barData)
 		{
@@ -298,7 +299,7 @@ namespace OpenQuant.API
 				case BarData.OpenInt:
 					return FreeQuant.Data.BarData.OpenInt;
 				default:
-					throw new NotImplementedException("BarData is not supported : " + (object)barData);
+					throw new ArgumentException(string.Format("Unsupported BarData - {0}", barData));
 			}
 		}
 
@@ -313,7 +314,7 @@ namespace OpenQuant.API
 				case ECross.None:
 					return Cross.None;
 				default:
-					throw new NotImplementedException("Cross type is not supported : " + (object)cross);
+					throw new ArgumentException(string.Format("Unsupported ECross - {0}", cross));
 			}
 		}
 
@@ -328,94 +329,82 @@ namespace OpenQuant.API
 				case Cross.None:
 					return ECross.None;
 				default:
-					throw new NotImplementedException("Cross type is not supported : " + (object)cross);
+					throw new ArgumentException(string.Format("Unsupported Cross - {0}", cross));
 			}
 		}
 
 		internal static StopType Convert(StopType stopType)
 		{
-			switch (stopType)
-			{
-				case StopType.Fixed:
-					return (StopType)0;
-				case StopType.Trailing:
-					return (StopType)1;
-				case StopType.Time:
-					return (StopType)2;
-				default:
-					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
-			}
+			return stopType;
+//			switch (stopType)
+//			{
+//				case StopType.Fixed:
+//					return (StopType)0;
+//				case StopType.Trailing:
+//					return (StopType)1;
+//				case StopType.Time:
+//					return (StopType)2;
+//				default:
+//					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
+//			}
 		}
 
-		internal static StopType Convert(StopType stopType)
-		{
-			switch ((int)stopType)
-			{
-				case 0:
-					return StopType.Fixed;
-				case 1:
-					return StopType.Trailing;
-				case 2:
-					return StopType.Time;
-				default:
-					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
-			}
-		}
-
-		internal static StopMode Convert(StopMode stopMode)
-		{
-			switch (stopMode)
-			{
-				case StopMode.Absolute:
-					return (StopMode)0;
-				case StopMode.Percent:
-					return (StopMode)1;
-				default:
-					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
-			}
-		}
+//		internal static StopType Convert(StopType stopType)
+//		{
+//			switch ((int)stopType)
+//			{
+//				case 0:
+//					return StopType.Fixed;
+//				case 1:
+//					return StopType.Trailing;
+//				case 2:
+//					return StopType.Time;
+//				default:
+//					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
+//			}
+//		}
 
 		internal static StopMode Convert(StopMode stopMode)
 		{
-			switch ((int)stopMode)
-			{
-				case 0:
-					return StopMode.Absolute;
-				case 1:
-					return StopMode.Percent;
-				default:
-					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
-			}
+			return stopMode;
+//			switch (stopMode)
+//			{
+//				case StopMode.Absolute:
+//					return (StopMode)0;
+//				case StopMode.Percent:
+//					return (StopMode)1;
+//				default:
+//					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
+//			}
 		}
+
+//		internal static StopMode Convert(StopMode stopMode)
+//		{
+//			switch ((int)stopMode)
+//			{
+//				case 0:
+//					return StopMode.Absolute;
+//				case 1:
+//					return StopMode.Percent;
+//				default:
+//					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
+//			}
+//		}
 
 		internal static StopStatus Convert(StopStatus stopStatus)
 		{
-			switch (stopStatus)
-			{
-				case StopStatus.Active:
-					return (StopStatus)0;
-				case StopStatus.Executed:
-					return (StopStatus)1;
-				case StopStatus.Canceled:
-					return (StopStatus)2;
-				default:
-					throw new NotImplementedException("Stop status is not supported : " + (object)stopStatus);
-			}
-		}
-
-		internal static StopStatus Convert(StopStatus stopStatus)
-		{
-			switch ((int)stopStatus)
-			{
-				case 0:
-					return StopStatus.Active;
-				case 1:
-					return StopStatus.Executed;
-				case 2:
-					return StopStatus.Canceled;
-				default:
-					throw new NotImplementedException("Stop status is not supported : " + (object)stopStatus);
-			}
+			return stopStatus;
+//			switch (stopStatus)
+//			{
+//				case StopStatus.Active:
+//					return (StopStatus)0;
+//				case StopStatus.Executed:
+//					return (StopStatus)1;
+//				case StopStatus.Canceled:
+//					return (StopStatus)2;
+//				default:
+//					throw new NotImplementedException("Stop status is not supported : " + (object)stopStatus);
+//			}
 		}
 
 		internal static PutCall Convert(PutOrCall value)
@@ -427,7 +416,7 @@ namespace OpenQuant.API
 				case PutOrCall.Call:
 					return PutCall.Call;
 				default:
-					throw new ArgumentException(string.Format("Unsupported put or call: {0}", (object)value));
+					throw new ArgumentException(string.Format("Unsupported PutOrCall: {0}", value));
 			}
 		}
 
@@ -440,7 +429,7 @@ namespace OpenQuant.API
 				case PutCall.Call:
 					return PutOrCall.Call;
 				default:
-					throw new ArgumentException(string.Format("Unsupported PutOrCall - {0}", (object)value));
+					throw new ArgumentException(string.Format("Unsupported PutCall - {0}", value));
 			}
 		}
 
@@ -452,8 +441,10 @@ namespace OpenQuant.API
 					return IndicatorStyle.SmartQuant;
 				case 1:
 					return IndicatorStyle.MetaStock;
+				case 2:
+					return IndicatorStyle.FreeQuant;
 				default:
-					throw new NotImplementedException("Indicator style is not supported : " + (object)indicatorStyle);
+					throw new NotImplementedException("Indicator style is not supported: " + indicatorStyle);
 			}
 		}
 
@@ -465,8 +456,10 @@ namespace OpenQuant.API
 					return (EIndicatorStyle)0;
 				case IndicatorStyle.MetaStock:
 					return (EIndicatorStyle)1;
+				case IndicatorStyle.FreeQuant:
+					return (EIndicatorStyle)2;
 				default:
-					throw new NotImplementedException("Indicator style is not supported : " + (object)indicatorStyle);
+					throw new NotSupportedException(string.Format("IndicatorStyle is not supported - {0}", indicatorStyle));
 			}
 		}
 
@@ -479,7 +472,7 @@ namespace OpenQuant.API
 				case MDSide.Ask:
 					return BidAsk.Ask;
 				default:
-					throw new NotSupportedException(string.Format("MDSide is not supported - {0}", (object)side));
+					throw new NotSupportedException(string.Format("MDSide is not supported - {0}", side));
 			}
 		}
 
@@ -492,7 +485,7 @@ namespace OpenQuant.API
 				case BidAsk.Ask:
 					return MDSide.Ask;
 				default:
-					throw new NotSupportedException(string.Format("BidAsk is not supported - {0}", (object)side));
+					throw new NotSupportedException(string.Format("BidAsk is not supported - {0}", side));
 			}
 		}
 
@@ -511,7 +504,7 @@ namespace OpenQuant.API
 				case MDOperation.Undefined:
 					return OrderBookAction.Undefined;
 				default:
-					throw new NotSupportedException(string.Format("MDOperation is not supported - {0}", (object)operation));
+					throw new NotSupportedException(string.Format("MDOperation is not supported - {0}", operation));
 			}
 		}
 
@@ -530,7 +523,7 @@ namespace OpenQuant.API
 				case OrderBookAction.Undefined:
 					return MDOperation.Undefined;
 				default:
-					throw new NotSupportedException(string.Format("OrderBookAction is not supported - {0}", (object)action));
+					throw new NotSupportedException(string.Format("OrderBookAction is not supported - {0}", action));
 			}
 		}
 	}

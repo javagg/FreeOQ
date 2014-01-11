@@ -1,6 +1,5 @@
 using FreeQuant.Data;
 using FreeQuant.FIX;
-using System.ComponentModel;
 
 namespace FreeQuant.Providers
 {

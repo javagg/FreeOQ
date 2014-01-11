@@ -2,11 +2,11 @@
 
 namespace OpenQuant.API.Plugins
 {
-  [Flags]
-  public enum SubscriptionDataType : byte
-  {
-    Trades = (byte) 1,
-    Quotes = (byte) 2,
-    OrderBook = (byte) 4,
-  }
+	[Flags]
+	public enum SubscriptionDataType
+	{
+		Trades = 1,
+		Quotes = 2,
+		OrderBook = 4,
+	}
 }

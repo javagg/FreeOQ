@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreeQuant.Indicators</RootNamespace>
+    <AssemblyName>FreeQuant.Indicators</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WMA.cs" />
+    <Compile Include="WAD.cs" />
+    <Compile Include="VWAP.cs" />
+    <Compile Include="VROC.cs" />
+    <Compile Include="VOSC.cs" />
+    <Compile Include="VHF.cs" />
+    <Compile Include="VCH.cs" />
+    <Compile Include="UltOsc.cs" />
+    <Compile Include="TRIX.cs" />
+    <Compile Include="TR.cs" />
+    <Compile Include="TL.cs" />
+    <Compile Include="TH.cs" />
+    <Compile Include="SMV.cs" />
+    <Compile Include="SMD.cs" />
+    <Compile Include="SMA.cs" />
+    <Compile Include="SAR.cs" />
+    <Compile Include="RSI.cs" />
+    <Compile Include="ROC.cs" />
+    <Compile Include="RegressionDistanceMode.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="R.cs" />
+    <Compile Include="PVT.cs" />
+    <Compile Include="PVI.cs" />
+    <Compile Include="PointAndFigure.cs" />
+    <Compile Include="PERF.cs" />
+    <Compile Include="PDM.cs" />
+    <Compile Include="PDI.cs" />
+    <Compile Include="PCU.cs" />
+    <Compile Include="PCL.cs" />
+    <Compile Include="OSC.cs" />
+    <Compile Include="OBV.cs" />
+    <Compile Include="NVI.cs" />
+    <Compile Include="MOM.cs" />
+    <Compile Include="MFI.cs" />
+    <Compile Include="MDM.cs" />
+    <Compile Include="MDI.cs" />
+    <Compile Include="MASS.cs" />
+    <Compile Include="MarketFI.cs" />
+    <Compile Include="MACD.cs" />
+    <Compile Include="LRS.cs" />
+    <Compile Include="LRI.cs" />
+    <Compile Include="K_Slow.cs" />
+    <Compile Include="KRI.cs" />
+    <Compile Include="K_Fast.cs" />
+    <Compile Include="KCU.cs" />
+    <Compile Include="KCL.cs" />
+    <Compile Include="Indicator.cs" />
+    <Compile Include="HV.cs" />
+    <Compile Include="FO.cs" />
+    <Compile Include="ENVU.cs" />
+    <Compile Include="ENVL.cs" />
+    <Compile Include="EMV.cs" />
+    <Compile Include="EMA.cs" />
+    <Compile Include="EIndicatorType.cs" />
+    <Compile Include="EIndicatorStyle.cs" />
+    <Compile Include="DX.cs" />
+    <Compile Include="D_Slow.cs" />
+    <Compile Include="DPO.cs" />
+    <Compile Include="D_Fast.cs" />
+    <Compile Include="CMO.cs" />
+    <Compile Include="CCI.cs" />
+    <Compile Include="CAD.cs" />
+    <Compile Include="BBU.cs" />
+    <Compile Include="BBL.cs" />
+    <Compile Include="B.cs" />
+    <Compile Include="ATR.cs" />
+    <Compile Include="AroonU.cs" />
+    <Compile Include="AroonL.cs" />
+    <Compile Include="ADXR.cs" />
+    <Compile Include="ADX.cs" />
+    <Compile Include="AD.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

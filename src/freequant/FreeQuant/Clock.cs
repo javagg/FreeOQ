@@ -10,12 +10,11 @@ using System.Timers;
 
 namespace FreeQuant
 {
-	public enum ClockMode { Realtime, Simulation	}
+	public enum ClockMode { Realtime, Simulation }
 
 	public class Clock
 	{
-		private static ClockMode clockMode; 
-		private static DateTime V43r8pGmVV;
+		private static DateTime now;
 		private static TimeSpan KLyrIGEWaU;
 		private static SortedList PQDrlFHKP0;
 		private static Timer timer;
@@ -27,7 +26,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl2;
+				return now;
 			}
 		}
 
@@ -43,8 +42,8 @@ namespace FreeQuant
 
 		static Clock()
 		{
-			Clock.clockMode = ClockMode.Realtime;
-			Clock.V43r8pGmVV = DateTime.Now;
+			Clock.ClockMode = ClockMode.Realtime;
+			Clock.now = DateTime.Now;
 			Clock.KLyrIGEWaU = TimeSpan.Zero;
 			Clock.PQDrlFHKP0 = new SortedList();
 			Clock.JIyr9VlLXh = false;
@@ -74,26 +73,6 @@ namespace FreeQuant
 
 		
 		public static void FireAllReminders()
-		{
-		}
-
-		
-		private static void w9brTOhgdW([In] ArrayList obj0, [In] ReminderEventHandler obj1)
-		{
-		}
-
-		
-		private static void UoLrWKXhTR([In] DateTime obj0)
-		{
-		}
-
-		
-		private static void SRjrGO4qdD([In] object obj0, [In] ElapsedEventArgs obj1)
-		{
-		}
-
-		
-		private static void N1ur0QBmvI()
 		{
 		}
 	}
