@@ -18,7 +18,7 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.fList[index] as Trade;
+        return this.list[index] as Trade;
       }
     }
 

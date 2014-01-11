@@ -19,7 +19,7 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.fList[index] as Quote;
+        return this.list[index] as Quote;
       }
     }
 

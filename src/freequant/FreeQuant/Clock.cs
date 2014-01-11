@@ -1,3 +1,7 @@
+#region License
+// Copyright (c) 2007 James Newton-King
+#endregion
+
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -6,11 +10,7 @@ using System.Timers;
 
 namespace FreeQuant
 {
-	public enum ClockMode
-	{
-		Realtime,
-		Simulation
-	}
+	public enum ClockMode { Realtime, Simulation	}
 
 	public class Clock
 	{
@@ -22,17 +22,7 @@ namespace FreeQuant
 		private static bool JIyr9VlLXh;
 		private static EventHandler GW0rV1V0KZ;
 
-		public static ClockMode ClockMode
-		{
-			get
-			{
-				return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl12;
-			}
-			set
-			{
-			}
-		}
-
+		public static ClockMode ClockMode {	get; set; }
 		public static DateTime Now
 		{
 			get
@@ -53,8 +43,6 @@ namespace FreeQuant
 
 		static Clock()
 		{
-			GItcYDqSxj5aE60JeS.GRAroVBQNR();
-			U11BeMmYvqFIQ38CeV7.y89NYTfzAIJ6Q();
 			Clock.clockMode = ClockMode.Realtime;
 			Clock.V43r8pGmVV = DateTime.Now;
 			Clock.KLyrIGEWaU = TimeSpan.Zero;

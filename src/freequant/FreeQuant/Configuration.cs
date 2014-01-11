@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -7,19 +8,19 @@ namespace FreeQuant
 {
   public class Configuration
   {
-    private const string KMfmCD6RBk = "Trace";
-    private const string HWgm8mfSmm = "Defaults";
+		private const string Trace = "Trace";
+		private const string Defaults = "Defaults";
     private const string qSTmIZYQno = "Error Management";
     private const string TvkmlyTube = "framework.xml";
-    private const System.Diagnostics.TraceLevel p5bm2wAvJs = System.Diagnostics.TraceLevel.Info;
-    private const string T3Qm9usnId = "Currency";
-    private const string PfXmVQJjCq = "Portfolio";
-    private const string gVemgBLiKH = "Exchange";
-    private const string LAtmbbgnaa = "ExecutionProvider";
-    private const string KjrmvsKr1v = "MarketDataProvider";
+		private const TraceLevel defaultTraceLevel = TraceLevel.Info;
+		private const string Currency = "Currency";
+		private const string Portfolio = "Portfolio";
+		private const string Exchange = "Exchange";
+		private const string ExecutionProvider = "ExecutionProvider";
+		private const string MarketDataProvider = "MarketDataProvider";
     private ReferenceList DQjmfsNtrs;
-    private PluginList OKampyn3AK;
-    private System.Diagnostics.TraceLevel Rk0mdunFrb;
+		private PluginList plugins;
+		private TraceLevel traceLevel;
     private string ytrmcAy4ir;
     private string eVlmZNmmA4;
     private string GIMm15xSFy;
@@ -47,23 +48,14 @@ namespace FreeQuant
     {
        get
       {
-        return (PluginList) null;
+				return plugins;
       }
     }
 
-    [DefaultValue(System.Diagnostics.TraceLevel.Info)]
+    [DefaultValue(TraceLevel.Info)]
     [Description("Gets or sets trace level")]
     [Category("Trace")]
-    public System.Diagnostics.TraceLevel TraceLevel
-    {
-      get
-      {
-        return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl5;
-      }
-       set
-      {
-      }
-    }
+		public TraceLevel TraceLevel { get; set; }
 
     [Category("Error Management")]
     [DisplayName("Enabled")]
@@ -82,16 +74,7 @@ namespace FreeQuant
     [DisplayName("Target")]
     [Category("Error Management")]
     [DefaultValue(RuntimeErrorOutputTarget.PopupWindow)]
-    public RuntimeErrorOutputTarget RuntimeErrorOutputTarget
-    {
-       get
-      {
-        return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl4;
-      }
-       set
-      {
-      }
-    }
+	public RuntimeErrorOutputTarget RuntimeErrorOutputTarget { get; }
 
     [Description("Gets or sets default currency")]
     [Category("Defaults")]

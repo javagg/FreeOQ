@@ -14,17 +14,17 @@ namespace FreeQuant.Data
     {
       bool flag = false;
       int index = 0;
-      foreach (MarketDepth marketDepth in this.fList)
+      foreach (MarketDepth marketDepth in this.list)
       {
         if (marketDepth.Price == item.Price && marketDepth.Size == item.Size && (marketDepth.MarketMaker == item.MarketMaker && marketDepth.Side == item.Side))
         {
-          this.fList[index] = (object) item;
+          this.list[index] = (object) item;
           flag = true;
         }
         ++index;
       }
       if (!flag)
-        this.fList.Add((object) item);
+        this.list.Add((object) item);
       return flag;
     }
   }

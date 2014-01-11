@@ -293,7 +293,7 @@ namespace FreeQuant.Data
 			this.close = close;
 			this.volume = volume;
 			this.openInt = openInt;
-			this.providerId = (byte)0;
+			this.providerId = 0;
 			this.color = Color.Empty;
 			this.isComplete = false;
 		}

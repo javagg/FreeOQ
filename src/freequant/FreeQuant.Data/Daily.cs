@@ -40,18 +40,18 @@ namespace FreeQuant.Data
     {
       return (ISeriesObject) new Daily();
     }
+//
+//    public override void WriteTo(BinaryWriter writer)
+//    {
+//      base.WriteTo(writer);
+//      writer.Write((byte) 1);
+//    }
 
-    public override void WriteTo(BinaryWriter writer)
-    {
-      base.WriteTo(writer);
-      writer.Write((byte) 1);
-    }
-
-    public override void ReadFrom(BinaryReader reader)
-    {
-      base.ReadFrom(reader);
-//      int num = (int) reader.ReadByte();
-    }
+//    public override void ReadFrom(BinaryReader reader)
+//    {
+//      base.ReadFrom(reader);
+////      int num = (int) reader.ReadByte();
+//    }
 
     public override object Clone()
     {

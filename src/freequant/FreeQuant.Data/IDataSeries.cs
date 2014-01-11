@@ -11,9 +11,9 @@ namespace FreeQuant.Data
 
 		int Count { get; }
 
-		object this [DateTime datetime] { get; set; }
+		object this[DateTime datetime] { get; set; }
 
-		object this [int index] { get; }
+		object this[int index] { get; }
 
 		DateTime FirstDateTime { get; }
 
