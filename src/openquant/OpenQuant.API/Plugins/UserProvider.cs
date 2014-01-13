@@ -4,29 +4,51 @@ using System;
 
 namespace OpenQuant.API.Plugins
 {
+	///<summary>
+	///  A user defined provider
+	///</summary>
 	public class UserProvider
 	{
+		private FQProvider provider;
+		///<summary>
+		///  Provider identificator
+		///</summary>
 		protected byte id = byte.MaxValue;
-		protected string name = "User provider";
-		protected string description = "User provider";
-		protected string url = "http://www.smartquant.com";
-		private SQProvider provider;
+		///<summary>
+		///  Provider name 
+		///</summary>
+		protected string name = "User provider name";
+		///<summary>
+		///  Provider description
+		///</summary>
+		protected string description = "User provider description";
+		///<summary>
+		///  Provider URL
+		///</summary>
+		protected string url = "http://www.freequant.org";
+		///<summary>
+		///  Provider connected flag 
+		///</summary>
 		protected bool isConnected;
 
 		protected virtual bool IsConnected
-		{
-			get
-			{
-				return this.isConnected;
-			}
+		{ 
+			get { return this.isConnected; }
 		}
 
+		///<summary>
+		///  Initializes a new instance of the UserProvider class
+		///</summary>
 		protected UserProvider()
 		{
 			this.isConnected = false;
-			this.provider = new SQProvider(this);
+			this.provider = new FQProvider(this);
 		}
 
+		///<summary>
+		///  Initializes a new instance of the UserProvider class
+		///</summary>
+		/// 
 		internal byte GetId()
 		{
 			return this.id;
@@ -51,10 +73,14 @@ namespace OpenQuant.API.Plugins
 		{
 		}
 
-		protected virtual void Disconnect()
-		{
-		}
+		///<summary>
+		///  Override to disconnect from provider
+		///</summary>
+		protected virtual void Disconnect() {}
 
+		///<summary>
+		///  Override to shutdown provider plugin 
+		///</summary>
 		protected virtual void Shutdown()
 		{
 			if (!this.isConnected)
@@ -62,33 +88,44 @@ namespace OpenQuant.API.Plugins
 			this.Disconnect();
 		}
 
+		///<summary>
+		///  Override to subscribe to market data feed
+		///</summary>		 
 		[Obsolete("Use Subscribe(Instrument,SubscriptionDataType) method", false)]
-		protected virtual void Subscribe(Instrument instrument)
-		{
-		}
+		protected virtual void Subscribe(Instrument instrument) {}
 
+		///<summary>
+		///  Override to subscribe to market data feed
+		///</summary>	
 		protected virtual void Subscribe(Instrument instrument, SubscriptionDataType subscriptionDataType)
 		{
 			this.Subscribe(instrument);
 		}
 
+		///<summary>
+		///  Override to unsubscribe from market data feed
+		///</summary>	
 		[Obsolete("Use Unsubscribe(Instrument,SubscriptionDataType) method", false)]
-		protected virtual void Unsubscribe(Instrument instrument)
-		{
-		}
+		protected virtual void Unsubscribe(Instrument instrument) {}
 
+		///<summary>
+		///  Override to unsubscribe from market data feed
+		///</summary>	
 		protected virtual void Unsubscribe(Instrument instrument, SubscriptionDataType subscriptionDataType)
 		{
 			this.Unsubscribe(instrument);
 		}
 
+		///<summary>
+		///  Override to request a historical data 
+		///</summary>	
 		protected virtual void RequestHistoricalData(HistoricalDataRequest request)
 		{
 		}
-
-		protected virtual void CancelHistoricalData(HistoricalDataRequest request)
-		{
-		}
+		///<summary>
+		///  Override to cancel a historical data request
+		///</summary>
+		protected virtual void CancelHistoricalData(HistoricalDataRequest request)	{}
 
 		protected void EmitConnected()
 		{
@@ -150,6 +187,9 @@ namespace OpenQuant.API.Plugins
 			this.EmitError(-1, -1, message);
 		}
 
+		///<summary>
+		///  Call to emit order accepted execution report 
+		///</summary>
 		protected void EmitAccepted(Order order)
 		{
 			this.provider.EmitExecutionReport(order, OrdStatus.New);
@@ -175,6 +215,9 @@ namespace OpenQuant.API.Plugins
 			this.provider.EmitExecutionReport(order, OrdStatus.PendingCancel);
 		}
 
+		///<summary>
+		///  Call to emit order cancelled execution report
+		///</summary>
 		protected void EmitCancelled(Order order)
 		{
 			this.provider.EmitExecutionReport(order, OrdStatus.Cancelled);
@@ -290,19 +333,28 @@ namespace OpenQuant.API.Plugins
 			this.CancelHistoricalData(request);
 		}
 
-		protected virtual void Send(Order order)
-		{
-		}
+		///<summary>
+		///  Override to send an order
+		///</summary>
+		protected virtual void Send(Order order) {}
 
-		protected virtual void Cancel(Order order)
-		{
-		}
+		///<summary>
+		///  Override to cancel an order
+		///</summary>
+		protected virtual void Cancel(Order order) {}
 
+		///<summary>
+		///  Override to replace an order 
+		///</summary>
 		[Obsolete("Use Replace(Order,double,double,double) method.", false)]
 		protected virtual void Replace(Order order)
 		{
+			throw new NotImplementedException("Not implemented because of Obsoletion");
 		}
 
+		///<summary>
+		///  Override to replace an order
+		///</summary>
 		protected virtual void Replace(Order order, double newQty, double newPrice, double newStopPrice)
 		{
 		}

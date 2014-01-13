@@ -6,19 +6,16 @@ using System.ComponentModel;
 
 namespace OpenQuant.API.Plugins
 {
+	///<summary>
+	///  A user defined indicator
+	///</summary>
 	public class UserIndicator : Indicator
 	{
 		private ISeries input;
 		private FreeQuant.Series.TimeSeries series;
 		private bool isInitialized;
 
-		public ISeries Input
-		{
-			get
-			{
-				return this.input;
-			}
-		}
+		public ISeries Input { get	{ return this.input;	} }
 
 		[Browsable(false)]
 		public new string Name
@@ -35,7 +32,7 @@ namespace OpenQuant.API.Plugins
 			}
 		}
 
-		public override double this [int index]
+		public override double this[int index]
 		{
 			get
 			{
@@ -120,6 +117,10 @@ namespace OpenQuant.API.Plugins
 			}
 		}
 
+
+		///<summary>
+		///  Initializes a new instance of the UserIndicator class
+		///</summary>
 		public UserIndicator(ISeries input)
 		{
 			this.input = input;
@@ -132,6 +133,9 @@ namespace OpenQuant.API.Plugins
 			this.indicator = new Indicator(this.series);
 		}
 
+		///<summary>
+		///  Initializes user indicator
+		///</summary>
 		public void Init()
 		{
 			if (this.isInitialized)
@@ -146,6 +150,9 @@ namespace OpenQuant.API.Plugins
 			this.isInitialized = true;
 		}
 
+		///<summary>
+		///  Do the Calculation work
+		///</summary>
 		public virtual double Calculate(int index)
 		{
 			return double.NaN;

@@ -4,10 +4,16 @@ using System;
 
 namespace OpenQuant.API
 {
+	///<summary>
+	///  Settings of the historical data request
+	///</summary>
 	public class HistoricalDataRequest
 	{
 		internal FreeQuant.Providers.HistoricalDataRequest request;
 
+		///<summary>
+		///  Gets instrument
+		///</summary>
 		public Instrument Instrument
 		{
 			get
@@ -16,6 +22,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets DataType
+		///</summary>
 		public DataType DataType
 		{
 			get
@@ -31,11 +40,14 @@ namespace OpenQuant.API
 					case HistoricalDataType.Daily:
 						return DataType.Daily;
 					default:
-						throw new ArgumentException(string.Format("Not supported data type - {0}", (object)this.request.DataType));
+						throw new ArgumentException(string.Format("Not supported data type - {0}", this.request.DataType));
 				}
 			}
 		}
 
+		///<summary>
+		///  Gets size of requested bars(in seconds)
+		///</summary>
 		public long BarSize
 		{
 			get
@@ -44,6 +56,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets begin datetime 
+		///</summary>
 		public DateTime BeginDate
 		{
 			get
@@ -52,6 +67,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets end datetime
+		///</summary>
 		public DateTime EndDate
 		{
 			get

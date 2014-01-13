@@ -236,13 +236,9 @@
     <Compile Include="Design\AltSourceTypeEditor.cs" />
     <Compile Include="Design\AltIDGroupPropertyDescriptor.cs" />
     <Compile Include="Plugins\UserProvider.cs" />
-    <Compile Include="Plugins\SQProviderTypeDescriptor.cs" />
-    <Compile Include="Plugins\SQProviderTypeDescriptionProvider.cs" />
     <Compile Include="Plugins\SubscriptionDataType.cs" />
     <Compile Include="Plugins\OrderRecord.cs" />
     <Compile Include="Plugins\UserIndicator.cs" />
-    <Compile Include="Plugins\SQProvider.cs" />
-    <Compile Include="Plugins\SQProviderPropertyDescriptor.cs" />
     <Compile Include="Engine\ProjectList.cs" />
     <Compile Include="Engine\Solution.cs" />
     <Compile Include="Engine\IDE.cs" />
@@ -278,6 +274,10 @@
     <Compile Include="Compression\TickBarCompressor.cs" />
     <Compile Include="Compression\CompressedBarEventArgs.cs" />
     <Compile Include="Compression\BarDataEnumerator.cs" />
+    <Compile Include="Plugins\FQProvider.cs" />
+    <Compile Include="Plugins\FQProviderTypeDescriptor.cs" />
+    <Compile Include="Plugins\FQProviderPropertyDescriptor.cs" />
+    <Compile Include="Plugins\FQProviderTypeDescriptionProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Design\AltSourceForm.resx" />

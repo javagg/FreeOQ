@@ -5,9 +5,12 @@ using System.Drawing;
 
 namespace OpenQuant.API
 {
+	///<summary>
+	///  A time series of double values
+	///</summary>
 	public class TimeSeries : ISeries
 	{
-		internal DoubleSeries series;
+		internal FreeQuant.Series.DoubleSeries series;
 
 		public string Name
 		{
@@ -45,6 +48,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets or sets series width 
+		///</summary>
 		[Description("Gets or sets series width")]
 		[Category("Drawing")]
 		public int Width
@@ -59,7 +65,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public double this [int index]
+		public double this[int index]
 		{
 			get
 			{
@@ -67,7 +73,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public double this [DateTime dateTime]
+		public double this[DateTime dateTime]
 		{
 			get
 			{
@@ -75,7 +81,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public double this [DateTime dateTime, BarData barData]
+		public double this[DateTime dateTime, BarData barData]
 		{
 			get
 			{
@@ -83,7 +89,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public double this [int index, BarData barData]
+		public double this[int index, BarData barData]
 		{
 			get
 			{
@@ -96,31 +102,25 @@ namespace OpenQuant.API
 			this.series = series;
 		}
 
+		///<summary>
+		///  Creates an instance of TimeSeries class 
+		///</summary>
 		public TimeSeries(string name, string title)
 		{
 			this.series = new DoubleSeries(name, title);
 		}
 
 		public TimeSeries(string name, string title, Color color)
-      : this(name, title)
+			: this(name, title)
 		{
 			this.series.Color = color;
 		}
 
-		public TimeSeries(string name)
-      : this(name, "")
-		{
-		}
+		public TimeSeries(string name) : this(name, String.Empty) {}
 
-		public TimeSeries(string name, Color color)
-      : this(name, "", color)
-		{
-		}
+		public TimeSeries(string name, Color color) : this(name, String.Empty, color) {}
 
-		public TimeSeries()
-      : this("", "")
-		{
-		}
+		public TimeSeries() : this(String.Empty, String.Empty) {}
 
 		public bool Contains(DateTime dateTime)
 		{

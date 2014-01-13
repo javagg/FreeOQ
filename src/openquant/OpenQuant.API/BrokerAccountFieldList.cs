@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using FreeQuant.Providers;
 
 namespace OpenQuant.API
 {
@@ -33,7 +34,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public BrokerAccountField this [string name, string currency]
+		internal BrokerAccountField this[string name, string currency]
 		{
 			get
 			{
@@ -48,7 +49,7 @@ namespace OpenQuant.API
 			}
 		}
 
-		public BrokerAccountField this [string name]
+		public BrokerAccountField this[string name]
 		{
 			get
 			{
@@ -86,7 +87,7 @@ namespace OpenQuant.API
 				yield return (object)new BrokerAccountField(field);
 		}
 
-		public BrokerAccountField[] GetAllByName(string name)
+		internal BrokerAccountField[] GetAllByName(string name)
 		{
 			Dictionary<string, FreeQuant.Providers.BrokerAccountField> dictionary;
 			if (!this.table.TryGetValue(name, out dictionary))
@@ -97,7 +98,7 @@ namespace OpenQuant.API
 			return list.ToArray();
 		}
 
-		public bool Contains(string name, string currency)
+		internal bool Contains(string name, string currency)
 		{
 			Dictionary<string, SmartQuant.Providers.BrokerAccountField> dictionary;
 			if (this.table.TryGetValue(name, out dictionary))
@@ -106,7 +107,7 @@ namespace OpenQuant.API
 				return false;
 		}
 
-		public bool Contains(string name)
+		internal bool Contains(string name)
 		{
 			return this.Contains(name, string.Empty);
 		}

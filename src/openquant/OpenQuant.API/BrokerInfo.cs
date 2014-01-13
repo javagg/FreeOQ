@@ -1,5 +1,10 @@
-﻿namespace OpenQuant.API
+﻿using FreeQuant.Providers;
+
+namespace OpenQuant.API
 {
+	///<summary>
+	///  Holds broker information such as Account list
+	///</summary>
 	public class BrokerInfo
 	{
 		internal FreeQuant.Providers.BrokerInfo brokerInfo;
@@ -17,8 +22,10 @@
 			this.brokerInfo = brokerInfo;
 		}
 
-		public BrokerInfo()
-			: this(new FreeQuant.Providers.BrokerInfo())
+		///<summary>
+		///  Initializes a new instance of this class
+		///</summary>
+		public BrokerInfo() : this(new FreeQuant.Providers.BrokerInfo())
 		{
 		}
 

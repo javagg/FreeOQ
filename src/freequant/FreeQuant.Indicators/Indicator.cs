@@ -21,7 +21,7 @@ namespace FreeQuant.Indicators
 
     protected int fRealCount
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLastIndex - this.fFirstIndex + 1;
       }
@@ -30,7 +30,7 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public override DateTime FirstDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         if (this.fRealCount <= 0)
@@ -43,7 +43,7 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public override DateTime LastDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         if (this.fRealCount <= 0)
@@ -57,7 +57,7 @@ namespace FreeQuant.Indicators
     [Description("")]
     public EIndicatorType Type
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fType;
       }
@@ -66,7 +66,7 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public override int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         return base.Count;
@@ -76,11 +76,11 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public TimeSeries Input
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fInput;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (this.fInput != null)
           this.fInput.Children.Remove((object) this);
@@ -95,11 +95,11 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public bool Monitored
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMonitored;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMonitored = value;
         if (this.fMonitored)
@@ -112,7 +112,7 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public override int FirstIndex
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fFirstIndex;
       }
@@ -121,7 +121,7 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public override int LastIndex
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLastIndex;
       }
@@ -130,7 +130,7 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public override int RealCount
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fRealCount;
       }
@@ -139,11 +139,11 @@ namespace FreeQuant.Indicators
     [Browsable(false)]
     public bool DrawEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fDrawEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fDrawEnabled = value;
       }
@@ -151,11 +151,11 @@ namespace FreeQuant.Indicators
 
     public static bool SyncIndex
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Indicator.fSyncIndex;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Indicator.fSyncIndex = value;
       }
@@ -163,7 +163,7 @@ namespace FreeQuant.Indicators
 
     public new double this[int Index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         return base[Index];
@@ -172,7 +172,7 @@ namespace FreeQuant.Indicators
 
     public new double this[DateTime DateTime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         return base[DateTime];
@@ -181,7 +181,7 @@ namespace FreeQuant.Indicators
 
     public new double this[DateTime DateTime, EIndexOption Option]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         return base[DateTime, Option];
@@ -190,43 +190,31 @@ namespace FreeQuant.Indicators
 
     public override double this[int Col, int Row]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         this.Calculate();
         return base[Col, Row];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    static Indicator()
+   public Indicator() : base()
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Indicator()
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fCalculate = true;
       this.fDrawEnabled = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Indicator(TimeSeries Input)
+    
+		public Indicator(TimeSeries Input) : base()
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fCalculate = true;
       this.fDrawEnabled = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.fInput = Input;
+
+	   this.fInput = Input;
       this.fInput.Children.Add((object) this);
       this.Connect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void Connect()
     {
       if (this.fInput == null)
@@ -234,27 +222,27 @@ namespace FreeQuant.Indicators
       this.fInput.ItemAdded += new ItemAddedEventHandler(this.OnInputItemAdded2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void Disconnect()
     {
       this.fInput.ItemAdded -= new ItemAddedEventHandler(this.OnInputItemAdded2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Detach()
     {
       this.Disconnect();
       this.fInput.Children.Remove((object) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void Init()
     {
       this.fFirstIndex = 1073741823;
       this.fLastIndex = -1073741824;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void OnInputItemAdded2(object sender, DateTimeEventArgs EventArgs)
     {
       if (this.rbmJhWudB)
@@ -264,7 +252,7 @@ namespace FreeQuant.Indicators
       this.OnInputItemAdded(sender, EventArgs);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void OnInputItemAdded(object sender, DateTimeEventArgs EventArgs)
     {
       if (!this.fMonitored)
@@ -275,7 +263,7 @@ namespace FreeQuant.Indicators
       this.Calculate(index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Calculate()
     {
       if (!this.fCalculate)
@@ -289,7 +277,7 @@ namespace FreeQuant.Indicators
         this.Calculate(Index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Calculate(bool Force)
     {
       if (Force)
@@ -297,12 +285,12 @@ namespace FreeQuant.Indicators
       this.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual void Calculate(int Index)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Add(DateTime DateTime, double Data)
     {
       if (!Indicator.fSyncIndex && double.IsNaN(Data))
@@ -328,7 +316,7 @@ namespace FreeQuant.Indicators
       this.EmitItemAdded(DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Remove(int Index)
     {
       if (Index < this.fFirstIndex)
@@ -339,7 +327,7 @@ namespace FreeQuant.Indicators
       this.fChanged = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Clear()
     {
       this.fArray.Clear();
@@ -348,42 +336,42 @@ namespace FreeQuant.Indicators
       this.fChanged = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override bool Contains(DateTime dateTime)
     {
       this.Calculate();
       return base.Contains(dateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override bool Contains(int index)
     {
       this.Calculate();
       return base.Contains(index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override DateTime GetDateTime(int Index)
     {
       this.Calculate();
       return base.GetDateTime(Index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override int GetIndex(DateTime DateTime)
     {
       this.Calculate();
       return base.GetIndex(DateTime);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override int GetIndex(DateTime DateTime, EIndexOption Option)
     {
       this.Calculate();
       return base.GetIndex(DateTime, Option);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
     {
       Pen pen = new Pen(this.fColor, (float) this.fDrawWidth);
@@ -452,7 +440,7 @@ namespace FreeQuant.Indicators
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetSum()
     {
       if (this.fChanged)
@@ -468,13 +456,13 @@ namespace FreeQuant.Indicators
       return this.fSum;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetSum(int Row)
     {
       return this.GetSum(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMean()
     {
       if (this.Count <= 0)
@@ -484,13 +472,13 @@ namespace FreeQuant.Indicators
       return this.fMean;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMean(int Row)
     {
       return this.GetMean(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMedian()
     {
       if (this.Count <= 0)
@@ -500,13 +488,13 @@ namespace FreeQuant.Indicators
       return this.fMedian;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMedian(int Row)
     {
       return this.GetMedian(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetVariance()
     {
       if (this.fRealCount <= 1)
@@ -528,43 +516,43 @@ namespace FreeQuant.Indicators
       return this.fVariance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetVariance(int Row)
     {
       return this.GetVariance(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetPositiveVariance(int Row)
     {
       return this.GetPositiveVariance(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetNegativeVariance(int Row)
     {
       return this.GetNegativeVariance(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetMoment(int k, int Row)
     {
       return this.GetMoment(k, this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetAsymmetry(int Row)
     {
       return this.GetAsymmetry(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetExcess(int Row)
     {
       return this.GetExcess(this.fFirstIndex, this.fLastIndex, Row);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double GetAutoCovariance(int Lag)
     {
       if (Lag >= this.fRealCount)
@@ -576,7 +564,7 @@ namespace FreeQuant.Indicators
       return num / (double) (this.fLastIndex - Lag);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override DoubleSeries GetReturnSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.fName, this.fTitle + GXPBSPblRhtUOANrS4.LSuAVoYjy(540));
@@ -597,7 +585,7 @@ namespace FreeQuant.Indicators
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override DoubleSeries GetPercentReturnSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries(this.fName, this.fTitle + GXPBSPblRhtUOANrS4.LSuAVoYjy(562));
@@ -618,7 +606,7 @@ namespace FreeQuant.Indicators
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override DoubleSeries GetPositiveSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries();
@@ -630,7 +618,7 @@ namespace FreeQuant.Indicators
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override DoubleSeries GetNegativeSeries()
     {
       DoubleSeries doubleSeries = new DoubleSeries();
@@ -642,7 +630,7 @@ namespace FreeQuant.Indicators
       return doubleSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Dispose()
     {
       this.Detach();

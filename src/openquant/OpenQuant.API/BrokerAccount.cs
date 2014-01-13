@@ -1,4 +1,6 @@
-﻿namespace OpenQuant.API
+﻿using FreeQuant.Providers;
+
+namespace OpenQuant.API
 {
 	///<summary>
 	///  Represents a set of broker account's properties such as Name, BuyingPower and Position list

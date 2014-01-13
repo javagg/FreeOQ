@@ -50,15 +50,15 @@ namespace FreeQuant.QUIK
 
     public override byte Id
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return (byte) 31;
+				return 31;
       }
     }
 
     public override string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return nvcneRd3YWS84l4984.Ey6KSwFglw(162);
       }
@@ -66,7 +66,7 @@ namespace FreeQuant.QUIK
 
     public override string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Name;
       }
@@ -74,7 +74,7 @@ namespace FreeQuant.QUIK
 
     public override string URL
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return nvcneRd3YWS84l4984.Ey6KSwFglw(182);
       }
@@ -83,107 +83,107 @@ namespace FreeQuant.QUIK
     [Description("Directory to store logs")]
     [Category("Message Logging")]
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
-    public string FileLogPath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string FileLogPath {  get;  set; }
 
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
     [Category("Message Logging")]
     [Description("Directory to store backup logs")]
-    public string FileLogBackupPath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string FileLogBackupPath {  get;  set; }
 
     [Category("Message Storage")]
     [Description("If set to N, no messages will be persisted. This will force QuickFIX to always send GapFills instead of resending messages")]
     [DefaultValue(false)]
-    public bool PersistMessages { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool PersistMessages {  get;  set; }
 
     [Editor(typeof (FolderNameEditor), typeof (UITypeEditor))]
     [Description("Directory to store sequence number and message files")]
     [Category("Message Storage")]
-    public string FileStorePath { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string FileStorePath {  get;  set; }
 
     [Category("Session")]
     [DefaultValue(typeof (TimeSpan), "00:00:00")]
     [Description("Time of day that this FIX session becomes activated")]
-    public TimeSpan StartTime { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan StartTime {  get;  set; }
 
     [DefaultValue(typeof (TimeSpan), "00:00:00")]
     [Category("Session")]
     [Description("Time of day that this FIX session becomes deactivated")]
-    public TimeSpan EndTime { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan EndTime {  get;  set; }
 
     [Description("If set to true, QuickFIX will send all necessary resend requests, even if they appear redundant")]
     [DefaultValue(false)]
     [Category("Session")]
-    public bool SendRedundantResendRequests { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool SendRedundantResendRequests {  get;  set; }
 
     [DefaultValue(false)]
     [Description("Determines if sequence numbers should be reset to 1 after a normal logout termination")]
     [Category("Session")]
-    public bool ResetOnLogout { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool ResetOnLogout {  get;  set; }
 
     [Category("Session")]
     [Description("Determines if sequence numbers should be reset to 1 after an abnormal termination")]
     [DefaultValue(false)]
-    public bool ResetOnDisconnect { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool ResetOnDisconnect {  get;  set; }
 
     [DefaultValue(false)]
     [Description("Determines if session state should be restored from persistence layer when logging on")]
     [Category("Session")]
-    public bool RefreshOnLogon { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool RefreshOnLogon {  get;  set; }
 
     [Description("XML definition file for validating incoming FIX messages")]
     [Editor(typeof (FileNameEditor), typeof (UITypeEditor))]
     [Category("Session")]
-    public string DataDictionary { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string DataDictionary {  get;  set; }
 
     [Description("If set to Y, messages must be received from the counterparty within a defined number of seconds (see MaxLatency)")]
     [DefaultValue(true)]
     [Category("Session")]
-    public bool CheckLatency { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public bool CheckLatency {  get;  set; }
 
     [Category("Session")]
     [DefaultValue(typeof (TimeSpan), "00:02:00")]
     [Description("If CheckLatency is set to Y, this defines the number of seconds latency allowed for a message to be processed")]
-    public TimeSpan MaxLatency { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan MaxLatency {  get;  set; }
 
     [DefaultValue(typeof (TimeSpan), "00:00:30")]
     [Description("Time between reconnection attempts")]
     [Category("Session")]
-    public TimeSpan ReconnectInterval { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan ReconnectInterval {  get;  set; }
 
     [DefaultValue(typeof (TimeSpan), "00:00:20")]
     [Description("Heartbeat interval")]
     [Category("Session")]
-    public TimeSpan HeartBtInt { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public TimeSpan HeartBtInt {  get;  set; }
 
     [Category("Session")]
     [Description("Host to connect to")]
     [DefaultValue("localhost")]
-    public string SocketConnectHost { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string SocketConnectHost {  get;  set; }
 
     [Category("Session")]
     [Description("Socket port for connecting to a session")]
     [DefaultValue(0L)]
-    public uint SocketConnectPort { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public uint SocketConnectPort {  get;  set; }
 
     [Description("Your ID as associated with this FIX session")]
     [Category("Session")]
-    public string SenderCompID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string SenderCompID {  get;  set; }
 
     [Category("Session")]
     [Description("Counter parties ID as associated with this FIX session")]
-    public string TargetCompID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string TargetCompID {  get;  set; }
 
     [Category("Execution")]
-    public string DefaultAccount { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string DefaultAccount {  get;  set; }
 
     [Category("Execution")]
-    public string DefaultClientID { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public string DefaultClientID {  get;  set; }
 
     [DefaultValue(0)]
     [Category("Market Data")]
-    public int MarketDepth { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public int MarketDepth {  get;  set; }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public QUIKFIX()
     {
       he1DlExnKSyvVxIfFh.qrl8YBDzYVm38();
@@ -214,7 +214,7 @@ namespace FreeQuant.QUIK
       ProviderManager.Add((IProvider) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Init()
     {
       Dictionary defaults = new Dictionary();
@@ -248,7 +248,7 @@ namespace FreeQuant.QUIK
       this.application = (QuickFIX42Application) new mWYFJZ8xKCsaXEKF78(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void SendMarketDataRequest(FIXMarketDataRequest request)
     {
       if (this.IsConnected)
@@ -257,7 +257,7 @@ namespace FreeQuant.QUIK
         this.EmitError(nvcneRd3YWS84l4984.Ey6KSwFglw(804));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void SendNewOrderSingle(NewOrderSingle order)
     {
       if (!order.ContainsField(1) && !string.IsNullOrWhiteSpace(this.DefaultAccount))
@@ -267,7 +267,7 @@ namespace FreeQuant.QUIK
       base.SendNewOrderSingle(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void SendOrderCancelReplaceRequest(OrderCancelReplaceRequest request)
     {
       if (!request.ContainsField(1) && !string.IsNullOrWhiteSpace(this.DefaultAccount))

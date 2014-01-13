@@ -12,8 +12,8 @@ using System.Globalization;
 
 namespace OpenQuant.API.Plugins
 {
-  [TypeDescriptionProvider(typeof (SQProviderTypeDescriptionProvider))]
-  internal class SQProvider : IMarketDataProvider, IExecutionProvider, IHistoricalDataProvider, IProvider
+  [TypeDescriptionProvider(typeof(FQProviderTypeDescriptionProvider))]
+  internal class FQProvider : IMarketDataProvider, IExecutionProvider, IHistoricalDataProvider, IProvider
   {
     private const string CATEGORY_INFO = "Information";
     private const string CATEGORY_STATUS = "Status";
@@ -259,7 +259,7 @@ namespace OpenQuant.API.Plugins
 
     public event HistoricalTradeEventHandler NewHistoricalTrade;
 
-    internal SQProvider(UserProvider provider)
+    internal FQProvider(UserProvider provider)
     {
       this.provider = provider;
       this.BarFactory = (IBarFactory) new SmartQuant.Providers.BarFactory(false);

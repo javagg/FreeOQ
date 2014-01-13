@@ -2,6 +2,9 @@
 
 namespace OpenQuant.API.Plugins
 {
+	///<summary>
+	///  Subscription data type   
+	///</summary>
 	[Flags]
 	public enum SubscriptionDataType
 	{

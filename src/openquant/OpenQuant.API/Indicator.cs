@@ -1,15 +1,27 @@
 ﻿using FreeQuant.Indicators;
 using FreeQuant.Series;
+using FreeQuant.Indicators;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 
 namespace OpenQuant.API
 {
+	///<summary>
+	///  A technical indicator
+	///</summary>
 	public class Indicator : ISeries
 	{
-		internal Indicator indicator;
+		internal FreeQuant.Indicators.Indicator indicator;
 
+		///<summary>
+		///  Initializes a new instance of the Indicator class
+		///</summary>
+		public Indicator() {}
+
+		///<summary>
+		///  Gets or sets indicator name 
+		///</summary>
 		[Browsable(false)]
 		public string Name
 		{
@@ -23,6 +35,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets or sets indicator description 
+		///</summary>
 		[Browsable(false)]
 		public string Description
 		{
@@ -36,6 +51,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets or sets indicator color
+		///</summary>
 		[Category("Drawing")]
 		[Description("Gets or sets indicator color")]
 		public Color Color
@@ -50,7 +68,10 @@ namespace OpenQuant.API
 			}
 		}
 
-		[Description("Gets or sets indicator width")]
+		///<summary>
+		///  Gets or sets indicator width
+		///</summary>
+      [Description("Gets or sets indicator width")]
 		[Category("Drawing")]
 		public int Width
 		{
@@ -64,7 +85,10 @@ namespace OpenQuant.API
 			}
 		}
 
-		public virtual double this [int index]
+		///<summary>
+		///  Gets indicator value at specified index
+		///</summary>
+		public virtual double this[int index]
 		{
 			get
 			{
@@ -72,7 +96,10 @@ namespace OpenQuant.API
 			}
 		}
 
-		public virtual double this [DateTime dateTime]
+		///<summary>
+		///  Gets indicator value at specified time stamp
+		///</summary>
+		public virtual double this[DateTime dateTime]
 		{
 			get
 			{
@@ -80,6 +107,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets the number of items in this indicator
+		///</summary>
 		[Browsable(false)]
 		public virtual int Count
 		{
@@ -89,7 +119,10 @@ namespace OpenQuant.API
 			}
 		}
 
-		public virtual double this [Bar bar]
+		///<summary>
+		///  Gets indicator value at specified bar
+		///</summary>
+		public virtual double this[Bar bar]
 		{
 			get
 			{
@@ -97,6 +130,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets last value of this indicator
+		///</summary>
 		[Browsable(false)]
 		public virtual double Last
 		{
@@ -106,6 +142,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets first date-time 
+		///</summary>
 		[Browsable(false)]
 		public virtual DateTime FirstDateTime
 		{
@@ -115,6 +154,9 @@ namespace OpenQuant.API
 			}
 		}
 
+		///<summary>
+		///  Gets last date-time
+		///</summary>
 		[Browsable(false)]
 		public virtual DateTime LastDateTime
 		{
@@ -124,7 +166,10 @@ namespace OpenQuant.API
 			}
 		}
 
-		public virtual double this [DateTime dateTime, BarData barData]
+		///<summary>
+		///  Gets value with specified time stamp in the series
+		///</summary>
+		public virtual double this[DateTime dateTime, BarData barData]
 		{
 			get
 			{
@@ -132,7 +177,10 @@ namespace OpenQuant.API
 			}
 		}
 
-		public virtual double this [int index, BarData barData]
+		///<summary>
+		///  Gets value with specified time stamp in the series
+		///</summary>
+		public virtual double this[int index, BarData barData]
 		{
 			get
 			{
@@ -140,21 +188,33 @@ namespace OpenQuant.API
 			}
 		}
 
+   	///<summary>
+		///  Returns n-bars-ago indicator value
+		///</summary>
 		public virtual double Ago(int n)
 		{
 			return ((DoubleSeries)this.indicator).Ago(n);
 		}
 
+		///<summary>
+		///  Checks if this indicator contains an entry with specified time stamp 
+		///</summary>
 		public virtual bool Contains(DateTime dateTime)
 		{
 			return ((FreeQuant.Series.TimeSeries)this.indicator).Contains(dateTime);
 		}
 
+		///<summary>
+		///  Checks if this indicator contains an entry with specified time stamp
+		///</summary>
 		public virtual bool Contains(Bar bar)
 		{
-			return ((FreeQuant.Series.TimeSeries)this.indicator).Contains(bar.DateTime);
+			return this.Contains(bar.DateTime);
 		}
 
+		///<summary>
+		///  Checks if this indicator crosses a bar series above at specified dateTime
+		///</summary>
 		public virtual Cross Crosses(TimeSeries series, DateTime dateTime)
 		{
 			return EnumConverter.Convert(((FreeQuant.Series.TimeSeries)this.indicator).Crosses((FreeQuant.Series.TimeSeries)series.series, dateTime));
