@@ -121,7 +121,7 @@
       <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
       <Name>FreeQuant.FIX</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Freequant.FIXData\FreeQuant.FIXData.csproj">
+    <ProjectReference Include="..\FreeQuant.FIXData\FreeQuant.FIXData.csproj">
       <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
       <Name>FreeQuant.FIXData</Name>
     </ProjectReference>

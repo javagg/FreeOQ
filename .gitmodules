@@ -1,0 +1,3 @@
+[submodule "plugins/CTP"]
+	path = plugins/CTP
+	url = git@github.com:javagg/FreeOQ-CTP.git

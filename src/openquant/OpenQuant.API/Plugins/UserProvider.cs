@@ -69,9 +69,7 @@ namespace OpenQuant.API.Plugins
 			return this.url;
 		}
 
-		protected virtual void Connect()
-		{
-		}
+		protected virtual void Connect() {}
 
 		///<summary>
 		///  Override to disconnect from provider
