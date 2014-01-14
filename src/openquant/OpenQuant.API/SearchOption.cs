@@ -1,8 +1,11 @@
 ﻿namespace OpenQuant.API
 {
-  public enum SearchOption
-  {
-    Next,
-    Prev
-  }
+	///<summary>
+	///  Search option.
+	///</summary>
+	public enum SearchOption
+	{
+		Next,
+		Prev
+	}
 }

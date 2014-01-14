@@ -2,19 +2,32 @@
 
 namespace OpenQuant.API.Engine
 {
-  public class ProjectInfo
-  {
-    public string Name { get; private set; }
 
-    public FileInfo ProjectFile { get; private set; }
+	///<summary>
+	///  A Project Info 
+	///</summary>
+	public class ProjectInfo
+	{
+		///<summary>
+		///  Gets project name 
+		///</summary>
+		public string Name { get; private set; }
 
-    public FileInfo CodeFile { get; private set; }
+		///<summary>
+		///  Gets project settings file path
+		///</summary>
+		public FileInfo ProjectFile { get; private set; }
 
-    internal ProjectInfo(string name, FileInfo projectFile, FileInfo codeFile)
-    {
-      this.Name = name;
-      this.ProjectFile = projectFile;
-      this.CodeFile = codeFile;
-    }
-  }
+		///<summary>
+		///  Gets project code file path 
+		///</summary>
+		public FileInfo CodeFile { get; private set; }
+
+		internal ProjectInfo(string name, FileInfo projectFile, FileInfo codeFile)
+		{
+			this.Name = name;
+			this.ProjectFile = projectFile;
+			this.CodeFile = codeFile;
+		}
+	}
 }

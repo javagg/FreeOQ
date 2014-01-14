@@ -4,6 +4,9 @@ using System;
 
 namespace OpenQuant.API.Quant
 {
+	///<summary>
+	///  Financial mathematics
+	///</summary>
 	public class FinMath
 	{
 		internal static EPutCall SPutCall(PutCall x)

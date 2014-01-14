@@ -281,22 +281,27 @@
     <None Include="OpenQuant\Startup\SplashScreen.resx" />
     <None Include="OpenQuant\Startup\StartPageWindow.resx" />
     <None Include="OpenQuant\TradingTools\QuoteMonitorWindow.resx" />
-    <None Include="OpenQuant\lib\SharpZipLib.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Charting.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Data.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Execution.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.FIX.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.FinChart.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Indicators.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Instruments.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Optimization.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Providers.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.QuantBaseLib.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Series.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Simulation.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Testing.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Trading.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.Xml.dll" />
-    <None Include="OpenQuant\lib\SmartQuant.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\openquant\OpenQuant.Trading\OpenQuant.Trading.csproj">
+      <Project>{9F59047F-AED7-4550-B0D3-01768149FACF}</Project>
+      <Name>OpenQuant.Trading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\openquant\OpenQuant.API\OpenQuant.API.csproj">
+      <Project>{40E0C499-01D7-4D12-97C6-EBA1F605F756}</Project>
+      <Name>OpenQuant.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\freequant\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
 </Project>

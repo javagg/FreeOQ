@@ -3,55 +3,73 @@ using System.Collections.Generic;
 
 namespace OpenQuant.API
 {
-  public class ScriptSettings : IEnumerable<KeyValuePair<string, object>>, IEnumerable
-  {
-    private Dictionary<string, object> settings;
+	///<summary>
+	///  Script settings
+	///</summary>
+	public class ScriptSettings : IEnumerable<KeyValuePair<string, object>>, IEnumerable
+	{
+		private Dictionary<string, object> settings;
 
-    public int Count
-    {
-      get
-      {
-        return this.settings.Count;
-      }
-    }
+		///<summary>
+		///  Count of script settings 
+		///</summary>
+		public int Count
+		{
+			get
+			{
+				return this.settings.Count;
+			}
+		}
 
-    public object this[string name]
-    {
-      get
-      {
-        object obj = (object) null;
-        this.settings.TryGetValue(name, out obj);
-        return obj;
-      }
-      set
-      {
-        this.settings[name] = value;
-      }
-    }
+		///<summary>
+		///  Gets or sets script setting by name
+		///</summary>
+		public object this[string name]
+		{
+			get
+			{
+				object obj = (object)null;
+				this.settings.TryGetValue(name, out obj);
+				return obj;
+			}
+			set
+			{
+				this.settings[name] = value;
+			}
+		}
 
-    internal ScriptSettings()
-    {
-      this.settings = new Dictionary<string, object>();
-    }
+		internal ScriptSettings()
+		{
+			this.settings = new Dictionary<string, object>();
+		}
 
-    public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
-    {
-      return (IEnumerator<KeyValuePair<string, object>>) this.settings.GetEnumerator();
-    }
+		///<summary>
+		///  Gets enumerator 
+		///</summary>
+		public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
+		{
+			return (IEnumerator<KeyValuePair<string, object>>)this.settings.GetEnumerator();
+		}
 
-    public void Add(string name, object data)
-    {
-      this.settings.Add(name, data);
-    }
+		///<summary>
+		///  Adds script setting by name
+		///</summary>
+		public void Add(string name, object data)
+		{
+			this.settings.Add(name, data);
+		}
 
-    public void Remove(string name)
-    {
-      this.settings.Remove(name);
-    }
+		///<summary>
+		///  Removes script settings by name
+		///</summary>
+		public void Remove(string name)
+		{
+			this.settings.Remove(name);
+		}
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-      return (IEnumerator) this.settings.GetEnumerator();
-    }
-  }
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return this.settings.GetEnumerator();
+		}
+	}
 }

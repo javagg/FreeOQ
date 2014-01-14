@@ -6,6 +6,10 @@ using System.Drawing.Design;
 
 namespace OpenQuant.API
 {
+
+	///<summary>
+	///  A financial instrument
+	///</summary>
 	public class Instrument
 	{
 		private const string CATEGORY_APPEARANCE = "Appearance";

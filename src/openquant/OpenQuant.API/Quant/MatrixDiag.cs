@@ -2,6 +2,9 @@
 
 namespace OpenQuant.API.Quant
 {
+	///<summary>
+	///  A matrix diagonal
+	///</summary>
 	public class MatrixDiag
 	{
 		internal Matrix fMatrix;
@@ -11,14 +14,14 @@ namespace OpenQuant.API.Quant
 			get
 			{
 				if (i >= 0 && i < this.NDiag)
-					return this.fMatrix.fElements[i, i];
+					return this.fMatrix.elements[i, i];
 				this.Error("this[]", "Out of boundry");
 				return 0.0;
 			}
 			set
 			{
 				if (i >= 0 && i < this.NDiag)
-					this.fMatrix.fElements[i, i] = value;
+					this.fMatrix.elements[i, i] = value;
 				else
 					this.Error("this[]", "Out of boundry");
 			}
@@ -28,7 +31,7 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				return Math.Min(this.fMatrix.fCols, this.fMatrix.fRows);
+				return Math.Min(this.fMatrix.cols, this.fMatrix.rows);
 			}
 		}
 

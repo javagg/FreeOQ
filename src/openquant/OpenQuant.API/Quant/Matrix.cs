@@ -2,18 +2,21 @@
 
 namespace OpenQuant.API.Quant
 {
+	///<summary>
+	///  A matrix
+	///</summary>
 	public class Matrix
 	{
-		internal double[,] fElements;
-		internal int fRows;
-		internal int fCols;
-		internal MatrixDiag fDiagonal;
+		internal double[,] elements;
+		internal int rows;
+		internal int cols;
+		internal MatrixDiag diagonal;
 
 		public MatrixDiag Diagonal
 		{
 			get
 			{
-				return this.fDiagonal;
+				return this.diagonal;
 			}
 		}
 
@@ -21,7 +24,7 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				return this.fRows;
+				return this.rows;
 			}
 		}
 
@@ -29,7 +32,7 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				return this.fCols;
+				return this.cols;
 			}
 		}
 
@@ -37,7 +40,7 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				return this.fRows;
+				return this.rows;
 			}
 		}
 
@@ -45,7 +48,7 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				return this.fCols;
+				return this.cols;
 			}
 		}
 
@@ -53,7 +56,7 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				return this.fElements;
+				return this.elements;
 			}
 		}
 
@@ -62,7 +65,7 @@ namespace OpenQuant.API.Quant
 			get
 			{
 				if (row >= 0 && row < this.M && (col >= 0 && col < this.N))
-					return this.fElements[row, col];
+					return this.elements[row, col];
 				else
 					return 0.0;
 			}
@@ -70,7 +73,7 @@ namespace OpenQuant.API.Quant
 			{
 				if (row < 0 || row >= this.M || (col < 0 || col >= this.N))
 					return;
-				this.fElements[row, col] = value;
+				this.elements[row, col] = value;
 			}
 		}
 
@@ -94,13 +97,13 @@ namespace OpenQuant.API.Quant
 		{
 			get
 			{
-				if (this.fCols != this.fRows)
+				if (this.cols != this.rows)
 					return false;
-				for (int index1 = 0; index1 < this.fRows; ++index1)
+				for (int index1 = 0; index1 < this.rows; ++index1)
 				{
 					for (int index2 = 0; index2 < index1; ++index2)
 					{
-						if (this.fElements[index1, index2] != this.fElements[index2, index1])
+						if (this.elements[index1, index2] != this.elements[index2, index1])
 							return false;
 					}
 				}
@@ -114,66 +117,66 @@ namespace OpenQuant.API.Quant
 
 		public Matrix(Matrix matrix)
 		{
-			this.fElements = new double[matrix.M, matrix.N];
-			this.fDiagonal = new MatrixDiag(this);
-			this.fRows = matrix.fRows;
-			this.fCols = matrix.fCols;
+			this.elements = new double[matrix.M, matrix.N];
+			this.diagonal = new MatrixDiag(this);
+			this.rows = matrix.rows;
+			this.cols = matrix.cols;
 			for (int index1 = 0; index1 < this.M; ++index1)
 			{
 				for (int index2 = 0; index2 < this.N; ++index2)
-					this.fElements[index1, index2] = matrix.fElements[index1, index2];
+					this.elements[index1, index2] = matrix.elements[index1, index2];
 			}
 		}
 
 		public Matrix(int m, int n)
 		{
-			this.fRows = m;
-			this.fCols = n;
-			this.fElements = new double[m, n];
-			this.fDiagonal = new MatrixDiag(this);
+			this.rows = m;
+			this.cols = n;
+			this.elements = new double[m, n];
+			this.diagonal = new MatrixDiag(this);
 		}
 
 		public Matrix(int Size)
 		{
-			this.fRows = Size;
-			this.fCols = Size;
-			this.fElements = new double[Size, Size];
-			this.fDiagonal = new MatrixDiag(this);
+			this.rows = Size;
+			this.cols = Size;
+			this.elements = new double[Size, Size];
+			this.diagonal = new MatrixDiag(this);
 		}
 
 		public Matrix(int m, int n, double val)
 		{
-			this.fRows = m;
-			this.fCols = n;
-			this.fElements = new double[m, n];
-			this.fDiagonal = new MatrixDiag(this);
+			this.rows = m;
+			this.cols = n;
+			this.elements = new double[m, n];
+			this.diagonal = new MatrixDiag(this);
 			for (int index1 = 0; index1 < m; ++index1)
 			{
 				for (int index2 = 0; index2 < n; ++index2)
-					this.fElements[index1, index2] = val;
+					this.elements[index1, index2] = val;
 			}
 		}
 
 		public Matrix(double[] values)
 		{
-			this.fRows = 1;
-			this.fCols = values.Length;
-			this.fElements = new double[this.M, this.N];
-			this.fDiagonal = new MatrixDiag(this);
+			this.rows = 1;
+			this.cols = values.Length;
+			this.elements = new double[this.M, this.N];
+			this.diagonal = new MatrixDiag(this);
 			for (int index = 0; index < this.N; ++index)
-				this.fElements[0, index] = values[index];
+				this.elements[0, index] = values[index];
 		}
 
 		public Matrix(double[,] values)
 		{
-			this.fRows = values.GetLength(0);
-			this.fCols = values.GetLength(1);
-			this.fElements = new double[this.M, this.N];
-			this.fDiagonal = new MatrixDiag(this);
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			this.rows = values.GetLength(0);
+			this.cols = values.GetLength(1);
+			this.elements = new double[this.M, this.N];
+			this.diagonal = new MatrixDiag(this);
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					this.fElements[index1, index2] = values[index1, index2];
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					this.elements[index1, index2] = values[index1, index2];
 			}
 		}
 
@@ -270,11 +273,11 @@ namespace OpenQuant.API.Quant
 		{
 			if (!Matrix.AreComparable(Matrix1, Matrix2))
 				return false;
-			for (int index1 = 0; index1 < Matrix1.fRows; ++index1)
+			for (int index1 = 0; index1 < Matrix1.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < Matrix1.fCols; ++index2)
+				for (int index2 = 0; index2 < Matrix1.cols; ++index2)
 				{
-					if (Matrix1.fElements[index1, index2] != Matrix2.fElements[index1, index2])
+					if (Matrix1.elements[index1, index2] != Matrix2.elements[index1, index2])
 						return false;
 				}
 			}
@@ -285,11 +288,11 @@ namespace OpenQuant.API.Quant
 		{
 			if (!Matrix.AreComparable(Matrix1, Matrix2))
 				return false;
-			for (int index1 = 0; index1 < Matrix1.fRows; ++index1)
+			for (int index1 = 0; index1 < Matrix1.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < Matrix1.fCols; ++index2)
+				for (int index2 = 0; index2 < Matrix1.cols; ++index2)
 				{
-					if (Matrix1.fElements[index1, index2] == Matrix2.fElements[index1, index2])
+					if (Matrix1.elements[index1, index2] == Matrix2.elements[index1, index2])
 						return false;
 				}
 			}
@@ -298,11 +301,11 @@ namespace OpenQuant.API.Quant
 
 		public static bool operator ==(Matrix matrix, double Scalar)
 		{
-			for (int index1 = 0; index1 < matrix.fRows; ++index1)
+			for (int index1 = 0; index1 < matrix.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < matrix.fCols; ++index2)
+				for (int index2 = 0; index2 < matrix.cols; ++index2)
 				{
-					if (matrix.fElements[index1, index2] != Scalar)
+					if (matrix.elements[index1, index2] != Scalar)
 						return false;
 				}
 			}
@@ -311,11 +314,11 @@ namespace OpenQuant.API.Quant
 
 		public static bool operator !=(Matrix matrix, double Scalar)
 		{
-			for (int index1 = 0; index1 < matrix.fRows; ++index1)
+			for (int index1 = 0; index1 < matrix.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < matrix.fCols; ++index2)
+				for (int index2 = 0; index2 < matrix.cols; ++index2)
 				{
-					if (matrix.fElements[index1, index2] == Scalar)
+					if (matrix.elements[index1, index2] == Scalar)
 						return false;
 				}
 			}
@@ -324,11 +327,11 @@ namespace OpenQuant.API.Quant
 
 		public static bool operator <(Matrix matrix, double Scalar)
 		{
-			for (int index1 = 0; index1 < matrix.fRows; ++index1)
+			for (int index1 = 0; index1 < matrix.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < matrix.fCols; ++index2)
+				for (int index2 = 0; index2 < matrix.cols; ++index2)
 				{
-					if (matrix.fElements[index1, index2] >= Scalar)
+					if (matrix.elements[index1, index2] >= Scalar)
 						return false;
 				}
 			}
@@ -337,11 +340,11 @@ namespace OpenQuant.API.Quant
 
 		public static bool operator <=(Matrix matrix, double Scalar)
 		{
-			for (int index1 = 0; index1 < matrix.fRows; ++index1)
+			for (int index1 = 0; index1 < matrix.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < matrix.fCols; ++index2)
+				for (int index2 = 0; index2 < matrix.cols; ++index2)
 				{
-					if (matrix.fElements[index1, index2] > Scalar)
+					if (matrix.elements[index1, index2] > Scalar)
 						return false;
 				}
 			}
@@ -350,11 +353,11 @@ namespace OpenQuant.API.Quant
 
 		public static bool operator >(Matrix matrix, double Scalar)
 		{
-			for (int index1 = 0; index1 < matrix.fRows; ++index1)
+			for (int index1 = 0; index1 < matrix.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < matrix.fCols; ++index2)
+				for (int index2 = 0; index2 < matrix.cols; ++index2)
 				{
-					if (matrix.fElements[index1, index2] <= Scalar)
+					if (matrix.elements[index1, index2] <= Scalar)
 						return false;
 				}
 			}
@@ -363,11 +366,11 @@ namespace OpenQuant.API.Quant
 
 		public static bool operator >=(Matrix matrix, double Scalar)
 		{
-			for (int index1 = 0; index1 < matrix.fRows; ++index1)
+			for (int index1 = 0; index1 < matrix.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < matrix.fCols; ++index2)
+				for (int index2 = 0; index2 < matrix.cols; ++index2)
 				{
-					if (matrix.fElements[index1, index2] < Scalar)
+					if (matrix.elements[index1, index2] < Scalar)
 						return false;
 				}
 			}
@@ -512,8 +515,8 @@ namespace OpenQuant.API.Quant
 
 		public void MakeTridiagonal(Matrix a, Vector d, Vector e)
 		{
-			int num1 = a.fRows;
-			if (a.fRows != a.fCols)
+			int num1 = a.rows;
+			if (a.rows != a.cols)
 				throw new ApplicationException("Matrix to tridiagonalize must be square");
 			if (!a.IsSymmetric)
 				throw new ApplicationException("Can only tridiagonalise symmetric matrix");
@@ -601,35 +604,35 @@ namespace OpenQuant.API.Quant
 
 		public static bool AreComparable(Matrix Matrix1, Matrix Matrix2)
 		{
-			return Matrix1.fRows == Matrix2.fRows && Matrix1.fCols == Matrix2.fCols;
+			return Matrix1.rows == Matrix2.rows && Matrix1.cols == Matrix2.cols;
 		}
 
 		public Matrix Abs()
 		{
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					this.fElements[index1, index2] = Math.Abs(this.fElements[index1, index2]);
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					this.elements[index1, index2] = Math.Abs(this.elements[index1, index2]);
 			}
 			return this;
 		}
 
 		public Matrix Sqr()
 		{
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					this.fElements[index1, index2] = Math.Pow(this.fElements[index1, index2], 2.0);
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					this.elements[index1, index2] = Math.Pow(this.elements[index1, index2], 2.0);
 			}
 			return this;
 		}
 
 		public Matrix Sqrt()
 		{
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					this.fElements[index1, index2] = Math.Sqrt(this.fElements[index1, index2]);
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					this.elements[index1, index2] = Math.Sqrt(this.elements[index1, index2]);
 			}
 			return this;
 		}
@@ -637,11 +640,11 @@ namespace OpenQuant.API.Quant
 		public double RowNorm()
 		{
 			double val2 = 0.0;
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
 				double val1 = 0.0;
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					val1 += Math.Abs(this.fElements[index1, index2]);
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					val1 += Math.Abs(this.elements[index1, index2]);
 				val2 = Math.Max(val1, val2);
 			}
 			return val2;
@@ -650,11 +653,11 @@ namespace OpenQuant.API.Quant
 		public double ColNorm()
 		{
 			double val2 = 0.0;
-			for (int index1 = 0; index1 < this.fCols; ++index1)
+			for (int index1 = 0; index1 < this.cols; ++index1)
 			{
 				double val1 = 0.0;
-				for (int index2 = 0; index2 < this.fRows; ++index2)
-					val1 += Math.Abs(this.fElements[index2, index1]);
+				for (int index2 = 0; index2 < this.rows; ++index2)
+					val1 += Math.Abs(this.elements[index2, index1]);
 				val2 = Math.Max(val1, val2);
 			}
 			return val2;
@@ -663,10 +666,10 @@ namespace OpenQuant.API.Quant
 		public double E2Norm()
 		{
 			double num = 0.0;
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					num += Math.Pow(this.fElements[index1, index2], 2.0);
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					num += Math.Pow(this.elements[index1, index2], 2.0);
 			}
 			return num;
 		}
@@ -674,17 +677,17 @@ namespace OpenQuant.API.Quant
 		public double E2Norm(Matrix Matrix1, Matrix Matrix2)
 		{
 			double num = 0.0;
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					num += Math.Pow(Matrix1.fElements[index1, index2] - Matrix2.fElements[index1, index2], 2.0);
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					num += Math.Pow(Matrix1.elements[index1, index2] - Matrix2.elements[index1, index2], 2.0);
 			}
 			return num;
 		}
 
 		public Matrix NormByDiag()
 		{
-			if (this.fRows != this.fCols)
+			if (this.rows != this.cols)
 			{
 				this.Error("NormByDiag", "Not square");
 				return this;
@@ -701,9 +704,9 @@ namespace OpenQuant.API.Quant
 						return this;
 					}
 				}
-				for (int index1 = 0; index1 < this.fRows; ++index1)
+				for (int index1 = 0; index1 < this.rows; ++index1)
 				{
-					for (int index2 = 0; index2 < this.fCols; ++index2)
+					for (int index2 = 0; index2 < this.cols; ++index2)
 						this[index1, index2] = this[index1, index2] / Math.Sqrt(numArray[index1] * numArray[index2]);
 				}
 				return this;
@@ -712,16 +715,16 @@ namespace OpenQuant.API.Quant
 
 		public Matrix Transpose()
 		{
-			double[,] numArray = new double[this.fCols, this.fRows];
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			double[,] numArray = new double[this.cols, this.rows];
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					numArray[index2, index1] = this.fElements[index1, index2];
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					numArray[index2, index1] = this.elements[index1, index2];
 			}
-			this.fElements = numArray;
-			int num = this.fCols;
-			this.fCols = this.fRows;
-			this.fRows = num;
+			this.elements = numArray;
+			int num = this.cols;
+			this.cols = this.rows;
+			this.rows = num;
 			return this;
 		}
 
@@ -796,19 +799,19 @@ namespace OpenQuant.API.Quant
 
 		public Matrix MakeSymetric()
 		{
-			if (this.fCols != this.fRows)
+			if (this.cols != this.rows)
 			{
 				this.Error("MakeSymetric", "Matrix to symmetrize must be square");
 				return this;
 			}
 			else
 			{
-				for (int index1 = 0; index1 < this.fRows; ++index1)
+				for (int index1 = 0; index1 < this.rows; ++index1)
 				{
-					for (int index2 = 0; index2 < this.fCols; ++index2)
+					for (int index2 = 0; index2 < this.cols; ++index2)
 					{
-						this.fElements[index1, index2] = (this.fElements[index1, index2] + this.fElements[index2, index1]) / 2.0;
-						this.fElements[index2, index1] = this.fElements[index1, index2];
+						this.elements[index1, index2] = (this.elements[index1, index2] + this.elements[index2, index1]) / 2.0;
+						this.elements[index2, index1] = this.elements[index1, index2];
 					}
 				}
 				return this;
@@ -817,22 +820,22 @@ namespace OpenQuant.API.Quant
 
 		public Matrix UnitMatrix()
 		{
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
-					this.fElements[index1, index2] = index1 != index2 ? 0.0 : 1.0;
+				for (int index2 = 0; index2 < this.cols; ++index2)
+					this.elements[index1, index2] = index1 != index2 ? 0.0 : 1.0;
 			}
 			return this;
 		}
 
 		public Matrix HilbertMatrix()
 		{
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
+				for (int index2 = 0; index2 < this.cols; ++index2)
 				{
 					if (index1 == index2)
-						this.fElements[index1, index2] = 1.0 / ((double)(index1 + index2) + 1.0);
+						this.elements[index1, index2] = 1.0 / ((double)(index1 + index2) + 1.0);
 				}
 			}
 			return this;
@@ -840,12 +843,12 @@ namespace OpenQuant.API.Quant
 
 		public Matrix HilbertMatrix2()
 		{
-			for (int index1 = 0; index1 < this.fRows; ++index1)
+			for (int index1 = 0; index1 < this.rows; ++index1)
 			{
-				for (int index2 = 0; index2 < this.fCols; ++index2)
+				for (int index2 = 0; index2 < this.cols; ++index2)
 				{
 					if (index1 == index2)
-						this.fElements[index1, index2] = 1.0 / ((double)(index1 + index2) + 1.0);
+						this.elements[index1, index2] = 1.0 / ((double)(index1 + index2) + 1.0);
 				}
 			}
 			return this;

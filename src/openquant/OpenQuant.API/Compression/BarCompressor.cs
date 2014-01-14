@@ -2,9 +2,7 @@
 using FreeQuant.Data;
 using System;
 
-namespace OpenQuant.API
-{
-namespace Compression
+namespace OpenQuant.API.Compression
 {
 	internal abstract class BarCompressor
 	{
@@ -92,6 +90,5 @@ namespace Compression
 				return;
 			this.EmitNewCompressedBar();
 		}
-	}
 	}
 }

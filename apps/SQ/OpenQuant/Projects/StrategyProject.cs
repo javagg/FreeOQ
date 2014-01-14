@@ -1,8 +1,3 @@
-﻿// Type: OpenQuant.Projects.StrategyProject
-// Assembly: OpenQuant, Version=3.9.1.0, Culture=neutral, PublicKeyToken=null
-// MVID: E55CD87F-F1ED-4D4E-8DEA-A2A903234F95
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\OpenQuant.exe
-
 using OpenQuant;
 using OpenQuant.API;
 using OpenQuant.API.Engine;
@@ -11,7 +6,7 @@ using OpenQuant.ObjectMap;
 using OpenQuant.Projects.Xml;
 using OpenQuant.Shared.Compiler;
 using OpenQuant.Trading;
-using SmartQuant.Instruments;
+using FreeQuant.Instruments;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections;

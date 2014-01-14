@@ -4,67 +4,112 @@ using System.Windows.Forms;
 
 namespace OpenQuant.API
 {
-  public abstract class Script
-  {
-    private Form mainForm;
+	///<summary>
+	///  A script
+	///</summary>
+	public abstract class Script
+	{
+		private Form mainForm;
 
-    public abstract void Run();
+		public abstract void Run();
 
-    public void Invoke(Action action)
-    {
-      this.mainForm.Invoke((Delegate) action);
-    }
+		///<summary>
+		///  Initializes a new instance of this class
+		///</summary>
+		public Script() {}
 
-    public void AddTimer(DateTime dateTime, object data)
-    {
-      FreeQuant.Clock.AddReminder(new ReminderEventHandler(this.OnReminder), dateTime, data);
-    }
+		///<summary>
+		///  Invoke a action
+		///</summary>
+		public void Invoke(Action action)
+		{
+			this.mainForm.Invoke((Delegate)action);
+		}
 
-    public void RemoveTimers()
-    {
-      FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
-    }
+		///<summary>
+		///  Adds reminder on specified datetime
+		///</summary>
+		public void AddTimer(DateTime dateTime, object data)
+		{
+			FreeQuant.Clock.AddReminder(new ReminderEventHandler(this.OnReminder), dateTime, data);
+		}
 
-    public void RemoveTimer(DateTime dateTime)
-    {
-      FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), dateTime);
-    }
+		///<summary>
+		///  Removes all reminders
+		///</summary>
+		public void RemoveTimers()
+		{
+			FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
+		}
 
-    private void OnReminder(ReminderEventArgs args)
-    {
-      this.OnTimer(args.SignalTime, args.Data);
-    }
+		///<summary>
+		///  Removes reminder at specified datatime
+		///</summary>
+		public void RemoveTimer(DateTime dateTime)
+		{
+			FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), dateTime);
+		}
 
-    public virtual void OnTimer(DateTime dateTime, object data)
-    {
-    }
 
-    public virtual void OnSolutionStarting()
-    {
-    }
+		private void OnReminder(ReminderEventArgs args)
+		{
+			this.OnTimer(args.SignalTime, args.Data);
+		}
 
-    public virtual void OnSolutionStopping()
-    {
-    }
+		///<summary>
+		///  Called when a reminder gets triggered
+		///</summary>
+		public virtual void OnTimer(DateTime dateTime, object data)
+		{
+		}
 
-    public virtual void OnSolutionStopped()
-    {
-    }
+		///<summary>
+		///  Called when solution is starting
+		///</summary>
+		public virtual void OnSolutionStarting()
+		{
+		}
 
-    public virtual void OnSolutionStarted()
-    {
-    }
+		///<summary>
+		///  Called when solution is stopping
+		///</summary>
+		public virtual void OnSolutionStopping()
+		{
+		}
 
-    public virtual void OnSolutionOpened(string name)
-    {
-    }
+		///<summary>
+		///  Called when solution is stopped
+		///</summary>
+		public virtual void OnSolutionStopped()
+		{
+		}
 
-    public virtual void OnScriptStopped(string path)
-    {
-    }
+		///<summary>
+		///  Called when solution is started 
+		///</summary>
+		public virtual void OnSolutionStarted()
+		{
+		}
 
-    public virtual void OnStop()
-    {
-    }
-  }
+		///<summary>
+		///  Called when solution is opened
+		///</summary>
+		public virtual void OnSolutionOpened(string name)
+		{
+		}
+
+		///<summary>
+		///  Called when script is stopped
+		///</summary>
+		public virtual void OnScriptStopped(string path)
+		{
+		}
+
+		///<summary>
+		///  Called when this script is about to stop 
+		///</summary>
+		public virtual void OnStop()
+		{
+		}
+	}
 }

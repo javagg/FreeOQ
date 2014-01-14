@@ -1,9 +1,12 @@
 ﻿namespace OpenQuant.API
 {
-  public enum StrategyMode
-  {
-    Simulation,
-    Paper,
-    Live
-  }
+	///<summary>
+	/// Strategy Mode
+	///</summary>
+	public enum StrategyMode
+	{
+		Simulation,
+		Paper,
+		Live
+	}
 }

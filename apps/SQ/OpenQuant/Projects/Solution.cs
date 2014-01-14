@@ -6,13 +6,14 @@ using OpenQuant.Projects.Xml;
 using OpenQuant.Shared.Compiler;
 using OpenQuant.Shared.Logs;
 using OpenQuant.Trading;
-using SmartQuant.Instruments;
+using FreeQuant.Instruments;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using OpenQuant.API;
 
 namespace OpenQuant.Projects
 {

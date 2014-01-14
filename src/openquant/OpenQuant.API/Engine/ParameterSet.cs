@@ -3,46 +3,67 @@ using System.Collections.Generic;
 
 namespace OpenQuant.API.Engine
 {
-  public class ParameterSet : IEnumerable
-  {
-    private Dictionary<string, Parameter> parameters;
 
-    public int Count
-    {
-      get
-      {
-        return this.parameters.Count;
-      }
-    }
+	///<summary>
+	///  A parameter set
+	///</summary>
+	public class ParameterSet : IEnumerable
+	{
+		private Dictionary<string, Parameter> parameters;
 
-    public Parameter this[string name]
-    {
-      get
-      {
-        return this.parameters[name];
-      }
-    }
+		///<summary>
+		///  Gets the number of parameters in this parameter set
+		///</summary>
+		public int Count
+		{
+			get
+			{
+				return this.parameters.Count;
+			}
+		}
 
-    internal ParameterSet(List<Parameter> list)
-    {
-      this.parameters = new Dictionary<string, Parameter>();
-      foreach (Parameter parameter in list)
-        this.parameters[parameter.Name] = parameter;
-    }
+		///<summary>
+		///  Gets parameter by name
+		///</summary>
+		public Parameter this[string name]
+		{
+			get
+			{
+				return this.parameters[name];
+			}
+		}
 
-    public IEnumerator GetEnumerator()
-    {
-      return (IEnumerator) this.parameters.Values.GetEnumerator();
-    }
+		internal ParameterSet(List<Parameter> list)
+		{
+			this.parameters = new Dictionary<string, Parameter>();
+			foreach (Parameter parameter in list)
+			{
+				this.parameters[parameter.Name] = parameter;
+			}
+		}
 
-    public bool Contains(string name)
-    {
-      return this.parameters.ContainsKey(name);
-    }
+		///<summary>
+		///  Gets enumerator
+		///</summary>
+		public IEnumerator GetEnumerator()
+		{
+			return this.parameters.Values.GetEnumerator();
+		}
 
-    public bool TryGetValue(string name, out Parameter parameter)
-    {
-      return this.parameters.TryGetValue(name, out parameter);
-    }
-  }
+		///<summary>
+		///  Gets if the parameter set contains a parameter with specified name
+		///</summary>
+		public bool Contains(string name)
+		{
+			return this.parameters.ContainsKey(name);
+		}
+
+		///<summary>
+		///  Gets parameter by name
+		///</summary>
+		public bool TryGetValue(string name, out Parameter parameter)
+		{
+			return this.parameters.TryGetValue(name, out parameter);
+		}
+	}
 }

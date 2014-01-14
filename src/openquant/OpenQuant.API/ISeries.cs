@@ -2,6 +2,7 @@
 
 namespace OpenQuant.API
 {
+
 	public interface ISeries
 	{
 		///<summary>

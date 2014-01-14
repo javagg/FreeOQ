@@ -1,4 +1,5 @@
 using System.CodeDom.Compiler;
+using Microsoft.CSharp;
 using System.Runtime.CompilerServices;
 
 namespace FreeQuant
