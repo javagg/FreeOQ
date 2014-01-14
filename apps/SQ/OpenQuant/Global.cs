@@ -1,8 +1,3 @@
-﻿// Type: OpenQuant.Global
-// Assembly: OpenQuant, Version=3.9.1.0, Culture=neutral, PublicKeyToken=null
-// MVID: E55CD87F-F1ED-4D4E-8DEA-A2A903234F95
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\OpenQuant.exe
-
 using OpenQuant.Flags;
 using OpenQuant.Options;
 using OpenQuant.Projects;
@@ -21,11 +16,11 @@ namespace OpenQuant
     {
       get
       {
-        return (Form) Global.GetObject<Form>("MAIN_FORM");
+        return Global.GetObject<Form>("MAIN_FORM");
       }
       set
       {
-        Global.SetObject("MAIN_FORM", (object) value);
+        Global.SetObject("MAIN_FORM", value);
       }
     }
 
@@ -33,11 +28,11 @@ namespace OpenQuant
     {
       get
       {
-        return (SetupInfo) Global.get_Setup();
+				return Global.get_Setup();
       }
       set
       {
-        Global.set_Setup((SetupInfo) value);
+        Global.set_Setup(value);
       }
     }
 
@@ -45,11 +40,11 @@ namespace OpenQuant
     {
       get
       {
-        return (OpenQuantOptions) Global.get_Options();
+        return Global.get_Options();
       }
       set
       {
-        Global.set_Options((AppOptions) value);
+        Global.set_Options(value);
       }
     }
 

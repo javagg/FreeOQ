@@ -1,4 +1,4 @@
-﻿// Type: OpenQuant.Program
+// Type: OpenQuant.Program
 // Assembly: OpenQuant, Version=3.9.1.0, Culture=neutral, PublicKeyToken=null
 // MVID: E55CD87F-F1ED-4D4E-8DEA-A2A903234F95
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\OpenQuant.exe
@@ -25,17 +25,17 @@ namespace OpenQuant
       Global.Setup = new SetupInfo();
       if (Framework.IsAlreadyRunning)
       {
-        int num1 = (int) MessageBox.Show("Cannot start OpenQuant because another instance of application is already running.", "OpenQuant", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+        int num1 = MessageBox.Show("Cannot start OpenQuant because another instance of application is already running.", "OpenQuant", MessageBoxButtons.OK, MessageBoxIcon.Hand);
       }
       else
       {
         if (!Framework.Installation.GetLicense().Licensed)
-          Application.Run((Form) new DemoDialog());
+          Application.Run(new DemoDialog());
         SplashScreen splashScreen = new SplashScreen();
-        Application.Run((Form) splashScreen);
+        Application.Run(splashScreen);
         if (splashScreen.get_HasError())
           Environment.Exit(-1);
-        Application.Run((Form) new IDE());
+        Application.Run(new IDE());
         ProviderManager.Shutdown();
         try
         {
@@ -44,15 +44,15 @@ namespace OpenQuant
         catch (Exception ex)
         {
           if (Trace.IsLevelEnabled(TraceLevel.Error))
-            Trace.WriteLine(((object) ex).ToString());
-          int num2 = (int) MessageBox.Show("Error closing data manager. See log file for details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            Trace.WriteLine(ex.ToString());
+          int num2 = MessageBox.Show("Error closing data manager. See log file for details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
       }
     }
 
     private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
     {
-      RuntimeErrorManager.ReportError(new RuntimeError(RuntimeErrorLevel.Medium, e.Exception, (object) "Application"));
+      RuntimeErrorManager.ReportError(new RuntimeError(RuntimeErrorLevel.Medium, e.Exception, "Application"));
     }
   }
 }

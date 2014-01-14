@@ -1,8 +1,3 @@
-﻿// Type: OpenQuant.IDE
-// Assembly: OpenQuant, Version=3.9.1.0, Culture=neutral, PublicKeyToken=null
-// MVID: E55CD87F-F1ED-4D4E-8DEA-A2A903234F95
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\OpenQuant.exe
-
 using OpenQuant.API;
 using OpenQuant.BrokerInfo;
 using OpenQuant.Config;
@@ -262,7 +257,7 @@ namespace OpenQuant
     {
       this.InitializeComponent();
       this.menuView_Toolbars.DropDown.Closing += new ToolStripDropDownClosingEventHandler(this.menuView_Toolbars_DropDown_Closing);
-      Global.MainForm = (Form) this;
+      Global.MainForm = this;
       Global.set_DockManager(new DockManager((Control) this.panel, (Form) this));
       Global.Options = new OpenQuantOptions();
       Global.ProjectManager = new ProjectManager();
