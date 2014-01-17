@@ -123,15 +123,17 @@ namespace OpenQuant.Projects
 
     public void Close()
     {
-      foreach (StrategyProject strategyProject in this.projects.Values)
-        strategyProject.Close();
+			foreach (StrategyProject strategyProject in this.projects.Values)
+			{
+				strategyProject.Close();
+			}
     }
 
     public void AddProject(StrategyProject project)
     {
       this.projects.Add(project.Name, project);
-      project.StrategyRunner.set_Portfolio(this.GetPortfolio(project.Name));
-      project.StrategyRunner.get_Portfolio().Persistent = Configuration.get_Active().get_Persistent();
+		project.StrategyRunner.Portfolio = this.GetPortfolio(project.Name);
+		project.StrategyRunner.Portfolio.Persistent = Configuration.Active.Persistent;
       this.Consolidate();
     }
 
@@ -209,7 +211,7 @@ namespace OpenQuant.Projects
       CompilingServices compilingServices = new CompilingServices(this.scenarioLang);
       foreach (BuildReference buildReference in Global.Options.Solutions.Build.GetReferences())
       {
-        if (buildReference.get_Valid())
+				if (buildReference.get_Valid()) 
           compilingServices.AddReference(buildReference.get_Path());
       }
       compilingServices.AddFile(this.scenarioFile.FullName);

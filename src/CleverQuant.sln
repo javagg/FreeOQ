@@ -71,10 +71,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.Indicators", "fre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeQuant.CTP", "..\plugins\CTP\src\FreeQuant.CTP\FreeQuant.CTP.csproj", "{B207DA3A-2290-45FF-9AF3-0AD6D33DC84F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQ", "..\apps\SQ\SQ.csproj", "{0A46090D-980B-4AE0-827E-E117AF99C256}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleverQuant", "cleverquant\CleverQuant.csproj", "{60135B85-C93C-4BE9-8889-1AFD53496FA7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,10 +89,6 @@ Global
 		{09E01D16-88B6-4CC7-90D1-745B10130899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09E01D16-88B6-4CC7-90D1-745B10130899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09E01D16-88B6-4CC7-90D1-745B10130899}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A46090D-980B-4AE0-827E-E117AF99C256}.Release|Any CPU.Build.0 = Release|Any CPU
 		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -141,10 +133,6 @@ Global
 		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C4F7119-E153-4DB3-B5D7-531AF66335CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60135B85-C93C-4BE9-8889-1AFD53496FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60135B85-C93C-4BE9-8889-1AFD53496FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60135B85-C93C-4BE9-8889-1AFD53496FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60135B85-C93C-4BE9-8889-1AFD53496FA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D451F39-360E-4689-9E6C-2E0BE7574820}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -231,6 +219,6 @@ Global
 		{FC5FB8FE-7F5F-463B-AE43-8FDE00522977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = cleverquant\CleverQuant.csproj
+		StartupItem = openquant\OpenQuant.API\OpenQuant.API.csproj
 	EndGlobalSection
 EndGlobal

@@ -3,9 +3,9 @@ using OpenQuant.Options;
 using OpenQuant.Projects;
 using OpenQuant.Scripts;
 using OpenQuant.Shared;
-using OpenQuant.Shared.Editor;
-using OpenQuant.Shared.Options;
-using OpenQuant.Shared.Scripts;
+//using OpenQuant.Shared.Editor;
+//using OpenQuant.Shared.Options;
+//using OpenQuant.Shared.Scripts;
 using System.Windows.Forms;
 
 namespace OpenQuant
@@ -108,9 +108,8 @@ namespace OpenQuant
       }
     }
 
-    public Global()
+	public Global() : base()
     {
-      base.\u002Ector();
     }
   }
 }

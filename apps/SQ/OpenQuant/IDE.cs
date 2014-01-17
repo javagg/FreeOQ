@@ -35,12 +35,12 @@ using OpenQuant.Shared.ToolWindows;
 using OpenQuant.Shared.Updates;
 using OpenQuant.Startup;
 using OpenQuant.TradingTools;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.Docking.WinForms;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Providers;
+using OpenQuant;
+using OpenQuant.Data;
+//using OpenQuant.Docking.WinForms;
+using OpenQuant.FIX;
+using OpenQuant.Instruments;
+using OpenQuant.Providers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +51,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using TD.SandDock;
+//using TD.SandDock;
 
 namespace OpenQuant
 {
