@@ -4,87 +4,120 @@ using System.Reflection;
 
 namespace OpenQuant.API
 {
-  public class Provider
-  {
-    internal IProvider provider;
+	/// <summary>
+	/// Provider
+	/// </summary>
+	public class Provider
+	{
+		internal IProvider provider;
 
-    public bool IsMarketDataProvider
-    {
-      get
-      {
-        return this.provider is IMarketDataProvider;
-      }
-    }
+		/// <summary>
+		/// Gets value indicating if this provider is Market Data Provider
+		/// </summary>
+		public bool IsMarketDataProvider
+		{
+			get
+			{
+				return this.provider is IMarketDataProvider;
+			}
+		}
 
-    public bool IsExecutionProvider
-    {
-      get
-      {
-        return this.provider is IExecutionProvider;
-      }
-    }
+		/// <summary>
+		///  Gets value indicating if this provider is Execution Provider 
+		/// </summary>
+		public bool IsExecutionProvider
+		{
+			get
+			{
+				return this.provider is IExecutionProvider;
+			}
+		}
 
-    public bool IsHistoricalDataProvider
-    {
-      get
-      {
-        return this.provider is IHistoricalDataProvider;
-      }
-    }
+		/// <summary>
+		///  Gets value indicating if this provider is Historical Data Provider
+		/// </summary>
+		public bool IsHistoricalDataProvider
+		{
+			get
+			{
+				return this.provider is IHistoricalDataProvider;
+			}
+		}
 
-    public bool IsInstrumentProvider
-    {
-      get
-      {
-        return this.provider is IInstrumentProvider;
-      }
-    }
+		/// <summary>
+		///  Gets value indicating if this provider is Instrument Provider
+		/// </summary>
+		public bool IsInstrumentProvider
+		{
+			get
+			{
+				return this.provider is IInstrumentProvider;
+			}
+		}
 
-    public ProviderPropertyList Properties { get; private set; }
+		/// <summary>
+		/// Gets Provider properties
+		/// </summary>
+		public ProviderPropertyList Properties { get; private set; }
 
-    public byte Id
-    {
-      get
-      {
-        return this.provider.Id;
-      }
-    }
+		/// <summary>
+		/// Gets Provider id
+		/// </summary>
+		public byte Id
+		{
+			get
+			{
+				return this.provider.Id;
+			}
+		}
 
-    public string Name
-    {
-      get
-      {
-        return this.provider.Name;
-      }
-    }
+		/// <summary>
+		/// Gets Provider name
+		/// </summary>
+		public string Name
+		{
+			get
+			{
+				return this.provider.Name;
+			}
+		}
 
-    public bool IsConnected
-    {
-      get
-      {
-        return this.provider.IsConnected;
-      }
-    }
+		/// <summary>
+		///  Gets value indicating if the Provider is connected
+		/// </summary>
+		public bool IsConnected
+		{
+			get
+			{
+				return this.provider.IsConnected;
+			}
+		}
 
-    internal Provider(IProvider provider)
-    {
-      this.provider = provider;
-      this.Properties = new ProviderPropertyList();
-      foreach (PropertyInfo property in provider.GetType().GetProperties())
-      {
-        if (property.CanRead && property.CanWrite && (property.PropertyType.IsValueType || property.PropertyType == typeof (string)))
-          this.Properties.Add(new ProviderProperty(property, provider));
-      }
-    }
+		internal Provider(IProvider provider)
+		{
+			this.provider = provider;
+			this.Properties = new ProviderPropertyList();
+			foreach (PropertyInfo property in provider.GetType().GetProperties())
+			{
+				if (property.CanRead && property.CanWrite && (property.PropertyType.IsValueType || property.PropertyType == typeof(string)))
+					this.Properties.Add(new ProviderProperty(property, provider));
+			}
+		}
 
-    public void Connect()
-    {
-      Map.RequestProviderConnect((object) this.provider);
-    }
+		/// <summary>
+		/// Connects the provider
+		/// </summary>
+		public void Connect()
+		{
+			Map.RequestProviderConnect((object)this.provider);
+		}
 
-    public void Disconnect()
-    {
-      Map.RequestProviderDisconnect((object) this.provider);
-    }
-  }
+		/// <summary>
+		/// Disconnects the provider
+		/// </summary>
+		public void Disconnect()
+		{
+			Map.RequestProviderDisconnect((object)this.provider);
+		}
+	}
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace OpenQuant.API
 {
-	///<summary>
-	///  Script settings
-	///</summary>
+	/// <summary>
+	/// Script settings
+	/// </summary>
 	public class ScriptSettings : IEnumerable<KeyValuePair<string, object>>, IEnumerable
 	{
 		private Dictionary<string, object> settings;
@@ -21,9 +21,9 @@ namespace OpenQuant.API
 			}
 		}
 
-		///<summary>
-		///  Gets or sets script setting by name
-		///</summary>
+		/// <summary>
+		/// Gets or sets script setting by name
+		/// </summary>
 		public object this[string name]
 		{
 			get

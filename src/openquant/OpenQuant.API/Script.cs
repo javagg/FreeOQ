@@ -4,18 +4,18 @@ using System.Windows.Forms;
 
 namespace OpenQuant.API
 {
-	///<summary>
-	///  A script
-	///</summary>
+	/// <summary>
+	/// A script
+	/// </summary>
 	public abstract class Script
 	{
 		private Form mainForm;
 
 		public abstract void Run();
 
-		///<summary>
-		///  Initializes a new instance of this class
-		///</summary>
+		/// <summary>
+		/// Initializes a new instance of this class
+		/// </summary>
 		public Script() {}
 
 		///<summary>
@@ -42,9 +42,9 @@ namespace OpenQuant.API
 			FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder));
 		}
 
-		///<summary>
-		///  Removes reminder at specified datatime
-		///</summary>
+		/// <summary>
+		/// Removes reminder at specified datatime
+		/// </summary>
 		public void RemoveTimer(DateTime dateTime)
 		{
 			FreeQuant.Clock.RemoveReminder(new ReminderEventHandler(this.OnReminder), dateTime);
@@ -56,58 +56,58 @@ namespace OpenQuant.API
 			this.OnTimer(args.SignalTime, args.Data);
 		}
 
-		///<summary>
-		///  Called when a reminder gets triggered
-		///</summary>
+		/// <summary>
+		/// Called when a reminder gets triggered
+		/// </summary>
 		public virtual void OnTimer(DateTime dateTime, object data)
 		{
 		}
 
-		///<summary>
-		///  Called when solution is starting
-		///</summary>
+		/// <summary>
+		/// Called when solution is starting
+		/// </summary>
 		public virtual void OnSolutionStarting()
 		{
 		}
 
-		///<summary>
-		///  Called when solution is stopping
-		///</summary>
+		/// <summary>
+		/// Called when solution is stopping
+		/// </summary>
 		public virtual void OnSolutionStopping()
 		{
 		}
 
-		///<summary>
-		///  Called when solution is stopped
-		///</summary>
+		/// <summary>
+		/// Called when solution is stopped
+		/// </summary>
 		public virtual void OnSolutionStopped()
 		{
 		}
 
-		///<summary>
-		///  Called when solution is started 
-		///</summary>
+		/// <summary>
+		/// Called when solution is started 
+		/// </summary>
 		public virtual void OnSolutionStarted()
 		{
 		}
 
-		///<summary>
-		///  Called when solution is opened
-		///</summary>
+		/// <summary>
+		/// Called when solution is opened
+		/// </summary>
 		public virtual void OnSolutionOpened(string name)
 		{
 		}
 
-		///<summary>
-		///  Called when script is stopped
-		///</summary>
+		/// <summary>
+		/// Called when script is stopped
+		/// </summary>
 		public virtual void OnScriptStopped(string path)
 		{
 		}
 
-		///<summary>
-		///  Called when this script is about to stop 
-		///</summary>
+		/// <summary>
+		/// Called when this script is about to stop 
+		/// </summary>
 		public virtual void OnStop()
 		{
 		}

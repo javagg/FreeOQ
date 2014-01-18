@@ -4,43 +4,55 @@ using System.Reflection;
 
 namespace OpenQuant.API
 {
-  public class ProviderProperty
-  {
-    private PropertyInfo property;
-    private IProvider provider;
+	/// <summary>
+	/// A Provider Property
+	/// </summary>
+	public class ProviderProperty
+	{
+		private PropertyInfo property;
+		private IProvider provider;
 
-    public string Name
-    {
-      get
-      {
-        return this.property.Name;
-      }
-    }
+		/// <summary>
+		/// Gets Provider Property name
+		/// </summary>
+		public string Name
+		{
+			get
+			{
+				return this.property.Name;
+			}
+		}
 
-    public object Value
-    {
-      get
-      {
-        return this.property.GetValue((object) this.provider, (object[]) null);
-      }
-      set
-      {
-        this.property.SetValue((object) this.provider, value, (object[]) null);
-      }
-    }
+		/// <summary>
+		/// Gets Provider Property value
+		/// </summary>
+		public object Value
+		{
+			get
+			{
+				return this.property.GetValue((object)this.provider, (object[])null);
+			}
+			set
+			{
+				this.property.SetValue((object)this.provider, value, (object[])null);
+			}
+		}
 
-    public Type Type
-    {
-      get
-      {
-        return this.property.PropertyType;
-      }
-    }
+		/// <summary>
+		/// Gets Provider Property type
+		/// </summary>
+		public Type Type
+		{
+			get
+			{
+				return this.property.PropertyType;
+			}
+		}
 
-    internal ProviderProperty(PropertyInfo property, IProvider provider)
-    {
-      this.property = property;
-      this.provider = provider;
-    }
-  }
+		internal ProviderProperty(PropertyInfo property, IProvider provider)
+		{
+			this.property = property;
+			this.provider = provider;
+		}
+	}
 }

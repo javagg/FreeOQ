@@ -65,7 +65,7 @@ namespace OpenQuant.API.Engine
 			get
 			{
 				if (IDE.SolutionInfoRequested != null)
-					IDE.SolutionInfoRequested((object)null, EventArgs.Empty);
+					IDE.SolutionInfoRequested(null, EventArgs.Empty);
 				return IDE.solutionInfo;
 			}
 		}
