@@ -1,12 +1,11 @@
-﻿using FreeQuant.Data;
+using FreeQuant.Data;
 using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class VolumeBSView : SeriesView
   {
@@ -16,11 +15,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public override Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.sxtcYpgtQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.sxtcYpgtQ = value;
       }
@@ -28,7 +27,7 @@ namespace SmartQuant.FinChart
 
     public override int LabelDigitsCount
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return 0;
       }
@@ -36,7 +35,7 @@ namespace SmartQuant.FinChart
 
     public override string DisplayName
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.MainSeries.Name + FJDHryrxb1WIq5jBAt.mT707pbkgT(50);
       }
@@ -44,7 +43,7 @@ namespace SmartQuant.FinChart
 
     public override TimeSeries MainSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (TimeSeries) this.cNQwO6AHR;
       }
@@ -52,13 +51,13 @@ namespace SmartQuant.FinChart
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return ((TimeSeries) this.cNQwO6AHR)[this.cNQwO6AHR.GetIndex(this.lastDate, EIndexOption.Prev), BarData.Volume];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public VolumeBSView(Pad pad, DoubleSeries series)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -69,7 +68,7 @@ namespace SmartQuant.FinChart
       this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
       double min = this.cNQwO6AHR.GetMin(this.firstDate, this.lastDate, BarData.Volume);
@@ -83,7 +82,7 @@ namespace SmartQuant.FinChart
       return new PadRange(min, max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint()
     {
       SolidBrush solidBrush = new SolidBrush(this.sxtcYpgtQ);
@@ -107,7 +106,7 @@ namespace SmartQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();

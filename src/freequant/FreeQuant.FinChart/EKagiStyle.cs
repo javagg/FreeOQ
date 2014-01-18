@@ -1,8 +1,8 @@
 namespace FreeQuant.FinChart
 {
-  public enum EKagiStyle
-  {
-    Point,
-    Percent,
-  }
+	public enum EKagiStyle
+	{
+		Point,
+		Percent,
+	}
 }

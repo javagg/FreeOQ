@@ -1,20 +1,13 @@
-﻿// Type: SmartQuant.FinChart.PnFBSView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
-using SmartQuant.Data;
-using SmartQuant.Indicators;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Indicators;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class PnFBSView : SeriesView
   {
@@ -27,11 +20,11 @@ namespace SmartQuant.FinChart
     [Category("Color scheme")]
     public Color UpColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.m7vJrqqdI4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.m7vJrqqdI4 = value;
       }
@@ -40,11 +33,11 @@ namespace SmartQuant.FinChart
     [Category("Color scheme")]
     public Color DownColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.UUfJKgNeH7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.UUfJKgNeH7 = value;
       }
@@ -53,14 +46,14 @@ namespace SmartQuant.FinChart
     [Category("Color scheme")]
     public override Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.pGlJXklPGE[this.lastDate].Open > this.pGlJXklPGE[this.lastDate].Close)
           return this.m7vJrqqdI4;
         else
           return this.UUfJKgNeH7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.gKtJiYQi50 = value;
       }
@@ -68,7 +61,7 @@ namespace SmartQuant.FinChart
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.lastDate == this.pGlJXklPGE.LastDateTime)
           return this.lv0J05VbR1.Last.Close;
@@ -79,13 +72,13 @@ namespace SmartQuant.FinChart
 
     public override TimeSeries MainSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (TimeSeries) this.pGlJXklPGE;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PnFBSView(Pad pad, BarSeries series, double boxSize, int reversalAmount)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -101,19 +94,19 @@ namespace SmartQuant.FinChart
       this.pGlJXklPGE.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
       return new PadRange(this.pGlJXklPGE.LowestLow(this.firstDate, this.lastDate), this.pGlJXklPGE.HighestHigh(this.firstDate, this.lastDate));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate()
     {
       this.pGlJXklPGE.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint()
     {
       Pen pen1 = new Pen(this.m7vJrqqdI4);
@@ -144,7 +137,7 @@ namespace SmartQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();

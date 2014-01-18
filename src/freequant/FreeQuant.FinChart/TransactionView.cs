@@ -1,21 +1,14 @@
-﻿// Type: SmartQuant.FinChart.TransactionView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
-using SmartQuant.Data;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class TransactionView : IChartDrawable, IDateDrawable
   {
@@ -35,11 +28,11 @@ namespace SmartQuant.FinChart
     [Browsable(false)]
     public Color BuyColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aPewsePQDS;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.aPewsePQDS = value;
       }
@@ -49,11 +42,11 @@ namespace SmartQuant.FinChart
     [Browsable(false)]
     public Color SellColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.lZ5wLD8PkC;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.lZ5wLD8PkC = value;
       }
@@ -63,11 +56,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color SellShortColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.xEkwqNT82W;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.xEkwqNT82W = value;
       }
@@ -77,11 +70,11 @@ namespace SmartQuant.FinChart
     [Browsable(false)]
     public bool TextEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.T1lwVYQLqj;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.T1lwVYQLqj = value;
       }
@@ -91,11 +84,11 @@ namespace SmartQuant.FinChart
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipEnabled = value;
       }
@@ -105,11 +98,11 @@ namespace SmartQuant.FinChart
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipFormat = value;
       }
@@ -117,7 +110,7 @@ namespace SmartQuant.FinChart
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (!(this.pad.Series is BarSeries))
           return this.AMKwObevl9.DateTime;
@@ -129,7 +122,7 @@ namespace SmartQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TransactionView(Transaction transaction, Pad pad)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -148,20 +141,20 @@ namespace SmartQuant.FinChart
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal bool v0vwQdHGPo()
     {
       return this.selected;
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void GBIw6qlqgC(bool value)
     {
       this.selected = value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
       int index = this.pad.Series.GetIndex(this.AMKwObevl9.DateTime, EIndexOption.Prev);
@@ -243,20 +236,20 @@ namespace SmartQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool Compare(object obj)
     {
       return obj == this.AMKwObevl9;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetInterval(DateTime minDate, DateTime maxDate)
     {
       this.firstDate = minDate;
       this.lastDate = maxDate;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance Distance(int x, double y)
     {
       Distance distance = new Distance();
@@ -274,12 +267,12 @@ namespace SmartQuant.FinChart
       return distance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Select()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnSelect()
     {
     }

@@ -1,4 +1,4 @@
-using SmartQuant.FinChart;
+using FreeQuant.FinChart;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -19,17 +19,17 @@ namespace FreeQuant.FinChart.Objects
     protected DateTime chartFirstDate;
     protected DateTime chartLastDate;
 
-    public Pad Pad { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public Pad Pad {  get;  set; }
 
     [Category("ToolTip")]
     [Description("Enable or disable tooltip appearance for this marker.")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipEnabled = value;
       }
@@ -39,17 +39,17 @@ namespace FreeQuant.FinChart.Objects
     [Description("Tooltip format string. {1} - X coordinate, {2} - Y coordinte.")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipFormat = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PathView(DrawingPath path, Pad pad)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -63,36 +63,36 @@ namespace FreeQuant.FinChart.Objects
       this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3248);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
       this.ciMyW8o1Tg();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetInterval(DateTime minDate, DateTime maxDate)
     {
       this.firstDate = minDate;
       this.lastDate = maxDate;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance Distance(int x, double y)
     {
       return this.TBRyFWEHO3(x, y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Select()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnSelect()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void ciMyW8o1Tg()
     {
       GraphicsPath path = new GraphicsPath();
@@ -110,13 +110,13 @@ namespace FreeQuant.FinChart.Objects
       this.Pad.Graphics.DrawPath(new Pen(this.QLSyIOYXoI.Color, (float) this.QLSyIOYXoI.Width), path);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private Distance TBRyFWEHO3([In] int obj0, [In] double obj1)
     {
       return (Distance) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeY(Pad pad)
     {
       return new PadRange(0.0, 0.0);

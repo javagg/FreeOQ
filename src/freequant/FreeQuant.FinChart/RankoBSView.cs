@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.FinChart.RankoBSView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class RankoBSView : SeriesView
   {
@@ -21,18 +14,18 @@ namespace SmartQuant.FinChart
 
     public override Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return Color.FromArgb(0, (int) byte.MaxValue, 0);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
       }
     }
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.rPoS1WavBw[this.lastDate, EIndexOption.Prev].Close;
       }
@@ -40,7 +33,7 @@ namespace SmartQuant.FinChart
 
     public override TimeSeries MainSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (TimeSeries) this.SxvSUG7nWo;
       }

@@ -1,8 +1,3 @@
-﻿// Type: SmartQuant.FinChart.Objects.DrawingEllipse
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
@@ -21,11 +16,11 @@ namespace FreeQuant.FinChart.Objects
 
     public bool RangeY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.rangeY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.rangeY = value;
         this.uvbyJ2XdPh();
@@ -34,11 +29,11 @@ namespace FreeQuant.FinChart.Objects
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Un1yXhicQO;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Un1yXhicQO = value;
         this.uvbyJ2XdPh();
@@ -47,26 +42,26 @@ namespace FreeQuant.FinChart.Objects
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.eJXyDMSI7d;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.eJXyDMSI7d = value;
         this.uvbyJ2XdPh();
       }
     }
 
-    public string Name { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+    public string Name {  get;  private set; }
 
     public DateTime X1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.QbJy0TUwFX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.QbJy0TUwFX = value;
         this.uvbyJ2XdPh();
@@ -75,11 +70,11 @@ namespace FreeQuant.FinChart.Objects
 
     public DateTime X2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kA4yrTb50K;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.kA4yrTb50K = value;
         this.uvbyJ2XdPh();
@@ -88,11 +83,11 @@ namespace FreeQuant.FinChart.Objects
 
     public double Y1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GjOyKRGd06;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GjOyKRGd06 = value;
         this.uvbyJ2XdPh();
@@ -101,11 +96,11 @@ namespace FreeQuant.FinChart.Objects
 
     public double Y2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.l36yibjrFV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.l36yibjrFV = value;
         this.uvbyJ2XdPh();
@@ -114,7 +109,7 @@ namespace FreeQuant.FinChart.Objects
 
     public event EventHandler Updated;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DrawingEllipse(DateTime x1, double y1, DateTime x2, double y2, string name)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -128,7 +123,7 @@ namespace FreeQuant.FinChart.Objects
       this.l36yibjrFV = y2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void uvbyJ2XdPh()
     {
       if (this.raxySEVyyA == null)

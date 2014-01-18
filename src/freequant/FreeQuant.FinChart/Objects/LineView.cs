@@ -1,4 +1,4 @@
-using SmartQuant.FinChart;
+using FreeQuant.FinChart;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -24,11 +24,11 @@ namespace FreeQuant.FinChart.Objects
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipEnabled = value;
       }
@@ -38,17 +38,17 @@ namespace FreeQuant.FinChart.Objects
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipFormat = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LineView(DrawingLine line, Pad pad)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -64,20 +64,20 @@ namespace FreeQuant.FinChart.Objects
       this.chartLastDate = new DateTime(Math.Max(line.X1.Ticks, line.X2.Ticks));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
       this.RQXykfUBlu();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetInterval(DateTime minDate, DateTime maxDate)
     {
       this.firstDate = minDate;
       this.lastDate = maxDate;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance Distance(int x, double y)
     {
       if (this.chartFirstDate > this.lastDate || this.chartLastDate < this.firstDate)
@@ -86,17 +86,17 @@ namespace FreeQuant.FinChart.Objects
         return this.WWpyQW3r7I(x, y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Select()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnSelect()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void RQXykfUBlu()
     {
       DateTime dateTime1 = new DateTime(Math.Min(this.VLoy6nwXZ8.X1.Ticks, this.VLoy6nwXZ8.X2.Ticks));
@@ -120,7 +120,7 @@ namespace FreeQuant.FinChart.Objects
       this.pad.Graphics.DrawLine(new Pen(this.VLoy6nwXZ8.Color, (float) this.VLoy6nwXZ8.Width), x1, y1, x2, y2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private double mXvyM23twN([In] int obj0)
     {
       double num1 = (double) this.pad.MainSeries.GetIndex(this.VLoy6nwXZ8.X1);
@@ -128,7 +128,7 @@ namespace FreeQuant.FinChart.Objects
       return this.VLoy6nwXZ8.Y1 + ((double) obj0 - num1) / (num2 - num1) * (this.VLoy6nwXZ8.Y2 - this.VLoy6nwXZ8.Y1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private Distance WWpyQW3r7I([In] int obj0, [In] double obj1)
     {
       Distance distance = new Distance();
@@ -158,7 +158,7 @@ namespace FreeQuant.FinChart.Objects
       return distance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeY(Pad pad)
     {
       return new PadRange(0.0, 0.0);

@@ -1,8 +1,3 @@
-// Type: SmartQuant.FinChart.Objects.DrawingRectangle
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
@@ -21,11 +16,11 @@ namespace FreeQuant.FinChart.Objects
 
     public bool RangeY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.rangeY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.rangeY = value;
         this.wdfSDwf2c9();
@@ -34,11 +29,11 @@ namespace FreeQuant.FinChart.Objects
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.IAtSEgvi6q;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.IAtSEgvi6q = value;
         this.wdfSDwf2c9();
@@ -47,26 +42,26 @@ namespace FreeQuant.FinChart.Objects
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.yPASPrHxtE;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yPASPrHxtE = value;
         this.wdfSDwf2c9();
       }
     }
 
-    public string Name { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+    public string Name {  get;  private set; }
 
     public DateTime X1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nFrSen0Bbv;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nFrSen0Bbv = value;
         this.wdfSDwf2c9();
@@ -75,11 +70,11 @@ namespace FreeQuant.FinChart.Objects
 
     public DateTime X2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.LscSnwRM85;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.LscSnwRM85 = value;
         this.wdfSDwf2c9();
@@ -88,11 +83,11 @@ namespace FreeQuant.FinChart.Objects
 
     public double Y1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.CoBS7yK5v5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.CoBS7yK5v5 = value;
         this.wdfSDwf2c9();
@@ -101,11 +96,11 @@ namespace FreeQuant.FinChart.Objects
 
     public double Y2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.seVSRC3nMB;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.seVSRC3nMB = value;
         this.wdfSDwf2c9();
@@ -114,7 +109,7 @@ namespace FreeQuant.FinChart.Objects
 
     public event EventHandler Updated;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DrawingRectangle(DateTime x1, double y1, DateTime x2, double y2, string name)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -128,7 +123,7 @@ namespace FreeQuant.FinChart.Objects
       this.seVSRC3nMB = y2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void wdfSDwf2c9()
     {
       if (this.T3XSbKaATt == null)

@@ -15,11 +15,11 @@ namespace FreeQuant.FinChart
 
     public double X1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.x1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.x1 = value;
       }
@@ -27,11 +27,11 @@ namespace FreeQuant.FinChart
 
     public double X2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.x2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.x2 = value;
       }
@@ -39,17 +39,17 @@ namespace FreeQuant.FinChart
 
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.y;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.y = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public AxisBottom(Chart chart, int x1, int x2, int y)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -62,7 +62,7 @@ namespace FreeQuant.FinChart
       this.h0j0bmMn2r();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void h0j0bmMn2r()
     {
       this.enabled = true;
@@ -100,7 +100,7 @@ namespace FreeQuant.FinChart
       this.height = -1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetBounds(int x1, int x2, int y)
     {
       this.x1 = (double) x1;
@@ -108,7 +108,7 @@ namespace FreeQuant.FinChart
       this.y = (double) y;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private long c9T0e1qB80([In] DateTime obj0, [In] EGridSize obj1)
     {
       long num;
@@ -242,7 +242,7 @@ namespace FreeQuant.FinChart
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void PaintWithDates(DateTime minDate, DateTime maxDate)
     {
       SolidBrush solidBrush1 = new SolidBrush(this.titleColor);
@@ -356,7 +356,7 @@ namespace FreeQuant.FinChart
       this.chart.Graphics.DrawString(this.title, this.titleFont, (Brush) solidBrush1, (float) (int) (this.x1 + (this.x2 - this.x1 - (double) num17) / 2.0), (float) (int) (this.y + (double) this.labelOffset + (double) num14 + (double) this.titleOffset));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static EGridSize CalculateSize(double ticks)
     {
       int num1 = 7;
@@ -473,7 +473,7 @@ namespace FreeQuant.FinChart
       return num39 >= (double) num2 && num39 <= (double) num1 ? EGridSize.year20 : EGridSize.year20;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static long GetNextMajor(long PrevMajor, EGridSize GridSize)
     {
       long num;

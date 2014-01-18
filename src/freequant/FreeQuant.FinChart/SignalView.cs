@@ -1,19 +1,12 @@
-﻿// Type: SmartQuant.FinChart.SignalView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
-using SmartQuant.Series;
-using SmartQuant.Trading;
+using FreeQuant.Series;
+using FreeQuant.Trading;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class SignalView : IChartDrawable, IDateDrawable
   {
@@ -32,11 +25,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color BuyColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.JVpy8D2xUR;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.JVpy8D2xUR = value;
       }
@@ -45,11 +38,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color BuyCoverColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.zMOyBnpkt3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.zMOyBnpkt3 = value;
       }
@@ -58,11 +51,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color SellColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.tHoyjarrU1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.tHoyjarrU1 = value;
       }
@@ -71,11 +64,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color SellShortColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.XNayo9fgOU;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.XNayo9fgOU = value;
       }
@@ -85,11 +78,11 @@ namespace SmartQuant.FinChart
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.toolTipEnabled = value;
       }
@@ -99,11 +92,11 @@ namespace SmartQuant.FinChart
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.toolTipFormat = value;
       }
@@ -111,7 +104,7 @@ namespace SmartQuant.FinChart
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.VP3yN9Uek6.DateTime;
       }

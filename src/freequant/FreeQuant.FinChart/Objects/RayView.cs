@@ -1,5 +1,5 @@
-using SmartQuant.FinChart;
-using SmartQuant.Series;
+using FreeQuant.FinChart;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -20,17 +20,17 @@ namespace FreeQuant.FinChart.Objects
     protected DateTime chartFirstDate;
     protected DateTime chartLastDate;
 
-    public Pad Pad { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public Pad Pad {  get;  set; }
 
     [Description("Enable or disable tooltip appearance for this marker.")]
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipEnabled = value;
       }
@@ -40,17 +40,17 @@ namespace FreeQuant.FinChart.Objects
     [Description("Tooltip format string. {1} - X coordinate, {2} - Y coordinte.")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipFormat = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RayView(DrawingRay ray, Pad pad)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -69,36 +69,36 @@ namespace FreeQuant.FinChart.Objects
       this.chartLastDate = DateTime.MaxValue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
       this.YL5JMg9FL();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetInterval(DateTime minDate, DateTime maxDate)
     {
       this.firstDate = minDate;
       this.lastDate = maxDate;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance Distance(int x, double y)
     {
       return this.QVTy2A1Hg(x, y);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Select()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnSelect()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void YL5JMg9FL()
     {
       double y = this.mYYSbcj8S.Y;
@@ -118,7 +118,7 @@ namespace FreeQuant.FinChart.Objects
       this.Pad.Graphics.DrawLine(pen, x1, (float) num2, x2, (float) num2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private Distance QVTy2A1Hg([In] int obj0, [In] double obj1)
     {
       Distance distance = new Distance();
@@ -138,7 +138,7 @@ namespace FreeQuant.FinChart.Objects
       return distance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeY(Pad pad)
     {
       double y1 = this.mYYSbcj8S.Y;

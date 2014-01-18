@@ -14,18 +14,18 @@ namespace FreeQuant.FinChart
 
     public override Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Color.FromArgb(0, (int) byte.MaxValue, 0);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Itiy9gS5Yd[this.lastDate, EIndexOption.Prev].Close;
       }
@@ -33,13 +33,13 @@ namespace FreeQuant.FinChart
 
     public override TimeSeries MainSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (TimeSeries) this.RCUyO2wSvi;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public KagiBaView(Pad pad, BarSeries series)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -52,19 +52,19 @@ namespace FreeQuant.FinChart
       this.RCUyO2wSvi.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
       return new PadRange(this.RCUyO2wSvi.LowestLow(this.firstDate, this.lastDate), this.RCUyO2wSvi.HighestHigh(this.firstDate, this.lastDate));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate()
     {
       this.RCUyO2wSvi.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint()
     {
       Pen pen1 = new Pen(Color.Black);
@@ -89,7 +89,7 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();

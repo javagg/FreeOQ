@@ -1,8 +1,3 @@
-// Type: SmartQuant.FinChart.Kagi
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using FreeQuant.Data;
 using FreeQuant.Series;
 using System.Runtime.CompilerServices;
@@ -21,7 +16,7 @@ namespace FreeQuant.FinChart
     private double Di0PI2QTl;
     private bool QI6TpeujS;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Kagi(BarSeries BarArray)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -32,7 +27,7 @@ namespace FreeQuant.FinChart
       this.Yq5njBAtJ.ItemAdded += new ItemAddedEventHandler(this.zGqhj5LH6);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Kagi(BarSeries BarArray, EKagiStyle Style)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -43,7 +38,7 @@ namespace FreeQuant.FinChart
       this.Yq5njBAtJ.ItemAdded += new ItemAddedEventHandler(this.zGqhj5LH6);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Kagi(BarSeries BarArray, double RevAmount)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -55,7 +50,7 @@ namespace FreeQuant.FinChart
       this.Yq5njBAtJ.ItemAdded += new ItemAddedEventHandler(this.zGqhj5LH6);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Kagi(BarSeries BarArray, EKagiStyle Style, double RevAmount)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -67,7 +62,7 @@ namespace FreeQuant.FinChart
       this.Yq5njBAtJ.ItemAdded += new ItemAddedEventHandler(this.zGqhj5LH6);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate()
     {
       this.hK0RL5ffy = this.Yq5njBAtJ[0].Close;
@@ -121,7 +116,7 @@ namespace FreeQuant.FinChart
       this.Add(new Bar(this.Yq5njBAtJ.Last.DateTime, this.hK0RL5ffy, this.CQfEJwwjn, this.hK0RL5ffy, this.CQfEJwwjn, 1L, 1L));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void zGqhj5LH6([In] object obj0, [In] DateTimeEventArgs obj1)
     {
       if (this.N9o76Qnve)

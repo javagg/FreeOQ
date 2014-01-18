@@ -1,21 +1,13 @@
-﻿// Type: SmartQuant.FinChart.OrderView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
-using SmartQuant;
-using SmartQuant.Execution;
-using SmartQuant.FIX;
-using SmartQuant.Series;
+using FreeQuant;
+using FreeQuant.Execution;
+using FreeQuant.FIX;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.CompilerServices;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public class OrderView : IChartDrawable
   {
@@ -40,11 +32,11 @@ namespace SmartQuant.FinChart
     [Browsable(false)]
     public Color BuyColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.xNSw3se3iH;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.xNSw3se3iH = value;
       }
@@ -54,11 +46,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color SellColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.d3XwNSK42k;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.d3XwNSK42k = value;
       }
@@ -68,11 +60,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public Color SellShortColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cCOw8XFtec;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.cCOw8XFtec = value;
       }
@@ -82,11 +74,11 @@ namespace SmartQuant.FinChart
     [Category("Drawing Style")]
     public bool TextEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ksiwBkoxAO;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ksiwBkoxAO = value;
       }
@@ -96,11 +88,11 @@ namespace SmartQuant.FinChart
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipEnabled = value;
       }
@@ -110,17 +102,17 @@ namespace SmartQuant.FinChart
     [Category("ToolTip")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipFormat = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OrderView(SingleOrder order, Pad pad)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -143,7 +135,7 @@ namespace SmartQuant.FinChart
       this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(314);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
       if (this.Ynnw28rK7h.Reports[0].TransactTime > this.lastDate || this.Ynnw28rK7h.Reports[this.Ynnw28rK7h.Reports.Count - 1].TransactTime < this.firstDate)
@@ -286,25 +278,25 @@ namespace SmartQuant.FinChart
       this.pad.Graphics.DrawString(str1, font1, Brushes.Black, (float) num11, (float) num10);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetInterval(DateTime minDate, DateTime maxDate)
     {
       this.firstDate = minDate;
       this.lastDate = maxDate;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance Distance(int x, double y)
     {
       return (Distance) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Select()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnSelect()
     {
     }

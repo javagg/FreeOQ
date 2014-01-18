@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.FinChart
+namespace FreeQuant.FinChart
 {
   public enum ChartActionType
   {

@@ -1,8 +1,3 @@
-﻿// Type: SmartQuant.FinChart.BSView
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using FreeQuant.Data;
 using FreeQuant.Series;
 using System.Runtime.CompilerServices;
@@ -12,7 +7,7 @@ namespace FreeQuant.FinChart
 {
   public abstract class BSView : SeriesView
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BSView(Pad pad)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -20,7 +15,7 @@ namespace FreeQuant.FinChart
       base.\u002Ector(pad);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
       double max = this.MainSeries.GetMax(this.firstDate, this.lastDate);
@@ -34,7 +29,7 @@ namespace FreeQuant.FinChart
       return new PadRange(max, min);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();

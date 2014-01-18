@@ -1,11 +1,5 @@
-﻿// Type: SmartQuant.FinChart.Objects.DrawingImage
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FinChart.Objects
 {
@@ -15,15 +9,15 @@ namespace FreeQuant.FinChart.Objects
     private double JPXyR8VTA9;
     private Image aipyEffZDd;
 
-    public string Name { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
+    public string Name {  get;  private set; }
 
     public DateTime X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.kK7y702WDY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.kK7y702WDY = value;
         this.hw2ybdMqpF();
@@ -32,11 +26,11 @@ namespace FreeQuant.FinChart.Objects
 
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.JPXyR8VTA9;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.JPXyR8VTA9 = value;
         this.hw2ybdMqpF();
@@ -45,11 +39,11 @@ namespace FreeQuant.FinChart.Objects
 
     public Image Image
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aipyEffZDd;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.aipyEffZDd = value;
         this.hw2ybdMqpF();
@@ -58,7 +52,7 @@ namespace FreeQuant.FinChart.Objects
 
     public event EventHandler Updated;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DrawingImage(DateTime x, double y, Image image, string name)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -70,7 +64,7 @@ namespace FreeQuant.FinChart.Objects
       this.aipyEffZDd = image;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void hw2ybdMqpF()
     {
       if (this.enQyncNsH9 == null)

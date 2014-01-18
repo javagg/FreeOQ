@@ -1,14 +1,7 @@
-﻿// Type: SmartQuant.FinChart.PropertyForm
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
-using cY9o6QKnveiK0L5ffy;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using yHueqhRH1sS5jNKgDq;
 
 namespace SmartQuant.FinChart
 {
@@ -18,17 +11,15 @@ namespace SmartQuant.FinChart
     private Button pqrJbPSFp1;
     private Container DNPJesGe4X;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public PropertyForm(object properties)
+    
+	public PropertyForm(object properties) ：base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.edmJDBj1tJ();
       this.OCRJhaKNQA.SelectedObject = properties;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Dispose(bool disposing)
     {
       if (disposing && this.DNPJesGe4X != null)
@@ -36,7 +27,7 @@ namespace SmartQuant.FinChart
       base.Dispose(disposing);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void edmJDBj1tJ()
     {
       this.OCRJhaKNQA = new PropertyGrid();

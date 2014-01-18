@@ -15,11 +15,11 @@ namespace FreeQuant.FinChart
 
     public double X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.x;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.x = value;
       }
@@ -27,11 +27,11 @@ namespace FreeQuant.FinChart
 
     public double Y1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.y1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.y1 = value;
       }
@@ -39,17 +39,17 @@ namespace FreeQuant.FinChart
 
     public double Y2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.y2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.y2 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public AxisRight(Chart chart, Pad pad, int x, int y1, int y2)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -63,7 +63,7 @@ namespace FreeQuant.FinChart
       this.hTucCxtmDC();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void hTucCxtmDC()
     {
       this.enabled = true;
@@ -101,7 +101,7 @@ namespace FreeQuant.FinChart
       this.height = -1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetBounds(int x, int y1, int y2)
     {
       this.x = (double) x;
@@ -109,7 +109,7 @@ namespace FreeQuant.FinChart
       this.y2 = (double) y2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int GetAxisGap()
     {
       double maxValue = this.ipsc8CkXcd.MaxValue;
@@ -117,7 +117,7 @@ namespace FreeQuant.FinChart
       return (int) this.chart.Graphics.MeasureString(maxValue.ToString(this.ipsc8CkXcd.AxisLabelFormat), this.chart.Font).Width;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
       SolidBrush solidBrush1 = new SolidBrush(this.titleColor);
@@ -206,7 +206,7 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private bool UvocmIoHmQ([In] Color obj0, [In] Color obj1)
     {
       if ((int) obj0.A == (int) obj1.A && (int) obj0.R == (int) obj1.R && (int) obj0.G == (int) obj1.G)
@@ -215,7 +215,7 @@ namespace FreeQuant.FinChart
         return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static double O3Qc3nfpkF([In] double obj0)
     {
       double num1 = obj0 > 0.0 ? 1.0 : -1.0;
@@ -228,7 +228,7 @@ namespace FreeQuant.FinChart
       return num1 * num3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static double kBKcNuxFwi([In] double obj0)
     {
       double num1 = obj0 > 0.0 ? 1.0 : -1.0;

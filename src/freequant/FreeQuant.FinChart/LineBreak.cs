@@ -1,8 +1,3 @@
-// Type: SmartQuant.FinChart.LineBreak
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using FreeQuant.Data;
 using FreeQuant.Series;
 using System.Runtime.CompilerServices;
@@ -17,7 +12,7 @@ namespace FreeQuant.FinChart
     private bool couXtHe2A;
     private int nWoDvrxxo;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LineBreak(BarSeries BarArray)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -28,7 +23,7 @@ namespace FreeQuant.FinChart
       this.lySiCl1si.ItemAdded += new ItemAddedEventHandler(this.d2ors9hOM);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LineBreak(BarSeries BarArray, int NumberOfLines)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -40,7 +35,7 @@ namespace FreeQuant.FinChart
       this.lySiCl1si.ItemAdded += new ItemAddedEventHandler(this.d2ors9hOM);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate()
     {
       if (this.lySiCl1si[0].Open < this.lySiCl1si[0].Close)
@@ -88,7 +83,7 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void d2ors9hOM([In] object obj0, [In] DateTimeEventArgs obj1)
     {
       int index = this.lySiCl1si.Count - 1;

@@ -31,11 +31,11 @@ namespace FreeQuant.FinChart
 
     public Chart Chart
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.uKfc1Da3lW;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AqGcKEUcwd();
         this.uKfc1Da3lW = value;
@@ -48,7 +48,7 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ChartToolStrip()
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -57,80 +57,80 @@ namespace FreeQuant.FinChart
       this.mU9cTyJqiF();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Ib1wW2Sljv([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.ActionType = ChartActionType.None;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void yB0wF4OxjP([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.ActionType = ChartActionType.Cross;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void lrCwI8sugV([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.ZoomIn();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void si0wzAnoUg([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.ZoomOut();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void RiUct5bNDO([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.ScaleStyle = PadScaleStyle.Arith;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void nLBcwE0kD9([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.ScaleStyle = PadScaleStyle.Log;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void J6pccasRQb([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.UpdateStyle = ChartUpdateStyle.Trailing;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void GnhcJDCpbI([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.UpdateStyle = ChartUpdateStyle.Fixed;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void zp7cy9i5y0([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.BarSeriesStyle = BSStyle.Candle;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void GCWcSArxSA([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.BarSeriesStyle = BSStyle.Bar;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void HSLc0kgK4E([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.BarSeriesStyle = BSStyle.Line;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void v4ncrpO7y9([In] object obj0, [In] EventArgs obj1)
     {
       this.uKfc1Da3lW.BarSeriesStyle = BSStyle.PointAndFigure;
       this.uKfc1Da3lW.DrawItems = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void AqGcKEUcwd()
     {
       if (this.uKfc1Da3lW == null)
@@ -142,7 +142,7 @@ namespace FreeQuant.FinChart
       this.uKfc1Da3lW.ScaleStyleChanged -= new EventHandler(this.TiFcPjuKcW);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void DaociS2YZP()
     {
       if (this.uKfc1Da3lW == null)
@@ -154,7 +154,7 @@ namespace FreeQuant.FinChart
       this.uKfc1Da3lW.ScaleStyleChanged += new EventHandler(this.TiFcPjuKcW);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void FYpcXcTm5K()
     {
       if (this.uKfc1Da3lW.UpdateStyle == ChartUpdateStyle.Fixed)
@@ -173,12 +173,12 @@ namespace FreeQuant.FinChart
       this.X4xcf07fkS.Checked = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void QwTcDTfHxx()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void wixchCxoOR()
     {
       if (this.uKfc1Da3lW.BarSeriesStyle == BSStyle.Bar)
@@ -210,7 +210,7 @@ namespace FreeQuant.FinChart
       this.EVWc9EB5Fv.Checked = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void PUOcbN0NeH()
     {
       if (this.uKfc1Da3lW.ActionType == ChartActionType.Cross)
@@ -224,7 +224,7 @@ namespace FreeQuant.FinChart
       this.SfwcOA7wk9.Checked = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void k1nceBNLGc()
     {
       if (this.uKfc1Da3lW.ScaleStyle == PadScaleStyle.Arith)
@@ -238,37 +238,37 @@ namespace FreeQuant.FinChart
       this.gjKcZ28hMU.Checked = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void K6scn2C04y([In] object obj0, [In] EventArgs obj1)
     {
       this.FYpcXcTm5K();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void QFlc7BkMTp([In] object obj0, [In] EventArgs obj1)
     {
       this.QwTcDTfHxx();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void onkcRs6s8G([In] object obj0, [In] EventArgs obj1)
     {
       this.wixchCxoOR();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void QaicEQAa3l([In] object obj0, [In] EventArgs obj1)
     {
       this.PUOcbN0NeH();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void TiFcPjuKcW([In] object obj0, [In] EventArgs obj1)
     {
       this.k1nceBNLGc();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Dispose(bool disposing)
     {
       if (disposing && this.mLvcUAxdtm != null)
@@ -276,7 +276,7 @@ namespace FreeQuant.FinChart
       base.Dispose(disposing);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void mU9cTyJqiF()
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (ChartToolStrip));

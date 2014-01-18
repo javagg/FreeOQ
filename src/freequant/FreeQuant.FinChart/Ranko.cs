@@ -1,15 +1,9 @@
-﻿// Type: SmartQuant.FinChart.Ranko
-// Assembly: SmartQuant.FinChart, Version=1.0.5036.28359, Culture=neutral, PublicKeyToken=null
-// MVID: B0E28D96-7193-4746-A2CB-1ADD555CD2CE
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.FinChart.dll
-
 using SmartQuant.Data;
 using SmartQuant.Series;
 using System;
-using System.Runtime.CompilerServices;
-using yHueqhRH1sS5jNKgDq;
 
-namespace SmartQuant.FinChart
+
+namespace FreeQuant.FinChart
 {
   public class Ranko : BarSeries
   {
@@ -18,13 +12,13 @@ namespace SmartQuant.FinChart
 
     public double BoxSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.xEpya2iCkD;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Ranko(BarSeries BarSeries)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -33,7 +27,7 @@ namespace SmartQuant.FinChart
       this.M0IypMtV6M = BarSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Ranko(BarSeries BarSeries, double BoxSize)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -43,7 +37,7 @@ namespace SmartQuant.FinChart
       this.xEpya2iCkD = BoxSize;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Calculate()
     {
       double num1 = 0.0;
