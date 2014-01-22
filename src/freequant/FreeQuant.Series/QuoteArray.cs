@@ -9,11 +9,11 @@ namespace FreeQuant.Series
 {
   public class QuoteArray : DataArray, IDrawable, IZoomable
   {
-    private bool h6TXjpCYi;
-    private string Xf6BjdM2C;
-    private string Em2ljk11n;
-    private Color RfPeZVU0q;
-    private Color rc4Ks7Qtq;
+    private bool toolTipEnabled;
+    private string toolTipFormat;
+    private string toolTipDateTimeFormat;
+    private Color bidColor;
+    private Color askColor;
 
     public Quote this[int index]
     {
@@ -27,11 +27,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.RfPeZVU0q;
+				return this.bidColor; 
       }
        set
       {
-        this.RfPeZVU0q = value;
+        this.bidColor = value;
       }
     }
 
@@ -39,11 +39,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.rc4Ks7Qtq;
+				return this.askColor; 
       }
        set
       {
-        this.rc4Ks7Qtq = value;
+        this.askColor = value;
       }
     }
 
@@ -51,23 +51,23 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.Xf6BjdM2C;
+				return this.toolTipFormat; 
       }
        set
       {
-        this.Xf6BjdM2C = value;
+        this.toolTipFormat = value;
       }
     }
 
     public string ToolTipDateTimeFormat
     {
        get
-      {
-        return this.Em2ljk11n;
+			{
+				return this.toolTipDateTimeFormat;  
       }
        set
       {
-        this.Em2ljk11n = value;
+        this.toolTipDateTimeFormat = value;
       }
     }
 
@@ -75,31 +75,28 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.h6TXjpCYi;
+				return this.toolTipEnabled; 
       }
        set
       {
-        this.h6TXjpCYi = value;
+        this.toolTipEnabled = value;
       }
     }
 
     
-    public QuoteArray()
+		public QuoteArray() : base()
     {
-      rMD0QtDvnkaitCE3eL.SGVusT6zsNsKR();
-      this.h6TXjpCYi = true;
-      this.Xf6BjdM2C = oK6F3TB73XXXGhdieP.wF6SgrNUO(170);
-      this.RfPeZVU0q = Color.Red;
-      this.rc4Ks7Qtq = Color.Blue;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+      this.toolTipEnabled = true;
+			this.toolTipFormat = "default format";
+      this.bidColor = Color.Red;
+      this.askColor = Color.Blue;
     }
 
     
     public void Paint(Pad pad, double MinX, double MaxX, double MinY, double MaxY)
     {
-      Pen pen1 = new Pen(this.rc4Ks7Qtq);
-      Pen pen2 = new Pen(this.RfPeZVU0q);
+      Pen pen1 = new Pen(this.askColor);
+      Pen pen2 = new Pen(this.bidColor);
       int num1 = 0;
       double num2 = 0.0;
       double num3 = 0.0;
@@ -175,9 +172,9 @@ namespace FreeQuant.Series
         return (TDistance) null;
       DateTime dateTime = new DateTime((long) tdistance.X);
       StringBuilder stringBuilder = new StringBuilder();
-      this.Xf6BjdM2C = oK6F3TB73XXXGhdieP.wF6SgrNUO(194);
-      stringBuilder.AppendFormat(this.Xf6BjdM2C, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(254), (object) dateTime.ToString(this.Em2ljk11n), (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(278), (object) quote.Bid, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(288), (object) quote.Ask);
-      tdistance.ToolTipText = ((object) stringBuilder).ToString();
+			this.toolTipFormat = "tooltipFormat";
+//			stringBuilder.AppendFormat(this.toolTipFormat, "{0}", (object) dateTime.ToString(this.toolTipDateTimeFormat), (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(278), (object) quote.Bid, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(288), (object) quote.Ask);
+      tdistance.ToolTipText = stringBuilder.ToString();
       return tdistance;
     }
 
@@ -186,11 +183,11 @@ namespace FreeQuant.Series
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(oK6F3TB73XXXGhdieP.wF6SgrNUO(298), oK6F3TB73XXXGhdieP.wF6SgrNUO(322));
+			Canvas canvas = new Canvas("CavName", "Cavtitle");
       }
       Chart.Pad.Add((IDrawable) this);
       Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
-      Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(346);
+			Chart.Pad.AxisBottom.LabelFormat = "LabelFormat";
       double num1 = (double) this.FirstDateTime.Ticks;
       double num2 = (double) this.LastDateTime.Ticks;
       double num3 = double.MaxValue;

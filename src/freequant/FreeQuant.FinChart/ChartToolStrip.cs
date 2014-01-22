@@ -9,7 +9,7 @@ namespace FreeQuant.FinChart
 {
   public class ChartToolStrip : UserControl
   {
-    private Chart uKfc1Da3lW;
+    private Chart chart;
     private IContainer mLvcUAxdtm;
     private ToolStripButton BajclxbZrs;
     private ToolStripButton XA4cvACCns;
@@ -33,12 +33,12 @@ namespace FreeQuant.FinChart
     {
        get
       {
-        return this.uKfc1Da3lW;
+				return this.chart; 
       }
        set
       {
         this.AqGcKEUcwd();
-        this.uKfc1Da3lW = value;
+        this.chart = value;
         this.DaociS2YZP();
         this.PUOcbN0NeH();
         this.wixchCxoOR();
@@ -49,125 +49,122 @@ namespace FreeQuant.FinChart
     }
 
     
-    public ChartToolStrip()
+	public ChartToolStrip() :base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.mU9cTyJqiF();
     }
 
     
     private void Ib1wW2Sljv([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.ActionType = ChartActionType.None;
+      this.chart.ActionType = ChartActionType.None;
     }
 
     
     private void yB0wF4OxjP([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.ActionType = ChartActionType.Cross;
+      this.chart.ActionType = ChartActionType.Cross;
     }
 
     
     private void lrCwI8sugV([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.ZoomIn();
+      this.chart.ZoomIn();
     }
 
     
     private void si0wzAnoUg([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.ZoomOut();
+      this.chart.ZoomOut();
     }
 
     
     private void RiUct5bNDO([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.ScaleStyle = PadScaleStyle.Arith;
+      this.chart.ScaleStyle = PadScaleStyle.Arith;
     }
 
     
     private void nLBcwE0kD9([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.ScaleStyle = PadScaleStyle.Log;
+      this.chart.ScaleStyle = PadScaleStyle.Log;
     }
 
     
     private void J6pccasRQb([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.UpdateStyle = ChartUpdateStyle.Trailing;
+      this.chart.UpdateStyle = ChartUpdateStyle.Trailing;
     }
 
     
     private void GnhcJDCpbI([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.UpdateStyle = ChartUpdateStyle.Fixed;
+      this.chart.UpdateStyle = ChartUpdateStyle.Fixed;
     }
 
     
     private void zp7cy9i5y0([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.BarSeriesStyle = BSStyle.Candle;
+      this.chart.BarSeriesStyle = BSStyle.Candle;
     }
 
     
     private void GCWcSArxSA([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.BarSeriesStyle = BSStyle.Bar;
+      this.chart.BarSeriesStyle = BSStyle.Bar;
     }
 
     
     private void HSLc0kgK4E([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.BarSeriesStyle = BSStyle.Line;
+      this.chart.BarSeriesStyle = BSStyle.Line;
     }
 
     
     private void v4ncrpO7y9([In] object obj0, [In] EventArgs obj1)
     {
-      this.uKfc1Da3lW.BarSeriesStyle = BSStyle.PointAndFigure;
-      this.uKfc1Da3lW.DrawItems = false;
+      this.chart.BarSeriesStyle = BSStyle.PointAndFigure;
+      this.chart.DrawItems = false;
     }
 
     
     private void AqGcKEUcwd()
     {
-      if (this.uKfc1Da3lW == null)
+      if (this.chart == null)
         return;
-      this.uKfc1Da3lW.ActionTypeChanged -= new EventHandler(this.QaicEQAa3l);
-      this.uKfc1Da3lW.UpdateStyleChanged -= new EventHandler(this.K6scn2C04y);
-      this.uKfc1Da3lW.VolumeVisibleChanged -= new EventHandler(this.QFlc7BkMTp);
-      this.uKfc1Da3lW.BarSeriesStyleChanged -= new EventHandler(this.onkcRs6s8G);
-      this.uKfc1Da3lW.ScaleStyleChanged -= new EventHandler(this.TiFcPjuKcW);
+      this.chart.ActionTypeChanged -= new EventHandler(this.QaicEQAa3l);
+      this.chart.UpdateStyleChanged -= new EventHandler(this.K6scn2C04y);
+      this.chart.VolumeVisibleChanged -= new EventHandler(this.QFlc7BkMTp);
+      this.chart.BarSeriesStyleChanged -= new EventHandler(this.onkcRs6s8G);
+      this.chart.ScaleStyleChanged -= new EventHandler(this.TiFcPjuKcW);
     }
 
     
     private void DaociS2YZP()
     {
-      if (this.uKfc1Da3lW == null)
+      if (this.chart == null)
         return;
-      this.uKfc1Da3lW.ActionTypeChanged += new EventHandler(this.QaicEQAa3l);
-      this.uKfc1Da3lW.UpdateStyleChanged += new EventHandler(this.K6scn2C04y);
-      this.uKfc1Da3lW.VolumeVisibleChanged += new EventHandler(this.QFlc7BkMTp);
-      this.uKfc1Da3lW.BarSeriesStyleChanged += new EventHandler(this.onkcRs6s8G);
-      this.uKfc1Da3lW.ScaleStyleChanged += new EventHandler(this.TiFcPjuKcW);
+      this.chart.ActionTypeChanged += new EventHandler(this.QaicEQAa3l);
+      this.chart.UpdateStyleChanged += new EventHandler(this.K6scn2C04y);
+      this.chart.VolumeVisibleChanged += new EventHandler(this.QFlc7BkMTp);
+      this.chart.BarSeriesStyleChanged += new EventHandler(this.onkcRs6s8G);
+      this.chart.ScaleStyleChanged += new EventHandler(this.TiFcPjuKcW);
     }
 
     
     private void FYpcXcTm5K()
     {
-      if (this.uKfc1Da3lW.UpdateStyle == ChartUpdateStyle.Fixed)
+      if (this.chart.UpdateStyle == ChartUpdateStyle.Fixed)
       {
         this.v67cGZ0JAC.Checked = true;
         this.X4xcf07fkS.Checked = false;
       }
-      if (this.uKfc1Da3lW.UpdateStyle == ChartUpdateStyle.Trailing)
+      if (this.chart.UpdateStyle == ChartUpdateStyle.Trailing)
       {
         this.v67cGZ0JAC.Checked = false;
         this.X4xcf07fkS.Checked = true;
       }
-      if (this.uKfc1Da3lW.UpdateStyle != ChartUpdateStyle.WholeRange)
+      if (this.chart.UpdateStyle != ChartUpdateStyle.WholeRange)
         return;
       this.v67cGZ0JAC.Checked = false;
       this.X4xcf07fkS.Checked = false;
@@ -181,28 +178,28 @@ namespace FreeQuant.FinChart
     
     private void wixchCxoOR()
     {
-      if (this.uKfc1Da3lW.BarSeriesStyle == BSStyle.Bar)
+      if (this.chart.BarSeriesStyle == BSStyle.Bar)
       {
         this.ULKcQDLvrP.Checked = true;
         this.eTmcMZk3N2.Checked = false;
         this.fNtc6GDVDA.Checked = false;
         this.EVWc9EB5Fv.Checked = false;
       }
-      if (this.uKfc1Da3lW.BarSeriesStyle == BSStyle.Candle)
+      if (this.chart.BarSeriesStyle == BSStyle.Candle)
       {
         this.ULKcQDLvrP.Checked = false;
         this.eTmcMZk3N2.Checked = true;
         this.fNtc6GDVDA.Checked = false;
         this.EVWc9EB5Fv.Checked = false;
       }
-      if (this.uKfc1Da3lW.BarSeriesStyle == BSStyle.Line)
+      if (this.chart.BarSeriesStyle == BSStyle.Line)
       {
         this.ULKcQDLvrP.Checked = false;
         this.eTmcMZk3N2.Checked = false;
         this.fNtc6GDVDA.Checked = true;
         this.EVWc9EB5Fv.Checked = false;
       }
-      if (this.uKfc1Da3lW.BarSeriesStyle != BSStyle.PointAndFigure)
+      if (this.chart.BarSeriesStyle != BSStyle.PointAndFigure)
         return;
       this.ULKcQDLvrP.Checked = false;
       this.eTmcMZk3N2.Checked = false;
@@ -213,12 +210,12 @@ namespace FreeQuant.FinChart
     
     private void PUOcbN0NeH()
     {
-      if (this.uKfc1Da3lW.ActionType == ChartActionType.Cross)
+      if (this.chart.ActionType == ChartActionType.Cross)
       {
         this.RVncAmH7ZD.Checked = true;
         this.SfwcOA7wk9.Checked = false;
       }
-      if (this.uKfc1Da3lW.ActionType != ChartActionType.None)
+      if (this.chart.ActionType != ChartActionType.None)
         return;
       this.RVncAmH7ZD.Checked = false;
       this.SfwcOA7wk9.Checked = true;
@@ -227,12 +224,12 @@ namespace FreeQuant.FinChart
     
     private void k1nceBNLGc()
     {
-      if (this.uKfc1Da3lW.ScaleStyle == PadScaleStyle.Arith)
+      if (this.chart.ScaleStyle == PadScaleStyle.Arith)
       {
         this.wSqcuFpCG0.Checked = true;
         this.gjKcZ28hMU.Checked = false;
       }
-      if (this.uKfc1Da3lW.ScaleStyle != PadScaleStyle.Log)
+      if (this.chart.ScaleStyle != PadScaleStyle.Log)
         return;
       this.wSqcuFpCG0.Checked = false;
       this.gjKcZ28hMU.Checked = true;

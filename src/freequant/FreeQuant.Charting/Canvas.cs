@@ -13,7 +13,6 @@ namespace FreeQuant.Charting
     private static string CJy6CmouJG;
     private static string ANH66vA6dt;
     private static string i4P6YLI4vV;
-    private static bool ppm6BPFcVg;
     private HelpProvider OkJ6lpo8hb;
     private Chart nvt6KwgxYV;
     private Container yeZ6fGuZt9;
@@ -38,17 +37,17 @@ namespace FreeQuant.Charting
       }
     }
 
-    public static bool FileEnabled
-    {
-       get
-      {
-        return Canvas.ppm6BPFcVg;
-      }
-       set
-      {
-        Canvas.ppm6BPFcVg = value;
-      }
-    }
+		public static bool FileEnabled { get; set; }
+//    {
+//       get
+//      {
+//				return Canvas.fileEnabled;  
+//      }
+//       set
+//      {
+//        Canvas.fileEnabled = value;
+//      }
+//    }
 
     public static string FileDir
     {
@@ -244,7 +243,7 @@ namespace FreeQuant.Charting
       Canvas.CJy6CmouJG = "";
       Canvas.ANH66vA6dt = "";
       Canvas.i4P6YLI4vV = "";
-      Canvas.ppm6BPFcVg = false;
+			Canvas.FileEnabled = false;
     }
 
     
@@ -255,13 +254,13 @@ namespace FreeQuant.Charting
 		this.Text = "CanvasText";
       this.Wnm6oPv8qu();
       CanvasManager.Add(this);
-      if (Canvas.ppm6BPFcVg)
+			if (Canvas.FileEnabled)
         return;
       ((Control) this).Show();
     }
 
 
-    public Canvas(string Name, string Title):base()
+		public Canvas(string Name, string Title) : base()
     {
 
       this.CNA6nGRr44();
@@ -351,9 +350,9 @@ namespace FreeQuant.Charting
     
     private void Wnm6oPv8qu()
     {
-      if (!Canvas.ppm6BPFcVg)
+			if (!Canvas.FileEnabled)
         return;
-      this.nvt6KwgxYV.FileName = Canvas.CJy6CmouJG + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(848) + Canvas.ANH66vA6dt + this.Name + DateTime.Now.ToString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(856)) + Canvas.i4P6YLI4vV + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(886);
+			this.nvt6KwgxYV.FileName = Canvas.CJy6CmouJG + "dd" + Canvas.ANH66vA6dt + this.Name + DateTime.Now.ToString("D") + Canvas.i4P6YLI4vV + "dd";
     }
 
     

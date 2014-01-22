@@ -1,5 +1,3 @@
-﻿using ASQMKC8WePBGJ83PL4;
-using Byqm85MNrFBe6JPJlI;
 using FreeQuant.Testing.TesterItems;
 using System;
 using System.Runtime.CompilerServices;
@@ -10,25 +8,20 @@ namespace FreeQuant.Testing.MathStatistics
   {
     private double h7MhwLxuw;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Minimum(string name, SeriesTesterItem parentSeriesItem)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
+			:      base(name, parentSeriesItem, name + parentSeriesItem.Series.Title)
+		 {
       this.h7MhwLxuw = double.MaxValue;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, parentSeriesItem, name + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(1376) + parentSeriesItem.Series.Title);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Minimum(string name)
+    
+		public Minimum(string name):  base(name)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
       this.h7MhwLxuw = double.MaxValue;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void CalculateSeries(int firstIndex, int lastIndex)
     {
       if (firstIndex > lastIndex)
@@ -47,7 +40,7 @@ namespace FreeQuant.Testing.MathStatistics
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override double GetValue(DateTime date)
     {
       double val2 = double.MaxValue;
@@ -57,7 +50,7 @@ namespace FreeQuant.Testing.MathStatistics
       return val2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Reset()
     {
       this.h7MhwLxuw = double.MaxValue;

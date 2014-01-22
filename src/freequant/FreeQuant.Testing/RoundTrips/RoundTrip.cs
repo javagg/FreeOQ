@@ -1,20 +1,13 @@
-﻿// Type: SmartQuant.Testing.RoundTrips.RoundTrip
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using ASQMKC8WePBGJ83PL4;
-using Byqm85MNrFBe6JPJlI;
-using SmartQuant;
-using SmartQuant.Charting;
-using SmartQuant.Instruments;
-using SmartQuant.Series;
+using FreeQuant;
+using FreeQuant.Charting;
+using FreeQuant.Instruments;
+using FreeQuant.Series;
 using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Testing.RoundTrips
+namespace FreeQuant.Testing.RoundTrips
 {
   public class RoundTrip : IDrawable
   {
@@ -38,7 +31,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public RoundTripStatus Status
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.status;
       }
@@ -46,11 +39,11 @@ namespace SmartQuant.Testing.RoundTrips
 
     public DateTime EntryDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.entryDateTime;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.entryDateTime = value;
       }
@@ -58,11 +51,11 @@ namespace SmartQuant.Testing.RoundTrips
 
     public DateTime ExitDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.exitDateTime;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.exitDateTime = value;
       }
@@ -70,11 +63,11 @@ namespace SmartQuant.Testing.RoundTrips
 
     public PositionSide TradePosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.tradePosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.tradePosition = value;
       }
@@ -82,11 +75,11 @@ namespace SmartQuant.Testing.RoundTrips
 
     public Instrument Instrument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.instrument;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.instrument = value;
       }
@@ -94,7 +87,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double EntryPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.entryPrice;
       }
@@ -102,7 +95,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double ExitPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.exitPrice;
       }
@@ -110,7 +103,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double EntryValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.entryValue;
       }
@@ -118,7 +111,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double ExitValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.exitValue;
       }
@@ -126,7 +119,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double Amount
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.amount;
       }
@@ -134,7 +127,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double EntryCost
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.entryCost;
       }
@@ -142,7 +135,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double ExitCost
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.exitCost;
       }
@@ -150,7 +143,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public string DurationToString
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         long ticks = this.exitDateTime.Ticks - this.entryDateTime.Ticks;
         if (ticks <= 0L)
@@ -160,18 +153,18 @@ namespace SmartQuant.Testing.RoundTrips
         string str = "";
         TimeSpan timeSpan = new TimeSpan(ticks);
         if (timeSpan.Days != 0)
-          str = str + timeSpan.Days.ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2044);
+          str = str + timeSpan.Days.ToString();
         if (timeSpan.Hours != 0)
-          str = str + timeSpan.Hours.ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2060);
+          str = str + timeSpan.Hours.ToString() ;
         if (timeSpan.Minutes != 0)
-          str = str + timeSpan.Minutes.ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2078);
+          str = str + timeSpan.Minutes.ToString();
         return str;
       }
     }
 
     public double RoundTripHighPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.roundTripHighPrice;
       }
@@ -179,7 +172,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double RoundTripLowPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.roundTripLowPrice;
       }
@@ -187,7 +180,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double RoundTripResultWithCost
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.RoundTripResultWithoutCost - (this.entryCost + this.exitCost);
       }
@@ -195,18 +188,18 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double RoundTripResultWithoutCost
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.tradePosition == PositionSide.Long)
-          return SmartQuant.Instruments.Currency.Convert(this.exitPrice - this.entryPrice, this.position.Currency, this.position.Portfolio.Account.Currency);
+          return FreeQuant.Instruments.Currency.Convert(this.exitPrice - this.entryPrice, this.position.Currency, this.position.Portfolio.Account.Currency);
         else
-          return SmartQuant.Instruments.Currency.Convert(this.entryPrice - this.exitPrice, this.position.Currency, this.position.Portfolio.Account.Currency);
+          return FreeQuant.Instruments.Currency.Convert(this.entryPrice - this.exitPrice, this.position.Currency, this.position.Portfolio.Account.Currency);
       }
     }
 
     public double EntryEfficiency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (Math.Abs(this.roundTripHighPrice - this.roundTripLowPrice) < 4.94065645841247E-324)
           return double.NaN;
@@ -219,7 +212,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double ExitEfficiency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (Math.Abs(this.roundTripHighPrice - this.roundTripLowPrice) < 4.94065645841247E-324)
           return double.NaN;
@@ -232,7 +225,7 @@ namespace SmartQuant.Testing.RoundTrips
 
     public double TotalEfficiency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (Math.Abs(this.roundTripHighPrice - this.roundTripLowPrice) < 4.94065645841247E-324)
           return double.NaN;
@@ -245,32 +238,29 @@ namespace SmartQuant.Testing.RoundTrips
 
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
 
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return false;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RoundTrip(Position Position, Instrument Instrument, PositionSide TradePosition, double Amount, double EntryPrice, double ExitPrice, DateTime EntryDateTime, DateTime ExitDateTime, RoundTripStatus Status)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+			: base() {
       this.position = Position;
       this.instrument = Instrument;
       this.tradePosition = TradePosition;
@@ -293,12 +283,11 @@ namespace SmartQuant.Testing.RoundTrips
       this.Connect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RoundTrip(Position Position, Instrument Instrument, PositionSide TradePosition, double Amount, double EntryPrice, double ExitPrice, DateTime EntryDateTime, DateTime ExitDateTime)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+			:base() 
+		{
+ 
       this.position = Position;
       this.instrument = Instrument;
       this.tradePosition = TradePosition;
@@ -316,7 +305,7 @@ namespace SmartQuant.Testing.RoundTrips
       this.status = RoundTripStatus.Closed;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Close(DateTime exitDate)
     {
       this.status = RoundTripStatus.Closed;
@@ -329,7 +318,7 @@ namespace SmartQuant.Testing.RoundTrips
       this.ddEzhORsd();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Cancel()
     {
       this.status = RoundTripStatus.Canceled;
@@ -337,19 +326,19 @@ namespace SmartQuant.Testing.RoundTrips
       this.ddEzhORsd();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void Connect()
     {
       this.position.ValueChanged += new EventHandler(this.sejlK1ALD);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void Disconnect()
     {
       this.position.ValueChanged -= new EventHandler(this.sejlK1ALD);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY)
     {
       Graphics graphics = Pad.Graphics;
@@ -441,32 +430,32 @@ namespace SmartQuant.Testing.RoundTrips
       graphics.DrawEllipse(pen1, num7 - width / 2f, (float) ((double) num8 - (double) height1 / 2.0 - (double) height2 / 2.0), width, height2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       return (TDistance) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw()
     {
       Chart.Pad.Add((IDrawable) this);
       Chart.Pad.SetRange(0.0, 100.0, 0.0, 100.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void sejlK1ALD([In] object obj0, [In] EventArgs obj1)
     {
       this.Update(true);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Update()
     {
       this.Update(false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Update(bool force)
     {
       if (!(this.exitDateTime != Clock.Now) && !force)
@@ -478,7 +467,7 @@ namespace SmartQuant.Testing.RoundTrips
       this.ddEzhORsd();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void ddEzhORsd()
     {
       if (this.Updated == null)

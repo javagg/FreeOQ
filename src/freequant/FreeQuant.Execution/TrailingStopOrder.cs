@@ -1,4 +1,3 @@
-using RZ1j9O1DCcsDf19ge6;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
 using FreeQuant.Providers;
@@ -8,12 +7,10 @@ namespace FreeQuant.Execution
 {
   public class TrailingStopOrder : SingleOrder
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TrailingStopOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double delta)
+    
+		public TrailingStopOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double delta):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.OrdType = OrdType.TrailingStop;
       this.Provider = provider;
       this.Portfolio = portfolio;
@@ -23,20 +20,14 @@ namespace FreeQuant.Execution
       this.TrailingAmt = delta;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TrailingStopOrder(Instrument instrument, Side side, double qty, double delta)
+    
+		public TrailingStopOrder(Instrument instrument, Side side, double qty, double delta): this(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, delta)
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, delta);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    private TrailingStopOrder()
+    
+		private TrailingStopOrder():base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

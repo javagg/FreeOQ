@@ -292,29 +292,5 @@
       <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
       <Name>FreeQuant.Series</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Quant\FreeQuant.Quant.csproj">
-      <Project>{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}</Project>
-      <Name>FreeQuant.Quant</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.FIX\FreeQuant.FIX.csproj">
-      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
-      <Name>FreeQuant.FIX</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Providers\FreeQuant.Providers.csproj">
-      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
-      <Name>FreeQuant.Providers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
-      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
-      <Name>FreeQuant.Instruments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Indicators\FreeQuant.Indicators.csproj">
-      <Project>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</Project>
-      <Name>FreeQuant.Indicators</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Trading\FreeQuant.Trading.csproj">
-      <Project>{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}</Project>
-      <Name>FreeQuant.Trading</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,17 +1,11 @@
-﻿// Type: SmartQuant.Testing.RoundTrips.RoundTripsTesterItem
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using Byqm85MNrFBe6JPJlI;
-using SmartQuant.Series;
-using SmartQuant.Testing.TesterItems;
+using FreeQuant.Series;
+using FreeQuant.Testing.TesterItems;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Testing.RoundTrips
+namespace FreeQuant.Testing.RoundTrips
 {
   public class RoundTripsTesterItem : SeriesTesterItem
   {
@@ -21,7 +15,7 @@ namespace SmartQuant.Testing.RoundTrips
     [Browsable(false)]
     public override DoubleSeries ParentSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DoubleSeries) null;
       }
@@ -30,11 +24,11 @@ namespace SmartQuant.Testing.RoundTrips
     [Browsable(false)]
     public override SeriesTesterItem ParentComponent
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (SeriesTesterItem) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -42,7 +36,7 @@ namespace SmartQuant.Testing.RoundTrips
     [Browsable(false)]
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (!this.enabled)
           return double.NaN;
@@ -60,12 +54,9 @@ namespace SmartQuant.Testing.RoundTrips
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RoundTripsTesterItem(RoundTripList parentRoundTripList, string title)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(title);
+			: base(title) {
       this.isUpdating = false;
       this.lastDateTime = DateTime.MinValue;
       this.series = new DoubleSeries();
@@ -76,7 +67,7 @@ namespace SmartQuant.Testing.RoundTrips
       this.Connect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void CalculateSeries(int firstIndex, int lastIndex)
     {
       for (int lastIndex1 = firstIndex; lastIndex1 <= lastIndex; ++lastIndex1)
@@ -87,32 +78,32 @@ namespace SmartQuant.Testing.RoundTrips
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected virtual double GetValue(int lastIndex)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Connect()
     {
       this.parentRoundTripList.Updated += new RoundTripListEventHandler(this.cfMXcZVei);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Disconnect()
     {
       this.parentRoundTripList.Updated -= new RoundTripListEventHandler(this.cfMXcZVei);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Reset()
     {
       this.lastNotUpdatedIndex = -1;
       base.Reset();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void cfMXcZVei([In] RoundTripListEventArgs obj0)
     {
       this.lastNotUpdatedIndex = obj0.LastNotUpdatedIndex;
@@ -121,7 +112,7 @@ namespace SmartQuant.Testing.RoundTrips
       this.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Calculate()
     {
       if (!this.enabled)

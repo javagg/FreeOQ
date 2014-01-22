@@ -151,7 +151,7 @@ namespace FreeQuant.Instruments
 			}
 			this.transactions.Add(transaction);
 			this.ciP6G6y5gB(transaction);
-			position.value += transaction.Value;
+			position.Value += transaction.Value;
 			this.tom6YJohef();
 		}
 
@@ -262,16 +262,16 @@ namespace FreeQuant.Instruments
 
 		private void tom6YJohef()
 		{
-			if (this.V6R6Npn0Yb == null)
-				return;
-			this.V6R6Npn0Yb((object)this, EventArgs.Empty);
+//			if (this.V6R6Npn0Yb == null)
+//				return;
+//			this.V6R6Npn0Yb((object)this, EventArgs.Empty);
 		}
 
 		private void ciP6G6y5gB([In] AccountTransaction obj0)
 		{
-			if (this.R7Y6OfFd9f == null)
-				return;
-			this.R7Y6OfFd9f((object)this, new AccountTransactionEventArgs(obj0));
+//			if (this.R7Y6OfFd9f == null)
+//				return;
+//			this.R7Y6OfFd9f((object)this, new AccountTransactionEventArgs(obj0));
 		}
 	}
 }

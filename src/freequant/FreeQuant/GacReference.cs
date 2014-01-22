@@ -13,7 +13,7 @@ namespace FreeQuant
 			}
 		}
 
-		public GacReference(string name, Version version, bool enabled)
+		public GacReference(string name, Version version, bool enabled) : base(ReferenceType.FreeQuant,enabled)
 		{
 		}
 	}

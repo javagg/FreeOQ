@@ -42,7 +42,7 @@ namespace FreeQuant
     [Category("Main")]
     public Version Version
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Version) null;
       }
@@ -51,16 +51,16 @@ namespace FreeQuant
     [Browsable(false)]
     public Edition Edition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl9;
+				return Edition.Enterprise;
       }
     }
 
     [Browsable(false)]
     public string MainProduct
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (string) null;
       }
@@ -69,7 +69,7 @@ namespace FreeQuant
     [Category("Main")]
     public DirectoryInfo QUANTSYS
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -79,11 +79,11 @@ namespace FreeQuant
     [ReadOnly(true)]
     public DirectoryInfo QUANTDAT
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -91,7 +91,7 @@ namespace FreeQuant
     [Category("Main")]
     public DirectoryInfo QUANTAPP
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -100,7 +100,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo DataDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -110,11 +110,11 @@ namespace FreeQuant
     [ReadOnly(true)]
     public DirectoryInfo BinDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
@@ -122,7 +122,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo IniDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -131,7 +131,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo SolutionDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -140,7 +140,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo ComponentDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -149,7 +149,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo TemplateDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -158,7 +158,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo HelpDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -167,7 +167,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo LogDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -176,7 +176,7 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo FIXDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
@@ -185,36 +185,31 @@ namespace FreeQuant
     [Category("Other")]
     public DirectoryInfo TempDir
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (DirectoryInfo) null;
       }
     }
 
-    static Installation()
-    {
-      GItcYDqSxj5aE60JeS.GRAroVBQNR();
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     internal Installation()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void k9JB9fI5oq()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LicenseInfo GetLicense()
     {
       // ISSUE: reference to a compiler-generated field
-      return \u003CPrivateImplementationDetails\u003E\u007BBC86C0EF\u002D576E\u002D453D\u002D8BFD\u002DFAB33B893C15\u007D.fieldimpl10;
+			return new LicenseInfo();
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal bool tnABvXFOOP()
     {
       return true;

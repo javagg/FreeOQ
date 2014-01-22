@@ -63,7 +63,7 @@ namespace FreeQuant.Instruments
     
     static PortfolioManager()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
+  
       PortfolioManager.pricer = (IPortfolioPricer) new PortfolioPricer();
       PortfolioManager.server = (IPortfolioServer) new PortfolioDbServer();
       Type connectionType = (Type) null;
@@ -71,12 +71,12 @@ namespace FreeQuant.Instruments
       switch (Framework.Storage.ServerType)
       {
         case DbServerType.MS_ACCESS:
-          connectionType = Type.GetType(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9868));
-          connectionString = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10098), (object) Framework.Installation.DataDir.FullName);
+					connectionType = Type.GetType("");
+					connectionString = string.Format("dfs", (object) Framework.Installation.DataDir.FullName);
           break;
         case DbServerType.SQL_SERVER_COMPACT_EDITION_35:
-          connectionType = Type.GetType(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10226));
-          connectionString = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10492), (object) Framework.Installation.DataDir.FullName);
+					connectionType = Type.GetType("");
+					connectionString = string.Format("fsfs", Framework.Installation.DataDir.FullName);
           break;
       }
       PortfolioManager.server.Open(connectionType, connectionString);
@@ -86,9 +86,6 @@ namespace FreeQuant.Instruments
     
     public PortfolioManager()
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     
@@ -144,17 +141,17 @@ namespace FreeQuant.Instruments
     
     private static void zAFsl21MLH([In] Portfolio obj0)
     {
-      if (PortfolioManager.C8wsJidmHP == null)
-        return;
-      PortfolioManager.C8wsJidmHP(new PortfolioEventArgs(obj0));
+//      if (PortfolioManager.C8wsJidmHP == null)
+//        return;
+//      PortfolioManager.C8wsJidmHP(new PortfolioEventArgs(obj0));
     }
 
     
     private static void cDvsYRfr9s([In] Portfolio obj0)
     {
-      if (PortfolioManager.eDZsrqQCBW == null)
-        return;
-      PortfolioManager.eDZsrqQCBW(new PortfolioEventArgs(obj0));
+//      if (PortfolioManager.eDZsrqQCBW == null)
+//        return;
+//      PortfolioManager.eDZsrqQCBW(new PortfolioEventArgs(obj0));
     }
   }
 }

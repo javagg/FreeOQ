@@ -14,12 +14,12 @@ namespace FreeQuant.Series
     private Color OpVNnlGuX;
     private int X6cDrdfNL;
     private EWidthStyle zO38ddk50;
-    private int c8Ev5W247;
-    private EWidthStyle je6AmJnLt;
-    private Color akqmISyaZ;
-    private Color uguQD88G4;
-    private Color L0hs9FwV4;
-    private Color f9xTLL17Y;
+    private int candleWidth;
+    private EWidthStyle candleWidthStyle;
+    private Color candleColor;
+    private Color candleBlackColor;
+    private Color candleWhiteColor;
+    private Color candleBorderColor;
 
     [Description("A bar array can be drawn as bar, candle or line chart")]
     [Category("Chart Style")]
@@ -83,11 +83,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.akqmISyaZ;
+				return this.candleColor; 
       }
        set
       {
-        this.akqmISyaZ = value;
+        this.candleColor = value;
       }
     }
 
@@ -97,11 +97,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.uguQD88G4;
+				return this.candleBlackColor; 
       }
        set
       {
-        this.uguQD88G4 = value;
+        this.candleBlackColor = value;
       }
     }
 
@@ -111,11 +111,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.L0hs9FwV4;
+				return this.candleWhiteColor; 
       }
        set
       {
-        this.L0hs9FwV4 = value;
+        this.candleWhiteColor = value;
       }
     }
 
@@ -125,11 +125,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.c8Ev5W247;
+				return this.candleWidth; 
       }
        set
       {
-        this.c8Ev5W247 = value;
+        this.candleWidth = value;
       }
     }
 
@@ -139,11 +139,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.je6AmJnLt;
+				return this.candleWidthStyle; 
       }
        set
       {
-        this.je6AmJnLt = value;
+        this.candleWidthStyle = value;
       }
     }
 
@@ -153,11 +153,11 @@ namespace FreeQuant.Series
     {
        get
       {
-        return this.f9xTLL17Y;
+				return this.candleBorderColor; 
       }
        set
       {
-        this.f9xTLL17Y = value;
+        this.candleBorderColor = value;
       }
     }
 
@@ -166,7 +166,7 @@ namespace FreeQuant.Series
        get
       {
         if (this.Count <= 0)
-          throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10508));
+					throw new ApplicationException("Count<0");
         else
           return this[0];
       }
@@ -177,13 +177,13 @@ namespace FreeQuant.Series
        get
       {
         if (this.Count <= 0)
-          throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10554));
+					throw new ApplicationException("count < 0");
         else
           return this[this.Count - 1];
       }
     }
 
-    public Bar this[int i]
+		public Bar this[int i]
     {
        get
       {
@@ -207,19 +207,19 @@ namespace FreeQuant.Series
       }
     }
 
-    public override double this[int Index, int BarData]
+		public override double this[int index, int barData]
     {
        get
       {
-        return this[Index][BarData];
+				return this[index][barData];
       }
     }
 
-    public override double this[int Index, BarData BarData]
+		public override double this[int index, BarData barData]
     {
        get
       {
-        return this[Index][BarData];
+				return this[index][barData];
       }
     }
 
@@ -229,52 +229,51 @@ namespace FreeQuant.Series
       this.OpVNnlGuX = Color.Black;
       this.X6cDrdfNL = 5;
       this.zO38ddk50 = EWidthStyle.Auto;
-      this.c8Ev5W247 = 5;
-      this.je6AmJnLt = EWidthStyle.Auto;
-      this.akqmISyaZ = Color.Black;
-      this.uguQD88G4 = Color.Black;
-      this.L0hs9FwV4 = Color.White;
-      this.f9xTLL17Y = Color.Black;
+      this.candleWidth = 5;
+      this.candleWidthStyle = EWidthStyle.Auto;
+      this.candleColor = Color.Black;
+      this.candleBlackColor = Color.Black;
+      this.candleWhiteColor = Color.White;
+      this.candleBorderColor = Color.Black;
       this.j3Tk73XXX();
-      this.fArray = (IDataSeries) new MemorySeries<Bar>();
+      this.fArray =  new MemorySeries<Bar>();
     }
-
     
-	public BarSeries(string name) :  this(name, "")
+		public BarSeries(string name) : this(name, String.Empty)
     {
     }
 
     
-	public BarSeries() :  this("")
+		public BarSeries() : this(String.Empty)
     {
-      this.fName = oK6F3TB73XXXGhdieP.wF6SgrNUO(10766);
+			this.name = "barSeries1";
     }
 
     
     private void j3Tk73XXX()
     {
-      this.fToolTipEnabled = true;
-      this.fToolTipFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10600);
-      this.fToolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10724);
+      this.toolTipEnabled = true;
+			this.toolTipFormat = "tooltip";
+			this.toolTipDateTimeFormat = "tooltipDatFormat";
     }
 
     
-    public BarSeries Clone()
-    {
-      return base.Clone() as BarSeries;
-    }
+//    public BarSeries Clone()
+//    {
+//      return base.Clone() as BarSeries;
+//    }
 
     
-    public BarSeries Clone(int Index1, int Index2)
-    {
-      return base.Clone(Index1, Index2) as BarSeries;
-    }
-
-    
-    public BarSeries Clone(DateTime DateTime1, DateTime DateTime2)
-    {
-      return base.Clone(DateTime1, DateTime2) as BarSeries;
-    }
+//    public BarSeries Clone(int Index1, int Index2)
+//    {
+//      return base.Clone(Index1, Index2) as BarSeries;
+//    }
+//
+//    
+//    public BarSeries Clone(DateTime DateTime1, DateTime DateTime2)
+//    {
+//      return base.Clone(DateTime1, DateTime2) as BarSeries;
+//    }
 
     
     public bool Contains(Bar Bar)
@@ -296,38 +295,38 @@ namespace FreeQuant.Series
     }
 
     
-    public BarSeries Shift(int offset)
-    {
-      BarSeries barSeries = new BarSeries(this.Name, this.Title);
-      int num = 0;
-      if (offset < 0)
-        num += Math.Abs(offset);
-      for (int index1 = num; index1 < this.Count; ++index1)
-      {
-        int index2 = index1 + offset;
-        if (index2 < this.Count)
-        {
-          DateTime dateTime = this.GetDateTime(index2);
-          barSeries.Add(new Bar(this[index1])
-          {
-            DateTime = dateTime
-          });
-        }
-        else
-          break;
-      }
-      return barSeries;
-    }
+//    public BarSeries Shift(int offset)
+//    {
+//      BarSeries barSeries = new BarSeries(this.Name, this.Title);
+//      int num = 0;
+//      if (offset < 0)
+//        num += Math.Abs(offset);
+//      for (int index1 = num; index1 < this.Count; ++index1)
+//      {
+//        int index2 = index1 + offset;
+//        if (index2 < this.Count)
+//        {
+//          DateTime dateTime = this.GetDateTime(index2);
+//          barSeries.Add(new Bar(this[index1])
+//          {
+//            DateTime = dateTime
+//          });
+//        }
+//        else
+//          break;
+//      }
+//      return barSeries;
+//    }
 
     
-    public Bar Ago(int n)
-    {
-      int index = this.Count - 1 - n;
-      if (index < 0)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10780) + (object) n + oK6F3TB73XXXGhdieP.wF6SgrNUO(10822));
-      else
-        return this[index];
-    }
+//    public Bar Ago(int n)
+//    {
+//      int index = this.Count - 1 - n;
+//      if (index < 0)
+//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10780) + (object) n + oK6F3TB73XXXGhdieP.wF6SgrNUO(10822));
+//      else
+//        return this[index];
+//    }
 
     
     public DoubleSeries GetArray(BarData BarData)
@@ -353,7 +352,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetHighSeries()
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10896));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "HighSeries");
       for (int index = 0; index < this.Count; ++index)
         doubleSeries.Add(this[index].DateTime, this[index].High);
       return doubleSeries;
@@ -362,7 +361,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetLowSeries()
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10910));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "LowSeries");
       for (int index = 0; index < this.Count; ++index)
         doubleSeries.Add(this[index].DateTime, this[index].Low);
       return doubleSeries;
@@ -371,7 +370,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetOpenSeries()
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10922));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenSeries");
       for (int index = 0; index < this.Count; ++index)
         doubleSeries.Add(this[index].DateTime, this[index].Open);
       return doubleSeries;
@@ -380,7 +379,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetCloseSeries()
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10936));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "CloseSeries");
       for (int index = 0; index < this.Count; ++index)
         doubleSeries.Add(this[index].DateTime, this[index].Close);
       return doubleSeries;
@@ -389,7 +388,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetVolumeSeries()
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10952));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "VolumeSeries");
       for (int index = 0; index < this.Count; ++index)
         doubleSeries.Add(this[index].DateTime, (double) this[index].Volume);
       return doubleSeries;
@@ -398,7 +397,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetOpenIntSeries()
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10970));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenIntSeries");
       for (int index = 0; index < this.Count; ++index)
         doubleSeries.Add(this[index].DateTime, (double) this[index].OpenInt);
       return doubleSeries;
@@ -407,7 +406,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetHighSeries(DateTime date1, DateTime date2)
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(10990));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "HighSeries");
       for (int index = 0; index < this.Count; ++index)
       {
         if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
@@ -419,7 +418,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetLowSeries(DateTime date1, DateTime date2)
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11004));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "LowSeries");
       for (int index = 0; index < this.Count; ++index)
       {
         if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
@@ -431,7 +430,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetOpenSeries(DateTime date1, DateTime date2)
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11016));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenSeries");
       for (int index = 0; index < this.Count; ++index)
       {
         if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
@@ -443,7 +442,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetCloseSeries(DateTime date1, DateTime date2)
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11030));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "CloseSeries");
       for (int index = 0; index < this.Count; ++index)
       {
         if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
@@ -455,7 +454,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetVolumeSeries(DateTime date1, DateTime date2)
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11046));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "VolumeSeries");
       for (int index = 0; index < this.Count; ++index)
       {
         if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
@@ -467,7 +466,7 @@ namespace FreeQuant.Series
     
     public DoubleSeries GetOpenIntSeries(DateTime date1, DateTime date2)
     {
-      DoubleSeries doubleSeries = new DoubleSeries(this.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(11064));
+			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenIntSeries");
       for (int index = 0; index < this.Count; ++index)
       {
         if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
@@ -479,14 +478,14 @@ namespace FreeQuant.Series
     
     public Bar HighestHighBar(int Index1, int Index2)
     {
-      if (this.Count <= 0)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11084));
-      if (Index1 > Index2)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11180));
-      if (Index1 < 0 || Index1 > this.Count - 1)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11252));
-      if (Index2 < 0 || Index2 > this.Count - 1)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11300));
+//      if (this.Count <= 0)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11084));
+//      if (Index1 > Index2)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11180));
+//      if (Index1 < 0 || Index1 > this.Count - 1)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11252));
+//      if (Index2 < 0 || Index2 > this.Count - 1)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11300));
       Bar bar = this[Index1];
       for (int index = Index1 + 1; index <= Index2; ++index)
       {
@@ -511,14 +510,14 @@ namespace FreeQuant.Series
     
     public Bar LowestLowBar(int Index1, int Index2)
     {
-      if (this.Count <= 0)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11348));
-      if (Index1 > Index2)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11440));
-      if (Index1 < 0 || Index1 > this.Count - 1)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11512));
-      if (Index2 < 0 || Index2 > this.Count - 1)
-        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11560));
+//      if (this.Count <= 0)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11348));
+//      if (Index1 > Index2)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11440));
+//      if (Index1 < 0 || Index1 > this.Count - 1)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11512));
+//      if (Index2 < 0 || Index2 > this.Count - 1)
+//        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11560));
       Bar bar = this[Index1];
       for (int index = Index1 + 1; index <= Index2; ++index)
       {
@@ -1285,12 +1284,12 @@ namespace FreeQuant.Series
       if (this.Count <= 0)
         return barSeries;
       long size = this[0].Size;
-      if (NewBarSize < size)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11608));
+//      if (NewBarSize < size)
+//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11608));
       long result;
       Math.DivRem(NewBarSize, size, out result);
-      if (result != 0L)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11728));
+//      if (result != 0L)
+//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11728));
       if (NewBarSize == size)
         return this;
       double num1 = 0.0;
@@ -1382,13 +1381,13 @@ namespace FreeQuant.Series
         return barSeries;
       long size = this[0].Size;
       if (newBarSize < size)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11848));
+				throw new ArgumentException("newBarSize < size");
       if (sessionStart >= sessionEnd)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11968));
+				throw new ArgumentException("sessionStart >= sessionEnd");
       long result;
       Math.DivRem(newBarSize, size, out result);
-      if (result != 0L)
-        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(12074));
+//      if (result != 0L)
+//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(12074));
       if (newBarSize == size)
         return this;
       double num1 = 0.0;
@@ -1511,60 +1510,60 @@ namespace FreeQuant.Series
     }
 
     
-    public override void Draw(string Option)
-    {
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12194)) != -1)
-        this.uhdhiePNX = ChartStyle.Candle;
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12200)) != -1)
-        this.uhdhiePNX = ChartStyle.Bar;
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12206)) != -1)
-        this.uhdhiePNX = ChartStyle.Line;
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12212)) == -1 && this.Count > 0)
-        Chart.Pad.SetRange((double) this.FirstDateTime.Ticks, (double) (this.LastDateTime.Ticks + this.Last.EndTime.Ticks - this.Last.BeginTime.Ticks), this.LowestLowBar().Low, this.HighestHighBar().High);
-      if (Chart.Pad == null)
-      {
-        Canvas canvas = new Canvas(oK6F3TB73XXXGhdieP.wF6SgrNUO(12218), oK6F3TB73XXXGhdieP.wF6SgrNUO(12234));
-      }
-      Chart.Pad.Add((IDrawable) this);
-      Chart.Pad.Title.Add(this.fName, this.fColor);
-      Chart.Pad.Legend.Add(this.fName, this.fColor);
-      Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
-      if (Chart.Pad.AxisBottom.LabelFormat == "")
-      {
-        Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(12250);
-      }
-      else
-      {
-        if (this.Count <= 0)
-          return;
-        if ((this.LastDateTime - this.FirstDateTime).TotalSeconds / (double) this.Count >= 86400.0)
-        {
-          Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(12286);
-          this.fToolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(12310);
-        }
-        else
-        {
-          Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(12334);
-          this.fToolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(12348);
-        }
-      }
-    }
-
+//    public override void Draw(string Option)
+//    {
+//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12194)) != -1)
+//        this.uhdhiePNX = ChartStyle.Candle;
+//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12200)) != -1)
+//        this.uhdhiePNX = ChartStyle.Bar;
+//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12206)) != -1)
+//        this.uhdhiePNX = ChartStyle.Line;
+//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12212)) == -1 && this.Count > 0)
+//        Chart.Pad.SetRange((double) this.FirstDateTime.Ticks, (double) (this.LastDateTime.Ticks + this.Last.EndTime.Ticks - this.Last.BeginTime.Ticks), this.LowestLowBar().Low, this.HighestHighBar().High);
+//      if (Chart.Pad == null)
+//      {
+//				Canvas canvas = new Canvas("CavName", "CavTitle");
+//      }
+//      Chart.Pad.Add((IDrawable) this);
+//      Chart.Pad.Title.Add(this.name, this.color);
+//      Chart.Pad.Legend.Add(this.name, this.color);
+//      Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
+//      if (Chart.Pad.AxisBottom.LabelFormat == "")
+//      {
+//				Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
+//      }
+//      else
+//      {
+//        if (this.Count <= 0)
+//          return;
+//        if ((this.LastDateTime - this.FirstDateTime).TotalSeconds / (double) this.Count >= 86400.0)
+//        {
+//					Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
+//					this.toolTipDateTimeFormat = "toolTipFormat";
+//        }
+//        else
+//        {
+//					Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
+//					this.toolTipDateTimeFormat = "toolTipFormat";
+//        }
+//      }
+//    }
+//
     
     public override void Draw()
     {
-      this.Draw("");
+			this.Draw(String.Empty);
     }
 
     
     public override void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
     {
-      Pen pen1 = new Pen(this.fColor);
+      Pen pen1 = new Pen(this.color);
       Pen pen2 = new Pen(this.OpVNnlGuX);
-      Pen pen3 = new Pen(this.akqmISyaZ);
-      Pen pen4 = new Pen(this.f9xTLL17Y);
-      Brush brush1 = (Brush) new SolidBrush(this.L0hs9FwV4);
-      Brush brush2 = (Brush) new SolidBrush(this.uguQD88G4);
+      Pen pen3 = new Pen(this.candleColor);
+      Pen pen4 = new Pen(this.candleBorderColor);
+      Brush brush1 = (Brush) new SolidBrush(this.candleWhiteColor);
+      Brush brush2 = (Brush) new SolidBrush(this.candleBlackColor);
       int num1 = 0;
       double num2 = 0.0;
       double num3 = 0.0;
@@ -1644,15 +1643,15 @@ namespace FreeQuant.Series
             else
               break;
           case ChartStyle.Candle:
-            switch (this.je6AmJnLt)
+            switch (this.candleWidthStyle)
             {
               case EWidthStyle.Pixel:
-                num6 = pad.ClientX(num15) - this.c8Ev5W247 / 2;
-                x2 = pad.ClientX(num15) + this.c8Ev5W247 / 2;
+                num6 = pad.ClientX(num15) - this.candleWidth / 2;
+                x2 = pad.ClientX(num15) + this.candleWidth / 2;
                 break;
               case EWidthStyle.DateTime:
-                num6 = pad.ClientX(num15 - (double) ((long) this.c8Ev5W247 * 10000000L / 2L));
-                x2 = pad.ClientX(num15 + (double) ((long) this.c8Ev5W247 * 10000000L / 2L));
+                num6 = pad.ClientX(num15 - (double) ((long) this.candleWidth * 10000000L / 2L));
+                x2 = pad.ClientX(num15 + (double) ((long) this.candleWidth * 10000000L / 2L));
                 break;
               case EWidthStyle.Auto:
                 num6 = pad.ClientX((double) num13);
@@ -1677,7 +1676,7 @@ namespace FreeQuant.Series
                 int height = pad.ClientY(open) - pad.ClientY(close);
                 if (height == 0)
                   height = 1;
-                if (pad.ForeColor == this.L0hs9FwV4)
+                if (pad.ForeColor == this.candleWhiteColor)
                 {
                   pad.Graphics.DrawRectangle(pen4, num6, pad.ClientY(close), width, height);
                   pad.Graphics.FillRectangle(brush1, num6 + 1, pad.ClientY(close) + 1, width - 2, height - 1);
@@ -1712,7 +1711,7 @@ namespace FreeQuant.Series
         return (TDistance) null;
       DateTime dateTime = new DateTime((long) tdistance.X);
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.fToolTipFormat, (object) this.fName, (object) this.fTitle, (object) bar.DateTime.ToString(this.fToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
+      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.name, (object) this.title, (object) bar.DateTime.ToString(this.toolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
       tdistance.ToolTipText = ((object) stringBuilder).ToString();
       return tdistance;
     }

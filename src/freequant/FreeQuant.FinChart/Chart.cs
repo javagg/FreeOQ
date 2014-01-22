@@ -16,14 +16,9 @@ namespace FreeQuant.FinChart
 {
 	public class Chart : UserControl
 	{
-		private IContainer NwHaET7tS;
+		private IContainer container;
 		private int PRRwtLFpd5;
 		private int etYww3BBO8;
-		private Image jDmwcKaZhf;
-		private Image P5cwJ316lg;
-		protected Color sessionGridColor;
-		protected TimeSpan sessionStart;
-		protected TimeSpan sessionEnd;
 		protected bool sessionGridEnabled;
 		protected SmoothingMode smoothingMode;
 		protected SmoothingMode doubleSeriesSmoothingMode;
@@ -40,7 +35,7 @@ namespace FreeQuant.FinChart
 		protected Color canvasColor;
 		protected int firstIndex;
 		protected int lastIndex;
-		private HScrollBar WeMwyqaMBs;
+		private HScrollBar hScrollBar;
 		protected Graphics graphics;
 		protected double intervalWidth;
 		protected AxisBottom axisBottom;
@@ -52,8 +47,8 @@ namespace FreeQuant.FinChart
 		protected bool isMouseOverCanvas;
 		protected bool contentUpdated;
 		protected Bitmap bitmap;
-		internal ToolTip RswwSJ5RAW;
-		private ChartActionType xnVw0R83gu;
+		internal ToolTip toolTip;
+		private ChartActionType actionType;
 		protected DateTime leftDateTime;
 		protected DateTime rightDateTime;
 		protected ChartUpdateStyle updateStyle;
@@ -61,118 +56,63 @@ namespace FreeQuant.FinChart
 		protected int minAxisGap;
 		protected PadScaleStyle scaleStyle;
 		protected VolumeBSView volumeView;
-		private bool cPZwruyoU4;
-		private bool csVwKnABS5;
-		private int u5BwilXyvv;
-		private int B3twXXpMAN;
-		internal Font rRlwD21sH7;
-		private Color ttlwhhjUvM;
-		private Color OxuwbrIAJv;
-		private Color RlLwe53pY9;
-		private Color iAKwnRdT4K;
-		private Color Cw0w7HbSYD;
-		private Color CVOwRpN0GR;
-		private Color wJ9wERVQO0;
-		private Color udnwPMpBdJ;
-		private Color Hl4wTrvPSQ;
-		private Color NK9w1xq4O9;
-		private Color L5wwUnfhPv;
-		private Color eACwlDopwE;
-		private Color dx3wvFg8OX;
-		private Color qNhwdmYFHH;
-		private Color vDewu3xhO6;
-		private Color wMbwxkW0XN;
-		private Color wAswA7ExWR;
-		private Color pslw5H3bwV;
-		private Color hCMwZ5uJAB;
-		private Color IR7w4uJgse;
-		private Color XZKwfkNv2P;
-		private object UxNwG80KmM;
+		private int rightAxesFontSize;
+		internal Font font;
+		private Color chartBackColor;
+		private Color dateTipRectangleColor;
+		private Color dateTipTextColor;
+		private Color valTipRectangleColor;
+		private Color valTipTextColor;
+		private Color crossColor;
+		private Color borderColor;
+		private Color splitterColor;
+		private Color candleUpColor;
+		private Color candleDownColor;
+		private Color volumeColor;
+		private Color rightAxisGridColor;
+		private Color rightAxisTextColor;
+		private Color rightAxisMinorTickColor;
+		private Color rightAxisMajorTicksColor;
+		private Color itemTextColor;
+		private Color selectedItemTextColor;
+		private Color selectedTransactionHighlightColor;
+		private Color activeStopColor;
+		private Color executedStopColor;
+		private Color canceledStopColor;
+		private object dataLock;
 		private DateTime MPmwkOLBbW;
 		private DateTime AAUwMEaLwI;
 
-		public bool ContextMenuEnabled
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.csVwKnABS5;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.csVwKnABS5 = value;
-			}
-		}
+		public bool ContextMenuEnabled { get; set; }
 
 		public int RightAxesFontSize
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.B3twXXpMAN;
+				return this.rightAxesFontSize;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
-				this.B3twXXpMAN = value;
-				this.rRlwD21sH7 = new Font(this.Font.FontFamily, (float)this.B3twXXpMAN);
-			}
-		}
-
-		public int LabelDigitsCount
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.u5BwilXyvv;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.u5BwilXyvv = value;
+				this.rightAxesFontSize = value;
+				this.font = new Font(this.Font.FontFamily, (float)this.rightAxesFontSize);
 			}
 		}
 
-		public Image PrimitiveDeleteImage
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.jDmwcKaZhf;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.jDmwcKaZhf = value;
-			}
-		}
-
-		public Image PrimitivePropertiesImage
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.P5cwJ316lg;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.P5cwJ316lg = value;
-			}
-		}
+		public int LabelDigitsCount {	get; set; }
+		public Image PrimitiveDeleteImage { get; set; }
+		public Image PrimitivePropertiesImage { get; set; }
 
 		[Browsable(false)]
-		public bool DrawItems
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.cPZwruyoU4;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.cPZwruyoU4 = value;
-			}
-		}
+		public bool DrawItems { get; set; }
 
 		[Browsable(false)]
 		public bool VolumePadVisible
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.volumePadShown;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				if (value)
 					this.ShowVolumePad();
@@ -183,11 +123,11 @@ namespace FreeQuant.FinChart
 
 		public ChartUpdateStyle UpdateStyle
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.updateStyle;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.updateStyle = value;
 				this.aUdHWj4OL();
@@ -196,16 +136,16 @@ namespace FreeQuant.FinChart
 
 		public BSStyle BarSeriesStyle
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.barSeriesStyle;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
-				this.cPZwruyoU4 = true;
+				this.DrawItems = true;
 				if (this.barSeriesStyle == value)
 					return;
-				lock (this.UxNwG80KmM)
+				lock (this.dataLock)
 				{
 					this.barSeriesStyle = value;
 					if (this.mainSeries != null)
@@ -215,7 +155,7 @@ namespace FreeQuant.FinChart
 						{
 							this.pads[1].RemovePrimitive((IChartDrawable)this.volumeView);
 							this.volumeView = new VolumeBSView(this.pads[1], this.mainSeries as DoubleSeries);
-							this.volumeView.Color = this.L5wwUnfhPv;
+							this.volumeView.Color = this.volumeColor;
 							this.pads[1].AddPrimitive((IChartDrawable)this.volumeView);
 						}
 						if (local_0)
@@ -239,11 +179,11 @@ namespace FreeQuant.FinChart
 		[Category("Transformation")]
 		public bool SessionGridEnabled
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.sessionGridEnabled;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.sessionGridEnabled = value;
 			}
@@ -251,49 +191,18 @@ namespace FreeQuant.FinChart
 
 		[Category("Transformation")]
 		[Description("")]
-		public Color SessionGridColor
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.sessionGridColor;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.sessionGridColor = value;
-			}
-		}
+		public Color SessionGridColor { get; set; }
 
 		[Description("")]
 		[Category("Transformation")]
-		public TimeSpan SessionStart
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.sessionStart;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.sessionStart = value;
-			}
-		}
+		public TimeSpan SessionStart { get; set; }
 
 		[Category("Transformation")]
 		[Description("")]
-		public TimeSpan SessionEnd
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.sessionEnd;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.sessionEnd = value;
-			}
-		}
-
+		public TimeSpan SessionEnd { get; set; }
 		public double IntervalWidth
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.intervalWidth;
 			}
@@ -301,27 +210,17 @@ namespace FreeQuant.FinChart
 
 		public Graphics Graphics
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.graphics;
 			}
 		}
 
-		public SmoothingMode SmoothingMode
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
-			{
-				return this.smoothingMode;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
-			{
-				this.smoothingMode = value;
-			}
-		}
+		public SmoothingMode SmoothingMode { get; set; }
 
 		public TimeSeries MainSeries
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.mainSeries;
 			}
@@ -329,7 +228,7 @@ namespace FreeQuant.FinChart
 
 		public int FirstIndex
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.firstIndex;
 			}
@@ -337,7 +236,7 @@ namespace FreeQuant.FinChart
 
 		public int LastIndex
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.lastIndex;
 			}
@@ -345,7 +244,7 @@ namespace FreeQuant.FinChart
 
 		public int PadCount
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.pads.Count;
 			}
@@ -353,11 +252,11 @@ namespace FreeQuant.FinChart
 
 		public Color CanvasColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.canvasColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				this.canvasColor = value;
@@ -366,28 +265,28 @@ namespace FreeQuant.FinChart
 
 		public Color ChartBackColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.ttlwhhjUvM;
+				return this.chartBackColor; 
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.ttlwhhjUvM = value;
+				this.chartBackColor = value;
 			}
 		}
 
 		public ChartActionType ActionType
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.xnVw0R83gu;
+				return this.actionType;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
-				if (this.xnVw0R83gu == value)
+				if (this.actionType == value)
 					return;
-				this.xnVw0R83gu = value;
+				this.actionType = value;
 				this.CBhmsygdb();
 				this.Invalidate();
 			}
@@ -395,11 +294,11 @@ namespace FreeQuant.FinChart
 
 		public int MinNumberOfBars
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.minCountOfBars;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.minCountOfBars = value;
 			}
@@ -407,50 +306,50 @@ namespace FreeQuant.FinChart
 
 		public Color SelectedTransactionHighlightColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.pslw5H3bwV;
+				return this.selectedTransactionHighlightColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
-				this.pslw5H3bwV = Color.FromArgb(100, value);
+				this.selectedTransactionHighlightColor = Color.FromArgb(100, value);
 				this.contentUpdated = true;
 			}
 		}
 
 		public Color ItemTextColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.wMbwxkW0XN;
+				return this.itemTextColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
-				this.wMbwxkW0XN = value;
+				this.itemTextColor = value;
 				this.contentUpdated = true;
 			}
 		}
 
 		public Color SelectedItemTextColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.wAswA7ExWR;
+				return this.selectedItemTextColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
-				this.wAswA7ExWR = value;
+				this.selectedItemTextColor = value;
 				this.contentUpdated = true;
 			}
 		}
 
 		public Color BottomAxisGridColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.axisBottom.GridColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				this.axisBottom.GridColor = value;
@@ -459,11 +358,11 @@ namespace FreeQuant.FinChart
 
 		public Color BottomAxisLabelColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.axisBottom.LabelColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				this.axisBottom.LabelColor = value;
@@ -472,213 +371,213 @@ namespace FreeQuant.FinChart
 
 		public Color RightAxisGridColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.eACwlDopwE;
+				return this.rightAxisGridColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				foreach (Pad pad in this.pads)
 					pad.Axis.GridColor = value;
-				this.eACwlDopwE = value;
+				this.rightAxisGridColor = value;
 			}
 		}
 
 		public Color RightAxisTextColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.dx3wvFg8OX;
+				return this.rightAxisTextColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				foreach (Pad pad in this.pads)
 					pad.Axis.LabelColor = value;
-				this.dx3wvFg8OX = value;
+				this.rightAxisTextColor = value;
 			}
 		}
 
 		public Color RightAxisMinorTicksColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.qNhwdmYFHH;
+				return this.rightAxisMinorTickColor; 
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				foreach (Pad pad in this.pads)
 					pad.Axis.MinorTicksColor = value;
-				this.qNhwdmYFHH = value;
+				this.rightAxisMinorTickColor = value;
 			}
 		}
 
 		public Color RightAxisMajorTicksColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get 
 			{
-				return this.vDewu3xhO6;
+				return this.rightAxisMajorTicksColor; 
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
 				foreach (Pad pad in this.pads)
 					pad.Axis.MajorTicksColor = value;
-				this.vDewu3xhO6 = value;
+				this.rightAxisMajorTicksColor = value;
 			}
 		}
 
 		public Color DateTipRectangleColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get 
 			{
-				return this.OxuwbrIAJv;
+				return this.dateTipRectangleColor; 
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.OxuwbrIAJv = value;
+				this.dateTipRectangleColor = value;
 			}
 		}
 
 		public Color DateTipTextColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get 
 			{
-				return this.RlLwe53pY9;
+				return this.dateTipTextColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.RlLwe53pY9 = value;
+				this.dateTipTextColor = value;
 			}
 		}
 
 		public Color ValTipRectangleColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get 
 			{
-				return this.iAKwnRdT4K;
+				return this.valTipRectangleColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.iAKwnRdT4K = value;
+				this.valTipRectangleColor = value;
 			}
 		}
 
 		public Color ValTipTextColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get 
 			{
-				return this.Cw0w7HbSYD;
+				return this.valTipTextColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.Cw0w7HbSYD = value;
+				this.valTipTextColor = value;
 			}
 		}
 
 		public Color CrossColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.CVOwRpN0GR;
+				return this.crossColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.CVOwRpN0GR = value;
+				this.crossColor = value;
 			}
 		}
 
 		public Color BorderColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.wJ9wERVQO0;
+				return this.borderColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.wJ9wERVQO0 = value;
+				this.borderColor = value;
 			}
 		}
 
 		public Color SplitterColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.udnwPMpBdJ;
+				return this.splitterColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.udnwPMpBdJ = value;
+				this.splitterColor = value;
 			}
 		}
 
 		public Color CandleUpColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.Hl4wTrvPSQ;
+				return this.candleUpColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.Hl4wTrvPSQ = value;
+				this.candleUpColor = value;
 				if (!(this.mainSeriesView is SimpleBSView))
 					return;
-				(this.mainSeriesView as SimpleBSView).UpColor = this.Hl4wTrvPSQ;
+				(this.mainSeriesView as SimpleBSView).UpColor = this.candleUpColor;
 			}
 		}
 
 		public Color CandleDownColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.NK9w1xq4O9;
+				return this.candleDownColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.NK9w1xq4O9 = value;
+				this.candleDownColor = value;
 				if (!(this.mainSeriesView is SimpleBSView))
 					return;
-				(this.mainSeriesView as SimpleBSView).DownColor = this.NK9w1xq4O9;
+				(this.mainSeriesView as SimpleBSView).DownColor = this.candleDownColor;
 			}
 		}
 
 		public Color VolumeColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			get 
 			{
-				return this.L5wwUnfhPv;
+				return this.volumeColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.L5wwUnfhPv = value;
+				this.volumeColor = value;
 				if (this.volumeView == null)
 					return;
-				this.volumeView.Color = this.L5wwUnfhPv;
+				this.volumeView.Color = this.volumeColor;
 			}
 		}
 
 		public Color ActiveStopColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.hCMwZ5uJAB;
+				return this.activeStopColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.hCMwZ5uJAB = value;
+				this.activeStopColor = value;
 				foreach (Pad pad in this.pads)
 				{
 					foreach (IChartDrawable chartDrawable in pad.Primitives)
@@ -692,14 +591,14 @@ namespace FreeQuant.FinChart
 
 		public Color CanceledStopColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.XZKwfkNv2P;
+				return this.canceledStopColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.XZKwfkNv2P = value;
+				this.canceledStopColor = value;
 				foreach (Pad pad in this.pads)
 				{
 					foreach (IChartDrawable chartDrawable in pad.Primitives)
@@ -713,14 +612,14 @@ namespace FreeQuant.FinChart
 
 		public Color ExecutedStopColor
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.IR7w4uJgse;
+				return this.executedStopColor;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.contentUpdated = true;
-				this.IR7w4uJgse = value;
+				this.executedStopColor = value;
 				foreach (Pad pad in this.pads)
 				{
 					foreach (IChartDrawable chartDrawable in pad.Primitives)
@@ -734,11 +633,11 @@ namespace FreeQuant.FinChart
 
 		public PadScaleStyle ScaleStyle
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
 				return this.scaleStyle;
 			}
-			[MethodImpl(MethodImplOptions.NoInlining)] set
+			 set
 			{
 				this.scaleStyle = value;
 				this.pads[0].ScaleStyle = value;
@@ -754,7 +653,7 @@ namespace FreeQuant.FinChart
 		public event EventHandler BarSeriesStyleChanged;
 		public event EventHandler ScaleStyleChanged;
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public Chart()
 		{
 			xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -771,39 +670,39 @@ namespace FreeQuant.FinChart
 			this.padsHeightArray = new ArrayList();
 			this.padSplitIndex = -1;
 			this.contentUpdated = true;
-			this.xnVw0R83gu = ChartActionType.None;
+			this.actionType = ChartActionType.None;
 			this.updateStyle = ChartUpdateStyle.Trailing;
 			this.minAxisGap = 50;
-			this.csVwKnABS5 = true;
-			this.u5BwilXyvv = 2;
-			this.B3twXXpMAN = 7;
-			this.OxuwbrIAJv = Color.LightGray;
-			this.RlLwe53pY9 = Color.Black;
-			this.iAKwnRdT4K = Color.LightGray;
-			this.Cw0w7HbSYD = Color.Black;
-			this.CVOwRpN0GR = Color.DarkGray;
-			this.wJ9wERVQO0 = Color.Gray;
-			this.udnwPMpBdJ = Color.LightGray;
-			this.Hl4wTrvPSQ = Color.Black;
-			this.NK9w1xq4O9 = Color.Lime;
-			this.L5wwUnfhPv = Color.SteelBlue;
-			this.eACwlDopwE = Color.DimGray;
-			this.dx3wvFg8OX = Color.LightGray;
-			this.qNhwdmYFHH = Color.LightGray;
-			this.vDewu3xhO6 = Color.LightGray;
-			this.wMbwxkW0XN = Color.LightGray;
-			this.wAswA7ExWR = Color.Yellow;
-			this.pslw5H3bwV = Color.LightBlue;
-			this.hCMwZ5uJAB = Color.Yellow;
-			this.IR7w4uJgse = Color.MediumSeaGreen;
-			this.XZKwfkNv2P = Color.Gray;
-			this.UxNwG80KmM = new object();
+			this.ContextMenuEnabled = true;
+			this.LabelDigitsCount = 2;
+			this.rightAxesFontSize = 7;
+			this.dateTipRectangleColor = Color.LightGray;
+			this.dateTipTextColor = Color.Black;
+			this.valTipRectangleColor = Color.LightGray;
+			this.valTipTextColor = Color.Black;
+			this.crossColor = Color.DarkGray;
+			this.borderColor = Color.Gray;
+			this.splitterColor = Color.LightGray;
+			this.candleUpColor = Color.Black;
+			this.candleDownColor = Color.Lime;
+			this.volumeColor = Color.SteelBlue;
+			this.rightAxisGridColor = Color.DimGray;
+			this.rightAxisTextColor = Color.LightGray;
+			this.rightAxisMinorTickColor = Color.LightGray;
+			this.rightAxisMajorTicksColor = Color.LightGray;
+			this.itemTextColor = Color.LightGray;
+			this.selectedItemTextColor = Color.Yellow;
+			this.selectedTransactionHighlightColor = Color.LightBlue;
+			this.activeStopColor = Color.Yellow;
+			this.executedStopColor = Color.MediumSeaGreen;
+			this.canceledStopColor = Color.Gray;
+			this.dataLock = new object();
 			this.MPmwkOLBbW = DateTime.MaxValue;
 			this.AAUwMEaLwI = DateTime.MinValue;
 			// ISSUE: explicit constructor call
 			base.\u002Ector();
 			this.nwudcQQcv();
-			this.rRlwD21sH7 = new Font(this.Font.FontFamily, (float)this.B3twXXpMAN);
+			this.font = new Font(this.Font.FontFamily, (float)this.rightAxesFontSize);
 			this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, true);
 			this.UpdateStyles();
 			this.canvasLeftOffset = 10;
@@ -813,13 +712,13 @@ namespace FreeQuant.FinChart
 			this.MouseWheel += new MouseEventHandler(this.tHXG4q3el);
 			this.AddPad();
 			this.axisBottom = new AxisBottom(this, this.canvasLeftOffset, this.Width - this.canvasRightOffset, this.Height - this.canvasTopOffset);
-			this.WeMwyqaMBs.Minimum = 0;
-			this.ttlwhhjUvM = Color.MidnightBlue;
+			this.hScrollBar.Minimum = 0;
+			this.chartBackColor = Color.MidnightBlue;
 			this.firstIndex = -1;
 			this.lastIndex = -1;
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public Chart(DoubleSeries mainSeries)
 		{
 			xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -828,29 +727,29 @@ namespace FreeQuant.FinChart
 			this.SetMainSeries(mainSeries);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		protected override void Dispose(bool disposing)
 		{
-			if (disposing && this.NwHaET7tS != null)
-				this.NwHaET7tS.Dispose();
+			if (disposing && this.container != null)
+				this.container.Dispose();
 			base.Dispose(disposing);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void nwudcQQcv()
 		{
-			this.NwHaET7tS = (IContainer)new Container();
-			this.WeMwyqaMBs = new HScrollBar();
-			this.RswwSJ5RAW = new ToolTip(this.NwHaET7tS);
+			this.container = new Container();
+			this.hScrollBar = new HScrollBar();
+			this.toolTip = new ToolTip(this.container);
 			this.SuspendLayout();
-			this.WeMwyqaMBs.Dock = DockStyle.Bottom;
-			this.WeMwyqaMBs.Location = new Point(0, 455);
-			this.WeMwyqaMBs.Name = FJDHryrxb1WIq5jBAt.mT707pbkgT(122);
-			this.WeMwyqaMBs.Size = new Size(512, 17);
-			this.WeMwyqaMBs.TabIndex = 0;
-			this.WeMwyqaMBs.Scroll += new ScrollEventHandler(this.FSOLY9YLw);
+			this.hScrollBar.Dock = DockStyle.Bottom;
+			this.hScrollBar.Location = new Point(0, 455);
+			this.hScrollBar.Name = FJDHryrxb1WIq5jBAt.mT707pbkgT(122);
+			this.hScrollBar.Size = new Size(512, 17);
+			this.hScrollBar.TabIndex = 0;
+			this.hScrollBar.Scroll += new ScrollEventHandler(this.FSOLY9YLw);
 			this.AutoScroll = true;
-			this.Controls.Add((Control)this.WeMwyqaMBs);
+			this.Controls.Add((Control)this.hScrollBar);
 			this.Font = new Font(FJDHryrxb1WIq5jBAt.mT707pbkgT(144), 7f, FontStyle.Regular, GraphicsUnit.Point, (byte)204);
 			this.Name = FJDHryrxb1WIq5jBAt.mT707pbkgT(188);
 			this.Size = new Size(512, 472);
@@ -861,55 +760,55 @@ namespace FreeQuant.FinChart
 		}
 
 		[SpecialName]
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal TimeSeries OkdNNmbiw()
 		{
 			return this.series;
 		}
 
 		[SpecialName]
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal bool SydByiP6p()
 		{
 			return this.contentUpdated;
 		}
 
 		[SpecialName]
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal void dkEjGbQNc(bool value)
 		{
 			this.contentUpdated = value;
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal void NXKu7WiuX([In] Pen obj0, [In] long obj1, [In] int obj2)
 		{
 			this.graphics.DrawLine(obj0, this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset), this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset) + obj2);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal void IXrxgFKyT([In] Pen obj0, [In] long obj1)
 		{
 			int x1 = this.ClientX(new DateTime(obj1));
 			this.graphics.DrawLine(obj0, x1, this.canvasTopOffset, this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset));
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal void pw9AQjMR6([In] Pen obj0, [In] long obj1)
 		{
 			this.graphics.DrawLine(obj0, (int)((double)this.ClientX(new DateTime(obj1)) - this.intervalWidth / 2.0), this.canvasTopOffset, (int)((double)this.ClientX(new DateTime(obj1)) - this.intervalWidth / 2.0), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset));
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color)
 		{
 			this.DrawSeries(series, padNumber, color, EIndexOption.Null);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, EIndexOption option)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -920,22 +819,22 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, SimpleDSStyle style)
 		{
 			this.DrawSeries(series, padNumber, color, style, EIndexOption.Null, this.doubleSeriesSmoothingMode);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, SimpleDSStyle style, SmoothingMode smoothingMode)
 		{
 			this.DrawSeries(series, padNumber, color, style, EIndexOption.Null, smoothingMode);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, SimpleDSStyle style, EIndexOption option, SmoothingMode smoothingMode)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -947,10 +846,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawTransaction(Transaction transaction, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -960,10 +859,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawRay(DrawingRay ray, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -975,17 +874,17 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void Xsr5a43Ll([In] object obj0, [In] EventArgs obj1)
 		{
 			this.contentUpdated = true;
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawLine(DrawingLine line, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -997,10 +896,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawEllipse(DrawingEllipse circle, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -1012,10 +911,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawRectangle(DrawingRectangle rect, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -1027,10 +926,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawPath(DrawingPath path, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -1042,10 +941,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawImage(DrawingImage image, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -1057,10 +956,10 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawSignal(Signal signal, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -1070,42 +969,42 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawOrder(SingleOrder order, int padNumber)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void DrawStop(ATSStop stop, int padNumber)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
 				StopView local_0 = new StopView(stop, this.pads[padNumber]);
 				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.ExecutedColor = this.IR7w4uJgse;
-				local_0.ActiveColor = this.hCMwZ5uJAB;
-				local_0.CanceledColor = this.XZKwfkNv2P;
+				local_0.ExecutedColor = this.executedStopColor;
+				local_0.ActiveColor = this.activeStopColor;
+				local_0.CanceledColor = this.canceledStopColor;
 				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		protected override void OnPaint(PaintEventArgs e)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				try
 				{
 					this.HNXZVR2bH(e.Graphics);
 					if (this.lastIndex <= 0 || this.firstIndex < 0)
 						return;
-					if (this.WeMwyqaMBs.Maximum != this.mainSeries.Count - (this.lastIndex - this.firstIndex + 1) + this.WeMwyqaMBs.LargeChange - 1)
-						this.WeMwyqaMBs.Maximum = this.mainSeries.Count - (this.lastIndex - this.firstIndex + 1) + this.WeMwyqaMBs.LargeChange - 1;
-					if (this.WeMwyqaMBs.Value == this.firstIndex)
+					if (this.hScrollBar.Maximum != this.mainSeries.Count - (this.lastIndex - this.firstIndex + 1) + this.hScrollBar.LargeChange - 1)
+						this.hScrollBar.Maximum = this.mainSeries.Count - (this.lastIndex - this.firstIndex + 1) + this.hScrollBar.LargeChange - 1;
+					if (this.hScrollBar.Value == this.firstIndex)
 						return;
-					this.WeMwyqaMBs.Value = this.firstIndex;
+					this.hScrollBar.Value = this.firstIndex;
 				}
 				catch (Exception exception_0)
 				{
@@ -1113,7 +1012,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void HNXZVR2bH([In] Graphics obj0)
 		{
 			if (this.lastIndex - this.firstIndex + 1 == 0)
@@ -1128,7 +1027,7 @@ namespace FreeQuant.FinChart
 				this.bitmap = new Bitmap(this.Width, this.Height);
 				Graphics graphics = Graphics.FromImage((Image)this.bitmap);
 				graphics.SmoothingMode = this.smoothingMode;
-				graphics.Clear(this.ttlwhhjUvM);
+				graphics.Clear(this.chartBackColor);
 				this.graphics = graphics;
 				int val1 = int.MinValue;
 				foreach (Pad pad in this.pads)
@@ -1140,7 +1039,7 @@ namespace FreeQuant.FinChart
 				this.canvasRightOffset = Math.Max(val1, this.minAxisGap);
 				foreach (Pad pad in this.pads)
 				{
-					pad.DrawItems = this.cPZwruyoU4;
+					pad.DrawItems = this.DrawItems;
 					pad.FtGJAXHCKL(this.Width - this.canvasRightOffset - this.canvasLeftOffset);
 				}
 				graphics.FillRectangle((Brush)new SolidBrush(this.canvasColor), this.canvasLeftOffset, this.canvasTopOffset, this.Width - this.canvasRightOffset - this.canvasLeftOffset, this.Height - this.canvasBottomOffset - this.canvasLeftOffset);
@@ -1148,33 +1047,33 @@ namespace FreeQuant.FinChart
 				{
 					int num2 = this.ClientX(this.AAUwMEaLwI);
 					if (num2 > this.canvasLeftOffset && num2 < this.Width - this.canvasRightOffset)
-						graphics.FillRectangle((Brush)new SolidBrush(this.pslw5H3bwV), (float)num2 - (float)this.intervalWidth / 2f, (float)this.canvasTopOffset, (float)this.intervalWidth, (float)(this.Height - this.canvasBottomOffset - this.canvasLeftOffset));
+						graphics.FillRectangle((Brush)new SolidBrush(this.selectedTransactionHighlightColor), (float)num2 - (float)this.intervalWidth / 2f, (float)this.canvasTopOffset, (float)this.intervalWidth, (float)(this.Height - this.canvasBottomOffset - this.canvasLeftOffset));
 				}
-				graphics.DrawRectangle(new Pen(this.wJ9wERVQO0), this.canvasLeftOffset, this.canvasTopOffset, this.Width - this.canvasRightOffset - this.canvasLeftOffset, this.Height - this.canvasBottomOffset - this.canvasLeftOffset);
+				graphics.DrawRectangle(new Pen(this.borderColor), this.canvasLeftOffset, this.canvasTopOffset, this.Width - this.canvasRightOffset - this.canvasLeftOffset, this.Height - this.canvasBottomOffset - this.canvasLeftOffset);
 				if (this.mainSeries != null && this.mainSeries.Count != 0)
 					this.axisBottom.PaintWithDates(this.mainSeries.GetDateTime(this.firstIndex), this.mainSeries.GetDateTime(this.lastIndex));
 				foreach (Pad pad in this.pads)
 					pad.WxfJR1jrge(graphics);
 				for (int index = 1; index < this.pads.Count; ++index)
-					graphics.DrawLine(new Pen(this.udnwPMpBdJ), this.pads[index].X1, this.pads[index].Y1, this.pads[index].X2, this.pads[index].Y1);
+					graphics.DrawLine(new Pen(this.splitterColor), this.pads[index].X1, this.pads[index].Y1, this.pads[index].X2, this.pads[index].Y1);
 				graphics.Dispose();
 				this.contentUpdated = false;
 			}
-			if (this.mainSeries != null && this.mainSeries.Count != 0 && (this.xnVw0R83gu == ChartActionType.Cross && this.isMouseOverCanvas) && this.bitmap != null)
+			if (this.mainSeries != null && this.mainSeries.Count != 0 && (this.actionType == ChartActionType.Cross && this.isMouseOverCanvas) && this.bitmap != null)
 			{
 				obj0.DrawImage((Image)this.bitmap, 0, 0);
 				obj0.SmoothingMode = this.smoothingMode;
 				Point point = this.PointToClient(Cursor.Position);
 				this.mouseX = point.X;
 				this.mouseY = point.Y;
-				obj0.DrawLine(new Pen(this.CVOwRpN0GR, 0.5f), this.canvasLeftOffset, this.mouseY, this.mouseX - 10, this.mouseY);
-				obj0.DrawLine(new Pen(this.CVOwRpN0GR, 0.5f), this.mouseX + 10, this.mouseY, this.Width - this.canvasRightOffset, this.mouseY);
-				obj0.DrawLine(new Pen(this.CVOwRpN0GR, 0.5f), this.mouseX, this.canvasTopOffset, this.mouseX, this.mouseY - 10);
-				obj0.DrawLine(new Pen(this.CVOwRpN0GR, 0.5f), this.mouseX, this.mouseY + 10, this.mouseX, this.Height - this.canvasBottomOffset);
+				obj0.DrawLine(new Pen(this.crossColor, 0.5f), this.canvasLeftOffset, this.mouseY, this.mouseX - 10, this.mouseY);
+				obj0.DrawLine(new Pen(this.crossColor, 0.5f), this.mouseX + 10, this.mouseY, this.Width - this.canvasRightOffset, this.mouseY);
+				obj0.DrawLine(new Pen(this.crossColor, 0.5f), this.mouseX, this.canvasTopOffset, this.mouseX, this.mouseY - 10);
+				obj0.DrawLine(new Pen(this.crossColor, 0.5f), this.mouseX, this.mouseY + 10, this.mouseX, this.Height - this.canvasBottomOffset);
 				string str1 = this.GetDateTime(this.mouseX).ToString();
 				SizeF sizeF1 = obj0.MeasureString(str1, this.Font);
-				obj0.FillRectangle((Brush)new SolidBrush(this.OxuwbrIAJv), (float)((double)this.mouseX - (double)sizeF1.Width / 2.0 - 2.0), (float)(this.Height - this.canvasBottomOffset), sizeF1.Width, sizeF1.Height + 2f);
-				obj0.DrawString(str1, this.Font, (Brush)new SolidBrush(this.RlLwe53pY9), (float)((double)this.mouseX - (double)sizeF1.Width / 2.0 - 1.0), (float)(this.Height - this.canvasBottomOffset + 2));
+				obj0.FillRectangle((Brush)new SolidBrush(this.dateTipRectangleColor), (float)((double)this.mouseX - (double)sizeF1.Width / 2.0 - 2.0), (float)(this.Height - this.canvasBottomOffset), sizeF1.Width, sizeF1.Height + 2f);
+				obj0.DrawString(str1, this.Font, (Brush)new SolidBrush(this.dateTipTextColor), (float)((double)this.mouseX - (double)sizeF1.Width / 2.0 - 1.0), (float)(this.Height - this.canvasBottomOffset + 2));
 				double num2 = 0.0;
 				for (int index = 0; index < this.pads.Count; ++index)
 				{
@@ -1185,10 +1084,10 @@ namespace FreeQuant.FinChart
 						break;
 					}
 				}
-				string str2 = num2.ToString(FJDHryrxb1WIq5jBAt.mT707pbkgT(202) + (object)this.u5BwilXyvv);
+				string str2 = num2.ToString(FJDHryrxb1WIq5jBAt.mT707pbkgT(202) + this.LabelDigitsCount);
 				SizeF sizeF2 = obj0.MeasureString(str2, this.Font);
-				obj0.FillRectangle((Brush)new SolidBrush(this.iAKwnRdT4K), (float)(this.Width - this.canvasRightOffset), (float)((double)this.mouseY - (double)sizeF2.Height / 2.0 - 2.0), sizeF2.Width, sizeF2.Height + 2f);
-				obj0.DrawString(str2, this.Font, (Brush)new SolidBrush(this.Cw0w7HbSYD), (float)(this.Width - this.canvasRightOffset + 2), (float)((double)this.mouseY - (double)sizeF2.Height / 2.0 - 1.0));
+				obj0.FillRectangle((Brush)new SolidBrush(this.valTipRectangleColor), (float)(this.Width - this.canvasRightOffset), (float)((double)this.mouseY - (double)sizeF2.Height / 2.0 - 2.0), sizeF2.Width, sizeF2.Height + 2f);
+				obj0.DrawString(str2, this.Font, (Brush)new SolidBrush(this.valTipTextColor), (float)(this.Width - this.canvasRightOffset + 2), (float)((double)this.mouseY - (double)sizeF2.Height / 2.0 - 1.0));
 			}
 			else
 			{
@@ -1198,12 +1097,12 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		protected override void OnPaintBackground(PaintEventArgs pevent)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void X114DAC9M([In] object obj0, [In] MouseEventArgs obj1)
 		{
 			try
@@ -1231,7 +1130,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void iWffcAxHA([In] object obj0, [In] MouseEventArgs obj1)
 		{
 			try
@@ -1250,7 +1149,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void tHXG4q3el([In] object obj0, [In] MouseEventArgs obj1)
 		{
 			if (obj1.Delta > 0)
@@ -1260,7 +1159,7 @@ namespace FreeQuant.FinChart
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
 			try
@@ -1272,13 +1171,13 @@ namespace FreeQuant.FinChart
 					if (e.X > this.canvasLeftOffset && e.X < this.Width - this.canvasRightOffset && (e.Y > this.canvasTopOffset && e.Y < this.Height - this.canvasBottomOffset))
 					{
 						this.isMouseOverCanvas = true;
-						if (this.xnVw0R83gu == ChartActionType.Cross)
+						if (this.actionType == ChartActionType.Cross)
 							this.Cursor = Cursors.Cross;
 					}
 					else
 					{
 						this.isMouseOverCanvas = false;
-						if (this.xnVw0R83gu == ChartActionType.Cross)
+						if (this.actionType == ChartActionType.Cross)
 							this.Invalidate();
 						this.Cursor = Cursors.Default;
 					}
@@ -1313,7 +1212,7 @@ namespace FreeQuant.FinChart
 						if (pad.X1 <= e.X && pad.X2 >= e.X && (pad.Y1 <= e.Y && pad.Y2 >= e.Y))
 							pad.MouseMove(e);
 					}
-					if (this.isMouseOverCanvas && this.xnVw0R83gu == ChartActionType.Cross)
+					if (this.isMouseOverCanvas && this.actionType == ChartActionType.Cross)
 						this.Invalidate();
 				}
 				this.PRRwtLFpd5 = this.mouseX;
@@ -1324,14 +1223,14 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void apXk9fKZc([In] object obj0, [In] EventArgs obj1)
 		{
 			this.isMouseOverCanvas = false;
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		protected override void OnResize(EventArgs e)
 		{
 			base.OnResize(e);
@@ -1342,19 +1241,19 @@ namespace FreeQuant.FinChart
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		protected override void OnKeyPress(KeyPressEventArgs e)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void yHuMeqhH1([In] int obj0)
 		{
 			this.xhyOat6AP(Math.Min(this.firstIndex + obj0, this.lastIndex - 1 + 1), this.lastIndex);
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void HS5QjNKgD([In] int obj0)
 		{
 			if (this.mainSeries == null || this.mainSeries.Count == 0)
@@ -1363,19 +1262,19 @@ namespace FreeQuant.FinChart
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void ZoomIn()
 		{
 			this.yHuMeqhH1((this.lastIndex - this.firstIndex) / 5);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void ZoomOut()
 		{
 			this.HS5QjNKgD((this.lastIndex - this.firstIndex) / 10 + 1);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void UnSelectAll()
 		{
 			foreach (Pad pad in this.pads)
@@ -1388,12 +1287,12 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public virtual void ShowProperties(DSView view, Pad pad, bool forceShowProperties)
 		{
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void AddPad()
 		{
 			this.Eqy9o6NL3();
@@ -1402,7 +1301,7 @@ namespace FreeQuant.FinChart
 			this.contentUpdated = true;
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void J3J6sEr6u()
 		{
 			int y1 = this.canvasTopOffset;
@@ -1419,7 +1318,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void Eqy9o6NL3()
 		{
 			if (this.padsHeightArray.Count == 0)
@@ -1446,7 +1345,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void ShowVolumePad()
 		{
 			if (this.volumePadShown || !(this.mainSeries is BarSeries))
@@ -1457,14 +1356,14 @@ namespace FreeQuant.FinChart
 			pad.AxisLabelFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(208);
 			pad.DrawGrid = false;
 			this.volumeView = new VolumeBSView(pad, (DoubleSeries)(this.mainSeries as BarSeries));
-			this.volumeView.Color = this.L5wwUnfhPv;
+			this.volumeView.Color = this.volumeColor;
 			pad.AddPrimitive((IChartDrawable)this.volumeView);
 			this.pads.Insert(1, pad);
 			this.J3J6sEr6u();
 			this.V9dYTd2ef();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void HideVolumePad()
 		{
 			if (!this.volumePadShown)
@@ -1476,24 +1375,24 @@ namespace FreeQuant.FinChart
 			this.V9dYTd2ef();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public int ClientX(DateTime dateTime)
 		{
 			double num = (double)(this.Width - this.canvasLeftOffset - this.canvasRightOffset) / (double)(this.lastIndex - this.firstIndex + 1);
 			return this.canvasLeftOffset + (int)((double)(this.mainSeries.GetIndex(dateTime) - this.firstIndex) * num + num / 2.0);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public DateTime GetDateTime(int x)
 		{
 			double num = (double)(this.Width - this.canvasLeftOffset - this.canvasRightOffset) / (double)(this.lastIndex - this.firstIndex + 1);
 			return this.mainSeries.GetDateTime((int)Math.Floor((double)(x - this.canvasLeftOffset) / num) + this.firstIndex);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void Reset()
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				foreach (Pad item_1 in this.pads)
 				{
@@ -1521,16 +1420,16 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void SetMainSeries(DoubleSeries mainSeries)
 		{
 			this.SetMainSeries(mainSeries, false);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void SetMainSeries(DoubleSeries mainSeries, bool showVolumePad)
 		{
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				if (this.mainSeries != null)
 				{
@@ -1564,7 +1463,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void xhyOat6AP([In] int obj0, [In] int obj1)
 		{
 			if (this.mainSeries == null || obj0 < 0 || obj1 > this.mainSeries.Count - 1)
@@ -1578,27 +1477,27 @@ namespace FreeQuant.FinChart
 			this.contentUpdated = true;
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void RBtsskQJ8([In] DateTime obj0, [In] DateTime obj1)
 		{
 			this.xhyOat6AP(this.MainSeries.GetIndex(obj0, EIndexOption.Next), this.MainSeries.GetIndex(obj1, EIndexOption.Prev));
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void FSOLY9YLw([In] object obj0, [In] ScrollEventArgs obj1)
 		{
-			if (this.WeMwyqaMBs.Value == obj1.NewValue)
+			if (this.hScrollBar.Value == obj1.NewValue)
 				return;
-			int num = obj1.NewValue - this.WeMwyqaMBs.Value;
+			int num = obj1.NewValue - this.hScrollBar.Value;
 			this.xhyOat6AP(this.firstIndex + num, this.lastIndex + num);
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void EevqwoC33([In] object obj0, [In] DateTimeEventArgs obj1)
 		{
 			bool flag = false;
-			lock (this.UxNwG80KmM)
+			lock (this.dataLock)
 			{
 				this.contentUpdated = true;
 				if (this.firstIndex == -1)
@@ -1623,14 +1522,14 @@ namespace FreeQuant.FinChart
 			Application.DoEvents();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void L8iVpVKax([In] object obj0, [In] EventArgs obj1)
 		{
 			this.firstIndex = -1;
 			this.lastIndex = -1;
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private bool vA32MRaPG([In] BSStyle obj0, [In] bool obj1)
 		{
 			bool flag = true;
@@ -1640,8 +1539,8 @@ namespace FreeQuant.FinChart
 				{
 					this.pads[0].RemovePrimitive((IChartDrawable)this.mainSeriesView);
 					this.mainSeriesView = (SeriesView)new SimpleBSView(this.pads[0], this.series as BarSeries);
-					(this.mainSeriesView as SimpleBSView).UpColor = this.Hl4wTrvPSQ;
-					(this.mainSeriesView as SimpleBSView).DownColor = this.NK9w1xq4O9;
+					(this.mainSeriesView as SimpleBSView).UpColor = this.candleUpColor;
+					(this.mainSeriesView as SimpleBSView).DownColor = this.candleDownColor;
 					this.mainSeries = this.mainSeriesView.MainSeries;
 					this.pads[0].AddPrimitive((IChartDrawable)this.mainSeriesView);
 				}
@@ -1694,13 +1593,13 @@ namespace FreeQuant.FinChart
 			return flag;
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private PnFBSView AaUga350I([In] Pad obj0, [In] BarSeries obj1)
 		{
 			return new PnFBSView(obj0, obj1, 1.0, 3);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void aUdHWj4OL()
 		{
 			if (this.LE4pZguJ7 == null)
@@ -1708,7 +1607,7 @@ namespace FreeQuant.FinChart
 			this.LE4pZguJ7((object)this, EventArgs.Empty);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void V9dYTd2ef()
 		{
 			if (this.qihWfJrGe == null)
@@ -1716,7 +1615,7 @@ namespace FreeQuant.FinChart
 			this.qihWfJrGe((object)this, EventArgs.Empty);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void P7TCrmLFf()
 		{
 			if (this.MpIIw5Gl2 == null)
@@ -1724,7 +1623,7 @@ namespace FreeQuant.FinChart
 			this.MpIIw5Gl2((object)this, EventArgs.Empty);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void CBhmsygdb()
 		{
 			if (this.KgyF1utcO == null)
@@ -1732,7 +1631,7 @@ namespace FreeQuant.FinChart
 			this.KgyF1utcO((object)this, EventArgs.Empty);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		private void L3g3dmTt3()
 		{
 			if (this.OeIzvbutI == null)
@@ -1740,7 +1639,7 @@ namespace FreeQuant.FinChart
 			this.OeIzvbutI((object)this, EventArgs.Empty);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public void EnsureVisible(Transaction transaction)
 		{
 			if (transaction.DateTime < this.mainSeries.FirstDateTime)
@@ -1755,7 +1654,7 @@ namespace FreeQuant.FinChart
 			this.Invalidate();
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		public int GetPadNumber(Point point)
 		{
 			int y = point.Y;

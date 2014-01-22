@@ -53,9 +53,6 @@ namespace FreeQuant.Providers
     
     internal BrokerAccountList()
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.hr2ghYQhPV = new SortedList<string, BrokerAccount>();
       this.gXQgVvIuK4 = new List<BrokerAccount>();
     }

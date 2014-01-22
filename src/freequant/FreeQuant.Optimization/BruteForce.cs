@@ -70,7 +70,7 @@ namespace FreeQuant.Optimization
       if (this.fVerboseMode == EVerboseMode.Debug)
       {
         for (int index = 0; index < this.fNParam; ++index)
-          Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(286), (object) index, (object) this.fParam[index]);
+					Console.WriteLine("sd", index, this.fParam[index]);
         base.Print();
       }
       this.EmitCompleted();

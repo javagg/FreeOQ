@@ -1,6 +1,3 @@
-﻿using ASQMKC8WePBGJ83PL4;
-using Byqm85MNrFBe6JPJlI;
-using iA35u4dCToxkZX7vHa;
 using FreeQuant;
 using FreeQuant.Business;
 using FreeQuant.FIX;
@@ -77,7 +74,7 @@ namespace FreeQuant.Testing
 
     public Dictionary<Instrument, LiveTester> FriendlyTesters
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.vOUewuUQI7;
       }
@@ -86,7 +83,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public RoundTripList RoundTripList
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.roundTripList;
       }
@@ -95,7 +92,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public RoundTripList LongRoundTripList
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.longRoundTripList;
       }
@@ -104,20 +101,20 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public RoundTripList ShortRoundTripList
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.shortRoundTripList;
       }
     }
 
-    [Editor(typeof (soR9ANwsV4tOMEsHP7), typeof (UITypeEditor))]
+//    [Editor(typeof (soR9ANwsV4tOMEsHP7), typeof (UITypeEditor))]
     public TesterItemList Components
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.components;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.components = value;
       }
@@ -125,11 +122,11 @@ namespace FreeQuant.Testing
 
     public bool FollowChanges
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.followChanges;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (this.followChanges != value)
         {
@@ -157,11 +154,11 @@ namespace FreeQuant.Testing
 
     public bool AllowRoundTrips
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.allowRoundTrips;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.allowRoundTrips = value;
         if (!this.allowRoundTrips)
@@ -173,7 +170,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public Portfolio Portfolio
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.portfolio;
       }
@@ -181,11 +178,11 @@ namespace FreeQuant.Testing
 
     public TimeIntervalSize TimeInterval
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.timeInterval;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.timeInterval = value;
         this.NENyAxCZF4();
@@ -195,11 +192,11 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DateTime FirstDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.firstDate;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.firstDate = value;
       }
@@ -208,11 +205,11 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DateTime LastDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.lastDate;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.lastDate = value;
       }
@@ -221,11 +218,11 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public double InitialWealth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.initialWealth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.initialWealth = value;
         this.currentWealth = this.initialWealth;
@@ -237,11 +234,11 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public double RiskFreeRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.riskFreeRate;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         if (value == this.riskFreeRate)
           return;
@@ -252,7 +249,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public double DailyRiskFreeRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (Math.Pow(this.riskFreeRate / 100.0 + 1.0, 0.004) - 1.0) * 100.0;
       }
@@ -261,11 +258,11 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public bool BusinessDaysOnly
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.businessDaysOnly;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.businessDaysOnly = value;
       }
@@ -274,7 +271,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public int TestDays
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.wealthSeries.Count <= 0)
           return 0;
@@ -289,7 +286,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public int TradeDays
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.TestDays - Calendar.GetNWeekends(this.firstDate, this.lastDate);
       }
@@ -298,7 +295,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public double FinalWealth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.wealthSeries.Count > 0)
           return this.wealthSeries[this.wealthSeries.Count - 1];
@@ -310,7 +307,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries AllocationSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.allocationSeries;
       }
@@ -319,7 +316,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries AllocationLongSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.allocationLongSeries;
       }
@@ -328,7 +325,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries AllocationShortSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.allocationShortSeries;
       }
@@ -337,7 +334,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries PnLSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.pnLSeries;
       }
@@ -346,7 +343,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries DrawdownSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.drawdownSeries;
       }
@@ -355,7 +352,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries PercentDrawdownSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.percentDrawdownSeries;
       }
@@ -364,7 +361,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries WealthSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.wealthSeries;
       }
@@ -373,7 +370,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries CostSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.costSeries;
       }
@@ -382,7 +379,7 @@ namespace FreeQuant.Testing
     [Browsable(false)]
     public DoubleSeries ReturnSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.returnSeries;
       }
@@ -424,14 +421,11 @@ namespace FreeQuant.Testing
 
     internal event TesterEventHandler Osxy2s5d69;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LiveTester(Portfolio portfolio)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
       this.allowRoundTrips = true;
       this.vOUewuUQI7 = new Dictionary<Instrument, LiveTester>();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.firstDate = new DateTime(0L);
       this.lastDate = new DateTime(0L);
       this.portfolio = portfolio;
@@ -440,7 +434,7 @@ namespace FreeQuant.Testing
       this.Q6By9VekEl();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void C9hyoGWxUi()
     {
       this.tempPortfolio = new Portfolio();
@@ -459,30 +453,30 @@ namespace FreeQuant.Testing
       this.longRoundTripList = new RoundTripList(this);
       this.shortRoundTripList = new RoundTripList(this);
       this.isRoundTripsOnly = this.allowRoundTrips;
-      this.pnLSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2854);
-      this.wealthSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2864);
-      this.drawdownSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2880);
-      this.percentDrawdownSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2900);
-      this.costSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2936);
-      this.returnSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2974);
-      this.pnLSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2990);
-      this.wealthSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3000);
-      this.drawdownSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3016);
-      this.percentDrawdownSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3036);
-      this.costSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3072);
-      this.returnSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3110);
+//      this.pnLSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2854);
+//      this.wealthSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2864);
+//      this.drawdownSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2880);
+//      this.percentDrawdownSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2900);
+//      this.costSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2936);
+//      this.returnSeries.Title = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2974);
+//      this.pnLSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2990);
+//      this.wealthSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3000);
+//      this.drawdownSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3016);
+//      this.percentDrawdownSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3036);
+//      this.costSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3072);
+//      this.returnSeries.Name = s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3110);
       this.components = new TesterItemList();
       this.components.ComponentListChanged += new EventHandler(this.GvwyC63XLV);
       this.InitialWealth = -1.0;
       this.riskFreeRate = 0.0;
       this.businessDaysOnly = true;
       this.totalCost = 0.0;
-      SimpleSeriesItem simpleSeriesItem1 = new SimpleSeriesItem(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3126), this.wealthSeries);
-      SimpleSeriesItem simpleSeriesItem2 = new SimpleSeriesItem(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3142), this.drawdownSeries);
-      SimpleSeriesItem simpleSeriesItem3 = new SimpleSeriesItem(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3162), this.percentDrawdownSeries);
-      SimpleSeriesItem simpleSeriesItem4 = new SimpleSeriesItem(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3198), this.costSeries);
-      SimpleSeriesItem simpleSeriesItem5 = new SimpleSeriesItem(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3210), this.pnLSeries);
-      SimpleSeriesItem simpleSeriesItem6 = new SimpleSeriesItem(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3220), this.returnSeries);
+			SimpleSeriesItem simpleSeriesItem1 = new SimpleSeriesItem("", this.wealthSeries);
+			SimpleSeriesItem simpleSeriesItem2 = new SimpleSeriesItem("", this.drawdownSeries);
+			SimpleSeriesItem simpleSeriesItem3 = new SimpleSeriesItem("", this.percentDrawdownSeries);
+			SimpleSeriesItem simpleSeriesItem4 = new SimpleSeriesItem("", this.costSeries);
+			SimpleSeriesItem simpleSeriesItem5 = new SimpleSeriesItem("", this.pnLSeries);
+			SimpleSeriesItem simpleSeriesItem6 = new SimpleSeriesItem("", this.returnSeries);
       this.AddComponent((TesterItem) simpleSeriesItem1);
       this.AddComponent((TesterItem) simpleSeriesItem2);
       this.AddComponent((TesterItem) simpleSeriesItem3);
@@ -492,194 +486,194 @@ namespace FreeQuant.Testing
       this.iLayprxSnG();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void iLayprxSnG()
     {
-      SimpleSeriesItem simpleSeriesItem1 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3236)] as SimpleSeriesItem;
-      SimpleSeriesItem simpleSeriesItem2 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3252)] as SimpleSeriesItem;
-      SimpleSeriesItem simpleSeriesItem3 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3272)] as SimpleSeriesItem;
-      SimpleSeriesItem simpleSeriesItem4 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3308)] as SimpleSeriesItem;
-      SimpleSeriesItem simpleSeriesItem5 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3320)] as SimpleSeriesItem;
-      SimpleSeriesItem simpleSeriesItem6 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3330)] as SimpleSeriesItem;
-      SimpleMonthlySeries simpleMonthlySeries = new SimpleMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3346), (SeriesTesterItem) simpleSeriesItem1);
-      SimpleAnnualSeries simpleAnnualSeries = new SimpleAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3388), (SeriesTesterItem) simpleSeriesItem1);
-      SimpleDailySeries simpleDailySeries = new SimpleDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3428), (SeriesTesterItem) simpleSeriesItem1);
-      this.AddComponent((TesterItem) simpleMonthlySeries);
-      this.AddComponent((TesterItem) simpleAnnualSeries);
-      this.AddComponent((TesterItem) simpleDailySeries);
-      Return return1 = new Return(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3466), (SeriesTesterItem) simpleDailySeries);
-      Return return2 = new Return(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3504), (SeriesTesterItem) simpleMonthlySeries);
-      Return return3 = new Return(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3546), (SeriesTesterItem) simpleAnnualSeries);
-      this.AddComponent((TesterItem) return1);
-      this.AddComponent((TesterItem) return2);
-      this.AddComponent((TesterItem) return3);
-      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3586), (SeriesTesterItem) simpleSeriesItem2));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3620), (SeriesTesterItem) simpleSeriesItem2));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3656), (SeriesTesterItem) return3));
-      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3710), (SeriesTesterItem) return3));
-      this.AddComponent((TesterItem) new Maximum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3762), (SeriesTesterItem) return3));
-      this.AddComponent((TesterItem) new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3816), (SeriesTesterItem) return3));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3870), (SeriesTesterItem) return1));
-      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3922), (SeriesTesterItem) return1));
-      this.AddComponent((TesterItem) new Maximum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3972), (SeriesTesterItem) return1));
-      this.AddComponent((TesterItem) new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4024), (SeriesTesterItem) return1));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4076), (SeriesTesterItem) return2));
-      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4132), (SeriesTesterItem) return2));
-      this.AddComponent((TesterItem) new Maximum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4186), (SeriesTesterItem) return2));
-      this.AddComponent((TesterItem) new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4242), (SeriesTesterItem) return2));
-      this.AddComponent((TesterItem) new SimpleMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4298), (SeriesTesterItem) simpleSeriesItem2));
-      this.AddComponent((TesterItem) new SimpleAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4344), (SeriesTesterItem) simpleSeriesItem2));
-      this.AddComponent((TesterItem) new SimpleDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4388), (SeriesTesterItem) simpleSeriesItem2));
-      this.AddComponent((TesterItem) new SimpleMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4430), (SeriesTesterItem) simpleSeriesItem4));
-      this.AddComponent((TesterItem) new SimpleAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4468), (SeriesTesterItem) simpleSeriesItem4));
-      this.AddComponent((TesterItem) new SimpleDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4504), (SeriesTesterItem) simpleSeriesItem4));
-      this.AddComponent((TesterItem) new CumulativeMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4538), (SeriesTesterItem) simpleSeriesItem5));
-      this.AddComponent((TesterItem) new CumulativeAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4574), (SeriesTesterItem) simpleSeriesItem5));
-      this.AddComponent((TesterItem) new CumulativeDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4608), (SeriesTesterItem) simpleSeriesItem5));
-      this.AddComponent((TesterItem) new InitialWealth(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4640), this));
-      this.AddComponent((TesterItem) new FinalWealth(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4670), this));
-      this.AddComponent((TesterItem) new TradeDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4696), this));
-      this.AddComponent((TesterItem) new TotalDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4718), this));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4740), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new GainDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4780), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new LossDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4800), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new PositiveSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4820), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new NegativeSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4864), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4908), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4944)] as SeriesTesterItem));
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4988), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5024)] as SeriesTesterItem));
-      this.AddComponent((TesterItem) new StandardDeviation(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5068), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new GainStandardDeviation(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5106), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5152)] as SeriesTesterItem));
-      this.AddComponent((TesterItem) new LossStandardDeviation(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5196), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5242)] as SeriesTesterItem));
-      this.AddComponent((TesterItem) new CompoundAverageReturn(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5286), (SeriesTesterItem) return3));
-      this.AddComponent((TesterItem) new Skewness(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5332), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new Kurtosis(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5352), (SeriesTesterItem) simpleSeriesItem6));
-      this.AddComponent((TesterItem) new SharpeRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5372), (SeriesTesterItem) simpleSeriesItem6, this.RiskFreeRate));
-      this.AddComponent((TesterItem) new VaR(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5398), (SeriesTesterItem) simpleSeriesItem5, 95.0));
-      this.AddComponent((TesterItem) new VaR(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5412), (SeriesTesterItem) simpleSeriesItem5, 99.0));
-      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.month3);
-      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.month6);
-      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.month9);
-      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.year1);
-      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.year2);
-      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.month3);
-      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.month6);
-      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.month9);
-      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.year1);
-      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.year2);
-      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.month3);
-      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.month6);
-      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.month9);
-      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.year1);
-      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.year2);
-      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.month3);
-      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.month6);
-      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.month9);
-      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.year1);
-      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.year2);
-      Minimum minimum = new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5426), (SeriesTesterItem) simpleSeriesItem3);
-      this.AddComponent((TesterItem) minimum);
-      this.AddComponent((TesterItem) new MARRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5462), (SeriesTesterItem) return3, (SeriesTesterItem) minimum));
-      this.AddComponent((TesterItem) new ModifiedSharpeRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5484), (SeriesTesterItem) return2));
-      this.AddComponent((TesterItem) new SotrinoRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5530), (SeriesTesterItem) return1, 0.05));
-      this.FgQyY8DxsR(this.roundTripList, "");
-      this.FgQyY8DxsR(this.longRoundTripList, s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5560));
-      this.FgQyY8DxsR(this.shortRoundTripList, s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5578));
+//      SimpleSeriesItem simpleSeriesItem1 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3236)] as SimpleSeriesItem;
+//      SimpleSeriesItem simpleSeriesItem2 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3252)] as SimpleSeriesItem;
+//      SimpleSeriesItem simpleSeriesItem3 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3272)] as SimpleSeriesItem;
+//      SimpleSeriesItem simpleSeriesItem4 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3308)] as SimpleSeriesItem;
+//      SimpleSeriesItem simpleSeriesItem5 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3320)] as SimpleSeriesItem;
+//      SimpleSeriesItem simpleSeriesItem6 = this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3330)] as SimpleSeriesItem;
+//      SimpleMonthlySeries simpleMonthlySeries = new SimpleMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3346), (SeriesTesterItem) simpleSeriesItem1);
+//      SimpleAnnualSeries simpleAnnualSeries = new SimpleAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3388), (SeriesTesterItem) simpleSeriesItem1);
+//      SimpleDailySeries simpleDailySeries = new SimpleDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3428), (SeriesTesterItem) simpleSeriesItem1);
+//      this.AddComponent((TesterItem) simpleMonthlySeries);
+//      this.AddComponent((TesterItem) simpleAnnualSeries);
+//      this.AddComponent((TesterItem) simpleDailySeries);
+//      Return return1 = new Return(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3466), (SeriesTesterItem) simpleDailySeries);
+//      Return return2 = new Return(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3504), (SeriesTesterItem) simpleMonthlySeries);
+//      Return return3 = new Return(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3546), (SeriesTesterItem) simpleAnnualSeries);
+//      this.AddComponent((TesterItem) return1);
+//      this.AddComponent((TesterItem) return2);
+//      this.AddComponent((TesterItem) return3);
+//      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3586), (SeriesTesterItem) simpleSeriesItem2));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3620), (SeriesTesterItem) simpleSeriesItem2));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3656), (SeriesTesterItem) return3));
+//      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3710), (SeriesTesterItem) return3));
+//      this.AddComponent((TesterItem) new Maximum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3762), (SeriesTesterItem) return3));
+//      this.AddComponent((TesterItem) new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3816), (SeriesTesterItem) return3));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3870), (SeriesTesterItem) return1));
+//      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3922), (SeriesTesterItem) return1));
+//      this.AddComponent((TesterItem) new Maximum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(3972), (SeriesTesterItem) return1));
+//      this.AddComponent((TesterItem) new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4024), (SeriesTesterItem) return1));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4076), (SeriesTesterItem) return2));
+//      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4132), (SeriesTesterItem) return2));
+//      this.AddComponent((TesterItem) new Maximum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4186), (SeriesTesterItem) return2));
+//      this.AddComponent((TesterItem) new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4242), (SeriesTesterItem) return2));
+//      this.AddComponent((TesterItem) new SimpleMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4298), (SeriesTesterItem) simpleSeriesItem2));
+//      this.AddComponent((TesterItem) new SimpleAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4344), (SeriesTesterItem) simpleSeriesItem2));
+//      this.AddComponent((TesterItem) new SimpleDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4388), (SeriesTesterItem) simpleSeriesItem2));
+//      this.AddComponent((TesterItem) new SimpleMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4430), (SeriesTesterItem) simpleSeriesItem4));
+//      this.AddComponent((TesterItem) new SimpleAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4468), (SeriesTesterItem) simpleSeriesItem4));
+//      this.AddComponent((TesterItem) new SimpleDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4504), (SeriesTesterItem) simpleSeriesItem4));
+//      this.AddComponent((TesterItem) new CumulativeMonthlySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4538), (SeriesTesterItem) simpleSeriesItem5));
+//      this.AddComponent((TesterItem) new CumulativeAnnualSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4574), (SeriesTesterItem) simpleSeriesItem5));
+//      this.AddComponent((TesterItem) new CumulativeDailySeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4608), (SeriesTesterItem) simpleSeriesItem5));
+//      this.AddComponent((TesterItem) new InitialWealth(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4640), this));
+//      this.AddComponent((TesterItem) new FinalWealth(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4670), this));
+//      this.AddComponent((TesterItem) new TradeDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4696), this));
+//      this.AddComponent((TesterItem) new TotalDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4718), this));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4740), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new GainDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4780), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new LossDays(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4800), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new PositiveSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4820), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new NegativeSeries(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4864), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4908), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4944)] as SeriesTesterItem));
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(4988), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5024)] as SeriesTesterItem));
+//      this.AddComponent((TesterItem) new StandardDeviation(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5068), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new GainStandardDeviation(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5106), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5152)] as SeriesTesterItem));
+//      this.AddComponent((TesterItem) new LossStandardDeviation(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5196), this.Components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5242)] as SeriesTesterItem));
+//      this.AddComponent((TesterItem) new CompoundAverageReturn(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5286), (SeriesTesterItem) return3));
+//      this.AddComponent((TesterItem) new Skewness(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5332), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new Kurtosis(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5352), (SeriesTesterItem) simpleSeriesItem6));
+//      this.AddComponent((TesterItem) new SharpeRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5372), (SeriesTesterItem) simpleSeriesItem6, this.RiskFreeRate));
+//      this.AddComponent((TesterItem) new VaR(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5398), (SeriesTesterItem) simpleSeriesItem5, 95.0));
+//      this.AddComponent((TesterItem) new VaR(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5412), (SeriesTesterItem) simpleSeriesItem5, 99.0));
+//      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.month3);
+//      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.month6);
+//      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.month9);
+//      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.year1);
+//      this.ALwyG0kIYg(TimeIntervalSize.year1, TimeIntervalSize.year2);
+//      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.month3);
+//      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.month6);
+//      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.month9);
+//      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.year1);
+//      this.ALwyG0kIYg(TimeIntervalSize.month1, TimeIntervalSize.year2);
+//      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.month3);
+//      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.month6);
+//      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.month9);
+//      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.year1);
+//      this.ALwyG0kIYg(TimeIntervalSize.week1, TimeIntervalSize.year2);
+//      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.month3);
+//      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.month6);
+//      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.month9);
+//      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.year1);
+//      this.ALwyG0kIYg(TimeIntervalSize.day1, TimeIntervalSize.year2);
+//      Minimum minimum = new Minimum(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5426), (SeriesTesterItem) simpleSeriesItem3);
+//      this.AddComponent((TesterItem) minimum);
+//      this.AddComponent((TesterItem) new MARRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5462), (SeriesTesterItem) return3, (SeriesTesterItem) minimum));
+//      this.AddComponent((TesterItem) new ModifiedSharpeRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5484), (SeriesTesterItem) return2));
+//      this.AddComponent((TesterItem) new SotrinoRatio(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5530), (SeriesTesterItem) return1, 0.05));
+//      this.FgQyY8DxsR(this.roundTripList, "");
+//      this.FgQyY8DxsR(this.longRoundTripList, s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5560));
+//      this.FgQyY8DxsR(this.shortRoundTripList, s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5578));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void ALwyG0kIYg([In] TimeIntervalSize obj0, [In] TimeIntervalSize obj1)
     {
-      SimpleSeriesItem simpleSeriesItem = this.components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5598)] as SimpleSeriesItem;
-      PercentageOfProfitableForPeriod profitableForPeriod;
-      if (this.components.Contains(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5614) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5682) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5700)))
-      {
-        profitableForPeriod = this.components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5706) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5774) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5792)] as PercentageOfProfitableForPeriod;
-      }
-      else
-      {
-        profitableForPeriod = new PercentageOfProfitableForPeriod(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5798) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5866) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5884), (SeriesTesterItem) simpleSeriesItem, obj0, obj1);
-        this.AddComponent((TesterItem) profitableForPeriod);
-      }
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5890) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5944) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5988), (SeriesTesterItem) profitableForPeriod));
-      ReturnForPeriod returnForPeriod;
-      if (this.components.Contains(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5994) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6030) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6048)))
-      {
-        returnForPeriod = this.components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6054) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6090) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6108)] as ReturnForPeriod;
-      }
-      else
-      {
-        returnForPeriod = new ReturnForPeriod(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6114) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6150) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6168), (SeriesTesterItem) simpleSeriesItem, obj0, obj1);
-        this.AddComponent((TesterItem) returnForPeriod);
-      }
-      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6174) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6228) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6270), (SeriesTesterItem) returnForPeriod));
-      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6276) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6328) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6370), (SeriesTesterItem) returnForPeriod));
+//      SimpleSeriesItem simpleSeriesItem = this.components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5598)] as SimpleSeriesItem;
+//      PercentageOfProfitableForPeriod profitableForPeriod;
+//      if (this.components.Contains(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5614) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5682) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5700)))
+//      {
+//        profitableForPeriod = this.components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5706) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5774) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5792)] as PercentageOfProfitableForPeriod;
+//      }
+//      else
+//      {
+//        profitableForPeriod = new PercentageOfProfitableForPeriod(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5798) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5866) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5884), (SeriesTesterItem) simpleSeriesItem, obj0, obj1);
+//        this.AddComponent((TesterItem) profitableForPeriod);
+//      }
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5890) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5944) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5988), (SeriesTesterItem) profitableForPeriod));
+//      ReturnForPeriod returnForPeriod;
+//      if (this.components.Contains(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(5994) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6030) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6048)))
+//      {
+//        returnForPeriod = this.components[s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6054) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6090) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6108)] as ReturnForPeriod;
+//      }
+//      else
+//      {
+//        returnForPeriod = new ReturnForPeriod(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6114) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6150) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6168), (SeriesTesterItem) simpleSeriesItem, obj0, obj1);
+//        this.AddComponent((TesterItem) returnForPeriod);
+//      }
+//      this.AddComponent((TesterItem) new Average(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6174) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6228) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6270), (SeriesTesterItem) returnForPeriod));
+//      this.AddComponent((TesterItem) new Median(s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6276) + ((object) obj1).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6328) + ((object) obj0).ToString() + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6370), (SeriesTesterItem) returnForPeriod));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void FgQyY8DxsR([In] RoundTripList obj0, [In] string obj1)
     {
-      WinningRoundTrips winningRoundTrips = new WinningRoundTrips(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6376));
-      this.AddComponent((TesterItem) winningRoundTrips);
-      LosingRoundTrips losingRoundTrips = new LosingRoundTrips(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6436));
-      this.AddComponent((TesterItem) losingRoundTrips);
-      NumberOfRoundTrips numberOfRoundTrips = new NumberOfRoundTrips(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6494));
-      this.AddComponent((TesterItem) numberOfRoundTrips);
-      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6538), (SeriesTesterItem) winningRoundTrips, (SeriesTesterItem) numberOfRoundTrips, (SeriesTesterItem) numberOfRoundTrips));
-      AllRoundTripsTotalPnL roundTripsTotalPnL1 = new AllRoundTripsTotalPnL(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6592));
-      this.AddComponent((TesterItem) roundTripsTotalPnL1);
-      WinningRoundTripsTotalPnL roundTripsTotalPnL2 = new WinningRoundTripsTotalPnL(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6650));
-      this.AddComponent((TesterItem) roundTripsTotalPnL2);
-      LosingRoundTripsTotalPnL roundTripsTotalPnL3 = new LosingRoundTripsTotalPnL(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6716));
-      this.AddComponent((TesterItem) roundTripsTotalPnL3);
-      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6780), (SeriesTesterItem) roundTripsTotalPnL2, (SeriesTesterItem) winningRoundTrips, (SeriesTesterItem) winningRoundTrips));
-      this.AddComponent((TesterItem) new LargestWinningRoundTrip(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6832)));
-      this.AddComponent((TesterItem) new LargestLosingRoundTrip(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6886)));
-      Division division1 = new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6938), (SeriesTesterItem) roundTripsTotalPnL2, (SeriesTesterItem) winningRoundTrips, (SeriesTesterItem) roundTripsTotalPnL2);
-      this.AddComponent((TesterItem) division1);
-      Division division2 = new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6992), (SeriesTesterItem) roundTripsTotalPnL3, (SeriesTesterItem) losingRoundTrips, (SeriesTesterItem) roundTripsTotalPnL3);
-      this.AddComponent((TesterItem) division2);
-      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7044), (SeriesTesterItem) roundTripsTotalPnL1, (SeriesTesterItem) numberOfRoundTrips, (SeriesTesterItem) roundTripsTotalPnL1));
-      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7082), (SeriesTesterItem) division1, (SeriesTesterItem) division2, (SeriesTesterItem) roundTripsTotalPnL1, -1.0));
-      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7138), (SeriesTesterItem) roundTripsTotalPnL2, (SeriesTesterItem) roundTripsTotalPnL3, (SeriesTesterItem) roundTripsTotalPnL1, -1.0));
-      this.AddComponent((TesterItem) new OpenRoundTripValue(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7168)));
-      ConsecutiveWinners consecutiveWinners = new ConsecutiveWinners(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7214));
-      this.AddComponent((TesterItem) consecutiveWinners);
-      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7256), (SeriesTesterItem) consecutiveWinners));
-      ConsecutiveLosers consecutiveLosers = new ConsecutiveLosers(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7314));
-      this.AddComponent((TesterItem) consecutiveLosers);
-      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7354), (SeriesTesterItem) consecutiveLosers));
-      RoundTripsDuration roundTripsDuration1 = new RoundTripsDuration(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7410));
-      this.AddComponent((TesterItem) roundTripsDuration1);
-      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7466), (SeriesTesterItem) roundTripsDuration1));
-      WinningRoundTripsDuration roundTripsDuration2 = new WinningRoundTripsDuration(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7530));
-      this.AddComponent((TesterItem) roundTripsDuration2);
-      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7602), (SeriesTesterItem) roundTripsDuration2));
-      this.AddComponent((TesterItem) new Median(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7682), (SeriesTesterItem) roundTripsDuration2));
-      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7760), (SeriesTesterItem) roundTripsDuration2));
-      this.AddComponent((TesterItem) new Minimum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7840), (SeriesTesterItem) roundTripsDuration2));
-      LosingRoundTripsDuration roundTripsDuration3 = new LosingRoundTripsDuration(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7920));
-      this.AddComponent((TesterItem) roundTripsDuration3);
-      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7990), (SeriesTesterItem) roundTripsDuration3));
-      this.AddComponent((TesterItem) new Median(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8068), (SeriesTesterItem) roundTripsDuration3));
-      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8144), (SeriesTesterItem) roundTripsDuration3));
-      this.AddComponent((TesterItem) new Minimum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8222), (SeriesTesterItem) roundTripsDuration3));
-      TotalRoundTripsEfficiency roundTripsEfficiency = new TotalRoundTripsEfficiency(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8300));
-      this.AddComponent((TesterItem) roundTripsEfficiency);
-      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8366), (SeriesTesterItem) roundTripsEfficiency));
-      RoundTripsEntryEfficiency tripsEntryEfficiency = new RoundTripsEntryEfficiency(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8418));
-      this.AddComponent((TesterItem) tripsEntryEfficiency);
-      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8484), (SeriesTesterItem) tripsEntryEfficiency));
-      RoundTripsExitEfficiency tripsExitEfficiency = new RoundTripsExitEfficiency(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8536));
-      this.AddComponent((TesterItem) tripsExitEfficiency);
-      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8600), (SeriesTesterItem) tripsExitEfficiency));
+//      WinningRoundTrips winningRoundTrips = new WinningRoundTrips(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6376));
+//      this.AddComponent((TesterItem) winningRoundTrips);
+//      LosingRoundTrips losingRoundTrips = new LosingRoundTrips(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6436));
+//      this.AddComponent((TesterItem) losingRoundTrips);
+//      NumberOfRoundTrips numberOfRoundTrips = new NumberOfRoundTrips(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6494));
+//      this.AddComponent((TesterItem) numberOfRoundTrips);
+//      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6538), (SeriesTesterItem) winningRoundTrips, (SeriesTesterItem) numberOfRoundTrips, (SeriesTesterItem) numberOfRoundTrips));
+//      AllRoundTripsTotalPnL roundTripsTotalPnL1 = new AllRoundTripsTotalPnL(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6592));
+//      this.AddComponent((TesterItem) roundTripsTotalPnL1);
+//      WinningRoundTripsTotalPnL roundTripsTotalPnL2 = new WinningRoundTripsTotalPnL(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6650));
+//      this.AddComponent((TesterItem) roundTripsTotalPnL2);
+//      LosingRoundTripsTotalPnL roundTripsTotalPnL3 = new LosingRoundTripsTotalPnL(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6716));
+//      this.AddComponent((TesterItem) roundTripsTotalPnL3);
+//      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6780), (SeriesTesterItem) roundTripsTotalPnL2, (SeriesTesterItem) winningRoundTrips, (SeriesTesterItem) winningRoundTrips));
+//      this.AddComponent((TesterItem) new LargestWinningRoundTrip(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6832)));
+//      this.AddComponent((TesterItem) new LargestLosingRoundTrip(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6886)));
+//      Division division1 = new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6938), (SeriesTesterItem) roundTripsTotalPnL2, (SeriesTesterItem) winningRoundTrips, (SeriesTesterItem) roundTripsTotalPnL2);
+//      this.AddComponent((TesterItem) division1);
+//      Division division2 = new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(6992), (SeriesTesterItem) roundTripsTotalPnL3, (SeriesTesterItem) losingRoundTrips, (SeriesTesterItem) roundTripsTotalPnL3);
+//      this.AddComponent((TesterItem) division2);
+//      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7044), (SeriesTesterItem) roundTripsTotalPnL1, (SeriesTesterItem) numberOfRoundTrips, (SeriesTesterItem) roundTripsTotalPnL1));
+//      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7082), (SeriesTesterItem) division1, (SeriesTesterItem) division2, (SeriesTesterItem) roundTripsTotalPnL1, -1.0));
+//      this.AddComponent((TesterItem) new Division(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7138), (SeriesTesterItem) roundTripsTotalPnL2, (SeriesTesterItem) roundTripsTotalPnL3, (SeriesTesterItem) roundTripsTotalPnL1, -1.0));
+//      this.AddComponent((TesterItem) new OpenRoundTripValue(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7168)));
+//      ConsecutiveWinners consecutiveWinners = new ConsecutiveWinners(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7214));
+//      this.AddComponent((TesterItem) consecutiveWinners);
+//      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7256), (SeriesTesterItem) consecutiveWinners));
+//      ConsecutiveLosers consecutiveLosers = new ConsecutiveLosers(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7314));
+//      this.AddComponent((TesterItem) consecutiveLosers);
+//      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7354), (SeriesTesterItem) consecutiveLosers));
+//      RoundTripsDuration roundTripsDuration1 = new RoundTripsDuration(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7410));
+//      this.AddComponent((TesterItem) roundTripsDuration1);
+//      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7466), (SeriesTesterItem) roundTripsDuration1));
+//      WinningRoundTripsDuration roundTripsDuration2 = new WinningRoundTripsDuration(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7530));
+//      this.AddComponent((TesterItem) roundTripsDuration2);
+//      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7602), (SeriesTesterItem) roundTripsDuration2));
+//      this.AddComponent((TesterItem) new Median(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7682), (SeriesTesterItem) roundTripsDuration2));
+//      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7760), (SeriesTesterItem) roundTripsDuration2));
+//      this.AddComponent((TesterItem) new Minimum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7840), (SeriesTesterItem) roundTripsDuration2));
+//      LosingRoundTripsDuration roundTripsDuration3 = new LosingRoundTripsDuration(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7920));
+//      this.AddComponent((TesterItem) roundTripsDuration3);
+//      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(7990), (SeriesTesterItem) roundTripsDuration3));
+//      this.AddComponent((TesterItem) new Median(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8068), (SeriesTesterItem) roundTripsDuration3));
+//      this.AddComponent((TesterItem) new Maximum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8144), (SeriesTesterItem) roundTripsDuration3));
+//      this.AddComponent((TesterItem) new Minimum(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8222), (SeriesTesterItem) roundTripsDuration3));
+//      TotalRoundTripsEfficiency roundTripsEfficiency = new TotalRoundTripsEfficiency(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8300));
+//      this.AddComponent((TesterItem) roundTripsEfficiency);
+//      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8366), (SeriesTesterItem) roundTripsEfficiency));
+//      RoundTripsEntryEfficiency tripsEntryEfficiency = new RoundTripsEntryEfficiency(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8418));
+//      this.AddComponent((TesterItem) tripsEntryEfficiency);
+//      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8484), (SeriesTesterItem) tripsEntryEfficiency));
+//      RoundTripsExitEfficiency tripsExitEfficiency = new RoundTripsExitEfficiency(obj0, obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8536));
+//      this.AddComponent((TesterItem) tripsExitEfficiency);
+//      this.AddComponent((TesterItem) new Average(obj1 + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(8600), (SeriesTesterItem) tripsExitEfficiency));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Q6By9VekEl()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ResetParameters()
     {
       this.pnL = 0.0;
@@ -701,7 +695,7 @@ namespace FreeQuant.Testing
       this.isRoundTripsOnly = this.allowRoundTrips;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Reset()
     {
       this.isTested = false;
@@ -723,13 +717,13 @@ namespace FreeQuant.Testing
       this.EmitReseted();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Connect()
     {
       this.Connect(false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Connect(bool connectStatistics)
     {
       lock (this)
@@ -753,7 +747,7 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Disconnect(bool disconnectStatistics)
     {
       lock (this)
@@ -779,19 +773,19 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Disconnect()
     {
       this.Disconnect(false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DisconnectPorftolio()
     {
       this.tempPortfolio.Monitored = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DateTime GetIntervalEnd(DateTime dateTime, TimeIntervalSize intervalSize)
     {
       DateTime dateTime1;
@@ -912,7 +906,7 @@ namespace FreeQuant.Testing
       return dateTime1.AddTicks(-1L);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DateTime AddInterval(DateTime dateTime, TimeIntervalSize intervalSize)
     {
       DateTime dateTime1;
@@ -961,7 +955,7 @@ namespace FreeQuant.Testing
       return dateTime1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void ER6yOMtUyy([In] object obj0, [In] EventArgs obj1)
     {
       if (this.initialWealth != -1.0)
@@ -969,7 +963,7 @@ namespace FreeQuant.Testing
       this.InitialWealth = this.portfolio.Account.GetValue();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void o38yaR1giJ([In] object obj0, [In] TransactionEventArgs obj1)
     {
       lock (this)
@@ -1051,7 +1045,7 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void JKNyi7SDXu([In] ReminderEventArgs obj0)
     {
       lock (this)
@@ -1075,7 +1069,7 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Cndy1I50JO([In] DateTime obj0)
     {
       if (this.tempPortfolio.Transactions == null || this.tempPortfolio.Transactions.Count == 0)
@@ -1126,21 +1120,21 @@ namespace FreeQuant.Testing
       this.EmitRoundTripStatisticChanged();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void WM4yuesikn([In] object obj0, [In] PositionEventArgs obj1)
     {
       lock (this)
         this.isNewData = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void RCnyHI5vxH([In] object obj0, [In] EventArgs obj1)
     {
       lock (this)
         this.Reset();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Test(DateTime firstDateTime, DateTime lastDateTime, bool followChanges)
     {
       lock (this)
@@ -1272,13 +1266,13 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Test()
     {
       this.Test(this.followChanges);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Test(bool followChanges)
     {
       this.followChanges = followChanges;
@@ -1292,12 +1286,12 @@ namespace FreeQuant.Testing
       this.Test(this.firstDate, this.lastDate, followChanges);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void TestOffline()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddComponent(TesterItem component)
     {
       this.components.f9Ww98OVG(component);
@@ -1308,28 +1302,28 @@ namespace FreeQuant.Testing
       (component as SeriesTesterItem).ComponentEnabledChanged += new EventHandler(this.gFyyncG26J);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RemoveComponent(TesterItem component)
     {
       this.components.RY4dKuMHX(component.Name);
       component.PropertyChanged -= new TesterItemEventHandler(this.YJRyNuAZek);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ClearComponents(TesterItem component)
     {
       foreach (TesterItem component1 in new ArrayList((ICollection) this.components))
         this.RemoveComponent(component1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddList(TesterItemList componentList)
     {
       foreach (TesterItem component in componentList)
         this.AddComponent(component);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EnableComponent(string name)
     {
       TesterItem testerItem = this.components[name];
@@ -1338,7 +1332,7 @@ namespace FreeQuant.Testing
       (testerItem as SeriesTesterItem).Enabled = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DisableComponent(string name)
     {
       TesterItem testerItem = this.components[name];
@@ -1347,136 +1341,136 @@ namespace FreeQuant.Testing
       (testerItem as SeriesTesterItem).Enabled = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitAllocationShortSeriesValueAdded()
     {
-      if (this.Nn8eIYdy9S == null)
-        return;
-      this.Nn8eIYdy9S(this);
+//      if (this.Nn8eIYdy9S == null)
+//        return;
+//      this.Nn8eIYdy9S(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitAllocationLongSeriesValueAdded()
     {
-      if (this.p5XeeWq9Z2 == null)
-        return;
-      this.p5XeeWq9Z2(this);
+//      if (this.p5XeeWq9Z2 == null)
+//        return;
+//      this.p5XeeWq9Z2(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitAllocationSeriesValueAdded()
     {
-      if (this.N01eyHl59X == null)
-        return;
-      this.N01eyHl59X(this);
+//      if (this.N01eyHl59X == null)
+//        return;
+//      this.N01eyHl59X(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitPnLSeriesValueAdded()
     {
-      if (this.e3ly6aoDME == null)
-        return;
-      this.e3ly6aoDME(this);
+//      if (this.e3ly6aoDME == null)
+//        return;
+//      this.e3ly6aoDME(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitWealthSeriesValueAddedd()
     {
-      if (this.xi9yxswX2E == null)
-        return;
-      this.xi9yxswX2E(this);
+//      if (this.xi9yxswX2E == null)
+//        return;
+//      this.xi9yxswX2E(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitDrawdownSeriesValueAdded()
     {
-      if (this.HHHyl8HwBJ == null)
-        return;
-      this.HHHyl8HwBJ(this);
+//      if (this.HHHyl8HwBJ == null)
+//        return;
+//      this.HHHyl8HwBJ(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitCostSeriesValueAdded()
     {
-      if (this.sAgyzlHxE5 == null)
-        return;
-      this.sAgyzlHxE5(this);
+//      if (this.sAgyzlHxE5 == null)
+//        return;
+//      this.sAgyzlHxE5(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitReturnSeriesValueAdded()
     {
-      if (this.HxxerPUYmB == null)
-        return;
-      this.HxxerPUYmB(this);
+//      if (this.HxxerPUYmB == null)
+//        return;
+//      this.HxxerPUYmB(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitStatisticChanged()
     {
-      if (this.dlIeq5RNS7 == null)
-        return;
-      this.dlIeq5RNS7(this);
+//      if (this.dlIeq5RNS7 == null)
+//        return;
+//      this.dlIeq5RNS7(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitRoundTripStatisticChanged()
     {
-      if (this.HBjeRriftR == null)
-        return;
-      this.HBjeRriftR(this);
+//      if (this.HBjeRriftR == null)
+//        return;
+//      this.HBjeRriftR(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitRoundTripsUpdated()
     {
-      if (this.rooetfRMGh == null)
-        return;
-      this.rooetfRMGh(this);
+//      if (this.rooetfRMGh == null)
+//        return;
+//      this.rooetfRMGh(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitRoundTripsFinished()
     {
-      if (this.aBNeFTYic6 == null)
-        return;
-      this.aBNeFTYic6(this);
+//      if (this.aBNeFTYic6 == null)
+//        return;
+//      this.aBNeFTYic6(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EmitReseted()
     {
-      if (this.kFce7Nbiqu == null)
-        return;
-      this.kFce7Nbiqu(this);
+//      if (this.kFce7Nbiqu == null)
+//        return;
+//      this.kFce7Nbiqu(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void YJRyNuAZek([In] TesterItem obj0)
     {
       this.IQXyfM7NQ6(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void zLlySFoeEa([In] TesterItem obj0, [In] ComponentNameEventArgs obj1)
     {
       this.Udfyv7dk1s(obj0, obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void GvwyC63XLV([In] object obj0, [In] EventArgs obj1)
     {
       this.lRqy00gKm6(obj0, obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SaveSettings()
     {
       this.jHRedeUy4p = new TesterSettings(this);
       this.components.ActivateItemOnRequest = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RestoreSettings()
     {
       if (!this.components.ActivateItemOnRequest)
@@ -1485,7 +1479,7 @@ namespace FreeQuant.Testing
       this.jHRedeUy4p.LoadState();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DisableComponents()
     {
       foreach (TesterItem testerItem in this.Components)
@@ -1499,7 +1493,7 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetSplitDate(DateTime date, Color color)
     {
       foreach (TesterItem testerItem in this.Components)
@@ -1513,50 +1507,50 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void gFyyncG26J([In] object obj0, [In] EventArgs obj1)
     {
       this.aJXyPKqwug(obj0 as TesterItem);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void IQXyfM7NQ6([In] TesterItem obj0)
     {
-      if (this.EuremxNnCx == null)
-        return;
-      this.EuremxNnCx(obj0);
+//      if (this.EuremxNnCx == null)
+//        return;
+//      this.EuremxNnCx(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Udfyv7dk1s([In] TesterItem obj0, [In] ComponentNameEventArgs obj1)
     {
-      if (this.GJleQFCDgF == null)
-        return;
-      this.GJleQFCDgF(obj0, obj1);
+//      if (this.GJleQFCDgF == null)
+//        return;
+//      this.GJleQFCDgF(obj0, obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void lRqy00gKm6([In] object obj0, [In] EventArgs obj1)
     {
-      if (this.YM9eWVMbOS == null)
-        return;
-      this.YM9eWVMbOS(obj0, obj1);
+//      if (this.YM9eWVMbOS == null)
+//        return;
+//      this.YM9eWVMbOS(obj0, obj1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void aJXyPKqwug([In] TesterItem obj0)
     {
-      if (this.QiaesADbMF == null)
-        return;
-      this.QiaesADbMF(obj0);
+//      if (this.QiaesADbMF == null)
+//        return;
+//      this.QiaesADbMF(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void NENyAxCZF4()
     {
-      if (this.VRyeXPmb2Q == null)
-        return;
-      this.VRyeXPmb2Q((object) this, EventArgs.Empty);
+//      if (this.VRyeXPmb2Q == null)
+//        return;
+//      this.VRyeXPmb2Q((object) this, EventArgs.Empty);
     }
   }
 }

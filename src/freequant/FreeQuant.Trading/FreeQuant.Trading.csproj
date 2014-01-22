@@ -30,6 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -150,6 +152,46 @@
     <ProjectReference Include="..\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
       <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
       <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Execution\FreeQuant.Execution.csproj">
+      <Project>{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}</Project>
+      <Name>FreeQuant.Execution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Series\FreeQuant.Series.csproj">
+      <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
+      <Name>FreeQuant.Series</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIXData\FreeQuant.FIXData.csproj">
+      <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
+      <Name>FreeQuant.FIXData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Simulation\FreeQuant.Simulation.csproj">
+      <Project>{B59E197F-3529-4D45-BA90-2A7AE0962B5B}</Project>
+      <Name>FreeQuant.Simulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Optimization\FreeQuant.Optimization.csproj">
+      <Project>{4740F91B-634F-4934-AC4A-2C4A17759D7F}</Project>
+      <Name>FreeQuant.Optimization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Services\FreeQuant.Services.csproj">
+      <Project>{E9E495CF-9DFB-4E57-9D99-A80D06915A87}</Project>
+      <Name>FreeQuant.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Testing\FreeQuant.Testing.csproj">
+      <Project>{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}</Project>
+      <Name>FreeQuant.Testing</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

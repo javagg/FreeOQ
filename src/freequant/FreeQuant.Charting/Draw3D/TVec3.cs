@@ -111,7 +111,6 @@ namespace FreeQuant.Charting.Draw3D
 
 		public TVec3(double X, double Y, double Z)
 		{
-			Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
 			this.x = X;
 			this.y = Y;
 			this.z = Z;
@@ -119,7 +118,6 @@ namespace FreeQuant.Charting.Draw3D
 
 		public TVec3(TVec3 v)
 		{
-			Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
 			this.x = v.x;
 			this.y = v.y;
 			this.z = v.z;

@@ -91,7 +91,7 @@ namespace FreeQuant.Series
     {
       this.Calculate();
       this.rYJrndpjL = new DoubleSeries();
-      this.rYJrndpjL.Title = this.mCPIoPBIV.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(13318) + this.COjwFOKjx.Name + oK6F3TB73XXXGhdieP.wF6SgrNUO(13328);
+			this.rYJrndpjL.Title = this.mCPIoPBIV.Name + "" + this.COjwFOKjx.Name + "name";
       for (int index = 0; index < this.mCPIoPBIV.Count; ++index)
       {
         DateTime dateTime = this.mCPIoPBIV.GetDateTime(index);
@@ -110,9 +110,9 @@ namespace FreeQuant.Series
     public void Draw(string Option)
     {
       this.Calculate();
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(13374)) != -1)
+			if (Option.ToLower().IndexOf("ss") != -1)
         this.GetResidualSeries().Draw();
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(13380)) != -1)
+			if (Option.ToLower().IndexOf("fd") != -1)
       {
         for (int index = 0; index < this.mCPIoPBIV.Count; ++index)
         {
@@ -122,7 +122,7 @@ namespace FreeQuant.Series
         }
         this.graph.Draw();
       }
-      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(13386)) == -1)
+			if (Option.ToLower().IndexOf("fsd") == -1)
         return;
       double min = this.mCPIoPBIV.GetMin();
       double max = this.mCPIoPBIV.GetMax();
@@ -134,7 +134,7 @@ namespace FreeQuant.Series
     
     public void Draw()
     {
-      this.Draw(oK6F3TB73XXXGhdieP.wF6SgrNUO(13392));
+			this.Draw("options");
     }
   }
 }

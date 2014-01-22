@@ -1,21 +1,15 @@
-﻿// Type: SmartQuant.Testing.TesterItems.SimpleSeriesItem
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using Byqm85MNrFBe6JPJlI;
-using SmartQuant.Series;
+using FreeQuant.Series;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Testing.TesterItems
+namespace FreeQuant.Testing.TesterItems
 {
   public class SimpleSeriesItem : SeriesTesterItem
   {
     [Browsable(false)]
     public override SeriesTesterItem ParentComponent
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (SeriesTesterItem) null;
       }
@@ -24,7 +18,7 @@ namespace SmartQuant.Testing.TesterItems
     [Browsable(false)]
     public override bool FillSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fillSeries;
       }
@@ -33,18 +27,18 @@ namespace SmartQuant.Testing.TesterItems
     [Browsable(false)]
     public override bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.enabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.series.Count > 0)
           return this.series.Last;
@@ -53,12 +47,9 @@ namespace SmartQuant.Testing.TesterItems
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SimpleSeriesItem(string name, DoubleSeries parentSeries)
+    
+		public SimpleSeriesItem(string name, DoubleSeries parentSeries):  base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.enabled = true;
       this.parentSeries = parentSeries;
       this.name = name;
@@ -66,12 +57,9 @@ namespace SmartQuant.Testing.TesterItems
       this.fillSeries = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SimpleSeriesItem(string name)
+    
+		public SimpleSeriesItem(string name):  base(name)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
       this.enabled = true;
     }
   }

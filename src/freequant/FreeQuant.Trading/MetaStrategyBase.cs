@@ -11,7 +11,6 @@ using FreeQuant.Series;
 using FreeQuant.Services;
 using FreeQuant.Simulation;
 using FreeQuant.Testing;
-using FreeQuant.Trading.Design;
 using System;
 using System.Collections;
 using System.Collections.Generic;

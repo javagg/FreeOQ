@@ -17,14 +17,15 @@ namespace FreeQuant.FIX
       }
     }
 
-		public	FIXDoubleField (){
+		public FIXDoubleField() : base()
+		{
 		}
 
-    public FIXDoubleField(int tag) : this(tag, 0.0)
-    {
-    }
+//    public FIXDoubleField(int tag) : this(tag, 0.0)
+//    {
+//    }
 
-    public FIXDoubleField(int tag, double value):base(tag)
+	public FIXDoubleField(int tag, double value = 0) : base(tag)
     {
 
       this.Value = value;

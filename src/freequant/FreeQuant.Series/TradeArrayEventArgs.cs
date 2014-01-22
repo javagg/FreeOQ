@@ -4,19 +4,15 @@ namespace FreeQuant.Series
 {
 	public class TradeArrayEventArgs : EventArgs
 	{
-		private TradeArray tradeArray;
-
 		public TradeArray TradeArray
 		{
-			get
-			{
-				return this.tradeArray; 
-			}
+			get;
+			private set;
 		}
 
 		public TradeArrayEventArgs(TradeArray array) : base()
 		{
-			this.tradeArray = array;
+			this.TradeArray = array;
 		}
 	}
 }

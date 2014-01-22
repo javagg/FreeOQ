@@ -1,7 +1,5 @@
-﻿using RZ1j9O1DCcsDf19ge6;
 using FreeQuant.FIX;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Execution
 {
@@ -11,7 +9,7 @@ namespace FreeQuant.Execution
 
     public InstrumentOrderListTable this[IFIXInstrument instrument]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         InstrumentOrderListTable instrumentOrderListTable = this.DX1Eba8GVl[(object) instrument] as InstrumentOrderListTable;
         if (instrumentOrderListTable == null)
@@ -23,12 +21,9 @@ namespace FreeQuant.Execution
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OrderListTable()
+    
+		public OrderListTable():base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.DX1Eba8GVl = new Hashtable();
     }
 
@@ -38,21 +33,21 @@ namespace FreeQuant.Execution
       this.DX1Eba8GVl.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Add(SingleOrder order)
     {
       base.Add(order);
       this[(IFIXInstrument) order.Instrument].Add(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Remove(SingleOrder order)
     {
       base.Remove(order);
       this[(IFIXInstrument) order.Instrument].Remove(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Update(SingleOrder order)
     {
       base.Update(order);

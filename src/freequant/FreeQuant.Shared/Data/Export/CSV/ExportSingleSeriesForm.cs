@@ -1,12 +1,4 @@
-﻿// Type: SmartQuant.Shared.Data.Export.CSV.ExportSingleSeriesForm
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using DtUl76mA9MKTTZB0DQ;
-using H9b4E7XALG3VM7KH97;
-using SmartQuant.Data;
+using FreeQuant.Data;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -15,10 +7,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using xqYxq20VfCYuCuthvk;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Export.CSV
+namespace FreeQuant.Shared.Data.Export.CSV
 {
   public class ExportSingleSeriesForm : Form
   {

@@ -11,7 +11,7 @@ namespace FreeQuant.Charting
   {
     private object KtO3rBrbaI;
     private Pad evD3c4dHMV;
-    private PropertyGrid RwF3yvcan6;
+		private PropertyGrid propertyGrid; 
     private Container ahN3WtCyLA;
 
     
@@ -21,8 +21,8 @@ namespace FreeQuant.Charting
       this.nev3U8bfUe();
       this.KtO3rBrbaI = Object;
       this.evD3c4dHMV = Pad;
-      this.Text = Object.GetType().Name + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(430);
-      this.RwF3yvcan6.SelectedObject = Object;
+			this.Text = Object.GetType().Name + "Pad";
+      this.propertyGrid.SelectedObject = Object;
     }
 
     
@@ -37,26 +37,26 @@ namespace FreeQuant.Charting
     private void nev3U8bfUe()
     {
       ResourceManager resourceManager = new ResourceManager(typeof (PadProperyForm));
-      this.RwF3yvcan6 = new PropertyGrid();
+      this.propertyGrid = new PropertyGrid();
       this.SuspendLayout();
-      this.RwF3yvcan6.CommandsVisibleIfAvailable = true;
-      this.RwF3yvcan6.Dock = DockStyle.Fill;
-      this.RwF3yvcan6.LargeButtons = false;
-      this.RwF3yvcan6.LineColor = SystemColors.ScrollBar;
-      this.RwF3yvcan6.Location = new Point(0, 0);
-      this.RwF3yvcan6.Name = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(456);
-      this.RwF3yvcan6.Size = new Size(336, 381);
-      this.RwF3yvcan6.TabIndex = 0;
-      this.RwF3yvcan6.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(484);
-      this.RwF3yvcan6.ViewBackColor = SystemColors.Window;
-      this.RwF3yvcan6.ViewForeColor = SystemColors.WindowText;
-      this.RwF3yvcan6.PropertyValueChanged += new PropertyValueChangedEventHandler(this.mV134Z7kpS);
+      this.propertyGrid.CommandsVisibleIfAvailable = true;
+      this.propertyGrid.Dock = DockStyle.Fill;
+      this.propertyGrid.LargeButtons = false;
+      this.propertyGrid.LineColor = SystemColors.ScrollBar;
+      this.propertyGrid.Location = new Point(0, 0);
+			this.propertyGrid.Name = "Name";
+      this.propertyGrid.Size = new Size(336, 381);
+      this.propertyGrid.TabIndex = 0;
+			this.propertyGrid.Text = "text";
+      this.propertyGrid.ViewBackColor = SystemColors.Window;
+      this.propertyGrid.ViewForeColor = SystemColors.WindowText;
+      this.propertyGrid.PropertyValueChanged += new PropertyValueChangedEventHandler(this.mV134Z7kpS);
       this.AutoScaleBaseSize = new Size(5, 13);
       this.ClientSize = new Size(336, 381);
-      this.Controls.Add((Control) this.RwF3yvcan6);
-      this.Icon = (Icon) resourceManager.GetObject(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(514));
-      this.Name = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(538);
-      this.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(570);
+      this.Controls.Add((Control) this.propertyGrid);
+			this.Icon = (Icon)resourceManager.GetObject("PadProperyForm.Icon");
+			this.Name = "Name1";
+			this.Text = "Text1";
       this.ShowInTaskbar = false;
       this.ResumeLayout(false);
     }

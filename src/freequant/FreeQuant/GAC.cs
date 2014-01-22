@@ -16,10 +16,10 @@ namespace FreeQuant
       }
     }
 
-    static GAC()
-    {
-      GAC.MbbrEjYP5S = a4cHEC6EyvuUQ4VVMa.U0pX6sfsl();
-    }
+//    static GAC()
+//    {
+//			GAC.MbbrEjYP5S = "fsf";
+//    }
 
     private GAC()
     {

@@ -4,7 +4,6 @@ using FreeQuant.File;
 using FreeQuant.Series;
 using System;
 using System.Runtime.CompilerServices;
-using FreeQuant.File;
 
 namespace FreeQuant.Instruments
 {
@@ -22,7 +21,7 @@ namespace FreeQuant.Instruments
 
     public FileDataServer()
     {
-      this.file = new DataFile(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6390), Framework.Installation.DataDir.FullName);
+//      this.file = new DataFile(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6390), Framework.Installation.DataDir.FullName);
     }
 
     public void Add(string series, IDataObject obj)

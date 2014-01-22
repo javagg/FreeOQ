@@ -109,18 +109,14 @@ namespace FreeQuant.Providers
     
     static HistoricalDataRequest()
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
       HistoricalDataRequest.ScTgOyCwNp = 0;
     }
 
     
     public HistoricalDataRequest()
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       lock (typeof (HistoricalDataRequest))
-        this.H5ygRPXX3V = string.Format(GojrKtfk5NMi1fou68.a17L2Y7Wnd(750), (object) DateTime.Now, (object) HistoricalDataRequest.ScTgOyCwNp++);
+				this.H5ygRPXX3V = string.Format("", DateTime.Now, HistoricalDataRequest.ScTgOyCwNp++);
     }
   }
 }

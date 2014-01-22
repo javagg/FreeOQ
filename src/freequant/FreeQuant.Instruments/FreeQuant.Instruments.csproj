@@ -33,6 +33,7 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -106,14 +107,6 @@
     <Compile Include="UnderlyingList.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
-      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
-      <Name>FreeQuant.FIX</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
-      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
-      <Name>FreeQuant.Providers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FreeQuant.Series\FreeQuant.Series.csproj">
       <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
       <Name>FreeQuant.Series</Name>
@@ -121,6 +114,18 @@
     <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
       <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
       <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIXData\FreeQuant.FIXData.csproj">
+      <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
+      <Name>FreeQuant.FIXData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
     </ProjectReference>
     <ProjectReference Include="..\FreeQuant.File\FreeQuant.File.csproj">
       <Project>{5A995BBE-5233-4509-8BF9-E9A2C67CD629}</Project>
@@ -130,9 +135,9 @@
       <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
       <Name>FreeQuant.Charting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FreeQuant.FIXData\FreeQuant.FIXData.csproj">
-      <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
-      <Name>FreeQuant.FIXData</Name>
+    <ProjectReference Include="..\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

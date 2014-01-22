@@ -1,8 +1,4 @@
 namespace FreeQuant.Series
 {
-	public enum BarSlycing
-	{
-		Normal,
-		Equally,
-	}
+	public enum BarSlycing { Normal, Equally }
 }

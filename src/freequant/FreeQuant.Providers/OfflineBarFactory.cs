@@ -210,38 +210,38 @@ namespace FreeQuant.Providers
     private void iYlXRwvKS([In] DateTime obj0, [In] long obj1, out DateTime _param3, out DateTime _param4)
     {
       long num = (long) obj0.TimeOfDay.TotalSeconds / obj1 * obj1;
-      param2 = obj0.Date.AddSeconds((double) num);
-      param3 = param2.AddSeconds((double) obj1);
+			_param3 = obj0.Date.AddSeconds((double) num);
+			_param4 = _param3.AddSeconds((double) obj1);
     }
 
     
     private void CgiTKf5gQ([In] IFIXInstrument obj0, [In] Bar obj1)
     {
-      if (this.JL8oPByHO == null)
-        return;
-      this.JL8oPByHO((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) null));
+//      if (this.JL8oPByHO == null)
+//        return;
+//      this.JL8oPByHO((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) null));
     }
 
     
     private void M28GqE2S2([In] IFIXInstrument obj0, [In] Bar obj1)
     {
-      if (this.CSbm1wLhQ == null)
-        return;
-      this.CSbm1wLhQ((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) null));
+//      if (this.CSbm1wLhQ == null)
+//        return;
+//      this.CSbm1wLhQ((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) null));
     }
 
     
     private void jsgfiCe1q([In] IFIXInstrument obj0, [In] long obj1)
     {
-      if (this.W79MPhgAi == null)
-        return;
-      this.W79MPhgAi((object) this, new BarSliceEventArgs(obj1, (IMarketDataProvider) null));
+//      if (this.W79MPhgAi == null)
+//        return;
+//      this.W79MPhgAi((object) this, new BarSliceEventArgs(obj1, (IMarketDataProvider) null));
     }
 
     
     public override string ToString()
     {
-      return GojrKtfk5NMi1fou68.a17L2Y7Wnd(400);
+			return "fsfkkk";
     }
 
     private class PVGcuMn6TQoRUEfhwr
@@ -252,9 +252,6 @@ namespace FreeQuant.Providers
       
       public PVGcuMn6TQoRUEfhwr()
       {
-        Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
         this.rwG1TvUU0 = (Bar) null;
         this.WWlIn4O0w = 0;
       }

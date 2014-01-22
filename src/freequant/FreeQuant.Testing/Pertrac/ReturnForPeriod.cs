@@ -1,17 +1,10 @@
-﻿// Type: SmartQuant.Testing.Pertrac.ReturnForPeriod
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using ASQMKC8WePBGJ83PL4;
-using Byqm85MNrFBe6JPJlI;
-using SmartQuant.Series;
-using SmartQuant.Testing;
-using SmartQuant.Testing.TesterItems;
+using FreeQuant.Series;
+using FreeQuant.Testing;
+using FreeQuant.Testing.TesterItems;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Testing.Pertrac
+namespace FreeQuant.Testing.Pertrac
 {
   public class ReturnForPeriod : SeriesTesterItem
   {
@@ -20,11 +13,11 @@ namespace SmartQuant.Testing.Pertrac
 
     public TimeIntervalSize IntervalSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.intervalSize;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.intervalSize = value;
       }
@@ -32,47 +25,43 @@ namespace SmartQuant.Testing.Pertrac
 
     public TimeIntervalSize PeriodLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.periodLength;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.periodLength = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ReturnForPeriod(string name, SeriesTesterItem parentSeriesItem, TimeIntervalSize intervalSize, TimeIntervalSize periodLength)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, parentSeriesItem, name + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(9128) + parentSeriesItem.Series.Title);
-      this.intervalSize = intervalSize;
+			:      base(name, parentSeriesItem,  parentSeriesItem.Series.Title)
+		 {
+    this.intervalSize = intervalSize;
       this.periodLength = periodLength;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ReturnForPeriod(string name)
+    
+		public ReturnForPeriod(string name) : base(name)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DateTime AddInterval(DateTime dateTime, TimeIntervalSize intervalSize)
     {
       return this.AddInterval(dateTime, intervalSize, 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DateTime SubtractInterval(DateTime dateTime, TimeIntervalSize intervalSize)
     {
       return this.AddInterval(dateTime, intervalSize, -1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DateTime AddInterval(DateTime dateTime, TimeIntervalSize intervalSize, int multiplier)
     {
       DateTime dateTime1;
@@ -124,7 +113,7 @@ namespace SmartQuant.Testing.Pertrac
       return dateTime1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void CalculateSeries(int firstIndex, int lastIndex)
     {
       if (firstIndex > lastIndex)
@@ -149,7 +138,7 @@ namespace SmartQuant.Testing.Pertrac
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override double GetValue(DateTime date)
     {
       if (this.parentSeries.Count <= 1)

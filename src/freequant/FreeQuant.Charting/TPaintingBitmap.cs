@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SmartQuant.Charting
+namespace FreeQuant.Charting
 {
   [Serializable]
   public class TPaintingBitmap

@@ -4,7 +4,7 @@ namespace FreeQuant
 {
   public enum ReferenceType
   {
-    SmartQuant,
+		FreeQuant,
     GAC,
     User,
   }

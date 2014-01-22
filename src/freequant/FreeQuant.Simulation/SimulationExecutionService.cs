@@ -47,7 +47,7 @@ namespace FreeQuant.Simulation
     {
        get
       {
-        return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1688);
+				return "Name";
       }
     }
 
@@ -56,7 +56,7 @@ namespace FreeQuant.Simulation
     {
        get
       {
-        return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1732);
+				return "simut.Description";
       }
     }
 
@@ -80,11 +80,9 @@ namespace FreeQuant.Simulation
     public event FIXLogoutEventHandler Logout;
 
     
-    public SimulationExecutionService()
+		public SimulationExecutionService() : base()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.RfIejmtUHA = new OrderEntryList();
       this.yQseuHHKll = new List<OrderEntry>();
       this.zpaevs5ZvV();
@@ -122,19 +120,19 @@ namespace FreeQuant.Simulation
     
     public void Send(FIXOrderCancelReject message)
     {
-      throw new Exception(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1792));
+			throw new Exception("Send Exception");
     }
 
     
     public void Send(FIXLogon message)
     {
-      throw new Exception(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1882));
+			throw new Exception("Send Exception");
     }
 
     
     public void Send(FIXLogout message)
     {
-      throw new Exception(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(1972));
+			throw new Exception("Send Exception");
     }
 
     
@@ -192,47 +190,47 @@ namespace FreeQuant.Simulation
       singleOrder.StopPx = obj0.StopPx;
       singleOrder.OrderQty = obj0.OrderQty;
       singleOrder.Text = obj0.Text;
-      if (this.VOQeTqxjH5 == null)
-        return;
-      this.VOQeTqxjH5((object) this, new FIXNewOrderSingleEventArgs((FIXNewOrderSingle) singleOrder));
+//      if (this.VOQeTqxjH5 == null)
+//        return;
+//      this.VOQeTqxjH5((object) this, new FIXNewOrderSingleEventArgs((FIXNewOrderSingle) singleOrder));
     }
 
     
     internal void vSoeaZ8DfK()
     {
-      jHlkoKNvYKqUEkgu3D hlkoKnvYkqUekgu3D = new jHlkoKNvYKqUEkgu3D();
-      foreach (OrderEntry orderEntry in this.RfIejmtUHA)
-        hlkoKnvYkqUekgu3D.CP4y1KPBFu().umBU4R1dm(orderEntry);
-      hlkoKnvYkqUekgu3D.Save(this.jLCe4X7YLp());
+//      jHlkoKNvYKqUEkgu3D hlkoKnvYkqUekgu3D = new jHlkoKNvYKqUEkgu3D();
+//      foreach (OrderEntry orderEntry in this.RfIejmtUHA)
+//        hlkoKnvYkqUekgu3D.CP4y1KPBFu().umBU4R1dm(orderEntry);
+//      hlkoKnvYkqUekgu3D.Save(this.jLCe4X7YLp());
     }
 
     
     private void zpaevs5ZvV()
     {
-      string str = this.jLCe4X7YLp();
-      if (!File.Exists(str))
-        return;
-      jHlkoKNvYKqUEkgu3D hlkoKnvYkqUekgu3D = new jHlkoKNvYKqUEkgu3D();
-      hlkoKnvYkqUekgu3D.Load(str);
-      foreach (xsRJHu8Z4yfDTS2Z7y rjHu8Z4yfDtS2Z7y in (ListXmlNode<xsRJHu8Z4yfDTS2Z7y>) hlkoKnvYkqUekgu3D.CP4y1KPBFu())
-        this.RfIejmtUHA.Add(new OrderEntry()
-        {
-          Enabled = rjHu8Z4yfDtS2Z7y.BP8yYcQUn3(),
-          DateTime = rjHu8Z4yfDtS2Z7y.DateTime.Value,
-          Instrument = InstrumentManager.Instruments[rjHu8Z4yfDtS2Z7y.XVXyIVKEAZ().Value],
-          Side = rjHu8Z4yfDtS2Z7y.Side.Value,
-          OrdType = rjHu8Z4yfDtS2Z7y.OrdType.Value,
-          Price = rjHu8Z4yfDtS2Z7y.Price.Value,
-          StopPx = rjHu8Z4yfDtS2Z7y.StopPx.Value,
-          OrderQty = rjHu8Z4yfDtS2Z7y.OrderQty.Value,
-          Text = rjHu8Z4yfDtS2Z7y.Text.Value
-        });
+//      string str = this.jLCe4X7YLp();
+//      if (!File.Exists(str))
+//        return;
+//      jHlkoKNvYKqUEkgu3D hlkoKnvYkqUekgu3D = new jHlkoKNvYKqUEkgu3D();
+//      hlkoKnvYkqUekgu3D.Load(str);
+//      foreach (xsRJHu8Z4yfDTS2Z7y rjHu8Z4yfDtS2Z7y in (ListXmlNode<xsRJHu8Z4yfDTS2Z7y>) hlkoKnvYkqUekgu3D.CP4y1KPBFu())
+//        this.RfIejmtUHA.Add(new OrderEntry()
+//        {
+//          Enabled = rjHu8Z4yfDtS2Z7y.BP8yYcQUn3(),
+//          DateTime = rjHu8Z4yfDtS2Z7y.DateTime.Value,
+//          Instrument = InstrumentManager.Instruments[rjHu8Z4yfDtS2Z7y.XVXyIVKEAZ().Value],
+//          Side = rjHu8Z4yfDtS2Z7y.Side.Value,
+//          OrdType = rjHu8Z4yfDtS2Z7y.OrdType.Value,
+//          Price = rjHu8Z4yfDtS2Z7y.Price.Value,
+//          StopPx = rjHu8Z4yfDtS2Z7y.StopPx.Value,
+//          OrderQty = rjHu8Z4yfDtS2Z7y.OrderQty.Value,
+//          Text = rjHu8Z4yfDtS2Z7y.Text.Value
+//        });
     }
 
     
     private string jLCe4X7YLp()
     {
-      return string.Format(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(2062), (object) Framework.Installation.IniDir.FullName, (object) v6F3C32VVUpp2OYb5n.VVyFVqM4b6(2080));
+			return string.Format("", Framework.Installation.IniDir.FullName, "");
     }
   }
 }

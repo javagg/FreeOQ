@@ -30,6 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +206,10 @@
     <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
       <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
       <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

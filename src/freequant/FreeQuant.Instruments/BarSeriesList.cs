@@ -49,10 +49,10 @@ namespace FreeQuant.Instruments
           BarSeries barSeries = hashtable[(object) barSize] as BarSeries;
           if (barSeries == null)
           {
-            barSeries = new BarSeries(string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1850), (object) instrument.Symbol, (object) barType, (object) barSize));
+						barSeries = new BarSeries(string.Format("ddd", instrument.Symbol, barType, barSize));
             hashtable.Add((object) barSize, (object) barSeries);
-            if (this.ojGWVrrEwl != null)
-              this.ojGWVrrEwl((object) this, new BarSeriesEventArgs(barSeries, instrument));
+//            if (this.ojGWVrrEwl != null)
+//              this.ojGWVrrEwl((object) this, new BarSeriesEventArgs(barSeries, instrument));
           }
           return barSeries;
         }
@@ -65,7 +65,7 @@ namespace FreeQuant.Instruments
           {
             Instrument instrument1 = dictionaryEntry.Key as Instrument;
             BarSeries barSeries = dictionaryEntry.Value as BarSeries;
-            barSeries.Name = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1880), (object) instrument1.Symbol, (object) barType, (object) barSize);
+						barSeries.Name = string.Format("{0}", (object) instrument1.Symbol, (object) barType, (object) barSize);
             this.JqsWcXm11r(instrument1, barType).Add((object) barSize, (object) barSeries);
           }
           this.ET8WqOYmDx.Clear();
@@ -73,8 +73,8 @@ namespace FreeQuant.Instruments
           BarSeries barSeries1 = this[instrument, barType, barSize];
           foreach (DictionaryEntry dictionaryEntry in hashtable)
           {
-            if (this.BiWWFq4eYA != null)
-              this.BiWWFq4eYA((object) this, new BarSeriesEventArgs(dictionaryEntry.Value as BarSeries, dictionaryEntry.Key as Instrument));
+//            if (this.BiWWFq4eYA != null)
+//              this.BiWWFq4eYA((object) this, new BarSeriesEventArgs(dictionaryEntry.Value as BarSeries, dictionaryEntry.Key as Instrument));
           }
           return barSeries1;
         }
@@ -92,8 +92,8 @@ namespace FreeQuant.Instruments
         {
           barSeries = new BarSeries(instrument.Symbol);
           this.ET8WqOYmDx.Add((object) instrument, (object) barSeries);
-          if (this.ojGWVrrEwl != null)
-            this.ojGWVrrEwl((object) this, new BarSeriesEventArgs(barSeries, instrument));
+//          if (this.ojGWVrrEwl != null)
+//            this.ojGWVrrEwl((object) this, new BarSeriesEventArgs(barSeries, instrument));
         }
         return barSeries;
       }

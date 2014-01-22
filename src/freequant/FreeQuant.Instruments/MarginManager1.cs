@@ -14,10 +14,7 @@ namespace FreeQuant.Instruments
     
     public MarginManager1(Portfolio portfolio)
     {
-      Px7gU0q9iICvf09Y91.kdkL0sczOKVVS();
       this.nTCs7Rw8ms = new Hashtable();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.portfolio = portfolio;
       this.Connect();
     }
@@ -26,7 +23,7 @@ namespace FreeQuant.Instruments
     protected virtual void Connect()
     {
       foreach (Position position in this.portfolio.Positions)
-        position.ValueChanged += new EventHandler(this.ONFsKvHWyc);
+        position.ValueChanged += new EventHandler(this.PositionValueChanged);
       this.portfolio.PositionOpened += new PositionEventHandler(this.PUHs99fnF5);
       this.portfolio.PositionClosed += new PositionEventHandler(this.QLisC93NIN);
       this.portfolio.PositionChanged += new PositionEventHandler(this.tvWsM49Wkt);
@@ -37,7 +34,7 @@ namespace FreeQuant.Instruments
     protected virtual void Disconnect()
     {
       foreach (Position position in this.portfolio.Positions)
-        position.ValueChanged -= new EventHandler(this.ONFsKvHWyc);
+        position.ValueChanged -= new EventHandler(this.PositionValueChanged);
       this.portfolio.PositionOpened -= new PositionEventHandler(this.PUHs99fnF5);
       this.portfolio.PositionClosed -= new PositionEventHandler(this.QLisC93NIN);
       this.portfolio.PositionChanged -= new PositionEventHandler(this.tvWsM49Wkt);
@@ -45,7 +42,7 @@ namespace FreeQuant.Instruments
     }
 
     
-    private void ONFsKvHWyc([In] object obj0, [In] EventArgs obj1)
+    private void PositionValueChanged([In] object obj0, [In] EventArgs obj1)
     {
     }
 
@@ -55,13 +52,13 @@ namespace FreeQuant.Instruments
       Position position = obj1.Position;
       Transaction last = position.Transactions.Last;
       MarginPosition marginPosition = new MarginPosition(position);
-      if (last.Instrument.SecurityType == gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10862) && last.Side == Side.Buy)
+			if (last.Instrument.SecurityType == "ss" && last.Side == Side.Buy)
       {
         marginPosition.Margin = last.Value * 0.5;
         this.nTCs7Rw8ms.Add((object) position, (object) marginPosition);
-        this.portfolio.Account.Deposit(marginPosition.Margin, last.Currency, last.DateTime, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10870));
+				this.portfolio.Account.Deposit(marginPosition.Margin, last.Currency, last.DateTime, "dfdf");
       }
-      position.ValueChanged += new EventHandler(this.ONFsKvHWyc);
+      position.ValueChanged += new EventHandler(this.PositionValueChanged);
     }
 
     
@@ -70,12 +67,12 @@ namespace FreeQuant.Instruments
       Position position = obj1.Position;
       Transaction last = position.Transactions.Last;
       MarginPosition marginPosition = new MarginPosition(position);
-      if (last.Instrument.SecurityType == gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10890) && last.Side == Side.Sell)
+			if (last.Instrument.SecurityType == "dddd" && last.Side == Side.Sell)
       {
-        this.nTCs7Rw8ms.Remove((object) position);
-        this.portfolio.Account.Withdraw(marginPosition.Margin, last.Currency, last.DateTime, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10898));
+        this.nTCs7Rw8ms.Remove(position);
+				this.portfolio.Account.Withdraw(marginPosition.Margin, last.Currency, last.DateTime, "ddfss");
       }
-      obj1.Position.ValueChanged -= new EventHandler(this.ONFsKvHWyc);
+      obj1.Position.ValueChanged -= new EventHandler(this.PositionValueChanged);
     }
 
     

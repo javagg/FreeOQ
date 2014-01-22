@@ -1,9 +1,7 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
 using FreeQuant.FIX;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Y9kGLiKILMabFE38T3;
 
 namespace FreeQuant.Simulation
 {
@@ -18,11 +16,11 @@ namespace FreeQuant.Simulation
     [Description("Commission value (depends on Commission Type)")]
     public virtual double Commission
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCommission;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fCommission = value;
       }
@@ -33,11 +31,11 @@ namespace FreeQuant.Simulation
     [DefaultValue(CommType.PerShare)]
     public virtual CommType CommType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCommType;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fCommType = value;
       }
@@ -48,28 +46,25 @@ namespace FreeQuant.Simulation
     [Description("Minimal commission, absolute value")]
     public virtual double MinCommission
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMinCommission;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMinCommission = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public CommissionProvider()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fCommType = CommType.PerShare;
       this.fCommission = 0.0;
       this.fMinCommission = 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual FIXCommissionData GetCommissionData(FIXExecutionReport report)
     {
       FIXCommissionData fixCommissionData = new FIXCommissionData();
@@ -90,7 +85,7 @@ namespace FreeQuant.Simulation
             num = this.fCommission;
             break;
           default:
-            throw new NotSupportedException(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(2332) + (object) this.fCommType);
+						throw new NotSupportedException("");
         }
         if (num < this.fMinCommission)
         {
@@ -101,10 +96,10 @@ namespace FreeQuant.Simulation
       return fixCommissionData;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
-      return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(2406);
+			return "CommissionProvider";
     }
   }
 }

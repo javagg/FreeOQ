@@ -1,8 +1,4 @@
 namespace FreeQuant.Instruments
 {
-	public enum AccountAction
-	{
-		Withdraw,
-		Deposit,
-	}
+	public enum AccountAction { Withdraw, Deposit }
 }

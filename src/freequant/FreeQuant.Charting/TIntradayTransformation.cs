@@ -61,20 +61,14 @@ namespace FreeQuant.Charting
     
     public TIntradayTransformation()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.kQZCbKa8jb = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.SetSessionBounds(0L, 864000000000L);
+      this.SetSessionBounds(0, 864000000000);
     }
 
     
     public TIntradayTransformation(long FirstSessionTick, long LastSessionTick)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.kQZCbKa8jb = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.SetSessionBounds(FirstSessionTick, LastSessionTick);
     }
 

@@ -63,6 +63,10 @@ namespace FreeQuant.Charting
 		{
 			return this.WTQm1qtT9[index];
 		}
+			set 
+			{
+				this.WTQm1qtT9[index] = value;
+			}
 	}
     public PadList():base()
     {

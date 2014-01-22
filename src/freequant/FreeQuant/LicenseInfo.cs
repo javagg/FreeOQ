@@ -17,6 +17,5 @@ namespace FreeQuant
     public int NumberOfUses;
     public int NumberOfUsesCurrent;
     public SortedList<string, string> KeyValueList;
-
   }
 }

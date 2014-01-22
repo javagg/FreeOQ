@@ -40,17 +40,17 @@ namespace FreeQuant.Services
     protected void SetServiceStatus(ServiceStatus status)
     {
       this.status = status;
-      if (this.JqfcuNWXs == null)
-        return;
-      this.JqfcuNWXs((object) this, EventArgs.Empty);
-    }
+//      if (this.JqfcuNWXs == null)
+//        return;
+//      this.JqfcuNWXs((object) this, EventArgs.Empty);
+   }
 
-    ]
+    
     protected void EmitServiceError(ServiceError error)
     {
-      if (this.FrJZfqUgi == null)
-        return;
-      this.FrJZfqUgi((object) this, new ServiceErrorEventArgs(error));
+//      if (this.FrJZfqUgi == null)
+//        return;
+//      this.FrJZfqUgi((object) this, new ServiceErrorEventArgs(error));
     }
 
 

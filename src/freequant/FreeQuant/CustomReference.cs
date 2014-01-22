@@ -11,11 +11,11 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (string)null;
+				return null;
 			}
 		}
 
-		protected CustomReference(FileInfo file, ReferenceType referenceType, bool enabled)
+		protected CustomReference(FileInfo file, ReferenceType referenceType, bool enabled):base(referenceType, enabled)
 		{
 		}
 	}

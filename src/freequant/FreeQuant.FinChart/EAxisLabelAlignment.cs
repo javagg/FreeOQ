@@ -1,9 +1,9 @@
-﻿namespace FreeQuant.FinChart
+namespace FreeQuant.FinChart
 {
-  public enum EAxisLabelAlignment
-  {
-    Left,
-    Right,
-    Centre,
-  }
+	public enum EAxisLabelAlignment
+	{
+		Left,
+		Right,
+		Centre
+	}
 }

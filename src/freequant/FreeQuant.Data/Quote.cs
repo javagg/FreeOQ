@@ -7,7 +7,7 @@ namespace FreeQuant.Data
   [Serializable]
   public class Quote : IDataObject, ISeriesObject, ICloneable
   {
-    private const byte IoDDKr799 = (byte) 2;
+    private const byte IoDDKr799 =  2;
     protected DateTime datetime;
     protected byte providerId;
     protected double bid;

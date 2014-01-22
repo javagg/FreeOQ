@@ -5,7 +5,6 @@ namespace FreeQuant.FIX
 	public class FIXField
 	{
 		public int Tag;
-
 		public virtual FIXType FIXType
 		{
 			get
@@ -35,7 +34,7 @@ namespace FreeQuant.FIX
 
 		public virtual object GetValue()
 		{
-			return (object)null;
+			return null;
 		}
 
 		public static FIXField Field(FIXType type, int tag)
@@ -43,47 +42,47 @@ namespace FreeQuant.FIX
 			switch (type)
 			{
 				case FIXType.Bool:
-					return (FIXField)new FIXBoolField(tag);
+					return new FIXBoolField(tag);
 				case FIXType.Int:
-					return (FIXField)new FIXIntField(tag);
+					return new FIXIntField(tag);
 				case FIXType.Double:
-					return (FIXField)new FIXDoubleField(tag);
+					return new FIXDoubleField(tag);
 				case FIXType.Char:
-					return (FIXField)new FIXCharField(tag);
+					return new FIXCharField(tag);
 				case FIXType.String:
-					return (FIXField)new FIXStringField(tag);
+					return new FIXStringField(tag);
 				case FIXType.DateTime:
-					return (FIXField)new FIXDateTimeField(tag);
+					return new FIXDateTimeField(tag);
 				case FIXType.NumInGroup:
-					return (FIXField)new FIXNumInGroupField(tag);
+					return new FIXNumInGroupField(tag);
 				default:
-					throw new ArgumentException("Error: Unknown FIXType " + ((object)type).ToString());
+					throw new ArgumentException("Error: Unknown FIXType " + type);
 			}
 		}
 
-		public static FIXField Field(FIXType type, int tag, string value)
-		{
-			return FIXField.Field(type, tag, value, false);
-		}
+//		public static FIXField Field(FIXType type, int tag, string value)
+//		{
+//			return FIXField.Field(type, tag, value, false);
+//		}
 
-		public static FIXField Field(FIXType type, int tag, string value, bool invariantCulture)
+		public static FIXField Field(FIXType type, int tag, string value, bool invariantCulture = false)
 		{
 			switch (type)
 			{
 				case FIXType.Bool:
-					return (FIXField)new FIXBoolField(tag, value, invariantCulture);
+					return new FIXBoolField(tag, value, invariantCulture);
 				case FIXType.Int:
-					return (FIXField)new FIXIntField(tag, value, invariantCulture);
+					return new FIXIntField(tag, value, invariantCulture);
 				case FIXType.Double:
-					return (FIXField)new FIXDoubleField(tag, value, invariantCulture);
+					return new FIXDoubleField(tag, value, invariantCulture);
 				case FIXType.Char:
-					return (FIXField)new FIXCharField(tag, value, invariantCulture);
+					return new FIXCharField(tag, value, invariantCulture);
 				case FIXType.String:
-					return (FIXField)new FIXStringField(tag, value, invariantCulture);
+					return new FIXStringField(tag, value, invariantCulture);
 				case FIXType.DateTime:
-					return (FIXField)new FIXDateTimeField(tag, value, invariantCulture);
+					return new FIXDateTimeField(tag, value, invariantCulture);
 				default:
-					throw new ArgumentException("Error: " + ((object)type).ToString());
+					throw new ArgumentException("Error: Unknown FIXType " + type);
 			}
 		}
 	}

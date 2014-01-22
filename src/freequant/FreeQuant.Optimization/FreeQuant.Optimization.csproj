@@ -49,4 +49,10 @@
     <Compile Include="TOptimizable.cs" />
     <Compile Include="TwoParams.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Quant\FreeQuant.Quant.csproj">
+      <Project>{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}</Project>
+      <Name>FreeQuant.Quant</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

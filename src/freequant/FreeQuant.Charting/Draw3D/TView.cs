@@ -97,7 +97,6 @@ namespace FreeQuant.Charting.Draw3D
 
 		static TView()
 		{
-			Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
 			TView.rQFoIpIoe9 = (TMat3x3)new TMat3x3Diagonal(1.0, -1.0, 1.0);
 			TView.miCoqACXHl = (TMat3x3)new TExchangeYZ();
 			TView.R8ootJZDc1 = TView.rQFoIpIoe9 * TView.miCoqACXHl;
@@ -105,11 +104,8 @@ namespace FreeQuant.Charting.Draw3D
 
 		public TView()
 		{
-			Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
 			this.Light = new TLight();
 			this.kucoxKFTGF = 1.0;
-			// ISSUE: explicit constructor call
-			base.\u002Ector();
 			this.SetProjectionSpecial(-2.0, Math.PI / 6.0);
 		}
 

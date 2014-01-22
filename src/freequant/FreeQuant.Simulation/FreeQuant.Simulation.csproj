@@ -31,6 +31,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SlippageProvider.cs" />
@@ -60,12 +61,10 @@
     <Compile Include="BarFilterItem.cs" />
     <Compile Include="BarFilter.cs" />
     <Compile Include="Properties\Resources.cs" />
-    <Compile Include="Design\BarFilterItemListEditor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Design\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Resources.resx" />
@@ -94,6 +93,18 @@
     <ProjectReference Include="..\FreeQuant.Services\FreeQuant.Services.csproj">
       <Project>{E9E495CF-9DFB-4E57-9D99-A80D06915A87}</Project>
       <Name>FreeQuant.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Xml\FreeQuant.Xml.csproj">
+      <Project>{7225682B-5328-446F-8798-4E76B843D87E}</Project>
+      <Name>FreeQuant.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIXData\FreeQuant.FIXData.csproj">
+      <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
+      <Name>FreeQuant.FIXData</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

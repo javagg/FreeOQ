@@ -52,11 +52,8 @@ namespace FreeQuant.Neural
       this.Xoa2UGRFa = Data.Xoa2UGRFa;
     }
 
-    public TKohonenData(int NInput)
+		public TKohonenData(int NInput):base(NInput, 0)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(NInput, 0);
       this.UWRwwoI3Y = 0;
       this.Xoa2UGRFa = 0;
     }

@@ -14,7 +14,7 @@ namespace FreeQuant.Instruments
         return instrument.Trade.Price;
       if (instrument.Bar.DateTime != DateTime.MinValue)
         return instrument.Bar.Close;
-      Daily last = instrument.GetDailySeries().Last;
+			Daily last = (Daily)(instrument.GetDailySeries()).Last;
       if (last != null)
         return last.Close;
       else

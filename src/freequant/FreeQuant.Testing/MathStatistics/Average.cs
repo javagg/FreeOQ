@@ -1,5 +1,3 @@
-﻿using ASQMKC8WePBGJ83PL4;
-using Byqm85MNrFBe6JPJlI;
 using FreeQuant.Testing.TesterItems;
 using System;
 using System.Runtime.CompilerServices;
@@ -8,23 +6,18 @@ namespace FreeQuant.Testing.MathStatistics
 {
   public class Average : SeriesTesterItem
   {
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Average(string name, SeriesTesterItem parentSeriesItem)
+    
+		public Average(string name, SeriesTesterItem parentSeriesItem): base(name, parentSeriesItem, name + parentSeriesItem.Series.Title)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, parentSeriesItem, name + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2520) + parentSeriesItem.Series.Title);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Average(string name)
+    
+		public Average(string name): base(name)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void CalculateSeries(int firstIndex, int lastIndex)
     {
       if (firstIndex > lastIndex)
@@ -50,7 +43,7 @@ namespace FreeQuant.Testing.MathStatistics
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override double GetValue(DateTime date)
     {
       double num1 = 0.0;

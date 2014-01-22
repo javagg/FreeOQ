@@ -2,7 +2,6 @@ using System;
 
 namespace FreeQuant.Series
 {
-	[Serializable]
 	public class DateTimeEventArgs : EventArgs
 	{
 		public DateTime DateTime;

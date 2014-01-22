@@ -1,20 +1,14 @@
-﻿// Type: SmartQuant.Shared.Data.Import.CSV.BarEngine
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using SmartQuant.Data;
+using FreeQuant.Data;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Shared.Data.Import.CSV
+namespace FreeQuant.Shared.Data.Import.CSV
 {
   public class BarEngine : Engine
   {
     private bool kNrHzZrYuE;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BarEngine(bool makeDaily)
     {
       eX4XcIhHpDXt70u2x3N.k8isAcYzkUOGF();
@@ -23,7 +17,7 @@ namespace SmartQuant.Shared.Data.Import.CSV
       this.kNrHzZrYuE = makeDaily;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override IDataObject Process()
     {
       DateTime dateTime = this.GetDateTime();
@@ -44,7 +38,7 @@ namespace SmartQuant.Shared.Data.Import.CSV
       return dataObject;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Add(IDataSeries series, IDataObject obj)
     {
       series.Update(obj.DateTime, (object) obj);

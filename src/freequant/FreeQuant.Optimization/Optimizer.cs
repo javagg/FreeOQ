@@ -21,7 +21,7 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public SortedList[] Optimal1DList
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.optimal1DList;
       }
@@ -30,7 +30,7 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public Hashtable[,] Optimal2DList
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.optimal2DList;
       }
@@ -39,7 +39,7 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public double LastObjective
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLastObjective;
       }
@@ -48,7 +48,7 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public virtual int NObjectiveCalls
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNObjectiveCalls;
       }
@@ -57,11 +57,11 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public IOptimizable Object
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOptimizable;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOptimizable = value;
         this.fOptimizable.Init((ParamSet) this);
@@ -71,11 +71,11 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public int NParamSubset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNParamSubset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fNParamSubset = value;
       }
@@ -85,7 +85,7 @@ namespace FreeQuant.Optimization
     [Description("Optimizer type")]
     public EOptimizerType OptimizerType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fType;
       }
@@ -95,11 +95,11 @@ namespace FreeQuant.Optimization
     [Category("Output")]
     public EVerboseMode VerboseMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fVerboseMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fVerboseMode = value;
       }
@@ -160,12 +160,12 @@ namespace FreeQuant.Optimization
         for (int index2 = 0; index2 < this.fNParamSubset; ++index2)
           this.optimal2DList[index1, index2] = new Hashtable();
       }
-      if (this.YE5X4qsts == null)
-        return;
-      this.YE5X4qsts((object) this, EventArgs.Empty);
+//      if (this.YE5X4qsts == null)
+//        return;
+//      this.YE5X4qsts((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Objective()
     {
       ++this.fNObjectiveCalls;
@@ -173,8 +173,8 @@ namespace FreeQuant.Optimization
         return double.NaN;
       double num = this.fOptimizable.Objective();
       this.fLastObjective = num;
-      if (this.ewWNFr3xJ != null)
-        this.ewWNFr3xJ((object) this, EventArgs.Empty);
+//      if (this.ewWNFr3xJ != null)
+//        this.ewWNFr3xJ((object) this, EventArgs.Empty);
       for (int index1 = 0; index1 < this.fNParamSubset; ++index1)
       {
         double d1 = this[index1];
@@ -193,68 +193,68 @@ namespace FreeQuant.Optimization
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void OnStep()
     {
       if (this.fOptimizable == null)
         return;
       this.fOptimizable.OnStep();
-      if (this.Ragi6Xbmw == null)
-        return;
-      this.Ragi6Xbmw((object) this, EventArgs.Empty);
+//      if (this.Ragi6Xbmw == null)
+//        return;
+//      this.Ragi6Xbmw((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void OnCircle()
     {
       if (this.fOptimizable == null)
         return;
       this.fOptimizable.OnCircle();
-      if (this.kWMpbkyoR == null)
-        return;
-      this.kWMpbkyoR((object) this, EventArgs.Empty);
+//      if (this.kWMpbkyoR == null)
+//        return;
+//      this.kWMpbkyoR((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Update()
     {
       if (this.fOptimizable == null)
         return;
       this.fOptimizable.Update((ParamSet) this);
-      if (this.uCrgfMwL4 == null)
-        return;
-      this.uCrgfMwL4((object) this, EventArgs.Empty);
+//      if (this.uCrgfMwL4 == null)
+//        return;
+//      this.uCrgfMwL4((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Stop()
     {
       this.stopped = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void EmitCompleted()
     {
-      if (this.dljHVKBFX == null)
-        return;
-      this.dljHVKBFX((object) this, EventArgs.Empty);
+//      if (this.dljHVKBFX == null)
+//        return;
+//      this.dljHVKBFX((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected void EmitBestObjectiveReceived()
     {
-      if (this.UrKFYUM7X == null)
-        return;
-      this.UrKFYUM7X((object) this, EventArgs.Empty);
+//      if (this.UrKFYUM7X == null)
+//        return;
+//      this.UrKFYUM7X((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Print()
     {
-      Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(76) + ((object) this.fType).ToString());
-      Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(118) + ((object) this.fVerboseMode).ToString());
-      Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(160) + (object) this.fNObjectiveCalls);
-      Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(202) + (object) this.fNParamSubset);
+      Console.WriteLine( this.fType);
+      Console.WriteLine(this.fVerboseMode);
+      Console.WriteLine(this.fNObjectiveCalls);
+      Console.WriteLine(this.fNParamSubset);
     }
   }
 }

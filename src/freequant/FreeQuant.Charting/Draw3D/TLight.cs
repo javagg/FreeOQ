@@ -96,7 +96,6 @@ namespace FreeQuant.Charting.Draw3D
       
       public TSource(TVec3 o, TColor c)
       {
-        Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
         this.o = o;
         this.c = c;
       }

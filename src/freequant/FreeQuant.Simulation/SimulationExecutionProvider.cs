@@ -1,4 +1,3 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
 using FreeQuant;
 using FreeQuant.Execution;
 using FreeQuant.FIX;
@@ -10,8 +9,6 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using VHHKll9MOQqxjH5svX;
-using Y9kGLiKILMabFE38T3;
 
 namespace FreeQuant.Simulation
 {
@@ -52,43 +49,43 @@ namespace FreeQuant.Simulation
     [Category("Information")]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4594);
+				return "SimulationExecutionProvider";
       }
     }
 
     [Category("Information")]
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4638);
+				return "Title";
       }
     }
 
     [Category("Information")]
     public byte Id
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return (byte) 2;
+        return 2;
       }
     }
 
     [Category("Information")]
     public string URL
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
-        return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4700);
+				return "URL";
       }
     }
 
     [Category("Status")]
     public bool IsConnected
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.o8DPY3Gxpl;
       }
@@ -97,7 +94,7 @@ namespace FreeQuant.Simulation
     [Category("Status")]
     public ProviderStatus Status
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.SPRPHoKM7h;
       }
@@ -107,11 +104,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Data")]
     public int Latency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.hRwPnSQTDn;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.hRwPnSQTDn = value;
       }
@@ -121,11 +118,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Data")]
     public bool PartialFills
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.pT8P3oN0AY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.pT8P3oN0AY = value;
       }
@@ -135,11 +132,11 @@ namespace FreeQuant.Simulation
     [DefaultValue(true)]
     public bool FillOnQuote
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.OT6PXc09JA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.OT6PXc09JA = value;
       }
@@ -149,11 +146,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Data")]
     public bool FillOnTrade
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.jApPIfedlK;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.jApPIfedlK = value;
       }
@@ -163,11 +160,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Data")]
     public bool FillOnBar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.v5ePSd6q47;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.v5ePSd6q47 = value;
       }
@@ -177,11 +174,11 @@ namespace FreeQuant.Simulation
     [DefaultValue(true)]
     public bool TriggerOnQuote
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.nHiPwNRjLX;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.nHiPwNRjLX = value;
       }
@@ -191,11 +188,11 @@ namespace FreeQuant.Simulation
     [Category("Trigger Data")]
     public bool TriggerOnTrade
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.aw9Pct01wD;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.aw9Pct01wD = value;
       }
@@ -205,11 +202,11 @@ namespace FreeQuant.Simulation
     [DefaultValue(true)]
     public bool TriggerOnBar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.sqoP9w7Ra4;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.sqoP9w7Ra4 = value;
       }
@@ -219,11 +216,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Mode")]
     public FillOnTradeMode FillOnTradeMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.pUCPpABgQQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.pUCPpABgQQ = value;
       }
@@ -233,11 +230,11 @@ namespace FreeQuant.Simulation
     [DefaultValue(FillOnQuoteMode.LastQuote)]
     public FillOnQuoteMode FillOnQuoteMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.ywDPhhBJ3l;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.ywDPhhBJ3l = value;
       }
@@ -247,11 +244,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Mode")]
     public FillOnBarMode FillOnBarMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.ECGP5j0y56;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.ECGP5j0y56 = value;
       }
@@ -261,11 +258,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Mode")]
     public bool FillAtStopPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.D7lPieCvRj;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.D7lPieCvRj = value;
       }
@@ -275,11 +272,11 @@ namespace FreeQuant.Simulation
     [DefaultValue(false)]
     public bool FillAtLimitPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.J7TPAE2NPc;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.J7TPAE2NPc = value;
       }
@@ -289,11 +286,11 @@ namespace FreeQuant.Simulation
     [Category("Fill Mode")]
     public bool FillAtWorstQuoteRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.NyuPV5MBJC;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.NyuPV5MBJC = value;
       }
@@ -302,11 +299,11 @@ namespace FreeQuant.Simulation
     [Category("Commission & Slippage")]
     public ICommissionProvider CommissionProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fgjP2LYVa2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fgjP2LYVa2 = value;
       }
@@ -315,7 +312,7 @@ namespace FreeQuant.Simulation
     [Browsable(false)]
     public string CommissionProviderStr
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         List<string> list = new List<string>();
         if (this.fgjP2LYVa2 != null)
@@ -326,9 +323,9 @@ namespace FreeQuant.Simulation
           if (this.fgjP2LYVa2 is CommissionProvider)
             list.Add((this.fgjP2LYVa2 as CommissionProvider).MinCommission.ToString((IFormatProvider) invariantCulture));
         }
-        return string.Join(v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4844), list.ToArray());
+				return string.Join(",", list.ToArray());
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         if (this.fgjP2LYVa2 == null || value == null)
           return;
@@ -353,11 +350,11 @@ namespace FreeQuant.Simulation
     [Category("Commission & Slippage")]
     public ISlippageProvider SlippageProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.oJAPKFfD4m;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.oJAPKFfD4m = value;
       }
@@ -366,7 +363,7 @@ namespace FreeQuant.Simulation
     [Category("Fill Data")]
     public BarFilter BarFilter
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.I4hPDNarBO;
       }
@@ -375,11 +372,11 @@ namespace FreeQuant.Simulation
     [Browsable(false)]
     public string BarFilterString
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.I4hPDNarBO.ToString();
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.I4hPDNarBO.Vx1yomJJIf(value);
       }
@@ -397,10 +394,9 @@ namespace FreeQuant.Simulation
 
     public event OrderCancelRejectEventHandler OrderCancelReject;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public SimulationExecutionProvider()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
       this.SPRPHoKM7h = ProviderStatus.Unknown;
       this.MyIPdEI7fi = new Hashtable();
       this.OT6PXc09JA = true;
@@ -413,69 +409,67 @@ namespace FreeQuant.Simulation
       this.fgjP2LYVa2 = (ICommissionProvider) new CommissionProvider();
       this.oJAPKFfD4m = (ISlippageProvider) new SlippageProvider();
       this.I4hPDNarBO = new BarFilter();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       ProviderManager.Add((IProvider) this);
       ProviderManager.ExecutionSimulator = (IExecutionProvider) this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Connect()
     {
       if (this.o8DPY3Gxpl)
         return;
       this.o8DPY3Gxpl = true;
       this.SPRPHoKM7h = ProviderStatus.Connected;
-      if (this.O83PTrO73S != null)
-        this.O83PTrO73S((object) this, EventArgs.Empty);
-      if (this.KcQPO09f1q == null)
-        return;
-      this.KcQPO09f1q((object) this, EventArgs.Empty);
+//      if (this.O83PTrO73S != null)
+//        this.O83PTrO73S((object) this, EventArgs.Empty);
+//      if (this.KcQPO09f1q == null)
+//        return;
+//      this.KcQPO09f1q((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Connect(int timeout)
     {
       this.Connect();
       ProviderManager.WaitConnected((IProvider) this, timeout);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Disconnect()
     {
-      if (!this.o8DPY3Gxpl)
-        return;
-      while (this.MyIPdEI7fi.Count > 0)
-      {
-        IEnumerator enumerator = this.MyIPdEI7fi.Values.GetEnumerator();
-        try
-        {
-          if (enumerator.MoveNext())
-            ((zo21q6cy3fImtUHATQ) enumerator.Current).XNWFfvowtr();
-        }
-        finally
-        {
-          IDisposable disposable = enumerator as IDisposable;
-          if (disposable != null)
-            disposable.Dispose();
-        }
-      }
-      this.o8DPY3Gxpl = false;
-      this.SPRPHoKM7h = ProviderStatus.Disconnected;
-      if (this.S4dPo3vexS != null)
-        this.S4dPo3vexS((object) this, EventArgs.Empty);
-      if (this.KcQPO09f1q == null)
-        return;
-      this.KcQPO09f1q((object) this, EventArgs.Empty);
+//      if (!this.o8DPY3Gxpl)
+//        return;
+//      while (this.MyIPdEI7fi.Count > 0)
+//      {
+//        IEnumerator enumerator = this.MyIPdEI7fi.Values.GetEnumerator();
+//        try
+//        {
+////          if (enumerator.MoveNext())
+////            ((zo21q6cy3fImtUHATQ) enumerator.Current).XNWFfvowtr();
+//        }
+//        finally
+//        {
+//          IDisposable disposable = enumerator as IDisposable;
+//          if (disposable != null)
+//            disposable.Dispose();
+//        }
+//      }
+//      this.o8DPY3Gxpl = false;
+//      this.SPRPHoKM7h = ProviderStatus.Disconnected;
+//      if (this.S4dPo3vexS != null)
+//        this.S4dPo3vexS((object) this, EventArgs.Empty);
+//      if (this.KcQPO09f1q == null)
+//        return;
+//      this.KcQPO09f1q((object) this, EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Shutdown()
     {
       this.Disconnect();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SendNewOrderSingle(NewOrderSingle order)
     {
       if (this.o8DPY3Gxpl)
@@ -507,12 +501,12 @@ namespace FreeQuant.Simulation
         executionReport.AvgPx = 0.0;
         executionReport.CumQty = 0.0;
         executionReport.LeavesQty = order.OrderQty;
-        executionReport.Text = v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4754);
+				executionReport.Text = "text";
         this.JPVPJSWclF(executionReport);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SendOrderCancelRequest(OrderCancelRequest request)
     {
       if (this.hRwPnSQTDn == 0)
@@ -521,7 +515,7 @@ namespace FreeQuant.Simulation
         Clock.AddReminder(new ReminderEventHandler(this.t99PErAC3Y), Clock.Now.AddMilliseconds((double) this.hRwPnSQTDn), (object) request);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SendOrderCancelReplaceRequest(OrderCancelReplaceRequest request)
     {
       if (this.hRwPnSQTDn == 0)
@@ -530,31 +524,31 @@ namespace FreeQuant.Simulation
         Clock.AddReminder(new ReminderEventHandler(this.gFqPLKYI6J), Clock.Now.AddMilliseconds((double) this.hRwPnSQTDn), (object) request);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SendOrderStatusRequest(OrderStatusRequest request)
     {
       throw new NotImplementedException();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void MxtPRD9hCH([In] ReminderEventArgs obj0)
     {
       this.lCXP6mCfhb(obj0.Data as NewOrderSingle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void t99PErAC3Y([In] ReminderEventArgs obj0)
     {
       this.E3jPCDq9jY(obj0.Data as OrderCancelRequest);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void gFqPLKYI6J([In] ReminderEventArgs obj0)
     {
       this.M9IPlabLYo(obj0.Data as OrderCancelReplaceRequest);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void lCXP6mCfhb([In] NewOrderSingle obj0)
     {
       SingleOrder singleOrder = obj0 as SingleOrder;
@@ -579,7 +573,7 @@ namespace FreeQuant.Simulation
         executionReport.Currency = obj0.Currency;
         executionReport.Text = obj0.Text;
         this.JPVPJSWclF(executionReport);
-        zo21q6cy3fImtUHATQ zo21q6cy3fImtUhatq = new zo21q6cy3fImtUHATQ(this, (FIXNewOrderSingle) obj0);
+//        zo21q6cy3fImtUHATQ zo21q6cy3fImtUhatq = new zo21q6cy3fImtUHATQ(this, (FIXNewOrderSingle) obj0);
       }
       else
       {
@@ -603,67 +597,67 @@ namespace FreeQuant.Simulation
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void E3jPCDq9jY([In] OrderCancelRequest obj0)
     {
-      zo21q6cy3fImtUHATQ zo21q6cy3fImtUhatq = this.MyIPdEI7fi[(object) obj0.OrigClOrdID] as zo21q6cy3fImtUHATQ;
-      if (zo21q6cy3fImtUhatq == null)
-        return;
-      zo21q6cy3fImtUhatq.XNWFfvowtr();
+//      zo21q6cy3fImtUHATQ zo21q6cy3fImtUhatq = this.MyIPdEI7fi[(object) obj0.OrigClOrdID] as zo21q6cy3fImtUHATQ;
+//      if (zo21q6cy3fImtUhatq == null)
+//        return;
+//      zo21q6cy3fImtUhatq.XNWFfvowtr();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void M9IPlabLYo([In] OrderCancelReplaceRequest obj0)
     {
-      zo21q6cy3fImtUHATQ zo21q6cy3fImtUhatq = this.MyIPdEI7fi[(object) obj0.OrigClOrdID] as zo21q6cy3fImtUHATQ;
-      if (zo21q6cy3fImtUhatq == null)
-        return;
-      if (obj0.OrderQty > 0.0)
-      {
-        zo21q6cy3fImtUhatq.CfcFBQBLXe((FIXOrderCancelReplaceRequest) obj0);
-      }
-      else
-      {
-        OrderCancelReject orderCancelReject = new OrderCancelReject();
-        orderCancelReject.OrigClOrdID = obj0.OrigClOrdID;
-        orderCancelReject.ClOrdID = obj0.ClOrdID;
-        orderCancelReject.CxlRejResponseTo = CxlRejResponseTo.CancelReplaceRequest;
-        orderCancelReject.CxlRejReason = CxlRejReason.BrokerOption;
-        orderCancelReject.Text = v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4808);
-        orderCancelReject.OrdStatus = zo21q6cy3fImtUhatq.x6qFCwTWN2().OrdStatus;
-        orderCancelReject.TransactTime = Clock.Now;
-        this.FxSP7oxcnT(orderCancelReject);
-      }
+//      zo21q6cy3fImtUHATQ zo21q6cy3fImtUhatq = this.MyIPdEI7fi[(object) obj0.OrigClOrdID] as zo21q6cy3fImtUHATQ;
+//      if (zo21q6cy3fImtUhatq == null)
+//        return;
+//      if (obj0.OrderQty > 0.0)
+//      {
+//        zo21q6cy3fImtUhatq.CfcFBQBLXe((FIXOrderCancelReplaceRequest) obj0);
+//      }
+//      else
+//      {
+//        OrderCancelReject orderCancelReject = new OrderCancelReject();
+//        orderCancelReject.OrigClOrdID = obj0.OrigClOrdID;
+//        orderCancelReject.ClOrdID = obj0.ClOrdID;
+//        orderCancelReject.CxlRejResponseTo = CxlRejResponseTo.CancelReplaceRequest;
+//        orderCancelReject.CxlRejReason = CxlRejReason.BrokerOption;
+//        orderCancelReject.Text = v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4808);
+//        orderCancelReject.OrdStatus = zo21q6cy3fImtUhatq.x6qFCwTWN2().OrdStatus;
+//        orderCancelReject.TransactTime = Clock.Now;
+//        this.FxSP7oxcnT(orderCancelReject);
+//      }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public BrokerInfo GetBrokerInfo()
     {
       return new BrokerInfo();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RegisterOrder(NewOrderSingle order)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void JPVPJSWclF([In] ExecutionReport obj0)
     {
-      if (this.ulMP1Y8D5y == null)
-        return;
-      this.ulMP1Y8D5y((object) this, new ExecutionReportEventArgs(obj0));
+//      if (this.ulMP1Y8D5y == null)
+//        return;
+//      this.ulMP1Y8D5y((object) this, new ExecutionReportEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void FxSP7oxcnT([In] OrderCancelReject obj0)
     {
-      if (this.pfIPbeRjSr == null)
-        return;
-      this.pfIPbeRjSr((object) this, new OrderCancelRejectEventArgs(obj0));
+//      if (this.pfIPbeRjSr == null)
+//        return;
+//      this.pfIPbeRjSr((object) this, new OrderCancelRejectEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
       return this.Name;

@@ -1,4 +1,3 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
 using FreeQuant.Data;
 using System;
 using System.Runtime.CompilerServices;
@@ -12,7 +11,7 @@ namespace FreeQuant.Simulation
 
     public IDataObject Object
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.TF3PMehmVT;
       }
@@ -20,18 +19,16 @@ namespace FreeQuant.Simulation
 
     public IDataSeries Series
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.hFCPq0vSfe;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SeriesObjectEventArgs(IDataSeries series, IDataObject obj)
+    
+		public SeriesObjectEventArgs(IDataSeries series, IDataObject obj):base()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.hFCPq0vSfe = series;
       this.TF3PMehmVT = obj;
     }

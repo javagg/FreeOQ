@@ -585,11 +585,11 @@ namespace FreeQuant.FinChart
       }
       if (flag)
       {
-        this.OLnJZg8KVC.RswwSJ5RAW.SetToolTip((Control) this.OLnJZg8KVC, caption);
-        this.OLnJZg8KVC.RswwSJ5RAW.Active = true;
+        this.OLnJZg8KVC.toolTip.SetToolTip((Control) this.OLnJZg8KVC, caption);
+        this.OLnJZg8KVC.toolTip.Active = true;
       }
       else
-        this.OLnJZg8KVC.RswwSJ5RAW.Active = false;
+        this.OLnJZg8KVC.toolTip.Active = false;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]

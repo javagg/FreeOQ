@@ -17,7 +17,7 @@ namespace FreeQuant.Data
 			}
 		}
 
-		public IDataObject this [int index]
+		public IDataObject this[int index]
 		{
 			get
 			{
@@ -58,17 +58,17 @@ namespace FreeQuant.Data
 
 		public void Add(IDataObject obj)
 		{
-			this.list.Add((object)obj);
+			this.list.Add(obj);
 		}
 
 		public void Insert(int index, IDataObject obj)
 		{
-			this.list.Insert(index, (object)obj);
+			this.list.Insert(index, obj);
 		}
 
 		public void Remove(IDataObject obj)
 		{
-			this.list.Remove((object)obj);
+			this.list.Remove(obj);
 		}
 
 		public void RemoveAt(int index)
@@ -83,7 +83,7 @@ namespace FreeQuant.Data
 
 		public bool Contains(IDataObject obj)
 		{
-			return this.list.Contains((object)obj);
+			return this.list.Contains(obj);
 		}
 
 		public IEnumerator GetEnumerator()

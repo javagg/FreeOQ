@@ -1,4 +1,3 @@
-﻿using Byqm85MNrFBe6JPJlI;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -13,7 +12,7 @@ namespace FreeQuant.Testing.Components
 
     public Guid GUID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.OKRyrLQ5yq;
       }
@@ -21,11 +20,11 @@ namespace FreeQuant.Testing.Components
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.e85yyNrFBe;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.e85yyNrFBe = value;
       }
@@ -33,22 +32,20 @@ namespace FreeQuant.Testing.Components
 
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WJPyeJlI4g;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.WJPyeJlI4g = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TesterComponentAttribute(string guid)
+    
+		public TesterComponentAttribute(string guid):base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.OKRyrLQ5yq = new Guid(guid);
       this.e85yyNrFBe = (string) null;
       this.WJPyeJlI4g = (string) null;

@@ -2,10 +2,10 @@ namespace FreeQuant.Data
 {
 	public enum BarType : byte
 	{
-		Time = (byte)1,
-		Tick = (byte)2,
-		Volume = (byte)3,
-		Range = (byte)4,
-		Dynamic = (byte)5,
+		Time = 1,
+		Tick = 2,
+		Volume = 3,
+		Range = 4,
+		Dynamic = 5,
 	}
 }

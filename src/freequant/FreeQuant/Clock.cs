@@ -50,7 +50,7 @@ namespace FreeQuant
 			Clock.timer = new Timer();
 			Clock.timer.Interval = 1.0;
 			Clock.timer.AutoReset = false;
-			Clock.timer.Elapsed += new ElapsedEventHandler(Clock.SRjrGO4qdD);
+//			Clock.timer.Elapsed += new ElapsedEventHandler(Clock.SRjrGO4qdD);
 			Clock.timer.Start();
 		}
 

@@ -1,9 +1,9 @@
-﻿namespace FreeQuant.Simulation
+namespace FreeQuant.Simulation
 {
-  public enum FillOnBarMode
-  {
-    LastBarClose,
-    NextBarOpen,
-    NextBarClose,
-  }
+	public enum FillOnBarMode
+	{
+		LastBarClose,
+		NextBarOpen,
+		NextBarClose,
+	}
 }

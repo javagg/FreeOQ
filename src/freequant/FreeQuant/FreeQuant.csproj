@@ -41,7 +41,6 @@
     <Compile Include="Trace.cs" />
     <Compile Include="SystemInfo.cs" />
     <Compile Include="Storage.cs" />
-    <Compile Include="SmartQuantReference.cs" />
     <Compile Include="RuntimeMode.cs" />
     <Compile Include="RuntimeErrorOutputTarget.cs" />
     <Compile Include="RuntimeErrorManager.cs" />
@@ -89,6 +88,7 @@
     <Compile Include="CompilingService.cs" />
     <Compile Include="Clock.cs" />
     <Compile Include="Design\FlagsEnumTypeConverter.cs" />
+    <Compile Include="FreeQuantReference.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

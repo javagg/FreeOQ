@@ -1,9 +1,3 @@
-﻿// Type: SmartQuant.Simulation.Properties.Resources
-// Assembly: SmartQuant.Simulation, Version=1.0.5036.28353, Culture=neutral, PublicKeyToken=null
-// MVID: 7CFB1E94-1672-436F-90C9-C8B7893A5618
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Simulation.dll
-
-using CJ5Xsgeg9JvhJUnvO3D;
 using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -24,7 +18,7 @@ namespace SmartQuant.Simulation.Properties
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     internal static ResourceManager ResourceManager
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (object.ReferenceEquals((object) Resources.resourceMan, (object) null))
           Resources.resourceMan = new ResourceManager("SmartQuant.Simulation.Properties.Resources", typeof (Resources).Assembly);
@@ -35,22 +29,19 @@ namespace SmartQuant.Simulation.Properties
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     internal static CultureInfo Culture
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return Resources.resourceCulture;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         Resources.resourceCulture = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal Resources()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

@@ -53,19 +53,23 @@ namespace FreeQuant.Providers
 			}
 		}
 
-//		public BarFactoryItem this [int index]
-//		{
-//			get
-//			{
-//				return this.list[index] as BarFactoryItem;
-//			}
-//		}
-
-		public object this[int index]
+		public BarFactoryItem this [int index]
 		{
 			get
 			{
-				return this.list[index];
+				return this.list[index] as BarFactoryItem;
+			}
+		}
+
+		object IList.this[int index]
+		{
+			get
+			{
+				return (object)this.list[index];
+			}
+			set 
+			{
+				this.list[index]= (object)value;
 			}
 		}
 
@@ -73,16 +77,6 @@ namespace FreeQuant.Providers
 		{
 			this.list = new ArrayList();
 		}
-
-//		object IList.get_Item(int index)
-//		{
-//			return (object)this[index];
-//		}
-//
-//		void IList.set_Item(int index, object value)
-//		{
-//			throw new NotSupportedException();
-//		}
 
 		public void RemoveAt(int index)
 		{

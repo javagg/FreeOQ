@@ -94,7 +94,7 @@ namespace FreeQuant.Instruments
 			if (this.instrument != null)
 				return this.instrument.Symbol;
 			else
-				return gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9656);
+				return "";
 		}
 	}
 }

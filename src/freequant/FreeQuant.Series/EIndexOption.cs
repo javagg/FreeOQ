@@ -1,9 +1,4 @@
 namespace FreeQuant.Series
 {
-	public enum EIndexOption
-	{
-		Null,
-		Next,
-		Prev,
-	}
+	public enum EIndexOption { Null, Next, Prev }
 }

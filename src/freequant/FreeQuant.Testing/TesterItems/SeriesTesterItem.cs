@@ -1,23 +1,15 @@
-﻿// Type: SmartQuant.Testing.TesterItems.SeriesTesterItem
-// Assembly: SmartQuant.Testing, Version=1.0.5036.28344, Culture=neutral, PublicKeyToken=null
-// MVID: 176468FF-0FA0-4631-84AD-38EF6EDC463D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Testing.dll
-
-using Byqm85MNrFBe6JPJlI;
-using SmartQuant.Series;
+using FreeQuant.Series;
 using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using uvW9W9s8OVG0Y4KuMH;
-using XqApYXQU2afwmWNyvV;
 
-namespace SmartQuant.Testing.TesterItems
+namespace FreeQuant.Testing.TesterItems
 {
-  [Editor(typeof (NFYDmemfMcZVeiIsfe), typeof (UITypeEditor))]
-  [TypeConverter(typeof (QOoL8gW2RfToAZcPln))]
+//  [Editor(typeof (NFYDmemfMcZVeiIsfe), typeof (UITypeEditor))]
+//  [TypeConverter(typeof (QOoL8gW2RfToAZcPln))]
   public class SeriesTesterItem : TesterItem
   {
     protected SeriesTesterItem parentComponent;
@@ -34,11 +26,11 @@ namespace SmartQuant.Testing.TesterItems
     [Category("Properties")]
     public virtual bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.enabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         if (this.enabled == value)
           return;
@@ -64,11 +56,11 @@ namespace SmartQuant.Testing.TesterItems
     [Category("Parameters")]
     public virtual bool FillSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.fillSeries;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.fillSeries = value;
         if (this.fillSeries)
@@ -86,7 +78,7 @@ namespace SmartQuant.Testing.TesterItems
     [Browsable(false)]
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         if (!this.enabled)
           return double.NaN;
@@ -111,7 +103,7 @@ namespace SmartQuant.Testing.TesterItems
     [Browsable(false)]
     public virtual DoubleSeries ParentSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.parentSeries;
       }
@@ -120,7 +112,7 @@ namespace SmartQuant.Testing.TesterItems
     [Browsable(false)]
     public override DoubleSeries Series
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.series;
       }
@@ -130,11 +122,11 @@ namespace SmartQuant.Testing.TesterItems
     [Browsable(false)]
     public virtual SeriesTesterItem ParentComponent
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.parentComponent;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         SeriesTesterItem seriesTesterItem = this.parentComponent;
         if (value == seriesTesterItem)
@@ -148,45 +140,35 @@ namespace SmartQuant.Testing.TesterItems
 
     public event EventHandler ComponentEnabledChanged;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SeriesTesterItem()
+   
+		public SeriesTesterItem() : base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
       this.parentList = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SeriesTesterItem(string name)
+   
+		public SeriesTesterItem(string name) : base(name)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
       this.parentList = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public SeriesTesterItem(string name, SeriesTesterItem parentSeriesItem, string title)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
+			: base(name)  {
       this.parentList = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
       this.Init(name, parentSeriesItem, title, false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public SeriesTesterItem(string name, SeriesTesterItem parentSeriesItem, string title, bool fillSeries)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
+			: base(name) {
       this.parentList = new ArrayList();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
       this.Init(name, parentSeriesItem, title, fillSeries);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected void Init(string name, SeriesTesterItem parentSeriesItem, string title, bool fillSeries)
     {
       this.isUpdating = false;
@@ -201,7 +183,7 @@ namespace SmartQuant.Testing.TesterItems
       this.FillSeries = fillSeries;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     private void XD5mZhm60([In] SeriesTesterItem obj0, [In] SeriesTesterItem obj1)
     {
       this.Reset();
@@ -214,13 +196,13 @@ namespace SmartQuant.Testing.TesterItems
       obj1.Series.ItemAdded += new ItemAddedEventHandler(this.syrQYCdiq);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected virtual double GetValue(DateTime date)
     {
       return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     private void syrQYCdiq([In] object obj0, [In] DateTimeEventArgs obj1)
     {
       this.lastDateTime = obj1.DateTime;
@@ -229,14 +211,14 @@ namespace SmartQuant.Testing.TesterItems
       this.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected virtual void CalculateSeries(int firstIndex, int lastIndex)
     {
       for (int index = firstIndex; index <= lastIndex; ++index)
         this.txHWUR99S(this.parentSeries.GetDateTime(index));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected void CalculateParentSeries()
     {
       this.isUpdating = true;
@@ -245,7 +227,7 @@ namespace SmartQuant.Testing.TesterItems
       this.isUpdating = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     private void txHWUR99S([In] DateTime obj0)
     {
       double num = this.GetValue(obj0);
@@ -254,7 +236,7 @@ namespace SmartQuant.Testing.TesterItems
       this.series.Add(obj0, num);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public virtual void Calculate()
     {
       if (!this.enabled)
@@ -268,7 +250,7 @@ namespace SmartQuant.Testing.TesterItems
       this.CalculateSeries(firstIndex, this.lastIndex);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Reset()
     {
       base.Reset();
@@ -278,24 +260,24 @@ namespace SmartQuant.Testing.TesterItems
       this.lastDateTime = DateTime.MinValue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Connect()
     {
       this.parentSeries.ItemAdded += new ItemAddedEventHandler(this.syrQYCdiq);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Disconnect()
     {
       this.parentSeries.ItemAdded -= new ItemAddedEventHandler(this.syrQYCdiq);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected void EmitComponentEnabledChanged()
     {
-      if (this.Xf5sSFYDm == null)
-        return;
-      this.Xf5sSFYDm((object) this, EventArgs.Empty);
+//      if (this.Xf5sSFYDm == null)
+//        return;
+//      this.Xf5sSFYDm((object) this, EventArgs.Empty);
     }
   }
 }

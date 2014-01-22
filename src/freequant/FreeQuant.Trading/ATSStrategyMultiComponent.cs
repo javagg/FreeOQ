@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Trading
+namespace FreeQuant.Trading
 {
   public class ATSStrategyMultiComponent : StrategyBaseMultiComponent
   {

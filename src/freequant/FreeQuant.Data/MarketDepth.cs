@@ -7,7 +7,7 @@ namespace FreeQuant.Data
   [Serializable]
   public class MarketDepth : IComparable, IDataObject, ICloneable, ISeriesObject
   {
-    private const byte sP4fptbej = (byte) 3;
+    private const byte sP4fptbej = 3;
     private DateTime dateTime;
     private byte providerId;
     private string JLOpfyh4y;

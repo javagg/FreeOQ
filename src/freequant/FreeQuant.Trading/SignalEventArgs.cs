@@ -9,13 +9,12 @@ namespace FreeQuant.Trading
 
     public Signal Signal
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cKQi5NVTD4;
       }
     }
-		s
-    public SignalEventArgs(Signal signal)
+		public SignalEventArgs(Signal signal) :base(signal)
     {
       this.cKQi5NVTD4 = signal;
     }

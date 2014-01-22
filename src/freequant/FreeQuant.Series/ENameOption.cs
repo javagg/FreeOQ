@@ -1,8 +1,4 @@
 namespace FreeQuant.Series
 {
-	public enum ENameOption
-	{
-		Short,
-		Long,
-	}
+	public enum ENameOption { Short, Long }
 }

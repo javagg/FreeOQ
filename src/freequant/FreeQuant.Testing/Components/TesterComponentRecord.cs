@@ -1,4 +1,3 @@
-﻿using Byqm85MNrFBe6JPJlI;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -19,7 +18,7 @@ namespace FreeQuant.Testing.Components
     [Description("Component name")]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.m2leiEkS0b;
       }
@@ -29,7 +28,7 @@ namespace FreeQuant.Testing.Components
     [Category("Naming")]
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ihBe1O6DJg;
       }
@@ -38,7 +37,7 @@ namespace FreeQuant.Testing.Components
     [Browsable(false)]
     public FileInfo File
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jfGeuQbWrm;
       }
@@ -47,18 +46,15 @@ namespace FreeQuant.Testing.Components
     [Browsable(false)]
     public Type Type
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.PaNeHuD61b;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    internal TesterComponentRecord(string name, string description, FileInfo file, Type type)
+    
+		internal TesterComponentRecord(string name, string description, FileInfo file, Type type):base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.m2leiEkS0b = name;
       this.ihBe1O6DJg = description;
       this.jfGeuQbWrm = file;

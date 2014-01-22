@@ -2013,12 +2013,12 @@ namespace FreeQuant.Charting
         this.kpXo6pj5Cs
       });
       this.rlboC951ES.Index = 0;
-      this.rlboC951ES.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(152);
+			this.rlboC951ES.Text = "mnu1text";
       this.rlboC951ES.Click += new EventHandler(this.ruLesQ5Xv);
       menuItem.Index = 1;
-      menuItem.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(168);
+			menuItem.Text =  "mnu1text";
       this.kpXo6pj5Cs.Index = 2;
-      this.kpXo6pj5Cs.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(174);
+			this.kpXo6pj5Cs.Text = "mnu1text2";
       this.kpXo6pj5Cs.Click += new EventHandler(this.hMr7kanRQ);
     }
 
@@ -2575,7 +2575,7 @@ namespace FreeQuant.Charting
               if (drawable.ToolTipEnabled)
               {
                 if (caption != "")
-                  caption = caption + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(198);
+									caption = caption + "dd";
                 caption = caption + tdistance.ToolTipText;
                 flag = true;
               }
@@ -2747,7 +2747,7 @@ namespace FreeQuant.Charting
         if (this.fMouseContextMenuEnabled && this.fMouseDownButton == MouseButtons.Right && this.fOnPrimitive)
         {
           this.yxJj9CwXy();
-          this.rlboC951ES.Text = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(206) + this.fSelectedPrimitive.GetType().Name;
+					this.rlboC951ES.Text = "mnu1textqq" + this.fSelectedPrimitive.GetType().Name;
           this.KtXo3eo8yY.Show((Control) this.fChart, new Point(Event.X, Event.Y));
         }
       }
@@ -2847,9 +2847,9 @@ namespace FreeQuant.Charting
     
     public static void EmitNewTick(DateTime datetime)
     {
-      if (Pad.LFkonyUD7i == null)
-        return;
-      Pad.LFkonyUD7i((object) null, new NewTickEventArgs(datetime));
+//      if (Pad.LFkonyUD7i == null)
+//        return;
+//      Pad.LFkonyUD7i((object) null, new NewTickEventArgs(datetime));
     }
 
     
@@ -2877,9 +2877,9 @@ namespace FreeQuant.Charting
     
     public void EmitZoom(bool zoom)
     {
-      if (this.EEZoo0ML5l == null)
-        return;
-      this.EEZoo0ML5l((object) null, new ZoomEventArgs(this.XMin, this.XMax, this.YMin, this.YMax, zoom));
+//      if (this.EEZoo0ML5l == null)
+//        return;
+//      this.EEZoo0ML5l((object) null, new ZoomEventArgs(this.XMin, this.XMax, this.YMin, this.YMax, zoom));
     }
 
     
@@ -2907,9 +2907,6 @@ namespace FreeQuant.Charting
       
       public ut9JGY6223LcaEWEIv([In] Pad obj0)
       {
-        Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
         this.lAkoJHQf6Z = obj0;
         this.z7ooMblc8S = new Pad.ut9JGY6223LcaEWEIv.joI5FOYuNJBoRabUZ0(obj0);
         this.K7qoPqVA9V = new Axis[3]
@@ -2985,9 +2982,6 @@ namespace FreeQuant.Charting
         
         public joI5FOYuNJBoRabUZ0([In] Pad obj0)
         {
-          Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-          // ISSUE: explicit constructor call
-          base.\u002Ector();
           this.Tk3oZwwj0J = obj0;
           this.a32og8iTgD = new Axis(obj0);
           this.pnGobIDDW0 = new Axis(obj0);

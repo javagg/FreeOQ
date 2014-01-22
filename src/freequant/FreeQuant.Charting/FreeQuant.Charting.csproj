@@ -53,7 +53,6 @@
     <Compile Include="TImage.cs" />
     <Compile Include="TEmptyTransformation.cs" />
     <Compile Include="TDistance.cs" />
-    <Compile Include="Pie.cs" />
     <Compile Include="PadRange.cs" />
     <Compile Include="PadProperyForm.cs" />
     <Compile Include="PadList.cs" />
@@ -118,5 +117,11 @@
   <ItemGroup>
     <Folder Include="Draw3D\" />
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeQuant.Quant\FreeQuant.Quant.csproj">
+      <Project>{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}</Project>
+      <Name>FreeQuant.Quant</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -138,5 +138,17 @@
       <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
       <Name>FreeQuant.Instruments</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Business\FreeQuant.Business.csproj">
+      <Project>{B20CD445-C1EF-4393-9CF7-F8A6F8B90B91}</Project>
+      <Name>FreeQuant.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

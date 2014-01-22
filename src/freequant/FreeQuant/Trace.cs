@@ -20,7 +20,7 @@ namespace FreeQuant
 
     static Trace()
     {
-      Trace.e7F4dsWbmw = new TraceSwitch(GItcYDqSxj5aE60JeS.GFmrbXlIxf(4004), "");
+			Trace.e7F4dsWbmw = new TraceSwitch("", "");
       Trace.e7F4dsWbmw.Level = System.Diagnostics.TraceLevel.Error;
       Trace.Listeners.Clear();
     }

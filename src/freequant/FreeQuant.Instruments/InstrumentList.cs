@@ -52,7 +52,7 @@ namespace FreeQuant.Instruments
     {
        get
       {
-        return this.s1kB8GECjT[(object) (symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2372) + source)] as Instrument ?? this[symbol];
+				return this.s1kB8GECjT[(object) (symbol + "" + source)] as Instrument ?? this[symbol];
       }
     }
 
@@ -98,12 +98,12 @@ namespace FreeQuant.Instruments
     
     public void Add(Instrument instrument)
     {
-      if (this.ex3B24tuTL.Contains((object) instrument.Symbol))
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2234) + instrument.Symbol);
+//      if (this.ex3B24tuTL.Contains((object) instrument.Symbol))
+//        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2234) + instrument.Symbol);
       this.ex3B24tuTL.Add((object) instrument.Symbol, (object) instrument);
       this.SB4BlaFNT0.Add((object) instrument, (object) true);
       foreach (FIXSecurityAltIDGroup securityAltIdGroup in (FIXGroupList) instrument.SecurityAltIDGroup)
-        this.s1kB8GECjT[(object) (securityAltIdGroup.SecurityAltID + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2360) + securityAltIdGroup.SecurityAltIDSource)] = (object) instrument;
+				this.s1kB8GECjT[(object) (securityAltIdGroup.SecurityAltID + "" + securityAltIdGroup.SecurityAltIDSource)] = (object) instrument;
       base.Add((FIXGroup) instrument);
     }
 
@@ -138,7 +138,7 @@ namespace FreeQuant.Instruments
     
     public bool Contains(string symbol, string source)
     {
-      return this.s1kB8GECjT.ContainsKey((object) (symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2366) + source));
+			return this.s1kB8GECjT.ContainsKey((object) (symbol + "" + source));
     }
 
     

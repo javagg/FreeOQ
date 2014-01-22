@@ -1,8 +1,4 @@
 namespace FreeQuant.Data
 {
-	public enum PnFKind
-	{
-		Up,
-		Down,
-	}
+	public enum PnFKind { Up, Down }
 }

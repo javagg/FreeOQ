@@ -50,7 +50,7 @@ namespace FreeQuant.Instruments
     public void Add(Position position)
     {
       if (this.positions.Contains((object) position.Name))
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10740) + position.Name);
+				throw new ApplicationException("fsfs" + position.Name);
       this.positions.Add((object) position.Name, (object) position);
     }
 

@@ -1,4 +1,3 @@
-﻿using RZ1j9O1DCcsDf19ge6;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,7 +37,7 @@ namespace FreeQuant.Execution
 
     public SingleOrder this[string orderID]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         SingleOrder singleOrder;
         if (this.iX0Aocoro.TryGetValue(orderID, out singleOrder))
@@ -50,49 +49,46 @@ namespace FreeQuant.Execution
 
     public SingleOrder this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.YCZoPZ1j9[index];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    internal SellSideOrderList()
+    
+		internal SellSideOrderList():base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.iX0Aocoro = new Dictionary<string, SingleOrder>();
       this.YCZoPZ1j9 = new List<SingleOrder>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.YCZoPZ1j9.ToArray().CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return (IEnumerator) this.YCZoPZ1j9.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void HKElmrgRF()
     {
       this.iX0Aocoro.Clear();
       this.YCZoPZ1j9.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void YKsdCTvel([In] SingleOrder obj0)
     {
       this.iX0Aocoro.Add(obj0.OrderID, obj0);
       this.YCZoPZ1j9.Add(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void rkS4wTRRF([In] int obj0)
     {
       this.iX0Aocoro.Remove(this.YCZoPZ1j9[obj0].OrderID);

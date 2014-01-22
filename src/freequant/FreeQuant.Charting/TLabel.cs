@@ -10,8 +10,8 @@ namespace FreeQuant.Charting
   {
     private string OFU3pa8K6e;
     private ETextPosition q4G3dlxqU0;
-    private Font EQW3xMCkiW;
-    private Color PmN3IBiixN;
+		private Font font; 
+		private Color color; 
     private int ikB3qmd6of;
     private int WrF3tEwXpB;
 
@@ -49,11 +49,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.EQW3xMCkiW;
+        return this.font;
       }
        set
       {
-        this.EQW3xMCkiW = value;
+        this.font = value;
       }
     }
 
@@ -63,11 +63,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.PmN3IBiixN;
+        return this.color;
       }
        set
       {
-        this.PmN3IBiixN = value;
+        this.color = value;
       }
     }
 
@@ -118,15 +118,15 @@ namespace FreeQuant.Charting
     {
       this.OFU3pa8K6e = Text;
       this.I9m3s0VaOK();
-      this.PmN3IBiixN = TextColor;
+      this.color = TextColor;
     }
 
     
     private void I9m3s0VaOK()
     {
-      this.EQW3xMCkiW = new Font(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(602), 8f);
+			this.font = new Font("Arial", 8);
       this.q4G3dlxqU0 = ETextPosition.RightBottom;
-      this.PmN3IBiixN = Color.Black;
+      this.color = Color.Black;
       this.ikB3qmd6of = 0;
       this.WrF3tEwXpB = 2;
     }
@@ -137,27 +137,27 @@ namespace FreeQuant.Charting
       base.Paint(Pad, MinX, MaxX, MinY, MaxY);
       if (this.OFU3pa8K6e == null)
         return;
-      int num1 = (int) Pad.Graphics.MeasureString(this.OFU3pa8K6e, this.EQW3xMCkiW).Width;
-      int num2 = (int) Pad.Graphics.MeasureString(this.OFU3pa8K6e, this.EQW3xMCkiW).Height;
+      int num1 = (int) Pad.Graphics.MeasureString(this.OFU3pa8K6e, this.font).Width;
+      int num2 = (int) Pad.Graphics.MeasureString(this.OFU3pa8K6e, this.font).Height;
       switch (this.q4G3dlxqU0)
       {
         case ETextPosition.RightTop:
-          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.EQW3xMCkiW, (Brush) new SolidBrush(this.PmN3IBiixN), (float) (Pad.ClientX(this.fX) + this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) - num2 - this.WrF3tEwXpB));
+          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.font, (Brush) new SolidBrush(this.color), (float) (Pad.ClientX(this.fX) + this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) - num2 - this.WrF3tEwXpB));
           break;
         case ETextPosition.LeftTop:
-          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.EQW3xMCkiW, (Brush) new SolidBrush(this.PmN3IBiixN), (float) (Pad.ClientX(this.fX) - num1 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) - num2 - this.WrF3tEwXpB));
+          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.font, (Brush) new SolidBrush(this.color), (float) (Pad.ClientX(this.fX) - num1 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) - num2 - this.WrF3tEwXpB));
           break;
         case ETextPosition.CentreTop:
-          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.EQW3xMCkiW, (Brush) new SolidBrush(this.PmN3IBiixN), (float) (Pad.ClientX(this.fX) - num1 / 2 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) - num2 - this.WrF3tEwXpB));
+          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.font, (Brush) new SolidBrush(this.color), (float) (Pad.ClientX(this.fX) - num1 / 2 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) - num2 - this.WrF3tEwXpB));
           break;
         case ETextPosition.RightBottom:
-          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.EQW3xMCkiW, (Brush) new SolidBrush(this.PmN3IBiixN), (float) (Pad.ClientX(this.fX) + this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) + this.Size / 2 + this.WrF3tEwXpB));
+          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.font, (Brush) new SolidBrush(this.color), (float) (Pad.ClientX(this.fX) + this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) + this.Size / 2 + this.WrF3tEwXpB));
           break;
         case ETextPosition.LeftBottom:
-          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.EQW3xMCkiW, (Brush) new SolidBrush(this.PmN3IBiixN), (float) (Pad.ClientX(this.fX) - num1 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) + this.Size / 2 + this.WrF3tEwXpB));
+          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.font, (Brush) new SolidBrush(this.color), (float) (Pad.ClientX(this.fX) - num1 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) + this.Size / 2 + this.WrF3tEwXpB));
           break;
         case ETextPosition.CentreBottom:
-          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.EQW3xMCkiW, (Brush) new SolidBrush(this.PmN3IBiixN), (float) (Pad.ClientX(this.fX) - num1 / 2 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) + this.Size / 2 + this.WrF3tEwXpB));
+          Pad.Graphics.DrawString(this.OFU3pa8K6e, this.font, (Brush) new SolidBrush(this.color), (float) (Pad.ClientX(this.fX) - num1 / 2 - this.ikB3qmd6of), (float) (Pad.ClientY(this.fY) + this.Size / 2 + this.WrF3tEwXpB));
           break;
       }
     }

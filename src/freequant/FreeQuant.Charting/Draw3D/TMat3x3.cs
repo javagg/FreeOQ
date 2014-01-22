@@ -127,25 +127,19 @@ namespace FreeQuant.Charting.Draw3D
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TMat3x3()
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.a7ECjWrecf = new double[3, 3];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TMat3x3(double x)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-      // ISSUE: explicit constructor call
-      this.\u002Ector();
       this.a7ECjWrecf[0, 0] = this.a7ECjWrecf[1, 1] = this.a7ECjWrecf[2, 2] = x;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TMat3x3(double a, double b, double c, double d, double e, double f, double g, double h, double i):base()
     {
       this.a7ECjWrecf[0, 0] = a;
@@ -167,7 +161,7 @@ namespace FreeQuant.Charting.Draw3D
         return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static bool operator !=(TMat3x3 b, TMat3x3 a)
     {
       return !(b == a);
@@ -246,13 +240,13 @@ namespace FreeQuant.Charting.Draw3D
         this.a7ECjWrecf[index, index] = k;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetUnit()
     {
       this.SetNumber(1.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetDiagonal(double lx, double ly, double lz)
     {
       this.SetZero();
@@ -261,7 +255,7 @@ namespace FreeQuant.Charting.Draw3D
       this.zz = lz;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRot(int i1, int i2, double Angle)
     {
       this.SetUnit();
@@ -269,43 +263,43 @@ namespace FreeQuant.Charting.Draw3D
       this.a7ECjWrecf[i1, i2] = -(this.a7ECjWrecf[i2, i1] = Math.Sin(Angle));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRotYZ(double Angle)
     {
       this.SetRot(1, 2, Angle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRotZX(double Angle)
     {
       this.SetRot(2, 0, Angle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRotXY(double Angle)
     {
       this.SetRot(0, 1, Angle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRotX(double Angle)
     {
       this.SetRotYZ(Angle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRotY(double Angle)
     {
       this.SetRotZX(Angle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetRotZ(double Angle)
     {
       this.SetRotXY(Angle);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetExchangeAxes(int i, int j)
     {
       this.SetUnit();
@@ -313,13 +307,13 @@ namespace FreeQuant.Charting.Draw3D
       this.a7ECjWrecf[i, j] = this.a7ECjWrecf[j, i] = 1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetExchangeYZ()
     {
       this.SetExchangeAxes(1, 2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetSpecialProjection(double Angle)
     {
       this.SetUnit();

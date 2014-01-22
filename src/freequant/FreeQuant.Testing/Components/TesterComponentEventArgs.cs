@@ -1,4 +1,3 @@
-﻿using Byqm85MNrFBe6JPJlI;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -10,18 +9,15 @@ namespace FreeQuant.Testing.Components
 
     public TesterComponentRecord Component
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.UjAyJfIQgT;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TesterComponentEventArgs(TesterComponentRecord component)
+    
+		public TesterComponentEventArgs(TesterComponentRecord component):base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.UjAyJfIQgT = component;
     }
   }

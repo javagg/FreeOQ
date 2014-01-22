@@ -74,7 +74,7 @@ namespace FreeQuant
     [DisplayName("Target")]
     [Category("Error Management")]
     [DefaultValue(RuntimeErrorOutputTarget.PopupWindow)]
-	public RuntimeErrorOutputTarget RuntimeErrorOutputTarget { get; }
+		public RuntimeErrorOutputTarget RuntimeErrorOutputTarget { get; private set; }
 
     [Description("Gets or sets default currency")]
     [Category("Defaults")]
@@ -211,10 +211,10 @@ namespace FreeQuant
       }
     }
 
-    static Configuration()
-    {
-      GItcYDqSxj5aE60JeS.GRAroVBQNR();
-    }
+//    static Configuration()
+//    {
+//      GItcYDqSxj5aE60JeS.GRAroVBQNR();
+//    }
 
     
     internal Configuration()

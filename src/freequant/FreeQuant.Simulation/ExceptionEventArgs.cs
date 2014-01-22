@@ -1,4 +1,3 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -10,18 +9,15 @@ namespace FreeQuant.Simulation
 
     public Exception Exception
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.D4VelgZ5i4;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ExceptionEventArgs(Exception exception)
+    
+		public ExceptionEventArgs(Exception exception):base()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.D4VelgZ5i4 = exception;
     }
   }

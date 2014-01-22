@@ -1,4 +1,4 @@
-﻿using FreeQuant.Data;
+using FreeQuant.Data;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
 using FreeQuant.Providers;
@@ -519,7 +519,7 @@ namespace FreeQuant.Shared.Data.Import.HistoricalData
           HistoricalDataRequest historicalDataRequest = list[index];
           ++index;
           this.hRhl1skFVG.Add(historicalDataRequest.RequestId, historicalDataRequest);
-          WaitCallback callBack = (WaitCallback) (obj0 => this.tlNlxfyMLv.SendHistoricalDataRequest((HistoricalDataRequest) obj0));
+					WaitCallback callBack = (WaitCallback) (obj1 => this.tlNlxfyMLv.SendHistoricalDataRequest((HistoricalDataRequest) obj0));
           this.zYhk9pJVyB(this.V43ldlVmhs[historicalDataRequest.RequestId], nB29ckVlruqARiYysQ.Downloading);
           ThreadPool.QueueUserWorkItem(callBack, (object) historicalDataRequest);
         }

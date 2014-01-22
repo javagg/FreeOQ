@@ -38,7 +38,7 @@ namespace FreeQuant.Instruments
     {
       PortfolioList portfolioList = new PortfolioList();
       IDbCommand command = this.connection.CreateCommand();
-      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6566);
+//      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6566);
       IDataReader dataReader = command.ExecuteReader();
       while (dataReader.Read())
       {
@@ -48,7 +48,7 @@ namespace FreeQuant.Instruments
         string string3 = dataReader.GetString(3);
         string string4 = dataReader.GetString(4);
         bool flag = !dataReader.IsDBNull(5) && dataReader.GetBoolean(5);
-        Portfolio portfolio = (Portfolio) Activator.CreateInstance(Type.GetType(string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6618), (object) string2, (object) string1)), true);
+				Portfolio portfolio = (Portfolio) Activator.CreateInstance(Type.GetType(string.Format("ds", string2, string1)), true);
         portfolio.Id = int32;
         portfolio.Name = string3;
         portfolio.Description = string4;
@@ -88,7 +88,7 @@ namespace FreeQuant.Instruments
       this.GG5E1xwBnb(portfolio);
       IDbCommand command = this.connection.CreateCommand();
 			command.CommandText = "command11";
-      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6714), DbType.Int32, (object) portfolio.Id);
+			FIXDbServer.SetCommandParameter(command, "dd", DbType.Int32, (object) portfolio.Id);
       command.ExecuteNonQuery();
       command.Dispose();
     }
@@ -114,41 +114,41 @@ namespace FreeQuant.Instruments
     {
       IDbCommand command1 = this.connection.CreateCommand();
 			command1.CommandText = "commandtext";
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7290), DbType.Int32, (object) portfolio.Id);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7312), DbType.String, (object) transaction.ClOrdID);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7332), DbType.Int32, (object) transaction.ReportId);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7354), DbType.DateTime, (object) transaction.DateTime);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7376), DbType.Int32, (object) transaction.Instrument.Id);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7406), DbType.StringFixedLength, (object) FIXSide.ToFIX(transaction.Side));
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7420), DbType.Double, (object) transaction.Price);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7436), DbType.Double, (object) transaction.Qty);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7448), DbType.String, (object) transaction.Text);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7462), DbType.String, (object) transaction.TransactionCost.GetType().Assembly.FullName);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7492), DbType.String, (object) transaction.TransactionCost.GetType().FullName);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7514), DbType.Double, (object) transaction.TransactionCost.Commission);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7540), DbType.StringFixedLength, (object) FIXCommType.ToFIX(transaction.TransactionCost.CommType));
-      command1.ExecuteNonQuery();
-      command1.Dispose();
-      IDbCommand command2 = this.connection.CreateCommand();
-      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7562);
-      transaction.nx8WA03O1L(Convert.ToInt32(command2.ExecuteScalar()));
-      command2.Dispose();
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7290), DbType.Int32, (object) portfolio.Id);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7312), DbType.String, (object) transaction.ClOrdID);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7332), DbType.Int32, (object) transaction.ReportId);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7354), DbType.DateTime, (object) transaction.DateTime);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7376), DbType.Int32, (object) transaction.Instrument.Id);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7406), DbType.StringFixedLength, (object) FIXSide.ToFIX(transaction.Side));
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7420), DbType.Double, (object) transaction.Price);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7436), DbType.Double, (object) transaction.Qty);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7448), DbType.String, (object) transaction.Text);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7462), DbType.String, (object) transaction.TransactionCost.GetType().Assembly.FullName);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7492), DbType.String, (object) transaction.TransactionCost.GetType().FullName);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7514), DbType.Double, (object) transaction.TransactionCost.Commission);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7540), DbType.StringFixedLength, (object) FIXCommType.ToFIX(transaction.TransactionCost.CommType));
+//      command1.ExecuteNonQuery();
+//      command1.Dispose();
+//      IDbCommand command2 = this.connection.CreateCommand();
+//      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7562);
+//      transaction.nx8WA03O1L(Convert.ToInt32(command2.ExecuteScalar()));
+//      command2.Dispose();
     }
 
     
     public void Add(Portfolio portfolio, AccountTransaction transaction)
     {
       IDbCommand command1 = this.connection.CreateCommand();
-      command1.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7600);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7862), DbType.Int32, (object) portfolio.Id);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7884), DbType.DateTime, (object) transaction.DateTime);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7906), DbType.String, (object) transaction.Currency.Code);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7928), DbType.Double, (object) transaction.Value);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7944), DbType.String, (object) transaction.Text);
-      command1.ExecuteNonQuery();
-      command1.Dispose();
+//      command1.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7600);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7862), DbType.Int32, (object) portfolio.Id);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7884), DbType.DateTime, (object) transaction.DateTime);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7906), DbType.String, (object) transaction.Currency.Code);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7928), DbType.Double, (object) transaction.Value);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7944), DbType.String, (object) transaction.Text);
+//      command1.ExecuteNonQuery();
+//      command1.Dispose();
       IDbCommand command2 = this.connection.CreateCommand();
-      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7958);
+//      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7958);
       transaction.G7YBAhR7LA(Convert.ToInt32(command2.ExecuteScalar()));
       command2.Dispose();
     }
@@ -158,8 +158,8 @@ namespace FreeQuant.Instruments
     {
       obj0.LwTsbC870d(true);
       IDbCommand command1 = this.connection.CreateCommand();
-      command1.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7996);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8138), DbType.Int32, (object) obj0.Id);
+//      command1.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(7996);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8138), DbType.Int32, (object) obj0.Id);
       IDataReader dataReader1 = command1.ExecuteReader();
       while (dataReader1.Read())
       {
@@ -187,7 +187,7 @@ namespace FreeQuant.Instruments
         transaction.Price = double1;
         transaction.Qty = double2;
         transaction.Text = string3;
-        TransactionCost transactionCost = (TransactionCost) Activator.CreateInstance(Type.GetType(string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8160), (object) string5, (object) string4)), true);
+				TransactionCost transactionCost = (TransactionCost) Activator.CreateInstance(Type.GetType(string.Format("s", (object) string5, (object) string4)), true);
         transactionCost.CommType = FIXCommType.FromFIX(string6[0]);
         transactionCost.Commission = double3;
         transaction.TransactionCost = transactionCost;
@@ -198,8 +198,8 @@ namespace FreeQuant.Instruments
       dataReader1.Close();
       command1.Dispose();
       IDbCommand command2 = this.connection.CreateCommand();
-      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8180);
-      FIXDbServer.SetCommandParameter(command2, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8338), DbType.Int32, (object) obj0.Id);
+//      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8180);
+			FIXDbServer.SetCommandParameter(command2, "sss", DbType.Int32, (object) obj0.Id);
       IDataReader dataReader2 = command2.ExecuteReader();
       while (dataReader2.Read())
       {
@@ -229,7 +229,7 @@ namespace FreeQuant.Instruments
       if (!this.lgrEa297JL.TryGetValue(obj0, out instrument))
       {
         instrument = (Instrument) Activator.CreateInstance(typeof (Instrument), true);
-        instrument.Symbol = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8360), (object) obj0);
+				instrument.Symbol = string.Format("dd", obj0);
         this.lgrEa297JL.Add(obj0, instrument);
       }
       return instrument;
@@ -238,49 +238,49 @@ namespace FreeQuant.Instruments
     
     private void ospEgWBc0j([In] Portfolio obj0)
     {
-      IDbCommand command = this.connection.CreateCommand();
-      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8396);
-      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8500), DbType.Int32, (object) obj0.Id);
-      command.ExecuteNonQuery();
-      command.Dispose();
+//      IDbCommand command = this.connection.CreateCommand();
+//      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8396);
+//      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8500), DbType.Int32, (object) obj0.Id);
+//      command.ExecuteNonQuery();
+//      command.Dispose();
     }
 
     
     private void GG5E1xwBnb([In] Portfolio obj0)
     {
-      IDbCommand command = this.connection.CreateCommand();
-      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8522);
-      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8642), DbType.Int32, (object) obj0.Id);
-      command.ExecuteNonQuery();
-      command.Dispose();
+//      IDbCommand command = this.connection.CreateCommand();
+//      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8522);
+//      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8642), DbType.Int32, (object) obj0.Id);
+//      command.ExecuteNonQuery();
+//      command.Dispose();
     }
 
     
     private void lwxEohW3ad([In] Portfolio obj0)
     {
-      IDbCommand command1 = this.connection.CreateCommand();
-      command1.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8664);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8922), DbType.String, (object) obj0.GetType().Assembly.FullName);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8944), DbType.String, (object) obj0.GetType().FullName);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8958), DbType.String, (object) obj0.Name);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8972), DbType.String, (object) obj0.Description);
-      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9000), DbType.Boolean, (object) (bool) (obj0.Persistent ? 1 : 0));
-      command1.ExecuteNonQuery();
-      command1.Dispose();
-      IDbCommand command2 = this.connection.CreateCommand();
-      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9026);
-      obj0.Id = Convert.ToInt32(command2.ExecuteScalar());
-      command2.Dispose();
+//      IDbCommand command1 = this.connection.CreateCommand();
+//      command1.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8664);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8922), DbType.String, (object) obj0.GetType().Assembly.FullName);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8944), DbType.String, (object) obj0.GetType().FullName);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8958), DbType.String, (object) obj0.Name);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(8972), DbType.String, (object) obj0.Description);
+//      FIXDbServer.SetCommandParameter(command1, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9000), DbType.Boolean, (object) (bool) (obj0.Persistent ? 1 : 0));
+//      command1.ExecuteNonQuery();
+//      command1.Dispose();
+//      IDbCommand command2 = this.connection.CreateCommand();
+//      command2.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9026);
+//      obj0.Id = Convert.ToInt32(command2.ExecuteScalar());
+//      command2.Dispose();
     }
 
     
     private void k2YExH5Ue4([In] Portfolio obj0)
     {
       IDbCommand command = this.connection.CreateCommand();
-      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9064);
-      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9238), DbType.String, (object) obj0.Description);
-      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9266), DbType.Boolean, (object) (bool) (obj0.Persistent ? 1 : 0));
-      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9292), DbType.Int32, (object) obj0.Id);
+//      command.CommandText = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9064);
+//      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9238), DbType.String, (object) obj0.Description);
+//      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9266), DbType.Boolean, (object) (bool) (obj0.Persistent ? 1 : 0));
+//      FIXDbServer.SetCommandParameter(command, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9292), DbType.Int32, (object) obj0.Id);
       command.ExecuteNonQuery();
       command.Dispose();
     }
@@ -288,8 +288,8 @@ namespace FreeQuant.Instruments
     
     private void iguEIPjIAg()
     {
-      this.FQ3ELAbSkh(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9302), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9326), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9352));
-      this.FQ3ELAbSkh(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9370), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9414), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9428));
+//      this.FQ3ELAbSkh(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9302), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9326), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9352));
+//      this.FQ3ELAbSkh(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9370), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9414), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(9428));
     }
 
     

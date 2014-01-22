@@ -1,4 +1,3 @@
-﻿using Byqm85MNrFBe6JPJlI;
 using FreeQuant.Testing.TesterItems;
 using System.Runtime.CompilerServices;
 
@@ -10,17 +9,14 @@ namespace FreeQuant.Testing
     private TesterItemList U8g72RfTo;
     private TesterItemList SZctPlnKv;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TesterSettings(LiveTester tester)
+    
+		public TesterSettings(LiveTester tester):base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fNyFvVvOo = tester;
       this.FXUR2afwm();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void FXUR2afwm()
     {
       this.U8g72RfTo = new TesterItemList();
@@ -38,7 +34,7 @@ namespace FreeQuant.Testing
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void LoadState()
     {
       foreach (TesterItem testerItem in this.fNyFvVvOo.Components)

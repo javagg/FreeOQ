@@ -1,5 +1,3 @@
-﻿using ASQMKC8WePBGJ83PL4;
-using Byqm85MNrFBe6JPJlI;
 using FreeQuant.Testing.TesterItems;
 using System;
 using System.Collections;
@@ -13,27 +11,22 @@ namespace FreeQuant.Testing.MathStatistics
     protected ArrayList sortedSeries;
     protected double lastInsertedValue;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public Median(string name, SeriesTesterItem parentSeriesItem)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
+			: base(name, parentSeriesItem, name + parentSeriesItem.Series.Title)
+		 {
       this.sortedSeries = new ArrayList();
       this.lastInsertedValue = double.NaN;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, parentSeriesItem, name + s3j2vikrJi2pVH1Xpv.aMieSmUS9G(2166) + parentSeriesItem.Series.Title);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Median(string name)
+   
+		public Median(string name):    base(name)
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
       this.sortedSeries = new ArrayList();
       this.lastInsertedValue = double.NaN;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     private void M7hyIivSUJ([In] double obj0)
     {
       int index = 0;
@@ -42,7 +35,7 @@ namespace FreeQuant.Testing.MathStatistics
       this.sortedSeries.Insert(index, (object) obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void CalculateSeries(int firstIndex, int lastIndex)
     {
       if (firstIndex > lastIndex)
@@ -59,7 +52,7 @@ namespace FreeQuant.Testing.MathStatistics
       this.lastInsertedValue = this.parentSeries[lastIndex];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override double GetValue(DateTime date)
     {
       ArrayList arrayList = new ArrayList();
@@ -74,7 +67,7 @@ namespace FreeQuant.Testing.MathStatistics
       return arrayList.Count % 2 != 0 ? (double) arrayList[arrayList.Count / 2] : ((double) arrayList[arrayList.Count / 2 - 1] + (double) arrayList[arrayList.Count / 2]) / 2.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Reset()
     {
       base.Reset();

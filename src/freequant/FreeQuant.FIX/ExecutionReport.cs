@@ -8,11 +8,11 @@ namespace FreeQuant.FIX
     [Category("Attributes")]
     public Side Side
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXSide.FromFIX(base.Side);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.Side = FIXSide.ToFIX(value);
       }
@@ -21,11 +21,11 @@ namespace FreeQuant.FIX
     [Category("Attributes")]
     public OrdType OrdType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXOrdType.FromFIX(base.OrdType);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.OrdType = FIXOrdType.ToFIX(value);
       }
@@ -34,11 +34,11 @@ namespace FreeQuant.FIX
     [Category("Attributes")]
     public OrdStatus OrdStatus
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXOrdStatus.FromFIX(base.OrdStatus);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.OrdStatus = FIXOrdStatus.ToFIX(value);
       }
@@ -47,11 +47,11 @@ namespace FreeQuant.FIX
     [Category("Attributes")]
     public TimeInForce TimeInForce
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXTimeInForce.FromFIX(base.TimeInForce);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.TimeInForce = FIXTimeInForce.ToFIX(value);
       }
@@ -60,11 +60,11 @@ namespace FreeQuant.FIX
     [Category("Attributes")]
     public ExecTransType ExecTransType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXExecTransType.FromFIX(base.ExecTransType);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.ExecTransType = FIXExecTransType.ToFIX(value);
       }
@@ -73,11 +73,11 @@ namespace FreeQuant.FIX
     [Category("Attributes")]
     public ExecType ExecType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXExecType.FromFIX(base.ExecType);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.ExecType = FIXExecType.ToFIX(value);
       }
@@ -86,11 +86,11 @@ namespace FreeQuant.FIX
     [Category("Commission")]
     public CommType CommType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return FIXCommType.FromFIX(base.CommType);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         base.CommType = FIXCommType.ToFIX(value);
       }

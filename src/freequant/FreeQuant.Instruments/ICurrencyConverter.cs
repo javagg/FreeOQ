@@ -1,3 +1,5 @@
+using System;
+
 namespace FreeQuant.Instruments
 {
 	public interface ICurrencyConverter

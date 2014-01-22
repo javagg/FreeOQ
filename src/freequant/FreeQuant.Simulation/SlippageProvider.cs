@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using FreeQuant.FIX;
 
 namespace FreeQuant.Simulation
 {
@@ -12,25 +13,23 @@ namespace FreeQuant.Simulation
     [Category("Parameter")]
     public double Slippage
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.HvMPtuVkeV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.HvMPtuVkeV = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public SlippageProvider()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetExecutionPrice(ExecutionReport report)
     {
       double avgPx = report.AvgPx;
@@ -50,10 +49,10 @@ namespace FreeQuant.Simulation
       return report.AvgPx = avgPx;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string ToString()
     {
-      return v6F3C32VVUpp2OYb5n.VVyFVqM4b6(4850);
+			return "";
     }
   }
 }

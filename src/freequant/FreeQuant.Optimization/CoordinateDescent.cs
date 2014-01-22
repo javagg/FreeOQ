@@ -96,7 +96,7 @@ namespace FreeQuant.Optimization
     public override void Print()
     {
       base.Print();
-      Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(244) + (object) this.rMbL3XWM4);
+      Console.WriteLine(this.rMbL3XWM4);
     }
   }
 }

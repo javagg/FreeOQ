@@ -5,7 +5,6 @@ using FreeQuant.FIX;
 using FreeQuant.FIXData;
 using FreeQuant.Instruments;
 using FreeQuant.Providers;
-using FreeQuant.Trading.Design;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;

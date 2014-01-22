@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace FreeQuant
 {
@@ -67,10 +68,10 @@ namespace FreeQuant
 					if (!Framework.Installation.tnABvXFOOP() && !Framework.Installation.c7kBpxixDa())
 						break;
 					if (Trace.IsLevelEnabled(TraceLevel.Info))
-						Trace.WriteLine(GItcYDqSxj5aE60JeS.GFmrbXlIxf(76));
+						Trace.WriteLine("TraceLevel.Info");
 					if (Environment.UserInteractive)
 					{
-						int num1 = (int)MessageBox.Show(string.Format(GItcYDqSxj5aE60JeS.GFmrbXlIxf(140), (object)Framework.Installation.MainProduct), GItcYDqSxj5aE60JeS.GFmrbXlIxf(368), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						int num1 = (int)MessageBox.Show(string.Format("{0}", Framework.Installation.MainProduct), "dfs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					}
 					Environment.Exit(-1);
 					break;
@@ -79,10 +80,10 @@ namespace FreeQuant
 					if (Framework.Installation.i94BcvgC0K())
 						break;
 					if (Trace.IsLevelEnabled(TraceLevel.Info))
-						Trace.WriteLine(GItcYDqSxj5aE60JeS.GFmrbXlIxf(392));
+						Trace.WriteLine("TraceLevel.Info");
 					if (Environment.UserInteractive)
 					{
-						int num2 = (int)MessageBox.Show(GItcYDqSxj5aE60JeS.GFmrbXlIxf(462), GItcYDqSxj5aE60JeS.GFmrbXlIxf(532), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						int num2 = (int)MessageBox.Show("ddf", "fddd", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					}
 					Environment.Exit(-1);
 					break;

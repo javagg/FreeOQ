@@ -410,7 +410,7 @@ namespace FreeQuant.Instruments
       this.currency = CurrencyManager.DefaultCurrency;
       this.transactionCost = new TransactionCost();
       this.toolTipEnabled = true;
-      this.toolTipFormat = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2028);
+			this.toolTipFormat = "fs";
       this.buyColor = Color.Blue;
       this.sellColor = Color.Red;
       this.sellShortColor = Color.Yellow;
@@ -426,7 +426,7 @@ namespace FreeQuant.Instruments
       this.currency = CurrencyManager.DefaultCurrency;
       this.transactionCost = new TransactionCost();
       this.toolTipEnabled = true;
-      this.toolTipFormat = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2074);
+			this.toolTipFormat = "sf";
       this.buyColor = Color.Blue;
       this.sellColor = Color.Red;
       this.sellShortColor = Color.Yellow;
@@ -463,11 +463,11 @@ namespace FreeQuant.Instruments
     
     public void Draw(string option)
     {
-      if (option.IndexOf(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2120)) != -1)
+			if (option.IndexOf("textEnabled") != -1)
         this.textEnabled = true;
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2126), gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2142));
+				Canvas canvas = new Canvas("CName", "cTitle");
       }
       Chart.Pad.Add((IDrawable) this);
     }
@@ -475,13 +475,13 @@ namespace FreeQuant.Instruments
     
     public void Draw()
     {
-      this.Draw(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2158));
+			this.Draw("");
     }
 
     
     public override string ToString()
     {
-      return (string) (object) this.dateTime + (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2164) + ((object) this.side).ToString() + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2170) + (string) (object) this.qty + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2176) + this.instrument.Symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2182) + (string) (object) this.price;
+      return (string) (object) this.dateTime +  ((object) this.side).ToString()  + (string) (object) this.qty + this.instrument.Symbol + (string) (object) this.price;
     }
 
     
@@ -501,8 +501,8 @@ namespace FreeQuant.Instruments
       int x = Pad.ClientX((double) this.DateTime.Ticks);
       int y = Pad.ClientY(this.Price);
       float num1 = 12f;
-      string str = ((object) this.Side).ToString() + (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2190) + (string) (object) this.Qty + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2196) + this.Instrument.Symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2202) + this.Price.ToString(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2212));
-      Font font = new Font(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2220), 8f);
+			string str = ((object) this.Side).ToString()  + (string) (object) this.Qty  + this.Instrument.Symbol + this.Price.ToString();
+			Font font = new Font("airal", 8f);
       switch (this.Side)
       {
         case Side.Buy:

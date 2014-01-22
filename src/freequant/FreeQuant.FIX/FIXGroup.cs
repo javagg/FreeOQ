@@ -38,7 +38,7 @@ namespace FreeQuant.FIX
 		[Browsable(false)]
 		public FIXGroupTable Groups { get; private set; }
 
-		public FIXGroup() : base()
+		public FIXGroup()
 		{
 			this.fields = new Dictionary<int, FIXField>();
 			this.oncZo3Ix5 = new object();

@@ -6,29 +6,13 @@ namespace FreeQuant.Instruments
 {
 	public class BarSeriesEventArgs : EventArgs
 	{
-		private BarSeries barSeries;
-		private Instrument instrument;
-
-		public BarSeries BarSeries
-		{
-			get
-			{
-				return this.barSeries;
-			}
-		}
-
-		public Instrument Instrument
-		{
-			get
-			{
-				return this.instrument; 
-			}
-		}
+		public BarSeries BarSeries { get; private set; }
+		public Instrument Instrument { get; private set; }
 
 		public BarSeriesEventArgs(BarSeries barSeries, Instrument instrument) : base()
 		{
-			this.barSeries = barSeries;
-			this.instrument = instrument;
+			this.BarSeries = barSeries;
+			this.Instrument = instrument;
 		}
 	}
 }

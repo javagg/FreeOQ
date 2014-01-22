@@ -139,13 +139,9 @@ namespace FreeQuant.FIX
 		DateTime InterestAccrualDate { get; set; }
 
 		bool ContainsField(int tag);
-
 		FIXSecurityAltIDGroup GetSecurityAltIDGroup(int i);
-
 		void AddGroup(FIXSecurityAltIDGroup group);
-
 		FIXEventsGroup GetEventsGroup(int i);
-
 		void AddGroup(FIXEventsGroup group);
 	}
 }

@@ -5,13 +5,13 @@ namespace FreeQuant.Data
 {
 	public class DataSeriesList : IList
 	{
-		private ArrayList z1ZSqbavM;
+		private ArrayList list;
 
 		public bool IsReadOnly
 		{
 			get
 			{
-				return this.z1ZSqbavM.IsReadOnly;
+				return this.list.IsReadOnly;
 			}
 		}
 
@@ -19,7 +19,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.z1ZSqbavM.IsFixedSize;
+				return this.list.IsFixedSize;
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.z1ZSqbavM.IsSynchronized;
+				return this.list.IsSynchronized;
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.z1ZSqbavM.Count;
+				return this.list.Count;
 			}
 		}
 
@@ -43,40 +43,38 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.z1ZSqbavM.SyncRoot;
+				return this.list.SyncRoot;
 			}
 		}
-
-//		object get_Item(int index)
-//		{
-//			return (object)this[index];
-//		}
-//
-//		void set_Item(int index, object value)
-//		{
-//			this[index] = value as IDataSeries;
-//		}
-
+		//		object get_Item(int index)
+		//		{
+		//			return (object)this[index];
+		//		}
+		//
+		//		void set_Item(int index, object value)
+		//		{
+		//			this[index] = value as IDataSeries;
+		//		}
 		public object this[int index]
 		{
 			get
 			{
-				return this.z1ZSqbavM[index];
+				return this.list[index];
 			}
 			set
 			{
-				this.z1ZSqbavM[index] = (object)value;
+				this.list[index] = (object)value;
 			}
 		}
 
 		public DataSeriesList()
 		{
-			this.z1ZSqbavM = new ArrayList();
+			this.list = new ArrayList();
 		}
 
 		public void RemoveAt(int index)
 		{
-			this.z1ZSqbavM.RemoveAt(index);
+			this.list.RemoveAt(index);
 		}
 
 		void IList.Insert(int index, object value)
@@ -96,7 +94,7 @@ namespace FreeQuant.Data
 
 		public void Clear()
 		{
-			this.z1ZSqbavM.Clear();
+			this.list.Clear();
 		}
 
 		int IList.IndexOf(object value)
@@ -111,37 +109,37 @@ namespace FreeQuant.Data
 
 		public void CopyTo(Array array, int index)
 		{
-			this.z1ZSqbavM.CopyTo(array, index);
+			this.list.CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.z1ZSqbavM.GetEnumerator();
+			return this.list.GetEnumerator();
 		}
 
 		public void Insert(int index, IDataSeries series)
 		{
-			this.z1ZSqbavM.Insert(index, (object)series);
+			this.list.Insert(index, series);
 		}
 
 		public void Remove(IDataSeries series)
 		{
-			this.z1ZSqbavM.Remove((object)series);
+			this.list.Remove(series);
 		}
 
 		public bool Contains(IDataSeries series)
 		{
-			return this.z1ZSqbavM.Contains((object)series);
+			return this.list.Contains(series);
 		}
 
 		public int IndexOf(IDataSeries series)
 		{
-			return this.z1ZSqbavM.IndexOf((object)series);
+			return this.list.IndexOf(series);
 		}
 
 		public int Add(IDataSeries series)
 		{
-			return this.z1ZSqbavM.Add((object)series);
+			return this.list.Add(series);
 		}
 	}
 }

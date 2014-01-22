@@ -359,9 +359,9 @@ namespace FreeQuant.Optimization
 
     public void Print(string Option)
     {
-      Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(0), (object) this.fNParam);
+			Console.WriteLine("", this.fNParam);
       for (int index = 0; index < this.fNParam; ++index)
-        Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(28), (object) index, (object) this.fParam[index], (object) this.fParamName[index]);
+				Console.WriteLine("", index, this.fParam[index],this.fParamName[index]);
     }
   }
 }

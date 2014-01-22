@@ -50,11 +50,8 @@ namespace FreeQuant.FinChart
     }
 
     
-    public AxisRight(Chart chart, Pad pad, int x, int y1, int y2)
+		public AxisRight(Chart chart, Pad pad, int x, int y1, int y2):base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.chart = chart;
       this.ipsc8CkXcd = pad;
       this.x = (double) x;
@@ -199,7 +196,7 @@ namespace FreeQuant.FinChart
               if (this.UvocmIoHmQ(axesMarked.Color, Color.White))
                 color = Color.Black;
               this.ipsc8CkXcd.Graphics.FillRectangle((Brush) new SolidBrush(axesMarked.Color), (float) this.X, (float) ((double) this.ipsc8CkXcd.ClientY(axesMarked.LastValue) - (double) sizeF.Height / 2.0 - 2.0), sizeF.Width, sizeF.Height + 2f);
-              this.ipsc8CkXcd.Graphics.DrawString(str, this.chart.rRlwD21sH7, (Brush) new SolidBrush(color), (float) this.X + 2f, (float) ((double) this.ipsc8CkXcd.ClientY(axesMarked.LastValue) - (double) sizeF.Height / 2.0 - 1.0));
+              this.ipsc8CkXcd.Graphics.DrawString(str, this.chart.font, (Brush) new SolidBrush(color), (float) this.X + 2f, (float) ((double) this.ipsc8CkXcd.ClientY(axesMarked.LastValue) - (double) sizeF.Height / 2.0 - 1.0));
             }
           }
         }

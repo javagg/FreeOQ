@@ -1,5 +1,3 @@
-﻿using LI7wYoxjcQSGYmaiNa;
-using RZ1j9O1DCcsDf19ge6;
 using FreeQuant;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
@@ -43,7 +41,7 @@ namespace FreeQuant.Execution
 
     public static OrderListTable Orders
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return OrderManager.orders; 
       }
@@ -73,10 +71,9 @@ namespace FreeQuant.Execution
 
     public static event EventHandler OrderListUpdated;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static OrderManager()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
       OrderManager.c55wGJraV = false;
       OrderManager.a8ycqU2Fn = 0;
       OrderManager.orders = new OrderListTable();
@@ -107,12 +104,12 @@ namespace FreeQuant.Execution
       switch (Framework.Storage.ServerType)
       {
         case DbServerType.MS_ACCESS:
-          connectionType = Type.GetType(p9eligYgcNHo8cieFV.RdvEpVlLR7(2698));
-          connectionString = string.Format(p9eligYgcNHo8cieFV.RdvEpVlLR7(2928), (object) Framework.Installation.DataDir.FullName);
+					connectionType = Type.GetType("");
+					connectionString = string.Format("", (object) Framework.Installation.DataDir.FullName);
           break;
         case DbServerType.SQL_SERVER_COMPACT_EDITION_35:
-          connectionType = Type.GetType(p9eligYgcNHo8cieFV.RdvEpVlLR7(3056));
-          connectionString = string.Format(p9eligYgcNHo8cieFV.RdvEpVlLR7(3322), (object) Framework.Installation.DataDir.FullName);
+					connectionType = Type.GetType("");
+					connectionString = string.Format("", (object) Framework.Installation.DataDir.FullName);
           break;
       }
       OrderManager.server.Open(connectionType, connectionString);
@@ -135,7 +132,7 @@ namespace FreeQuant.Execution
     {
       lock (typeof (OrderManager))
       {
-        string local_0 = Clock.Now.ToString(p9eligYgcNHo8cieFV.RdvEpVlLR7(3430)) + (object) OrderManager.a8ycqU2Fn;
+        string local_0 = Clock.Now.ToString() +  OrderManager.a8ycqU2Fn;
         ++OrderManager.a8ycqU2Fn;
         return local_0;
       }
@@ -143,8 +140,8 @@ namespace FreeQuant.Execution
 
     internal static void GM96fGxEM([In] SingleOrder obj0)
     {
-      if (obj0.Provider == null)
-        throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(3526));
+//      if (obj0.Provider == null)
+//        throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(3526));
       if (obj0.Persistent)
         OrderManager.server.AddOrder((IOrder) obj0);
       OrderManager.orders.Add(obj0);
@@ -161,7 +158,7 @@ namespace FreeQuant.Execution
         report.Side = obj0.Side;
         report.OrdType = obj0.OrdType;
         report.Currency = obj0.Currency;
-        report.Text = p9eligYgcNHo8cieFV.RdvEpVlLR7(3460) + obj0.OCAGroup + p9eligYgcNHo8cieFV.RdvEpVlLR7(3484);
+				report.Text = ""+ obj0.OCAGroup;
         OrderManager.u4SCsblPj((object) null, new ExecutionReportEventArgs(report));
       }
       else
@@ -170,8 +167,8 @@ namespace FreeQuant.Execution
 
     internal static void mgxNNoGq5([In] SingleOrder obj0)
     {
-      if (obj0.Provider == null)
-        throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(3674));
+//      if (obj0.Provider == null)
+//				throw new ApplicationException("");
       OrderCancelRequest request = new OrderCancelRequest();
       request.OrigClOrdID = obj0.ClOrdID;
       request.ClOrdID = OrderManager.Xgea6ywFN();
@@ -191,8 +188,8 @@ namespace FreeQuant.Execution
 
     internal static void MlPSr0K75([In] SingleOrder obj0)
     {
-      if (obj0.Provider == null)
-        throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(3826));
+//      if (obj0.Provider == null)
+//        throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(3826));
       OrderCancelReplaceRequest request = new OrderCancelReplaceRequest();
       request.ClOrdID = OrderManager.Xgea6ywFN();
       request.OrigClOrdID = obj0.ClOrdID;
@@ -231,7 +228,7 @@ namespace FreeQuant.Execution
       obj0.Provider.SendOrderCancelReplaceRequest(request);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void RemoveOrders(int tag, object value)
     {
       int count = OrderManager.orders.Count;
@@ -251,12 +248,12 @@ namespace FreeQuant.Execution
         else
           ++index;
       }
-      if (count == OrderManager.orders.Count || OrderManager.sjIEOdweJO == null)
-        return;
-      OrderManager.sjIEOdweJO((object) typeof (OrderManager), EventArgs.Empty);
+//      if (count == OrderManager.orders.Count || OrderManager.sjIEOdweJO == null)
+//        return;
+//      OrderManager.sjIEOdweJO((object) typeof (OrderManager), EventArgs.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static OrderList GetOCAGroup(string name)
     {
       OrderList orderList = new OrderList();
@@ -271,7 +268,7 @@ namespace FreeQuant.Execution
       return orderList;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void u4SCsblPj([In] object obj0, [In] ExecutionReportEventArgs obj1)
     {
       ExecutionReport executionReport = obj1.ExecutionReport;
@@ -302,18 +299,18 @@ namespace FreeQuant.Execution
         order = OrderManager.orders.All[executionReport.ClOrdID] as SingleOrder;
       if (order == null)
       {
-        throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(3978) + ((object) executionReport.ExecType).ToString() + p9eligYgcNHo8cieFV.RdvEpVlLR7(4068) + executionReport.ClOrdID + p9eligYgcNHo8cieFV.RdvEpVlLR7(4094) + executionReport.OrigClOrdID);
+				throw new ApplicationException(executionReport.ExecType + executionReport.ClOrdID + executionReport.OrigClOrdID);
       }
       else
       {
-        if (order.Provider == null)
-          throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(4128));
+//        if (order.Provider == null)
+//          throw new ApplicationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(4128));
         OrdStatus ordStatus = order.OrdStatus;
         order.mlSRyS5Q1(executionReport);
         if (order.Persistent)
           OrderManager.server.AddReport((IOrder) order, (FIXExecutionReport) executionReport);
-        if (OrderManager.x5HEE1y1EF != null)
-          OrderManager.x5HEE1y1EF(obj0, new ExecutionReportEventArgs((NewOrderSingle) order, executionReport));
+//        if (OrderManager.x5HEE1y1EF != null)
+//          OrderManager.x5HEE1y1EF(obj0, new ExecutionReportEventArgs((NewOrderSingle) order, executionReport));
         if (ordStatus != order.OrdStatus)
         {
           OrderManager.orders.Update(order);
@@ -323,7 +320,7 @@ namespace FreeQuant.Execution
         if (OrderManager.EnablePartialTransactions && (executionReport.ExecType == ExecType.Fill || executionReport.ExecType == ExecType.PartialFill || executionReport.ExecType == ExecType.Trade))
           OrderManager.nf3XP7Xf3(order, executionReport.TransactTime, executionReport.LastPx, executionReport.LastQty);
         // ISSUE: reference to a compiler-generated method
-        if (ordStatus != order.OrdStatus && order.IsDone && !order.zNNTifyph())
+        if (ordStatus != order.OrdStatus && order.IsDone)
         {
           if (!OrderManager.EnablePartialTransactions)
             OrderManager.nf3XP7Xf3(order, executionReport.TransactTime, executionReport.AvgPx, executionReport.CumQty);
@@ -340,7 +337,7 @@ namespace FreeQuant.Execution
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void Y5Y2jeOHy([In] object obj0, [In] OrderCancelRejectEventArgs obj1)
     {
       OrderCancelReject orderCancelReject = obj1.OrderCancelReject;
@@ -367,13 +364,10 @@ namespace FreeQuant.Execution
 label_10:
       OrdStatus ordStatus = order.OrdStatus;
       order.hHemwyJmI(orderCancelReject);
-      if (OrderManager.s4oERsAytu != null)
-        OrderManager.s4oERsAytu(obj0, new OrderCancelRejectEventArgs((NewOrderSingle) order, orderCancelReject));
+//      if (OrderManager.s4oERsAytu != null)
+//        OrderManager.s4oERsAytu(obj0, new OrderCancelRejectEventArgs((NewOrderSingle) order, orderCancelReject));
       if (order.IsDone)
       {
-        // ISSUE: reference to a compiler-generated method
-        if (order.zNNTifyph())
-          return;
         if (!OrderManager.EnablePartialTransactions)
           OrderManager.nf3XP7Xf3(order, orderCancelReject.TransactTime, order.AvgPx, order.CumQty);
         OrderManager.YUArMfFNj(order);
@@ -388,7 +382,7 @@ label_10:
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void nf3XP7Xf3([In] SingleOrder obj0, [In] DateTime obj1, [In] double obj2, [In] double obj3)
     {
       if (obj0.LastQty <= 0.0 || obj0.Portfolio == null)
@@ -408,11 +402,11 @@ label_10:
       obj0.Portfolio.Add(transaction);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void YUArMfFNj([In] SingleOrder obj0)
     {
       // ISSUE: reference to a compiler-generated method
-      obj0.KbABb8YWe(true);
+//      obj0.KbABb8YWe(true);
       OrderManager.v6A0O8GUY(obj0);
       if (!OrderManager.RemoveDoneOrders)
         return;
@@ -420,15 +414,15 @@ label_10:
       OrderManager.nONISjMtt(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void wH4Pa5uQx([In] ProviderErrorEventArgs obj0)
     {
-      if (OrderManager.mLMEko505A == null)
-        return;
-      OrderManager.mLMEko505A(obj0);
+//      if (OrderManager.mLMEko505A == null)
+//        return;
+//      OrderManager.mLMEko505A(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void nhwqZAwVD([In] ProviderEventArgs obj0)
     {
       if (!(obj0.Provider is IExecutionProvider))
@@ -441,36 +435,36 @@ label_10:
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void JEbFt6tfX([In] SingleOrder obj0)
     {
-      if (OrderManager.arFEeX1wWI == null)
-        return;
-      OrderManager.arFEeX1wWI(new OrderEventArgs(obj0));
+//      if (OrderManager.arFEeX1wWI == null)
+//        return;
+//      OrderManager.arFEeX1wWI(new OrderEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void qrwh0GePg([In] SingleOrder obj0)
     {
-      if (OrderManager.UISEmPsva8 == null)
-        return;
-      OrderManager.UISEmPsva8(new OrderEventArgs(obj0));
-    }
+//      if (OrderManager.UISEmPsva8 == null)
+//        return;
+//      OrderManager.UISEmPsva8(new OrderEventArgs(obj0));
+   }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void v6A0O8GUY([In] SingleOrder obj0)
     {
-      if (OrderManager.v3uETTndAf == null)
-        return;
-      OrderManager.v3uETTndAf(new OrderEventArgs(obj0));
+//      if (OrderManager.v3uETTndAf == null)
+//        return;
+//      OrderManager.v3uETTndAf(new OrderEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void nONISjMtt([In] SingleOrder obj0)
     {
-      if (OrderManager.JhfEBj1mlh == null)
-        return;
-      OrderManager.JhfEBj1mlh(new OrderEventArgs(obj0));
+//      if (OrderManager.JhfEBj1mlh == null)
+//        return;
+//      OrderManager.JhfEBj1mlh(new OrderEventArgs(obj0));
     }
 
     public class SellSideService
@@ -480,7 +474,7 @@ label_10:
 
       public SellSideOrderList Orders
       {
-        [MethodImpl(MethodImplOptions.NoInlining)] get
+         get
         {
           return this.a44Etx1oTg;
         }
@@ -492,24 +486,21 @@ label_10:
 
       public event EventHandler OrderListUpdated;
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       internal SellSideService()
       {
-        NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
         this.a44Etx1oTg = new SellSideOrderList();
         this.pFJEnmStap = 1;
         ServiceManager.NewOrderSingle += new NewOrderSingleEventHandler(this.pTiEUEnvcs);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public string GetNextOrderID()
       {
-        return string.Format(p9eligYgcNHo8cieFV.RdvEpVlLR7(4182), (object) DateTime.Now, (object) this.pFJEnmStap++);
+				return string.Format("", DateTime.Now, this.pFJEnmStap++);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void SendExecutionReport(IExecutionService service, ExecutionReport report)
       {
         this.a44Etx1oTg[report.OrderID].mlSRyS5Q1(report);
@@ -517,7 +508,7 @@ label_10:
         this.aNsEVckbDs(report);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       public void RemoveOrders(int tag, object value)
       {
         int count = this.a44Etx1oTg.Count;
@@ -541,13 +532,13 @@ label_10:
         this.lXpEvXnu7N();
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       internal void ksHExX7sqh()
       {
         this.a44Etx1oTg.HKElmrgRF();
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       private void pTiEUEnvcs([In] object obj0, [In] NewOrderSingleEventArgs obj1)
       {
         SingleOrder singleOrder = obj1.Order as SingleOrder;
@@ -557,28 +548,28 @@ label_10:
         this.KHCE7c3kVy(singleOrder);
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       private void KHCE7c3kVy([In] SingleOrder obj0)
       {
-        if (this.Gt4EWZSr2q == null)
-          return;
-        this.Gt4EWZSr2q(new OrderEventArgs(obj0));
+//        if (this.Gt4EWZSr2q == null)
+//          return;
+//        this.Gt4EWZSr2q(new OrderEventArgs(obj0));
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       private void aNsEVckbDs([In] ExecutionReport obj0)
       {
-        if (this.fFHEsC37IP == null)
-          return;
-        this.fFHEsC37IP((object) this, new ExecutionReportEventArgs(obj0));
+//        if (this.fFHEsC37IP == null)
+//          return;
+//        this.fFHEsC37IP((object) this, new ExecutionReportEventArgs(obj0));
       }
 
-      [MethodImpl(MethodImplOptions.NoInlining)]
+      
       private void lXpEvXnu7N()
       {
-        if (this.GbiE1hC6fD == null)
-          return;
-        this.GbiE1hC6fD((object) typeof (OrderManager.SellSideService), EventArgs.Empty);
+//        if (this.GbiE1hC6fD == null)
+//          return;
+//        this.GbiE1hC6fD((object) typeof (OrderManager.SellSideService), EventArgs.Empty);
       }
     }
   }

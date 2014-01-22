@@ -1,8 +1,8 @@
 namespace FreeQuant.FinChart
 {
-  public enum ChartActionType
-  {
-    Cross,
-    None,
-  }
+	public enum ChartActionType
+	{
+		Cross,
+		None,
+	}
 }

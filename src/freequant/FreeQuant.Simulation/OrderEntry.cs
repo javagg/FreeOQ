@@ -1,4 +1,3 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
 using System;
@@ -8,7 +7,7 @@ namespace FreeQuant.Simulation
 {
   public class OrderEntry
   {
-    private bool USpebK6QpY;
+    private bool enabled;
     private DateTime EYxeYyIRE0;
     private Instrument v5feHuwqbg;
     private Side dOjedjlBjF;
@@ -20,23 +19,23 @@ namespace FreeQuant.Simulation
 
     public bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.USpebK6QpY;
+				return this.enabled; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.USpebK6QpY = value;
+        this.enabled = value;
       }
     }
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.EYxeYyIRE0;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.EYxeYyIRE0 = value;
       }
@@ -44,11 +43,11 @@ namespace FreeQuant.Simulation
 
     public Instrument Instrument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.v5feHuwqbg;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.v5feHuwqbg = value;
       }
@@ -56,11 +55,11 @@ namespace FreeQuant.Simulation
 
     public Side Side
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.dOjedjlBjF;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.dOjedjlBjF = value;
       }
@@ -68,11 +67,11 @@ namespace FreeQuant.Simulation
 
     public OrdType OrdType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nIHeXvWqvv;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nIHeXvWqvv = value;
       }
@@ -80,11 +79,11 @@ namespace FreeQuant.Simulation
 
     public double Price
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.yqpeIlWhZE;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yqpeIlWhZE = value;
       }
@@ -92,11 +91,11 @@ namespace FreeQuant.Simulation
 
     public double StopPx
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.KULeSyK2Wh;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.KULeSyK2Wh = value;
       }
@@ -104,11 +103,11 @@ namespace FreeQuant.Simulation
 
     public double OrderQty
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Ro5ewJtCLA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Ro5ewJtCLA = value;
       }
@@ -116,22 +115,19 @@ namespace FreeQuant.Simulation
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.LA6ecK9JGv;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.LA6ecK9JGv = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OrderEntry()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

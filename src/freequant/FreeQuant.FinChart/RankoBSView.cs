@@ -10,7 +10,7 @@ namespace FreeQuant.FinChart
   public class RankoBSView : SeriesView
   {
     private BarSeries rPoS1WavBw;
-    private Ranko SxvSUG7nWo;
+		private Ranko ranko; 
 
     public override Color Color
     {
@@ -35,7 +35,7 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return (TimeSeries) this.SxvSUG7nWo;
+        return (TimeSeries) this.ranko;
       }
     }
 
@@ -48,14 +48,14 @@ namespace FreeQuant.FinChart
       this.rPoS1WavBw = series;
       this.pad = pad;
       this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3504);
-      this.SxvSUG7nWo = new Ranko(series, 0.3);
-      this.SxvSUG7nWo.Calculate();
+      this.ranko = new Ranko(series, 0.3);
+      this.ranko.Calculate();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     public override PadRange GetPadRangeY(Pad Pad)
     {
-      return new PadRange(this.SxvSUG7nWo.LowestLow(this.firstDate, this.lastDate), this.SxvSUG7nWo.HighestHigh(this.firstDate, this.lastDate));
+      return new PadRange(this.ranko.LowestLow(this.firstDate, this.lastDate), this.ranko.HighestHigh(this.firstDate, this.lastDate));
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -66,28 +66,28 @@ namespace FreeQuant.FinChart
       Pen pen3 = new Pen(Color.White);
       SolidBrush solidBrush1 = new SolidBrush(Color.White);
       SolidBrush solidBrush2 = new SolidBrush(Color.Black);
-      int index1 = this.SxvSUG7nWo.GetIndex(this.firstDate);
-      int index2 = this.SxvSUG7nWo.GetIndex(this.lastDate);
+      int index1 = this.ranko.GetIndex(this.firstDate);
+      int index2 = this.ranko.GetIndex(this.lastDate);
       if (index2 == -1 || index2 == -1)
         return;
       int width = Math.Max(2, (int) this.pad.IntervalWidth);
       if (index1 == -1)
         return;
-      int height = this.pad.ClientY(0.0) - this.pad.ClientY(this.SxvSUG7nWo.BoxSize);
+      int height = this.pad.ClientY(0.0) - this.pad.ClientY(this.ranko.BoxSize);
       for (int index3 = index1; index3 <= index2; ++index3)
       {
-        int num1 = this.pad.ClientX(this.SxvSUG7nWo.GetDateTime(index3));
-        Bar bar = this.SxvSUG7nWo[index3];
-        double open = this.SxvSUG7nWo[index3].Open;
-        double close = this.SxvSUG7nWo[index3].Close;
-        int num2 = (int) Math.Floor(Math.Abs(close - open) / this.SxvSUG7nWo.BoxSize);
+        int num1 = this.pad.ClientX(this.ranko.GetDateTime(index3));
+        Bar bar = this.ranko[index3];
+        double open = this.ranko[index3].Open;
+        double close = this.ranko[index3].Close;
+        int num2 = (int) Math.Floor(Math.Abs(close - open) / this.ranko.BoxSize);
         if (open > close)
         {
           Pen pen4 = pen2;
           for (int index4 = 0; index4 < num2; ++index4)
           {
-            this.pad.Graphics.DrawRectangle(new Pen(Color.Black, 1f), num1 + width * index4 - width / 2, this.pad.ClientY(open - this.SxvSUG7nWo.BoxSize * (double) index4), width, height);
-            this.pad.Graphics.FillRectangle((Brush) new SolidBrush(pen4.Color), num1 + width * index4 - width / 2, this.pad.ClientY(open - this.SxvSUG7nWo.BoxSize * (double) index4) + 1, width, height);
+            this.pad.Graphics.DrawRectangle(new Pen(Color.Black, 1f), num1 + width * index4 - width / 2, this.pad.ClientY(open - this.ranko.BoxSize * (double) index4), width, height);
+            this.pad.Graphics.FillRectangle((Brush) new SolidBrush(pen4.Color), num1 + width * index4 - width / 2, this.pad.ClientY(open - this.ranko.BoxSize * (double) index4) + 1, width, height);
           }
         }
         else
@@ -96,7 +96,7 @@ namespace FreeQuant.FinChart
           if (num2 == 2)
             pen1 = pen3;
           for (int index4 = 0; index4 < num2; ++index4)
-            this.pad.Graphics.DrawRectangle(new Pen(Color.Black, 1f), num1 + width * index4 - width / 2, this.pad.ClientY(close - this.SxvSUG7nWo.BoxSize * (double) (num2 - 1 - index4)), width, height);
+            this.pad.Graphics.DrawRectangle(new Pen(Color.Black, 1f), num1 + width * index4 - width / 2, this.pad.ClientY(close - this.ranko.BoxSize * (double) (num2 - 1 - index4)), width, height);
         }
       }
     }
@@ -105,7 +105,7 @@ namespace FreeQuant.FinChart
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();
-      Bar bar = this.SxvSUG7nWo[this.pad.GetDateTime(x)];
+      Bar bar = this.ranko[this.pad.GetDateTime(x)];
       distance.DX = 0.0;
       if (y >= bar.Low && y <= bar.High)
         distance.DY = 0.0;

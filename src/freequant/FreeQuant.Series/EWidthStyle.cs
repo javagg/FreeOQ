@@ -1,9 +1,4 @@
 namespace FreeQuant.Series
 {
-	public enum EWidthStyle
-	{
-		Pixel,
-		DateTime,
-		Auto,
-	}
+	public enum EWidthStyle { Pixel, DateTime, Auto	}
 }

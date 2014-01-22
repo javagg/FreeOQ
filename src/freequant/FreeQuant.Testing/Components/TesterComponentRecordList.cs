@@ -1,4 +1,3 @@
-﻿using Byqm85MNrFBe6JPJlI;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
@@ -42,12 +41,9 @@ namespace FreeQuant.Testing.Components
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TesterComponentRecordList()
+
+		public TesterComponentRecordList():base()
     {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.jLpy88DHjp = new Hashtable();
     }
 

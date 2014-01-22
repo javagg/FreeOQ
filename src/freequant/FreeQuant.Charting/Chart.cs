@@ -402,7 +402,7 @@ namespace FreeQuant.Charting
         padIndex = 1;
       if (padIndex > this.fPads.Count)
         padIndex = this.fPads.Count;
-      Chart.fPad = this.fPads[padIndex - 1];
+			Chart.fPad = (Pad)this.fPads[padIndex - 1];
       return Chart.fPad;
     }
 
@@ -437,7 +437,7 @@ namespace FreeQuant.Charting
     public virtual Pad AddPad(double X1, double Y1, double X2, double Y2)
     {
       Chart.fPad = new Pad(this, X1, Y1, X2, Y2);
-      Chart.fPad.Name = RA7k7APgXK5aSsnmA9.qBCYFXVOKp(836) + (this.fPads.Count + 1).ToString();
+			Chart.fPad.Name = "PAd" + (this.fPads.Count + 1).ToString();
       Chart.fPad.ForeColor = this.fPadsForeColor;
       this.fPads.Add(Chart.fPad);
       Chart.fPad.Zoom += new ZoomEventHandler(this.ZoomChanged);
@@ -577,12 +577,12 @@ namespace FreeQuant.Charting
       int num2 = (int) ((double) this.ClientRectangle.Height * (double) Dpi / (double) graphics.DpiY);
       Bitmap bitmap = new Bitmap(num1, num2);
       bitmap.SetResolution(Dpi, Dpi);
-      Graphics Graphics = Graphics.FromImage((Image) bitmap);
-      Graphics.Clear(this.BackColor);
+			graphics = Graphics.FromImage((Image) bitmap);
+			graphics.Clear(this.BackColor);
       if (this.SmoothingEnabled)
-        Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+				graphics.SmoothingMode = SmoothingMode.AntiAlias;
       if (this.AntiAliasingEnabled)
-        Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+				graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
       if (this.GroupLeftMarginEnabled)
         this.iLkC1B5ln0();
       if (this.GroupRightMarginEnabled)
@@ -590,9 +590,9 @@ namespace FreeQuant.Charting
       foreach (Pad pad in this.fPads)
       {
         pad.SetCanvas(num1, num2);
-        pad.Update(Graphics);
+				pad.Update(graphics);
       }
-      Graphics.Dispose();
+			graphics.Dispose();
       return bitmap;
     }
 
@@ -606,12 +606,12 @@ namespace FreeQuant.Charting
       Metafile metafile = new Metafile(hdc, type);
       graphics.ReleaseHdc(hdc);
       graphics.Dispose();
-      Graphics Graphics = Graphics.FromImage((Image) metafile);
-      Graphics.Clear(this.BackColor);
+	   graphics = Graphics.FromImage((Image) metafile);
+		graphics.Clear(this.BackColor);
       if (this.SmoothingEnabled)
-        Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+				graphics.SmoothingMode = SmoothingMode.AntiAlias;
       if (this.AntiAliasingEnabled)
-        Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+				graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
       if (this.GroupLeftMarginEnabled)
         this.iLkC1B5ln0();
       if (this.GroupRightMarginEnabled)
@@ -619,9 +619,9 @@ namespace FreeQuant.Charting
       foreach (Pad pad in this.fPads)
       {
         pad.SetCanvas(width, height);
-        pad.Update(Graphics);
+				pad.Update(graphics);
       }
-      Graphics.Dispose();
+			graphics.Dispose();
       return metafile;
     }
 
@@ -649,27 +649,27 @@ namespace FreeQuant.Charting
       int width = this.ClientRectangle.Width;
       int height = this.ClientRectangle.Height;
       Bitmap bitmap = (Bitmap) null;
-      Graphics Graphics;
+			Graphics graphics;
       try
       {
         if (this.fDoubleBufferingEnabled)
         {
           bitmap = new Bitmap(width, height);
-          Graphics = Graphics.FromImage((Image) bitmap);
+					graphics = Graphics.FromImage((Image) bitmap);
         }
         else
-          Graphics = g;
+					graphics = g;
       }
       catch
       {
         this.fIsUpdating = false;
         return;
       }
-      Graphics.Clear(this.BackColor);
+			graphics.Clear(this.BackColor);
       if (this.SmoothingEnabled)
-        Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+				graphics.SmoothingMode = SmoothingMode.AntiAlias;
       if (this.AntiAliasingEnabled)
-        Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+				graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
       if (this.GroupLeftMarginEnabled)
         this.iLkC1B5ln0();
       if (this.GroupRightMarginEnabled)
@@ -677,11 +677,11 @@ namespace FreeQuant.Charting
       foreach (Pad pad in this.fPads)
       {
         pad.SetCanvas(width, height);
-        pad.Update(Graphics);
+				pad.Update(graphics);
       }
       if (this.fDoubleBufferingEnabled)
       {
-        Graphics graphics;
+//        Graphics graphics;
         try
         {
           graphics = g;
@@ -700,7 +700,7 @@ namespace FreeQuant.Charting
           graphics.Dispose();
         }
       }
-      Graphics.Dispose();
+			graphics.Dispose();
       this.fIsUpdating = false;
     }
 
@@ -781,14 +781,14 @@ namespace FreeQuant.Charting
     {
       if (this.fPadSplit)
       {
-        Pad pad1 = this.fPads[this.fPadSplitIndex];
+				Pad pad1 = (Pad)this.fPads[this.fPadSplitIndex];
         int width = this.ClientRectangle.Width;
         int height = this.ClientRectangle.Height;
         double num = (double) e.Y / (double) height;
         pad1.SetCanvas(pad1.CanvasX1, num, pad1.CanvasX2, pad1.CanvasY2, width, height);
         if (this.fPadSplitIndex != 0)
         {
-          Pad pad2 = this.fPads[this.fPadSplitIndex - 1];
+					Pad pad2 = (Pad)this.fPads[this.fPadSplitIndex - 1];
           pad2.SetCanvas(pad2.CanvasX1, pad2.CanvasY1, pad2.CanvasX2, num, width, height);
         }
         this.UpdatePads();
@@ -848,9 +848,9 @@ namespace FreeQuant.Charting
       if (this.fPadSplit)
       {
         this.fPadSplit = false;
-        if (this.JxOC7adEtl == null)
-          return;
-        this.JxOC7adEtl((object) this, EventArgs.Empty);
+//        if (this.JxOC7adEtl == null)
+//          return;
+//        this.JxOC7adEtl((object) this, EventArgs.Empty);
       }
       else
       {

@@ -33,20 +33,17 @@ namespace FreeQuant.Charting.Draw3D
     
     public TColor(double Gray)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.pG5C3Nf7gJ = this.onVCC2Wok1 = this.X31C6Jhc1X = Gray;
     }
 
     
     public TColor(Color c)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.pG5C3Nf7gJ = 1.0 / (double) byte.MaxValue * (double) c.R;
       this.onVCC2Wok1 = 1.0 / (double) byte.MaxValue * (double) c.G;
       this.X31C6Jhc1X = 1.0 / (double) byte.MaxValue * (double) c.B;
     }
-
-    
+		   
     public static implicit operator TColor(Color c)
     {
       return new TColor(c);

@@ -19,7 +19,7 @@ namespace FreeQuant.FinChart
 
     public EIndexOption Option
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.KQFylhRfSj;
       }
@@ -27,11 +27,11 @@ namespace FreeQuant.FinChart
 
     public SimpleDSStyle Style
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.FfryUetNii;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.FfryUetNii = value;
       }
@@ -39,7 +39,7 @@ namespace FreeQuant.FinChart
 
     public override TimeSeries MainSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (TimeSeries) this.J3CyTcOdfO;
       }
@@ -47,11 +47,11 @@ namespace FreeQuant.FinChart
 
     public override Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.J3CyTcOdfO.Color;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.J3CyTcOdfO.Color = value;
       }
@@ -59,7 +59,7 @@ namespace FreeQuant.FinChart
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.J3CyTcOdfO.Count == 0 || this.lastDate < this.J3CyTcOdfO.FirstDateTime)
           return double.NaN;
@@ -72,7 +72,7 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DSView(Pad pad, DoubleSeries series)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -83,7 +83,7 @@ namespace FreeQuant.FinChart
       this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2702), pad.Chart.LabelDigitsCount.ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DSView(Pad pad, DoubleSeries series, Color color)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -95,7 +95,7 @@ namespace FreeQuant.FinChart
       this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2744), pad.Chart.LabelDigitsCount.ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DSView(Pad pad, DoubleSeries series, EIndexOption option)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -109,7 +109,7 @@ namespace FreeQuant.FinChart
       this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2786), pad.Chart.LabelDigitsCount.ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DSView(Pad pad, DoubleSeries series, Color color, EIndexOption option, SmoothingMode smoothing)
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
@@ -125,7 +125,7 @@ namespace FreeQuant.FinChart
       this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2828), pad.Chart.LabelDigitsCount.ToString());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
       DateTime dateTime1;
@@ -159,7 +159,7 @@ namespace FreeQuant.FinChart
       return new PadRange(min, max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint()
     {
       Pen pen = new Pen(this.J3CyTcOdfO.Color, (float) this.J3CyTcOdfO.DrawWidth);
@@ -269,7 +269,7 @@ namespace FreeQuant.FinChart
       this.pad.Graphics.SmoothingMode = smoothingMode;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();

@@ -38,7 +38,6 @@ namespace FreeQuant.FIX
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
     public static int ToFIX(PutOrCall value)
     {
       switch (value)

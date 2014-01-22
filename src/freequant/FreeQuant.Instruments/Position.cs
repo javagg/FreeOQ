@@ -24,7 +24,7 @@ namespace FreeQuant.Instruments
        get
       {
         if (this.instrument == null)
-          throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2788));
+					throw new ApplicationException("fsfs");
         else
           return this.instrument.Symbol;
       }
@@ -190,9 +190,9 @@ namespace FreeQuant.Instruments
     
     internal void s7dBtZ7nOw()
     {
-      if (this.OFd6QXsNIJ == null)
-        return;
-      this.OFd6QXsNIJ((object) this, EventArgs.Empty);
+//      if (this.OFd6QXsNIJ == null)
+//        return;
+//      this.OFd6QXsNIJ((object) this, EventArgs.Empty);
     }
 
     [SpecialName]
@@ -227,7 +227,7 @@ namespace FreeQuant.Instruments
     public void Add(Transaction transaction)
     {
       if (this.instrument != transaction.Instrument)
-        throw new ArgumentException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3000) + transaction.Instrument.Symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3104) + this.instrument.Symbol);
+				throw new ArgumentException("dfsf" + transaction.Instrument.Symbol  + this.instrument.Symbol);
       double num1 = 0.0;
       double num2 = 0.0;
       int num3 = Math.Sign(transaction.Amount);

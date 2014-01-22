@@ -5,6 +5,6 @@ namespace FreeQuant.Data
 		Line,
 		Bar,
 		Candle,
-		Figure,
+		Figure
 	}
 }

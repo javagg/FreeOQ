@@ -1,5 +1,3 @@
-﻿using LI7wYoxjcQSGYmaiNa;
-using RZ1j9O1DCcsDf19ge6;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
 using FreeQuant.Providers;
@@ -10,11 +8,8 @@ namespace FreeQuant.Execution
 {
   public class LimitOrder : SingleOrder
   {
-    public LimitOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double price, string text)
+		public LimitOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double price, string text):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrdType = OrdType.Limit;
       this.Provider = provider;
       this.Portfolio = portfolio;
@@ -25,11 +20,8 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    public LimitOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double price)
+		public LimitOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double price):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrdType = OrdType.Limit;
       this.Provider = provider;
       this.Portfolio = portfolio;
@@ -39,11 +31,8 @@ namespace FreeQuant.Execution
       this.Price = price;
     }
 
-    public LimitOrder(Instrument instrument, Side side, double qty, double price, string text)
+		public LimitOrder(Instrument instrument, Side side, double qty, double price, string text):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrdType = OrdType.Limit;
       this.Provider = ProviderManager.DefaultExecutionProvider;
       this.Portfolio = PortfolioManager.DefaultPortfolio;
@@ -54,11 +43,8 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    public LimitOrder(Instrument instrument, Side side, double qty, double price)
+		public LimitOrder(Instrument instrument, Side side, double qty, double price):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrdType = OrdType.Limit;
       this.Provider = ProviderManager.DefaultExecutionProvider;
       this.Portfolio = PortfolioManager.DefaultPortfolio;
@@ -68,15 +54,12 @@ namespace FreeQuant.Execution
       this.Price = price;
     }
 
-    public LimitOrder(string symbol, Side side, double qty, double price, string text)
+		public LimitOrder(string symbol, Side side, double qty, double price, string text):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrdType = OrdType.Limit;
       this.Instrument = InstrumentManager.Instruments[symbol];
       if (this.Instrument == null)
-        throw new ArgumentException(p9eligYgcNHo8cieFV.RdvEpVlLR7(0) + symbol + p9eligYgcNHo8cieFV.RdvEpVlLR7(90));
+				throw new ArgumentException(symbol);
       this.Provider = ProviderManager.DefaultExecutionProvider;
       this.Portfolio = PortfolioManager.DefaultPortfolio;
       this.Side = side;
@@ -85,15 +68,12 @@ namespace FreeQuant.Execution
       this.Text = text;
     }
 
-    public LimitOrder(string symbol, Side side, double qty, double price)
+		public LimitOrder(string symbol, Side side, double qty, double price):base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.OrdType = OrdType.Limit;
       this.Instrument = InstrumentManager.Instruments[symbol];
       if (this.Instrument == null)
-        throw new ArgumentException(p9eligYgcNHo8cieFV.RdvEpVlLR7(160) + symbol + p9eligYgcNHo8cieFV.RdvEpVlLR7(250));
+        throw new ArgumentException(symbol);
       this.Provider = ProviderManager.DefaultExecutionProvider;
       this.Portfolio = PortfolioManager.DefaultPortfolio;
       this.Side = side;
@@ -101,11 +81,8 @@ namespace FreeQuant.Execution
       this.Price = price;
     }
 
-    private LimitOrder()
+		private LimitOrder():base()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

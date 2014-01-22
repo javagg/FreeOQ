@@ -8,12 +8,12 @@ namespace FreeQuant
 {
 //  [Guid("CD193BC0-B4BC-11d2-9833-00C04FC31D2E")]
   [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  [ComImport]
+//  [ComImport]
   internal interface IAssemblyName
   {
-    int SetProperty(Wim3wFsqei13y08K1U PropertyId, IntPtr pvProperty, uint cbProperty);
+		int SetProperty(int PropertyId, IntPtr pvProperty, uint cbProperty);
 
-    int GetProperty(Wim3wFsqei13y08K1U PropertyId, IntPtr pvProperty, ref uint pcbProperty);
+		int GetProperty(int PropertyId, IntPtr pvProperty, ref uint pcbProperty);
 
     int Finalize();
 

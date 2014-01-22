@@ -74,8 +74,8 @@ namespace FreeQuant.Series
 		public TradeArray() : base()
     {
       this.toolTipEnabled = true;
-      this.toolTipFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(0);
-      this.toolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(36);
+			this.toolTipFormat = "toolTipFormat";
+			this.toolTipDateTimeFormat = "toolTipDateTimeFormat";
       this.color = Color.Black;
     }
 
@@ -172,7 +172,7 @@ namespace FreeQuant.Series
         return (TDistance) null;
       DateTime dateTime = new DateTime((long) tdistance.X);
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(60), (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(84), (object) dateTime.ToString(this.toolTipDateTimeFormat), (object) tdistance.Y);
+//      stringBuilder.AppendFormat(this.toolTipFormat, (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(60), (object) oK6F3TB73XXXGhdieP.wF6SgrNUO(84), (object) dateTime.ToString(this.toolTipDateTimeFormat), (object) tdistance.Y);
       tdistance.ToolTipText = ((object) stringBuilder).ToString();
       return tdistance;
     }
@@ -182,11 +182,11 @@ namespace FreeQuant.Series
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(oK6F3TB73XXXGhdieP.wF6SgrNUO(108), oK6F3TB73XXXGhdieP.wF6SgrNUO(132));
+				Canvas canvas = new Canvas("CName", "CTitle");
       }
       Chart.Pad.Add((IDrawable) this);
       Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
-      Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(156);
+			Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
       double num1 = (double) this.FirstDateTime.Ticks;
       double num2 = (double) this.LastDateTime.Ticks;
       double minPrice = this.GetMinPrice();

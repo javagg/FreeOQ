@@ -8,11 +8,8 @@ namespace FreeQuant.FinChart
   public abstract class BSView : SeriesView
   {
     
-    public BSView(Pad pad)
+		public BSView(Pad pad) : base(pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
     }
 
     

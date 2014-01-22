@@ -4,19 +4,15 @@ namespace FreeQuant.Data
 {
 	public class BarArrayEventArgs : EventArgs
 	{
-		private BarArray bars;
-
 		public BarArray BarArray
 		{
-			get
-			{
-				return this.bars;
-			}
+			get;
+			private set;
 		}
 
 		public BarArrayEventArgs(BarArray bars)
 		{
-			this.bars = bars;
+			this.BarArray = bars;
 		}
 	}
 }

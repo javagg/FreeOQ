@@ -33,9 +33,9 @@ namespace FreeQuant.File
 		private string location;
 		private Indexer defaultIndexer;
 		private string T2CdqZ3S6a;
-		private XKnrYnX3iyxP4mxHdY cZGdvu7wXe;
-		private EQJFquhB2QLQLSaG0F UQAdA9yU8P;
-		private FRJ1FMOwU8CAwJuZZf TGQdFvfQ8H;
+//		private XKnrYnX3iyxP4mxHdY cZGdvu7wXe;
+//		private EQJFquhB2QLQLSaG0F UQAdA9yU8P;
+//		private FRJ1FMOwU8CAwJuZZf TGQdFvfQ8H;
 		private bool isOpen;
 
 		[Browsable(true)]
@@ -116,8 +116,8 @@ namespace FreeQuant.File
 			}
 			set
 			{
-				if (value < 0 || value > 9)
-					throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2644), (object)value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2678));
+//				if (value < 0 || value > 9)
+//					throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2644), (object)value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2678));
 				this.defaultZipLevel = value;
 				this.DXbxTDioKH();
 			}
@@ -144,8 +144,9 @@ namespace FreeQuant.File
 		{
 			get
 			{
-				return this.cZGdvu7wXe.Ss8QG6N1O();
-			}
+//				return this.cZGdvu7wXe.Ss8QG6N1O();
+				return null;
+					}
 		}
 
 		[Browsable(false)]
@@ -153,25 +154,28 @@ namespace FreeQuant.File
 		{
 			get
 			{
-				return this.TGQdFvfQ8H.B3hx4osn2A();
+//				return this.TGQdFvfQ8H.B3hx4osn2A();
+				return 0;
 			}
 		}
 
 		[Browsable(false)]
 		public long HeaderFileSize
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.TGQdFvfQ8H.povxkCCnpF();
+//				return this.TGQdFvfQ8H.povxkCCnpF();
+				return 0;
 			}
 		}
 
 		[Browsable(false)]
 		public long IndexFileSize
 		{
-			[MethodImpl(MethodImplOptions.NoInlining)] get
+			 get
 			{
-				return this.TGQdFvfQ8H.vSVxEc7okY();
+//				return this.TGQdFvfQ8H.vSVxEc7okY();
+				return 0;
 			}
 		}
 
@@ -193,27 +197,27 @@ namespace FreeQuant.File
 			this.location = new DirectoryInfo(location).FullName;
 			this.name = name;
 			this.description = String.Empty;
-			this.T2CdqZ3S6a = this.Location + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2506);
-			this.Dewxid4agx();
+//			this.T2CdqZ3S6a = this.Location + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2506);
+//			this.Dewxid4agx();
 		}
 
 		public static DataFile Open(string location)
 		{
-			return new DataFile(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2528), location);
+			return new DataFile("name", location);
 		}
 
-		private void Dewxid4agx()
-		{
-			this.cZGdvu7wXe = new XKnrYnX3iyxP4mxHdY(this.Location);
-			this.UQAdA9yU8P = new EQJFquhB2QLQLSaG0F(this.cZGdvu7wXe);
-			this.TGQdFvfQ8H = new FRJ1FMOwU8CAwJuZZf(this.Location, (IFormatter)this.UQAdA9yU8P);
-			this.defaultBlockSize = 1000;
-			this.defaultZipLevel = 1;
-			this.cAgxmaSvP5();
-			this.series = new SeriesCollection(this);
-			this.TGQdFvfQ8H.fg5iZaP12(this.series);
-			this.isOpen = true;
-		}
+//		private void Dewxid4agx()
+//		{
+//			this.cZGdvu7wXe = new XKnrYnX3iyxP4mxHdY(this.Location);
+//			this.UQAdA9yU8P = new EQJFquhB2QLQLSaG0F(this.cZGdvu7wXe);
+//			this.TGQdFvfQ8H = new FRJ1FMOwU8CAwJuZZf(this.Location, (IFormatter)this.UQAdA9yU8P);
+//			this.defaultBlockSize = 1000;
+//			this.defaultZipLevel = 1;
+//			this.cAgxmaSvP5();
+//			this.series = new SeriesCollection(this);
+//			this.TGQdFvfQ8H.fg5iZaP12(this.series);
+//			this.isOpen = true;
+//		}
 
 		public void Close()
 		{
@@ -221,16 +225,16 @@ namespace FreeQuant.File
 				return;
 			foreach (FileSeries fileSeries in this.series)
 				fileSeries.Flush();
-			this.TGQdFvfQ8H.LCQ84w08t();
+//			this.TGQdFvfQ8H.LCQ84w08t();
 			this.series = new SeriesCollection(this);
 			this.isOpen = false;
 		}
 
 		public void Defragment(int zipLevel, int maxBlockSize)
 		{
-			string path = this.Location + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2744);
+			string path = this.Location + "dd";
 			Directory.CreateDirectory(path);
-			this.TGQdFvfQ8H.PUnY2sLXa(path, this, zipLevel, maxBlockSize);
+//			this.TGQdFvfQ8H.PUnY2sLXa(path, this, zipLevel, maxBlockSize);
 			Directory.Delete(path, true);
 		}
 
@@ -240,75 +244,75 @@ namespace FreeQuant.File
 		}
 
 		[SpecialName]
-		internal FRJ1FMOwU8CAwJuZZf kBox0k2EsS()
-		{
-			return this.TGQdFvfQ8H;
-		}
+//		internal FRJ1FMOwU8CAwJuZZf kBox0k2EsS()
+//		{
+//			return this.TGQdFvfQ8H;
+//		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		
 		internal void PwExuFCdRV([In] FileSeries obj0)
 		{
-			if (this.lIEdXL2Qo2 == null)
-				return;
-			this.lIEdXL2Qo2(new SeriesEventArgs(obj0));
+//			if (this.lIEdXL2Qo2 == null)
+//				return;
+//			this.lIEdXL2Qo2(new SeriesEventArgs(obj0));
 		}
 
 		internal void qoHxS5EmLT([In] FileSeries obj0)
 		{
-			if (this.KEEdbs3yRr == null)
-				return;
-			this.KEEdbs3yRr(new SeriesEventArgs(obj0));
+//			if (this.KEEdbs3yRr == null)
+//				return;
+//			this.KEEdbs3yRr(new SeriesEventArgs(obj0));
 		}
 
 		internal void IsTxnSj3Fr([In] DefragmentCancelEventArgs obj0)
 		{
-			if (this.k72dOZBJZA == null)
-				return;
-			this.k72dOZBJZA(obj0);
+//			if (this.k72dOZBJZA == null)
+//				return;
+//			this.k72dOZBJZA(obj0);
 		}
 
 		private void cAgxmaSvP5()
 		{
-			try
-			{
-				if (File.Exists(this.T2CdqZ3S6a))
-				{
-					DataSet dataSet = new DataSet(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2758));
-					DataTable dataTable = dataSet.Tables.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2774));
-					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2798), typeof(string));
-					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2824), typeof(int));
-					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2846), typeof(int));
-					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2878), typeof(Indexer));
-					int num = (int)dataSet.ReadXml(this.T2CdqZ3S6a, XmlReadMode.IgnoreSchema);
-					DataRow dataRow = dataSet.Tables[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2896)].Rows[0];
-					this.description = (string)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2920)];
-					this.defaultZipLevel = (int)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2946)];
-					this.defaultBlockSize = (int)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2968)];
-					this.defaultIndexer = (Indexer)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3000)];
-				}
-				else
-					this.DXbxTDioKH();
-			}
-			catch (Exception ex)
-			{
-			}
+//			try
+//			{
+//				if (File.Exists(this.T2CdqZ3S6a))
+//				{
+//					DataSet dataSet = new DataSet(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2758));
+//					DataTable dataTable = dataSet.Tables.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2774));
+//					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2798), typeof(string));
+//					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2824), typeof(int));
+//					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2846), typeof(int));
+//					dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2878), typeof(Indexer));
+//					int num = (int)dataSet.ReadXml(this.T2CdqZ3S6a, XmlReadMode.IgnoreSchema);
+//					DataRow dataRow = dataSet.Tables[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2896)].Rows[0];
+//					this.description = (string)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2920)];
+//					this.defaultZipLevel = (int)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2946)];
+//					this.defaultBlockSize = (int)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2968)];
+//					this.defaultIndexer = (Indexer)dataRow[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3000)];
+//				}
+//				else
+//					this.DXbxTDioKH();
+//			}
+//			catch (Exception ex)
+//			{
+//			}
 		}
 
 		private void DXbxTDioKH()
 		{
-			DataSet dataSet = new DataSet(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3018));
-			DataTable dataTable = dataSet.Tables.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3034));
-			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3058), typeof(string));
-			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3084), typeof(int));
-			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3106), typeof(int));
-			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3138), typeof(Indexer));
-			DataRow row = dataTable.NewRow();
-			dataTable.Rows.Add(row);
-			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3156)] = (object)this.description;
-			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3182)] = (object)this.defaultZipLevel;
-			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3204)] = (object)this.defaultBlockSize;
-			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3236)] = (object)this.defaultIndexer;
-			dataSet.WriteXml(this.T2CdqZ3S6a, XmlWriteMode.WriteSchema);
+//			DataSet dataSet = new DataSet(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3018));
+//			DataTable dataTable = dataSet.Tables.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3034));
+//			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3058), typeof(string));
+//			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3084), typeof(int));
+//			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3106), typeof(int));
+//			dataTable.Columns.Add(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3138), typeof(Indexer));
+//			DataRow row = dataTable.NewRow();
+//			dataTable.Rows.Add(row);
+//			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3156)] = (object)this.description;
+//			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3182)] = (object)this.defaultZipLevel;
+//			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3204)] = (object)this.defaultBlockSize;
+//			row[BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(3236)] = (object)this.defaultIndexer;
+//			dataSet.WriteXml(this.T2CdqZ3S6a, XmlWriteMode.WriteSchema);
 		}
 	}
 }

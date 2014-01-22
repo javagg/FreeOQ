@@ -1,5 +1,3 @@
-﻿using ao4bquRNmB4R1dmGd7;
-using CJ5Xsgeg9JvhJUnvO3D;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Simulation
 {
-  [Editor(typeof (PoNb77rWV1athRPm6K), typeof (UITypeEditor))]
+//  [Editor(typeof (PoNb77rWV1athRPm6K), typeof (UITypeEditor))]
   public class OrderEntryList : ICollection, IEnumerable
   {
     private SortedList<DateTime, List<OrderEntry>> h8JysE0Edj;
@@ -17,7 +15,7 @@ namespace FreeQuant.Simulation
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ET2yt9EkNR.Count;
       }
@@ -25,7 +23,7 @@ namespace FreeQuant.Simulation
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return false;
       }
@@ -33,7 +31,7 @@ namespace FreeQuant.Simulation
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (object) null;
       }
@@ -41,7 +39,7 @@ namespace FreeQuant.Simulation
 
     public OrderEntry[] this[DateTime datetime]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         List<OrderEntry> list;
         if (this.h8JysE0Edj.TryGetValue(datetime, out list))
@@ -51,42 +49,39 @@ namespace FreeQuant.Simulation
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal OrderEntryList()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.h8JysE0Edj = new SortedList<DateTime, List<OrderEntry>>();
       this.ET2yt9EkNR = new List<OrderEntry>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.ET2yt9EkNR.ToArray().CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return (IEnumerator) this.ET2yt9EkNR.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.h8JysE0Edj.Clear();
       this.ii5yMUmqog();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OrderEntry[] GetByIndex(int index)
     {
       return this[this.h8JysE0Edj.Keys[0]];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(OrderEntry entry)
     {
       List<OrderEntry> list;
@@ -99,7 +94,7 @@ namespace FreeQuant.Simulation
       this.ii5yMUmqog();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void ii5yMUmqog()
     {
       this.ET2yt9EkNR.Clear();

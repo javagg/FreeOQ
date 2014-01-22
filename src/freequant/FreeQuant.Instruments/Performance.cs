@@ -189,11 +189,11 @@ namespace FreeQuant.Instruments
     public Performance(Portfolio portfolio)
     {
       this.enabled = true;
-      this.equitySeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2378));
-      this.coreEquitySeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2394));
-      this.pnlSeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2420));
-      this.drawdownSeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2430));
-      this.drawdownPercentSeries = new DoubleSeries(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(2450));
+			this.equitySeries = new DoubleSeries("Equity");
+			this.coreEquitySeries = new DoubleSeries("CoreEquity");
+			this.pnlSeries = new DoubleSeries("PnL");
+			this.drawdownSeries = new DoubleSeries("Drawdown");
+			this.drawdownPercentSeries = new DoubleSeries("DrawdownPercent");
       this.InjBy1lkoo = double.NaN;
       this.MrYBqYV87G = double.NaN;
       this.portfolio = portfolio;
@@ -230,9 +230,9 @@ namespace FreeQuant.Instruments
       this.FZABJ7ZbGj(dateTime);
       this.SijB3EsC7m(dateTime);
       this.PSxBNlvv0d(dateTime);
-      if (this.VIABfp2hVw == null)
-        return;
-      this.VIABfp2hVw((object) this, EventArgs.Empty);
+//      if (this.VIABfp2hVw == null)
+//        return;
+//      this.VIABfp2hVw((object) this, EventArgs.Empty);
     }
 
     
@@ -271,8 +271,7 @@ namespace FreeQuant.Instruments
         {
           this.highEquity = obj1;
           this.lowEquity = obj1;
-          this.VpPUJn; 
-  = 0.0;
+//          this.VpPUJn = 0.0;
         }
         if (this.equity < this.lowEquity)
         {
@@ -281,8 +280,7 @@ namespace FreeQuant.Instruments
         }
         if (obj1 <= this.lowEquity || obj1 >= this.highEquity)
           return;
-        this.VpPUJn; 
-  = 1.0 - obj1 / this.highEquity;
+//				this.VpPUJn  = 1.0 - obj1 / this.highEquity;
         this.currentRunUp = obj1 / this.lowEquity - 1.0;
       }
     }

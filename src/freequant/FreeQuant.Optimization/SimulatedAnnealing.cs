@@ -1,4 +1,5 @@
 using System;
+using FreeQuant;
 using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -56,7 +57,7 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public double Temperature
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.a5kBNxIlj;
       }
@@ -66,11 +67,11 @@ namespace FreeQuant.Optimization
     [Description("Start temperature in the annealing schedule")]
     public double StartTemperature
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.TQQPjxObY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.TQQPjxObY = value;
       }
@@ -80,11 +81,11 @@ namespace FreeQuant.Optimization
     [Category("Temperature")]
     public double StopTemperature
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Po3j7nARl;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Po3j7nARl = value;
       }
@@ -94,11 +95,11 @@ namespace FreeQuant.Optimization
     [Category("Temperature")]
     public double TemperatureReductionFactor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GxQxLxogs;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GxQxLxogs = value;
       }
@@ -108,11 +109,11 @@ namespace FreeQuant.Optimization
     [Category("Temperature")]
     public int NTemperatureReductionSteps
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.To5tAj5b7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.To5tAj5b7 = value;
       }
@@ -121,7 +122,7 @@ namespace FreeQuant.Optimization
     [Browsable(false)]
     public double DisplacementTemperature
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Ve059ku8I;
       }
@@ -131,11 +132,11 @@ namespace FreeQuant.Optimization
     [Description("Displacement start temperature in the annealing schedule")]
     public double DisplacementStartTemperature
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.MAxUj4muW;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.MAxUj4muW = value;
       }
@@ -145,11 +146,11 @@ namespace FreeQuant.Optimization
     [Category("Displacement")]
     public double DisplacementTemperatureReductionFactor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.S1vCXwaLF;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.S1vCXwaLF = value;
       }
@@ -159,11 +160,11 @@ namespace FreeQuant.Optimization
     [Description("Displacement distribution parameter")]
     public double DisplacementDistributionParam
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cc0qd97gj;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.cc0qd97gj = value;
       }
@@ -173,11 +174,11 @@ namespace FreeQuant.Optimization
     [Category("Acceptance")]
     public double AcceptanceProbabilityParam
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.POtwj3imR;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.POtwj3imR = value;
       }
@@ -187,11 +188,11 @@ namespace FreeQuant.Optimization
     [Category("Stopping Criterion")]
     public double ErrorTolerance
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.jYoRfARnr;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.jYoRfARnr = value;
       }
@@ -201,11 +202,11 @@ namespace FreeQuant.Optimization
     [Category("Stopping Criterion")]
     public int MaxObjectiveCalls
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Hrooye6Ec;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Hrooye6Ec = value;
       }
@@ -215,11 +216,11 @@ namespace FreeQuant.Optimization
     [Description("Minimum number of accepted uphill jumps")]
     public int MinAcceptedUphills
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.yoSfWm2GA;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yoSfWm2GA = value;
       }
@@ -229,11 +230,11 @@ namespace FreeQuant.Optimization
     [Description("Stop temperature stopping criterion")]
     public bool IsStopTemperatureCriterion
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.I2Ib8CPFn;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.I2Ib8CPFn = value;
       }
@@ -243,11 +244,11 @@ namespace FreeQuant.Optimization
     [Description("Number of objective calls stopping criterion")]
     public bool IsObjectiveCallsCriterion
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.CjlGFPh20;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.CjlGFPh20 = value;
       }
@@ -257,11 +258,11 @@ namespace FreeQuant.Optimization
     [Category("Stopping Criterion")]
     public bool IsErrorToleranceCriterion
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.EkG2mVJO8;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.EkG2mVJO8 = value;
       }
@@ -271,11 +272,11 @@ namespace FreeQuant.Optimization
     [Description("Number of accepted uphills stopping criterion")]
     public bool IsAcceptedUphillsCriterion
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.l6XKwkgnC;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.l6XKwkgnC = value;
       }
@@ -285,11 +286,11 @@ namespace FreeQuant.Optimization
     [Category("Stopping Criterion")]
     public bool IsAcceptedDownhillsCriterion
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.GnTmfc3hq;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.GnTmfc3hq = value;
       }
@@ -322,7 +323,7 @@ namespace FreeQuant.Optimization
       this.fVerboseMode = EVerboseMode.Quiet;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetScheme(ESimulatedAnnealingScheme Scheme)
     {
       switch (Scheme)
@@ -363,7 +364,7 @@ namespace FreeQuant.Optimization
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void EnableStoppingCriterion(EStoppingCriterion Criterion, bool Enable)
     {
       switch (Criterion)
@@ -393,7 +394,7 @@ namespace FreeQuant.Optimization
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsStoppingCriterionEnabled(EStoppingCriterion Criterion)
     {
       bool flag = false;
@@ -418,7 +419,7 @@ namespace FreeQuant.Optimization
       return flag;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DisableStoppingCriterion(EStoppingCriterion Criterion)
     {
       switch (Criterion)
@@ -448,7 +449,7 @@ namespace FreeQuant.Optimization
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected double GetDisplacementDistribution(double dx)
     {
       double x = this.Ve059ku8I;
@@ -457,7 +458,7 @@ namespace FreeQuant.Optimization
       return Math.Pow(x, -num1 / (3.0 - num2)) / Math.Pow(1.0 + (num2 - 1.0) * Math.Pow(dx, 2.0) / Math.Pow(x, 2.0 / (3.0 - num2)), 1.0 / (num2 - 1.0) + (num1 - 1.0) / 2.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected double GetDisplacement(double MinDisplacement, double MaxDisplacement)
     {
       if (MinDisplacement < -20.0 * this.Ve059ku8I)
@@ -474,26 +475,26 @@ namespace FreeQuant.Optimization
       return dx;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected double GetNextTemperature()
     {
       return this.TQQPjxObY * (Math.Pow(2.0, this.cc0qd97gj - 1.0) - 1.0) / (Math.Pow((double) (this.ff6If9BwL + 1), this.cc0qd97gj - 1.0) - 1.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected double GetNextDisplacementTemperature()
     {
       return this.MAxUj4muW * (Math.Pow(2.0, this.cc0qd97gj - 1.0) - 1.0) / (Math.Pow((double) (this.ff6If9BwL + 1), this.cc0qd97gj - 1.0) - 1.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected double GetAcceptanceProbability(double dE)
     {
       double x = 1.0 + (this.POtwj3imR - 1.0) * dE / this.a5kBNxIlj;
       return Math.Min(1.0, x <= 0.0 ? 0.0 : Math.Pow(x, 1.0 / (1.0 - this.POtwj3imR)));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Step()
     {
       Application.DoEvents();
@@ -625,7 +626,7 @@ namespace FreeQuant.Optimization
       this.OnStep();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Circle()
     {
       for (int index = 0; index < this.To5tAj5b7 * this.fNParam; ++index)
@@ -638,19 +639,19 @@ namespace FreeQuant.Optimization
       this.OnCircle();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public string FormatParamsHashCode()
     {
       string str = "";
       for (int NParam = 0; NParam < this.fNParam; ++NParam)
       {
         if (this.GetParamType(NParam) == EParamType.Int)
-          str = str + ((int) this[NParam]).ToString() + oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(322);
+					str = str + this[NParam];
       }
       return str;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Optimize()
     {
       base.Optimize();
@@ -703,11 +704,11 @@ namespace FreeQuant.Optimization
           this.Ve059ku8I *= this.S1vCXwaLF;
           ++this.ff6If9BwL;
           if (this.fVerboseMode != EVerboseMode.Quiet)
-            Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(328), (object) this.a5kBNxIlj, (object) this.Ve059ku8I, (object) this.d1gcW8ZAL, (object) this.cVWV7h0CD, (object) this.wM5hbXEF8, (object) this.rgiy3dtVJ, (object) this.vRQ0XTqU7);
+						Console.WriteLine("", (object) this.a5kBNxIlj, (object) this.Ve059ku8I, (object) this.d1gcW8ZAL, (object) this.cVWV7h0CD, (object) this.wM5hbXEF8, (object) this.rgiy3dtVJ, (object) this.vRQ0XTqU7);
           if (this.CjlGFPh20 && this.fNObjectiveCalls > this.Hrooye6Ec)
           {
             if (this.fVerboseMode != EVerboseMode.Quiet)
-              Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(410));
+							Console.WriteLine("");
             flag = true;
           }
           if (this.EkG2mVJO8)
@@ -720,7 +721,7 @@ namespace FreeQuant.Optimization
                 if (this.olSzmDbB6 == 5)
                   flag = true;
                 if (this.fVerboseMode != EVerboseMode.Quiet)
-                  Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(478), (object) this.olSzmDbB6);
+									Console.WriteLine("", (object) this.olSzmDbB6);
               }
               else
               {
@@ -734,7 +735,7 @@ namespace FreeQuant.Optimization
           if (this.I2Ib8CPFn && this.a5kBNxIlj < this.Po3j7nARl)
           {
             if (this.fVerboseMode != EVerboseMode.Quiet)
-              Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(568));
+							Console.WriteLine("");
             flag = true;
           }
           if (this.l6XKwkgnC)
@@ -742,7 +743,7 @@ namespace FreeQuant.Optimization
             if (this.d1gcW8ZAL != 0 && this.wM5hbXEF8 <= this.yoSfWm2GA)
             {
               if (this.fVerboseMode != EVerboseMode.Quiet)
-                Console.WriteLine(oEMkdBNOWhfqbwWYwp.AvLDN5sEpR(632));
+								Console.WriteLine("");
               ++this.olSzmDbB6;
               if (this.olSzmDbB6 == 5)
                 flag = true;

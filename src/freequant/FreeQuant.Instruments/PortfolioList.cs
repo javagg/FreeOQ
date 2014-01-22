@@ -43,12 +43,12 @@ namespace FreeQuant.Instruments
     internal void VJDEDjQE7o([In] Portfolio obj0)
     {
       if (this.portfolios.Contains((object) obj0.Name))
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5406) + obj0.Name);
+				throw new ApplicationException("" + obj0.Name);
       this.portfolios.Add((object) obj0.Name, (object) obj0);
       if (obj0.Id == -1)
         return;
       if (this.pnfEc3IewS.Contains((object) obj0.Id))
-        throw new ApplicationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5530) + (object) obj0.Id);
+				throw new ApplicationException("" + (object) obj0.Id);
       this.pnfEc3IewS.Add((object) obj0.Id, (object) obj0);
     }
 

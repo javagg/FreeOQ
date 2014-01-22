@@ -326,77 +326,77 @@ namespace FreeQuant.Providers
 		{
 			if (this.NJNLAPvWPO.Contains((object)obj0))
 				return;
-			Clock.AddReminder(new ReminderEventHandler(this.nAMLprxZKC), obj0, (object)null);
+//			Clock.AddReminder(new ReminderEventHandler(this.nAMLprxZKC), obj0, (object)null);
 			this.NJNLAPvWPO.Add((object)obj0, (object)null);
 		}
 
 		private void LMyLmGC5QQ([In] Bar obj0, [In] IFIXInstrument obj1)
 		{
 			obj0.IsComplete = true;
-			if (this.KEmLUcpLMO == null)
-				return;
-			this.KEmLUcpLMO((object)null, new BarEventArgs(obj0, obj1, (IMarketDataProvider)null));
+//			if (this.KEmLUcpLMO == null)
+//				return;
+//			this.KEmLUcpLMO((object)null, new BarEventArgs(obj0, obj1, (IMarketDataProvider)null));
 		}
 
 		private void tTOLoA7c7B([In] Bar obj0, [In] IFIXInstrument obj1)
 		{
-			if (this.lvHLkGUxTn == null)
-				return;
-			this.lvHLkGUxTn((object)null, new BarEventArgs(obj0, obj1, (IMarketDataProvider)null));
+//			if (this.lvHLkGUxTn == null)
+//				return;
+//			this.lvHLkGUxTn((object)null, new BarEventArgs(obj0, obj1, (IMarketDataProvider)null));
 		}
 
-		private void MPfLM438w2([In] long obj0)
-		{
-			if (this.TjfL0V3blS == null)
-				return;
-			this.TjfL0V3blS((object)null, new BarSliceEventArgs(obj0, (IMarketDataProvider)null));
-		}
+//		private void MPfLM438w2([In] long obj0)
+//		{
+//			if (this.TjfL0V3blS == null)
+//				return;
+//			this.TjfL0V3blS((object)null, new BarSliceEventArgs(obj0, (IMarketDataProvider)null));
+//		}
 
-		private void nAMLprxZKC([In] ReminderEventArgs obj0)
-		{
-			SortedList sortedList = new SortedList();
-			lock (this)
-			{
-				foreach (DictionaryEntry item_1 in new Hashtable((IDictionary) this.A3ELH6L4QJ))
-				{
-					IFIXInstrument local_2 = (IFIXInstrument)item_1.Key;
-					Hashtable local_3 = (Hashtable)item_1.Value;
-					SortedList local_4 = local_3[(object)BarType.Time] as SortedList;
-					if (local_4 != null)
-					{
-						foreach (DictionaryEntry item_0 in new SortedList((IDictionary) local_4))
-						{
-							long local_6 = (long)item_0.Key;
-							Bar local_7 = (Bar)item_0.Value;
-							if (local_7.BeginTime.AddSeconds((double)local_6) == obj0.SignalTime)
-							{
-								local_7.EndTime = obj0.SignalTime;
-								ArrayList local_8 = sortedList[(object)local_6] as ArrayList;
-								if (local_8 == null)
-								{
-									local_8 = new ArrayList();
-									sortedList.Add((object)local_6, (object)local_8);
-								}
-								local_8.Add((object)new KeyValuePair<IFIXInstrument, Bar>(local_2, local_7));
-								local_4.Remove((object)local_6);
-							}
-						}
-						if (local_4.Count == 0)
-							local_3.Remove((object)BarType.Time);
-						if (local_3.Count == 0)
-							this.A3ELH6L4QJ.Remove((object)local_2);
-					}
-				}
-			}
-			foreach (DictionaryEntry dictionaryEntry in sortedList)
-			{
-				long num = (long)dictionaryEntry.Key;
-				foreach (KeyValuePair<IFIXInstrument, Bar> keyValuePair in (ArrayList) dictionaryEntry.Value)
-					this.LMyLmGC5QQ(keyValuePair.Value, keyValuePair.Key);
-				this.MPfLM438w2(num);
-			}
-			this.NJNLAPvWPO.Remove((object)obj0.SignalTime);
-		}
+//		private void nAMLprxZKC([In] ReminderEventArgs obj0)
+//		{
+//			SortedList sortedList = new SortedList();
+//			lock (this)
+//			{
+//				foreach (DictionaryEntry item_1 in new Hashtable((IDictionary) this.A3ELH6L4QJ))
+//				{
+//					IFIXInstrument local_2 = (IFIXInstrument)item_1.Key;
+//					Hashtable local_3 = (Hashtable)item_1.Value;
+//					SortedList local_4 = local_3[(object)BarType.Time] as SortedList;
+//					if (local_4 != null)
+//					{
+//						foreach (DictionaryEntry item_0 in new SortedList((IDictionary) local_4))
+//						{
+//							long local_6 = (long)item_0.Key;
+//							Bar local_7 = (Bar)item_0.Value;
+//							if (local_7.BeginTime.AddSeconds((double)local_6) == obj0.SignalTime)
+//							{
+//								local_7.EndTime = obj0.SignalTime;
+//								ArrayList local_8 = sortedList[(object)local_6] as ArrayList;
+//								if (local_8 == null)
+//								{
+//									local_8 = new ArrayList();
+//									sortedList.Add((object)local_6, (object)local_8);
+//								}
+//								local_8.Add((object)new KeyValuePair<IFIXInstrument, Bar>(local_2, local_7));
+//								local_4.Remove((object)local_6);
+//							}
+//						}
+//						if (local_4.Count == 0)
+//							local_3.Remove((object)BarType.Time);
+//						if (local_3.Count == 0)
+//							this.A3ELH6L4QJ.Remove((object)local_2);
+//					}
+//				}
+//			}
+//			foreach (DictionaryEntry dictionaryEntry in sortedList)
+//			{
+//				long num = (long)dictionaryEntry.Key;
+//				foreach (KeyValuePair<IFIXInstrument, Bar> keyValuePair in (ArrayList) dictionaryEntry.Value)
+//					this.LMyLmGC5QQ(keyValuePair.Value, keyValuePair.Key);
+//				this.MPfLM438w2(num);
+//			}
+//			this.NJNLAPvWPO.Remove((object)obj0.SignalTime);
+//		}
 
 		private DateTime qJpLNA6Aiq([In] DateTime obj0, [In] long obj1)
 		{

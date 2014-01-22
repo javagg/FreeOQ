@@ -1,4 +1,3 @@
-﻿using CJ5Xsgeg9JvhJUnvO3D;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
@@ -11,7 +10,7 @@ namespace FreeQuant.Simulation
 
     public bool IsReadOnly
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WFYFuI1Oa1.IsReadOnly;
       }
@@ -19,7 +18,7 @@ namespace FreeQuant.Simulation
 
     public bool IsFixedSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WFYFuI1Oa1.IsFixedSize;
       }
@@ -27,7 +26,7 @@ namespace FreeQuant.Simulation
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WFYFuI1Oa1.IsSynchronized;
       }
@@ -35,7 +34,7 @@ namespace FreeQuant.Simulation
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WFYFuI1Oa1.Count;
       }
@@ -43,119 +42,120 @@ namespace FreeQuant.Simulation
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.WFYFuI1Oa1.SyncRoot;
       }
     }
 
-    public Interval this[int index]
+		public object this[int index]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.WFYFuI1Oa1[index] as Interval;
+        return this.WFYFuI1Oa1[index];
       }
+			set
+			{
+				this.WFYFuI1Oa1[index] = value;
+			}
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IntervalList()
     {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.WFYFuI1Oa1 = new ArrayList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    object IList.get_Item(int index)
-    {
-      return this.WFYFuI1Oa1[index];
-    }
+    
+//    object IList.get_Item(int index)
+//    {
+//      return this.WFYFuI1Oa1[index];
+//    }
+//
+//    
+//    void IList.set_Item(int index, object value)
+//    {
+//    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    void IList.set_Item(int index, object value)
-    {
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RemoveAt(int index)
     {
       this.WFYFuI1Oa1.RemoveAt(index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     void IList.Insert(int index, object value)
     {
       this.WFYFuI1Oa1.Insert(index, value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     void IList.Remove(object value)
     {
       this.WFYFuI1Oa1.Remove(value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     bool IList.Contains(object value)
     {
       return this.WFYFuI1Oa1.Contains(value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.WFYFuI1Oa1.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     int IList.IndexOf(object value)
     {
       return this.WFYFuI1Oa1.IndexOf(value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     int IList.Add(object value)
     {
       return this.WFYFuI1Oa1.Add(value);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.WFYFuI1Oa1.CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return this.WFYFuI1Oa1.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Remove(Interval interval)
     {
       this.WFYFuI1Oa1.Remove((object) interval);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool Contains(Interval interval)
     {
       return this.WFYFuI1Oa1.Contains((object) interval);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int IndexOf(Interval interval)
     {
       return this.WFYFuI1Oa1.IndexOf((object) interval);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int Add(Interval interval)
     {
       return this.WFYFuI1Oa1.Add((object) interval);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int Add(DateTime begin, DateTime end)
     {
       return this.Add(new Interval(begin, end));

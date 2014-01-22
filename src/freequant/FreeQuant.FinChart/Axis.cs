@@ -45,11 +45,11 @@ namespace FreeQuant.FinChart
 
     public Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+     get
       {
         return this.color;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.color = value;
       }
@@ -57,11 +57,11 @@ namespace FreeQuant.FinChart
 
     public bool MajorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.majorTicksEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.majorTicksEnabled = value;
       }
@@ -69,11 +69,11 @@ namespace FreeQuant.FinChart
 
     public Color MajorTicksColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.majorTicksColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.majorTicksColor = value;
       }
@@ -81,11 +81,11 @@ namespace FreeQuant.FinChart
 
     public float MajorTicksWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.majorTicksWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.majorTicksWidth = value;
       }
@@ -93,11 +93,11 @@ namespace FreeQuant.FinChart
 
     public int MajorTicksLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.majorTicksLength;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.majorTicksLength = value;
       }
@@ -105,11 +105,11 @@ namespace FreeQuant.FinChart
 
     public bool MinorTicksEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorTicksEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorTicksEnabled = value;
       }
@@ -117,11 +117,11 @@ namespace FreeQuant.FinChart
 
     public Color MinorTicksColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorTicksColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorTicksColor = value;
       }
@@ -129,11 +129,11 @@ namespace FreeQuant.FinChart
 
     public float MinorTicksWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorTicksWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorTicksWidth = value;
       }
@@ -141,11 +141,11 @@ namespace FreeQuant.FinChart
 
     public int MinorTicksLength
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorTicksLength;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorTicksLength = value;
       }
@@ -153,11 +153,11 @@ namespace FreeQuant.FinChart
 
     public EAxisTitlePosition TitlePosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.titlePosition;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.titlePosition = value;
       }
@@ -165,11 +165,11 @@ namespace FreeQuant.FinChart
 
     public Font TitleFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.titleFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.titleFont = value;
       }
@@ -177,11 +177,11 @@ namespace FreeQuant.FinChart
 
     public Color TitleColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.titleColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.titleColor = value;
       }
@@ -189,11 +189,11 @@ namespace FreeQuant.FinChart
 
     public int TitleOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.titleOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.titleOffset = value;
       }
@@ -201,11 +201,11 @@ namespace FreeQuant.FinChart
 
     public double Min
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.min;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.min = value;
       }
@@ -213,11 +213,11 @@ namespace FreeQuant.FinChart
 
     public double Max
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.max;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.max = value;
       }
@@ -225,11 +225,11 @@ namespace FreeQuant.FinChart
 
     public bool Enabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.enabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.enabled = value;
       }
@@ -237,11 +237,11 @@ namespace FreeQuant.FinChart
 
     public bool Zoomed
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.zoomed;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.zoomed = value;
       }
@@ -249,11 +249,11 @@ namespace FreeQuant.FinChart
 
     public bool GridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.gridEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.gridEnabled = value;
       }
@@ -261,11 +261,11 @@ namespace FreeQuant.FinChart
 
     public Color GridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.gridColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.gridColor = value;
       }
@@ -273,11 +273,11 @@ namespace FreeQuant.FinChart
 
     public float GridWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.gridWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.gridWidth = value;
       }
@@ -285,11 +285,11 @@ namespace FreeQuant.FinChart
 
     public DashStyle GridDashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.gridDashStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.gridDashStyle = value;
       }
@@ -297,11 +297,11 @@ namespace FreeQuant.FinChart
 
     public bool MinorGridEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorGridEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorGridEnabled = value;
       }
@@ -309,11 +309,11 @@ namespace FreeQuant.FinChart
 
     public Color MinorGridColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorGridColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorGridColor = value;
       }
@@ -321,11 +321,11 @@ namespace FreeQuant.FinChart
 
     public float MinorGridWidth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorGridWidth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorGridWidth = value;
       }
@@ -333,11 +333,11 @@ namespace FreeQuant.FinChart
 
     public DashStyle MinorGridDashStyle
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.minorGridDashStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.minorGridDashStyle = value;
       }
@@ -345,11 +345,11 @@ namespace FreeQuant.FinChart
 
     public bool TitleEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.titleEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.titleEnabled = value;
       }
@@ -357,11 +357,11 @@ namespace FreeQuant.FinChart
 
     public bool LabelEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.labelEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.labelEnabled = value;
       }
@@ -369,11 +369,11 @@ namespace FreeQuant.FinChart
 
     public Font LabelFont
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.labelFont;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.labelFont = value;
       }
@@ -381,11 +381,11 @@ namespace FreeQuant.FinChart
 
     public Color LabelColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.labelColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.labelColor = value;
       }
@@ -393,11 +393,11 @@ namespace FreeQuant.FinChart
 
     public int LabelOffset
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.labelOffset;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.labelOffset = value;
       }
@@ -405,11 +405,11 @@ namespace FreeQuant.FinChart
 
     public string LabelFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.labelFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.labelFormat = value;
       }
@@ -417,11 +417,11 @@ namespace FreeQuant.FinChart
 
     public EAxisLabelAlignment LabelAlignment
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.labelAlignment;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.labelAlignment = value;
       }
@@ -429,11 +429,11 @@ namespace FreeQuant.FinChart
 
     public int Width
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.width;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.width = value;
       }
@@ -441,11 +441,11 @@ namespace FreeQuant.FinChart
 
     public int Height
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.height;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.height = value;
       }
@@ -453,22 +453,14 @@ namespace FreeQuant.FinChart
 
     public string Title
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.title;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.title = value;
       }
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public Axis()
-    {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

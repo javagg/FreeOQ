@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using FreeQuant.Quant;
 
 namespace FreeQuant.Charting
 {
@@ -206,7 +207,7 @@ namespace FreeQuant.Charting
           this.fIntegral[index] = index != 0 ? this.fIntegral[index - 1] + this.fBins[index] : this.fBins[index];
         if (this.fIntegral[this.fNBins - 1] == 0.0)
         {
-          Console.WriteLine(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1004));
+					Console.WriteLine("dddd");
           return (double[]) null;
         }
         else
@@ -221,11 +222,11 @@ namespace FreeQuant.Charting
     
     public double GetRandom()
     {
-      double SearchValue = SmartQuant.Quant.Random.Rndm();
+		double SearchValue = FreeQuant.Quant.Random.Rndm();
       int Index = FinMath.BinarySearch(this.fNBins, this.GetIntegral(), SearchValue);
       if (Index >= 0 && Index < this.fNBins)
         return this.GetBinMin(Index) + this.fBinSize * (SearchValue - this.fIntegral[Index]) / (this.fIntegral[Index + 1] - this.fIntegral[Index]);
-      Console.WriteLine(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1100) + (object) Index);
+			Console.WriteLine("Index111" +  Index);
       return 0.0;
     }
 
@@ -258,7 +259,7 @@ namespace FreeQuant.Charting
     public void Print()
     {
       for (int Index = 0; Index < this.fNBins; ++Index)
-        Console.WriteLine((string) (object) Index + (object) RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1184) + (string) (object) this.GetBinMin(Index) + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1196) + (string) (object) this.GetBinCentre(Index) + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1202) + (string) (object) this.GetBinMax(Index) + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1208) + this.fBins[Index].ToString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1220)));
+				Console.WriteLine(Index + "indexs" + (string) (object) this.GetBinMin(Index) + "fsdf" + this.GetBinCentre(Index) + "fddfs" + this.GetBinMax(Index) + " dd" + this.fBins[Index].ToString("D"));
     }
 
     
@@ -272,12 +273,12 @@ namespace FreeQuant.Charting
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1228), RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1244));
+				Canvas canvas = new Canvas("Ca Name", "Ca Title");
       }
       Chart.Pad.Add((IDrawable) this);
       Chart.Pad.Title.Add(this.P6F6OEmA1G, this.igE6PbVkgQ);
       Chart.Pad.Legend.Add(this.P6F6OEmA1G, this.igE6PbVkgQ);
-      if (Option.ToLower().IndexOf(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(1260)) >= 0)
+			if (Option.ToLower().IndexOf("what") >= 0)
         return;
       Chart.Pad.SetRange(this.fXMin, this.fXMax, this.fYMin - (this.fYMax - this.fYMin) / 10.0, this.fYMax + (this.fYMax - this.fYMin) / 10.0);
     }

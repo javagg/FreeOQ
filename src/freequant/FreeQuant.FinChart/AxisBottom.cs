@@ -50,11 +50,8 @@ namespace FreeQuant.FinChart
     }
 
     
-    public AxisBottom(Chart chart, int x1, int x2, int y)
+		public AxisBottom(Chart chart, int x1, int x2, int y) :base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.chart = chart;
       this.x1 = (double) x1;
       this.x2 = (double) x2;

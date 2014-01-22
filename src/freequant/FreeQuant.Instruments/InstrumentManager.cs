@@ -48,12 +48,12 @@ namespace FreeQuant.Instruments
       switch (Framework.Storage.ServerType)
       {
         case DbServerType.MS_ACCESS:
-          connectionType = Type.GetType(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5654));
-          connectionString = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(5884), (object) Framework.Installation.DataDir.FullName);
+					connectionType = Type.GetType("rr");
+					connectionString = string.Format("", (object) Framework.Installation.DataDir.FullName);
           break;
         case DbServerType.SQL_SERVER_COMPACT_EDITION_35:
-          connectionType = Type.GetType(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6014));
-          connectionString = string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(6280), (object) Framework.Installation.DataDir.FullName);
+					connectionType = Type.GetType("typename");
+					connectionString = string.Format("", (object) Framework.Installation.DataDir.FullName);
           break;
       }
       InstrumentManager.server.Open(connectionType, connectionString);
@@ -70,9 +70,9 @@ namespace FreeQuant.Instruments
     {
       InstrumentManager.server.Remove(instrument);
       InstrumentManager.instruments.Remove(instrument);
-      if (InstrumentManager.KmpEvph5v6 == null)
-        return;
-      InstrumentManager.KmpEvph5v6(new InstrumentEventArgs(instrument));
+//      if (InstrumentManager.KmpEvph5v6 == null)
+//        return;
+//      InstrumentManager.KmpEvph5v6(new InstrumentEventArgs(instrument));
     }
 
      public static void Remove(string symbol)
@@ -103,9 +103,9 @@ namespace FreeQuant.Instruments
      internal static void VljEVFlVHf([In] Instrument obj0)
     {
       InstrumentManager.instruments.Add(obj0);
-      if (InstrumentManager.FN9EpXCpRx == null)
-        return;
-      InstrumentManager.FN9EpXCpRx(new InstrumentEventArgs(obj0));
+//      if (InstrumentManager.FN9EpXCpRx == null)
+//        return;
+//      InstrumentManager.FN9EpXCpRx(new InstrumentEventArgs(obj0));
     }
 
      internal static void DdbEFF4dAg([In] Instrument obj0)

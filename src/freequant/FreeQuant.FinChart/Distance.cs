@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.FinChart
 {
   public class Distance
@@ -12,11 +10,11 @@ namespace FreeQuant.FinChart
 
     public double DX
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.zLoydB5Wbj;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.zLoydB5Wbj = value;
       }
@@ -24,11 +22,11 @@ namespace FreeQuant.FinChart
 
     public double DY
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ooOyuBmOd3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.ooOyuBmOd3 = value;
       }
@@ -36,11 +34,11 @@ namespace FreeQuant.FinChart
 
     public double X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.u0CyxUS0Td;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.u0CyxUS0Td = value;
       }
@@ -48,11 +46,11 @@ namespace FreeQuant.FinChart
 
     public double Y
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.OFyyALaPT1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.OFyyALaPT1 = value;
       }
@@ -60,17 +58,17 @@ namespace FreeQuant.FinChart
 
     public string ToolTipText
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.HXey5hRkvQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.HXey5hRkvQ = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance()
     {
       xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();

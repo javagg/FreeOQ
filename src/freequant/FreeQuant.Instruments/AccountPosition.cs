@@ -2,28 +2,11 @@ namespace FreeQuant.Instruments
 {
 	public class AccountPosition
 	{
-		internal Currency currency;
-		internal double value;
-
-		public Currency Currency
-		{
-			get
-			{
-				return this.currency;
-			}
-		}
-
-		public double Value
-		{
-			get
-			{
-				return this.value;
-			}
-		}
-
+		public Currency Currency { get; private set; }
+		public double Value { get; set; }
 		public AccountPosition(Currency currency)
 		{
-			this.currency = currency;
+			this.Currency = currency;
 		}
 	}
 }

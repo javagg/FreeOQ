@@ -1,4 +1,3 @@
-﻿using Byqm85MNrFBe6JPJlI;
 using FreeQuant.Series;
 using FreeQuant.Testing.TesterItems;
 using System;
@@ -12,20 +11,14 @@ namespace FreeQuant.Testing.MathStatistics
     private SeriesTesterItem BMbVKSFYY;
     private double KVogOByx1;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Division(string name, SeriesTesterItem numeratorSeriesItem, SeriesTesterItem denominatorSeriesItem, SeriesTesterItem signalSeriesItem)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(name, numeratorSeriesItem, denominatorSeriesItem, signalSeriesItem, 1.0);
+			:this(name, numeratorSeriesItem, denominatorSeriesItem, signalSeriesItem, 1.0) {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Division(string name, SeriesTesterItem numeratorSeriesItem, SeriesTesterItem denominatorSeriesItem, SeriesTesterItem signalSeriesItem, double multiplier)
-    {
-      JALDIdDEhORsdnKRLQ.ot5XEbmzoL0lp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name, signalSeriesItem, name);
+			: base(name, signalSeriesItem, name) {
       this.Q6TKkEvoQ = numeratorSeriesItem;
       this.BMbVKSFYY = denominatorSeriesItem;
       this.parentList.Add((object) numeratorSeriesItem);
@@ -33,7 +26,7 @@ namespace FreeQuant.Testing.MathStatistics
       this.KVogOByx1 = multiplier;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override double GetValue(DateTime date)
     {
       double num1 = double.NaN;

@@ -206,7 +206,7 @@ namespace FreeQuant.Instruments
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];
       if (instrument == null)
-        throw new ArgumentException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(10924) + this.Name + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(11002) + symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(11056));
+				throw new ArgumentException("ddd" + this.Name + symbol);
       else
         this.Add(new Transaction(datetime, side, qty, instrument, price, commission, commType));
     }
@@ -216,7 +216,7 @@ namespace FreeQuant.Instruments
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];
       if (instrument == null)
-        throw new ArgumentException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(11118) + this.Name + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(11196) + symbol + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(11250));
+        throw new ArgumentException(this.Name + symbol);
       else
         this.Add(new Transaction(datetime, side, qty, instrument, price));
     }
@@ -570,9 +570,9 @@ namespace FreeQuant.Instruments
         this.performance.GcxBG7nv0L();
       if (this.persistent)
         PortfolioManager.iY2s8gqb4S(this);
-      if (this.S6KdBSfi4y == null)
-        return;
-      this.S6KdBSfi4y((object) this, EventArgs.Empty);
+//      if (this.S6KdBSfi4y == null)
+//        return;
+//      this.S6KdBSfi4y((object) this, EventArgs.Empty);
     }
 
     
@@ -658,49 +658,49 @@ namespace FreeQuant.Instruments
     
     private void Ui2sg7ghMJ([In] Position obj0)
     {
-      if (this.cJcsTZRIto == null)
-        return;
-      this.cJcsTZRIto((object) this, new PositionEventArgs(obj0));
+//      if (this.cJcsTZRIto == null)
+//        return;
+//      this.cJcsTZRIto((object) this, new PositionEventArgs(obj0));
     }
 
     
     private void W88s1d36mE([In] Position obj0)
     {
-      if (this.PXHszRqJsA == null)
-        return;
-      this.PXHszRqJsA((object) this, new PositionEventArgs(obj0));
+//      if (this.PXHszRqJsA == null)
+//        return;
+//      this.PXHszRqJsA((object) this, new PositionEventArgs(obj0));
     }
 
     
     private void eY6sogNFDu([In] Position obj0)
     {
-      if (this.oXpdQAbGCD == null)
-        return;
-      this.oXpdQAbGCD((object) this, new PositionEventArgs(obj0));
+//      if (this.oXpdQAbGCD == null)
+//        return;
+//      this.oXpdQAbGCD((object) this, new PositionEventArgs(obj0));
     }
 
     
     private void lmWsxlDsUD([In] Transaction obj0)
     {
-      if (this.oYlswngCFy == null)
-        return;
-      this.oYlswngCFy((object) this, new TransactionEventArgs(obj0));
+//      if (this.oYlswngCFy == null)
+//        return;
+//      this.oYlswngCFy((object) this, new TransactionEventArgs(obj0));
     }
 
     
     private void gJYsIOGcWf([In] Position obj0)
     {
-      if (this.HJ6dWyfgm9 == null)
-        return;
-      this.HJ6dWyfgm9((object) this, new PositionEventArgs(obj0));
+//      if (this.HJ6dWyfgm9 == null)
+//        return;
+//      this.HJ6dWyfgm9((object) this, new PositionEventArgs(obj0));
     }
 
     
     internal void AYIsLEwh9x()
     {
-      if (this.Aj9d6OW7UW == null)
-        return;
-      this.Aj9d6OW7UW((object) this, EventArgs.Empty);
+//      if (this.Aj9d6OW7UW == null)
+//        return;
+//      this.Aj9d6OW7UW((object) this, EventArgs.Empty);
     }
 
     
@@ -724,8 +724,8 @@ namespace FreeQuant.Instruments
     
     public void ConsolidateFrom(Portfolio[] portfolioList, bool cloneTransactions)
     {
-      if (this.e2sdEWgJbD != null)
-        this.e2sdEWgJbD((object) this, EventArgs.Empty);
+//      if (this.e2sdEWgJbD != null)
+//        this.e2sdEWgJbD((object) this, EventArgs.Empty);
       this.Mk5dJuOhmC = true;
       this.Clear(false);
       List<Portfolio> list1 = new List<Portfolio>();
@@ -756,7 +756,7 @@ namespace FreeQuant.Instruments
         this.account.Add(transaction.CashFlow, transaction.Currency, transaction.DateTime, transaction.Text);
         List<int> list3;
         int index3;
-        (list3 = list2)[index3 = index1] = list3[index3] + 1;
+//        list3 = list2)[index3 = index1] = list3[index3] + 1;
         if (list2[index1] == list1[index1].Transactions.Count)
         {
           list2.RemoveAt(index1);
@@ -764,9 +764,9 @@ namespace FreeQuant.Instruments
         }
       }
       this.Mk5dJuOhmC = false;
-      if (this.PcjdsX4HQ2 == null)
-        return;
-      this.PcjdsX4HQ2((object) this, EventArgs.Empty);
+//      if (this.PcjdsX4HQ2 == null)
+//        return;
+//      this.PcjdsX4HQ2((object) this, EventArgs.Empty);
     }
 
     

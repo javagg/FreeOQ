@@ -59,36 +59,37 @@ namespace FreeQuant.File
     {
       FileSeries fileSeries = this[name];
       this.fE3x1KvvUM.Remove((object) fileSeries.Name);
-      this.dataFile.kBox0k2EsS().KgSKBZK4t(fileSeries);
+//      this.dataFile.kBox0k2EsS().KgSKBZK4t(fileSeries);
     }
 
     public FileSeries Add(string name)
     {
-      FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), name, "", this.dataFile.DefaultZipLevel, this.dataFile.DefaultBlockSize, this.dataFile.DefaultIndexer);
-      this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
-      this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
-      return fileSeries;
-    }
+//      FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), name, "", this.dataFile.DefaultZipLevel, this.dataFile.DefaultBlockSize, this.dataFile.DefaultIndexer);
+//      this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
+//      this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
+//      return fileSeries;
+			return null;
+		   }
 
     public void Rename(string oldName, string newName)
     {
       FileSeries fileSeries = this[oldName];
-      if (fileSeries == null)
-        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2392) + oldName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2418));
-      if (this.Contains(newName))
-        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2444) + newName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2470));
-      fileSeries.TaaFdlDDd(newName);
-      this.fE3x1KvvUM.Remove((object) oldName);
-      this.fE3x1KvvUM.Add((object) newName, (object) fileSeries);
-      this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
+//      if (fileSeries == null)
+//        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2392) + oldName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2418));
+//      if (this.Contains(newName))
+//        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2444) + newName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2470));
+//      fileSeries.TaaFdlDDd(newName);
+//      this.fE3x1KvvUM.Remove((object) oldName);
+//      this.fE3x1KvvUM.Add((object) newName, (object) fileSeries);
+//      this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
     }
 
-    internal FileSeries zL2xM8qdRl([In] string obj0, [In] string obj1, [In] int obj2, [In] int obj3, [In] Indexer obj4)
-    {
-      FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), obj0, obj1, obj2, obj3, obj4);
-      this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
-      return fileSeries;
-    }
+//    internal FileSeries zL2xM8qdRl([In] string obj0, [In] string obj1, [In] int obj2, [In] int obj3, [In] Indexer obj4)
+//    {
+//////      FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), obj0, obj1, obj2, obj3, obj4);
+////      this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
+////      return fileSeries;
+//    }
 
     public void CopyTo(Array array, int index)
     {

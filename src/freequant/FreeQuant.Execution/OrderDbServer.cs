@@ -1,5 +1,3 @@
-using LI7wYoxjcQSGYmaiNa;
-using RZ1j9O1DCcsDf19ge6;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
 using FreeQuant.Providers;
@@ -17,12 +15,9 @@ namespace FreeQuant.Execution
     private Dictionary<int, Type> jW5iqEmeD;
     private Dictionary<Type, int> t1OfD4U1U;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OrderDbServer()
     {
-      NwTRRFsYX0ocoroLCZ.RAuNDcAzwyQvC();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.jW5iqEmeD = new Dictionary<int, Type>();
       this.t1OfD4U1U = new Dictionary<Type, int>();
     }
@@ -39,22 +34,22 @@ namespace FreeQuant.Execution
     public void AddOrder(IOrder order)
     {
       if (order.Id != -1)
-        throw new InvalidOperationException(p9eligYgcNHo8cieFV.RdvEpVlLR7(640));
+				throw new InvalidOperationException("");
       lock (this)
       {
         IDbCommand local_0 = this.cMOyAvus8.CreateCommand();
-        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(756);
-        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1004), DbType.Int32, (object) this.Hblu18jwZ(order));
-        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1022), DbType.Int32, (object) order.Instrument.Id);
-        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1052), DbType.Int32, (object) order.Provider.Id);
-        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1078), DbType.Int32, (object) order.Portfolio.Id);
+//        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(756);
+//        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1004), DbType.Int32, (object) this.Hblu18jwZ(order));
+//        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1022), DbType.Int32, (object) order.Instrument.Id);
+//        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1052), DbType.Int32, (object) order.Provider.Id);
+//        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1078), DbType.Int32, (object) order.Portfolio.Id);
         local_0.ExecuteNonQuery();
         local_0.Dispose();
         IDbCommand local_0_1 = this.cMOyAvus8.CreateCommand();
-        local_0_1.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1106);
+				local_0_1.CommandText = "";
         order.Id = Convert.ToInt32(local_0_1.ExecuteScalar());
         local_0_1.Dispose();
-        FIXDbServer.SaveFIXGroup(this.cMOyAvus8, (FIXGroup) (order as SingleOrder), p9eligYgcNHo8cieFV.RdvEpVlLR7(1144), order.Id);
+				FIXDbServer.SaveFIXGroup(this.cMOyAvus8, (FIXGroup) (order as SingleOrder),"", order.Id);
       }
     }
 
@@ -62,18 +57,18 @@ namespace FreeQuant.Execution
     {
       lock (this)
       {
-        FIXDbServer.RemoveFIXGroup(this.cMOyAvus8, p9eligYgcNHo8cieFV.RdvEpVlLR7(1172), order.Id);
-        FIXDbServer.SaveFIXGroup(this.cMOyAvus8, (FIXGroup) (order as SingleOrder), p9eligYgcNHo8cieFV.RdvEpVlLR7(1200), order.Id);
-        IDbCommand local_0 = this.cMOyAvus8.CreateCommand();
-        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1228);
-        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1330), DbType.Int32, (object) order.Id);
-        local_0.ExecuteNonQuery();
-        local_0.Dispose();
-        IDbCommand local_0_1 = this.cMOyAvus8.CreateCommand();
-        local_0_1.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1352);
-        report.Id = Convert.ToInt32(local_0_1.ExecuteScalar());
-        local_0_1.Dispose();
-        FIXDbServer.SaveFIXGroup(this.cMOyAvus8, (FIXGroup) report, p9eligYgcNHo8cieFV.RdvEpVlLR7(1390), report.Id);
+//        FIXDbServer.RemoveFIXGroup(this.cMOyAvus8, p9eligYgcNHo8cieFV.RdvEpVlLR7(1172), order.Id);
+//        FIXDbServer.SaveFIXGroup(this.cMOyAvus8, (FIXGroup) (order as SingleOrder), p9eligYgcNHo8cieFV.RdvEpVlLR7(1200), order.Id);
+//        IDbCommand local_0 = this.cMOyAvus8.CreateCommand();
+//        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1228);
+//        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1330), DbType.Int32, (object) order.Id);
+//        local_0.ExecuteNonQuery();
+//        local_0.Dispose();
+//        IDbCommand local_0_1 = this.cMOyAvus8.CreateCommand();
+//        local_0_1.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1352);
+//        report.Id = Convert.ToInt32(local_0_1.ExecuteScalar());
+//        local_0_1.Dispose();
+//        FIXDbServer.SaveFIXGroup(this.cMOyAvus8, (FIXGroup) report, p9eligYgcNHo8cieFV.RdvEpVlLR7(1390), report.Id);
       }
     }
 
@@ -81,11 +76,11 @@ namespace FreeQuant.Execution
     {
       lock (this)
       {
-        IDbCommand local_0 = this.cMOyAvus8.CreateCommand();
-        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1420);
-        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1488), DbType.Int32, (object) order.Id);
-        local_0.ExecuteNonQuery();
-        local_0.Dispose();
+//        IDbCommand local_0 = this.cMOyAvus8.CreateCommand();
+//        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1420);
+//        FIXDbServer.SetCommandParameter(local_0, p9eligYgcNHo8cieFV.RdvEpVlLR7(1488), DbType.Int32, (object) order.Id);
+//        local_0.ExecuteNonQuery();
+//        local_0.Dispose();
       }
     }
 
@@ -97,7 +92,7 @@ namespace FreeQuant.Execution
     private void zNagDpvUO()
     {
       IDbCommand command = this.cMOyAvus8.CreateCommand();
-      command.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1498);
+			command.CommandText = "";
       IDataReader dataReader = command.ExecuteReader();
       while (dataReader.Read())
       {
@@ -116,7 +111,7 @@ namespace FreeQuant.Execution
       {
         OrderList local_2 = new OrderList();
         IDbCommand local_0 = this.cMOyAvus8.CreateCommand();
-        local_0.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1552);
+				local_0.CommandText = "";
         IDataReader local_1 = local_0.ExecuteReader();
         while (local_1.Read())
         {
@@ -135,10 +130,10 @@ namespace FreeQuant.Execution
         }
         local_1.Close();
         local_0.Dispose();
-        FIXDbServer.LoadFIXGroups(this.cMOyAvus8, (FIXGroupList) local_2, p9eligYgcNHo8cieFV.RdvEpVlLR7(1596));
+				FIXDbServer.LoadFIXGroups(this.cMOyAvus8, (FIXGroupList) local_2, "");
         ExecutionReportList local_9 = new ExecutionReportList();
         IDbCommand local_0_1 = this.cMOyAvus8.CreateCommand();
-        local_0_1.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1624);
+				local_0_1.CommandText = "commadn";
         IDataReader local_1_1 = local_0_1.ExecuteReader();
         while (local_1_1.Read())
         {
@@ -151,7 +146,7 @@ namespace FreeQuant.Execution
         }
         local_1_1.Close();
         local_0_1.Dispose();
-        FIXDbServer.LoadFIXGroups(this.cMOyAvus8, (FIXGroupList) local_9, p9eligYgcNHo8cieFV.RdvEpVlLR7(1670));
+				FIXDbServer.LoadFIXGroups(this.cMOyAvus8, (FIXGroupList) local_9, "");
         return local_2;
       }
     }
@@ -161,27 +156,27 @@ namespace FreeQuant.Execution
       Type type = obj0.GetType();
       if (!this.t1OfD4U1U.ContainsKey(type))
       {
-        string str = type.FullName + p9eligYgcNHo8cieFV.RdvEpVlLR7(1700) + type.Assembly.GetName().Name;
-        IDbCommand command1 = this.cMOyAvus8.CreateCommand();
-        command1.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1708);
-        FIXDbServer.SetCommandParameter(command1, p9eligYgcNHo8cieFV.RdvEpVlLR7(1802), DbType.String, (object) string.Format(p9eligYgcNHo8cieFV.RdvEpVlLR7(1816), (object) type.FullName, (object) type.Assembly.GetName().Name));
-        command1.ExecuteNonQuery();
-        command1.Dispose();
-        IDbCommand command2 = this.cMOyAvus8.CreateCommand();
-        command2.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1836);
-        int key = Convert.ToInt32(command2.ExecuteScalar());
-        command2.Dispose();
-        this.jW5iqEmeD.Add(key, type);
-        this.t1OfD4U1U.Add(type, key);
+//        string str = type.FullName + p9eligYgcNHo8cieFV.RdvEpVlLR7(1700) + type.Assembly.GetName().Name;
+//        IDbCommand command1 = this.cMOyAvus8.CreateCommand();
+//        command1.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1708);
+//        FIXDbServer.SetCommandParameter(command1, p9eligYgcNHo8cieFV.RdvEpVlLR7(1802), DbType.String, (object) string.Format(p9eligYgcNHo8cieFV.RdvEpVlLR7(1816), (object) type.FullName, (object) type.Assembly.GetName().Name));
+//        command1.ExecuteNonQuery();
+//        command1.Dispose();
+//        IDbCommand command2 = this.cMOyAvus8.CreateCommand();
+//        command2.CommandText = p9eligYgcNHo8cieFV.RdvEpVlLR7(1836);
+//        int key = Convert.ToInt32(command2.ExecuteScalar());
+//        command2.Dispose();
+//        this.jW5iqEmeD.Add(key, type);
+//        this.t1OfD4U1U.Add(type, key);
       }
       return this.t1OfD4U1U[type];
     }
 
     private void TQt5NviMg()
     {
-      this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1874), p9eligYgcNHo8cieFV.RdvEpVlLR7(1890), p9eligYgcNHo8cieFV.RdvEpVlLR7(1920));
-      this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1930), p9eligYgcNHo8cieFV.RdvEpVlLR7(1946), p9eligYgcNHo8cieFV.RdvEpVlLR7(1972));
-      this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1982), p9eligYgcNHo8cieFV.RdvEpVlLR7(1998), p9eligYgcNHo8cieFV.RdvEpVlLR7(2026));
+//      this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1874), p9eligYgcNHo8cieFV.RdvEpVlLR7(1890), p9eligYgcNHo8cieFV.RdvEpVlLR7(1920));
+//      this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1930), p9eligYgcNHo8cieFV.RdvEpVlLR7(1946), p9eligYgcNHo8cieFV.RdvEpVlLR7(1972));
+//      this.GvA89FjyZ(p9eligYgcNHo8cieFV.RdvEpVlLR7(1982), p9eligYgcNHo8cieFV.RdvEpVlLR7(1998), p9eligYgcNHo8cieFV.RdvEpVlLR7(2026));
     }
 
     private void GvA89FjyZ([In] string obj0, [In] string obj1, [In] string obj2)

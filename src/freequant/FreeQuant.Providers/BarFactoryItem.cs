@@ -9,66 +9,61 @@ namespace FreeQuant.Providers
     internal const BarType aYrgwoBvsH = BarType.Time;
     internal const long l27gtTMOx0 = 60L;
     internal const bool dAxggIVaoI = true;
-    private BarType WdOgLDv873;
-    private long peigWZAUss;
-    private bool pKNgSFEXfx;
+    private BarType barType;
+    private long barSize;
+    private bool enabled;
 
     [DefaultValue(BarType.Time)]
     public BarType BarType
     {
        get
       {
-        return this.WdOgLDv873;
+				return this.barType; 
       }
        set
       {
-        this.WdOgLDv873 = value;
+        this.barType = value;
       }
     }
 
-    [DefaultValue(60L)]
+    [DefaultValue(60)]
     public long BarSize
     {
        get
       {
-        return this.peigWZAUss;
+				return this.barSize; 
       }
        set
       {
-        this.peigWZAUss = value;
+        this.barSize = value;
       }
     }
 
     [DefaultValue(true)]
-    public bool Enabled
+		public bool Enabled
     {
        get
       {
-        return this.pKNgSFEXfx;
+				return this.enabled; 
       }
        set
       {
-        this.pKNgSFEXfx = value;
+        this.enabled = value;
       }
     }
 
     
     public BarFactoryItem(BarType barType, long barSize, bool enabled)
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.WdOgLDv873 = barType;
-      this.peigWZAUss = barSize;
-      this.pKNgSFEXfx = enabled;
+      this.barType = barType;
+      this.barSize = barSize;
+      this.enabled = enabled;
     }
 
     
-    public BarFactoryItem()
+		public BarFactoryItem():this(BarType.Time, 60, true)
     {
-      Y8h1Gnp6qhyPRT2DDw.iUP8o3RzIib3P();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(BarType.Time, 60L, true);
+
     }
 
     
@@ -77,9 +72,9 @@ namespace FreeQuant.Providers
       BarFactoryItem barFactoryItem = obj as BarFactoryItem;
       if (barFactoryItem != null)
       {
-        if (this.peigWZAUss > barFactoryItem.peigWZAUss)
+        if (this.barSize > barFactoryItem.barSize)
           return 1;
-        if (this.peigWZAUss < barFactoryItem.peigWZAUss)
+        if (this.barSize < barFactoryItem.barSize)
           return -1;
       }
       return 0;
@@ -88,7 +83,7 @@ namespace FreeQuant.Providers
     
     public override string ToString()
     {
-      return string.Format(GojrKtfk5NMi1fou68.a17L2Y7Wnd(718), (object) this.WdOgLDv873, (object) this.peigWZAUss, (object) (bool) (this.pKNgSFEXfx ? 1 : 0));
+			return string.Format("{0}", this.barType, this.barSize, this.enabled);
     }
   }
 }

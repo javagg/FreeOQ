@@ -11,6 +11,6 @@ namespace FreeQuant.Data
 		Weighted,
 		Volume,
 		OpenInt,
-		Average,
+		Average
 	}
 }

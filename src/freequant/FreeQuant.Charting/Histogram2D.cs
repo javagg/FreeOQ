@@ -154,13 +154,11 @@ namespace FreeQuant.Charting
     
     public Histogram2D(string Name, string Title, int NBinsX, double XMin, double XMax, int NBinsY, double YMin, double YMax)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.kG6oz8rvGU = new Histogram2D.FZPRsSBmTaNrPqwljR();
       this.U4Z3nPEiRp = new Histogram2D.jCAh8vlcna2K6CJfbh();
       this.l303o6TYVf = new Histogram2D.a8pjE1K8r7B62oxStB();
       this.MUK33qPZeB = new Histogram2D.XD9QjcfMcOLK0nS6xp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.fName = Name;
       this.fTitle = Title;
       this.uBuojBImWt(NBinsX, XMin, XMax, NBinsY, YMin, YMax);
@@ -169,13 +167,10 @@ namespace FreeQuant.Charting
     
     public Histogram2D(string Name, int NBinsX, double XMin, double XMax, int NBinsY, double YMin, double YMax)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.kG6oz8rvGU = new Histogram2D.FZPRsSBmTaNrPqwljR();
       this.U4Z3nPEiRp = new Histogram2D.jCAh8vlcna2K6CJfbh();
       this.l303o6TYVf = new Histogram2D.a8pjE1K8r7B62oxStB();
       this.MUK33qPZeB = new Histogram2D.XD9QjcfMcOLK0nS6xp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fName = Name;
       this.uBuojBImWt(NBinsX, XMin, XMax, NBinsY, YMin, YMax);
     }
@@ -183,13 +178,10 @@ namespace FreeQuant.Charting
     
     public Histogram2D(int NBinsX, double XMin, double XMax, int NBinsY, double YMin, double YMax)
     {
-      Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
       this.kG6oz8rvGU = new Histogram2D.FZPRsSBmTaNrPqwljR();
       this.U4Z3nPEiRp = new Histogram2D.jCAh8vlcna2K6CJfbh();
       this.l303o6TYVf = new Histogram2D.a8pjE1K8r7B62oxStB();
       this.MUK33qPZeB = new Histogram2D.XD9QjcfMcOLK0nS6xp();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.uBuojBImWt(NBinsX, XMin, XMax, NBinsY, YMin, YMax);
     }
 
@@ -436,7 +428,7 @@ namespace FreeQuant.Charting
         for (int Index2 = 0; Index2 < this.fNBinsY; ++Index2)
         {
           if (this.fBins[Index1, Index2] != 0.0)
-            Console.WriteLine((string) (object) Index1 + (object) RA7k7APgXK5aSsnmA9.qBCYFXVOKp(256) + (string) (object) Index2 + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(262) + (string) (object) this.GetBinCentreX(Index1) + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(274) + (string) (object) this.GetBinCentreY(Index2) + RA7k7APgXK5aSsnmA9.qBCYFXVOKp(280) + this.fBins[Index1, Index2].ToString(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(292)));
+						Console.WriteLine(Index1 + "fsd" + Index2 + "dss" + this.GetBinCentreX(Index1) + "sfdfdf" + this.GetBinCentreY(Index2) + "fsfd"+ this.fBins[Index1, Index2].ToString("sss"));
         }
       }
     }
@@ -452,12 +444,12 @@ namespace FreeQuant.Charting
     {
       if (Chart.Pad == null)
       {
-        Canvas canvas = new Canvas(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(300), RA7k7APgXK5aSsnmA9.qBCYFXVOKp(316));
+				Canvas canvas = new Canvas("Canvas Name", "Canvas Title");
       }
       if (Chart.Pad.View3D == null)
         Chart.Pad.View3D = (object) new TView();
       Chart.Pad.Add((IDrawable) this);
-      if (Option.ToLower().IndexOf(RA7k7APgXK5aSsnmA9.qBCYFXVOKp(332)) >= 0)
+			if (Option.ToLower().IndexOf("waht") >= 0)
         return;
       if (Chart.Pad.For3D)
         new TText(this.fName, this.fXMin, this.fYMax).Draw();
@@ -647,11 +639,9 @@ namespace FreeQuant.Charting
       protected double DQY3XkBEnm;
 
       
-      public FZPRsSBmTaNrPqwljR()
+			public FZPRsSBmTaNrPqwljR() :base()
       {
-        Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
+
       }
 
       
@@ -683,11 +673,8 @@ namespace FreeQuant.Charting
     private class jCAh8vlcna2K6CJfbh : Histogram2D.FZPRsSBmTaNrPqwljR
     {
       
-      public jCAh8vlcna2K6CJfbh()
+		public jCAh8vlcna2K6CJfbh() : base()
       {
-        Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
       }
 
       
@@ -724,11 +711,8 @@ namespace FreeQuant.Charting
       private double LSr3HnRJss;
 
       
-      public a8pjE1K8r7B62oxStB()
+		public a8pjE1K8r7B62oxStB() : base()
       {
-        Apmqf3XByShSL8cPCS.GHkILmVzKt7va();
-        // ISSUE: explicit constructor call
-        base.\u002Ector();
       }
 
       

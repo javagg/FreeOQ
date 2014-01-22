@@ -19,7 +19,7 @@ namespace FreeQuant.File
     internal DateTime lastDateTime;
     internal int count;
     internal long lyMkX4DEV;
-    private FRJ1FMOwU8CAwJuZZf streamer;
+//    private FRJ1FMOwU8CAwJuZZf streamer;
     private string name;
     private string description;
     private int maxBlockSize;
@@ -31,7 +31,7 @@ namespace FreeQuant.File
     [Browsable(true)]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return this.name; 
       }
@@ -46,12 +46,12 @@ namespace FreeQuant.File
       {
 				return this.description; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        if (value.Length > (int) sbyte.MaxValue)
-          throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(0), BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(120));
+//        if (value.Length > (int) sbyte.MaxValue)
+//          throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(0), BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(120));
         this.description = value;
-        this.streamer.VmKuLwiT3(this);
+//        this.streamer.VmKuLwiT3(this);
       }
     }
 
@@ -61,16 +61,16 @@ namespace FreeQuant.File
     [Description("Gets or sets the maximum block's size")]
     public int MaxBlockSize
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return this.maxBlockSize; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        if (value < 2)
-          throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(146), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(174));
+//        if (value < 2)
+//          throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(146), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(174));
 				this.maxBlockSize = value; 
-				this.streamer.VmKuLwiT3(this); 
+//				this.streamer.VmKuLwiT3(this); 
       }
     }
 
@@ -80,23 +80,23 @@ namespace FreeQuant.File
     [Description("Gets or sets the zip level")]
     public int ZipLevel
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return this.zipLevel;  
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        if (value < 0 || value > 9)
-          throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(242), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(262));
+//        if (value < 0 || value > 9)
+//          throw new ArgumentOutOfRangeException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(242), (object) value, BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(262));
         this.zipLevel = value;
-        this.streamer.VmKuLwiT3(this);
+//        this.streamer.VmKuLwiT3(this);
       }
     }
 
     [Browsable(false)]
     public Indexer Indexer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return this.indexer; 
       }
@@ -105,7 +105,7 @@ namespace FreeQuant.File
     [Browsable(false)]
     public IndexStatus IndexStatus
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (this.indexer == Indexer.None)
           return IndexStatus.None;
@@ -116,7 +116,7 @@ namespace FreeQuant.File
     [Browsable(false)]
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
 				return this.count; 
       }
@@ -125,11 +125,11 @@ namespace FreeQuant.File
     [Browsable(false)]
     public DateTime FirstDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        if (this.count == 0)
-          throw new InvalidOperationException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(328));
-        else
+//        if (this.count == 0)
+//          throw new InvalidOperationException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(328));
+//        else
 					return this.firstDateTime; 
       }
     }
@@ -137,39 +137,57 @@ namespace FreeQuant.File
     [Browsable(false)]
     public DateTime LastDateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        if (this.count == 0)
-          throw new InvalidOperationException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(370));
-        else
+//        if (this.count == 0)
+//          throw new InvalidOperationException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(370));
+//        else
 					return this.lastDateTime; 
       }
     }
+	
+		public object this[DateTime datetime] { 
+			get {
+				return this[datetime, SearchOption.Exact];
+			} 
+			set
+			{
+			}
+		 }
+		public object this[int index] 
+		{ 
+			get
+			{
+				return null;
+			} 
+		}
 
-    [Browsable(false)]
-    public ISeriesObject this[int index]
-    {
-      get
-      {
-        return this.streamer.mKEzFCE4r(this, index);
-      }
-    }
+//    [Browsable(false)]
+//    public ISeriesObject this[int index]
+//    {
+//      get
+//      {
+////        return this.streamer.mKEzFCE4r(this, index);
+//				return null;
+//      }
+//    }
 
-    [Browsable(false)]
-    public ISeriesObject this[DateTime datetime]
-    {
-      get
-      {
-        return this[datetime, SearchOption.Exact];
-      }
-    }
+//    [Browsable(false)]
+//		public object this[DateTime datetime]
+//    {
+//      get
+//      {
+//        return this[datetime, SearchOption.Exact];
+//      }
+//    }
 
     [Browsable(false)]
     public ISeriesObject this[DateTime datetime, SearchOption option]
     {
       get
       {
-        return this.streamer.CTsxsPQA1A(this, datetime, option);
+//        return this.streamer.CTsxsPQA1A(this, datetime, option);
+				return null;
       }
     }
 
@@ -178,26 +196,24 @@ namespace FreeQuant.File
     {
         get
       {
-        return this.streamer.LIixxmGnRR(this);
+//        return this.streamer.LIixxmGnRR(this);
+				return 0;
       }
        set
       {
-        this.streamer.fnHxdL12qe(this, value);
+//        this.streamer.fnHxdL12qe(this, value);
       }
     }
 
-    internal FileSeries(FRJ1FMOwU8CAwJuZZf streamer, string name, string description, int zipLevel, int maxBlockSize, Indexer indexer)
+		internal FileSeries(/*FRJ1FMOwU8CAwJuZZf streamer,*/ string name, string description, int zipLevel, int maxBlockSize, Indexer indexer)
     {
-      F45ZyD1Qi4NklFUbBa.aTsHghczyNAhO();
       this.gJBOw3afc = -1L;
       this.dC0L5SwaN = -1L;
       this.hnKhMyEgT = -1L;
       this.firstDateTime = DateTime.MaxValue;
       this.lastDateTime = DateTime.MinValue;
       this.lyMkX4DEV = -1L;
-			// ISSUE: explicit constructor call
-      base.\u002Ector();
-			this.streamer = streamer; 
+//			this.streamer = streamer; 
 			this.name = name; 
       this.description = description;
 			this.zipLevel = zipLevel; 
@@ -205,21 +221,21 @@ namespace FreeQuant.File
 			this.indexer = indexer; 
     }
 
-    object IDataSeries.get_Item(int index)
-    {
-      return (object) this[index];
-    }
+//    object IDataSeries.get_Item(int index)
+//    {
+//      return (object) this[index];
+//    }
 
-    object IDataSeries.get_Item(DateTime datetime)
-    {
-      return (object) this[datetime];
-    }
+//    object IDataSeries.get_Item(DateTime datetime)
+//    {
+//      return (object) this[datetime];
+//    }
 
 //    void IDataSeries.set_Item(DateTime datetime, object value)
 //    {
 //    }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ISeriesObject[] GetArray()
     {
       return this.GetArray(DateTime.MinValue, DateTime.MaxValue);
@@ -227,34 +243,37 @@ namespace FreeQuant.File
 
     public ISeriesObject[] GetArray(DateTime start, DateTime end)
     {
-      return this.streamer.TPxeRVXsG(this, start, end);
+//      return this.streamer.TPxeRVXsG(this, start, end);
+			return null;
     }
 
     public ISeriesObject[] GetArray(int beginIndex, int endIndex)
     {
-      return this.streamer.lcNUtVLQa(this, beginIndex, endIndex);
-    }
+//      return this.streamer.lcNUtVLQa(this, beginIndex, endIndex);
+			return null;
+
+   }
 
     public void Add(ISeriesObject obj)
     {
-      this.streamer.jGN7PFamp(this, obj);
+//      this.streamer.jGN7PFamp(this, obj);
     }
 
     public void Add(DateTime datetime, object obj)
     {
-      if (!(obj is ISeriesObject))
-        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(412));
+//      if (!(obj is ISeriesObject))
+//        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(412));
       this.Add(obj as ISeriesObject);
     }
 
     public void Update(DateTime datetime, object obj)
     {
-      this.streamer.mrranh0iN(this, obj as ISeriesObject);
+//      this.streamer.mrranh0iN(this, obj as ISeriesObject);
     }
 
     public void Update(int index, object obj)
     {
-      this.streamer.eb63Ogbkv(this, obj as ISeriesObject, index);
+//      this.streamer.eb63Ogbkv(this, obj as ISeriesObject, index);
     }
 
     public void Flush()
@@ -262,27 +281,29 @@ namespace FreeQuant.File
       this.Flush(false);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Flush(bool flushIndex)
     {
-      this.streamer.Dbgg6r6Wu(this, flushIndex);
+//      this.streamer.Dbgg6r6Wu(this, flushIndex);
     }
 
     public void Reindex(Indexer indexer)
     {
       this.indexer = indexer;
-      this.streamer.A3iIpmIeh(this);
+//      this.streamer.A3iIpmIeh(this);
     }
 
     public ISeriesObject Read()
     {
-      return this.streamer.e7bxHVj446(this);
-    }
+//      return this.streamer.e7bxHVj446(this);
+			return null;
+		}
 
     public int IndexOf(DateTime datetime, SearchOption option)
     {
-      return this.streamer.Ry8jC7als(this, datetime, option);
-    }
+//      return this.streamer.Ry8jC7als(this, datetime, option);
+			return 0;
+  }
 
     public int IndexOf(DateTime datetime)
     {
@@ -296,23 +317,23 @@ namespace FreeQuant.File
 
     public void Remove(DateTime datetime)
     {
-      this.streamer.loZx5NFiaR(this, datetime);
+//      this.streamer.loZx5NFiaR(this, datetime);
     }
 
     public void RemoveAt(int index)
     {
-      this.streamer.xZFxPvvctV(this, index);
+//      this.streamer.xZFxPvvctV(this, index);
     }
 
     public void Clear()
     {
-      this.streamer.POZxB2ZfIx(this);
+//      this.streamer.POZxB2ZfIx(this);
     }
 
     public void CopyTo(FileSeries dstSeries, ISeriesFilter filter)
     {
       if (dstSeries == this)
-        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(564));
+				throw new ArgumentException("itself");
       if (filter == null)
       {
         foreach (ISeriesObject seriesObject in this)
@@ -324,22 +345,25 @@ namespace FreeQuant.File
 
     public DateTime DateTimeAt(int index)
     {
-      return this[index].DateTime;
+//			return this[index].DateTime;
+			return DateTime.Now;
     }
 
     public IEnumerator GetEnumerator()
     {
-      return (IEnumerator) new LPr0ffVt3PxRVXsGbc(this);
-    }
+//      return (IEnumerator) new LPr0ffVt3PxRVXsGbc(this);
+			return (IEnumerator)null;
+		  
+  }
 
     internal void TaaFdlDDd([In] string obj0)
     {
       this.name = obj0;
     }
 
-    private void DbvJxJl8B()
-    {
-      this.streamer.YEAxNKIbiu(this);
-    }
+//    private void DbvJxJl8B()
+//    {
+////      this.streamer.YEAxNKIbiu(this);
+//    }
   }
 }

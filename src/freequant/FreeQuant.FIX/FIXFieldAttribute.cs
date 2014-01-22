@@ -5,44 +5,21 @@ namespace FreeQuant.FIX
 	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true)]
 	public class FIXFieldAttribute : Attribute
 	{
-		protected int tag;
-		protected bool required;
+//		protected int tag;
+//		protected bool required;
 
-		public int Tag
-		{
-			get
-			{
-				return this.tag;
-			}
-			set
-			{
-				this.tag = value;
-			}
-		}
-
-		public bool Required
-		{
-			get
-			{
-				return this.required;
-			}
-			set
-			{
-				this.required = value;
-			}
-		}
+		protected int Tag { get; set; }
+		public bool Required { get; set; }
 
 		public FIXFieldAttribute(int tag) : base()
 		{
-			this.tag = tag;
+			this.Tag = tag;
 		}
 
 		public FIXFieldAttribute(string tag, EFieldOption required) : base()
 		{
-			this.tag = int.Parse(tag);
-			if (required != EFieldOption.Required)
-				return;
-			this.required = true;
+			this.Tag = int.Parse(tag);
+			this.Required = required == EFieldOption.Required;
 		}
 	}
 }
