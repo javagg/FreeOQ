@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Providers
 {
-	public class ProviderList : ICollection, IEnumerable
+	public class ProviderList : ICollection
 	{
 		private SortedList providerNames;
 		private SortedList providerIds;
@@ -34,19 +32,19 @@ namespace FreeQuant.Providers
 			}
 		}
 
-		public IProvider this [string name]
+		public IProvider this[string name]
 		{
 			get
 			{
-				return this.providerNames[(object)name] as IProvider;
+				return this.providerNames[name] as IProvider;
 			}
 		}
 
-		public IProvider this [byte id]
+		public IProvider this[byte id]
 		{
 			get
 			{
-				return this.providerIds[(object)id] as IProvider;
+				return this.providerIds[id] as IProvider;
 			}
 		}
 
@@ -71,29 +69,29 @@ namespace FreeQuant.Providers
 			return this.providerNames.Values.GetEnumerator();
 		}
 
-		internal void HH8tS7bFw([In] IProvider obj0)
+		internal void HH8tS7bFw(IProvider obj0)
 		{
 //      if (this.providerNames.ContainsKey((object) obj0.Name))
 //        throw new ArgumentException(GojrKtfk5NMi1fou68.a17L2Y7Wnd(0) + obj0.Name);
 //      if (this.providerIds.Contains((object) obj0.Id))
 //        throw new ArgumentException(GojrKtfk5NMi1fou68.a17L2Y7Wnd(142) + (object) obj0.Id);
-			this.providerNames.Add((object)obj0.Name, (object)obj0);
-			this.providerIds.Add((object)obj0.Id, (object)obj0);
+			this.providerNames.Add(obj0.Name, obj0);
+			this.providerIds.Add(obj0.Id, obj0);
 		}
 
 		public bool Contains(string name)
 		{
-			return this.providerNames.ContainsKey((object)name); 
+			return this.providerNames.ContainsKey(name); 
 		}
 
 		public bool Contains(byte id)
 		{
-			return this.providerIds.ContainsKey((object)id); 
+			return this.providerIds.ContainsKey(id); 
 		}
 
 		public bool Contains(IProvider provider)
 		{
-			return this.providerNames.ContainsValue((object)provider);
+			return this.providerNames.ContainsValue(provider);
 		}
 	}
 }

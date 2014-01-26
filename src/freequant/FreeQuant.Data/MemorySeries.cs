@@ -1,61 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Data
 {
 	public class MemorySeries<TValue> : IDataSeries, IEnumerable
 	{
-		private string name;
-		private string description;
-		private SortedList<DateTime, TValue> jy6GVFJfR;
+		private SortedList<DateTime, TValue> list =  new SortedList<DateTime, TValue>(); 
 
-		public string Name
-		{
-			get
-			{
-				return this.name; 
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return this.description; 
-			}
-			set
-			{
-				this.description = value;
-			}
-		}
-
+		public string Name { get; private set; }
+		public string Description { get; set; }
 		public int Count
 		{
 			get
 			{
-				return this.jy6GVFJfR.Count;
+				return this.list.Count;
 			}
 		}
 
-		public object this [DateTime datetime]
+		public object this[DateTime datetime]
 		{
 			get
 			{
-				return (object)this.jy6GVFJfR[datetime];
+				return (object)this.list[datetime];
 			}
 			set
 			{
-				this.jy6GVFJfR[datetime] = (TValue)value;
+				this.list[datetime] = (TValue)value;
 			}
 		}
 
-		public object this [int index]
+		public object this[int index]
 		{
 			get
 			{
-				return (object)this.jy6GVFJfR.Values[index];
+				return (object)this.list.Values[index];
 			}
 		}
 
@@ -63,7 +42,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.jy6GVFJfR.Keys[0];
+				return this.list.Keys[0];
 			}
 		}
 
@@ -71,29 +50,32 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.jy6GVFJfR.Keys[this.jy6GVFJfR.Count - 1];
+				return this.list.Keys[this.list.Count - 1];
 			}
 		}
 
-		public MemorySeries(string name, string description) :base()
+		public MemorySeries(string name = null, string description = null)
 		{
-			this.name = name;
-			this.description = description;
-			this.jy6GVFJfR = new SortedList<DateTime, TValue>();
+			this.Name = name ?? String.Empty;
+			this.Description = description ?? String.Empty;
 		}
 
-		public MemorySeries(string name) : this(name, "")
-		{
+//		public MemorySeries(string name) : this(name, String.Empty)
+//		{
+//		}
+//
+//		public MemorySeries()
+//		{
+//		}
 
-		}
-
-		public MemorySeries()
+		public void Add(DateTime datetime, TValue value)
 		{
+			this.list[datetime] = value;
 		}
 
 		public void Add(DateTime datetime, object obj)
 		{
-			this.jy6GVFJfR[datetime] = (TValue)obj;
+			this.list[datetime] = (TValue)obj;
 		}
 
 		public void Update(DateTime datetime, object obj)
@@ -103,24 +85,24 @@ namespace FreeQuant.Data
 
 		public void Update(int index, object obj)
 		{
-			this.Update(this.jy6GVFJfR.Keys[index], obj);
+			this.Update(this.list.Keys[index], obj);
 		}
 
 		public bool Contains(DateTime datetime)
 		{
-			return this.jy6GVFJfR.ContainsKey(datetime);
+			return this.list.ContainsKey(datetime);
 		}
 
 		public int IndexOf(DateTime datetime)
 		{
-			return this.jy6GVFJfR.IndexOfKey(datetime);
+			return this.list.IndexOfKey(datetime);
 		}
 
 		public int IndexOf(DateTime datetime, SearchOption option)
 		{
 			int index = 0;
 			int num1 = 0;
-			int num2 = this.jy6GVFJfR.Count - 1;
+			int num2 = this.list.Count - 1;
 			bool flag = true;
 			while (flag)
 			{
@@ -130,12 +112,12 @@ namespace FreeQuant.Data
 				switch (option)
 				{
 					case SearchOption.Prev:
-						if (this.jy6GVFJfR.Keys[index] <= datetime && (index == this.jy6GVFJfR.Count - 1 || this.jy6GVFJfR.Keys[index + 1] > datetime))
+						if (this.list.Keys[index] <= datetime && (index == this.list.Count - 1 || this.list.Keys[index + 1] > datetime))
 						{
 							flag = false;
 							continue;
 						}
-						else if (this.jy6GVFJfR.Keys[index] > datetime)
+						else if (this.list.Keys[index] > datetime)
 						{
 							num2 = index - 1;
 							continue;
@@ -146,17 +128,17 @@ namespace FreeQuant.Data
 							continue;
 						}
 					case SearchOption.Exact:
-						if (this.jy6GVFJfR.Keys[index] == datetime)
+						if (this.list.Keys[index] == datetime)
 						{
 							flag = false;
 							continue;
 						}
-						else if (this.jy6GVFJfR.Keys[index] > datetime)
+						else if (this.list.Keys[index] > datetime)
 						{
 							num2 = index - 1;
 							continue;
 						}
-						else if (this.jy6GVFJfR.Keys[index] < datetime)
+						else if (this.list.Keys[index] < datetime)
 						{
 							num1 = index + 1;
 							continue;
@@ -164,12 +146,12 @@ namespace FreeQuant.Data
 						else
 							continue;
 					case SearchOption.Next:
-						if (this.jy6GVFJfR.Keys[index] >= datetime && (index == 0 || this.jy6GVFJfR.Keys[index - 1] < datetime))
+						if (this.list.Keys[index] >= datetime && (index == 0 || this.list.Keys[index - 1] < datetime))
 						{
 							flag = false;
 							continue;
 						}
-						else if (this.jy6GVFJfR.Keys[index] < datetime)
+						else if (this.list.Keys[index] < datetime)
 						{
 							num1 = index + 1;
 							continue;
@@ -188,22 +170,22 @@ namespace FreeQuant.Data
 
 		public DateTime DateTimeAt(int index)
 		{
-			return this.jy6GVFJfR.Keys[index];
+			return this.list.Keys[index];
 		}
 
 		public void Remove(DateTime datetime)
 		{
-			this.jy6GVFJfR.Remove(datetime);
+			this.list.Remove(datetime);
 		}
 
 		public void RemoveAt(int index)
 		{
-			this.jy6GVFJfR.RemoveAt(index);
+			this.list.RemoveAt(index);
 		}
 
 		public void Clear()
 		{
-			this.jy6GVFJfR.Clear();
+			this.list.Clear();
 		}
 
 		public void Flush()
@@ -212,7 +194,7 @@ namespace FreeQuant.Data
 
 		public IEnumerator GetEnumerator()
 		{
-			return (IEnumerator)this.jy6GVFJfR.Values.GetEnumerator();
+			return this.list.Values.GetEnumerator();
 		}
 	}
 }

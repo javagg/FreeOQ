@@ -24,7 +24,7 @@ namespace FreeQuant.Trading
     [Description("Component GUID")]
     public Guid GUID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Nw6AMYVhpY;
       }
@@ -35,7 +35,7 @@ namespace FreeQuant.Trading
     [Category("Misc")]
     public ComponentType ComponentType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.ADRAb0ogRe;
       }
@@ -45,7 +45,7 @@ namespace FreeQuant.Trading
     [Category("Naming")]
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.PCJAyM2mJo;
       }
@@ -55,7 +55,7 @@ namespace FreeQuant.Trading
     [Category("Naming")]
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.VE2AGjfq7K;
       }
@@ -64,7 +64,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public FileInfo File
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cJeASj73hr;
       }
@@ -72,7 +72,7 @@ namespace FreeQuant.Trading
 
     public bool BuiltIn
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cJeASj73hr == null;
       }
@@ -80,7 +80,7 @@ namespace FreeQuant.Trading
 
     public Type RuntimeType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.h8rATLvYmT;
       }
@@ -88,7 +88,7 @@ namespace FreeQuant.Trading
 
     public bool IsChanged
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.rHqAIJtKMy;
       }
@@ -97,18 +97,15 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public CompilerErrorCollection Errors
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aDSArHx8Z9;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal ComponentRecord(Guid guid, ComponentType componentType, string name, string description, FileInfo file, Type runtimeType, CompilerErrorCollection errors)
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Nw6AMYVhpY = guid;
       this.ADRAb0ogRe = componentType;
       this.PCJAyM2mJo = name;
@@ -119,43 +116,43 @@ namespace FreeQuant.Trading
       this.rHqAIJtKMy = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void VnhAiVxt7S([In] bool obj0)
     {
       this.rHqAIJtKMy = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void TkgA7UI4gW([In] Guid obj0)
     {
       this.Nw6AMYVhpY = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void CvyAHpcreG([In] ComponentType obj0)
     {
       this.ADRAb0ogRe = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void lfVAUUDxYN([In] string obj0)
     {
       this.PCJAyM2mJo = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void x63AOXlRIK([In] string obj0)
     {
       this.VE2AGjfq7K = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void X8yAQiuh7R([In] Type obj0)
     {
       this.h8rATLvYmT = obj0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     internal void HrjA5j3PaA([In] CompilerErrorCollection obj0)
     {
       this.aDSArHx8Z9 = obj0;

@@ -2,19 +2,11 @@ namespace FreeQuant.Providers
 {
 	public class BrokerInfo
 	{
-		private BrokerAccountList list;
-
-		public BrokerAccountList Accounts
-		{
-			get
-			{
-				return this.list;
-			}
-		}
+		public BrokerAccountList Accounts { get; private set; }
 
 		public BrokerInfo()
 		{
-			this.list = new BrokerAccountList();
+			this.Accounts = new BrokerAccountList();
 		}
 	}
 }

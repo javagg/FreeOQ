@@ -15,7 +15,7 @@ namespace FreeQuant.Series
     private Color bidColor;
     private Color askColor;
 
-    public Quote this[int index]
+		new public Quote this[int index]
     {
        get
       {

@@ -4,7 +4,7 @@ namespace FreeQuant.Series
 {
 	public class DateTimeEventArgs : EventArgs
 	{
-		public DateTime DateTime;
+		public DateTime DateTime { get; set; }
 
 		public DateTimeEventArgs(DateTime dateTime) : base()
 		{

@@ -28,7 +28,7 @@ namespace FreeQuant.Series
 //      }
 //    }
 
-    public PnF this[int i]
+		new  public PnF this[int i]
     {
      get
       {
@@ -36,21 +36,21 @@ namespace FreeQuant.Series
       }
     }
 
-//    public PnF this[DateTime DateTime]
-//    {
-//     get
-//      {
-//        return ((TimeSeries) this)[DateTime] as PnF;
-//      }
-//    }
+	new public PnF this[DateTime DateTime]
+    {
+     get
+      {
+        return ((TimeSeries)this)[DateTime] as PnF;
+      }
+    }
 
-//    public PnF this[DateTime DateTime, EIndexOption Option]
-//    {
-//     get
-//      {
-//        return ((TimeSeries) this)[DateTime, Option] as PnF;
-//      }
-//    }
+		new public PnF this[DateTime DateTime, EIndexOption Option]
+    {
+     get
+      {
+        return ((TimeSeries) this)[DateTime, Option] as PnF;
+      }
+    }
 
     public override double this[int Index, int BarData]
     {

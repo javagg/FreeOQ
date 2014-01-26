@@ -14,7 +14,7 @@ namespace FreeQuant.Trading
 
     public Guid GUID
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.FKt6afUVYg;
       }
@@ -22,7 +22,7 @@ namespace FreeQuant.Trading
 
     public ComponentType Type
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.Fgf6t1InAZ;
       }
@@ -30,11 +30,11 @@ namespace FreeQuant.Trading
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.qUB6dnbNLe;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.qUB6dnbNLe = value;
       }
@@ -42,22 +42,20 @@ namespace FreeQuant.Trading
 
     public string Description
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.npb6wakWaw;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.npb6wakWaw = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StrategyComponentAttribute(string guid, ComponentType type)
+   
+		public StrategyComponentAttribute(string guid, ComponentType type):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.FKt6afUVYg = new Guid(guid);
       this.Fgf6t1InAZ = type;
       this.qUB6dnbNLe = (string) null;

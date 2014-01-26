@@ -5,29 +5,13 @@ namespace FreeQuant.Providers
 {
 	public class BarSliceEventArgs : EventArgs
 	{
-		private IMarketDataProvider provider;
-		private long barSize;
-
-		public IMarketDataProvider Provider
-		{
-			get
-			{
-				return this.provider; 
-			}
-		}
-
-		public long BarSize
-		{
-			get
-			{
-				return this.barSize; 
-			}
-		}
+		public IMarketDataProvider Provider { get; private set; }
+		public long BarSize{ get; private set; }
 
 		public BarSliceEventArgs(long barSize, IMarketDataProvider provider) : base()
 		{
-			this.barSize = barSize;
-			this.provider = provider;
+			this.BarSize = barSize;
+			this.Provider = provider;
 		}
 	}
 }

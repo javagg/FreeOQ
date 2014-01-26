@@ -1,10 +1,3 @@
-// Type: SmartQuant.Pricers.IndexPricer
-// Assembly: SmartQuant.Pricers, Version=1.0.5036.28349, Culture=neutral, PublicKeyToken=null
-// MVID: B5619836-F92D-4F05-87FC-59ACDBEC6C4D
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Pricers.dll
-
-using deZgvqpY4MQTDmgNxy;
-using oqvZcLyyH5L6j7Q2Ce;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
 using System;
@@ -29,7 +22,7 @@ namespace FreeQuant.Pricers
             num -= leg.LegRatioQty * leg.Instrument.Price();
             continue;
           default:
-            throw new ApplicationException(YFr4aDi8cYtC1CTC1J.rIdf61NpS(0) + (object) instrument.Symbol + YFr4aDi8cYtC1CTC1J.rIdf61NpS(42) + (string) (object) leg.LegSide + YFr4aDi8cYtC1CTC1J.rIdf61NpS(86) + leg.Instrument.Symbol);
+            throw new ApplicationException( (object) instrument.Symbol + (string) (object) leg.LegSide + leg.Instrument.Symbol);
         }
       }
       return num;
@@ -60,7 +53,7 @@ namespace FreeQuant.Pricers
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Rho(Instrument instrument)
     {
       return 0.0;
@@ -82,37 +75,37 @@ namespace FreeQuant.Pricers
             num -= leg.LegRatioQty * leg.Instrument.Price();
             continue;
           default:
-            throw new ApplicationException(YFr4aDi8cYtC1CTC1J.rIdf61NpS(108) + (object) instrument.Symbol + YFr4aDi8cYtC1CTC1J.rIdf61NpS(150) + (string) (object) leg.LegSide + YFr4aDi8cYtC1CTC1J.rIdf61NpS(194) + leg.Instrument.Symbol);
+            throw new ApplicationException((object) instrument.Symbol + (string) (object) leg.LegSide  + leg.Instrument.Symbol);
         }
       }
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Volatility(Instrument instrument, DateTime dateTime1, DateTime dateTime2)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Delta(Instrument instrument, DateTime dateTime)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Gamma(Instrument instrument, DateTime dateTime)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Theta(Instrument instrument, DateTime dateTime)
     {
       return 0.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double Vega(Instrument instrument, DateTime dateTime)
     {
       return 0.0;

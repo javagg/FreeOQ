@@ -2,7 +2,7 @@ namespace FreeQuant.Providers
 {
 	public class ExecutionProviderList : ProviderList
 	{
-		public IExecutionProvider this [string name]
+		new public IExecutionProvider this[string name]
 		{
 			get
 			{
@@ -10,7 +10,7 @@ namespace FreeQuant.Providers
 			}
 		}
 
-		public IExecutionProvider this [byte id]
+		new public IExecutionProvider this [byte id]
 		{
 			get
 			{
@@ -20,7 +20,6 @@ namespace FreeQuant.Providers
 
 		internal ExecutionProviderList() : base()
 		{
-
 		}
 	}
 }

@@ -49,11 +49,11 @@ namespace FreeQuant.Trading
 
     public bool TraceOnBar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTraceOnBar;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTraceOnBar = value;
       }
@@ -61,11 +61,11 @@ namespace FreeQuant.Trading
 
     public bool TraceOnBarOpen
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTraceOnBarOpen;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTraceOnBarOpen = value;
       }
@@ -73,11 +73,11 @@ namespace FreeQuant.Trading
 
     public bool TraceOnTrade
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTraceOnTrade;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTraceOnTrade = value;
       }
@@ -85,11 +85,11 @@ namespace FreeQuant.Trading
 
     public bool TraceOnQuote
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTraceOnQuote;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTraceOnQuote = value;
       }
@@ -97,11 +97,11 @@ namespace FreeQuant.Trading
 
     public bool TrailOnOpen
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTrailOnOpen;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTrailOnOpen = value;
       }
@@ -109,11 +109,11 @@ namespace FreeQuant.Trading
 
     public bool TrailOnHighLow
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTrailOnHighLow;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTrailOnHighLow = value;
       }
@@ -121,11 +121,11 @@ namespace FreeQuant.Trading
 
     public double Level
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLevel;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLevel = value;
       }
@@ -133,7 +133,7 @@ namespace FreeQuant.Trading
 
     public StopType Type
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fType;
       }
@@ -141,7 +141,7 @@ namespace FreeQuant.Trading
 
     public StopMode Mode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMode;
       }
@@ -149,7 +149,7 @@ namespace FreeQuant.Trading
 
     public StopStatus Status
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fStatus;
       }
@@ -157,7 +157,7 @@ namespace FreeQuant.Trading
 
     public DateTime CreationTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCreationTime;
       }
@@ -165,7 +165,7 @@ namespace FreeQuant.Trading
 
     public DateTime CompletionTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fCompletionTime;
       }
@@ -173,7 +173,7 @@ namespace FreeQuant.Trading
 
     public Position Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fPosition;
       }
@@ -182,11 +182,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color ExecutedColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.executedColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.executedColor = value;
       }
@@ -195,11 +195,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color ActiveColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.activeColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.activeColor = value;
       }
@@ -208,11 +208,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color CanceledColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.canceledColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.canceledColor = value;
       }
@@ -221,11 +221,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public bool TextEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.textEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.textEnabled = value;
       }
@@ -235,11 +235,11 @@ namespace FreeQuant.Trading
     [Description("Enable or disable tooltip appearance for this marker.")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipEnabled;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipEnabled = value;
       }
@@ -249,20 +249,19 @@ namespace FreeQuant.Trading
     [Description("Tooltip format string. {1} - X coordinate, {2} - Y coordinte.")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.toolTipFormat;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.toolTipFormat = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StopBase()
+    
+		public StopBase():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
       this.fType = StopType.Trailing;
       this.fMode = StopMode.Percent;
       this.fTraceOnQuote = true;
@@ -275,30 +274,28 @@ namespace FreeQuant.Trading
       this.fFillMode = StopFillMode.Stop;
       this.textEnabled = true;
       this.toolTipEnabled = true;
-      this.toolTipFormat = USaG3GpjZagj1iVdv4u.Y4misFk9D9(4608);
+			this.toolTipFormat = "";
       this.activeColor = Color.Purple;
       this.executedColor = Color.RoyalBlue;
       this.canceledColor = Color.Gray;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
     public abstract void Disconnect();
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetBarFilter(long barSize, BarType barType)
     {
       this.fFilterBarSize = barSize;
       this.fFilterBarType = barType;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetBarFilter(long barSize)
     {
       this.SetBarFilter(barSize, BarType.Time);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY)
     {
       double WorldY = this.fStatus != StopStatus.Executed ? Math.Abs(this.fStopPrice) : Math.Abs(this.fFillPrice);
@@ -306,8 +303,8 @@ namespace FreeQuant.Trading
         WorldY = this.fStopPrice;
       int num1 = Pad.ClientX((double) this.fCreationTime.Ticks);
       int num2 = Pad.ClientY(WorldY);
-      string str = USaG3GpjZagj1iVdv4u.Y4misFk9D9(4670) + WorldY.ToString(this.fInstrument.PriceDisplay) + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4690) + ((object) this.fStatus).ToString() + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4698);
-      Font font = new Font(USaG3GpjZagj1iVdv4u.Y4misFk9D9(4704), 8f);
+      string str = WorldY.ToString(this.fInstrument.PriceDisplay) + ((object) this.fStatus).ToString();
+			Font font = new Font("Arial", 8f);
       Color color = this.canceledColor;
       switch (this.fStatus)
       {
@@ -340,7 +337,7 @@ namespace FreeQuant.Trading
       Pad.Graphics.DrawString(str, font, Brushes.Black, (float) num3, (float) num4);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       TDistance tdistance = new TDistance();
@@ -353,31 +350,31 @@ namespace FreeQuant.Trading
       if (!this.isFixedPrice)
       {
         if (this.fCreationTime.Second != 0 || this.fCreationTime.Minute != 0 || this.fCreationTime.Hour != 0)
-          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4718), (object) this.fLevel.ToString(this.fPosition.Instrument.PriceDisplay), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4736), (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime);
+					stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), "", (object) this.fLevel.ToString(this.fPosition.Instrument.PriceDisplay), "", (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime);
         else
-          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4746), (object) this.fLevel.ToString(this.fPosition.Instrument.PriceDisplay), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4764), (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime.ToShortDateString());
+					stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), "", (object) this.fLevel.ToString(this.fPosition.Instrument.PriceDisplay), "", (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime.ToShortDateString());
       }
       else if (this.fCreationTime.Second != 0 || this.fCreationTime.Minute != 0 || this.fCreationTime.Hour != 0)
-        stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4774), (object) this.fStopPrice.ToString(this.fPosition.Instrument.PriceDisplay), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4796), (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime);
+				stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), "", (object) this.fStopPrice.ToString(this.fPosition.Instrument.PriceDisplay), "", (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime);
       else
-        stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4804), (object) this.fStopPrice.ToString(this.fPosition.Instrument.PriceDisplay), (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4826), (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime.ToShortDateString());
+				stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.fStatus).ToString(), (object) ((object) this.fType).ToString(), "", (object) this.fStopPrice.ToString(this.fPosition.Instrument.PriceDisplay), "", (object) this.fPosition.Instrument.Symbol, (object) num.ToString(this.fPosition.Instrument.PriceDisplay), (object) this.fCreationTime.ToShortDateString());
       tdistance.ToolTipText = ((object) stringBuilder).ToString();
       return tdistance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw()
     {
       Chart.Pad.Add((IDrawable) this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsPadRangeY()
     {
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeY(Pad pad)
     {
       if (!(new DateTime((long) pad.XMin) <= this.fCompletionTime) || !(new DateTime((long) pad.XMax) >= this.fCreationTime) || this.fStatus == StopStatus.Canceled)
@@ -386,13 +383,13 @@ namespace FreeQuant.Trading
       return new PadRange(num - 0.0 / 1.0, num + 0.0 / 1.0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public bool IsPadRangeX()
     {
       return false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PadRange GetPadRangeX(Pad pad)
     {
       return (PadRange) null;

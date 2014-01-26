@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Data
@@ -8,32 +7,42 @@ namespace FreeQuant.Data
 	public class OrderBookEventArgs : EventArgs
 	{
 		public MDSide Side { get; set; }
-
 		public MDOperation Operation { get; set; }
-
 		public int Position { get; set; }
+
+		public OrderBookEventArgs(MDSide size, MDOperation operation, int position)
+		{
+			this.Side = size;
+			this.Operation = operation;
+			this.Position = position;
+		}
 	}
 
-	public delegate void OrderBookEventHandler(object sender,OrderBookEventArgs args);
+	public delegate void OrderBookEventHandler(object sender, OrderBookEventArgs args);
 
 	public class OrderBookEntry
 	{
 		public DateTime DateTime { get; set; }
-
 		public double Price { get; set; }
-
 		public int Size { get; set; }
+
+		public OrderBookEntry(DateTime dateTime, double price, int size)
+		{
+			this.DateTime = dateTime;
+			this.Price = price;
+			this.Size = size;
+		}
 	}
 
-	public class OrderBookEntryList : ICollection, IEnumerable
+	public class OrderBookEntryList : ICollection
 	{
-		private ArrayList sOM5e8lcm;
+		private ArrayList orders;
 
 		public bool IsSynchronized
 		{
 			get
 			{
-				return this.sOM5e8lcm.IsSynchronized;
+				return this.orders.IsSynchronized;
 			}
 		}
 
@@ -41,7 +50,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.sOM5e8lcm.Count;
+				return this.orders.Count;
 			}
 		}
 
@@ -49,47 +58,46 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.sOM5e8lcm.SyncRoot;
+				return this.orders.SyncRoot;
 			}
 		}
 
-		public OrderBookEntry this [int index]
+		public OrderBookEntry this[int index]
 		{
 			get
 			{
-				return this.sOM5e8lcm[index] as OrderBookEntry;
+				return this.orders[index] as OrderBookEntry;
 			}
 		}
 
 		internal OrderBookEntryList()
 		{
-
-			this.sOM5e8lcm = ArrayList.Synchronized(new ArrayList());
+			this.orders = ArrayList.Synchronized(new ArrayList());
 		}
 
 		public void CopyTo(Array array, int index)
 		{
-			this.sOM5e8lcm.CopyTo(array, index);
+			this.orders.CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.sOM5e8lcm.GetEnumerator();
+			return this.orders.GetEnumerator();
 		}
 
-		internal void EeBM3flam()
+		internal void Clear()
 		{
-			this.sOM5e8lcm.Clear();
+			this.orders.Clear();
 		}
 
-		internal void H7WIwp9Mh([In] int obj0, [In] OrderBookEntry obj1)
+		internal void Insert([In] int index, [In] OrderBookEntry entry)
 		{
-			this.sOM5e8lcm.Insert(obj0, (object)obj1);
+			this.orders.Insert(index, entry);
 		}
 
-		internal void EpiQxWKO6([In] int obj0)
+		internal void RemoveAt([In] int index)
 		{
-			this.sOM5e8lcm.RemoveAt(obj0);
+			this.orders.RemoveAt(index);
 		}
 	}
 }

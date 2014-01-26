@@ -1,10 +1,5 @@
-﻿// Type: OpenQuant.API.Indicators.KRI
-// Assembly: OpenQuant.API, Version=1.0.5037.20290, Culture=neutral, PublicKeyToken=null
-// MVID: EDDC005E-5962-4767-9721-B9BF91924AC8
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Bin\OpenQuant.API.dll
-
 using OpenQuant.API;
-using SmartQuant.Indicators;
+using FreeQuant.Indicators;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -31,44 +26,44 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new KRI();
     }
 
-    public KRI(OpenQuant.API.BarSeries series, int length)
+    public KRI(BarSeries series, int length)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) series.series, length);
+			this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) series.series, length);
     }
 
     public KRI(Indicator indicator, int length)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) indicator.indicator, length);
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) indicator.indicator, length);
     }
 
-    public KRI(OpenQuant.API.BarSeries series, int length, BarData option)
+    public KRI(BarSeries series, int length, BarData option)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
     }
 
     public KRI(Indicator indicator, int length, BarData option)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
     }
 
-    public KRI(OpenQuant.API.BarSeries series, int length, Color color)
+    public KRI(BarSeries series, int length, Color color)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) series.series, length, color);
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) series.series, length, color);
     }
 
     public KRI(Indicator indicator, int length, Color color)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) indicator.indicator, length, color);
     }
 
-    public KRI(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
+    public KRI(BarSeries series, int length, BarData option, Color color)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
     }
 
     public KRI(Indicator indicator, int length, BarData option, Color color)
     {
-      this.indicator = (Indicator) new KRI((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
+      this.indicator = (Indicator) new KRI((FreeQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
     }
   }
 }

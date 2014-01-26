@@ -12,22 +12,19 @@ namespace FreeQuant.Trading
     public const string GUID = "{D106D35A-E1E4-4e86-8869-846289E98232}";
     protected Hashtable orders;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ExecutionManager()
+    
+		public ExecutionManager():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.orders = new Hashtable();
+       this.orders = new Hashtable();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Init()
     {
       this.orders.Clear();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Execute(Signal signal)
     {
       SingleOrder singleOrder = new SingleOrder();

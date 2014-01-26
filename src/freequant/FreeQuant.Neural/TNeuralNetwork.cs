@@ -51,7 +51,7 @@ namespace FreeQuant.Neural
 
     public static TNeuralNetwork Network
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return TNeuralNetwork.cBJeufbvY;
       }
@@ -59,11 +59,11 @@ namespace FreeQuant.Neural
 
     public EWeightInitMode InitMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fInitMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fInitMode = value;
       }
@@ -71,11 +71,11 @@ namespace FreeQuant.Neural
 
     public ELearningMethod LearningMethod
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLearningMethod;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLearningMethod = value;
       }
@@ -83,11 +83,11 @@ namespace FreeQuant.Neural
 
     public double[] Input
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fInput;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fInput = value;
       }
@@ -95,11 +95,11 @@ namespace FreeQuant.Neural
 
     public double[] Output
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOutput;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOutput = value;
       }
@@ -107,11 +107,11 @@ namespace FreeQuant.Neural
 
     public double[] Target
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fTarget;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fTarget = value;
       }
@@ -119,11 +119,11 @@ namespace FreeQuant.Neural
 
     public int NBatch
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNBatch;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fNBatch = value;
       }
@@ -131,11 +131,11 @@ namespace FreeQuant.Neural
 
     public int NPattern
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNPattern;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fNPattern = value;
       }
@@ -143,11 +143,11 @@ namespace FreeQuant.Neural
 
     public double LearningRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLearningRate;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLearningRate = value;
       }
@@ -155,11 +155,11 @@ namespace FreeQuant.Neural
 
     public double Momentum
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMomentum;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMomentum = value;
       }
@@ -167,11 +167,11 @@ namespace FreeQuant.Neural
 
     public double WeightDecay
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fWeightDecay;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fWeightDecay = value;
       }
@@ -179,11 +179,11 @@ namespace FreeQuant.Neural
 
     public double MaximumGrowth
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fMaximumGrowth;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fMaximumGrowth = value;
       }
@@ -191,11 +191,11 @@ namespace FreeQuant.Neural
 
     public double RpropDeltaInit
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fRpropDeltaInit;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fRpropDeltaInit = value;
       }
@@ -203,11 +203,11 @@ namespace FreeQuant.Neural
 
     public double RpropDeltaMin
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fRpropDeltaMin;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fRpropDeltaMin = value;
       }
@@ -215,11 +215,11 @@ namespace FreeQuant.Neural
 
     public double RpropDeltaMax
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fRpropDeltaMax;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fRpropDeltaMax = value;
       }
@@ -227,11 +227,11 @@ namespace FreeQuant.Neural
 
     public double RpropDecrease
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fRpropDecrease;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fRpropDecrease = value;
       }
@@ -239,11 +239,11 @@ namespace FreeQuant.Neural
 
     public double RpropIncrease
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fRpropIncrease;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fRpropIncrease = value;
       }
@@ -251,11 +251,11 @@ namespace FreeQuant.Neural
 
     public TNeuralLayer InputLayer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fInputLayer;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fInputLayer = value;
       }
@@ -263,34 +263,28 @@ namespace FreeQuant.Neural
 
     public TNeuralLayer OutputLayer
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOutputLayer;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOutputLayer = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralNetwork()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fNInput = 0;
       this.fNOutput = 0;
       this.OhqpGGWfa();
       TNeuralNetwork.cBJeufbvY = this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralNetwork(string Name, string Title)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fName = Name;
       this.fTitle = Title;
       this.fNInput = 0;
@@ -299,12 +293,9 @@ namespace FreeQuant.Neural
       TNeuralNetwork.cBJeufbvY = this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralNetwork(string Name)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fName = Name;
       this.fNInput = 0;
       this.fNOutput = 0;
@@ -312,7 +303,7 @@ namespace FreeQuant.Neural
       TNeuralNetwork.cBJeufbvY = this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void OhqpGGWfa()
     {
       this.fNeuron = new ArrayList();
@@ -328,7 +319,7 @@ namespace FreeQuant.Neural
       this.fRpropIncrease = 1.2;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddNeuron(TNeuron Neuron)
     {
       if (Neuron.ID != -1)
@@ -337,7 +328,7 @@ namespace FreeQuant.Neural
       Neuron.ID = num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddWeight(TNeuralWeight Weight)
     {
       if (this.fWeight.IndexOf((object) Weight) == -1)
@@ -345,56 +336,56 @@ namespace FreeQuant.Neural
       this.fWeight.Add((object) Weight);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Reset()
     {
       this.ResetWeights();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ResetWeights()
     {
       this.RandomizeWeights();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RandomizeWeights(int Option)
     {
       if (Option != 0)
       {
-        SmartQuant.Quant.Random.Seed1 = this.DFX6Ht5lO;
-        SmartQuant.Quant.Random.Seed2 = this.HOaZ3SwNl;
+        FreeQuant.Quant.Random.Seed1 = this.DFX6Ht5lO;
+        FreeQuant.Quant.Random.Seed2 = this.HOaZ3SwNl;
       }
       else
       {
-        this.DFX6Ht5lO = SmartQuant.Quant.Random.Seed1;
-        this.HOaZ3SwNl = SmartQuant.Quant.Random.Seed2;
+        this.DFX6Ht5lO = FreeQuant.Quant.Random.Seed1;
+        this.HOaZ3SwNl = FreeQuant.Quant.Random.Seed2;
       }
       foreach (TNeuron tneuron in this.fNeuron)
         tneuron.RandomizeWeights();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RandomizeWeights()
     {
       this.RandomizeWeights(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void StoreWeights()
     {
       foreach (TNeuron tneuron in this.fNeuron)
         tneuron.StoreWeights();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RestoreWeights()
     {
       foreach (TNeuron tneuron in this.fNeuron)
         tneuron.RestoreWeights();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralWeight GetMinWeight()
     {
       if (this.KCL7WIToG)
@@ -415,7 +406,7 @@ namespace FreeQuant.Neural
       return this.EGtFBCxEX;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralWeight GetMaxWeight()
     {
       if (this.u25o0XTtW)
@@ -436,46 +427,46 @@ namespace FreeQuant.Neural
       return this.hG4PgBLCK;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuron GetMinWeightNeuron()
     {
       this.GetMinWeight();
       return this.ahkE1lI8Y;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuron GetMaxWeightNeuron()
     {
       this.GetMaxWeight();
       return this.Vlon5OFCQ;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Prune()
     {
       this.ahkE1lI8Y.Disconnect(this.GetMinWeight().Neuron);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Connect(TNeuralNetwork Network)
     {
       this.fInputLayer.Connect(Network.OutputLayer);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void cd()
     {
       TNeuralNetwork.cBJeufbvY = this;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetStopping(EStoppingMethod SCriterion, double SParameter)
     {
       this.fSMethod = SCriterion;
       this.fSParameter = SParameter;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Update(int Param)
     {
       this.KCL7WIToG = true;

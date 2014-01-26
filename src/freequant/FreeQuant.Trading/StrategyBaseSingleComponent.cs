@@ -16,11 +16,11 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public StrategyBase StrategyBase
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] internal set
+      internal set
       {
         if (this.U8ZSiZE1f != null)
           this.Disconnect();
@@ -34,7 +34,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public Portfolio Portfolio
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f.Portfolio;
       }
@@ -43,7 +43,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public BarSeriesList Bars
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f.Bars;
       }
@@ -52,7 +52,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public BarSeries Bar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f.Bars[this.instrument];
       }
@@ -61,7 +61,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public Position Position
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f.Portfolio.Positions[this.instrument];
       }
@@ -70,7 +70,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public bool HasPosition
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.Position != null;
       }
@@ -79,7 +79,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public NamedOrderTable Orders
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f.Orders[this.instrument];
       }
@@ -88,27 +88,25 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public Hashtable Global
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.U8ZSiZE1f.Global;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StrategyBaseSingleComponent()
+   
+		public StrategyBaseSingleComponent():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void Draw(IDrawable primitive, int padNumber)
     {
       this.U8ZSiZE1f.MetaStrategyBase.zeFW20hc2d(this.instrument, primitive, padNumber);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void Draw(IDrawable primitive, int padNumber, Color color)
     {
       if (primitive is TimeSeries)

@@ -1,8 +1,4 @@
 namespace FreeQuant.Data
 {
-	public enum MDSide
-	{
-		Bid = 1,
-		Ask = 2,
-	}
+	public enum MDSide :byte {	Bid = 1,	Ask = 2 }
 }

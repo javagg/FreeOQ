@@ -15,36 +15,33 @@ namespace FreeQuant.Trading
     public const string GUID = "{E70A6417-E7FA-4ec1-BC16-B03DE53C6E85}";
     private Dictionary<SingleOrder, List<ExecutionReport>> fU8pNJpaT5;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ATSCrossComponent()
+   
+		public ATSCrossComponent():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fU8pNJpaT5 = new Dictionary<SingleOrder, List<ExecutionReport>>();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public virtual void OnStopStatusChanged(ATSStop stop)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public virtual void OnStopCanceled(ATSStop stop)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public virtual void OnStopExecuted(ATSStop stop)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override sealed void OnNewOrder(SingleOrder order)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public ATSStop SetStop(Position position, double level, StopType type, StopMode mode)
     {
       ATSStop atsStop = new ATSStop(position, level, type, mode);
@@ -52,7 +49,7 @@ namespace FreeQuant.Trading
       return atsStop;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public ATSStop SetStop(Position position, DateTime dateTime)
     {
       ATSStop atsStop = new ATSStop(position, dateTime);
@@ -60,7 +57,7 @@ namespace FreeQuant.Trading
       return atsStop;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public MarketOrder MarketOrder(Instrument instrument, Side side, double qty)
     {
       MarketOrder marketOrder = new MarketOrder(instrument, side, qty);
@@ -68,7 +65,7 @@ namespace FreeQuant.Trading
       return marketOrder;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public LimitOrder LimitOrder(Instrument instrument, Side side, double qty, double price)
     {
       LimitOrder limitOrder = new LimitOrder(instrument, side, qty, price);
@@ -76,7 +73,7 @@ namespace FreeQuant.Trading
       return limitOrder;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public StopOrder StopOrder(Instrument instrument, Side side, double qty, double price)
     {
       StopOrder stopOrder = new StopOrder(instrument, side, qty, price);
@@ -84,7 +81,7 @@ namespace FreeQuant.Trading
       return stopOrder;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public StopLimitOrder StopLimitOrder(Instrument instrument, Side side, double qty, double limitPrice, double stopPrice)
     {
       StopLimitOrder stopLimitOrder = new StopLimitOrder(instrument, side, qty, limitPrice, stopPrice);
@@ -92,7 +89,7 @@ namespace FreeQuant.Trading
       return stopLimitOrder;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public TrailingStopOrder TrailingStopOrder(Instrument instrument, Side side, double qty, double delta)
     {
       TrailingStopOrder trailingStopOrder = new TrailingStopOrder(instrument, side, qty, delta);
@@ -100,19 +97,19 @@ namespace FreeQuant.Trading
       return trailingStopOrder;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     internal void mfbpeU3YGv([In] SingleOrder obj0)
     {
       this.fU8pNJpaT5.Add(obj0, new List<ExecutionReport>());
       this.OnClientOrder(obj0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public virtual void OnClientOrder(SingleOrder order)
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void AcceptClientOrder(SingleOrder order)
     {
       ExecutionReport executionReport = this.feHpgokAEH(order);
@@ -124,7 +121,7 @@ namespace FreeQuant.Trading
       this.Strategy.RM9EmoIgF(executionReport);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void CancelClientOrder(SingleOrder order)
     {
       ExecutionReport executionReport = this.feHpgokAEH(order);
@@ -137,7 +134,7 @@ namespace FreeQuant.Trading
       this.Strategy.RM9EmoIgF(executionReport);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void RejectClientOrder(SingleOrder order, string text)
     {
       ExecutionReport executionReport = this.feHpgokAEH(order);
@@ -150,13 +147,13 @@ namespace FreeQuant.Trading
       this.Strategy.RM9EmoIgF(executionReport);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void RejectClientOrder(SingleOrder order)
     {
       this.RejectClientOrder(order, string.Empty);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void FillClientOrder(SingleOrder order, double price)
     {
       ExecutionReport executionReport = this.feHpgokAEH(order);
@@ -170,7 +167,7 @@ namespace FreeQuant.Trading
       this.Strategy.RM9EmoIgF(executionReport);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void PartialFillClientOrder(SingleOrder order, double price, double qty)
     {
       List<ExecutionReport> list = this.fU8pNJpaT5[order];
@@ -194,7 +191,7 @@ namespace FreeQuant.Trading
       this.Strategy.RM9EmoIgF(executionReport2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     private ExecutionReport feHpgokAEH([In] SingleOrder obj0)
     {
       ExecutionReport executionReport = new ExecutionReport();

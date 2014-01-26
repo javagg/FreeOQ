@@ -1,6 +1,6 @@
 namespace FreeQuant.Data
 {
-	public enum MDOperation
+	public enum MDOperation : byte
 	{
 		Insert = 0,
 		Update = 1,

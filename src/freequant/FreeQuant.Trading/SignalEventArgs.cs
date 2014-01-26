@@ -14,7 +14,7 @@ namespace FreeQuant.Trading
         return this.cKQi5NVTD4;
       }
     }
-		public SignalEventArgs(Signal signal) :base(signal)
+		public SignalEventArgs(Signal signal) :base()
     {
       this.cKQi5NVTD4 = signal;
     }

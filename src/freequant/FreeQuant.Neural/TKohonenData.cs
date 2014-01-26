@@ -12,11 +12,11 @@ namespace FreeQuant.Neural
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.iXtbZuYY7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.iXtbZuYY7 = value;
       }
@@ -24,11 +24,11 @@ namespace FreeQuant.Neural
 
     public int X
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.UWRwwoI3Y;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.UWRwwoI3Y = value;
       }
@@ -40,7 +40,7 @@ namespace FreeQuant.Neural
       {
         return this.Xoa2UGRFa;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.Xoa2UGRFa = value;
       }
@@ -58,30 +58,21 @@ namespace FreeQuant.Neural
       this.Xoa2UGRFa = 0;
     }
 
-    public TKohonenData(int NInput, double[] Input)
+		public TKohonenData(int NInput, double[] Input) :base(NInput, 0, Input, null)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(NInput, 0, Input, (double[]) null);
       this.UWRwwoI3Y = 0;
       this.Xoa2UGRFa = 0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TKohonenData(int NInput, int NOutput)
+   
+		public TKohonenData(int NInput, int NOutput) :base(NInput, NOutput)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(NInput, NOutput);
       this.UWRwwoI3Y = 0;
       this.Xoa2UGRFa = 0;
     }
 
-    public TKohonenData(int NInput, int NOutput, double[] Input, double[] Output)
+		public TKohonenData(int NInput, int NOutput, double[] Input, double[] Output):base(NInput, NOutput, Input, Output)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(NInput, NOutput, Input, Output);
       this.UWRwwoI3Y = 0;
       this.Xoa2UGRFa = 0;
     }

@@ -1,6 +1,4 @@
 using FreeQuant.Data;
-
-//using FreeQuant.Providers.Design;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -9,7 +7,7 @@ using System.Drawing.Design;
 namespace FreeQuant.Providers
 {
 	//  [Editor(typeof (BarFactoryItemListEditor), typeof (UITypeEditor))]
-	public class BarFactoryItemList : IList, ICollection, IEnumerable
+	public class BarFactoryItemList : IList
 	{
 		private ArrayList list;
 
@@ -53,7 +51,7 @@ namespace FreeQuant.Providers
 			}
 		}
 
-		public BarFactoryItem this [int index]
+		public BarFactoryItem this[int index]
 		{
 			get
 			{
@@ -65,11 +63,11 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return (object)this.list[index];
+				return this.list[index];
 			}
 			set 
 			{
-				this.list[index]= (object)value;
+				this.list[index] = value;
 			}
 		}
 
@@ -125,9 +123,9 @@ namespace FreeQuant.Providers
 
 		public int Add(BarFactoryItem item)
 		{
-			this.list.Add((object)item);
+			this.list.Add(item);
 			this.list.Sort();
-			return this.list.IndexOf((object)item);
+			return this.list.IndexOf(item);
 		}
 
 		public int Add(BarType barType, long barSize, bool enabled)

@@ -1,14 +1,7 @@
-﻿// Type: SmartQuant.Trading.Conditions.CrossSeriesCondition
-// Assembly: SmartQuant.Trading, Version=1.0.5036.28355, Culture=neutral, PublicKeyToken=null
-// MVID: C5705820-2ED1-4F4A-8256-821635A4814B
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Trading.dll
-
-using l3Z5ZAp2dkqyZZDck9P;
-using SlN8f6pWyHStvuMgWbM;
-using SmartQuant.Series;
+using FreeQuant.Series;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Trading.Conditions
+namespace FreeQuant.Trading.Conditions
 {
   public class CrossSeriesCondition : Condition
   {
@@ -20,11 +13,11 @@ namespace SmartQuant.Trading.Conditions
 
     public RuleItemList Above
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fIL66Bb1BO;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fIL66Bb1BO = value;
       }
@@ -32,11 +25,11 @@ namespace SmartQuant.Trading.Conditions
 
     public RuleItemList Below
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.owT6ARA0Tf;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.owT6ARA0Tf = value;
       }
@@ -44,11 +37,11 @@ namespace SmartQuant.Trading.Conditions
 
     public RuleItemList None
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nY56jSKj9G;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nY56jSKj9G = value;
       }
@@ -56,11 +49,11 @@ namespace SmartQuant.Trading.Conditions
 
     public DoubleSeries Series1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.qcp6k8UGuY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.qcp6k8UGuY = value;
       }
@@ -68,11 +61,11 @@ namespace SmartQuant.Trading.Conditions
 
     public DoubleSeries Series2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.rhO6pQ5uxM;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.rhO6pQ5uxM = value;
       }
@@ -80,60 +73,54 @@ namespace SmartQuant.Trading.Conditions
 
     public override string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        if (this.qcp6k8UGuY == null || this.rhO6pQ5uxM == null)
-          return USaG3GpjZagj1iVdv4u.Y4misFk9D9(4350);
-        return USaG3GpjZagj1iVdv4u.Y4misFk9D9(4290) + this.qcp6k8UGuY.Name + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4336) + this.rhO6pQ5uxM.Name + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4344);
+//        if (this.qcp6k8UGuY == null || this.rhO6pQ5uxM == null)
+//          return USaG3GpjZagj1iVdv4u.Y4misFk9D9(4350);
+				return  this.qcp6k8UGuY.Name + this.rhO6pQ5uxM.Name;
       }
     }
 
     public override string CodeName
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.qcp6k8UGuY.Name.Replace(USaG3GpjZagj1iVdv4u.Y4misFk9D9(4404), "") + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4410) + this.rhO6pQ5uxM.Name.Replace(USaG3GpjZagj1iVdv4u.Y4misFk9D9(4428), "");
+				return this.qcp6k8UGuY.Name.Replace("dfsdfs", "") + this.rhO6pQ5uxM.Name.Replace("fddfs", "");
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public CrossSeriesCondition(DoubleSeries series1, DoubleSeries series2)
+    
+		public CrossSeriesCondition(DoubleSeries series1, DoubleSeries series2):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.qcp6k8UGuY = series1;
       this.rhO6pQ5uxM = series2;
       this.QUupz0XrCD();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public CrossSeriesCondition()
+    
+		public CrossSeriesCondition():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.QUupz0XrCD();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override string GetInitCode(string name)
     {
-      return USaG3GpjZagj1iVdv4u.Y4misFk9D9(4434) + name + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4480) + this.qcp6k8UGuY.Name.Replace(USaG3GpjZagj1iVdv4u.Y4misFk9D9(4540), "") + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4546) + this.rhO6pQ5uxM.Name.Replace(USaG3GpjZagj1iVdv4u.Y4misFk9D9(4554), "") + USaG3GpjZagj1iVdv4u.Y4misFk9D9(4560);
+			return  name +  this.qcp6k8UGuY.Name.Replace("fssf", "") + this.rhO6pQ5uxM.Name.Replace("fdfd", "");
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void QUupz0XrCD()
     {
       this.fIL66Bb1BO = new RuleItemList();
       this.owT6ARA0Tf = new RuleItemList();
       this.nY56jSKj9G = new RuleItemList();
-      this.childs.Add((object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4568), (object) this.fIL66Bb1BO);
-      this.childs.Add((object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4582), (object) this.owT6ARA0Tf);
-      this.childs.Add((object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(4596), (object) this.nY56jSKj9G);
+			this.childs.Add("", (object) this.fIL66Bb1BO);
+			this.childs.Add("", (object) this.owT6ARA0Tf);
+			this.childs.Add("", (object) this.nY56jSKj9G);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Execute()
     {
       if (this.qcp6k8UGuY.Count == 0 || this.rhO6pQ5uxM.Count == 0)

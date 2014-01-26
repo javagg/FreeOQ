@@ -1,24 +1,15 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX
 {
-  public class MarketDataRequestRejectEventArgs : EventArgs
-  {
-    private MarketDataRequestReject ArcQzX6KuU;
+	public class MarketDataRequestRejectEventArgs : EventArgs
+	{
+		public MarketDataRequestReject MarketDataRequestReject { get; private set; }
 
-    public MarketDataRequestReject MarketDataRequestReject
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.ArcQzX6KuU;
-      }
-    }
+		public MarketDataRequestRejectEventArgs(MarketDataRequestReject reject)
+		{
 
-    public MarketDataRequestRejectEventArgs(MarketDataRequestReject reject)
-    {
-
-      this.ArcQzX6KuU = reject;
-    }
-  }
+			this.MarketDataRequestReject = reject;
+		}
+	}
 }

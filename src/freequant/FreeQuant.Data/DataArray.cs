@@ -32,7 +32,7 @@ namespace FreeQuant.Data
 				if (this.Count != 0)
 					return this[0].DateTime;
 				else
-					return new DateTime(0);
+					return new DateTime();
 			}
 		}
 
@@ -93,8 +93,8 @@ namespace FreeQuant.Data
 
 		public int GetIndex(DateTime datetime)
 		{
-			if (this.Count == 0)
-				return -1;
+			if (this.Count == 0) return -1;
+
 			DateTime dateTime1 = this[0].DateTime;
 			DateTime dateTime2 = this[this.Count - 1].DateTime;
 			if (dateTime1 > datetime || dateTime2 < datetime)

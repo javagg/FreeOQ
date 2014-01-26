@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.Indicators.LRI
-// Assembly: SmartQuant.Indicators, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 31E147DE-EF63-4F0C-B049-23C3662CE212
-// Assembly location: E:\OpenQuant\Framework\bin\SmartQuant.Indicators.dll
-
-using JgR8Nw4Dcm7J7u8IfB;
-using ko1tl8f5ZvqOYr69tl;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Indicators
+namespace FreeQuant.Indicators
 {
   [Serializable]
   public class LRI : Indicator
@@ -26,11 +19,11 @@ namespace SmartQuant.Indicators
     [Description("")]
     public BarData Option
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOption;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOption = value;
         this.Init();
@@ -42,11 +35,11 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(0)]
     public int Length
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLength;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLength = value;
         this.Init();
@@ -58,59 +51,47 @@ namespace SmartQuant.Indicators
     [Category("Parameters")]
     public RegressionDistanceMode DistanceMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aKF3Bglmd;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.aKF3Bglmd = value;
         this.Init();
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public LRI()
+    
+		public LRI(): base()
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public LRI(TimeSeries input, int length, BarData option)
+    
+		public LRI(TimeSeries input, int length, BarData option)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public LRI(TimeSeries input, int length, BarData option, Color color)
+    
+		public LRI(TimeSeries input, int length, BarData option, Color color)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.Init();
       this.Color = color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LRI(TimeSeries input, int length, BarData option, Color color, EDrawStyle drawStyle)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input)   {
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.Init();
@@ -118,54 +99,48 @@ namespace SmartQuant.Indicators
       this.DrawStyle = drawStyle;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public LRI(TimeSeries input, int length)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input)  {
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public LRI(TimeSeries input, int length, Color color)
+    
+		public LRI(TimeSeries input, int length, Color color)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.Color = color;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Init()
     {
-      this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(3510) + (object) this.fLength + GXPBSPblRhtUOANrS4.LSuAVoYjy(3524);
-      this.fTitle = GXPBSPblRhtUOANrS4.LSuAVoYjy(3530);
+			this.Name ="LRI" + (object) this.fLength ;
+			this.Title = "LRI";
       this.fType = EIndicatorType.Price;
       this.Clear();
       this.fCalculate = true;
       if (this.fInput == null)
         return;
       if (this.fInput is BarSeries)
-        this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(3588) + (object) this.fLength + GXPBSPblRhtUOANrS4.LSuAVoYjy(3602) + (string) (object) this.fOption + GXPBSPblRhtUOANrS4.LSuAVoYjy(3610);
-      if (TimeSeries.fNameOption != ENameOption.Long)
+				this.Name ="LRI" + (object) this.fLength + (string) (object) this.fOption;
+			if (TimeSeries.nameOption != ENameOption.Long)
         return;
-      this.fName = this.fInput.Name + GXPBSPblRhtUOANrS4.LSuAVoYjy(3616) + this.fName;
+      this.Name = this.fInput.Name + this.Name;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Calculate(int index)
     {
       double Data = LRI.Value(this.fInput, index, this.fLength, this.fOption, this.aKF3Bglmd);
       this.Add(this.fInput.GetDateTime(index), Data);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(TimeSeries input, int index, int length, BarData option, RegressionDistanceMode distanceMode)
     {
       if (index < length - 1)
@@ -203,22 +178,22 @@ namespace SmartQuant.Indicators
       return num6 * num4 + num7;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(DoubleSeries input, int index, int length, RegressionDistanceMode distanceMode)
     {
       return LRI.Value((TimeSeries) input, index, length, BarData.Close, distanceMode);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(DoubleSeries input, int index, int length)
     {
       return LRI.Value((TimeSeries) input, index, length, BarData.Close, RegressionDistanceMode.Time);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void OnInputItemAdded(object sender, DateTimeEventArgs EventArgs)
     {
-      if (!this.fMonitored)
+      if (!this.Monitored)
         return;
       int index = this.fInput.GetIndex(EventArgs.DateTime);
       if (index == -1)

@@ -5,20 +5,11 @@ namespace FreeQuant.Providers
 {
 	public class HistoricalBarEventArgs : HistoricalDataEventArgs
 	{
-		private FreeQuant.Data.Bar bar;
+		public Bar Bar { get; private set; }
 
-		public FreeQuant.Data.Bar Bar
+		public HistoricalBarEventArgs(Bar bar, string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength) : base(requestId, instrument, provider, dataLength)
 		{
-			get
-			{
-				return this.bar;
-			}
-		}
-
-		public HistoricalBarEventArgs(FreeQuant.Data.Bar bar, string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength) : base(requestId, instrument, provider, dataLength)
-		{
-
-			this.bar = bar; 
+			this.Bar = bar; 
 		}
 	}
 }

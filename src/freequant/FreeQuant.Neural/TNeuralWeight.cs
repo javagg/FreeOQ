@@ -19,7 +19,7 @@ namespace FreeQuant.Neural
 
     public TNeuron Neuron
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.vW0jGfkno;
       }
@@ -27,31 +27,25 @@ namespace FreeQuant.Neural
 
     public double Weight
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.NN8J3LC7E;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.NN8J3LC7E = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralWeight()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       TNeuralNetwork.Network.AddWeight(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralWeight(TNeuron Neuron, double Weight)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.vW0jGfkno = Neuron;
       this.RlTATm4JD = Neuron.ID;
       if (TNeuralNetwork.Network.InitMode == EWeightInitMode.Random)
@@ -66,12 +60,9 @@ namespace FreeQuant.Neural
       TNeuralNetwork.Network.AddWeight(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralWeight(TNeuron Neuron)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.vW0jGfkno = Neuron;
       this.RlTATm4JD = Neuron.ID;
       if (TNeuralNetwork.Network.InitMode == EWeightInitMode.Random)
@@ -86,32 +77,32 @@ namespace FreeQuant.Neural
       TNeuralNetwork.Network.AddWeight(this);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Randomize()
     {
-      this.NN8J3LC7E = SmartQuant.Quant.Random.Rndm() - 0.5;
+			this.NN8J3LC7E = FreeQuant.Quant.Random.Rndm() - 0.5;
       this.rYdS9wvbM = this.NN8J3LC7E;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetInput()
     {
       return this.vW0jGfkno.GetOutput();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double PropagateInput()
     {
       return this.NN8J3LC7E * this.GetInput();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void PropagateError(double Error)
     {
       this.vW0jGfkno.AddError(this.NN8J3LC7E * Error);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Update(double Error)
     {
       this.uOXtaamso = -Error * this.vW0jGfkno.GetOutput();
@@ -181,14 +172,14 @@ namespace FreeQuant.Neural
       this.rYdS9wvbM = num1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Store()
     {
       this.SQmiIFQhZ = this.NN8J3LC7E;
       this.juuH7yMX2 = this.rYdS9wvbM;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Restore()
     {
       this.NN8J3LC7E = this.SQmiIFQhZ;

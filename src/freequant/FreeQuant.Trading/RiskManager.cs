@@ -9,27 +9,24 @@ namespace FreeQuant.Trading
   {
     public const string GUID = "{BE0176A8-3BBD-407c-814A-D5A3E3437899}";
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RiskManager()
+    
+		public RiskManager():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual double GetPositionRisk()
     {
       return 1.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual bool Validate(Signal signal)
     {
       return true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual Stop AddStop(Position position, double level, StopType type, StopMode mode)
     {
       if (!this.Strategy.IsInstrumentActive(position.Instrument))
@@ -38,7 +35,7 @@ namespace FreeQuant.Trading
         return new Stop((StrategyBase) this.Strategy, position, level, type, mode);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual Stop AddStop(double level, StopType type, StopMode mode)
     {
       if (!this.Strategy.IsInstrumentActive(this.Position.Instrument))
@@ -47,7 +44,7 @@ namespace FreeQuant.Trading
         return new Stop((StrategyBase) this.Strategy, this.Position, level, type, mode);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual Stop AddStop(Position position, DateTime time)
     {
       if (!this.Strategy.IsInstrumentActive(position.Instrument))
@@ -56,7 +53,7 @@ namespace FreeQuant.Trading
         return new Stop((StrategyBase) this.Strategy, position, time);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual Stop AddStop(DateTime time)
     {
       if (!this.Strategy.IsInstrumentActive(this.Position.Instrument))

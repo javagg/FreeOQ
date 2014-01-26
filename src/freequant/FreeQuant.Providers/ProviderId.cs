@@ -41,7 +41,7 @@ namespace FreeQuant.Providers
 		public const byte QuantRouter = 38;
 		public const byte Lightspeed = 39;
 		public const byte DBFIX = 40;
-
 		public const byte CTP = 41;
+		public const byte KSFT = 42;
 	}
 }

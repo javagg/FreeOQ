@@ -2,7 +2,7 @@
 {
 	public class BrokerAccountField
 	{
-		private SmartQuant.Providers.BrokerAccountField field;
+		private FreeQuant.Providers.BrokerAccountField field;
 
 		public string Name
 		{

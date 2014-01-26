@@ -7,9 +7,7 @@ namespace FreeQuant.Services
 		event FIXNewOrderSingleEventHandler NewOrderSingle;
 		event FIXOrderCancelRequestEventHandler OrderCancelRequest;
 		event FIXOrderCancelReplaceRequestEventHandler OrderCancelReplaceRequest;
-
 		void Send(FIXExecutionReport message);
-
 		void Send(FIXOrderCancelReject message);
 	}
 }

@@ -1,4 +1,4 @@
 namespace FreeQuant.FIX
 {
-  public delegate void MarketDataRequestRejectEventHandler(object sender, MarketDataRequestRejectEventArgs args);
+	public delegate void MarketDataRequestRejectEventHandler(object sender, MarketDataRequestRejectEventArgs args);
 }

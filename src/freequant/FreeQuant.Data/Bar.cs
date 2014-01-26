@@ -1,14 +1,12 @@
 using System;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Data
 {
 	[Serializable]
-	public class Bar : IDataObject, ISeriesObject, ICloneable
+	public class Bar : IDataObject, ISeriesObject
 	{
-		protected byte providerId;
 		protected DateTime beginTime;
 		protected DateTime endTime;
 		protected double high;
@@ -22,18 +20,7 @@ namespace FreeQuant.Data
 		protected Color color;
 		protected BarType barType;
 
-		public byte ProviderId
-		{
-			get
-			{
-				return this.providerId;
-			}
-			set
-			{
-				this.providerId = value;
-			}
-		}
-
+		public byte ProviderId { get; set; }
 		public DateTime DateTime
 		{
 			get
@@ -293,23 +280,23 @@ namespace FreeQuant.Data
 			this.close = close;
 			this.volume = volume;
 			this.openInt = openInt;
-			this.providerId = 0;
+			this.ProviderId = 0;
 			this.color = Color.Empty;
 			this.isComplete = false;
 		}
 
-		public Bar(DateTime datetime, double open, double high, double low, double close, long volume, long size) : this(BarType.Time, size, datetime, datetime.AddSeconds((double)size), open, high, low, close, volume, 0L)
+		public Bar(DateTime datetime, double open, double high, double low, double close, long volume, long size) : this(BarType.Time, size, datetime, datetime.AddSeconds(size), open, high, low, close, volume, 0)
 		{
 		}
 
 		public Bar(Bar bar) : this(bar.barType, bar.size, bar.beginTime, bar.endTime, bar.open, bar.high, bar.low, bar.close, bar.volume, bar.openInt)
 		{
-			this.providerId = bar.providerId;
+			this.ProviderId = bar.ProviderId;
 			this.color = bar.color;
 			this.isComplete = bar.isComplete;
 		}
 
-		public Bar() : this(DateTime.MinValue, 0.0, 0.0, 0.0, 0.0, 0L, 0L)
+		public Bar() : this(DateTime.MinValue, 0.0, 0.0, 0.0, 0.0, 0, 0)
 		{
 		}
 
@@ -346,17 +333,17 @@ namespace FreeQuant.Data
 		public virtual void WriteTo(BinaryWriter writer)
 		{
 			writer.Write((byte)2);
-			writer.Write(this.beginTime.Ticks);
-			writer.Write(this.endTime.Ticks);
-			writer.Write((byte)this.barType);
-			writer.Write(this.size);
-			writer.Write(this.high);
-			writer.Write(this.low);
-			writer.Write(this.open);
-			writer.Write(this.close);
-			writer.Write(this.volume);
-			writer.Write(this.openInt);
-			writer.Write(this.providerId);
+			writer.Write(this.BeginTime.Ticks);
+			writer.Write(this.EndTime.Ticks);
+			writer.Write((byte)this.BarType);
+			writer.Write(this.Size);
+			writer.Write(this.High);
+			writer.Write(this.Low);
+			writer.Write(this.Open);
+			writer.Write(this.Close);
+			writer.Write(this.Volume);
+			writer.Write(this.OpenInt);
+			writer.Write(this.ProviderId);
 		}
 
 		public virtual void ReadFrom(BinaryReader reader)
@@ -366,20 +353,20 @@ namespace FreeQuant.Data
 			{
 				case (byte) 1:
 					this.beginTime = new DateTime(reader.ReadInt64());
-					this.endTime = new DateTime(reader.ReadInt64());
-					this.barType = (BarType)reader.ReadByte();
-					this.size = reader.ReadInt64();
-					this.high = Math.Round((double)reader.ReadSingle(), 4);
-					this.low = Math.Round((double)reader.ReadSingle(), 4);
-					this.open = Math.Round((double)reader.ReadSingle(), 4);
-					this.close = Math.Round((double)reader.ReadSingle(), 4);
-					this.volume = reader.ReadInt64();
-					this.openInt = reader.ReadInt64();
-					this.providerId = reader.ReadByte();
+					this.EndTime = new DateTime(reader.ReadInt64());
+					this.BarType = (BarType)reader.ReadByte();
+					this.Size = reader.ReadInt64();
+					this.High = Math.Round((double)reader.ReadSingle(), 4);
+					this.Low = Math.Round((double)reader.ReadSingle(), 4);
+					this.Open = Math.Round((double)reader.ReadSingle(), 4);
+					this.Close = Math.Round((double)reader.ReadSingle(), 4);
+					this.Volume = reader.ReadInt64();
+					this.OpenInt = reader.ReadInt64();
+					this.ProviderId = reader.ReadByte();
 					break;
 				case (byte) 2:
 					this.beginTime = new DateTime(reader.ReadInt64());
-					this.endTime = new DateTime(reader.ReadInt64());
+					this.EndTime = new DateTime(reader.ReadInt64());
 					this.barType = (BarType)reader.ReadByte();
 					this.size = reader.ReadInt64();
 					this.high = reader.ReadDouble();
@@ -388,21 +375,21 @@ namespace FreeQuant.Data
 					this.close = reader.ReadDouble();
 					this.volume = reader.ReadInt64();
 					this.openInt = reader.ReadInt64();
-					this.providerId = reader.ReadByte();
+					this.ProviderId = reader.ReadByte();
 					break;
 				default:
-					throw new Exception(""+(object)num); //throw new Exception(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(446) + (object)num);
+					throw new Exception("Version doesn't Match. Version: " + num);
 			}
 		}
 
 		public virtual ISeriesObject NewInstance()
 		{
-			return (ISeriesObject)new Bar();
+			return new Bar();
 		}
 
 		public virtual object Clone()
 		{
-			return (object)new Bar(this);
+			return new Bar(this);
 		}
 	}
 }

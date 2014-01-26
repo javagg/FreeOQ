@@ -7,6 +7,6 @@ namespace FreeQuant.Providers
 		Ask,
 		BidAsk,
 		Middle,
-		Spread,
+		Spread
 	}
 }

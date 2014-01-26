@@ -11,7 +11,6 @@ namespace FreeQuant.Neural
 
     public TOCRDataSet()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
       this.nuSLdi5R1 = new double[10, 35]
       {
         {

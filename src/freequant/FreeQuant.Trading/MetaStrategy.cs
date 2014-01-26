@@ -21,18 +21,18 @@ namespace FreeQuant.Trading
     private SignalList aNKR2wRnBL;
 
     [Category("Components")]
-    [TypeConverter(typeof (ComponentTypeConverter))]
-    [Editor(typeof (VloQkVmhmpyuVfn267), typeof (UITypeEditor))]
+//    [TypeConverter(typeof (ComponentTypeConverter))]
+//    [Editor(typeof (VloQkVmhmpyuVfn267), typeof (UITypeEditor))]
     public MetaExposureManager MetaExposureManager
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.k7bROYTXtn;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         if (!this.DesignMode)
-          throw new InvalidOperationException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(13008));
+          throw new InvalidOperationException();
         if (this.k7bROYTXtn != null)
         {
           this.k7bROYTXtn.Disconnect();
@@ -49,18 +49,18 @@ namespace FreeQuant.Trading
     }
 
     [Category("Components")]
-    [TypeConverter(typeof (ComponentTypeConverter))]
-    [Editor(typeof (j8JpaTe5oUu0XrCDGc), typeof (UITypeEditor))]
+//    [TypeConverter(typeof (ComponentTypeConverter))]
+//    [Editor(typeof (j8JpaTe5oUu0XrCDGc), typeof (UITypeEditor))]
     public MetaRiskManager MetaRiskManager
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.kXJRQmVtwY;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         if (!this.DesignMode)
-          throw new InvalidOperationException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(13080));
+          throw new InvalidOperationException();
         if (this.kXJRQmVtwY != null)
         {
           this.kXJRQmVtwY.Disconnect();
@@ -76,19 +76,19 @@ namespace FreeQuant.Trading
       }
     }
 
-    [TypeConverter(typeof (ComponentTypeConverter))]
+//    [TypeConverter(typeof (ComponentTypeConverter))]
     [Category("Components")]
-    [Editor(typeof (MfCmgO2d6ZUIseVQ0Y), typeof (UITypeEditor))]
+//    [Editor(typeof (MfCmgO2d6ZUIseVQ0Y), typeof (UITypeEditor))]
     public ExecutionManager ExecutionManager
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.XSvR57mV5s;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         if (!this.DesignMode)
-          throw new InvalidOperationException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(13152));
+          throw new InvalidOperationException();
         if (this.XSvR57mV5s != null)
         {
           this.XSvR57mV5s.Disconnect();
@@ -107,7 +107,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public SignalList Signals
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.aNKR2wRnBL;
       }
@@ -117,34 +117,32 @@ namespace FreeQuant.Trading
 
     public event EventHandler SignalListCleared;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MetaStrategy(string name)
+   
+		public MetaStrategy(string name): base(name)
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(name);
-      this.MetaExposureManager = StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(12768), (object) this) as MetaExposureManager;
-      this.ExecutionManager = StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(12848), (object) this) as ExecutionManager;
-      this.MetaRiskManager = StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(12928), (object) this) as MetaRiskManager;
+
+			this.MetaExposureManager = StrategyComponentManager.GetComponent("GetComponent", (object) this) as MetaExposureManager;
+			this.ExecutionManager = StrategyComponentManager.GetComponent("GetComponent", (object) this) as ExecutionManager;
+			this.MetaRiskManager = StrategyComponentManager.GetComponent("GetComponent", (object) this) as MetaRiskManager;
       this.aNKR2wRnBL = new SignalList();
       this.componentTypeList.Add(ComponentType.MetaRiskManager);
       this.componentTypeList.Add(ComponentType.MetaExposureManager);
       this.componentTypeList.Add(ComponentType.ExecutionManager);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnInit()
     {
       this.aNKR2wRnBL.Clear();
-      if (this.JQvRMMGCuq != null)
-        this.JQvRMMGCuq((object) this, EventArgs.Empty);
+//      if (this.JQvRMMGCuq != null)
+//        this.JQvRMMGCuq((object) this, EventArgs.Empty);
       this.XSvR57mV5s.Init();
       this.optimizationManager.Init();
       this.k7bROYTXtn.Init();
       this.kXJRQmVtwY.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnMetaStrategyStop()
     {
       this.k7bROYTXtn.OnStrategyStop();
@@ -152,7 +150,7 @@ namespace FreeQuant.Trading
       this.XSvR57mV5s.OnStrategyStop();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     internal SingleOrder PFARUMnUwZ([In] Signal obj0)
     {
       bool flag = false;
@@ -170,140 +168,140 @@ namespace FreeQuant.Trading
         }
       }
       this.aNKR2wRnBL.Add(obj0);
-      if (this.iCcRBViVvB != null)
-        this.iCcRBViVvB(new SignalEventArgs(obj0));
+//      if (this.iCcRBViVvB != null)
+//        this.iCcRBViVvB(new SignalEventArgs(obj0));
       if (flag)
         return this.XSvR57mV5s.Execute(obj0);
       else
         return (SingleOrder) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnPositionOpened(Position position)
     {
       this.kXJRQmVtwY.OnPositionOpened(position);
       this.k7bROYTXtn.OnPositionOpened(position);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnPositionChanged(Position position)
     {
       this.kXJRQmVtwY.OnPositionChanged(position);
       this.k7bROYTXtn.OnPositionChanged(position);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnPositionClosed(Position position)
     {
       this.kXJRQmVtwY.OnPositionClosed(position);
       this.k7bROYTXtn.OnPositionClosed(position);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnPortfolioValueChanged(Position position)
     {
       this.kXJRQmVtwY.OnPortfolioValueChanged(this.portfolio);
       this.k7bROYTXtn.OnPortfolioValueChanged(this.portfolio);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewBarOpen(Instrument instrument, Bar bar)
     {
       this.kXJRQmVtwY.OnBarOpen(instrument, bar);
       this.k7bROYTXtn.OnBarOpen(instrument, bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewBar(Instrument instrument, Bar bar)
     {
       this.kXJRQmVtwY.OnBar(instrument, bar);
       this.k7bROYTXtn.OnBar(instrument, bar);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewTrade(Instrument instrument, Trade trade)
     {
       this.kXJRQmVtwY.OnTrade(instrument, trade);
       this.k7bROYTXtn.OnTrade(instrument, trade);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewQuote(Instrument instrument, Quote quote)
     {
       this.kXJRQmVtwY.OnQuote(instrument, quote);
       this.k7bROYTXtn.OnQuote(instrument, quote);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewMarketDepth(Instrument instrument, MarketDepth marketDepth)
     {
       this.kXJRQmVtwY.OnMarketDepth(instrument, marketDepth);
       this.k7bROYTXtn.OnMarketDepth(instrument, marketDepth);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewFundamental(Instrument instrument, Fundamental fundamental)
     {
       this.kXJRQmVtwY.OnFundamental(instrument, fundamental);
       this.k7bROYTXtn.OnFundamental(instrument, fundamental);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewCorporateAction(Instrument instrument, CorporateAction corporateAction)
     {
       this.kXJRQmVtwY.OnCorporateAction(instrument, corporateAction);
       this.k7bROYTXtn.OnCorporateAction(instrument, corporateAction);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnNewOrder(SingleOrder order)
     {
       this.XSvR57mV5s.OnNewOrder(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnExecutionReport(SingleOrder order, ExecutionReport report)
     {
       this.XSvR57mV5s.OnExecutionReport(order, report);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnOrderPartiallyFilled(SingleOrder order)
     {
       this.XSvR57mV5s.OnOrderPartiallyFilled(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnOrderStatusChanged(SingleOrder order)
     {
       this.XSvR57mV5s.OnOrderStatusChanged(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnOrderFilled(SingleOrder order)
     {
       this.XSvR57mV5s.OnOrderFilled(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnOrderCancelled(SingleOrder order)
     {
       this.XSvR57mV5s.OnOrderCancelled(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnOrderRejected(SingleOrder order)
     {
       this.XSvR57mV5s.OnOrderRejected(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnOrderDone(SingleOrder order)
     {
       this.XSvR57mV5s.OnOrderDone(order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnProviderConnected(IProvider provider)
     {
       this.kXJRQmVtwY.OnProviderConnected(provider);
@@ -311,7 +309,7 @@ namespace FreeQuant.Trading
       this.XSvR57mV5s.OnProviderConnected(provider);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnProviderDisconnected(IProvider provider)
     {
       this.kXJRQmVtwY.OnProviderDisconnected(provider);
@@ -319,7 +317,7 @@ namespace FreeQuant.Trading
       this.XSvR57mV5s.OnProviderDisconnected(provider);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     protected override void OnProviderError(IProvider provider, int id, int code, string message)
     {
       this.kXJRQmVtwY.OnProviderError(provider, id, code, message);
@@ -327,7 +325,7 @@ namespace FreeQuant.Trading
       this.XSvR57mV5s.OnProviderError(provider, id, code, message);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override IComponentBase GetComponent(ComponentType type)
     {
       switch (type)
@@ -343,7 +341,7 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void SetComponent(ComponentType type, IComponentBase component)
     {
       switch (type)

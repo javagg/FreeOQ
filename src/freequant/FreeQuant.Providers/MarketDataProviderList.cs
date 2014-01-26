@@ -4,7 +4,7 @@ namespace FreeQuant.Providers
 {
 	public class MarketDataProviderList : ProviderList
 	{
-		public IMarketDataProvider this [string name]
+		new public IMarketDataProvider this[string name]
 		{
 			get
 			{
@@ -12,7 +12,7 @@ namespace FreeQuant.Providers
 			}
 		}
 
-		public IMarketDataProvider this [byte id]
+		new public IMarketDataProvider this [byte id]
 		{
 			get
 			{

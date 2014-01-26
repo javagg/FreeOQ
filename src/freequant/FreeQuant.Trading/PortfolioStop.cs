@@ -26,25 +26,22 @@ namespace FreeQuant.Trading
 
     public StopFillMode FillMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.rfci6isjj5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.rfci6isjj5 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PortfolioStop(StrategyBase strategy, double level, StopType type, StopMode mode, bool stopStrategy)
-    {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
+			:base(){
       this.dUqRtBdT71 = StopType.Trailing;
       this.Wa9RdDJEOa = StopMode.Percent;
       this.rfci6isjj5 = StopFillMode.Stop;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.sKmRoRmeN5 = strategy;
       this.ElNRan0isi = strategy.Portfolio;
       this.QqtReC8Evy = level;
@@ -62,15 +59,12 @@ namespace FreeQuant.Trading
       this.QJSRn03JW5();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public PortfolioStop(StrategyBase strategy, DateTime time, bool stopStrategy)
-    {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
+			:base(){
       this.dUqRtBdT71 = StopType.Trailing;
       this.Wa9RdDJEOa = StopMode.Percent;
       this.rfci6isjj5 = StopFillMode.Stop;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.sKmRoRmeN5 = strategy;
       this.ElNRan0isi = strategy.Portfolio;
       this.RUQiAxBBaC = stopStrategy;
@@ -83,7 +77,7 @@ namespace FreeQuant.Trading
       Clock.AddReminder(new ReminderEventHandler(this.AaPRYK2epA), this.xTNRf1TvWo, (object) null);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private double aIZRlrvLwJ()
     {
       this.cbLRgVrenR = this.uLLipPWdua;
@@ -94,23 +88,23 @@ namespace FreeQuant.Trading
         case StopMode.Percent:
           return this.uLLipPWdua - Math.Abs(this.uLLipPWdua * this.QqtReC8Evy);
         default:
-          throw new ArgumentException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16170) + (object) this.Wa9RdDJEOa);
+					throw new ArgumentException((string) (object) this.Wa9RdDJEOa);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void i7uRq8Sj1g()
     {
       this.ElNRan0isi.ValueChanged += new PositionEventHandler(this.hk5RZyVTx9);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Disconnect()
     {
       this.ElNRan0isi.ValueChanged -= new PositionEventHandler(this.hk5RZyVTx9);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void hk5RZyVTx9([In] object obj0, [In] PositionEventArgs obj1)
     {
       this.oURRNWOggg = this.ElNRan0isi.GetValue();
@@ -119,7 +113,7 @@ namespace FreeQuant.Trading
       this.QJSRn03JW5();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void QJSRn03JW5()
     {
       if (this.oURRNWOggg == 0.0)
@@ -143,14 +137,14 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void aH7RuF48ZR([In] StopStatus obj0)
     {
       this.sCBRwgCW8P = obj0;
       this.xTNRf1TvWo = Clock.Now;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void AaPRYK2epA([In] ReminderEventArgs obj0)
     {
       if (obj0.SignalTime > Clock.Now)

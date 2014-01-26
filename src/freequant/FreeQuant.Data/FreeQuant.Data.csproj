@@ -56,7 +56,6 @@
     <Compile Include="MarketDepthArray.cs" />
     <Compile Include="MDOperation.cs" />
     <Compile Include="MDSide.cs" />
-    <Compile Include="MemorySeries`1.cs" />
     <Compile Include="OrderBook.cs" />
     <Compile Include="OrderBookEntryList.cs" />
     <Compile Include="PnF.cs" />
@@ -67,5 +66,6 @@
     <Compile Include="SeriesObject.cs" />
     <Compile Include="Trade.cs" />
     <Compile Include="ViewAttribute.cs" />
+    <Compile Include="MemorySeries.cs" />
   </ItemGroup>
 </Project>

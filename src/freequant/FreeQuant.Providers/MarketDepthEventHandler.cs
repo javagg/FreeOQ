@@ -1,4 +1,4 @@
 namespace FreeQuant.Providers
 {
-  public delegate void MarketDepthEventHandler(object sender, MarketDepthEventArgs args);
+	public delegate void MarketDepthEventHandler(object sender, MarketDepthEventArgs args);
 }

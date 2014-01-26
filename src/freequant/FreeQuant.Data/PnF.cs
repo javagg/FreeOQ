@@ -182,7 +182,7 @@ namespace FreeQuant.Data
 			}
 		}
 
-		public double this [int barData]
+		public double this[int barData]
 		{
 			get
 			{
@@ -203,16 +203,16 @@ namespace FreeQuant.Data
 					case 6:
 						return this.Weighted;
 					case 7:
-						return (double)this.volume;
+						return this.Volume;
 					case 8:
-						return (double)this.openInt;
+						return this.OpenInt;
 					default:
 						return double.NaN;
 				}
 			}
 		}
 
-		public double this [BarData barData]
+		public double this[BarData barData]
 		{
 			get
 			{
@@ -222,16 +222,15 @@ namespace FreeQuant.Data
 
 		public PnF(double boxSize, DateTime beginTime, DateTime endTime, double open, double high, double low, double close, long volume, long openInt)
 		{
-
 			this.boxSize = boxSize;
 			this.beginTime = beginTime;
-			this.endTime = endTime;
-			this.open = open;
-			this.high = high;
-			this.low = low;
-			this.close = close;
-			this.volume = volume;
-			this.openInt = openInt;
+			this.EndTime = endTime;
+			this.Open = open;
+			this.High = high;
+			this.Low = low;
+			this.Close = close;
+			this.Volume = volume;
+			this.OpenInt = openInt;
 		}
 
 		public PnF(PnF pnF) : this(pnF.BoxSize, pnF.beginTime, pnF.endTime, pnF.open, pnF.high, pnF.low, pnF.close, pnF.volume, pnF.openInt)

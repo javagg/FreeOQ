@@ -46,24 +46,28 @@ namespace FreeQuant.Data
 				return this.list.SyncRoot;
 			}
 		}
-		//		object get_Item(int index)
-		//		{
-		//			return (object)this[index];
-		//		}
-		//
-		//		void set_Item(int index, object value)
-		//		{
-		//			this[index] = value as IDataSeries;
-		//		}
-		public object this[int index]
+
+		public IDataSeries this [int index]
 		{
 			get
 			{
-				return this.list[index];
+				return this.list[index] as IDataSeries;
 			}
 			set
 			{
-				this.list[index] = (object)value;
+				this.list[index] = value;
+			}
+		}
+
+		object IList.this [int index]
+		{
+			get
+			{
+				return this[index];
+			}
+			set
+			{
+				this[index] = value as IDataSeries;
 			}
 		}
 

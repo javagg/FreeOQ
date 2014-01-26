@@ -13,7 +13,7 @@ namespace FreeQuant.Trading
 
     public Instrument Instrument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.QTH6x9uW18;
       }
@@ -21,7 +21,7 @@ namespace FreeQuant.Trading
 
     public char Side
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.qYX68VSGfR;
       }
@@ -29,18 +29,15 @@ namespace FreeQuant.Trading
 
     public Bar Bar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.Bci6cEaeJs;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ExitEventArgs(Instrument instrument, char side, Bar bar)
+    
+		public ExitEventArgs(Instrument instrument, char side, Bar bar):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.QTH6x9uW18 = instrument;
       this.qYX68VSGfR = side;
       this.Bci6cEaeJs = bar;

@@ -3,7 +3,6 @@ using FreeQuant.FIX;
 using System;
 using System.IO;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
@@ -20,9 +19,9 @@ namespace FreeQuant.Providers
     private static MarketDataProviderList nOmtoMmG6Q;
     private static InstrumentProviderList ljbtMTjldy;
     private static HistoricalDataProviderList rlMtpT1jXx;
-    private static IMarketDataProvider mi7tNm4m7F;
-    private static IExecutionProvider KmPtyC3sWf;
-    private static ProviderErrorCollection cIXt1Sv2ZR;
+    private static IMarketDataProvider marketDataProvider;
+    private static IExecutionProvider executionProvider;
+		private static ProviderErrorCollection errors; 
 
     public static ProviderList Providers
     {
@@ -98,11 +97,11 @@ namespace FreeQuant.Providers
     {
        get
       {
-        return ProviderManager.mi7tNm4m7F;
+        return ProviderManager.marketDataProvider;
       }
        set
       {
-        ProviderManager.mi7tNm4m7F = value;
+        ProviderManager.marketDataProvider = value;
       }
     }
 
@@ -110,11 +109,11 @@ namespace FreeQuant.Providers
     {
        get
       {
-        return ProviderManager.KmPtyC3sWf;
+        return ProviderManager.executionProvider;
       }
        set
       {
-        ProviderManager.KmPtyC3sWf = value;
+        ProviderManager.executionProvider = value;
       }
     }
 
@@ -122,7 +121,7 @@ namespace FreeQuant.Providers
     {
        get
       {
-        return ProviderManager.cIXt1Sv2ZR;
+        return ProviderManager.errors;
       }
     }
 
@@ -167,10 +166,10 @@ namespace FreeQuant.Providers
       ProviderManager.KGXtmeVerO = new ExecutionProviderList();
       ProviderManager.nOmtoMmG6Q = new MarketDataProviderList();
       ProviderManager.ljbtMTjldy = new InstrumentProviderList();
-      ProviderManager.rlMtpT1jXx = new HistoricalDataProviderList();
-      ProviderManager.mi7tNm4m7F = (IMarketDataProvider) null;
-      ProviderManager.KmPtyC3sWf = (IExecutionProvider) null;
-      ProviderManager.cIXt1Sv2ZR = new ProviderErrorCollection();
+			ProviderManager.rlMtpT1jXx = new HistoricalDataProviderList();   
+			ProviderManager.marketDataProvider = null;  
+			ProviderManager.executionProvider = null; 
+      ProviderManager.errors = new ProviderErrorCollection();
     }
    
     public static void Add(IProvider provider)
@@ -426,7 +425,7 @@ namespace FreeQuant.Providers
       {
         if (Trace.IsLevelEnabled(TraceLevel.Error))
           Trace.WriteLine(obj0.ToString() + Environment.NewLine);
-        ProviderManager.cIXt1Sv2ZR.VruWdmvdd(obj0.Error);
+				ProviderManager.errors.Add(obj0.Error);
 //        if (ProviderManager.RYJtAso3kD == null)
 //          return;
 //        ProviderManager.RYJtAso3kD(obj0);

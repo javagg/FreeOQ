@@ -24,7 +24,7 @@ namespace FreeQuant.Neural
 
     public Graph TrainingErrorGraph
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.V8laR9xb7;
       }
@@ -32,30 +32,24 @@ namespace FreeQuant.Neural
 
     public Graph ValidationErrorGraph
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.XOwvCEen2;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TPerceptron()
+   
+		public TPerceptron():base()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.kB5uny9D9 = 0;
       this.wAeTg5Tjg = EActivationMode.Approximation;
       this.tD5M1LlFx = (TNeuralDataSet) null;
       this.WKl1lduPx = (TNeuralDataSet) null;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public TPerceptron(string Name, string Title, int NInput, int NHidden, int NOutput, EActivationMode Mode)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name, Title);
+			:base(Name, Title){
       this.fNInput = NInput;
       this.kB5uny9D9 = NHidden;
       this.fNOutput = NOutput;
@@ -65,12 +59,10 @@ namespace FreeQuant.Neural
       this.Configure();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public TPerceptron(string Name, string Title, TNeuralDataSet TrainingSet, int NHidden, EActivationMode Mode)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name, Title);
+			: base(Name, Title) {
+
       this.tD5M1LlFx = TrainingSet;
       this.WKl1lduPx = (TNeuralDataSet) null;
       this.fNInput = TrainingSet.NInput;
@@ -80,12 +72,9 @@ namespace FreeQuant.Neural
       this.Configure();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public TPerceptron(string Name, string Title, TNeuralDataSet TrainingSet, TNeuralDataSet ValidationSet, int NHidden, EActivationMode Mode)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name, Title);
+			: base(Name, Title) {
       this.tD5M1LlFx = TrainingSet;
       this.WKl1lduPx = ValidationSet;
       this.fNInput = TrainingSet.NInput;
@@ -95,7 +84,7 @@ namespace FreeQuant.Neural
       this.Configure();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void Configure()
     {
       this.fInputLayer = (TNeuralLayer) new TInputNeuralLayer(this.fNInput, true);
@@ -115,15 +104,15 @@ namespace FreeQuant.Neural
       this.wm8s050QY = 0.0;
       this.MSg9cpEpW = 0.0;
       this.V8laR9xb7 = new Graph();
-      this.V8laR9xb7.Title = nsoHwqAxvM4sAIorFP.auoBSZuq3T(0);
+			this.V8laR9xb7.Title = "title";
       this.V8laR9xb7.LineColor = Color.Red;
       this.XOwvCEen2 = new Graph();
-      this.XOwvCEen2.Title = nsoHwqAxvM4sAIorFP.auoBSZuq3T(56);
+			this.XOwvCEen2.Title = "title";
       this.XOwvCEen2.LineColor = Color.Blue;
       this.x1tDaZE2v = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void ReConfigure(int NHidden)
     {
       this.fNInput = this.tD5M1LlFx.NInput;
@@ -132,25 +121,25 @@ namespace FreeQuant.Neural
       this.Configure();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void ResetError()
     {
       this.V8laR9xb7 = new Graph();
-      this.V8laR9xb7.Title = nsoHwqAxvM4sAIorFP.auoBSZuq3T(116);
+			this.V8laR9xb7.Title = "title";
       this.V8laR9xb7.LineColor = Color.Red;
       this.XOwvCEen2 = new Graph();
-      this.XOwvCEen2.Title = nsoHwqAxvM4sAIorFP.auoBSZuq3T(172);
+			this.XOwvCEen2.Title = "title";
       this.XOwvCEen2.LineColor = Color.Blue;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Reset()
     {
       TNeuralNetwork.Network.Reset();
       this.ResetError();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void AddHiddenLayer(int NHidden)
     {
       TNeuralLayer Layer1 = (TNeuralLayer) this.rCHgEckPw[this.rCHgEckPw.Count - 1];
@@ -167,7 +156,7 @@ namespace FreeQuant.Neural
       tperceptron.fMaxNY = num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public int GetNHidden(int i)
     {
       if (i != 0)
@@ -176,7 +165,7 @@ namespace FreeQuant.Neural
         return this.kB5uny9D9;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void FeedForward()
     {
       ((TInputNeuralLayer) this.fInputLayer).FeedInput(this.fInput);
@@ -187,7 +176,7 @@ namespace FreeQuant.Neural
       this.fOutput = ((TOutputNeuralLayer) this.fOutputLayer).GetOutput();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void FeedBackward()
     {
       ((TOutputNeuralLayer) this.fOutputLayer).FeedError(this.cGqCj2YUM);
@@ -196,14 +185,14 @@ namespace FreeQuant.Neural
         ((TNeuralLayer) this.rCHgEckPw[index]).ProcessError();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void ComputeError()
     {
       for (int index = 0; index < this.fNOutput; ++index)
         this.cGqCj2YUM[index] = this.fTarget[index] - this.fOutput[index];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Update(int Param)
     {
       base.Update(0);
@@ -212,7 +201,7 @@ namespace FreeQuant.Neural
         ((TNeuralLayer) this.rCHgEckPw[index]).Update();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void TrainPerceptron()
     {
       this.x1tDaZE2v = false;
@@ -241,12 +230,12 @@ label_1:
           num2 += this.fNBatch;
           if (this.x1tDaZE2v)
           {
-            Console.WriteLine(nsoHwqAxvM4sAIorFP.auoBSZuq3T(232));
+						Console.WriteLine("");
             return;
           }
           else if (this.fSMethod == EStoppingMethod.PatternNumber && (double) num1 >= this.fSParameter)
           {
-            Console.WriteLine(nsoHwqAxvM4sAIorFP.auoBSZuq3T(294), (object) (int) this.fSParameter);
+						Console.WriteLine("", this.fSParameter);
             return;
           }
         }
@@ -265,7 +254,7 @@ label_1:
       goto label_1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public double GetError()
     {
       double num = 0.0;
@@ -274,7 +263,7 @@ label_1:
       return 0.5 * num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public double GetTrainingSetError(int Option)
     {
       if (Option != 0)
@@ -293,7 +282,7 @@ label_1:
       return num / (double) ndata;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public double GetValidationSetError(int Option)
     {
       if (Option != 0)
@@ -314,32 +303,32 @@ label_1:
       return num / (double) ndata;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public double GetTrainingSetError()
     {
       return this.GetTrainingSetError(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public double GetValidationSetError()
     {
       return this.GetValidationSetError(0);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void PrintError()
     {
       if (this.fTarget[1] == 0.0)
         return;
-      Console.WriteLine(nsoHwqAxvM4sAIorFP.auoBSZuq3T(342), (object) this.GetError());
+			Console.WriteLine("",  this.GetError());
       for (int index = 0; index < this.fNOutput; ++index)
       {
-        Console.WriteLine(nsoHwqAxvM4sAIorFP.auoBSZuq3T(368), (object) this.GetWinner());
-        Console.WriteLine(nsoHwqAxvM4sAIorFP.auoBSZuq3T(386), (object) this.fTarget[index], (object) this.fOutput[index], (object) this.cGqCj2YUM[index]);
+				Console.WriteLine("", this.GetWinner());
+				Console.WriteLine("", this.fTarget[index], this.fOutput[index], this.cGqCj2YUM[index]);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void PrintTrainingSetError()
     {
       int ndata = this.tD5M1LlFx.GetNData();
@@ -356,7 +345,7 @@ label_1:
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public int GetWinner()
     {
       int index1 = 0;
@@ -368,7 +357,7 @@ label_1:
       return index1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public double GetWinnerConfidence()
     {
       int index1 = 0;
@@ -382,19 +371,19 @@ label_1:
       return this.fOutput[index1] / num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void SetInputName(int i, string Name)
     {
       this.fInputLayer.SetName(i, Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void SetOutputName(int i, string Name)
     {
       this.fOutputLayer.SetName(i - 1, Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void Print(string Option)
     {
     }

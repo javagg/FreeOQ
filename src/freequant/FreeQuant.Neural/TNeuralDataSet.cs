@@ -21,11 +21,11 @@ namespace FreeQuant.Neural
 
     public int NInput
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNInput;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fNInput = value;
       }
@@ -33,11 +33,11 @@ namespace FreeQuant.Neural
 
     public int NOutput
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNOutput;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fNOutput = value;
       }
@@ -45,32 +45,26 @@ namespace FreeQuant.Neural
 
     public int NData
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fNData;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fNData = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralDataSet()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fIsOwner = true;
       this.embmG1hcf();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralDataSet(int NInput, int NOutput, bool IsOwner)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fNData = 0;
       this.fNInput = NInput;
       this.fNOutput = NOutput;
@@ -78,12 +72,9 @@ namespace FreeQuant.Neural
       this.embmG1hcf();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralDataSet(int NInput, int NOutput)
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fNData = 0;
       this.fNInput = NInput;
       this.fNOutput = NOutput;
@@ -91,7 +82,7 @@ namespace FreeQuant.Neural
       this.embmG1hcf();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void embmG1hcf()
     {
       this.fNData = 0;
@@ -104,20 +95,20 @@ namespace FreeQuant.Neural
       this.fIsChanged = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddData(TNeuralData NeuralData)
     {
       this.fData.Add((object) NeuralData);
       ++this.fNData;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddData(int NInput, int NOutput, double[] Input, double[] Output)
     {
       this.AddData(new TNeuralData(NInput, NOutput, Input, Output));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int GetNData()
     {
       if (this.fIsChanged)
@@ -129,7 +120,7 @@ namespace FreeQuant.Neural
       return this.fNData;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralData GetData(int Seek)
     {
       if (this.fIsChanged)
@@ -139,54 +130,54 @@ namespace FreeQuant.Neural
       }
       int num1 = this.fFirst != -1 ? this.fFirst : 0;
       int num2 = this.fLast != -1 ? this.fLast : this.fData.Count - 1;
-      return (TNeuralData) this.fData[Seek != -1 ? num1 + Seek : num1 + (int) ((double) (num2 - num1 + 1) * SmartQuant.Quant.Random.Rndm())];
+			return (TNeuralData) this.fData[Seek != -1 ? num1 + Seek : num1 + (int) ((double) (num2 - num1 + 1) * FreeQuant.Quant.Random.Rndm())];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double[] GetInput(int Seek)
     {
       return this.GetData(Seek).Input;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double[] GetOutput(int Seek)
     {
       return this.GetData(Seek).Output;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralData GetData()
     {
       return this.GetData(-1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double[] GetInput()
     {
       return this.GetInput(-1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double[] GetOutput()
     {
       return this.GetOutput(-1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RandomizeInput(int Input, double Min, double Max)
     {
       for (int Seek = 0; Seek < this.fData.Count; ++Seek)
         this.GetData(Seek).RandomizeInput(Input, Min, Max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RandomizeOutput(int Output, double Min, double Max)
     {
       for (int Seek = 0; Seek < this.fData.Count; ++Seek)
         this.GetData(Seek).RandomizeInput(Output, Min, Max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetMean(int Col)
     {
       double num1 = 0.0;
@@ -201,7 +192,7 @@ namespace FreeQuant.Neural
       return num3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetVariance(int Col)
     {
       double mean = this.GetMean(Col);
@@ -217,20 +208,20 @@ namespace FreeQuant.Neural
       return num3;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetStandardDeviation(int Col)
     {
       return Math.Sqrt(this.GetVariance(Col));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void NormalizeInput()
     {
       for (int Seek = 0; Seek < this.fData.Count; ++Seek)
         this.GetData(Seek).NormalizeInput();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Renormalize()
     {
       for (int Col = 0; Col < this.fNInput; ++Col)
@@ -246,25 +237,25 @@ namespace FreeQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void NormalizeOutput()
     {
       for (int Seek = 0; Seek < this.fData.Count; ++Seek)
         this.GetData(Seek).NormalizeOutput();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void PrepareData()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetStoredMean(int Col)
     {
       return this.fMean[Col];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetStoredVariance(int Col)
     {
       return this.fVariance[Col];

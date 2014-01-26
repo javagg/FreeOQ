@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.Indicators.RSI
-// Assembly: SmartQuant.Indicators, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 31E147DE-EF63-4F0C-B049-23C3662CE212
-// Assembly location: E:\OpenQuant\Framework\bin\SmartQuant.Indicators.dll
-
-using JgR8Nw4Dcm7J7u8IfB;
-using ko1tl8f5ZvqOYr69tl;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Indicators
+namespace FreeQuant.Indicators
 {
   [Serializable]
   public class RSI : Indicator
@@ -28,11 +21,11 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(1)]
     public BarData Option
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOption;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOption = value;
         this.Init();
@@ -44,11 +37,11 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(0)]
     public int Length
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLength;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLength = value;
         this.Init();
@@ -60,47 +53,38 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(2)]
     public EIndicatorStyle Style
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fStyle;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fStyle = value;
         this.Init();
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RSI()
+    
+		public RSI(): base()
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RSI(TimeSeries input, int length, BarData option, EIndicatorStyle style)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input){
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.fStyle = style;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RSI(TimeSeries input, int length, BarData option, EIndicatorStyle style, Color color)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input) {
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.fStyle = style;
@@ -108,13 +92,10 @@ namespace SmartQuant.Indicators
       this.Color = color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public RSI(TimeSeries input, int length, BarData option, EIndicatorStyle style, Color color, EDrawStyle drawStyle)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input)  {
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.fStyle = style;
@@ -123,71 +104,59 @@ namespace SmartQuant.Indicators
       this.DrawStyle = drawStyle;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RSI(TimeSeries input, int length, BarData option)
+    
+		public RSI(TimeSeries input, int length, BarData option)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fOption = option;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RSI(TimeSeries input, int length, EIndicatorStyle style)
+    
+		public RSI(TimeSeries input, int length, EIndicatorStyle style)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.fStyle = style;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RSI(TimeSeries input, int length)
+    
+		public RSI(TimeSeries input, int length)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RSI(TimeSeries input, int length, Color color)
+    
+		public RSI(TimeSeries input, int length, Color color)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength = 14;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength = length;
       this.Color = color;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Init()
     {
-      this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(1690) + (object) this.fLength + GXPBSPblRhtUOANrS4.LSuAVoYjy(1704);
-      this.fTitle = GXPBSPblRhtUOANrS4.LSuAVoYjy(1710);
+			this.Name = "RSI"+ this.fLength.ToString();
+			this.Title = "RSI";
       this.Clear();
       this.fCalculate = true;
       if (this.fInput == null)
         return;
       if (this.fInput is BarSeries)
-        this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(1760) + (object) this.fLength + GXPBSPblRhtUOANrS4.LSuAVoYjy(1774) + (string) (object) this.fOption + GXPBSPblRhtUOANrS4.LSuAVoYjy(1782);
-      if (TimeSeries.fNameOption == ENameOption.Long)
-        this.fName = this.fInput.Name + GXPBSPblRhtUOANrS4.LSuAVoYjy(1788) + this.fName;
+				this.Name = "RSI" + (object) this.fLength + (string) (object) this.fOption;
+			if (TimeSeries.nameOption == ENameOption.Long)
+        this.Name = this.fInput.Name + this.Name;
       this.fUp = new DoubleSeries();
       this.fDown = new DoubleSeries();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Calculate(int index)
     {
       double Data1 = 0.0;
@@ -261,7 +230,7 @@ namespace SmartQuant.Indicators
       this.fDown.Add(this.fInput.GetDateTime(index), Data2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(TimeSeries input, int index, int length, BarData option, EIndicatorStyle style)
     {
       double num1 = 0.0;
@@ -313,22 +282,22 @@ namespace SmartQuant.Indicators
       return 100.0 - 100.0 / (1.0 + num1 / num2);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(DoubleSeries input, int index, int length, EIndicatorStyle style)
     {
       return RSI.Value((TimeSeries) input, index, length, BarData.Close, style);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(TimeSeries input, int index, int length, BarData option)
     {
       return RSI.Value(input, index, length, option, EIndicatorStyle.QuantStudio);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void OnInputItemAdded(object sender, DateTimeEventArgs EventArgs)
     {
-      if (!this.fMonitored)
+      if (!this.Monitored)
         return;
       int index = this.fInput.GetIndex(EventArgs.DateTime);
       if (index == -1)

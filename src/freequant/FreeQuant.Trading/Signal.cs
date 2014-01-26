@@ -1,4 +1,3 @@
-
 using FreeQuant.Charting;
 using FreeQuant.FIX;
 using FreeQuant.Instruments;
@@ -42,11 +41,11 @@ namespace FreeQuant.Trading
 
     public Strategy Strategy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.uUCAoxT2nM;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.uUCAoxT2nM = value;
       }
@@ -54,7 +53,7 @@ namespace FreeQuant.Trading
 
     public DateTime DateTime
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.BHmAafFWq5;
       }
@@ -62,11 +61,11 @@ namespace FreeQuant.Trading
 
     public ComponentType Sender
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.PZ8AtJFoSI;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.PZ8AtJFoSI = value;
       }
@@ -74,11 +73,11 @@ namespace FreeQuant.Trading
 
     public ComponentType Rejecter
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.k6uAd2ekch;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.k6uAd2ekch = value;
       }
@@ -86,11 +85,11 @@ namespace FreeQuant.Trading
 
     public string RejectReason
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.yMlAw2S8C2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yMlAw2S8C2 = value;
       }
@@ -98,11 +97,11 @@ namespace FreeQuant.Trading
 
     public SignalType Type
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Ug8AmpN6Lv;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Ug8AmpN6Lv = value;
       }
@@ -110,11 +109,11 @@ namespace FreeQuant.Trading
 
     public SignalSide Side
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.lFNAfw2jk5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.lFNAfw2jk5 = value;
       }
@@ -122,11 +121,11 @@ namespace FreeQuant.Trading
 
     public double Price
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.RxjAeNd9om;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.RxjAeNd9om = value;
       }
@@ -134,11 +133,11 @@ namespace FreeQuant.Trading
 
     public double StopPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.S1QAg2wH2p;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.S1QAg2wH2p = value;
       }
@@ -146,11 +145,11 @@ namespace FreeQuant.Trading
 
     public double LimitPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.iSpANxwsjn;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.iSpANxwsjn = value;
       }
@@ -158,11 +157,11 @@ namespace FreeQuant.Trading
 
     public double Qty
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Gm2AzcSQf0;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Gm2AzcSQf0 = value;
       }
@@ -170,11 +169,11 @@ namespace FreeQuant.Trading
 
     public TimeInForce TimeInForce
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.mjpjkJ4sSV;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.mjpjkJ4sSV = value;
       }
@@ -182,11 +181,11 @@ namespace FreeQuant.Trading
 
     public double StrategyPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.xPdj6rLiI5;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.xPdj6rLiI5 = value;
       }
@@ -194,11 +193,11 @@ namespace FreeQuant.Trading
 
     public bool StrategyFill
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.gDjjpRmweK;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.gDjjpRmweK = value;
       }
@@ -206,11 +205,11 @@ namespace FreeQuant.Trading
 
     public Instrument Instrument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cWTjA2ythk;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.cWTjA2ythk = value;
       }
@@ -218,11 +217,11 @@ namespace FreeQuant.Trading
 
     public string Text
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Y5wjj7NwTb;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Y5wjj7NwTb = value;
       }
@@ -230,11 +229,11 @@ namespace FreeQuant.Trading
 
     public SignalStatus Status
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nLojWnvefB;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.nLojWnvefB = value;
       }
@@ -243,11 +242,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color BuyColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.w8ejRbHlLp;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.w8ejRbHlLp = value;
       }
@@ -256,11 +255,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color BuyCoverColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.xnfji3BmDC;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.xnfji3BmDC = value;
       }
@@ -269,11 +268,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color SellColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Dguj7ca8kH;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.Dguj7ca8kH = value;
       }
@@ -282,11 +281,11 @@ namespace FreeQuant.Trading
     [Category("Drawing Style")]
     public Color SellShortColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.mrTjHmKfbk;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.mrTjHmKfbk = value;
       }
@@ -296,11 +295,11 @@ namespace FreeQuant.Trading
     [Category("ToolTip")]
     public bool ToolTipEnabled
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.NwWjUvU0CL;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.NwWjUvU0CL = value;
       }
@@ -310,28 +309,26 @@ namespace FreeQuant.Trading
     [Description("Tooltip format string. {1} - X coordinate, {2} - Y coordinte.")]
     public string ToolTipFormat
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.eXjjOqHWe9;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.eXjjOqHWe9 = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Signal(DateTime datetime, ComponentType sender, SignalType type, SignalSide side, double qty, double strategyPrice, Instrument instrument, string text)
-    {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
+			:base(){
       this.w8ejRbHlLp = Color.Blue;
       this.xnfji3BmDC = Color.SkyBlue;
       this.Dguj7ca8kH = Color.Pink;
       this.mrTjHmKfbk = Color.Red;
       this.NwWjUvU0CL = true;
-      this.eXjjOqHWe9 = USaG3GpjZagj1iVdv4u.Y4misFk9D9(10994);
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+			this.eXjjOqHWe9 ="dfdfs";
+
       this.BHmAafFWq5 = datetime;
       this.PZ8AtJFoSI = sender;
       this.Ug8AmpN6Lv = type;
@@ -349,21 +346,19 @@ namespace FreeQuant.Trading
       this.nLojWnvefB = SignalStatus.New;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Signal(DateTime datetime, ComponentType sender, SignalType type, SignalSide side, Instrument instrument, string text)
-    {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(datetime, sender, type, side, 0.0, 0.0, instrument, text);
+			: this(datetime, sender, type, side, 0.0, 0.0, instrument, text) {
+
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY)
     {
       int num1 = Pad.ClientX((double) this.DateTime.Ticks);
       int num2 = Pad.ClientY(this.RxjAeNd9om);
-      USaG3GpjZagj1iVdv4u.Y4misFk9D9(11044) + this.RxjAeNd9om.ToString(USaG3GpjZagj1iVdv4u.Y4misFk9D9(11064)) + USaG3GpjZagj1iVdv4u.Y4misFk9D9(11072) + ((object) this.Status).ToString() + USaG3GpjZagj1iVdv4u.Y4misFk9D9(11080);
-      Font font = new Font(USaG3GpjZagj1iVdv4u.Y4misFk9D9(11086), 8f);
+//      USaG3GpjZagj1iVdv4u.Y4misFk9D9(11044) + this.RxjAeNd9om.ToString(USaG3GpjZagj1iVdv4u.Y4misFk9D9(11064)) + USaG3GpjZagj1iVdv4u.Y4misFk9D9(11072) + ((object) this.Status).ToString() + USaG3GpjZagj1iVdv4u.Y4misFk9D9(11080);
+			Font font = new Font("Arial", 8f);
       Color color = this.w8ejRbHlLp;
       switch (this.Side)
       {
@@ -389,7 +384,7 @@ namespace FreeQuant.Trading
       Pad.Graphics.DrawEllipse(pen, num1 - num3 / 2, num2 - num3 / 2, num3, num3);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TDistance Distance(double X, double Y)
     {
       TDistance tdistance = new TDistance();
@@ -399,14 +394,14 @@ namespace FreeQuant.Trading
       tdistance.dY = Math.Abs(Y - tdistance.Y);
       StringBuilder stringBuilder = new StringBuilder();
       if (this.DateTime.Second != 0 || this.DateTime.Minute != 0 || this.DateTime.Hour != 0)
-        stringBuilder.AppendFormat(this.eXjjOqHWe9, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(11100), (object) ((object) this.Side).ToString(), (object) this.Instrument.Symbol, (object) this.Price, (object) this.DateTime, (object) ((object) this.Status).ToString());
+				stringBuilder.AppendFormat(this.eXjjOqHWe9, (object) "ffs", (object) ((object) this.Side).ToString(), (object) this.Instrument.Symbol, (object) this.Price, (object) this.DateTime, (object) ((object) this.Status).ToString());
       else
-        stringBuilder.AppendFormat(this.eXjjOqHWe9, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(11120), (object) ((object) this.Side).ToString(), (object) this.Instrument.Symbol, (object) this.Price, (object) this.DateTime.ToShortDateString(), (object) ((object) this.Status).ToString());
+				stringBuilder.AppendFormat(this.eXjjOqHWe9, (object)"fddsf", (object) ((object) this.Side).ToString(), (object) this.Instrument.Symbol, (object) this.Price, (object) this.DateTime.ToShortDateString(), (object) ((object) this.Status).ToString());
       tdistance.ToolTipText = ((object) stringBuilder).ToString();
       return tdistance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw()
     {
       Chart.Pad.Add((IDrawable) this);

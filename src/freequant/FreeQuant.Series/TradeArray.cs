@@ -14,7 +14,7 @@ namespace FreeQuant.Series
     private string toolTipDateTimeFormat;
     private Color color;
 
-    public Trade this[int index]
+		new public Trade this[int index]
     {
        get
       {

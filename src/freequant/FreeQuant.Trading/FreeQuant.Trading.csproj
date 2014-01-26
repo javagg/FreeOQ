@@ -32,6 +32,7 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -134,15 +135,9 @@
     <Compile Include="Conditions\RulesParser.cs" />
     <Compile Include="Conditions\SignalItem.cs" />
     <Compile Include="Conditions\SignalItemType.cs" />
-    <Compile Include="Design\ComboBoxTypeEditor.cs" />
-    <Compile Include="Design\ComponentTypeConverter.cs" />
-    <Compile Include="Design\ExecutionProviderTypeEditor.cs" />
-    <Compile Include="Design\MarketDataProviderTypeEditor.cs" />
-    <Compile Include="Design\ProviderTypeConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Conditions\" />
-    <Folder Include="Design\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
@@ -192,6 +187,10 @@
     <ProjectReference Include="..\FreeQuant.Testing\FreeQuant.Testing.csproj">
       <Project>{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}</Project>
       <Name>FreeQuant.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

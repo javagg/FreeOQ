@@ -11,7 +11,7 @@ namespace FreeQuant.Trading
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aBBpZAhsY6.IsSynchronized;
       }
@@ -19,7 +19,7 @@ namespace FreeQuant.Trading
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aBBpZAhsY6.Count;
       }
@@ -27,40 +27,37 @@ namespace FreeQuant.Trading
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.aBBpZAhsY6.SyncRoot;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TriggerList()
+    
+		public TriggerList():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.aBBpZAhsY6 = new ArrayList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.aBBpZAhsY6.CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       return this.aBBpZAhsY6.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Trigger trigger)
     {
       this.aBBpZAhsY6.Add((object) trigger);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.aBBpZAhsY6.Clear();

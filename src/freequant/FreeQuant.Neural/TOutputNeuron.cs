@@ -8,39 +8,34 @@ namespace FreeQuant.Neural
   {
     private EActivationMode dwvXwyWh8;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TOutputNeuron()
+    
+		public TOutputNeuron(): base()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+
       this.dwvXwyWh8 = EActivationMode.Approximation;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TOutputNeuron(EActivationMode Mode)
+    
+		public TOutputNeuron(EActivationMode Mode): base()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.dwvXwyWh8 = Mode;
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private EActivationMode pC6WUCL6n()
     {
       return this.dwvXwyWh8;
     }
 
     [SpecialName]
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void cXt5bimqX(EActivationMode value)
     {
       this.dwvXwyWh8 = value;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double Activation(double x)
     {
       switch (this.dwvXwyWh8)
@@ -54,7 +49,7 @@ namespace FreeQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override double Gradient(double x)
     {
       switch (this.dwvXwyWh8)

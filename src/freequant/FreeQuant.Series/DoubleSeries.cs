@@ -4,7 +4,6 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FreeQuant.Series
@@ -68,7 +67,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public double First
+		new public double First
 		{
 			get
 			{
@@ -76,7 +75,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public double Last
+		new public double Last
 		{
 			get
 			{
@@ -108,46 +107,43 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public double this[int Index]
+		new public double this[int index]
 		{
 			get
 			{
-				return (double)base[Index];
+				return (double)base[index];
 			}
 		}
 
-		public double this [DateTime DateTime]
+		new public double this [DateTime dateTime]
 		{
 			get
 			{
-				object obj = base[DateTime];
-//				if (obj == null)
-//					throw new Exception(oK6F3TB73XXXGhdieP.wF6SgrNUO(4408) + (object)DateTime);
-//				else
-					return (double)obj;
+				object obj = base[dateTime];
+				return (double)obj;
 			}
 			set
 			{
-				this.Add(DateTime, value);
+				this.Add(dateTime, value);
 			}
 		}
 
-		public double this [DateTime DateTime, EIndexOption Option]
+		new public double this [DateTime dateTime, EIndexOption option]
 		{
 			get
 			{
-				object obj = base[DateTime, Option];
+				object obj = base[dateTime, option];
 				if (obj != null)
 					return (double)obj;
-				throw new Exception("" + (object)DateTime + Option);
+				throw new Exception("" + dateTime + option);
 			}
 		}
 
-		public override double this [int Col, int row]
+		public override double this [int col, int row]
 		{
 			get
 			{
-				return this[Col];
+				return this[col];
 			}
 		}
 
@@ -205,7 +201,7 @@ namespace FreeQuant.Series
 			this.fVariance = double.NaN;
 			this.splitDate = DateTime.MaxValue;
 
-			this.fArray = (IDataSeries)new MemorySeries<double>();
+//			this.fArray = (IDataSeries)new MemorySeries<double>();
 		}
 
 		public DoubleSeries(string name) : this(name, String.Empty)
@@ -214,7 +210,6 @@ namespace FreeQuant.Series
 
 		public DoubleSeries() : base(string.Empty)
 		{
-
 		}
 
 		public static DoubleSeries operator +(DoubleSeries series1, DoubleSeries series2)
@@ -356,20 +351,20 @@ namespace FreeQuant.Series
 			return doubleSeries;
 		}
 
-//		public DoubleSeries Clone()
-//		{
-//			return base.Clone() as DoubleSeries;
-//		}
+		new public DoubleSeries Clone()
+		{
+			return base.Clone() as DoubleSeries;
+		}
 
-//		public DoubleSeries Clone(int index1, int index2)
-//		{
-//			return base.Clone(index1, index2) as DoubleSeries;
-//		}
+		new public DoubleSeries Clone(int index1, int index2)
+		{
+			return base.Clone(index1, index2) as DoubleSeries;
+		}
 
-//		public DoubleSeries Clone(DateTime DateTime1, DateTime DateTime2)
-//		{
-//			return base.Clone(DateTime1, DateTime2) as DoubleSeries;
-//		}
+		new public DoubleSeries Clone(DateTime DateTime1, DateTime DateTime2)
+		{
+			return base.Clone(DateTime1, DateTime2) as DoubleSeries;
+		}
 
 		public virtual void Add(DateTime DateTime, double Data)
 		{

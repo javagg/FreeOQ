@@ -24,11 +24,11 @@ namespace FreeQuant.Neural
 
     public EKohonenTopology Topology
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.M7SYu5gxf;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.M7SYu5gxf = value;
       }
@@ -36,11 +36,11 @@ namespace FreeQuant.Neural
 
     public EKohonenKernel Kernel
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.a8fxHLKhg;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.a8fxHLKhg = value;
       }
@@ -48,11 +48,11 @@ namespace FreeQuant.Neural
 
     public double InitLearningRate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.g5ykpFFS7;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.g5ykpFFS7 = value;
       }
@@ -60,11 +60,11 @@ namespace FreeQuant.Neural
 
     public double InitNeighborhoodRadius
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.yem372767;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yem372767 = value;
       }
@@ -72,7 +72,7 @@ namespace FreeQuant.Neural
 
     public double NeighborhoodRadius
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.L2kBAuWI5g;
       }
@@ -80,7 +80,7 @@ namespace FreeQuant.Neural
 
     public int NCols
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.crqUrCA6J;
       }
@@ -88,30 +88,24 @@ namespace FreeQuant.Neural
 
     public int NRows
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.R00zPKwYO;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TKohonenMap()
+    
+		public TKohonenMap() : base()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.en8Br1nJcm = (TNeuralDataSet) null;
       this.NZFB8Hsyyk = (Histogram2D) null;
       this.lHWBj2LFHb = (Graph) null;
       this.L2kBAuWI5g = this.yem372767;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TKohonenMap(string Name, string Title, int NCols, int NRows, TNeuralDataSet DataSet, int NPatterns)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name, Title);
+			:base(Name, Title) {
       this.crqUrCA6J = NCols;
       this.R00zPKwYO = NRows;
       this.en8Br1nJcm = DataSet;
@@ -122,12 +116,10 @@ namespace FreeQuant.Neural
       this.P2odmXxb0();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TKohonenMap(string Name, string Title, int NCols, int NRows, int Topology, TNeuralDataSet DataSet, int NPatterns)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name, Title);
+			:base(Name, Title) {
+
       this.crqUrCA6J = NCols;
       this.R00zPKwYO = NRows;
       this.en8Br1nJcm = DataSet;
@@ -138,12 +130,9 @@ namespace FreeQuant.Neural
       this.P2odmXxb0();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TKohonenMap(string Name, int NCols, int NRows, TNeuralDataSet DataSet, int NPatterns)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name);
+			:base(Name) {
       this.crqUrCA6J = NCols;
       this.R00zPKwYO = NRows;
       this.en8Br1nJcm = DataSet;
@@ -154,12 +143,9 @@ namespace FreeQuant.Neural
       this.P2odmXxb0();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TKohonenMap(string Name, int NCols, int NRows, int Topology, TNeuralDataSet DataSet, int NPatterns)
-    {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(Name);
+			:base(Name) {
       this.crqUrCA6J = NCols;
       this.R00zPKwYO = NRows;
       this.en8Br1nJcm = DataSet;
@@ -170,7 +156,7 @@ namespace FreeQuant.Neural
       this.P2odmXxb0();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void P2odmXxb0()
     {
       this.x0pBGNZNEv = new TInputNeuron[this.fNInput];
@@ -198,7 +184,7 @@ namespace FreeQuant.Neural
       this.yem372767 = 10.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void ProcessInput(double[] Input)
     {
       this.fInput = Input;
@@ -213,7 +199,7 @@ namespace FreeQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetError()
     {
       double num = 0.0;
@@ -225,7 +211,7 @@ namespace FreeQuant.Neural
       return num / (double) (this.crqUrCA6J * this.R00zPKwYO);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double GetAverageError()
     {
       double num = 0.0;
@@ -237,7 +223,7 @@ namespace FreeQuant.Neural
       return num;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TKohonenNeuron GetWinner()
     {
       TKohonenNeuron tkohonenNeuron = this.C4gBBYR9YW[0, 0];
@@ -257,7 +243,7 @@ namespace FreeQuant.Neural
       return tkohonenNeuron;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Update()
     {
       for (int index1 = 0; index1 < this.crqUrCA6J; ++index1)
@@ -267,7 +253,7 @@ namespace FreeQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void TrainThread()
     {
       this.fNPattern = 0;
@@ -284,10 +270,10 @@ namespace FreeQuant.Neural
         this.fLearningRate = this.g5ykpFFS7 * (1.0 - num2);
         this.L2kBAuWI5g = 1.0 + this.yem372767 * (1.0 - num2);
       }
-      Console.WriteLine(nsoHwqAxvM4sAIorFP.auoBSZuq3T(420) + (object) this.fNPattern + nsoHwqAxvM4sAIorFP.auoBSZuq3T(462));
+      Console.WriteLine( this.fNPattern);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Histogram2D GetMapHist()
     {
       this.NZFB8Hsyyk = new Histogram2D(this.fName, this.fTitle, this.crqUrCA6J, 0.0, (double) this.crqUrCA6J, this.R00zPKwYO, 0.0, (double) this.R00zPKwYO);
@@ -330,12 +316,12 @@ namespace FreeQuant.Neural
       return this.NZFB8Hsyyk;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawData(int X, int Y)
     {
       if (this.lHWBj2LFHb == null)
       {
-        this.lHWBj2LFHb = new Graph(nsoHwqAxvM4sAIorFP.auoBSZuq3T(506));
+				this.lHWBj2LFHb = new Graph("graph");
         this.lHWBj2LFHb.Style = EGraphStyle.Scatter;
         this.lHWBj2LFHb.MarkerSize = 1;
       }
@@ -347,13 +333,13 @@ namespace FreeQuant.Neural
       this.lHWBj2LFHb.Draw();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawData()
     {
       this.DrawData(0, 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawMesh(int X, int Y)
     {
       for (int index1 = 0; index1 < this.crqUrCA6J; ++index1)
@@ -385,21 +371,21 @@ namespace FreeQuant.Neural
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void DrawMesh()
     {
       this.DrawMesh(0, 1);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw(string Option)
     {
-      if (this.NZFB8Hsyyk == null || Option.ToLower() == nsoHwqAxvM4sAIorFP.auoBSZuq3T(534))
+			if (this.NZFB8Hsyyk == null || Option.ToLower() == "fsde")
         this.GetMapHist();
       this.NZFB8Hsyyk.Draw();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Draw()
     {
       this.Draw("");

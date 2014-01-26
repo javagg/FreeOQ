@@ -11,23 +11,20 @@ namespace FreeQuant.Trading
 
     public TimeSeries this[Instrument instrument]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (TimeSeries) this.BxPphSSHW[(object) instrument];
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.BxPphSSHW[(object) instrument] = (object) value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SeriesParam()
+    
+		public SeriesParam():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
       this.BxPphSSHW = new Hashtable();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

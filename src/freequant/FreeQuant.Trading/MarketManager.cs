@@ -20,7 +20,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public InstrumentList Instruments
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.cYRAR9UWJy;
       }
@@ -29,11 +29,11 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     internal IMarketDataProvider OM26eKMfqS
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.strategyMarketDataProvider;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.strategyMarketDataProvider = value;
       }
@@ -42,11 +42,11 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     internal IExecutionProvider TOY6zSGlVT
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.strategyExecutionProvider;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.strategyExecutionProvider = value;
       }
@@ -55,7 +55,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     internal Dictionary<Instrument, IMarketDataProvider> jcIApP7GcT
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nxTAjlViDK;
       }
@@ -64,24 +64,21 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     internal Dictionary<Instrument, IExecutionProvider> UyiAAd6ITD
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.utDAWNS3ic;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MarketManager()
+    
+		public MarketManager():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.nxTAjlViDK = new Dictionary<Instrument, IMarketDataProvider>();
       this.utDAWNS3ic = new Dictionary<Instrument, IExecutionProvider>();
       this.cYRAR9UWJy = new InstrumentList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddInstrument(Instrument instrument, IMarketDataProvider marketDataProvider, IExecutionProvider executionProvider)
     {
       if (!this.cYRAR9UWJy.Contains(instrument))
@@ -93,19 +90,19 @@ namespace FreeQuant.Trading
         this.utDAWNS3ic[instrument] = this.strategyExecutionProvider;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddInstrument(Instrument instrument, string marketDataProviderName, string executionProviderName)
     {
       IMarketDataProvider marketDataProvider = ProviderManager.MarketDataProviders[marketDataProviderName];
       IExecutionProvider executionProvider = ProviderManager.ExecutionProviders[executionProviderName];
       if (marketDataProvider == null && marketDataProviderName != "")
-        throw new InvalidOperationException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(9992) + instrument.Symbol + USaG3GpjZagj1iVdv4u.Y4misFk9D9(10066));
+        throw new InvalidOperationException(instrument.Symbol);
       if (executionProvider == null && executionProviderName != "")
-        throw new InvalidOperationException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(10100) + instrument.Symbol + USaG3GpjZagj1iVdv4u.Y4misFk9D9(10170));
+        throw new InvalidOperationException( instrument.Symbol);
       this.AddInstrument(instrument, marketDataProvider, executionProvider);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddInstrument(string symbol, string marketDataProviderName, string executionProviderName)
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];
@@ -114,13 +111,13 @@ namespace FreeQuant.Trading
       this.AddInstrument(instrument, marketDataProviderName, executionProviderName);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddInstrument(Instrument instrument)
     {
       this.AddInstrument(instrument, this.strategyMarketDataProvider, this.strategyExecutionProvider);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void AddInstrument(string symbol)
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];
@@ -129,7 +126,7 @@ namespace FreeQuant.Trading
       this.AddInstrument(instrument);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RemoveInstrument(Instrument instrument)
     {
       this.cYRAR9UWJy.Remove(instrument);
@@ -137,7 +134,7 @@ namespace FreeQuant.Trading
       this.utDAWNS3ic.Remove(instrument);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void RemoveInstrument(string symbol)
     {
       Instrument instrument = InstrumentManager.Instruments[symbol];

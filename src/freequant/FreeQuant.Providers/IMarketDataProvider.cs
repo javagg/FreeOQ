@@ -5,9 +5,7 @@ namespace FreeQuant.Providers
 	public interface IMarketDataProvider : IProvider
 	{
 		IBarFactory BarFactory { get; set; }
-
 		IMarketDataFilter MarketDataFilter { get; set; }
-
 		event MarketDataRequestRejectEventHandler MarketDataRequestReject;
 		event MarketDataSnapshotEventHandler MarketDataSnapshot;
 		event MarketDataEventHandler NewMarketData;
@@ -20,7 +18,6 @@ namespace FreeQuant.Providers
 		event MarketDepthEventHandler NewMarketDepth;
 		event FundamentalEventHandler NewFundamental;
 		event CorporateActionEventHandler NewCorporateAction;
-
 		void SendMarketDataRequest(FIXMarketDataRequest request);
 	}
 }

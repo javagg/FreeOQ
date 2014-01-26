@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.Indicators.UltOsc
-// Assembly: SmartQuant.Indicators, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 31E147DE-EF63-4F0C-B049-23C3662CE212
-// Assembly location: E:\OpenQuant\Framework\bin\SmartQuant.Indicators.dll
-
-using JgR8Nw4Dcm7J7u8IfB;
-using ko1tl8f5ZvqOYr69tl;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Indicators
+namespace FreeQuant.Indicators
 {
   [Serializable]
   public class UltOsc : Indicator
@@ -26,11 +19,11 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(0)]
     public int N1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fN1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fN1 = value;
         this.Init();
@@ -42,11 +35,11 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(1)]
     public int N2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fN2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fN2 = value;
         this.Init();
@@ -58,53 +51,44 @@ namespace SmartQuant.Indicators
     [IndicatorParameter(2)]
     public int N3
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fN3;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fN3 = value;
         this.Init();
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public UltOsc()
+    
+		public UltOsc(): base()
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fN1 = 14;
       this.fN2 = 10;
       this.fN3 = 5;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public UltOsc(TimeSeries input, int n1, int n2, int n3)
+    
+		public UltOsc(TimeSeries input, int n1, int n2, int n3):  base(input)
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fN1 = 14;
       this.fN2 = 10;
       this.fN3 = 5;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fN1 = n1;
       this.fN2 = n2;
       this.fN3 = n3;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public UltOsc(TimeSeries input, int n1, int n2, int n3, Color color)
+    
+		public UltOsc(TimeSeries input, int n1, int n2, int n3, Color color):  base(input)
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fN1 = 14;
       this.fN2 = 10;
       this.fN3 = 5;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fN1 = n1;
       this.fN2 = n2;
       this.fN3 = n3;
@@ -112,15 +96,12 @@ namespace SmartQuant.Indicators
       this.Color = color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public UltOsc(TimeSeries input, int n1, int n2, int n3, Color color, EDrawStyle drawStyle)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			:  base(input){
       this.fN1 = 14;
       this.fN2 = 10;
       this.fN3 = 5;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fN1 = n1;
       this.fN2 = n2;
       this.fN3 = n3;
@@ -129,26 +110,26 @@ namespace SmartQuant.Indicators
       this.DrawStyle = drawStyle;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Init()
     {
-      this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(5210) + (object) this.fN1 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5226) + (string) (object) this.fN2 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5234) + (string) (object) this.fN3 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5242);
-      this.fTitle = GXPBSPblRhtUOANrS4.LSuAVoYjy(5248);
+			this.Name =  this.fN1.ToString()  + this.fN2.ToString()  +  this.fN3.ToString();
+			this.Title = "UltOsc";
       this.Clear();
       this.fCalculate = true;
-      if (this.fInput == null || TimeSeries.fNameOption != ENameOption.Long)
+			if (this.fInput == null || TimeSeries.nameOption != ENameOption.Long)
         return;
-      this.fName = this.fInput.Name + GXPBSPblRhtUOANrS4.LSuAVoYjy(5290) + this.fName;
+      this.Name = this.fInput.Name + this.Name;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Calculate(int index)
     {
       double Data = UltOsc.Value(this.fInput, index, this.fN1, this.fN2, this.fN3);
       this.Add(this.fInput.GetDateTime(index), Data);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(TimeSeries input, int index, int n1, int n2, int n3)
     {
       if (index < Math.Max(n1, Math.Max(n2, n3)) + input.FirstIndex)
@@ -189,10 +170,10 @@ namespace SmartQuant.Indicators
       return (num4 + num7 + num10) / (double) (n3 / n1 + n3 / n2 + 1) * 100.0;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void OnInputItemAdded(object sender, DateTimeEventArgs EventArgs)
     {
-      if (!this.fMonitored)
+      if (!this.Monitored)
         return;
       int index = this.fInput.GetIndex(EventArgs.DateTime);
       if (index == -1)

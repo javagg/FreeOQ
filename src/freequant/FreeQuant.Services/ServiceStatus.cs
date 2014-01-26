@@ -1,8 +1,4 @@
 namespace FreeQuant.Services
 {
-	public enum ServiceStatus
-	{
-		Stopped,
-		Started,
-	}
+	public enum ServiceStatus { Stopped, Started }
 }

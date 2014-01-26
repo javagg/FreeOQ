@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 namespace FreeQuant.Data
 {
 	[Serializable]
-	public class Trade : IDataObject, ISeriesObject, ICloneable
+	public class Trade : IDataObject, ISeriesObject
 	{
 		protected DateTime datetime;
 		protected byte providerId;
@@ -98,24 +98,10 @@ namespace FreeQuant.Data
 
 		public virtual void ReadFrom(BinaryReader reader)
 		{
-			byte num = reader.ReadByte();
-			switch (num)
-			{
-				case (byte) 1:
-					this.datetime = new DateTime(reader.ReadInt64());
-					this.price = Math.Round((double)reader.ReadSingle(), 4);
-					this.size = reader.ReadInt32();
-					this.providerId = reader.ReadByte();
-					break;
-				case (byte) 2:
-					this.datetime = new DateTime(reader.ReadInt64());
-					this.price = reader.ReadDouble();
-					this.size = reader.ReadInt32();
-					this.providerId = reader.ReadByte();
-					break;
-				default:
-					throw new Exception("" + (object)num);
-			}
+			this.datetime = new DateTime(reader.ReadInt64());
+			this.price = reader.ReadDouble();
+			this.size = reader.ReadInt32();
+			this.providerId = reader.ReadByte();
 		}
 	}
 }

@@ -24,33 +24,13 @@ namespace FreeQuant.Providers
 
 		[DefaultValue(true)]
 		[Category("Status")]
-		public bool Enabled
-		{
-			get
-			{
-				return this.enabled; 
-			}
-			set
-			{
-				this.enabled = value;
-			}
-		}
+		public bool Enabled { get; set; }
 
 		[DefaultValue(BarFactoryInput.Trade)]
-		public BarFactoryInput Input
-		{
-			get
-			{
-				return this.input; 
-			}
-			set
-			{
-				this.input = value;
-			}
-		}
+		public BarFactoryInput Input { get; set; }
 
 		[Category("Items")]
-		public BarFactoryItemList Items
+		public BarFactoryItemList Items 
 		{
 			get
 			{
@@ -64,8 +44,8 @@ namespace FreeQuant.Providers
 
 		public BarFactory(bool enabled = true)
 		{
-			this.enabled = enabled;
-			this.input = BarFactoryInput.Trade;
+			this.Enabled = enabled;
+			this.Input = BarFactoryInput.Trade;
 			this.cqyLFWMOvs = new Hashtable();
 			this.items = new BarFactoryItemList();
 			this.items.Add(new BarFactoryItem());
@@ -132,8 +112,8 @@ namespace FreeQuant.Providers
 
 		private void h0TLeQWiAU([In] IFIXInstrument obj0, [In] DateTime obj1, [In] double obj2, [In] int obj3)
 		{
-			List<BarFactory.zNxuFsXhPSM7NAan2D> list = new List<BarFactory.zNxuFsXhPSM7NAan2D>();
-			lock (this)
+			var list = new List<BarFactory.zNxuFsXhPSM7NAan2D>();
+			lock(this)
 			{
 				foreach (BarFactoryItem item_0 in this.items)
 				{

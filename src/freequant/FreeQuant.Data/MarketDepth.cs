@@ -4,235 +4,225 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Data
 {
-  [Serializable]
-  public class MarketDepth : IComparable, IDataObject, ICloneable, ISeriesObject
-  {
-    private const byte sP4fptbej = 3;
-    private DateTime dateTime;
-    private byte providerId;
-    private string JLOpfyh4y;
-    private string eg7FZMr0F;
-    private int Me1WkVtkG;
-    private MDOperation jPJqD9uF9;
-    private MDSide B5WkwTEyx;
-    private double G6iR5ebrL;
-    private int zy1PMqcD3;
+	[Serializable]
+	public class MarketDepth : ISeriesObject, IDataObject, IComparable, ICloneable
+	{
+		private const byte sP4fptbej = 3;
+		private DateTime dateTime;
+		private byte providerId;
+		private string source;
+		private int position;
+		private MDOperation operation;
+		private MDSide side;
+		private double price;
+		private int size;
 
-    public byte ProviderId
-    {
-        get
-      {
+		public byte ProviderId
+		{
+			get
+			{
 				return this.providerId; 
-      }
-      set
-      {
-        this.providerId = value;
-      }
-    }
+			}
+			set
+			{
+				this.providerId = value;
+			}
+		}
 
-    public DateTime DateTime
-    {
-       get
-      {
+		public DateTime DateTime
+		{
+			get
+			{
 				return this.dateTime; 
-      }
-        set
-      {
-        this.dateTime = value;
-      }
-    }
+			}
+			set
+			{
+				this.dateTime = value;
+			}
+		}
 
-    [View]
-    public string MarketMaker
-    {
-      get
-      {
-        return this.JLOpfyh4y;
-      }
-       set
-      {
-        this.JLOpfyh4y = value;
-      }
-    }
+		[View]
+		public string MarketMaker { get; set; }
 
-    [View]
-    public string Source
-    {
-        get
-      {
-        return this.eg7FZMr0F;
-      }
-      set
-      {
-        this.eg7FZMr0F = value;
-      }
-    }
+		[View]
+		public string Source
+		{
+			get
+			{
+				return this.source; 
+			}
+			set
+			{
+				this.source = value;
+			}
+		}
 
-    [View]
-    public int Position
-    {
-      get
-      {
-        return this.Me1WkVtkG;
-      }
-       set
-      {
-        this.Me1WkVtkG = value;
-      }
-    }
+		[View]
+		public int Position
+		{
+			get
+			{
+				return this.position; 
+			}
+			set
+			{
+				this.position = value;
+			}
+		}
 
-    [View]
-    public MDOperation Operation
-    {
-      get
-      {
-        return this.jPJqD9uF9;
-      }
-     set
-      {
-        this.jPJqD9uF9 = value;
-      }
-    }
+		[View]
+		public MDOperation Operation
+		{
+			get
+			{
+				return this.operation;
+			}
+			set
+			{
+				this.operation = value;
+			}
+		}
 
-    [View]
-    public MDSide Side
-    {
-      get
-      {
-        return this.B5WkwTEyx;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.B5WkwTEyx = value;
-      }
-    }
+		[View]
+		public MDSide Side
+		{
+			get
+			{
+				return this.side;
+			}
+			 set
+			{
+				this.side = value;
+			}
+		}
 
-    [PriceView]
-    public double Price
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.G6iR5ebrL;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.G6iR5ebrL = value;
-      }
-    }
+		[PriceView]
+		public double Price
+		{
+			 get
+			{
+				return this.price;
+			}
+			 set
+			{
+				this.price = value;
+			}
+		}
 
-    [View]
-    public int Size
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.zy1PMqcD3;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.zy1PMqcD3 = value;
-      }
-    }
+		[View]
+		public int Size
+		{
+			 get
+			{
+				return this.size;
+			}
+			 set
+			{
+				this.size = value;
+			}
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MarketDepth(DateTime datetime, byte providerId, string marketMaker, string source, int position, MDOperation operation, MDSide side, double price, int size)
-    {
-      this.dateTime = datetime;
-      this.providerId = providerId;
-      this.JLOpfyh4y = marketMaker;
-      this.eg7FZMr0F = source;
-      this.Me1WkVtkG = position;
-      this.jPJqD9uF9 = operation;
-      this.B5WkwTEyx = side;
-      this.G6iR5ebrL = price;
-      this.zy1PMqcD3 = size;
-    }
+		
+		public MarketDepth(DateTime datetime, byte providerId, string marketMaker, string source, int position, MDOperation operation, MDSide side, double price, int size)
+		{
+			this.dateTime = datetime;
+			this.providerId = providerId;
+			this.MarketMaker = marketMaker;
+			this.source = source;
+			this.position = position;
+			this.operation = operation;
+			this.side = side;
+			this.price = price;
+			this.size = size;
+		}
 
-	public MarketDepth() {}
+		public MarketDepth()
+		{
+		}
 
-	public MarketDepth(DateTime datetime, string marketMaker, int position, MDOperation operation, MDSide side, double price, int size):this(datetime, (byte) 0, marketMaker, "", position, operation, side, price, size)
-    {
+		public MarketDepth(DateTime datetime, string marketMaker, int position, MDOperation operation, MDSide side, double price, int size) : this(datetime, 0, marketMaker, String.Empty, position, operation, side, price, size)
+		{
 
-    }
+		}
 
-		public MarketDepth(MarketDepth marketDepth):  this(marketDepth.dateTime, marketDepth.providerId, marketDepth.JLOpfyh4y, marketDepth.eg7FZMr0F, marketDepth.Me1WkVtkG, marketDepth.jPJqD9uF9, marketDepth.B5WkwTEyx, marketDepth.G6iR5ebrL, marketDepth.zy1PMqcD3)
-    {
-    }
+		public MarketDepth(MarketDepth marketDepth) : this(marketDepth.DateTime, marketDepth.ProviderId, marketDepth.MarketMaker, marketDepth.Source, marketDepth.Position, marketDepth.operation, marketDepth.side, marketDepth.Price, marketDepth.Size)
+		{
+		}
 
-    public int CompareTo(object obj)
-    {
-      if (obj is MarketDepth)
-        return this.G6iR5ebrL.CompareTo((obj as MarketDepth).G6iR5ebrL);
-      else
-			throw new ArgumentException("" + obj.GetType().ToString());
-    }
+		public int CompareTo(object obj)
+		{
+			if (obj is MarketDepth)
+				return this.price.CompareTo((obj as MarketDepth).price);
+			else
+				throw new ArgumentException("type is not MarketDepth: " + obj.GetType());
+		}
 
-    public virtual void WriteTo(BinaryWriter writer)
-    {
-      writer.Write((byte) 3);
-      writer.Write(this.dateTime.Ticks);
-      writer.Write(this.JLOpfyh4y);
-      writer.Write(this.eg7FZMr0F);
-      writer.Write((byte) this.B5WkwTEyx);
-      writer.Write(this.G6iR5ebrL);
-      writer.Write(this.zy1PMqcD3);
-      writer.Write(this.providerId);
-      writer.Write(this.Me1WkVtkG);
-      writer.Write((byte) this.jPJqD9uF9);
-    }
+		public virtual void WriteTo(BinaryWriter writer)
+		{
+			writer.Write((byte)3);
+			writer.Write(this.dateTime.Ticks);
+			writer.Write(this.MarketMaker);
+			writer.Write(this.source);
+			writer.Write((byte)this.side);
+			writer.Write(this.price);
+			writer.Write(this.size);
+			writer.Write(this.providerId);
+			writer.Write(this.position);
+			writer.Write((byte)this.operation);
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public virtual void ReadFrom(BinaryReader reader)
-    {
-      byte num = reader.ReadByte();
-      switch (num)
-      {
-        case (byte) 1:
-          this.dateTime = new DateTime(reader.ReadInt64());
-          this.JLOpfyh4y = reader.ReadString();
-          this.eg7FZMr0F = reader.ReadString();
-          this.B5WkwTEyx = (MDSide) reader.ReadByte();
-          this.G6iR5ebrL = Math.Round((double) reader.ReadSingle(), 4);
-          this.zy1PMqcD3 = reader.ReadInt32();
-          this.providerId = reader.ReadByte();
-          this.Me1WkVtkG = -1;
-          this.jPJqD9uF9 = MDOperation.Undefined;
-          break;
-        case (byte) 2:
-          this.dateTime = new DateTime(reader.ReadInt64());
-          this.JLOpfyh4y = reader.ReadString();
-          this.eg7FZMr0F = reader.ReadString();
-          this.B5WkwTEyx = (MDSide) reader.ReadByte();
-          this.G6iR5ebrL = Math.Round((double) reader.ReadSingle(), 4);
-          this.zy1PMqcD3 = reader.ReadInt32();
-          this.providerId = reader.ReadByte();
-          this.Me1WkVtkG = reader.ReadInt32();
-          this.jPJqD9uF9 = (MDOperation) reader.ReadByte();
-          break;
-        case (byte) 3:
-          this.dateTime = new DateTime(reader.ReadInt64());
-          this.JLOpfyh4y = reader.ReadString();
-          this.eg7FZMr0F = reader.ReadString();
-          this.B5WkwTEyx = (MDSide) reader.ReadByte();
-          this.G6iR5ebrL = reader.ReadDouble();
-          this.zy1PMqcD3 = reader.ReadInt32();
-          this.providerId = reader.ReadByte();
-          this.Me1WkVtkG = reader.ReadInt32();
-          this.jPJqD9uF9 = (MDOperation) reader.ReadByte();
-          break;
-        default:
-			throw new Exception(""+ (object) num);
-      }
-    }
+		
+		public virtual void ReadFrom(BinaryReader reader)
+		{
+			byte num = reader.ReadByte();
+			switch (num)
+			{
+				case (byte) 1:
+					this.dateTime = new DateTime(reader.ReadInt64());
+					this.MarketMaker = reader.ReadString();
+					this.Source = reader.ReadString();
+					this.Side = (MDSide)reader.ReadByte();
+					this.Price = Math.Round((double)reader.ReadSingle(), 4);
+					this.Size = reader.ReadInt32();
+					this.ProviderId = reader.ReadByte();
+					this.Position = -1;
+					this.Operation = MDOperation.Undefined;
+					break;
+				case (byte) 2:
+					this.dateTime = new DateTime(reader.ReadInt64());
+					this.MarketMaker = reader.ReadString();
+					this.source = reader.ReadString();
+					this.side = (MDSide)reader.ReadByte();
+					this.price = Math.Round((double)reader.ReadSingle(), 4);
+					this.size = reader.ReadInt32();
+					this.providerId = reader.ReadByte();
+					this.position = reader.ReadInt32();
+					this.operation = (MDOperation)reader.ReadByte();
+					break;
+				case (byte) 3:
+					this.dateTime = new DateTime(reader.ReadInt64());
+					this.MarketMaker = reader.ReadString();
+					this.source = reader.ReadString();
+					this.side = (MDSide)reader.ReadByte();
+					this.price = reader.ReadDouble();
+					this.size = reader.ReadInt32();
+					this.providerId = reader.ReadByte();
+					this.position = reader.ReadInt32();
+					this.operation = (MDOperation)reader.ReadByte();
+					break;
+				default:
+					throw new Exception("" + (object)num);
+			}
+		}
 
-    public virtual ISeriesObject NewInstance()
-    {
-      return (ISeriesObject) new MarketDepth();
-    }
+		public virtual ISeriesObject NewInstance()
+		{
+			return new MarketDepth();
+		}
 
-    public virtual object Clone()
-    {
-      return (object) new MarketDepth(this);
-    }
-
-  }
+		public virtual object Clone()
+		{
+			return new MarketDepth(this);
+		}
+	}
 }

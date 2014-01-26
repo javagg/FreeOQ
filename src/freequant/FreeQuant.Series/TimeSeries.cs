@@ -9,18 +9,19 @@ namespace FreeQuant.Series
 	[Serializable]
 	public class TimeSeries : IEnumerable
 	{
-		protected internal IDataSeries fArray;
 		protected EIndexOption indexOption;
 		protected string name;
 		protected string title;
-		protected Color color;
-		protected bool monitored;
+		protected Color color = Color.Black;
+		protected bool monitored = true;
 		protected bool changed;
-		protected bool toolTipEnabled;
-		protected string toolTipFormat;
-		protected string toolTipDateTimeFormat;
-		protected ArrayList children;
+		protected bool toolTipEnabled = true;
+		protected string toolTipFormat = "";
+		protected string toolTipDateTimeFormat = "";
+		protected ArrayList children = new ArrayList();
 		public static ENameOption nameOption;
+
+		protected internal IDataSeries fArray = new MemorySeries<object>();
 
 		[Description("")]
 		[Category("Description")]
@@ -200,7 +201,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public object this [DateTime dateTime, EIndexOption option]
+		public object this[DateTime dateTime, EIndexOption option]
 		{
 			get
 			{
@@ -217,15 +218,8 @@ namespace FreeQuant.Series
 
 		public TimeSeries(string name, string title)
 		{
-			this.color = Color.Black;
-			this.monitored = true;
-			this.toolTipEnabled = true;
-			this.toolTipFormat = "tipFormat";
-			this.toolTipDateTimeFormat = "tipDateFormat";
-			this.children = new ArrayList();
 			this.name = name;
 			this.title = title;
-			this.fArray = (IDataSeries)new MemorySeries<object>();
 		}
 
 		public TimeSeries(string name) : this(name, String.Empty)
@@ -262,9 +256,9 @@ namespace FreeQuant.Series
 		{
 			this.fArray.Clear();
 			this.changed = true;
-//			if (this.LsHOoevK6 == null)
-//				return;
-//			this.LsHOoevK6((object)this, EventArgs.Empty);
+			if (this.Cleared == null)
+				return;
+			this.Cleared(this, EventArgs.Empty);
 		}
 
 		public virtual bool Contains(DateTime dateTime)
@@ -1118,9 +1112,9 @@ namespace FreeQuant.Series
 
 		public virtual void EmitItemAdded(DateTime dateTime)
 		{
-//			if (this.JQFFlkZRZ == null)
-//				return;
-//			this.JQFFlkZRZ((object)this, new DateTimeEventArgs(dateTime));
+			if (this.ItemAdded == null)
+				return;
+			this.ItemAdded(this, new DateTimeEventArgs(dateTime));
 		}
 
 		public IEnumerator GetEnumerator()

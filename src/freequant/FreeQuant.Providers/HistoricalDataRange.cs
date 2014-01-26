@@ -4,6 +4,6 @@ namespace FreeQuant.Providers
 	{
 		DateTimeInterval,
 		DaysAgo,
-		ObjectsAgo,
+		ObjectsAgo
 	}
 }

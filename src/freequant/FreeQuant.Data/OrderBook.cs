@@ -1,7 +1,7 @@
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+//using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace FreeQuant.Data
 {
@@ -36,8 +36,8 @@ namespace FreeQuant.Data
 
 		public void Clear()
 		{
-			this.bid.EeBM3flam();
-			this.ask.EeBM3flam();
+			this.bid.Clear();
+			this.ask.Clear();
 		}
 
 		public void Add(MarketDepth marketDepth)
@@ -75,14 +75,14 @@ namespace FreeQuant.Data
 										--index;
 									break;
 							}
-//							orderBookEntryList.H7WIwp9Mh(index, new OrderBookEntry(marketDepth.DateTime, marketDepth.Price, marketDepth.Size));
-//							this.UYB6RbhX2(marketDepth.Side, marketDepth.Operation, index);
+							orderBookEntryList.Insert(index, new OrderBookEntry(marketDepth.DateTime, marketDepth.Price, marketDepth.Size));
+							this.EmitOrderBookEvent(marketDepth.Side, marketDepth.Operation, index);
 							break;
 						}
 						else
 						{
-//							orderBookEntryList.H7WIwp9Mh(marketDepth.Position, new OrderBookEntry(marketDepth.DateTime, marketDepth.Price, marketDepth.Size));
-//							this.UYB6RbhX2(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
+							orderBookEntryList.Insert(marketDepth.Position, new OrderBookEntry(marketDepth.DateTime, marketDepth.Price, marketDepth.Size));
+							this.EmitOrderBookEvent(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
 							break;
 						}
 					case MDOperation.Update:
@@ -93,17 +93,17 @@ namespace FreeQuant.Data
 						orderBookEntry.Size = marketDepth.Size;
 						if (marketDepth.Price > 0.0)
 							orderBookEntry.Price = marketDepth.Price;
-//						this.UYB6RbhX2(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
+						this.EmitOrderBookEvent(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
 						break;
 					case MDOperation.Delete:
 						if (marketDepth.Position == -1)
 							break;
-						orderBookEntryList.EpiQxWKO6(marketDepth.Position);
-//						this.UYB6RbhX2(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
+						orderBookEntryList.RemoveAt(marketDepth.Position);
+						this.EmitOrderBookEvent(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
 						break;
 					case MDOperation.Reset:
-						orderBookEntryList.EeBM3flam();
-//						this.UYB6RbhX2(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
+						orderBookEntryList.Clear();
+						this.EmitOrderBookEvent(marketDepth.Side, marketDepth.Operation, marketDepth.Position);
 						break;
 					case MDOperation.Undefined:
 						break;
@@ -113,7 +113,7 @@ namespace FreeQuant.Data
 			}
 			catch (Exception ex)
 			{
-				Trace.WriteLine(((object)ex).ToString());
+				Trace.WriteLine(ex);
 			}
 		}
 
@@ -241,11 +241,11 @@ namespace FreeQuant.Data
 			}
 		}
 
-//		private void UYB6RbhX2([In] MDSide obj0, [In] MDOperation obj1, [In] int obj2)
-//		{
-//			if (this.PBAs33WQb == null)
-//				return;
-//			this.PBAs33WQb((object)this, new OrderBookEventArgs(obj0, obj1, obj2));
-//		}
+		private void EmitOrderBookEvent([In] MDSide obj0, [In] MDOperation obj1, [In] int obj2)
+		{
+			if (this.Changed == null)
+				return;
+			this.Changed(this, new OrderBookEventArgs(obj0, obj1, obj2));
+		}
 	}
 }

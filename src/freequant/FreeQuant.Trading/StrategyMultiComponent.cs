@@ -9,18 +9,15 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public Strategy Strategy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.StrategyBase as Strategy;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StrategyMultiComponent()
+    
+		public StrategyMultiComponent():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

@@ -33,7 +33,7 @@ namespace FreeQuant.Trading
     private DateTime qsh6ShuQyQ;
     private DateTime RuO6T687cC;
     private double ipu6rgoC4P;
-    private SmartQuant.Instruments.Currency NSl6IOdVVo;
+    private FreeQuant.Instruments.Currency NSl6IOdVVo;
     private RequestList arK690bcVd;
     private RequestList HQ26hOnGxh;
 
@@ -41,11 +41,11 @@ namespace FreeQuant.Trading
     [Category("Execution - Commission & Slippage")]
     public ICommissionProvider CommissionProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).CommissionProvider;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).CommissionProvider = value;
       }
@@ -55,11 +55,11 @@ namespace FreeQuant.Trading
     [Description("Slippage")]
     public ISlippageProvider SlippageProvider
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).SlippageProvider;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).SlippageProvider = value;
       }
@@ -69,11 +69,11 @@ namespace FreeQuant.Trading
     [Category("Execution - Fill Data")]
     public bool FillOnQuote
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnQuote;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnQuote = value;
       }
@@ -83,11 +83,11 @@ namespace FreeQuant.Trading
     [DefaultValue(true)]
     public bool FillOnTrade
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnTrade;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnTrade = value;
       }
@@ -97,11 +97,11 @@ namespace FreeQuant.Trading
     [Category("Execution - Fill Data")]
     public bool FillOnBar
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnBar;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnBar = value;
       }
@@ -111,11 +111,11 @@ namespace FreeQuant.Trading
     [DefaultValue(FillOnTradeMode.LastTrade)]
     public FillOnTradeMode FillOnTradeMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnTradeMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnTradeMode = value;
       }
@@ -125,11 +125,11 @@ namespace FreeQuant.Trading
     [DefaultValue(FillOnQuoteMode.LastQuote)]
     public FillOnQuoteMode FillOnQuoteMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnQuoteMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnQuoteMode = value;
       }
@@ -139,11 +139,11 @@ namespace FreeQuant.Trading
     [DefaultValue(FillOnBarMode.LastBarClose)]
     public FillOnBarMode FillOnBarMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnBarMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         (ProviderManager.ExecutionSimulator as SimulationExecutionProvider).FillOnBarMode = value;
       }
@@ -152,17 +152,17 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public RequestList Requests
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.arK690bcVd;
       }
     }
 
-    [Editor(typeof (dlpOgBSiSH6BDdZEl9), typeof (UITypeEditor))]
+//    [Editor(typeof (dlpOgBSiSH6BDdZEl9), typeof (UITypeEditor))]
     [Category("Feed Simulator")]
     public RequestList StaticRequests
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.HQ26hOnGxh;
       }
@@ -172,11 +172,11 @@ namespace FreeQuant.Trading
     [Category("Feed Simulator")]
     public SimulationMode Mode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.Eua6blN8f6;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.Eua6blN8f6 = value;
       }
@@ -186,11 +186,11 @@ namespace FreeQuant.Trading
     [Category("Feed Simulator")]
     public double SpeedMultiplier
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.pHS6ytvuMg;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.pHS6ytvuMg = value;
       }
@@ -201,11 +201,11 @@ namespace FreeQuant.Trading
     [Description("Step size in seconds")]
     public int Step
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.ebM6G28i5h;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.ebM6G28i5h = value;
       }
@@ -215,11 +215,11 @@ namespace FreeQuant.Trading
     [DefaultValue(typeof (DateTime), "01/01/1970")]
     public DateTime EntryDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.qsh6ShuQyQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.qsh6ShuQyQ = value;
       }
@@ -228,11 +228,11 @@ namespace FreeQuant.Trading
     [Category("Feed Simulator")]
     public DateTime ExitDate
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.RuO6T687cC;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.RuO6T687cC = value;
       }
@@ -242,33 +242,32 @@ namespace FreeQuant.Trading
     [DefaultValue(10000.0)]
     public double Cash
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.ipu6rgoC4P;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.ipu6rgoC4P = value;
       }
     }
 
     [Category("Account")]
-    public SmartQuant.Instruments.Currency Currency
+    public FreeQuant.Instruments.Currency Currency
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.NSl6IOdVVo;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         this.NSl6IOdVVo = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SimulationManager()
+   
+		public SimulationManager():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
       this.Eua6blN8f6 = SimulationMode.MaxSpeed;
       this.pHS6ytvuMg = 1.0;
       this.ebM6G28i5h = 86400;
@@ -276,18 +275,16 @@ namespace FreeQuant.Trading
       this.RuO6T687cC = DateTime.Today;
       this.ipu6rgoC4P = 10000.0;
       this.NSl6IOdVVo = CurrencyManager.DefaultCurrency;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.arK690bcVd = new RequestList();
       this.HQ26hOnGxh = new RequestList();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public override void Init()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public void SendMarketDataRequest(string request)
     {
       if (this.arK690bcVd.Contains(request))

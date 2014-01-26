@@ -22,7 +22,7 @@ namespace FreeQuant.Trading
 
     public static StrategyComponentList Components
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return StrategyComponentManager.wcrRFbhwry;
       }
@@ -30,7 +30,7 @@ namespace FreeQuant.Trading
 
     public static ICollection ComponentTypes
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return StrategyComponentManager.tuxR3OBtRK.Keys;
       }
@@ -38,7 +38,7 @@ namespace FreeQuant.Trading
 
     public static ICollection ComponentRuntimeTypes
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (ICollection) new ArrayList()
         {
@@ -69,46 +69,42 @@ namespace FreeQuant.Trading
 
     public static event ComponentEventHandler ComponentReconstructed;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     static StrategyComponentManager()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
       StrategyComponentManager.tuxR3OBtRK = new Hashtable();
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.CrossEntry, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13724));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.CrossExit, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13754));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.Entry, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13782));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.Exit, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13802));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ExecutionManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13820));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ExposureManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13862));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MoneyManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13902));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.RiskManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13936));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MarketManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(13968));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.OptimizationManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14004));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ReportManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14052));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MetaExposureManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14088));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MetaMoneyManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14136));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MetaRiskManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14178));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.SimulationManager, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14218));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ATSComponent, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14262));
-      StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ATSCrossComponent, (object) USaG3GpjZagj1iVdv4u.Y4misFk9D9(14296));
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.CrossEntry, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.CrossExit, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.Entry, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.Exit, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ExecutionManager, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ExposureManager, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MoneyManager,  "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.RiskManager,"");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MarketManager,"");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.OptimizationManager,"");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ReportManager, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MetaExposureManager,"");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MetaMoneyManager, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.MetaRiskManager, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.SimulationManager, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ATSComponent, "");
+			StrategyComponentManager.tuxR3OBtRK.Add((object) ComponentType.ATSCrossComponent, "");
       StrategyComponentManager.gLhRsqD2VZ = new Hashtable();
       StrategyComponentManager.wcrRFbhwry = new StrategyComponentList();
       StrategyComponentManager.yNoRLNTZ2P = new List<string>();
       StrategyComponentManager.qGjRTr4ZHe();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StrategyComponentManager()
+    
+		public StrategyComponentManager():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void duERGEeA5M()
     {
-      string path = Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14340);
+      string path = Framework.Installation.ComponentDir.FullName;
       if (!File.Exists(path))
         return;
       StreamReader streamReader = new StreamReader(path);
@@ -118,10 +114,10 @@ namespace FreeQuant.Trading
       streamReader.Close();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void SaveBuiltComponents()
     {
-      StreamWriter streamWriter = new StreamWriter(Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14364));
+      StreamWriter streamWriter = new StreamWriter(Framework.Installation.ComponentDir.FullName);
       foreach (ComponentRecord componentRecord in StrategyComponentManager.wcrRFbhwry)
       {
         if (componentRecord.File != null && (componentRecord.Errors == null || !componentRecord.Errors.HasErrors))
@@ -130,43 +126,43 @@ namespace FreeQuant.Trading
       streamWriter.Close();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void LoadComponents()
     {
       StrategyComponentManager.idbRrwVHpr();
       FileSystemWatcher fileSystemWatcher = new FileSystemWatcher();
-      fileSystemWatcher.Path = Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14388);
-      fileSystemWatcher.Filter = USaG3GpjZagj1iVdv4u.Y4misFk9D9(14402);
+      fileSystemWatcher.Path = Framework.Installation.ComponentDir.FullName;
+			fileSystemWatcher.Filter = "filer";
       fileSystemWatcher.NotifyFilter = NotifyFilters.LastWrite;
       fileSystemWatcher.Changed += new FileSystemEventHandler(StrategyComponentManager.uWxRhBPP9U);
       fileSystemWatcher.EnableRaisingEvents = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void Init()
     {
       StrategyComponentManager.duERGEeA5M();
       StrategyComponentManager.LoadComponents();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void AddNewComponent(ComponentType componentType, string name, string description)
     {
-      StreamReader streamReader = new StreamReader(Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14412) + (string) StrategyComponentManager.tuxR3OBtRK[(object) componentType]);
+      StreamReader streamReader = new StreamReader(Framework.Installation.ComponentDir.FullName + (string) StrategyComponentManager.tuxR3OBtRK[(object) componentType]);
       string str1 = streamReader.ReadToEnd();
       streamReader.Close();
-      string newValue = USaG3GpjZagj1iVdv4u.Y4misFk9D9(14438) + Guid.NewGuid().ToString() + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14446) + ((object) componentType).ToString() + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14486) + name + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14508) + description + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14544);
-      string str2 = str1.Replace(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14550), newValue).Replace(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14570), name);
-      FileInfo fileInfo = new FileInfo(Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14596) + name + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14612));
+			string newValue = Guid.NewGuid().ToString() + ((object) componentType).ToString() + name +  description;
+			string str2 = str1.Replace("fdddfs", newValue).Replace("dfdfs", name);
+      FileInfo fileInfo = new FileInfo(Framework.Installation.ComponentDir.FullName + name);
       if (fileInfo.Exists)
-        throw new IOException(string.Format(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14622), (object) fileInfo.Name));
+				throw new IOException(string.Format("fdsfd", (object) fileInfo.Name));
       StreamWriter text = fileInfo.CreateText();
       text.Write(str2);
       text.Close();
       StrategyComponentManager.sLsRSGwrU3(fileInfo);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void sLsRSGwrU3([In] FileInfo obj0)
     {
       CompilerResults compilerResults = CompilingService.Compile(obj0.FullName, false);
@@ -193,20 +189,20 @@ namespace FreeQuant.Trading
           return;
         ComponentRecord componentRecord1 = new ComponentRecord(Guid.Empty, ComponentType.Unknown, obj0.Name, "", obj0, (Type) null, new CompilerErrorCollection(new CompilerError[1]
         {
-          new CompilerError(obj0.FullName, -1, -1, USaG3GpjZagj1iVdv4u.Y4misFk9D9(14674), USaG3GpjZagj1iVdv4u.Y4misFk9D9(14682))
+						new CompilerError(obj0.FullName, -1, -1, "dfdfs", "fdsdfs")
         }));
         StrategyComponentManager.wcrRFbhwry.ROm6C46rfm(componentRecord1);
         StrategyComponentManager.H13R1k6g2K(componentRecord1);
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void AddExistingComponent(FileInfo existingFile)
     {
-      StrategyComponentManager.sLsRSGwrU3(existingFile.CopyTo(Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(14724) + existingFile.Name));
+      StrategyComponentManager.sLsRSGwrU3(existingFile.CopyTo(Framework.Installation.ComponentDir.FullName +  existingFile.Name));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static bool RebuildComponent(FileInfo file)
     {
       ComponentRecord[] records = StrategyComponentManager.wcrRFbhwry.FindRecords(file);
@@ -271,7 +267,7 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void RemoveComponent(ComponentRecord record)
     {
       record.File.Delete();
@@ -280,7 +276,7 @@ namespace FreeQuant.Trading
       StrategyComponentManager.IP7RCltgOJ(record);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static StrategyComponentList GetComponentList(ComponentType componentType)
     {
       StrategyComponentList strategyComponentList = new StrategyComponentList();
@@ -292,49 +288,49 @@ namespace FreeQuant.Trading
       return strategyComponentList;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static IComponentBase GetDefaultComponent(ComponentType type, object issuer)
     {
       switch (type)
       {
         case ComponentType.CrossEntry:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14740), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.ATSCrossComponent:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15940), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.ReportManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15300), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.ATSComponent:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15860), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.MetaMoneyManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15620), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.MetaRiskManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15700), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.SimulationManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15460), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.ExecutionManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15540), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.OptimizationManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15780), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.MetaExposureManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15380), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.RiskManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15140), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.MarketManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15220), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.Entry:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14820), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.Exit:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14900), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.ExposureManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(14980), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         case ComponentType.MoneyManager:
-          return StrategyComponentManager.GetComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(15060), issuer);
+					return StrategyComponentManager.GetComponent("getCom", issuer);
         default:
           return (IComponentBase) null;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static IComponentBase GetComponent(Guid guid, object issuer)
     {
       ComponentRecord record1 = StrategyComponentManager.wcrRFbhwry.FindRecord(guid);
@@ -381,13 +377,13 @@ namespace FreeQuant.Trading
       return componentBase;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static IComponentBase GetComponent(string guid, object issuer)
     {
       return StrategyComponentManager.GetComponent(new Guid(guid), issuer);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void ClearComponentCache(object issuer)
     {
       foreach (DictionaryEntry dictionaryEntry in new Hashtable((IDictionary) StrategyComponentManager.gLhRsqD2VZ))
@@ -399,27 +395,27 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void qGjRTr4ZHe()
     {
       foreach (Type runtimeType in (IEnumerable) StrategyComponentManager.ComponentRuntimeTypes)
         StrategyComponentManager.RegisterDefaultComponent(runtimeType);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static void RegisterDefaultComponent(Type runtimeType)
     {
       ComponentRecord componentRecord = StrategyComponentManager.cN2R9Xa8LN(runtimeType, (FileInfo) null);
       StrategyComponentManager.wcrRFbhwry.ROm6C46rfm(componentRecord);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void idbRrwVHpr()
     {
-      StrategyComponentManager.faQRIM6nIU(new DirectoryInfo(Framework.Installation.ComponentDir.FullName + USaG3GpjZagj1iVdv4u.Y4misFk9D9(16020)).GetFiles());
+      StrategyComponentManager.faQRIM6nIU(new DirectoryInfo(Framework.Installation.ComponentDir.FullName).GetFiles());
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void faQRIM6nIU([In] FileInfo[] obj0)
     {
       string source = "";
@@ -432,10 +428,10 @@ namespace FreeQuant.Trading
         if (StrategyComponentManager.yNoRLNTZ2P.Contains(fileInfo.Name))
         {
           StreamReader streamReader = new StreamReader(fileInfo.FullName);
-          string index = USaG3GpjZagj1iVdv4u.Y4misFk9D9(16034) + (object) num;
+					string index = num.ToString();
           dictionary[index] = fileInfo;
           list1.Add(fileInfo);
-          source = source + USaG3GpjZagj1iVdv4u.Y4misFk9D9(16042) + index + Environment.NewLine + USaG3GpjZagj1iVdv4u.Y4misFk9D9(16066) + Environment.NewLine + streamReader.ReadToEnd() + Environment.NewLine + USaG3GpjZagj1iVdv4u.Y4misFk9D9(16072) + Environment.NewLine;
+          source = source +  index + Environment.NewLine + Environment.NewLine + streamReader.ReadToEnd() + Environment.NewLine + Environment.NewLine;
           ++num;
           streamReader.Close();
         }
@@ -454,7 +450,7 @@ namespace FreeQuant.Trading
         {
           if (type.IsPublic)
           {
-            string index = type.FullName.Substring(0, type.FullName.IndexOf(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16078)));
+						string index = type.FullName.Substring(0, type.FullName.IndexOf(""));
             FileInfo fileInfo = dictionary[index];
             list1.Remove(fileInfo);
             ComponentRecord componentRecord = StrategyComponentManager.cN2R9Xa8LN(type, fileInfo);
@@ -469,7 +465,7 @@ namespace FreeQuant.Trading
         {
           ComponentRecord componentRecord = new ComponentRecord(Guid.Empty, ComponentType.Unknown, file.Name, "", file, (Type) null, new CompilerErrorCollection(new CompilerError[1]
           {
-            new CompilerError(file.FullName, -1, -1, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16084), USaG3GpjZagj1iVdv4u.Y4misFk9D9(16092))
+							new CompilerError(file.FullName, -1, -1,"fddfs","trtr")
           }));
           StrategyComponentManager.wcrRFbhwry.ROm6C46rfm(componentRecord);
           StrategyComponentManager.H13R1k6g2K(componentRecord);
@@ -479,7 +475,7 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static ComponentRecord cN2R9Xa8LN([In] Type obj0, [In] FileInfo obj1)
     {
       StrategyComponentAttribute[] componentAttributeArray = obj0.GetCustomAttributes(typeof (StrategyComponentAttribute), false) as StrategyComponentAttribute[];
@@ -490,15 +486,15 @@ namespace FreeQuant.Trading
       return new ComponentRecord(componentAttribute.GUID, componentAttribute.Type, name, componentAttribute.Description, obj1, obj0, (CompilerErrorCollection) null);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void uWxRhBPP9U([In] object obj0, [In] FileSystemEventArgs obj1)
     {
       if (obj1.ChangeType != WatcherChangeTypes.Changed)
         return;
       string str = obj1.FullPath;
-      if (str.EndsWith(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16134)))
+			if (str.EndsWith("/"))
       {
-        int length = str.LastIndexOf(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16146));
+				int length = str.LastIndexOf("/");
         if (length != -1)
           str = str.Substring(0, length);
       }
@@ -509,28 +505,28 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void H13R1k6g2K([In] ComponentRecord obj0)
     {
-      if (StrategyComponentManager.L7oR4xlqNi == null)
-        return;
-      StrategyComponentManager.L7oR4xlqNi(new ComponentEventArgs(obj0));
+//      if (StrategyComponentManager.L7oR4xlqNi == null)
+//        return;
+//      StrategyComponentManager.L7oR4xlqNi(new ComponentEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void IP7RCltgOJ([In] ComponentRecord obj0)
     {
-      if (StrategyComponentManager.RBMRJwDgsx == null)
-        return;
-      StrategyComponentManager.RBMRJwDgsx(new ComponentEventArgs(obj0));
+//      if (StrategyComponentManager.RBMRJwDgsx == null)
+//        return;
+//      StrategyComponentManager.RBMRJwDgsx(new ComponentEventArgs(obj0));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private static void TXQRKdObj1([In] ComponentRecord obj0)
     {
-      if (StrategyComponentManager.GvhR0aa8Qx == null)
-        return;
-      StrategyComponentManager.GvhR0aa8Qx(new ComponentEventArgs(obj0));
+//      if (StrategyComponentManager.GvhR0aa8Qx == null)
+//        return;
+//      StrategyComponentManager.GvhR0aa8Qx(new ComponentEventArgs(obj0));
     }
   }
 }

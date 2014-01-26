@@ -1,23 +1,13 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
 	public class ProviderEventArgs : EventArgs
 	{
-		private IProvider provider;
-
-		public IProvider Provider
-		{
-			get
-			{
-				return this.provider; 
-			}
-		}
-
+		public IProvider Provider { get; private set; }
 		public ProviderEventArgs(IProvider provider) : base()
 		{
-			this.provider = provider;
+			this.Provider = provider;
 		}
 	}
 }

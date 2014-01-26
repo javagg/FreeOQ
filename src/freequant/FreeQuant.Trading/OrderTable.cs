@@ -12,7 +12,7 @@ namespace FreeQuant.Trading
 
     public bool IsSynchronized
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Nu5iGXwNr9.IsSynchronized;
       }
@@ -20,7 +20,7 @@ namespace FreeQuant.Trading
 
     public int Count
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Nu5iGXwNr9.Count;
       }
@@ -28,7 +28,7 @@ namespace FreeQuant.Trading
 
     public object SyncRoot
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.Nu5iGXwNr9.SyncRoot;
       }
@@ -36,7 +36,7 @@ namespace FreeQuant.Trading
 
     public NamedOrderTable this[Instrument instrument]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         if (!this.Nu5iGXwNr9.ContainsKey((object) instrument))
           this.Nu5iGXwNr9.Add((object) instrument, (object) new NamedOrderTable());
@@ -46,28 +46,25 @@ namespace FreeQuant.Trading
 
     public SingleOrder this[Instrument instrument, string name]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return (this.Nu5iGXwNr9[(object) instrument] as NamedOrderTable)[name];
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OrderTable()
+    
+		public OrderTable():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Nu5iGXwNr9 = new Hashtable();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void CopyTo(Array array, int index)
     {
       this.Nu5iGXwNr9.CopyTo(array, index);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public IEnumerator GetEnumerator()
     {
       ArrayList arrayList = new ArrayList();
@@ -79,7 +76,7 @@ namespace FreeQuant.Trading
       return arrayList.GetEnumerator();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Add(Instrument instrument, string name, SingleOrder order)
     {
       NamedOrderTable namedOrderTable;
@@ -95,7 +92,7 @@ namespace FreeQuant.Trading
       namedOrderTable.vxbiSOygU5(name, order);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Clear()
     {
       this.Nu5iGXwNr9.Clear();

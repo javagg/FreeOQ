@@ -38,7 +38,7 @@ namespace FreeQuant.Data
 
 		public override ISeriesObject NewInstance()
 		{
-			return (ISeriesObject)new Daily();
+			return new Daily();
 		}
 
 		public override void WriteTo(BinaryWriter writer)
@@ -55,7 +55,7 @@ namespace FreeQuant.Data
 
 		public override object Clone()
 		{
-			return (object)new Daily(this);
+			return new Daily(this);
 		}
 	}
 }

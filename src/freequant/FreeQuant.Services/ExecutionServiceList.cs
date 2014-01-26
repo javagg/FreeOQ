@@ -2,7 +2,7 @@ namespace FreeQuant.Services
 {
 	public class ExecutionServiceList : ServiceList
 	{
-		public IExecutionService this [string name]
+		public IExecutionService this[string name]
 		{
 			get
 			{
@@ -10,7 +10,7 @@ namespace FreeQuant.Services
 			}
 		}
 
-		public IExecutionService this [byte id]
+		public IExecutionService this[byte id]
 		{
 			get
 			{

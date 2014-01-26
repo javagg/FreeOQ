@@ -76,11 +76,11 @@ namespace FreeQuant.Neural
 
     public string Name
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.name;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.name = value;
       }
@@ -102,7 +102,7 @@ namespace FreeQuant.Neural
       this.weights.Add((object) new TNeuralWeight(Neuron));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual void Disconnect(TNeuron Neuron)
     {
       foreach (TNeuralWeight tneuralWeight in this.weights)
@@ -172,7 +172,7 @@ namespace FreeQuant.Neural
       return tneuralWeight1;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public TNeuralWeight GetMaxWeight()
     {
       if (this.weights.Count == 0)

@@ -12,13 +12,13 @@ namespace FreeQuant.Trading
     public const string GUID = "{D779BA8E-C0CA-44cf-8745-99105365882F}";
 
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder EmitSignal(Signal signal)
     {
       return this.Strategy.BgvpSPpUAD(signal);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder LongExit(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -33,13 +33,13 @@ namespace FreeQuant.Trading
       return this.Strategy.BgvpSPpUAD(signal);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder LongExit(Instrument instrument)
     {
-      return this.LongExit(instrument, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16412) + this.Strategy.Name);
+      return this.LongExit(instrument,  this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder ShortExit(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -54,13 +54,13 @@ namespace FreeQuant.Trading
       return this.Strategy.BgvpSPpUAD(signal);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder ShortExit(Instrument instrument)
     {
-      return this.ShortExit(instrument, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16434) + this.Strategy.Name);
+      return this.ShortExit(instrument, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder LongExit(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -77,13 +77,13 @@ namespace FreeQuant.Trading
       return this.Strategy.BgvpSPpUAD(signal);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder LongExit(Instrument instrument, double price)
     {
-      return this.LongExit(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16458) + this.Strategy.Name);
+      return this.LongExit(instrument, price, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder ShortExit(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -100,13 +100,13 @@ namespace FreeQuant.Trading
       return this.Strategy.BgvpSPpUAD(signal);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder ShortExit(Instrument instrument, double price)
     {
-      return this.ShortExit(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16480) + this.Strategy.Name);
+      return this.ShortExit(instrument, price, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder LongExit(Instrument instrument, FillOnBarMode mode, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -118,13 +118,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder LongExit(Instrument instrument, FillOnBarMode mode)
     {
-      return this.LongExit(instrument, mode, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16504) + this.Strategy.Name);
+      return this.LongExit(instrument, mode,  this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder ShortExit(Instrument instrument, FillOnBarMode mode, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -136,13 +136,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder ShortExit(Instrument instrument, FillOnBarMode mode)
     {
-      return this.ShortExit(instrument, mode, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16526) + this.Strategy.Name);
+      return this.ShortExit(instrument, mode, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Buy(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -151,13 +151,13 @@ namespace FreeQuant.Trading
         return this.Strategy.BgvpSPpUAD(new Signal(Clock.Now, ComponentType.CrossExit, SignalType.Market, SignalSide.Buy, instrument, text));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Buy(Instrument instrument)
     {
-      return this.Buy(instrument, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16550) + this.Strategy.Name);
+      return this.Buy(instrument, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Buy(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -169,13 +169,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Buy(Instrument instrument, double price)
     {
-      return this.Buy(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16562) + this.Strategy.Name);
+			return this.Buy(instrument, price, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Buy(Instrument instrument, FillOnBarMode mode, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -187,13 +187,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Buy(Instrument instrument, FillOnBarMode mode)
     {
-      return this.Buy(instrument, mode, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16574) + this.Strategy.Name);
+      return this.Buy(instrument, mode, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyLimit(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -204,13 +204,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyLimit(Instrument instrument, double price)
     {
-      return this.BuyLimit(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16586) + this.Strategy.Name);
+      return this.BuyLimit(instrument, price,  this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyStop(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -221,13 +221,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyStop(Instrument instrument, double price)
     {
-      return this.BuyStop(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16608) + this.Strategy.Name);
+      return this.BuyStop(instrument, price,  this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyStopLimit(Instrument instrument, double stopPrice, double limitPrice, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -239,13 +239,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyStopLimit(Instrument instrument, double stopPrice, double limitPrice)
     {
-      return this.BuyStopLimit(instrument, stopPrice, limitPrice, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16628) + this.Strategy.Name);
+      return this.BuyStopLimit(instrument, stopPrice, limitPrice, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyTrailingStop(Instrument instrument, double delta, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -256,13 +256,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder BuyTrailingStop(Instrument instrument, double delta)
     {
-      return this.BuyTrailingStop(instrument, delta, string.Format(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16658), (object) this.Strategy.Name));
+			return this.BuyTrailingStop(instrument, delta, string.Format("dffs", (object) this.Strategy.Name));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Sell(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -271,13 +271,13 @@ namespace FreeQuant.Trading
         return this.Strategy.BgvpSPpUAD(new Signal(Clock.Now, ComponentType.CrossExit, SignalType.Market, SignalSide.Sell, instrument, text));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Sell(Instrument instrument)
     {
-      return this.Sell(instrument, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16700) + this.Strategy.Name);
+      return this.Sell(instrument, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Sell(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -289,13 +289,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Sell(Instrument instrument, double price)
     {
-      return this.Sell(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16714) + this.Strategy.Name);
+      return this.Sell(instrument, price, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Sell(Instrument instrument, FillOnBarMode mode, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -307,13 +307,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder Sell(Instrument instrument, FillOnBarMode mode)
     {
-      return this.Sell(instrument, mode, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16728) + this.Strategy.Name);
+      return this.Sell(instrument, mode, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellLimit(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -324,13 +324,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellLimit(Instrument instrument, double price)
     {
-      return this.SellLimit(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16742) + this.Strategy.Name);
+			return this.SellLimit(instrument, price, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellStop(Instrument instrument, double price, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -341,13 +341,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellStop(Instrument instrument, double price)
     {
-      return this.SellStop(instrument, price, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16766) + this.Strategy.Name);
+			return this.SellStop(instrument, price, this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellStopLimit(Instrument instrument, double stopPrice, double limitPrice, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -359,13 +359,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellStopLimit(Instrument instrument, double stopPrice, double limitPrice)
     {
-      return this.SellStopLimit(instrument, stopPrice, limitPrice, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16788) + this.Strategy.Name);
+      return this.SellStopLimit(instrument, stopPrice, limitPrice,  this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellTrailingStop(Instrument instrument, double delta, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -376,13 +376,13 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellTrailingStop(Instrument instrument, double delta)
     {
-      return this.SellTrailingStop(instrument, delta, string.Format(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16820), (object) this.Strategy.Name));
+			return this.SellTrailingStop(instrument, delta, string.Format("dfdfs", (object) this.Strategy.Name));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellShort(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -391,13 +391,13 @@ namespace FreeQuant.Trading
         return this.Strategy.BgvpSPpUAD(new Signal(Clock.Now, ComponentType.CrossExit, SignalType.Market, SignalSide.SellShort, instrument, text));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellShort(Instrument instrument)
     {
-      return this.SellShort(instrument, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16864) + this.Strategy.Name);
+      return this.SellShort(instrument,  this.Strategy.Name);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellShort(Instrument instrument, FillOnBarMode mode, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
@@ -409,10 +409,10 @@ namespace FreeQuant.Trading
       });
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public virtual SingleOrder SellShort(Instrument instrument, FillOnBarMode mode)
     {
-      return this.Sell(instrument, mode, USaG3GpjZagj1iVdv4u.Y4misFk9D9(16888) + this.Strategy.Name);
+      return this.Sell(instrument, mode,  this.Strategy.Name);
     }
   }
 }

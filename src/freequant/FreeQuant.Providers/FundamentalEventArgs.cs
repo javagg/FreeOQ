@@ -5,20 +5,12 @@ namespace FreeQuant.Providers
 {
 	public class FundamentalEventArgs : IntradayEventArgs
 	{
-		private Fundamental fundamental;
+		public Fundamental Fundamental { get; private set; }
 
-		public Fundamental Fundamental
+		public FundamentalEventArgs(Fundamental fundamental, IFIXInstrument instrument, IMarketDataProvider provider) 
+			: base(instrument, provider)
 		{
-			get
-			{
-				return this.fundamental;
-			}
-		}
-
-		public FundamentalEventArgs(Fundamental fundamental, IFIXInstrument instrument, IMarketDataProvider provider) : base(instrument, provider)
-		{
-
-			this.fundamental = fundamental; 
+			this.Fundamental = fundamental; 
 		}
 	}
 }

@@ -11,11 +11,11 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public MetaStrategyBase MetaStrategyBase
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.kwrpUuwg4i;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] internal set
+      internal set
       {
         if (this.kwrpUuwg4i != null)
           this.Disconnect();
@@ -29,21 +29,18 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public Portfolio Portfolio
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return this.kwrpUuwg4i.Portfolio;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MetaStrategyBaseComponent()
+   
+		public MetaStrategyBaseComponent():base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+   
     public virtual void OnPortfolioValueChanged(Portfolio portfolio)
     {
     }

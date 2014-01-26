@@ -17,7 +17,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public DoubleSeries Series
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.nKliQLK5MZ;
       }
@@ -26,7 +26,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public PositionSide Side
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fSide;
       }
@@ -35,7 +35,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public override Instrument Instrument
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fInstrument;
       }
@@ -44,7 +44,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public double FillPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fFillPrice;
       }
@@ -53,7 +53,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public double StopPrice
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fStopPrice;
       }
@@ -62,7 +62,7 @@ namespace FreeQuant.Trading
     [Browsable(false)]
     public bool Connected
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.AF7iOty7LR;
       }
@@ -70,11 +70,11 @@ namespace FreeQuant.Trading
 
     public StopFillMode FillMode
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fFillMode;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fFillMode = value;
       }
@@ -82,12 +82,9 @@ namespace FreeQuant.Trading
 
     public event StopEventHandler StatusChanged;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public ATSStop(Position position, double level, StopType type, StopMode mode)
-    {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
+			:base(){
       this.fPosition = position;
       this.fInstrument = position.Instrument;
       this.fQty = position.Qty;
@@ -106,12 +103,9 @@ namespace FreeQuant.Trading
       this.fcqiWXKbqW();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ATSStop(Position position, DateTime time)
+    
+		public ATSStop(Position position, DateTime time):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fPosition = position;
       this.fInstrument = position.Instrument;
       this.fQty = position.Qty;
@@ -128,12 +122,9 @@ namespace FreeQuant.Trading
       Clock.AddReminder(new ReminderEventHandler(this.tQYi7Nff5A), this.fCompletionTime, (object) null);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public ATSStop(Position position, double price)
+    
+		public ATSStop(Position position, double price):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.fPosition = position;
       this.fInstrument = position.Instrument;
       this.fQty = position.Qty;
@@ -152,7 +143,7 @@ namespace FreeQuant.Trading
       this.fcqiWXKbqW();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Cancel()
     {
       if (this.fStatus != StopStatus.Active)
@@ -164,7 +155,7 @@ namespace FreeQuant.Trading
       this.Lf6iiLBYf9(StopStatus.Canceled);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private double lkZijZtYnj()
     {
       this.fInitPrice = this.fTrailPrice;
@@ -178,7 +169,7 @@ namespace FreeQuant.Trading
             case PositionSide.Short:
               return this.fTrailPrice + Math.Abs(this.fLevel);
             default:
-              throw new ArgumentException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16214) + (object) this.fPosition.Side);
+							throw new ArgumentException(this.fPosition.Side.ToString());
           }
         case StopMode.Percent:
           switch (this.fPosition.Side)
@@ -188,20 +179,20 @@ namespace FreeQuant.Trading
             case PositionSide.Short:
               return this.fTrailPrice + Math.Abs(this.fTrailPrice * this.fLevel);
             default:
-              throw new ArgumentException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16266) + (object) this.fPosition.Side);
+							throw new ArgumentException(this.fPosition.Side.ToString());
           }
         default:
-          throw new ArgumentException(USaG3GpjZagj1iVdv4u.Y4misFk9D9(16318) + (object) this.fMode);
+					throw new ArgumentException(this.fMode.ToString());
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void fcqiWXKbqW()
     {
       this.AF7iOty7LR = true;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Disconnect()
     {
       if (this.Type == StopType.Time)
@@ -210,7 +201,7 @@ namespace FreeQuant.Trading
         this.AF7iOty7LR = false;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void oEtiRP16ys()
     {
       if (this.fCurrPrice == 0.0)
@@ -251,7 +242,7 @@ namespace FreeQuant.Trading
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnPositionClosed(Position position)
     {
       if (position != this.fPosition)
@@ -260,7 +251,7 @@ namespace FreeQuant.Trading
       this.Lf6iiLBYf9(StopStatus.Canceled);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnNewBar(Bar bar)
     {
       if (this.fTraceOnBar && (this.fFilterBarSize < 0L || this.fFilterBarSize == bar.Size && this.fFilterBarType == BarType.Time))
@@ -305,7 +296,7 @@ namespace FreeQuant.Trading
       this.nKliQLK5MZ.Add(bar.DateTime, this.fStopPrice);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnNewBarOpen(Bar bar)
     {
       if (!this.fTraceOnBar || !this.fTraceOnBarOpen || this.fFilterBarSize >= 0L && (this.fFilterBarSize != bar.Size || this.fFilterBarType != BarType.Time))
@@ -317,7 +308,7 @@ namespace FreeQuant.Trading
       this.oEtiRP16ys();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnNewTrade(Trade trade)
     {
       if (!this.fTraceOnTrade)
@@ -328,7 +319,7 @@ namespace FreeQuant.Trading
       this.oEtiRP16ys();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void OnNewQuote(Quote quote)
     {
       if (!this.fTraceOnQuote)
@@ -347,7 +338,7 @@ namespace FreeQuant.Trading
       this.oEtiRP16ys();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void Lf6iiLBYf9([In] StopStatus obj0)
     {
       this.fStatus = obj0;
@@ -357,19 +348,19 @@ namespace FreeQuant.Trading
       this.fZIiHsKOSJ();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void tQYi7Nff5A([In] ReminderEventArgs obj0)
     {
       this.fStopPrice = this.fInstrument.Price();
       this.Lf6iiLBYf9(StopStatus.Executed);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private void fZIiHsKOSJ()
     {
-      if (this.xNwiUt6aan == null)
-        return;
-      this.xNwiUt6aan(new StopEventArgs((IStop) this));
+//      if (this.xNwiUt6aan == null)
+//        return;
+//      this.xNwiUt6aan(new StopEventArgs((IStop) this));
     }
   }
 }

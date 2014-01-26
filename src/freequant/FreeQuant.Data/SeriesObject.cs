@@ -3,7 +3,7 @@ using System.IO;
 
 namespace FreeQuant.Data
 {
-	public abstract class SeriesObject : ISeriesObject, ICloneable
+	public abstract class SeriesObject : ISeriesObject
 	{
 		protected DateTime datetime;
 
@@ -31,7 +31,6 @@ namespace FreeQuant.Data
 		}
 
 		public abstract ISeriesObject NewInstance();
-
 		public abstract object Clone();
 	}
 }

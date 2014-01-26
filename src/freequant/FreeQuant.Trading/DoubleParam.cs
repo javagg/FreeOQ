@@ -10,7 +10,7 @@ namespace FreeQuant.Trading
 
     public double this[Instrument instrument]
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         object obj = this.yvNRbXLeMW[(object) instrument];
         if (obj != null)
@@ -18,19 +18,16 @@ namespace FreeQuant.Trading
         else
           return 0.0;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.yvNRbXLeMW[(object) instrument] = (object) value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public DoubleParam()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
       this.yvNRbXLeMW = new Hashtable();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
     }
   }
 }

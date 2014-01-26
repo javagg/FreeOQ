@@ -14,6 +14,6 @@ namespace FreeQuant.FIX
 		CrossShort,
 		CrossShortExempt,
 		AsDefined,
-		Opposite,
+		Opposite
 	}
 }

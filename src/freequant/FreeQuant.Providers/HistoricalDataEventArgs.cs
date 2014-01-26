@@ -1,54 +1,21 @@
 using FreeQuant.FIX;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
 	public class HistoricalDataEventArgs : EventArgs
 	{
-		private string requestId;
-		private IFIXInstrument instrument;
-		private IHistoricalDataProvider provider;
-		private int dataLength;
-
-		public string RequestId
-		{
-			get
-			{
-				return this.requestId; 
-			}
-		}
-
-		public IFIXInstrument Instrument
-		{
-			get
-			{
-				return this.instrument; 
-			}
-		}
-
-		public IHistoricalDataProvider Provider
-		{
-			get
-			{
-				return this.provider; 
-			}
-		}
-
-		public int DataLength
-		{
-			get
-			{
-				return this.dataLength; 
-			}
-		}
+		public string RequestId { get; private set; }
+		public IFIXInstrument Instrument { get; private set; }
+		public IHistoricalDataProvider Provider { get; private set; }
+		public int DataLength { get; private set; }
 
 		public HistoricalDataEventArgs(string requestId, IFIXInstrument instrument, IHistoricalDataProvider provider, int dataLength) : base()
 		{
-			this.requestId = requestId;
-			this.instrument = instrument;
-			this.provider = provider;
-			this.dataLength = dataLength;
+			this.RequestId = requestId;
+			this.Instrument = instrument;
+			this.Provider = provider;
+			this.DataLength = dataLength;
 		}
 	}
 }

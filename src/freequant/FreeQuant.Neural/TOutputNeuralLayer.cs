@@ -9,21 +9,15 @@ namespace FreeQuant.Neural
     private double[] DLIlOx3mN;
     private EActivationMode AGFR7NSDt;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TOutputNeuralLayer()
+    
+		public TOutputNeuralLayer():base()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.AGFR7NSDt = EActivationMode.Approximation;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TOutputNeuralLayer(int NNeuron, EActivationMode Mode)
+    
+		public TOutputNeuralLayer(int NNeuron, EActivationMode Mode):base()
     {
-      dYYlo5mOFCQvCLWITo.LnsUthkzmPDgB();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.AGFR7NSDt = Mode;
       for (int index = 0; index < NNeuron; ++index)
         this.fNeuron.Add((object) new TOutputNeuron(this.AGFR7NSDt));
@@ -31,7 +25,7 @@ namespace FreeQuant.Neural
       this.fNNeuron = NNeuron;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public double[] GetOutput()
     {
       for (int index = 0; index < this.fNNeuron; ++index)
@@ -39,7 +33,7 @@ namespace FreeQuant.Neural
       return this.DLIlOx3mN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void FeedError(double[] Error)
     {
       for (int index = 0; index < this.fNNeuron; ++index)

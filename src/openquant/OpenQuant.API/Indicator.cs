@@ -1,6 +1,5 @@
 ﻿using FreeQuant.Indicators;
 using FreeQuant.Series;
-using FreeQuant.Indicators;
 using System;
 using System.ComponentModel;
 using System.Drawing;

@@ -10,18 +10,15 @@ namespace FreeQuant.Trading
 
     public StrategyBase Strategy
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.sOgRcFoa0f;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StrategyEventArgs(StrategyBase strategy)
+    
+		public StrategyEventArgs(StrategyBase strategy):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.sOgRcFoa0f = strategy;
     }
   }

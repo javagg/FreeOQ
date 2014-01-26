@@ -1,4 +1,6 @@
-﻿namespace OpenQuant.API
+﻿using FreeQuant.Providers;
+
+namespace OpenQuant.API
 {
   public class MarketDataProvider : Provider
   {

@@ -247,9 +247,9 @@ namespace OpenQuant.API
 			}
 		}
 
-		internal static RegressionDistanceMode Convert(RegressionDistanceMode mode)
-		{
-			return mode;
+//		internal static RegressionDistanceMode Convert(FreeQuant.Indicators.RegressionDistanceMode mode)
+//		{
+//			return mode;
 //			switch ((int)mode)
 //			{
 //				case 0:
@@ -259,9 +259,9 @@ namespace OpenQuant.API
 //				default:
 //					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
 //			}
-		}
+//		}
 
-//		internal static RegressionDistanceMode Convert(RegressionDistanceMode mode)
+//		internal static RegressionDistanceMode Convert(FreeQuant.Indicators.RegressionDistanceMode mode)
 //		{
 //			switch (mode)
 //			{

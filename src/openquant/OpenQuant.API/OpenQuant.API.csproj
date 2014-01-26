@@ -292,5 +292,53 @@
       <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
       <Name>FreeQuant.Series</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Execution\FreeQuant.Execution.csproj">
+      <Project>{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}</Project>
+      <Name>FreeQuant.Execution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Indicators\FreeQuant.Indicators.csproj">
+      <Project>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</Project>
+      <Name>FreeQuant.Indicators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Trading\FreeQuant.Trading.csproj">
+      <Project>{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}</Project>
+      <Name>FreeQuant.Trading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Testing\FreeQuant.Testing.csproj">
+      <Project>{13B7496A-0CBA-43A2-A4D0-506DAEE9205B}</Project>
+      <Name>FreeQuant.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Simulation\FreeQuant.Simulation.csproj">
+      <Project>{B59E197F-3529-4D45-BA90-2A7AE0962B5B}</Project>
+      <Name>FreeQuant.Simulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Quant\FreeQuant.Quant.csproj">
+      <Project>{9CC9613E-926F-4E54-B54B-FFE62B7CB25A}</Project>
+      <Name>FreeQuant.Quant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.FIXData\FreeQuant.FIXData.csproj">
+      <Project>{E60BC15E-85C1-438A-81CB-110898785B92}</Project>
+      <Name>FreeQuant.FIXData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

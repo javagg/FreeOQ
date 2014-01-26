@@ -1,24 +1,15 @@
 using FreeQuant;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Providers
 {
 	public class ProviderErrorEventArgs : EventArgs
 	{
-		private ProviderError error;
-
-		public ProviderError Error
-		{
-			get
-			{
-				return this.error; 
-			}
-		}
+		public ProviderError Error { get; private set; }
 
 		public ProviderErrorEventArgs(ProviderError error) : base()
 		{
-			this.error = error;
+			this.Error = error;
 		}
 
 		public ProviderErrorEventArgs(DateTime datetime, IProvider provider, int id, int code, string message)

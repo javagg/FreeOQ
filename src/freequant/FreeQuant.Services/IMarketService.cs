@@ -6,9 +6,7 @@ namespace FreeQuant.Services
 	{
 		event FIXLogonEventHandler Logon;
 		event FIXLogoutEventHandler Logout;
-
 		void Send(FIXLogon message);
-
 		void Send(FIXLogout message);
 	}
 }

@@ -1,18 +1,11 @@
-﻿// Type: SmartQuant.Indicators.OSC
-// Assembly: SmartQuant.Indicators, Version=1.0.5036.28340, Culture=neutral, PublicKeyToken=null
-// MVID: 31E147DE-EF63-4F0C-B049-23C3662CE212
-// Assembly location: E:\OpenQuant\Framework\bin\SmartQuant.Indicators.dll
-
-using JgR8Nw4Dcm7J7u8IfB;
-using ko1tl8f5ZvqOYr69tl;
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 
-namespace SmartQuant.Indicators
+namespace FreeQuant.Indicators
 {
   [Serializable]
   public class OSC : Indicator
@@ -26,11 +19,11 @@ namespace SmartQuant.Indicators
     [Category("Parameters")]
     public BarData Option
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fOption;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fOption = value;
         this.Init();
@@ -42,11 +35,11 @@ namespace SmartQuant.Indicators
     [Description("")]
     public int Length1
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLength1;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLength1 = value;
         this.Init();
@@ -58,50 +51,41 @@ namespace SmartQuant.Indicators
     [Category("Parameters")]
     public int Length2
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.fLength2;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.fLength2 = value;
         this.Init();
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OSC()
+    
+		public OSC(): base()
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength1 = 14;
       this.fLength2 = 20;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OSC(TimeSeries input, int length1, int length2, BarData option)
+    
+		public OSC(TimeSeries input, int length1, int length2, BarData option)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength1 = 14;
       this.fLength2 = 20;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength1 = length1;
       this.fLength2 = length2;
       this.fOption = option;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OSC(TimeSeries input, int length1, int length2, BarData option, Color color)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input) {
       this.fLength1 = 14;
       this.fLength2 = 20;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength1 = length1;
       this.fLength2 = length2;
       this.fOption = option;
@@ -109,14 +93,11 @@ namespace SmartQuant.Indicators
       this.Color = color;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public OSC(TimeSeries input, int length1, int length2, BarData option, Color color, EDrawStyle drawStyle)
-    {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
+			: base(input)  {
       this.fLength1 = 14;
       this.fLength2 = 20;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength1 = length1;
       this.fLength2 = length2;
       this.fOption = option;
@@ -125,57 +106,51 @@ namespace SmartQuant.Indicators
       this.DrawStyle = drawStyle;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OSC(TimeSeries input, int length1, int length2)
+    
+		public OSC(TimeSeries input, int length1, int length2)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength1 = 14;
       this.fLength2 = 20;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength1 = length1;
       this.fLength2 = length2;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public OSC(TimeSeries input, int length1, int length2, Color color)
+    
+		public OSC(TimeSeries input, int length1, int length2, Color color)	: base(input) 
     {
-      RMXbNVLKIIh1UeJavt.ngyLmRPzO9SGQ();
       this.fLength1 = 14;
       this.fLength2 = 20;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(input);
       this.fLength1 = length1;
       this.fLength2 = length2;
       this.Color = color;
       this.Init();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Init()
     {
-      this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(4988) + (object) this.fLength1 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5002) + (string) (object) this.fLength2 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5010);
-      this.fTitle = GXPBSPblRhtUOANrS4.LSuAVoYjy(5016);
+			this.Name = "OSC"+ (object) this.fLength1 + (string) (object) this.fLength2;
+			this.Title = "OSC";
       this.Clear();
       this.fCalculate = true;
       if (this.fInput == null)
         return;
       if (this.fInput is BarSeries)
-        this.fName = GXPBSPblRhtUOANrS4.LSuAVoYjy(5040) + (object) this.fLength1 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5054) + (string) (object) this.fLength2 + GXPBSPblRhtUOANrS4.LSuAVoYjy(5062) + (string) (object) this.fOption + GXPBSPblRhtUOANrS4.LSuAVoYjy(5070);
-      if (TimeSeries.fNameOption != ENameOption.Long)
+				this.Name = "OSC"+ (object) this.fLength1 + (string) (object) this.fLength2 + (string) (object) this.fOption;
+			if (TimeSeries.nameOption != ENameOption.Long)
         return;
-      this.fName = this.fInput.Name + GXPBSPblRhtUOANrS4.LSuAVoYjy(5076) + this.fName;
+      this.Name = this.fInput.Name + this.Name;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     protected override void Calculate(int index)
     {
       double Data = OSC.Value(this.fInput, index, this.fLength1, this.fLength2, this.fOption);
       this.Add(this.fInput.GetDateTime(index), Data);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(TimeSeries input, int index, int length1, int length2, BarData option)
     {
       if (index >= length1 - 1 + input.FirstIndex && index >= length2 - 1 + input.FirstIndex)
@@ -184,16 +159,16 @@ namespace SmartQuant.Indicators
         return double.NaN;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static double Value(DoubleSeries input, int index, int length1, int length2)
     {
       return OSC.Value((TimeSeries) input, index, length1, length2, BarData.Close);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void OnInputItemAdded(object sender, DateTimeEventArgs EventArgs)
     {
-      if (!this.fMonitored)
+      if (!this.Monitored)
         return;
       int index = this.fInput.GetIndex(EventArgs.DateTime);
       if (index == -1)

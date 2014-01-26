@@ -10,7 +10,7 @@ namespace FreeQuant.Trading
 
     public Exception Exception
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.lfjir9QWdQ;
       }
@@ -18,22 +18,19 @@ namespace FreeQuant.Trading
 
     public bool Ignore
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return this.PMmiI44IpQ;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.PMmiI44IpQ = value;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public MetaStrategyErrorEventArgs(Exception exception)
+    
+		public MetaStrategyErrorEventArgs(Exception exception):base()
     {
-      oVoTkGp5q2gt8BRDXu5.g6GSKyfzPYiPV();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.lfjir9QWdQ = exception;
       this.PMmiI44IpQ = false;
     }

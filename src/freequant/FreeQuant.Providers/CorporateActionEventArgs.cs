@@ -5,19 +5,12 @@ namespace FreeQuant.Providers
 {
 	public class CorporateActionEventArgs : IntradayEventArgs
 	{
-		private CorporateAction action;
+		public CorporateAction CorporateAction { get; private set; }
 
-		public CorporateAction CorporateAction
+		public CorporateActionEventArgs(CorporateAction corporateAction, IFIXInstrument instrument, IMarketDataProvider provider) 
+			: base(instrument, provider)
 		{
-			get
-			{
-				return this.action;
-			}
-		}
-
-		public CorporateActionEventArgs(CorporateAction corporateAction, IFIXInstrument instrument, IMarketDataProvider provider) : base(instrument, provider)
-		{
-			this.action = corporateAction; 
+			this.CorporateAction = corporateAction; 
 		}
 	}
 }
