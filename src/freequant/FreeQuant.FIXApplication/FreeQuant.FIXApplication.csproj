@@ -30,6 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing.Design" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +57,10 @@
     <Compile Include="FIXMarketDataIncrementalRefreshEventHandler.cs" />
     <Compile Include="FIXLogoutEventHandler.cs" />
     <Compile Include="FIXLogonEventHandler.cs" />
+    <Compile Include="QuickFIX44Application.cs" />
+    <Compile Include="QuickFIX44Provider.cs" />
+    <Compile Include="QuickFIX44CommonApplication.cs" />
+    <Compile Include="QuickFIX44CommonProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -73,6 +79,10 @@
     <ProjectReference Include="..\FreeQuant.Providers\FreeQuant.Providers.csproj">
       <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
       <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\deps\QuickFIXn\QuickFix.csproj">
+      <Project>{D67079DA-6C49-48B2-93AB-1C3E879F5A0B}</Project>
+      <Name>QuickFix</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

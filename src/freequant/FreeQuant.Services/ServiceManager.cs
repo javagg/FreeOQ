@@ -72,7 +72,7 @@ namespace FreeQuant.Services
 		{
 //			if (Framework.Installation.Edition == Edition.Research && (int)service.Id != 1)
 //				return;
-			ServiceManager.services.jLl6RmfZp(service);
+			ServiceManager.services.Add(service);
 			ServiceManager.HlUrceJWW(service);
 			service.StatusChanged += new EventHandler(ServiceManager.CjQS2cYWM);
 			service.Error += new ServiceErrorEventHandler(ServiceManager.DXXHdAxP1);
@@ -85,7 +85,7 @@ namespace FreeQuant.Services
 			if (service is IExecutionService)
 			{
 				IExecutionService executionService = service as IExecutionService;
-				ServiceManager.executionServices.jLl6RmfZp((IService)executionService);
+				ServiceManager.executionServices.Add((IService)executionService);
 				executionService.NewOrderSingle += new FIXNewOrderSingleEventHandler(ServiceManager.nKWRNT2TM);
 				executionService.OrderCancelRequest += new FIXOrderCancelRequestEventHandler(ServiceManager.NdSXrHt2W);
 				executionService.OrderCancelReplaceRequest += new FIXOrderCancelReplaceRequestEventHandler(ServiceManager.iHPj7xf9A);

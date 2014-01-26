@@ -1,7 +1,6 @@
 using FreeQuant.Data;
 using FreeQuant.Instruments;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Simulation
 {

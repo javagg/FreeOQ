@@ -7,7 +7,6 @@ namespace FreeQuant.Instruments
 {
   public class Pricer : IPricer
   {
-   
     public virtual double Price(Instrument instrument)
     {
       if (instrument.Trade.DateTime != DateTime.MinValue && instrument.Trade.DateTime >= instrument.Bar.DateTime)

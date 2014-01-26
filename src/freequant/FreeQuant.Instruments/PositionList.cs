@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
@@ -28,7 +27,7 @@ namespace FreeQuant.Instruments
     {
        get
       {
-        return this.positions[(object) name] as Position;
+        return this.positions[name] as Position;
       }
     }
 
@@ -36,7 +35,7 @@ namespace FreeQuant.Instruments
     {
        get
       {
-        return this.positions[(object) instrument.Symbol] as Position;
+        return this.positions[instrument.Symbol] as Position;
       }
     }
 
@@ -49,15 +48,15 @@ namespace FreeQuant.Instruments
     
     public void Add(Position position)
     {
-      if (this.positions.Contains((object) position.Name))
+      if (this.positions.Contains(position.Name))
 				throw new ApplicationException("fsfs" + position.Name);
-      this.positions.Add((object) position.Name, (object) position);
+      this.positions.Add(position.Name, position);
     }
 
     
     public void Remove(Position position)
     {
-      this.positions.Remove((object) position.Name);
+      this.positions.Remove(position.Name);
     }
 
     
@@ -75,19 +74,19 @@ namespace FreeQuant.Instruments
     
     public bool Contains(string name)
     {
-      return this.positions.Contains((object) name);
+      return this.positions.Contains(name);
     }
 
     
     public bool Contains(Instrument instrument)
     {
-      return this.positions.Contains((object) instrument.Symbol);
+      return this.positions.Contains(instrument.Symbol);
     }
 
     
     public bool Contains(Position position)
     {
-      return this.positions.ContainsValue((object) position);
+      return this.positions.ContainsValue(position);
     }
 
     
@@ -95,7 +94,7 @@ namespace FreeQuant.Instruments
     {
       Position[] positionArray = new Position[this.positions.Values.Count];
       this.positions.Values.CopyTo((Array) positionArray, 0);
-      return (ICollection) positionArray;
+      return positionArray;
     }
 
     
@@ -108,7 +107,7 @@ namespace FreeQuant.Instruments
     public override string ToString()
     {
       string str = "";
-      foreach (Position position in (IEnumerable) this.positions.Values)
+      foreach (Position position in this.positions.Values)
         str = str + position.ToString() + Environment.NewLine;
       return str;
     }

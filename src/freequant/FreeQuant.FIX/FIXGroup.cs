@@ -94,37 +94,37 @@ namespace FreeQuant.FIX
 
 		public void AddStringField(int tag, string value)
 		{
-			this.AddField((FIXField)new FIXStringField(tag, value));
+			this.AddField(new FIXStringField(tag, value));
 		}
 
 		public void AddCharField(int tag, char value)
 		{
-			this.AddField((FIXField)new FIXCharField(tag, value));
+			this.AddField(new FIXCharField(tag, value));
 		}
 
 		public void AddBoolField(int tag, bool value)
 		{
-			this.AddField((FIXField)new FIXBoolField(tag, value));
+			this.AddField(new FIXBoolField(tag, value));
 		}
 
 		public void AddIntField(int tag, int value)
 		{
-			this.AddField((FIXField)new FIXIntField(tag, value));
+			this.AddField(new FIXIntField(tag, value));
 		}
 
 		public void AddDoubleField(int tag, double value)
 		{
-			this.AddField((FIXField)new FIXDoubleField(tag, value));
+			this.AddField(new FIXDoubleField(tag, value));
 		}
 
 		public void AddDateTimeField(int tag, DateTime value)
 		{
-			this.AddField((FIXField)new FIXDateTimeField(tag, value));
+			this.AddField(new FIXDateTimeField(tag, value));
 		}
 
 		public void AddNumInGroupField(int tag, int value)
 		{
-			this.AddField((FIXField)new FIXNumInGroupField(tag, value));
+			this.AddField(new FIXNumInGroupField(tag, value));
 		}
 
 		public void AddFields(FIXGroup from)
@@ -169,12 +169,12 @@ namespace FreeQuant.FIX
 
 		public FIXDateTimeField GetDateTimeField(int tag)
 		{
-			return (FIXDateTimeField)this.GetField(tag);
+			return this.GetField(tag) as FIXDateTimeField;
 		}
 
 		public FIXNumInGroupField GetNumInGroupField(int tag)
 		{
-			return (FIXNumInGroupField)this.GetField(tag);
+			return this.GetField(tag) as FIXNumInGroupField;
 		}
 
 		public object GetValue(int tag)
@@ -183,7 +183,7 @@ namespace FreeQuant.FIX
 			if (field != null)
 				return field.GetValue();
 			else
-				return (object)null;
+				return null;
 		}
 
 		public bool GetBoolValue(int tag)

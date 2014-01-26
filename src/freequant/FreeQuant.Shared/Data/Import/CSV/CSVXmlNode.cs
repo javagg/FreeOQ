@@ -1,15 +1,8 @@
-﻿// Type: SmartQuant.Shared.Data.Import.CSV.CSVXmlNode
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Xml;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Import.CSV
+namespace FreeQuant.Shared.Data.Import.CSV
 {
   public class CSVXmlNode : CommonXmlNode
   {
@@ -20,7 +13,7 @@ namespace SmartQuant.Shared.Data.Import.CSV
 
     public CSVOptions Options
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
         return new CSVOptions()
         {
@@ -29,7 +22,7 @@ namespace SmartQuant.Shared.Data.Import.CSV
           CultureInfo = CultureInfo.CreateSpecificCulture(this.ReadAttribute(RNaihRhYEl0wUmAftnB.aYu7exFQKN(33244)))
         };
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
         this.AppendAttribute(RNaihRhYEl0wUmAftnB.aYu7exFQKN(33262), value.Separator.ToString());
         this.AppendAttribute(RNaihRhYEl0wUmAftnB.aYu7exFQKN(33284), value.HeaderLineCount.ToString());
@@ -37,7 +30,7 @@ namespace SmartQuant.Shared.Data.Import.CSV
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     private CSVXmlNode(XmlNode xmlNode)
     {
       eX4XcIhHpDXt70u2x3N.k8isAcYzkUOGF();
@@ -45,7 +38,7 @@ namespace SmartQuant.Shared.Data.Import.CSV
       base.\u002Ector(xmlNode);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public static explicit operator CSVXmlNode(XmlNode xmlNode)
     {
       return new CSVXmlNode(xmlNode);

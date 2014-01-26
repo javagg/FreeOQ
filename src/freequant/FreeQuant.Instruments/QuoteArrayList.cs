@@ -2,11 +2,10 @@ using FreeQuant.Data;
 using FreeQuant.Series;
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-	public class QuoteArrayList : ICollection, IEnumerable
+	public class QuoteArrayList : ICollection
 	{
 		private Hashtable quotes;
 

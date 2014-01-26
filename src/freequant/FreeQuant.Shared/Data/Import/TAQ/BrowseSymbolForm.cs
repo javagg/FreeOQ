@@ -1,11 +1,5 @@
-﻿// Type: SmartQuant.Shared.Data.Import.TAQ.BrowseSymbolForm
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using SmartQuant.FIX;
-using SmartQuant.Instruments;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -14,9 +8,8 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Import.TAQ
+namespace FreeQuant.Shared.Data.Import.TAQ
 {
   public class BrowseSymbolForm : Form
   {

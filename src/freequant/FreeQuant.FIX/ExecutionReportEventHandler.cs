@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.FIX
+namespace FreeQuant.FIX
 {
-  public delegate void ExecutionReportEventHandler(object sender, ExecutionReportEventArgs args);
+	public delegate void ExecutionReportEventHandler(object sender, ExecutionReportEventArgs args);
 }

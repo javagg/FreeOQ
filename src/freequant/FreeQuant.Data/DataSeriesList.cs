@@ -47,7 +47,7 @@ namespace FreeQuant.Data
 			}
 		}
 
-		public IDataSeries this [int index]
+		public IDataSeries this[int index]
 		{
 			get
 			{
@@ -59,7 +59,7 @@ namespace FreeQuant.Data
 			}
 		}
 
-		object IList.this [int index]
+		object IList.this[int index]
 		{
 			get
 			{

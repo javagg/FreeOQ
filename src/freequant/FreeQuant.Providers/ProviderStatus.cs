@@ -7,6 +7,6 @@ namespace FreeQuant.Providers
 		Connected,
 		LoggingIn,
 		LoggedIn,
-		Unknown,
+		Unknown
 	}
 }

@@ -20,19 +20,19 @@ namespace FreeQuant.FIX
 		{
 			switch (val)
 			{
-				case 1:
+				case CashDividend:
 					return "CashDividend";
-				case 2:
+				case StockDividend:
 					return "StockDividend";
-				case 3:
+				case Split:
 					return "Split";
-				case 4:
+				case RightsIssue:
 					return "RightsIssue";
-				case 5:
+				case Merger:
 					return "Merger";
-				case 6:
+				case Acquisition:
 					return "Acquisition";
-				case 7:
+				case SpinOff:
 					return "SpinOff";
 				default:
 					return "Not defined";

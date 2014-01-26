@@ -1,13 +1,5 @@
-﻿// Type: SmartQuant.Shared.Data.Import.NxCore.ImportForm
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using Dt5bTRSnuL0UjZKwy9;
-using SmartQuant.Instruments;
-using SmartQuant.Shared.Data.Import.TAQ;
-using sXnbXNj4xHlKa3OJTR;
+using FreeQuant.Instruments;
+using FreeQuant.Shared.Data.Import.TAQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +7,8 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Import.NxCore
+namespace FreeQuant.Shared.Data.Import.NxCore
 {
   public class ImportForm : Form
   {

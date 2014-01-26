@@ -4998,7 +4998,7 @@ namespace FreeQuant.FIX
 				case 7558:
 					return "ExpireSeconds";
 				default:
-					return "Not found" + (object)tag;
+					return "Not found" + tag;
 			}
 		}
 	}

@@ -4,37 +4,37 @@ namespace FreeQuant.FIX
 {
   public class PositionReport : FIXPositionReport
   {
-    public PosReqType PosReqType
+		new public PosReqType PosReqType
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return FIXPosReqType.FromFIX(base.PosReqType);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         base.PosReqType = FIXPosReqType.ToFIX(value);
       }
     }
 
-    public PosReqResult PosReqResult
+		new public PosReqResult PosReqResult
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return FIXPosReqResult.FromFIX(base.PosReqResult);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         base.PosReqResult = FIXPosReqResult.ToFIX(value);
       }
     }
 
-    public PutOrCall PutOrCall
+		new public PutOrCall PutOrCall
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+      get
       {
         return FIXPutOrCall.FromFIX(base.PutOrCall);
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+      set
       {
         base.PutOrCall = FIXPutOrCall.ToFIX(value);
       }

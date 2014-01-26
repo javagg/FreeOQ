@@ -4,7 +4,6 @@ namespace FreeQuant.FIX
 	{
 		public SecurityType(string val) : base(val)
 		{
-
 		}
 	}
 }

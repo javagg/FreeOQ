@@ -2956,7 +2956,7 @@ namespace FreeQuant.FIX
 				case 10103:
 					return FIXType.String;
 				default:
-					throw new ArgumentException("" + (object)tag);
+					throw new ArgumentException("No such tag: " + tag);
 			}
 		}
 	}

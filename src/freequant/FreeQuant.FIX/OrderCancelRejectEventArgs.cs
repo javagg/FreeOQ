@@ -1,37 +1,20 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+using System;
 
 namespace FreeQuant.FIX
 {
-  public class OrderCancelRejectEventArgs : EventArgs
-  {
-    private NewOrderSingle q7HQ2ja0mq;
-    private OrderCancelReject UJYQc8UigN;
+	public class OrderCancelRejectEventArgs : EventArgs
+	{
+		public NewOrderSingle Order { get; private set; }
+		public OrderCancelReject OrderCancelReject { get; private set; }
 
-    public NewOrderSingle Order
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.q7HQ2ja0mq;
-      }
-    }
+		public OrderCancelRejectEventArgs(NewOrderSingle order, OrderCancelReject reject) : base()
+		{
+			this.Order = order;
+			this.OrderCancelReject = reject;
+		}
 
-    public OrderCancelReject OrderCancelReject
-    {
-     get
-      {
-        return this.UJYQc8UigN;
-      }
-    }
-
-    public OrderCancelRejectEventArgs(NewOrderSingle order, OrderCancelReject reject) :base()
-    {
-      this.q7HQ2ja0mq = order;
-      this.UJYQc8UigN = reject;
-    }
-
-    public OrderCancelRejectEventArgs(OrderCancelReject reject): this((NewOrderSingle) null, reject)
-    {
-    }
-  }
+		public OrderCancelRejectEventArgs(OrderCancelReject reject) : this(null, reject)
+		{
+		}
+	}
 }

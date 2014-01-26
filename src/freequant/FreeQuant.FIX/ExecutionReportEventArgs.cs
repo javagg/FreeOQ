@@ -1,39 +1,20 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX
 {
-  public class ExecutionReportEventArgs : EventArgs
-  {
-    private NewOrderSingle KHOuJmbnBN;
-    private ExecutionReport A0NurZyR7T;
+	public class ExecutionReportEventArgs : EventArgs
+	{
+		public NewOrderSingle Order { get; private set; }
+		public ExecutionReport ExecutionReport{ get; private set; }
 
-    public NewOrderSingle Order
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.KHOuJmbnBN;
-      }
-    }
+		public ExecutionReportEventArgs(NewOrderSingle order, ExecutionReport report)
+		{
+ 			this.Order = order;
+			this.ExecutionReport = report;
+		}
 
-    public ExecutionReport ExecutionReport
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.A0NurZyR7T;
-      }
-    }
-
-    public ExecutionReportEventArgs(NewOrderSingle order, ExecutionReport report)
-    {
- 
-      this.KHOuJmbnBN = order;
-      this.A0NurZyR7T = report;
-    }
-
-    public ExecutionReportEventArgs(ExecutionReport report): this((NewOrderSingle) null, report)
-    {
-     
-    }
-  }
+		public ExecutionReportEventArgs(ExecutionReport report) : this(null, report)
+		{
+		}
+	}
 }

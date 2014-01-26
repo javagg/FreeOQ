@@ -1,12 +1,12 @@
 namespace FreeQuant.FIX
 {
-  public enum PosReqResult
-  {
-    ValidRequest,
-    InvalidOrUnsupportedRequest,
-    NoPositionsFound,
-    NotAuthorized,
-    RequestForPositionNotSupported,
-    Other,
-  }
+	public enum PosReqResult
+	{
+		ValidRequest,
+		InvalidOrUnsupportedRequest,
+		NoPositionsFound,
+		NotAuthorized,
+		RequestForPositionNotSupported,
+		Other
+	}
 }

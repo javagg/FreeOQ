@@ -8,19 +8,8 @@ namespace FreeQuant.Instruments
 {
 	public class Underlying : FIXGroup
 	{
-		private Instrument instrument;
 		//    [Editor(typeof (K87hpw9XvbU6vpD5hK), typeof (UITypeEditor))]
-		public Instrument Instrument
-		{
-			get
-			{
-				return this.instrument;
-			}
-			set
-			{
-				this.instrument = value;
-			}
-		}
+		public Instrument Instrument { get; set; }
 
 		[FIXField("318", EFieldOption.Optional)]
 		public string UnderlyingCurrency
@@ -134,21 +123,21 @@ namespace FreeQuant.Instruments
 		public Underlying(Instrument instrument) : base()
 		{
 
-			this.instrument = instrument;
+			this.Instrument = instrument;
 		}
 
 		public Underlying(string symbol) : base()
 		{
 
-			this.instrument = InstrumentManager.Instruments[symbol];
-			if (this.instrument == null)
+			this.Instrument = InstrumentManager.Instruments[symbol];
+			if (this.Instrument == null)
 				throw new ArgumentException("" + symbol);
 		}
 
 		public override string ToString()
 		{
-			if (this.instrument != null)
-				return this.instrument.Symbol;
+			if (this.Instrument != null)
+				return this.Instrument.Symbol;
 			else
 				return "fsdddd";
 		}

@@ -3,7 +3,6 @@ using FreeQuant.Data;
 using FreeQuant.File;
 using FreeQuant.Series;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {

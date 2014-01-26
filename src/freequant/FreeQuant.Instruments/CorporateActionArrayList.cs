@@ -33,15 +33,15 @@ namespace FreeQuant.Instruments
 			}
 		}
 
-		public CorporateActionArray this [Instrument instrument]
+		public CorporateActionArray this[Instrument instrument]
 		{
 			get
 			{
-				CorporateActionArray corporateActionArray = this.corporateActions[(object)instrument] as CorporateActionArray;
+				CorporateActionArray corporateActionArray = this.corporateActions[instrument] as CorporateActionArray;
 				if (corporateActionArray == null)
 				{
 					corporateActionArray = new CorporateActionArray();
-					this.corporateActions.Add((object)instrument, (object)corporateActionArray);
+					this.corporateActions.Add(instrument, corporateActionArray);
 				}
 				return corporateActionArray;
 			}
@@ -59,14 +59,14 @@ namespace FreeQuant.Instruments
 
 		public IEnumerator GetEnumerator()
 		{
-			return (IEnumerator)this.corporateActions.GetEnumerator();
+			return this.corporateActions.GetEnumerator();
 		}
 
 		public void Clear(bool dataOnly)
 		{
 			if (dataOnly)
 			{
-				foreach (DataArray dataArray in (IEnumerable) this.corporateActions.Values)
+				foreach (DataArray dataArray in this.corporateActions.Values)
 					dataArray.Clear();
 			}
 			else

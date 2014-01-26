@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.FIX
 {
 	public class NYSEIndustrySubGroup : FIXStringField
@@ -97,7 +95,8 @@ namespace FreeQuant.FIX
 		public const string OilRoyaltyTrust = "412B";
 		public const string OtherTrusts = "412C";
 
-//		public NYSEIndustrySubGroup() {
-//		}
+		public NYSEIndustrySubGroup() : base()
+		{
+		}
 	}
 }

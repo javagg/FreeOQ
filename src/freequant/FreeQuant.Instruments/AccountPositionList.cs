@@ -15,7 +15,7 @@ namespace FreeQuant.Instruments
 			}
 		}
 
-		public AccountPosition this [int index]
+		public AccountPosition this[int index]
 		{
 			get
 			{
@@ -23,11 +23,11 @@ namespace FreeQuant.Instruments
 			}
 		}
 
-		public AccountPosition this [Currency currency]
+		public AccountPosition this[Currency currency]
 		{
 			get
 			{
-				return this.positions[(object)currency.Code] as AccountPosition;
+				return this.positions[currency.Code] as AccountPosition;
 			}
 		}
 
@@ -38,9 +38,9 @@ namespace FreeQuant.Instruments
 
 		public void Add(AccountPosition position)
 		{
-			if (this.positions.Contains((object)position.Currency.Code))
-				throw new ApplicationException("nooo" + (object)position.Currency);
-			this.positions.Add((object)position.Currency.Code, (object)position);
+//			if (this.Positions.Contains(position.Currency.Code))
+//				throw new ApplicationException("nooo" + position.Currency);
+			this.positions.Add(position.Currency.Code, position);
 		}
 
 		public void Remove(AccountPosition position)
@@ -60,12 +60,12 @@ namespace FreeQuant.Instruments
 
 		public bool Contains(Currency currency)
 		{
-			return this.positions.Contains((object)currency.Code);
+			return this.positions.Contains(currency.Code);
 		}
 
 		public bool Contains(AccountPosition position)
 		{
-			return this.positions.ContainsValue((object)position);
+			return this.positions.ContainsValue(position);
 		}
 
 		public IEnumerator GetEnumerator()
@@ -76,8 +76,8 @@ namespace FreeQuant.Instruments
 		public override string ToString()
 		{
 			string str = "";
-			foreach (AccountPosition accountPosition in (IEnumerable) this.positions.Values)
-				str = str + accountPosition.ToString() + Environment.NewLine;
+			foreach (var position in this.positions.Values)
+				str = str + position.ToString() + Environment.NewLine;
 			return str;
 		}
 	}

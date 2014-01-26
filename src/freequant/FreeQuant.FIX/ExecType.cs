@@ -21,6 +21,6 @@ namespace FreeQuant.FIX
 		Trade,
 		TradeCorrect,
 		TradeCancel,
-		OrderStatus,
+		OrderStatus
 	}
 }

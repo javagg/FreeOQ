@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace FreeQuant.FIX
 {
-	public class FIXGroupList : IList, ICollection, IEnumerable
+	public class FIXGroupList : IList
 	{
 		protected ArrayList fList;
 		protected Hashtable fId;
@@ -48,7 +48,7 @@ namespace FreeQuant.FIX
 			}
 		}
 
-		public object this[int index]
+		object IList.this[int index]
 		{
 			get
 			{
@@ -56,49 +56,30 @@ namespace FreeQuant.FIX
 			}
 			set
 			{
-				this.fList[index] = (object)value;
+				this.fList[index] = value;
 			}
 		}
 
-//		public FIXGroup this [int index]
-//		{
-//			get
-//			{
-//				return this.fList[index] as FIXGroup;
-//			}
-//
-//			set
-//			{
-//				this.fList[index] = (FIXGroup)value;
-//			}
-//
-//		}
-		//		public object this[int index]
-		//		{
-		//			get
-		//			{
-		//				return this.fList[index];
-		//			}
-		//
-		//			set
-		//			{
-		//				this.fList[index] = value;
-		//			}
-		//		}
+		public FIXGroup this[int index]
+		{
+			get
+			{
+				return this[index] as FIXGroup;
+			}
+
+			set
+			{
+				this[index] = value as FIXGroup;
+			}
+
+		}
+
 		public FIXGroupList() : base()
 		{
-
 			this.fList = new ArrayList();
 			this.fId = new Hashtable();
 		}
-		//    object IList.get_Item(int index)
-		//    {
-		//      return this.fList[index];
-		//    }
-		//
-		//    void IList.set_Item(int index, object value)
-		//    {
-		//    }
+
 		public void RemoveAt(int index)
 		{
 			this.Remove((FIXGroup)this[index]);

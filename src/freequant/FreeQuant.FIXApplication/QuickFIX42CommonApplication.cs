@@ -1,13 +1,10 @@
-using aX1YwCE8tvUgZCyfib;
-using QuickFix;
-using QuickFix42;
 using FreeQuant;
 using FreeQuant.FIX;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using zWmpDbtlldCIky2Q1f;
+using QuickFix;
 
 namespace FreeQuant.FIXApplication
 {
@@ -16,12 +13,12 @@ namespace FreeQuant.FIXApplication
     protected QuickFIX42CommonProvider provider;
     protected SessionID priceSessionID;
     protected SessionID orderSessionID;
-	private LogFile logFile; 
+		private FileLog fileLog; 
 
 		protected QuickFIX42CommonApplication(QuickFIX42CommonProvider provider, string logFilePreffix) :base()
     {
       this.provider = provider;
-      this.logFile = new LogFile(logFilePreffix);
+			this.fileLog = new FileLog(logFilePreffix);
     }
 
     internal void adf1ZbrcY([In] SessionID obj0, [In] SessionID obj1)
@@ -144,46 +141,46 @@ namespace FreeQuant.FIXApplication
       session1.logout();
     }
 
-   public override void onMessage(MarketDataSnapshotFullRefresh message, SessionID sessionID)
+//		public void onMessage(QuickFix.FIX42.MarketDataSnapshotFullRefresh message, SessionID sessionID)
+//    {
+//    }
+
+		public void onMessage(QuickFix.FIX42.MarketDataIncrementalRefresh message, SessionID sessionID)
     {
     }
 
-    public override void onMessage(MarketDataIncrementalRefresh message, SessionID sessionID)
-    {
-    }
-
-    public override void onMessage(QuickFix42.MarketDataRequestReject reject, SessionID sessionID)
+		new public void onMessage(QuickFix.FIX42.MarketDataRequestReject reject, SessionID sessionID)
     {
       string str = reject.isSetText() ? reject.getText().getValue() : "";
       this.provider.EmitError(string.Format(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1356), (object) reject.getMDReqID().getValue(), (object) str));
     }
 
-    public override void onMessage(QuickFix42.Reject message, SessionID session)
+		public void onMessage(QuickFix.FIX42.Reject message, SessionID session)
     {
       this.provider.EmitError(string.Format(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1450), (object) message.ToString()));
     }
 
-    public override void onMessage(SecurityDefinition definition, SessionID sessionID)
+		new public void onMessage(QuickFix.FIX42.SecurityDefinition definition, SessionID sessionID)
     {
       FIXSecurityDefinition definition1 = new FIXSecurityDefinition();
       this.ConvertMessage((QuickFix.Message) definition, (FIXMessage) definition1);
       this.EmitSecurityDefinition(definition1);
     }
 
-    public override void onMessage(QuickFix42.ExecutionReport message, SessionID sessionID)
+//		public void onMessage(QuickFix.FIX42.ExecutionReport message, SessionID sessionID)
+//    {
+//    }
+
+		public void onMessage(QuickFix.FIX42.OrderCancelReject message, SessionID sessionID)
     {
     }
 
-    public override void onMessage(QuickFix42.OrderCancelReject message, SessionID sessionID)
-    {
-    }
-
-    public override void onMessage(BusinessMessageReject message, SessionID sessionID)
+		public void onMessage(QuickFix.FIX42.BusinessMessageReject message, SessionID sessionID)
     {
       this.provider.EmitError(string.Format(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1476), (object) message.ToString()));
     }
 
-    public override void onMessage(TradingSessionStatus message, SessionID sessionID)
+		public void onMessage(QuickFix.FIX42.TradingSessionStatus message, SessionID sessionID)
     {
       List<string> list = new List<string>();
       list.Add(BeAEwTZGlZaeOmY5cm.J00weU3cM6(1532));

@@ -1,27 +1,14 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIX
 {
-  public class FIXListCancelRequestEventArgs : EventArgs
-  {
-    private FIXListCancelRequest EknQ5IW7Z4;
+	public class FIXListCancelRequestEventArgs : EventArgs
+	{
+		public FIXListCancelRequest ListCancelRequest { get; set; }
 
-    public FIXListCancelRequest ListCancelRequest
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.EknQ5IW7Z4;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.EknQ5IW7Z4 = value;
-      }
-    }
-
-    public FIXListCancelRequestEventArgs(FIXListCancelRequest ListCancelRequest)
-    {
-      this.EknQ5IW7Z4 = ListCancelRequest;
-    }
-  }
+		public FIXListCancelRequestEventArgs(FIXListCancelRequest listCancelRequest)
+		{
+			this.ListCancelRequest = listCancelRequest;
+		}
+	}
 }

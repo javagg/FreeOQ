@@ -5,17 +5,17 @@ using System.Runtime.InteropServices;
 
 namespace FreeQuant.Services
 {
-	public class ServiceList : ICollection, IEnumerable
+	public class ServiceList : ICollection
 	{
-		private SortedList<string, IService> l6LAy7BYb;
-		private SortedList<byte, IService> wsSykLPBq;
-		private List<IService> Vag5R41WI;
+		private SortedList<string, IService> servicesByName; 
+		private SortedList<byte, IService> servicesById; 
+		private List<IService> services; 
 
 		public int Count
 		{
 			get
 			{
-				return this.Vag5R41WI.Count; 
+				return this.services.Count; 
 			}
 		}
 
@@ -31,7 +31,7 @@ namespace FreeQuant.Services
 		{
 			get
 			{
-				return (object)null;
+				return null;
 			}
 		}
 
@@ -40,10 +40,10 @@ namespace FreeQuant.Services
 			get
 			{
 				IService service;
-				if (this.l6LAy7BYb.TryGetValue(name, out service))
+				if (this.servicesByName.TryGetValue(name, out service))
 					return service;
 				else
-					return (IService)null;
+					return null;
 			}
 		}
 
@@ -52,7 +52,7 @@ namespace FreeQuant.Services
 			get
 			{
 				IService service;
-				if (this.wsSykLPBq.TryGetValue(id, out service))
+				if (this.servicesById.TryGetValue(id, out service))
 					return service;
 				else
 					return null;
@@ -61,33 +61,33 @@ namespace FreeQuant.Services
 
 		internal ServiceList()
 		{
-			this.l6LAy7BYb = new SortedList<string, IService>();
-			this.wsSykLPBq = new SortedList<byte, IService>();
-			this.Vag5R41WI = new List<IService>();
+			this.servicesByName = new SortedList<string, IService>();
+			this.servicesById = new SortedList<byte, IService>();
+			this.services = new List<IService>();
 		}
 
 		public void CopyTo(Array array, int index)
 		{
-			this.Vag5R41WI.ToArray().CopyTo(array, index);
+			this.services.ToArray().CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.Vag5R41WI.GetEnumerator();
+			return this.services.GetEnumerator();
 		}
 
-		internal void jLl6RmfZp([In] IService obj0)
+		internal void Add([In] IService obj0)
 		{
-			this.l6LAy7BYb.Add(obj0.Name, obj0);
-			this.wsSykLPBq.Add(obj0.Id, obj0);
-			this.k7BVcoadr();
+			this.servicesByName.Add(obj0.Name, obj0);
+			this.servicesById.Add(obj0.Id, obj0);
+			this.Refresh();
 		}
 
-		private void k7BVcoadr()
+		private void Refresh()
 		{
-			this.Vag5R41WI.Clear();
-			foreach (IService service in (IEnumerable<IService>) this.l6LAy7BYb.Values)
-				this.Vag5R41WI.Add(service);
+			this.services.Clear();
+			foreach (var service in this.servicesByName.Values)
+				this.services.Add(service);
 		}
 	}
 }

@@ -4,7 +4,7 @@ namespace FreeQuant.FIXData
 {
 	public class FundamentalArray : DataArray
 	{
-		public Fundamental this [int index]
+		public Fundamental this[int index]
 		{
 			get
 			{

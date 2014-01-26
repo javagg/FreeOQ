@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 
 namespace FreeQuant.File
 {
@@ -41,13 +41,7 @@ namespace FreeQuant.File
 		[Browsable(true)]
 		[Category("Names")]
 		[Description("The name of the file")]
-		public string Name
-		{
-			get
-			{
-				return this.name; 
-			}
-		}
+		public string Name { get; private set; }
 
 		[Browsable(true)]
 		[Description("Gets or sets the description")]
@@ -195,7 +189,7 @@ namespace FreeQuant.File
 		public DataFile(string name, string location)
 		{
 			this.location = new DirectoryInfo(location).FullName;
-			this.name = name;
+			this.Name = name;
 			this.description = String.Empty;
 //			this.T2CdqZ3S6a = this.Location + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2506);
 //			this.Dewxid4agx();

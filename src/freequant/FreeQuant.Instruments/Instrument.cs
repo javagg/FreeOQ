@@ -7,7 +7,6 @@ using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
@@ -16,22 +15,10 @@ namespace FreeQuant.Instruments
 	{
 		private const string ErF6qIRY8C = "F2";
 		private Currency currency;
-		private Exchange exchange;
-		private LegList legs;
-		private UnderlyingList underlyings;
-		private IPricer pricer;
-		private Quote quote;
-		private Trade trade;
-		private Bar bar;
-		private MarketDepth marketDepth;
-		private Fundamental fundamental;
-		private CorporateAction corporateAction;
-		private OrderBook orderBook;
-		private double change;
 
 		[Description("Indicates whether an Option is for a put or call.")]
 		[Category("Derivative")]
-		public PutOrCall PutOrCall
+		new public PutOrCall PutOrCall
 		{
 			get
 			{
@@ -44,52 +31,20 @@ namespace FreeQuant.Instruments
 		}
 
 		[Browsable(false)]
-		public Exchange Exchange
-		{
-			get
-			{
-				return this.exchange; 
-			}
-			set
-			{
-				this.exchange = value;
-			}
-		}
+		public Exchange Exchange { get; set; }
 
 		[Description("List of instrument legs")]
 //    [Editor(typeof (em03FhdRrsMhLEot1L), typeof (UITypeEditor))]
 		[Category("Attributes")]
-		public LegList Legs
-		{
-			get
-			{
-				return this.legs; 
-			}
-		}
+		public LegList Legs { get; private set; }
 
 		[Description("List of instrument underlyings")]
 		[Category("Attributes")]
 		//    [Editor(typeof (eHiaMMJnVTTEAxAjWe), typeof (UITypeEditor))]
-    public UnderlyingList Underlyings
-		{
-			get
-			{
-				return this.underlyings; 
-			}
-		}
+		public UnderlyingList Underlyings { get; private set; }
 
 		[Browsable(false)]
-		public IPricer Pricer
-		{
-			get
-			{
-				return this.pricer; 
-			}
-			set
-			{
-				this.pricer = value;
-			}
-		}
+		public IPricer Pricer { get; set; }
 
 		[Category("Trade")]
 		[Description("Identifies the form of delivery")]
@@ -307,76 +262,28 @@ namespace FreeQuant.Instruments
 		}
 
 		[Browsable(false)]
-		public Quote Quote
-		{
-			get
-			{
-				return this.quote;
-			}
-		}
+		public Quote Quote { get; private set; }
 
 		[Browsable(false)]
-		public Trade Trade
-		{
-			get
-			{
-				return this.trade;
-			}
-		}
+		public Trade Trade { get; private set; }
 
 		[Browsable(false)]
-		public Bar Bar
-		{
-			get
-			{
-				return this.bar;
-			}
-		}
+		public Bar Bar { get; private set; }
 
 		[Browsable(false)]
-		public MarketDepth MarketDepth
-		{
-			get
-			{
-				return this.marketDepth;
-			}
-		}
+		public MarketDepth MarketDepth { get; private set; }
 
 		[Browsable(false)]
-		public Fundamental Fundamental
-		{
-			get
-			{
-				return this.fundamental;
-			}
-		}
+		public Fundamental Fundamental { get; private set; }
 
 		[Browsable(false)]
-		public CorporateAction CorporateAction
-		{
-			get
-			{
-				return this.corporateAction;
-			}
-		}
+		public CorporateAction CorporateAction { get; private set; }
 
 		[Browsable(false)]
-		public OrderBook OrderBook
-		{
-			get
-			{
-				return this.orderBook;
-			}
-		}
+		public OrderBook OrderBook { get; private set; }
 
 		[Browsable(false)]
-		public double Change
-		{
-			get
-			{
-				return this.change; 
-			}
-		}
+		public double Change { get; private set; }
 
 		[Browsable(false)]
 		public QuoteArray Quotes
@@ -415,39 +322,29 @@ namespace FreeQuant.Instruments
 
 		protected Instrument() : base()
 		{
-			this.legs = new LegList();
-			this.underlyings = new UnderlyingList();
-			this.pricer = (IPricer)new Pricer();
-			this.quote = new Quote();
-			this.trade = new Trade();
-			this.bar = new Bar();
-			this.marketDepth = new MarketDepth();
-			this.fundamental = new Fundamental();
-			this.corporateAction = new CorporateAction();
-			this.orderBook = new OrderBook();
-//      this.PriceDisplay = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3196);
+			this.Legs = new LegList();
+			this.Underlyings = new UnderlyingList();
+			this.Pricer = (IPricer)new Pricer();
+			this.Quote = new Quote();
+			this.Trade = new Trade();
+			this.Bar = new Bar();
+			this.MarketDepth = new MarketDepth();
+			this.Fundamental = new Fundamental();
+			this.CorporateAction = new CorporateAction();
+			this.OrderBook = new OrderBook();
+			this.PriceDisplay = "latter";
 		}
 
-		public Instrument(string symbol) : this(symbol, "ss")
-		{
-		}
+//		public Instrument(string symbol) : this(symbol, "ss")
+//		{
+//		}
 
-		public Instrument(string symbol, string securityType) : base()
+		public Instrument(string symbol, string securityType = null) : this()
 		{
-			this.legs = new LegList();
-			this.underlyings = new UnderlyingList();
-			this.pricer = (IPricer)new Pricer();
-			this.quote = new Quote();
-			this.trade = new Trade();
-			this.bar = new Bar();
-			this.marketDepth = new MarketDepth();
-			this.fundamental = new Fundamental();
-			this.corporateAction = new CorporateAction();
-			this.orderBook = new OrderBook();
 			this.Symbol = symbol;
 			this.SecurityType = securityType;
-//      this.PriceDisplay = !(securityType == gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3212)) ? gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3230) : gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3222);
-			InstrumentManager.VljEVFlVHf(this);
+			this.PriceDisplay = "latter";
+			InstrumentManager.Add(this);
 		}
 
 		public Currency GetCurrency()
@@ -503,83 +400,83 @@ namespace FreeQuant.Instruments
 
 		public void Save()
 		{
-			InstrumentManager.DdbEFF4dAg(this);
+			InstrumentManager.Save(this);
 		}
 
 		public virtual double Price()
 		{
-			return this.pricer.Price(this);
+			return this.Pricer.Price(this);
 		}
 
 		public virtual double Price(DateTime datetime)
 		{
-			return this.pricer.Price(this, datetime);
+			return this.Pricer.Price(this, datetime);
 		}
 
 		public virtual double Volatility()
 		{
-			return this.pricer.Volatility(this);
+			return this.Pricer.Volatility(this);
 		}
 
 		public double Delta()
 		{
-			return this.pricer.Delta(this);
+			return this.Pricer.Delta(this);
 		}
 
 		public double Delta(DateTime datetime)
 		{
-			return this.pricer.Delta(this, datetime);
+			return this.Pricer.Delta(this, datetime);
 		}
 
 		public double Gamma()
 		{
-			return this.pricer.Gamma(this);
+			return this.Pricer.Gamma(this);
 		}
 
 		public double Gamma(DateTime datetime)
 		{
-			return this.pricer.Gamma(this, datetime);
+			return this.Pricer.Gamma(this, datetime);
 		}
 
 		public double Theta()
 		{
-			return this.pricer.Theta(this);
+			return this.Pricer.Theta(this);
 		}
 
 		public double Theta(DateTime datetime)
 		{
-			return this.pricer.Theta(this, datetime);
+			return this.Pricer.Theta(this, datetime);
 		}
 
 		public double Rho()
 		{
-			return this.pricer.Rho(this);
+			return this.Pricer.Rho(this);
 		}
 
 		public double Rho(DateTime datetime)
 		{
-			return this.pricer.Rho(this, datetime);
+			return this.Pricer.Rho(this, datetime);
 		}
 
 		public double Vega()
 		{
-			return this.pricer.Vega(this);
+			return this.Pricer.Vega(this);
 		}
 
 		public double Vega(DateTime datetime)
 		{
-			return this.pricer.Vega(this, datetime);
+			return this.Pricer.Vega(this, datetime);
 		}
 
 		public void Reset()
 		{
-			this.bar = new Bar(); 
-			this.quote = new Quote(); 
-			this.trade = new Trade(); 
-			this.marketDepth = new MarketDepth(); 
-			this.fundamental = new Fundamental(); 
-			this.corporateAction = new CorporateAction(); 
-			this.change = 0.0; 
+			this.Bar = new Bar(); 
+			this.Quote = new Quote(); 
+			this.Trade = new Trade(); 
+			this.MarketDepth = new MarketDepth(); 
+			this.Fundamental = new Fundamental(); 
+			this.CorporateAction = new CorporateAction(); 
+			this.Change = 0.0; 
 		}
 		//    internal void JLw6D59Mxc([In] QuoteEventArgs obj0)
 		//    {
@@ -617,21 +514,21 @@ namespace FreeQuant.Instruments
 		//    }
 		//
 		//    
-		//    internal void ami6cstOZQ([In] BarEventArgs obj0)
-		//    {
-		//      this.bar = obj0.Bar;
-		//      if (Trace.IsLevelEnabled(TraceLevel.Verbose))
-		//        Trace.WriteLine(string.Concat(new object[4]
-		//        {
-		//          (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3994),
-		//          (object) this.Symbol,
-		//          (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4052),
-		//          (object) this.bar
-		//        }));
-		//      if (this.iPM6grNm2V == null)
-		//        return;
-		//      this.iPM6grNm2V((object) this, obj0);
-		//    }
+//		    internal void ami6cstOZQ([In] BarEventArgs obj0)
+//		    {
+//		      this.bar = obj0.Bar;
+//		      if (Trace.IsLevelEnabled(TraceLevel.Verbose))
+//		        Trace.WriteLine(string.Concat(new object[4]
+//		        {
+//		          (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(3994),
+//		          (object) this.Symbol,
+//		          (object) gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(4052),
+//		          (object) this.bar
+//		        }));
+//		      if (this.iPM6grNm2V == null)
+//		        return;
+//		      this.iPM6grNm2V(this, obj0);
+//		    }
 		//
 		//    
 		//    internal void aSE6VetHfX([In] MarketDepthEventArgs obj0)

@@ -1,23 +1,14 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
 	public class PositionEventArgs : EventArgs
 	{
-		private Position position;
-
-		public Position Position
-		{
-			get
-			{
-				return this.position; 
-			}
-		}
+		public Position Position { get; private set; }
 
 		public PositionEventArgs(Position position) : base()
 		{
-			this.position = position;
+			this.Position = position;
 		}
 	}
 }

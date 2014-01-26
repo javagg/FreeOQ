@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.FIX
+namespace FreeQuant.FIX
 {
-  public delegate void OrderCancelRejectEventHandler(object sender, OrderCancelRejectEventArgs args);
+	public delegate void OrderCancelRejectEventHandler(object sender, OrderCancelRejectEventArgs args);
 }

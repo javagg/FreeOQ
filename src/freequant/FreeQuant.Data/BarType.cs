@@ -6,6 +6,6 @@ namespace FreeQuant.Data
 		Tick = 2,
 		Volume = 3,
 		Range = 4,
-		Dynamic = 5,
+		Dynamic = 5
 	}
 }

@@ -8,35 +8,12 @@ namespace FreeQuant.Instruments
 	[Serializable]
 	public class Account
 	{
-		private string name;
-		private string description;
-		private Currency currency;
 		private AccountTransactionList transactions;
 		private AccountPositionList positions;
 
-		public string Name
-		{
-			get
-			{
-				return this.name; 
-			}
-			set
-			{
-				this.name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return this.description; 
-			}
-			set
-			{
-				this.description = value;
-			}
-		}
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public Currency Currency { get; set; }
 
 		public AccountTransactionList Transactions
 		{
@@ -54,19 +31,7 @@ namespace FreeQuant.Instruments
 			}
 		}
 
-		public Currency Currency
-		{
-			get
-			{
-				return this.currency;
-			}
-			set
-			{
-				this.currency = value;
-			}
-		}
-
-		public double this [Currency currency]
+		public double this[Currency currency]
 		{
 			get
 			{
@@ -85,45 +50,42 @@ namespace FreeQuant.Instruments
 		{
 			this.transactions = new AccountTransactionList();
 			this.positions = new AccountPositionList();
-			this.name = name;
-			this.description = description;
-			this.currency = currency;
+			this.Name = name;
+			this.Description = description;
+			this.Currency = currency;
 		}
 
 		public Account(string name, string description) : this(name, description, CurrencyManager.DefaultCurrency)
 		{
 		}
 
-		public Account(string name) : this(name, "")
+		public Account(string name) : this(name, String.Empty)
 		{
 		}
 
-		public Account(string name, Currency currency) : this(name, "", currency)
+		public Account(string name, Currency currency) : this(name, String.Empty, currency)
 		{
-
 		}
 
-		public Account(Currency currency) : this("", currency)
+		public Account(Currency currency) : this(String.Empty, currency)
 		{
-
 		}
 
 		public Account() : this(CurrencyManager.DefaultCurrency)
 		{
-
 		}
 
 		public double GetValue()
 		{
 			double num = 0.0;
 			foreach (AccountPosition accountPosition in this.positions)
-				num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.currency);
+				num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.Currency);
 			return num;
 		}
 
 		public double GetValue(DateTime dateTime)
 		{
-			Account account = new Account(this.currency);
+			Account account = new Account(this.Currency);
 			foreach (AccountTransaction transaction in this.transactions)
 			{
 				if (transaction.DateTime <= dateTime)
@@ -131,7 +93,7 @@ namespace FreeQuant.Instruments
 			}
 			double num = 0.0;
 			foreach (AccountPosition accountPosition in account.Positions)
-				num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.currency, dateTime);
+				num += Currency.Convert(accountPosition.Value, accountPosition.Currency, this.Currency, dateTime);
 			return num;
 		}
 
@@ -182,12 +144,12 @@ namespace FreeQuant.Instruments
 
 		public void Add(double val, DateTime dateTime)
 		{
-			this.Add(val, this.currency, dateTime);
+			this.Add(val, this.Currency, dateTime);
 		}
 
 		public void Add(double val)
 		{
-			this.Add(val, this.currency, Clock.Now);
+			this.Add(val, this.Currency, Clock.Now);
 		}
 
 		public void Deposit(double val, Currency currency, DateTime dateTime, string text)
@@ -207,22 +169,22 @@ namespace FreeQuant.Instruments
 
 		public void Deposit(double val)
 		{
-			this.Deposit(val, this.currency, Clock.Now);
+			this.Deposit(val, this.Currency, Clock.Now);
 		}
 
 		public void Deposit(double val, DateTime dateTime)
 		{
-			this.Deposit(val, this.currency, dateTime);
+			this.Deposit(val, this.Currency, dateTime);
 		}
 
 		public void Deposit(double val, string text)
 		{
-			this.Deposit(val, this.currency, Clock.Now, text);
+			this.Deposit(val, this.Currency, Clock.Now, text);
 		}
 
 		public void Deposit(double val, DateTime dateTime, string text)
 		{
-			this.Deposit(val, this.currency, dateTime, text);
+			this.Deposit(val, this.Currency, dateTime, text);
 		}
 
 		public void Withdraw(double val, Currency currency, DateTime dateTime, string text)
@@ -242,22 +204,22 @@ namespace FreeQuant.Instruments
 
 		public void Withdraw(double val)
 		{
-			this.Withdraw(val, this.currency, Clock.Now);
+			this.Withdraw(val, this.Currency, Clock.Now);
 		}
 
 		public void Withdraw(double val, DateTime dateTime)
 		{
-			this.Withdraw(val, this.currency, dateTime);
+			this.Withdraw(val, this.Currency, dateTime);
 		}
 
 		public void Withdraw(double val, string text)
 		{
-			this.Withdraw(val, this.currency, Clock.Now, text);
+			this.Withdraw(val, this.Currency, Clock.Now, text);
 		}
 
 		public void Withdraw(double val, DateTime dateTime, string text)
 		{
-			this.Withdraw(val, this.currency, dateTime, text);
+			this.Withdraw(val, this.Currency, dateTime, text);
 		}
 
 		private void tom6YJohef()

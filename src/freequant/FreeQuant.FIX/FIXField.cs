@@ -60,11 +60,6 @@ namespace FreeQuant.FIX
 			}
 		}
 
-//		public static FIXField Field(FIXType type, int tag, string value)
-//		{
-//			return FIXField.Field(type, tag, value, false);
-//		}
-
 		public static FIXField Field(FIXType type, int tag, string value, bool invariantCulture = false)
 		{
 			switch (type)

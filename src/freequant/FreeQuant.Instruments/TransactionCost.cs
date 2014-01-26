@@ -1,6 +1,5 @@
 using FreeQuant.FIX;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {

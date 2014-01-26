@@ -1,10 +1,10 @@
 namespace FreeQuant.FIX
 {
-  public enum PosReqType
-  {
-    Positions,
-    Trades,
-    Exercises,
-    Assignments,
-  }
+	public enum PosReqType
+	{
+		Positions,
+		Trades,
+		Exercises,
+		Assignments
+	}
 }

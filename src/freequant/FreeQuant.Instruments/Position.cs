@@ -38,13 +38,7 @@ namespace FreeQuant.Instruments
       }
     }
 
-    public Instrument Instrument
-    {
-       get
-      {
-				return this.instrument; 
-      }
-    }
+		public Instrument Instrument { get; private set; }
 
     [Browsable(false)]
     public TransactionList Transactions

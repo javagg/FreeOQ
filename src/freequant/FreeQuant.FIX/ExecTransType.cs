@@ -5,6 +5,6 @@ namespace FreeQuant.FIX
 		New,
 		Cancel,
 		Correct,
-		Status,
+		Status
 	}
 }

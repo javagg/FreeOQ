@@ -1,14 +1,9 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
 	public class Currency
 	{
-		private string code;
-		private string description;
-		private static ICurrencyConverter converter;
-
 		public static Currency ARS;
 		public static Currency ATS;
 		public static Currency AUD;
@@ -39,41 +34,13 @@ namespace FreeQuant.Instruments
 		public static Currency SEK;
 		public static Currency CNY;
 
-		public string Code
-		{
-			get
-			{
-				return this.code; 
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return this.description; 
-			}
-			set
-			{
-				this.description = value;
-			}
-		}
-
-		public static ICurrencyConverter Converter
-		{
-			get
-			{
-				return Currency.converter;
-			}
-			set
-			{
-				Currency.converter = value;
-			}
-		}
+		public string Code { get; private set; }
+		public string Description { get; set; }
+		public static ICurrencyConverter Converter { get; set; }
 
 		static Currency()
 		{
-			Currency.converter = (ICurrencyConverter)new CurrencyConverter();
+			Currency.Converter = new CurrencyConverter();
 			Currency.ARS = new Currency("ARS", "Argentine peso");
 			Currency.ATS = new Currency("ATS", "Austrian Schilling");
 			Currency.AUD = new Currency("AUD", "Australian dollar");
@@ -111,38 +78,34 @@ namespace FreeQuant.Instruments
 
 		public Currency(string code, string description)
 		{
-			this.code = code;
-			this.description = description;
+			this.Code = code;
+			this.Description = description;
 			CurrencyManager.Currencies.Add(this);
-		}
-
-		internal static void vTnE26EIAD()
-		{
 		}
 
 		public static double Convert(double amount, Currency fromCurrency, Currency toCurrency)
 		{
-			return Currency.converter.Convert(amount, fromCurrency, toCurrency);
+			return Currency.Converter.Convert(amount, fromCurrency, toCurrency);
 		}
 
 		public static double Convert(double amount, Currency fromCurrency, Currency toCurrency, DateTime dateTime)
 		{
-			return Currency.converter.Convert(amount, fromCurrency, toCurrency, dateTime);
+			return Currency.Converter.Convert(amount, fromCurrency, toCurrency, dateTime);
 		}
 
 		public double Convert(double amount, Currency toCurrency)
 		{
-			return Currency.converter.Convert(amount, this, toCurrency);
+			return Currency.Converter.Convert(amount, this, toCurrency);
 		}
 
 		public double Convert(double amount, Currency toCurrency, DateTime dateTime)
 		{
-			return Currency.converter.Convert(amount, this, toCurrency, dateTime);
+			return Currency.Converter.Convert(amount, this, toCurrency, dateTime);
 		}
 
 		public override string ToString()
 		{
-			return this.code;
+			return this.Code;
 		}
 	}
 }

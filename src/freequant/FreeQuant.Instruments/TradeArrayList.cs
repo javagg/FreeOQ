@@ -1,12 +1,11 @@
-﻿using FreeQuant.Data;
+using FreeQuant.Data;
 using FreeQuant.Series;
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-	public class TradeArrayList : ICollection, IEnumerable
+	public class TradeArrayList : ICollection
 	{
 		private Hashtable trades;
 

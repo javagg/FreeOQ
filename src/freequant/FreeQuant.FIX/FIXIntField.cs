@@ -19,19 +19,13 @@ namespace FreeQuant.FIX
 		public FIXIntField() : base()
 		{
 		}
-		//    public FIXIntField(int tag) : this(tag, 0)
-		//    {
-		//    }
+
 		public FIXIntField(int tag, int value = 0) : base(tag)
 		{
 			this.Value = value;
 		}
 
-		public FIXIntField(int tag, string value) : this(tag, value, false)
-		{
-		}
-
-		public FIXIntField(int tag, string value, bool invariantCulture) : this(tag, invariantCulture ? int.Parse(value, (IFormatProvider)CultureInfo.InvariantCulture) : int.Parse(value))
+		public FIXIntField(int tag, string value, bool invariantCulture = false) : this(tag, invariantCulture ? int.Parse(value, (IFormatProvider)CultureInfo.InvariantCulture) : int.Parse(value))
 		{
 		}
 

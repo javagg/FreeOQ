@@ -2,7 +2,7 @@ namespace FreeQuant.Services
 {
 	public class ExecutionServiceEventArgs : MarketServiceEventArgs
 	{
-		public IExecutionService Service
+		new public IExecutionService Service
 		{
 			get
 			{
@@ -10,7 +10,7 @@ namespace FreeQuant.Services
 			}
 		}
 
-		public ExecutionServiceEventArgs(IExecutionService service) : base((IMarketService)service)
+		public ExecutionServiceEventArgs(IExecutionService service) : base(service)
 		{
 		}
 	}

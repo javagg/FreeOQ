@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-	public class AccountTransactionList : ICollection, IEnumerable
+	public class AccountTransactionList : ICollection
 	{
 		private ArrayList transactions;
 
@@ -32,7 +31,7 @@ namespace FreeQuant.Instruments
 			}
 		}
 
-		public AccountTransaction this [int index]
+		public AccountTransaction this[int index]
 		{
 			get
 			{
@@ -65,11 +64,11 @@ namespace FreeQuant.Instruments
 			int count;
 			for (count = this.transactions.Count; count > 0; --count)
 			{
-				AccountTransaction accountTransaction = this[count - 1];
+				AccountTransaction accountTransaction = this[count-1];
 				if (transaction.DateTime >= accountTransaction.DateTime)
 					break;
 			}
-			this.transactions.Insert(count, (object)transaction);
+			this.transactions.Insert(count, transaction);
 		}
 	}
 }

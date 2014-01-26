@@ -1,13 +1,11 @@
 using FreeQuant.FIX;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FIXData
 {
   public class FIXGroupStreamer
   {
-
     public static void WriteTo(BinaryWriter writer, FIXGroup group)
     {
       writer.Write(group.Fields.Length);

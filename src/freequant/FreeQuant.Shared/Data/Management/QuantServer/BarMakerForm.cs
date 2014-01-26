@@ -1,13 +1,7 @@
-﻿// Type: SmartQuant.Shared.Data.Management.QuantServer.BarMakerForm
-// Assembly: SmartQuant.Shared, Version=1.0.5036.28348, Culture=neutral, PublicKeyToken=null
-// MVID: BB2FC74B-486B-4DBF-B165-607056B8E43A
-// Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
-
-using AMiPSuhk8DSY5eSibKw;
-using SmartQuant;
-using SmartQuant.Data;
-using SmartQuant.File;
-using SmartQuant.Instruments;
+using FreeQuant;
+using FreeQuant.Data;
+using FreeQuant.File;
+using FreeQuant.Instruments;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -15,9 +9,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Data.Management.QuantServer
+namespace FreeQuant.Shared.Data.Management.QuantServer
 {
   public class BarMakerForm : Form
   {

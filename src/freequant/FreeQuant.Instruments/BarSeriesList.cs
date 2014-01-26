@@ -2,12 +2,11 @@ using FreeQuant.Data;
 using FreeQuant.Series;
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
 {
-  public class BarSeriesList : ICollection, IEnumerable
+  public class BarSeriesList : ICollection
   {
     private Hashtable a0SWypH8TX;
     private Hashtable ET8WqOYmDx;

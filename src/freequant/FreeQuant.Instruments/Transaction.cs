@@ -3,8 +3,8 @@ using FreeQuant.FIX;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {

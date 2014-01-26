@@ -1,8 +1,4 @@
 namespace FreeQuant.Instruments
 {
-	public enum PositionSide
-	{
-		Long,
-		Short,
-	}
+	public enum PositionSide {	Long, Short	}
 }
