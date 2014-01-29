@@ -10,7 +10,7 @@ namespace FreeQuant.FinChart.Objects
 {
   public class PathView : IChartDrawable, IZoomable
   {
-    private DrawingPath QLSyIOYXoI;
+		private DrawingPath drawingPath; 
     protected DateTime firstDate;
     protected DateTime lastDate;
     protected bool toolTipEnabled;
@@ -50,17 +50,12 @@ namespace FreeQuant.FinChart.Objects
     }
 
     
-    public PathView(DrawingPath path, Pad pad)
+		public PathView(DrawingPath path, Pad pad) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.toolTipEnabled = true;
-      this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.QLSyIOYXoI = path;
+      this.drawingPath = path;
       this.Pad = pad;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3248);
+			this.ToolTipEnabled = true;
+			this.ToolTipFormat = "tofr";
     }
 
     
@@ -98,7 +93,7 @@ namespace FreeQuant.FinChart.Objects
       GraphicsPath path = new GraphicsPath();
       int x1 = int.MaxValue;
       int y1 = 0;
-      foreach (DrawingPoint drawingPoint in this.QLSyIOYXoI.Points)
+      foreach (DrawingPoint drawingPoint in this.drawingPath.Points)
       {
         int x2 = this.Pad.ClientX(drawingPoint.X);
         int y2 = this.Pad.ClientY(drawingPoint.Y);
@@ -107,13 +102,13 @@ namespace FreeQuant.FinChart.Objects
         x1 = x2;
         y1 = y2;
       }
-      this.Pad.Graphics.DrawPath(new Pen(this.QLSyIOYXoI.Color, (float) this.QLSyIOYXoI.Width), path);
+      this.Pad.Graphics.DrawPath(new Pen(this.drawingPath.Color, (float) this.drawingPath.Width), path);
     }
 
     
     private Distance TBRyFWEHO3([In] int obj0, [In] double obj1)
     {
-      return (Distance) null;
+      return null;
     }
 
     

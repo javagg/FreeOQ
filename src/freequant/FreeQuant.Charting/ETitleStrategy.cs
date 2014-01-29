@@ -2,10 +2,11 @@ using System;
 
 namespace FreeQuant.Charting
 {
-  [Serializable]
-  public enum ETitleStrategy
-  {
-    Smart,
-    None,
-  }
+	[Serializable]
+	public enum ETitleStrategy
+	{
+		Smart,
+		Free,
+		None
+	}
 }

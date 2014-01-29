@@ -1,8 +1,4 @@
 namespace FreeQuant.FinChart
 {
-	public enum PadScaleStyle
-	{
-		Arith,
-		Log,
-	}
+	public enum PadScaleStyle { Arith, Log }
 }

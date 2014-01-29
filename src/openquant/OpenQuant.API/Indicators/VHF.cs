@@ -26,7 +26,7 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new VHF();
     }
 
-    public VHF(OpenQuant.API.BarSeries series, int length)
+    public VHF(BarSeries series, int length)
     {
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) series.series, length);
     }
@@ -36,7 +36,7 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) indicator.indicator, length);
     }
 
-    public VHF(OpenQuant.API.BarSeries series, int length, BarData option)
+    public VHF(BarSeries series, int length, BarData option)
     {
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
     }
@@ -46,7 +46,7 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
     }
 
-    public VHF(OpenQuant.API.BarSeries series, int length, Color color)
+    public VHF(BarSeries series, int length, Color color)
     {
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) series.series, length, color);
     }
@@ -56,7 +56,7 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
     }
 
-    public VHF(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
+    public VHF(BarSeries series, int length, BarData option, Color color)
     {
       this.indicator = (Indicator) new VHF((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
     }

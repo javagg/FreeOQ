@@ -1,8 +1,4 @@
 namespace OpenQuant.API.Indicators
 {
-	public enum RegressionDistanceMode
-	{
-		Time,
-		Index,
-	}
+	public enum RegressionDistanceMode { Time, Index }
 }

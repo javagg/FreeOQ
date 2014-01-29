@@ -1,8 +1,4 @@
 namespace FreeQuant.Charting
 {
-	public enum EGraphMoveStyle
-	{
-		Graph,
-		Point
-	}
+	public enum EGraphMoveStyle {	Graph, Point }
 }

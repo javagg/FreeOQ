@@ -5,65 +5,65 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class TRIX : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as TRIX).get_Length();
-      }
-      set
-      {
-        (this.indicator as TRIX).set_Length(value);
-      }
-    }
+	public class TRIX : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.TRIX).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.TRIX).Length = value;
+			}
+		}
 
-    private TRIX()
-    {
-      this.indicator = (Indicator) new TRIX();
-    }
+		private TRIX()
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX();
+		}
 
-    public TRIX(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public TRIX(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(series.series, length);
+		}
 
-    public TRIX(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public TRIX(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(indicator.indicator, length);
+		}
 
-    public TRIX(OpenQuant.API.BarSeries series, int length, BarData option)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public TRIX(BarSeries series, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(series.series, length, OpenQuant.API.EnumConverter.Convert(option));
+		}
 
-    public TRIX(Indicator indicator, int length, BarData option)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public TRIX(Indicator indicator, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
+		}
 
-    public TRIX(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public TRIX(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(series.series, length, color);
+		}
 
-    public TRIX(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public TRIX(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(indicator.indicator, length, color);
+		}
 
-    public TRIX(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public TRIX(BarSeries series, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(series.series, length, EnumConverter.Convert(option), color);
+		}
 
-    public TRIX(Indicator indicator, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new TRIX((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
-  }
+		public TRIX(Indicator indicator, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.TRIX(indicator.indicator, length, EnumConverter.Convert(option), color);
+		}
+	}
 }

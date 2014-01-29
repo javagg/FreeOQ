@@ -1,45 +1,20 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Instruments
 {
 	public class MarginPosition
 	{
-		public Position position;
-		public double margin;
+		public Position Position { get; set; }
 
-		public Position Position
-		{
-			get
-			{
-				return this.position;
-			}
-			set
-			{
-				this.position = value;
-			}
-		}
-
-		public double Margin
-		{
-			get
-			{
-				return this.margin;
-			}
-			set
-			{
-				this.margin = value;
-			}
-		}
+		public double Margin { get; set; }
 
 		public MarginPosition(Position position)
 		{
-			this.position = position;
+			this.Position = position;
 		}
 
 		public MarginPosition(Position position, double margin)
 		{
-			this.position = position;
-			this.margin = margin;
+			this.Position = position;
+			this.Margin = margin;
 		}
 	}
 }

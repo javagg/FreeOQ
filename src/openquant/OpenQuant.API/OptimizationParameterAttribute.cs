@@ -2,42 +2,35 @@
 
 namespace OpenQuant.API
 {
-  [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
-  public class OptimizationParameterAttribute : Attribute
-  {
-    private double start;
-    private double stop;
-    private double step;
+	/// <summary>
+	/// Optimization parameter attribute
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+	public class OptimizationParameterAttribute : Attribute
+	{
+		/// <summary>
+		/// Start value of the parameter
+		/// </summary>
+		public double Start { get; private set; }
 
-    public double Start
-    {
-      get
-      {
-        return this.start;
-      }
-    }
+		/// <summary>
+		/// Stop value of the parameter
+		/// </summary>
+		public double Stop { get; private set; }
 
-    public double Stop
-    {
-      get
-      {
-        return this.stop;
-      }
-    }
+		/// <summary>
+		/// Step value of the parameter
+		/// </summary>
+		public double Step { get; private set; }
 
-    public double Step
-    {
-      get
-      {
-        return this.step;
-      }
-    }
-
-    public OptimizationParameterAttribute(double start, double stop, double step)
-    {
-      this.start = start;
-      this.stop = stop;
-      this.step = step;
-    }
-  }
+		/// <summary>
+		/// Creates an instance of this attribute
+		/// </summary>
+		public OptimizationParameterAttribute(double start, double stop, double step)
+		{
+			this.Start = start;
+			this.Stop = stop;
+			this.Step = step;
+		}
+	}
 }

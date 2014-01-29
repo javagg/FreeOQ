@@ -1,40 +1,31 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting
 {
 	public class CanvasManager
 	{
-		private static CanvasList canvases;  
 
-		public static CanvasList Canvases
-		{
-			get
-			{
-				return CanvasManager.canvases;
-			}
-		}
-
+		public static CanvasList Canvases { get; private set; }
 		static CanvasManager()
 		{
-			CanvasManager.canvases = new CanvasList();
+			CanvasManager.Canvases = new CanvasList();
 		}
 
 		public static void Add(Canvas canvas)
 		{
-			if (CanvasManager.canvases[canvas.Name] != null)
-				((SortedList)CanvasManager.canvases).Remove((object)canvas.Name);
-			((SortedList)CanvasManager.canvases).Add((object)canvas.Name, (object)canvas);
+			if (CanvasManager.Canvases[canvas.Name] != null)
+				CanvasManager.Canvases.Remove(canvas.Name);
+			CanvasManager.Canvases.Add(canvas.Name, canvas);
 		}
 
 		public static void Remove(Canvas canvas)
 		{
-			((SortedList)CanvasManager.canvases).Remove((object)canvas.Name);
+			CanvasManager.Canvases.Remove(canvas.Name);
 		}
 
 		public static Canvas GetCanvas(string name)
 		{
-			return CanvasManager.canvases[name];
+			return CanvasManager.Canvases[name];
 		}
 	}
 }

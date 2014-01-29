@@ -5,57 +5,57 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class PDI : Indicator
-  {
-    [Description("Length")]
-    [Category("Parameters")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as PDI).get_Length();
-      }
-      set
-      {
-        (this.indicator as PDI).set_Length(value);
-      }
-    }
+	public class PDI : Indicator
+	{
+		[Description("Length")]
+		[Category("Parameters")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.PDI).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.PDI).Length = value;
+			}
+		}
 
-    public IndicatorStyle Style
-    {
-      get
-      {
-        return OpenQuant.API.EnumConverter.Convert((this.indicator as PDI).get_Style());
-      }
-      set
-      {
-        (this.indicator as PDI).set_Style(OpenQuant.API.EnumConverter.Convert(value));
-      }
-    }
+		public IndicatorStyle Style
+		{
+			get
+			{
+				return EnumConverter.Convert((this.indicator as FreeQuant.Indicators.PDI).Style);
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.PDI).Style(EnumConverter.Convert(value));
+			}
+		}
 
-    private PDI()
-    {
-      this.indicator = (Indicator) new PDI();
-    }
+		private PDI()
+		{
+			this.indicator = new FreeQuant.Indicators.PDI();
+		}
 
-    public PDI(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new PDI((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public PDI(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.PDI(series.series, length);
+		}
 
-    public PDI(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new PDI((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public PDI(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.PDI(indicator.indicator, length);
+		}
 
-    public PDI(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new PDI((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public PDI(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.PDI(series.series, length, color);
+		}
 
-    public PDI(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new PDI((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public PDI(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.PDI(indicator.indicator, length, color);
+		}
+	}
 }

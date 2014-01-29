@@ -1,84 +1,21 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting
 {
-  [Serializable]
-  public class TDistance
-  {
-    private double mAI5Wn0kq;
-    private double WSULTh6h4;
-    private double umeA8iTdG;
-    private double F0EQwfcIT;
-    private string stawPUnjw;
+	[Serializable]
+	public class TDistance
+	{
+		public double dX { get; set; }
+		public double dY{ get; set; }
+		public double X { get; set; }
+		public double Y { get; set; }
+		public string ToolTipText { get; set; }
 
-    public double dX
-    {
-       get
-      {
-        return this.mAI5Wn0kq;
-      }
-       set
-      {
-        this.mAI5Wn0kq = value;
-      }
-    }
-
-    public double dY
-    {
-       get
-      {
-        return this.WSULTh6h4;
-      }
-       set
-      {
-        this.WSULTh6h4 = value;
-      }
-    }
-
-    public double X
-    {
-       get
-      {
-        return this.umeA8iTdG;
-      }
-       set
-      {
-        this.umeA8iTdG = value;
-      }
-    }
-
-    public double Y
-    {
-       get
-      {
-        return this.F0EQwfcIT;
-      }
-       set
-      {
-        this.F0EQwfcIT = value;
-      }
-    }
-
-    public string ToolTipText
-    {
-       get
-      {
-        return this.stawPUnjw;
-      }
-       set
-      {
-        this.stawPUnjw = value;
-      }
-    }
-
-    
-    public TDistance():base()
-    {
-
-      this.mAI5Wn0kq = double.MaxValue;
-      this.WSULTh6h4 = double.MaxValue;
-      this.stawPUnjw = (string) null;
-    }
-  }
+		public TDistance()
+		{
+			this.dX = double.MaxValue;
+			this.dY = double.MaxValue;
+			this.ToolTipText = String.Empty;
+		}
+	}
 }

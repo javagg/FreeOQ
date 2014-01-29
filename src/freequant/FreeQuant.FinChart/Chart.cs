@@ -87,14 +87,14 @@ namespace FreeQuant.FinChart
 
 		public int RightAxesFontSize
 		{
-			 get
+			get
 			{
 				return this.rightAxesFontSize;
 			}
 			 set
 			{
 				this.rightAxesFontSize = value;
-				this.font = new Font(this.Font.FontFamily, (float)this.rightAxesFontSize);
+				this.font = new Font(this.Font.FontFamily, this.rightAxesFontSize);
 			}
 		}
 
@@ -130,7 +130,7 @@ namespace FreeQuant.FinChart
 			 set
 			{
 				this.updateStyle = value;
-				this.aUdHWj4OL();
+				this.EmitUpdateStyleChanged();
 			}
 		}
 
@@ -169,7 +169,7 @@ namespace FreeQuant.FinChart
 						}
 						this.contentUpdated = true;
 					}
-					this.P7TCrmLFf();
+					this.EmitBarSeriesStyleChanged();
 					this.Invalidate();
 				}
 			}
@@ -287,7 +287,7 @@ namespace FreeQuant.FinChart
 				if (this.actionType == value)
 					return;
 				this.actionType = value;
-				this.CBhmsygdb();
+				this.EmitActionTypeChanged();
 				this.Invalidate();
 			}
 		}
@@ -643,7 +643,7 @@ namespace FreeQuant.FinChart
 				this.pads[0].ScaleStyle = value;
 				this.contentUpdated = true;
 				this.Invalidate();
-				this.L3g3dmTt3();
+				this.EmitScaleStyleChanged();
 			}
 		}
 
@@ -652,11 +652,9 @@ namespace FreeQuant.FinChart
 		public event EventHandler ActionTypeChanged;
 		public event EventHandler BarSeriesStyleChanged;
 		public event EventHandler ScaleStyleChanged;
-
-		
-		public Chart()
+			
+		public Chart() : base()
 		{
-			xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
 			this.PRRwtLFpd5 = -1;
 			this.etYww3BBO8 = -1;
 			this.doubleSeriesSmoothingMode = SmoothingMode.HighSpeed;
@@ -699,9 +697,8 @@ namespace FreeQuant.FinChart
 			this.dataLock = new object();
 			this.MPmwkOLBbW = DateTime.MaxValue;
 			this.AAUwMEaLwI = DateTime.MinValue;
-			// ISSUE: explicit constructor call
-			base.\u002Ector();
-			this.nwudcQQcv();
+
+			this.InitializeComponent();
 			this.font = new Font(this.Font.FontFamily, (float)this.rightAxesFontSize);
 			this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, true);
 			this.UpdateStyles();
@@ -709,7 +706,7 @@ namespace FreeQuant.FinChart
 			this.canvasTopOffset = 10;
 			this.canvasRightOffset = 40;
 			this.canvasBottomOffset = 40;
-			this.MouseWheel += new MouseEventHandler(this.tHXG4q3el);
+			this.MouseWheel += new MouseEventHandler(this.HandleMouseWheel);
 			this.AddPad();
 			this.axisBottom = new AxisBottom(this, this.canvasLeftOffset, this.Width - this.canvasRightOffset, this.Height - this.canvasTopOffset);
 			this.hScrollBar.Minimum = 0;
@@ -718,16 +715,11 @@ namespace FreeQuant.FinChart
 			this.lastIndex = -1;
 		}
 
-		
-		public Chart(DoubleSeries mainSeries)
+		public Chart(DoubleSeries mainSeries) : this()
 		{
-			xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-			// ISSUE: explicit constructor call
-			this.\u002Ector();
 			this.SetMainSeries(mainSeries);
 		}
 
-		
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && this.container != null)
@@ -735,8 +727,7 @@ namespace FreeQuant.FinChart
 			base.Dispose(disposing);
 		}
 
-		
-		private void nwudcQQcv()
+		private void InitializeComponent()
 		{
 			this.container = new Container();
 			this.hScrollBar = new HScrollBar();
@@ -744,71 +735,60 @@ namespace FreeQuant.FinChart
 			this.SuspendLayout();
 			this.hScrollBar.Dock = DockStyle.Bottom;
 			this.hScrollBar.Location = new Point(0, 455);
-			this.hScrollBar.Name = FJDHryrxb1WIq5jBAt.mT707pbkgT(122);
+			this.hScrollBar.Name = "hscbar name";
 			this.hScrollBar.Size = new Size(512, 17);
 			this.hScrollBar.TabIndex = 0;
 			this.hScrollBar.Scroll += new ScrollEventHandler(this.FSOLY9YLw);
 			this.AutoScroll = true;
-			this.Controls.Add((Control)this.hScrollBar);
-			this.Font = new Font(FJDHryrxb1WIq5jBAt.mT707pbkgT(144), 7f, FontStyle.Regular, GraphicsUnit.Point, (byte)204);
-			this.Name = FJDHryrxb1WIq5jBAt.mT707pbkgT(188);
+			this.Controls.Add(this.hScrollBar);
+			this.Font = new Font("Arial", 7, FontStyle.Regular, GraphicsUnit.Point, 204);
+			this.Name = "Chart name";
 			this.Size = new Size(512, 472);
-			this.MouseDown += new MouseEventHandler(this.X114DAC9M);
-			this.MouseLeave += new EventHandler(this.apXk9fKZc);
-			this.MouseUp += new MouseEventHandler(this.iWffcAxHA);
+			this.MouseDown += new MouseEventHandler(this.HandleMouseDown);
+			this.MouseLeave += new EventHandler(this.HandleMouseLeave);
+			this.MouseUp += new MouseEventHandler(this.HandleMouseUp);
 			this.ResumeLayout(false);
 		}
 
-		[SpecialName]
-		
 		internal TimeSeries OkdNNmbiw()
 		{
 			return this.series;
 		}
 
-		[SpecialName]
-		
-		internal bool SydByiP6p()
+		internal bool IsContentUpdated()
 		{
 			return this.contentUpdated;
 		}
 
-		[SpecialName]
-		
-		internal void dkEjGbQNc(bool value)
+		internal void SetContentUpdated(bool value)
 		{
 			this.contentUpdated = value;
 		}
 
-		
-		internal void NXKu7WiuX([In] Pen obj0, [In] long obj1, [In] int obj2)
+		internal void NXKu7WiuX(Pen pen, long obj1, int obj2)
 		{
-			this.graphics.DrawLine(obj0, this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset), this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset) + obj2);
+			this.graphics.DrawLine(pen, this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset), this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset) + obj2);
 		}
-
 		
-		internal void IXrxgFKyT([In] Pen obj0, [In] long obj1)
+		internal void IXrxgFKyT(Pen pen, long obj1)
 		{
 			int x1 = this.ClientX(new DateTime(obj1));
-			this.graphics.DrawLine(obj0, x1, this.canvasTopOffset, this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset));
+			this.graphics.DrawLine(pen, x1, this.canvasTopOffset, this.ClientX(new DateTime(obj1)), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset));
 		}
 
-		
-		internal void pw9AQjMR6([In] Pen obj0, [In] long obj1)
+		internal void pw9AQjMR6(Pen pen, long obj1)
 		{
-			this.graphics.DrawLine(obj0, (int)((double)this.ClientX(new DateTime(obj1)) - this.intervalWidth / 2.0), this.canvasTopOffset, (int)((double)this.ClientX(new DateTime(obj1)) - this.intervalWidth / 2.0), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset));
+			this.graphics.DrawLine(pen, (int)((double)this.ClientX(new DateTime(obj1)) - this.intervalWidth / 2.0), this.canvasTopOffset, (int)((double)this.ClientX(new DateTime(obj1)) - this.intervalWidth / 2.0), this.canvasTopOffset + this.Height - (this.canvasBottomOffset + this.canvasTopOffset));
 		}
 
-		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color)
 		{
 			this.DrawSeries(series, padNumber, color, EIndexOption.Null);
 		}
 
-		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, EIndexOption option)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -819,22 +799,19 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, SimpleDSStyle style)
 		{
 			this.DrawSeries(series, padNumber, color, style, EIndexOption.Null, this.doubleSeriesSmoothingMode);
 		}
-
 		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, SimpleDSStyle style, SmoothingMode smoothingMode)
 		{
 			this.DrawSeries(series, padNumber, color, style, EIndexOption.Null, smoothingMode);
 		}
 
-		
 		public void DrawSeries(DoubleSeries series, int padNumber, Color color, SimpleDSStyle style, EIndexOption option, SmoothingMode smoothingMode)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -846,7 +823,6 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawTransaction(Transaction transaction, int padNumber)
 		{
 			lock (this.dataLock)
@@ -859,10 +835,9 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawRay(DrawingRay ray, int padNumber)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -874,17 +849,15 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		private void Xsr5a43Ll([In] object obj0, [In] EventArgs obj1)
 		{
 			this.contentUpdated = true;
 			this.Invalidate();
 		}
 
-		
 		public void DrawLine(DrawingLine line, int padNumber)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -896,7 +869,6 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawEllipse(DrawingEllipse circle, int padNumber)
 		{
 			lock (this.dataLock)
@@ -911,7 +883,6 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawRectangle(DrawingRectangle rect, int padNumber)
 		{
 			lock (this.dataLock)
@@ -926,10 +897,9 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawPath(DrawingPath path, int padNumber)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -941,10 +911,9 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawImage(DrawingImage image, int padNumber)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -956,10 +925,9 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawSignal(Signal signal, int padNumber)
 		{
-			lock (this.dataLock)
+			lock(this.dataLock)
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
@@ -969,11 +937,9 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void DrawOrder(SingleOrder order, int padNumber)
 		{
 		}
-
 		
 		public void DrawStop(ATSStop stop, int padNumber)
 		{
@@ -990,7 +956,6 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			lock (this.dataLock)
@@ -1006,14 +971,13 @@ namespace FreeQuant.FinChart
 						return;
 					this.hScrollBar.Value = this.firstIndex;
 				}
-				catch (Exception exception_0)
+				catch
 				{
 				}
 			}
 		}
 
-		
-		private void HNXZVR2bH([In] Graphics obj0)
+		private void HNXZVR2bH(Graphics obj0)
 		{
 			if (this.lastIndex - this.firstIndex + 1 == 0)
 				return;
@@ -1025,7 +989,7 @@ namespace FreeQuant.FinChart
 				if (this.bitmap != null)
 					this.bitmap.Dispose();
 				this.bitmap = new Bitmap(this.Width, this.Height);
-				Graphics graphics = Graphics.FromImage((Image)this.bitmap);
+				Graphics graphics = Graphics.FromImage(this.bitmap);
 				graphics.SmoothingMode = this.smoothingMode;
 				graphics.Clear(this.chartBackColor);
 				this.graphics = graphics;
@@ -1033,14 +997,14 @@ namespace FreeQuant.FinChart
 				foreach (Pad pad in this.pads)
 				{
 					pad.q1WJ72NWjL();
-					if (val1 < pad.QSlJ10KlWj() + 2)
-						val1 = pad.QSlJ10KlWj() + 2;
+					if (val1 < pad.getAxisGap() + 2)
+						val1 = pad.getAxisGap() + 2;
 				}
 				this.canvasRightOffset = Math.Max(val1, this.minAxisGap);
 				foreach (Pad pad in this.pads)
 				{
 					pad.DrawItems = this.DrawItems;
-					pad.FtGJAXHCKL(this.Width - this.canvasRightOffset - this.canvasLeftOffset);
+					pad.setWidth(this.Width - this.canvasRightOffset - this.canvasLeftOffset);
 				}
 				graphics.FillRectangle((Brush)new SolidBrush(this.canvasColor), this.canvasLeftOffset, this.canvasTopOffset, this.Width - this.canvasRightOffset - this.canvasLeftOffset, this.Height - this.canvasBottomOffset - this.canvasLeftOffset);
 				if (this.AAUwMEaLwI != DateTime.MinValue)
@@ -1084,26 +1048,20 @@ namespace FreeQuant.FinChart
 						break;
 					}
 				}
-				string str2 = num2.ToString(FJDHryrxb1WIq5jBAt.mT707pbkgT(202) + this.LabelDigitsCount);
+				string str2 = num2.ToString("D" + this.LabelDigitsCount);
 				SizeF sizeF2 = obj0.MeasureString(str2, this.Font);
-				obj0.FillRectangle((Brush)new SolidBrush(this.valTipRectangleColor), (float)(this.Width - this.canvasRightOffset), (float)((double)this.mouseY - (double)sizeF2.Height / 2.0 - 2.0), sizeF2.Width, sizeF2.Height + 2f);
-				obj0.DrawString(str2, this.Font, (Brush)new SolidBrush(this.valTipTextColor), (float)(this.Width - this.canvasRightOffset + 2), (float)((double)this.mouseY - (double)sizeF2.Height / 2.0 - 1.0));
+				obj0.FillRectangle(new SolidBrush(this.valTipRectangleColor), (float)(this.Width - this.canvasRightOffset), (float)(this.mouseY - sizeF2.Height / 2.0 - 2.0), sizeF2.Width, sizeF2.Height + 2f);
+				obj0.DrawString(str2, this.Font, new SolidBrush(this.valTipTextColor), (float)(this.Width - this.canvasRightOffset + 2), (float)(this.mouseY - sizeF2.Height / 2.0 - 1.0));
 			}
 			else
 			{
 				if (this.bitmap == null)
 					return;
-				obj0.DrawImage((Image)this.bitmap, 0, 0);
+				obj0.DrawImage(this.bitmap, 0, 0);
 			}
 		}
 
-		
-		protected override void OnPaintBackground(PaintEventArgs pevent)
-		{
-		}
-
-		
-		private void X114DAC9M([In] object obj0, [In] MouseEventArgs obj1)
+		private void HandleMouseDown(object sender, MouseEventArgs e)
 		{
 			try
 			{
@@ -1111,7 +1069,7 @@ namespace FreeQuant.FinChart
 				{
 					foreach (Pad pad in this.pads)
 					{
-						if (pad.Y1 - 1 <= obj1.Y && obj1.Y <= pad.Y1 + 1)
+						if (pad.Y1 - 1 <= e.Y && e.Y <= pad.Y1 + 1)
 						{
 							this.padSplit = true;
 							this.padSplitIndex = this.pads.IndexOf(pad);
@@ -1121,8 +1079,8 @@ namespace FreeQuant.FinChart
 				}
 				foreach (Pad pad in this.pads)
 				{
-					if (pad.X1 <= obj1.X && pad.X2 >= obj1.X && (pad.Y1 <= obj1.Y && pad.Y2 >= obj1.Y))
-						pad.MouseDown(obj1);
+					if (pad.X1 <= e.X && pad.X2 >= e.X && (pad.Y1 <= e.Y && pad.Y2 >= e.Y))
+						pad.MouseDown(e);
 				}
 			}
 			catch
@@ -1130,8 +1088,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
-		private void iWffcAxHA([In] object obj0, [In] MouseEventArgs obj1)
+		private void HandleMouseUp(object sender, MouseEventArgs e)
 		{
 			try
 			{
@@ -1139,8 +1096,8 @@ namespace FreeQuant.FinChart
 					this.padSplit = false;
 				foreach (Pad pad in this.pads)
 				{
-					if (pad.X1 <= obj1.X && pad.X2 >= obj1.X && (pad.Y1 <= obj1.Y && pad.Y2 >= obj1.Y))
-						pad.MouseUp(obj1);
+					if (pad.X1 <= e.X && pad.X2 >= e.X && (pad.Y1 <= e.Y && pad.Y2 >= e.Y))
+						pad.MouseUp(e);
 				}
 				this.Invalidate();
 			}
@@ -1149,17 +1106,15 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
-		private void tHXG4q3el([In] object obj0, [In] MouseEventArgs obj1)
+		private void HandleMouseWheel(object sender, MouseEventArgs e)
 		{
-			if (obj1.Delta > 0)
-				this.yHuMeqhH1(obj1.Delta / 20);
+			if (e.Delta > 0)
+				this.yHuMeqhH1(e.Delta / 20);
 			else
-				this.HS5QjNKgD(-obj1.Delta / 20);
+				this.HS5QjNKgD(-e.Delta / 20);
 			this.Invalidate();
 		}
 
-		
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
 			try
@@ -1223,14 +1178,12 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
-		private void apXk9fKZc([In] object obj0, [In] EventArgs obj1)
+		private void HandleMouseLeave(object sender, EventArgs e)
 		{
 			this.isMouseOverCanvas = false;
 			this.Invalidate();
 		}
 
-		
 		protected override void OnResize(EventArgs e)
 		{
 			base.OnResize(e);
@@ -1241,20 +1194,13 @@ namespace FreeQuant.FinChart
 			this.Invalidate();
 		}
 
-		
-		protected override void OnKeyPress(KeyPressEventArgs e)
-		{
-		}
-
-		
-		private void yHuMeqhH1([In] int obj0)
+		private void yHuMeqhH1(int obj0)
 		{
 			this.xhyOat6AP(Math.Min(this.firstIndex + obj0, this.lastIndex - 1 + 1), this.lastIndex);
 			this.Invalidate();
 		}
 
-		
-		private void HS5QjNKgD([In] int obj0)
+		private void HS5QjNKgD(int obj0)
 		{
 			if (this.mainSeries == null || this.mainSeries.Count == 0)
 				return;
@@ -1262,36 +1208,31 @@ namespace FreeQuant.FinChart
 			this.Invalidate();
 		}
 
-		
 		public void ZoomIn()
 		{
 			this.yHuMeqhH1((this.lastIndex - this.firstIndex) / 5);
 		}
 
-		
 		public void ZoomOut()
 		{
 			this.HS5QjNKgD((this.lastIndex - this.firstIndex) / 10 + 1);
 		}
 
-		
 		public void UnSelectAll()
 		{
 			foreach (Pad pad in this.pads)
 			{
-				if (pad.SKDJveno9i() != null)
+				if (pad.getChartDrawable() != null)
 				{
-					pad.SKDJveno9i().UnSelect();
-					pad.VdUJdkoHYO((IChartDrawable)null);
+					pad.getChartDrawable().UnSelect();
+					pad.setChartDrawable(null);
 				}
 			}
 		}
 
-		
 		public virtual void ShowProperties(DSView view, Pad pad, bool forceShowProperties)
 		{
 		}
-
 		
 		public void AddPad()
 		{
@@ -1301,7 +1242,6 @@ namespace FreeQuant.FinChart
 			this.contentUpdated = true;
 		}
 
-		
 		private void J3J6sEr6u()
 		{
 			int y1 = this.canvasTopOffset;
@@ -1311,23 +1251,22 @@ namespace FreeQuant.FinChart
 			foreach (Pad pad in this.pads)
 			{
 				num2 += (double)this.padsHeightArray[index];
-				int y2 = (int)((double)this.canvasTopOffset + (double)num1 * num2);
+				int y2 = (int)(this.canvasTopOffset + num1 * num2);
 				pad.SetCanvas(this.canvasLeftOffset, this.Width - this.canvasRightOffset, y1, y2);
 				++index;
 				y1 = y2;
 			}
 		}
 
-		
 		private void Eqy9o6NL3()
 		{
 			if (this.padsHeightArray.Count == 0)
 			{
-				this.padsHeightArray.Add((object)1.0);
+				this.padsHeightArray.Add(1.0);
 			}
 			else
 			{
-				this.padsHeightArray.Add((object)0);
+				this.padsHeightArray.Add(0);
 				int count = this.padsHeightArray.Count;
 				if (this.volumePadShown)
 					--count;
@@ -1345,7 +1284,6 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
 		public void ShowVolumePad()
 		{
 			if (this.volumePadShown || !(this.mainSeries is BarSeries))
@@ -1353,17 +1291,16 @@ namespace FreeQuant.FinChart
 			this.volumePadShown = true;
 			this.Eqy9o6NL3();
 			Pad pad = new Pad(this, this.canvasLeftOffset, this.Width - this.canvasRightOffset, this.canvasTopOffset, this.Height - this.canvasBottomOffset);
-			pad.AxisLabelFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(208);
+			pad.AxisLabelFormat = "xaxis";
 			pad.DrawGrid = false;
 			this.volumeView = new VolumeBSView(pad, (DoubleSeries)(this.mainSeries as BarSeries));
 			this.volumeView.Color = this.volumeColor;
-			pad.AddPrimitive((IChartDrawable)this.volumeView);
+			pad.AddPrimitive(this.volumeView);
 			this.pads.Insert(1, pad);
 			this.J3J6sEr6u();
-			this.V9dYTd2ef();
+			this.EmitVolumeVisibleChanged();
 		}
 
-		
 		public void HideVolumePad()
 		{
 			if (!this.volumePadShown)
@@ -1372,32 +1309,29 @@ namespace FreeQuant.FinChart
 			this.volumePadShown = false;
 			this.Eqy9o6NL3();
 			this.J3J6sEr6u();
-			this.V9dYTd2ef();
+			this.EmitVolumeVisibleChanged();
 		}
 
-		
 		public int ClientX(DateTime dateTime)
 		{
 			double num = (double)(this.Width - this.canvasLeftOffset - this.canvasRightOffset) / (double)(this.lastIndex - this.firstIndex + 1);
 			return this.canvasLeftOffset + (int)((double)(this.mainSeries.GetIndex(dateTime) - this.firstIndex) * num + num / 2.0);
 		}
 
-		
 		public DateTime GetDateTime(int x)
 		{
 			double num = (double)(this.Width - this.canvasLeftOffset - this.canvasRightOffset) / (double)(this.lastIndex - this.firstIndex + 1);
 			return this.mainSeries.GetDateTime((int)Math.Floor((double)(x - this.canvasLeftOffset) / num) + this.firstIndex);
 		}
 
-		
 		public void Reset()
 		{
 			lock (this.dataLock)
 			{
-				foreach (Pad item_1 in this.pads)
+				foreach (Pad pad in this.pads)
 				{
-					item_1.WudJnsmXyH();
-					foreach (object item_0 in item_1.Primitives)
+					pad.Clear();
+					foreach (object item_0 in pad.Primitives)
 					{
 						if (item_0 is IUpdatable)
 							(item_0 as IUpdatable).Updated -= new EventHandler(this.Xsr5a43Ll);
@@ -1411,7 +1345,7 @@ namespace FreeQuant.FinChart
 				this.lastIndex = -1;
 				if (this.series != null)
 					this.series.ItemAdded -= new ItemAddedEventHandler(this.EevqwoC33);
-				this.mainSeries = (TimeSeries)null;
+				this.mainSeries = null;
 				this.AAUwMEaLwI = DateTime.MinValue;
 				this.contentUpdated = true;
 				if (this.updateStyle == ChartUpdateStyle.Fixed)
@@ -1420,14 +1354,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
-		public void SetMainSeries(DoubleSeries mainSeries)
-		{
-			this.SetMainSeries(mainSeries, false);
-		}
-
-		
-		public void SetMainSeries(DoubleSeries mainSeries, bool showVolumePad)
+		public void SetMainSeries(DoubleSeries mainSeries, bool showVolumePad = false)
 		{
 			lock (this.dataLock)
 			{
@@ -1463,38 +1390,34 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		
-		private void xhyOat6AP([In] int obj0, [In] int obj1)
+		private void xhyOat6AP(int firstIndex, int lastIndex)
 		{
-			if (this.mainSeries == null || obj0 < 0 || obj1 > this.mainSeries.Count - 1)
+			if (this.mainSeries == null || firstIndex < 0 || lastIndex > this.mainSeries.Count - 1)
 				return;
-			this.firstIndex = obj0;
-			this.lastIndex = obj1;
-			this.leftDateTime = obj0 >= 0 ? this.mainSeries.GetDateTime(this.firstIndex) : DateTime.MaxValue;
-			this.rightDateTime = obj1 < 0 || obj1 > this.mainSeries.Count - 1 ? DateTime.MinValue : this.mainSeries.GetDateTime(this.lastIndex);
+			this.firstIndex = firstIndex;
+			this.lastIndex = lastIndex;
+			this.leftDateTime = firstIndex >= 0 ? this.mainSeries.GetDateTime(this.firstIndex) : DateTime.MaxValue;
+			this.rightDateTime = lastIndex < 0 || lastIndex > this.mainSeries.Count - 1 ? DateTime.MinValue : this.mainSeries.GetDateTime(this.lastIndex);
 			foreach (Pad pad in this.pads)
 				pad.SetInterval(this.leftDateTime, this.rightDateTime);
 			this.contentUpdated = true;
 		}
 
-		
-		private void RBtsskQJ8([In] DateTime obj0, [In] DateTime obj1)
+		private void SetInterval(DateTime minDate, DateTime maxDate)
 		{
-			this.xhyOat6AP(this.MainSeries.GetIndex(obj0, EIndexOption.Next), this.MainSeries.GetIndex(obj1, EIndexOption.Prev));
+			this.xhyOat6AP(this.MainSeries.GetIndex(minDate, EIndexOption.Next), this.MainSeries.GetIndex(maxDate, EIndexOption.Prev));
 		}
 
-		
-		private void FSOLY9YLw([In] object obj0, [In] ScrollEventArgs obj1)
+		private void FSOLY9YLw(object sender, ScrollEventArgs e)
 		{
-			if (this.hScrollBar.Value == obj1.NewValue)
+			if (this.hScrollBar.Value == e.NewValue)
 				return;
-			int num = obj1.NewValue - this.hScrollBar.Value;
+			int num = e.NewValue - this.hScrollBar.Value;
 			this.xhyOat6AP(this.firstIndex + num, this.lastIndex + num);
 			this.Invalidate();
 		}
 
-		
-		private void EevqwoC33([In] object obj0, [In] DateTimeEventArgs obj1)
+		private void EevqwoC33(object sender, DateTimeEventArgs e)
 		{
 			bool flag = false;
 			lock (this.dataLock)
@@ -1522,15 +1445,13 @@ namespace FreeQuant.FinChart
 			Application.DoEvents();
 		}
 
-		
-		private void L8iVpVKax([In] object obj0, [In] EventArgs obj1)
+		private void L8iVpVKax(object sender, EventArgs e)
 		{
 			this.firstIndex = -1;
 			this.lastIndex = -1;
 		}
 
-		
-		private bool vA32MRaPG([In] BSStyle obj0, [In] bool obj1)
+		private bool vA32MRaPG(BSStyle obj0, bool obj1)
 		{
 			bool flag = true;
 			if (obj0 == BSStyle.Candle || obj0 == BSStyle.Bar || obj0 == BSStyle.Line)
@@ -1600,46 +1521,34 @@ namespace FreeQuant.FinChart
 		}
 
 		
-		private void aUdHWj4OL()
+		private void EmitUpdateStyleChanged()
 		{
-			if (this.LE4pZguJ7 == null)
+			if (this.UpdateStyleChanged == null)
 				return;
-			this.LE4pZguJ7((object)this, EventArgs.Empty);
+			this.UpdateStyleChanged(this, EventArgs.Empty);
 		}
 
 		
-		private void V9dYTd2ef()
+		private void EmitVolumeVisibleChanged()
 		{
-			if (this.qihWfJrGe == null)
-				return;
-			this.qihWfJrGe((object)this, EventArgs.Empty);
+			if (this.VolumeVisibleChanged != null) this.VolumeVisibleChanged(this, EventArgs.Empty);
 		}
 
-		
-		private void P7TCrmLFf()
+		private void EmitBarSeriesStyleChanged()
 		{
-			if (this.MpIIw5Gl2 == null)
-				return;
-			this.MpIIw5Gl2((object)this, EventArgs.Empty);
+			if (this.BarSeriesStyleChanged != null) this.BarSeriesStyleChanged(this, EventArgs.Empty);
 		}
 
-		
-		private void CBhmsygdb()
+		private void EmitActionTypeChanged()
 		{
-			if (this.KgyF1utcO == null)
-				return;
-			this.KgyF1utcO((object)this, EventArgs.Empty);
+			if (this.ActionTypeChanged != null) this.ActionTypeChanged(this, EventArgs.Empty);
 		}
 
-		
-		private void L3g3dmTt3()
+		private void EmitScaleStyleChanged()
 		{
-			if (this.OeIzvbutI == null)
-				return;
-			this.OeIzvbutI((object)this, EventArgs.Empty);
+			if (this.ScaleStyleChanged != null) this.ScaleStyleChanged(this, EventArgs.Empty);
 		}
 
-		
 		public void EnsureVisible(Transaction transaction)
 		{
 			if (transaction.DateTime < this.mainSeries.FirstDateTime)
@@ -1648,13 +1557,12 @@ namespace FreeQuant.FinChart
 			int val2 = this.lastIndex - this.firstIndex + 1;
 			int num2 = Math.Max(Math.Min(this.mainSeries.Count - 1, num1 + val2 / 5), val2);
 			this.xhyOat6AP(num2 - val2 + 1, num2);
-			this.pads[0].SetSelectedObject((object)transaction);
+			this.pads[0].SetSelectedObject(transaction);
 			this.AAUwMEaLwI = this.mainSeries.GetDateTime(this.mainSeries.GetIndex(transaction.DateTime, EIndexOption.Prev));
 			this.contentUpdated = true;
 			this.Invalidate();
 		}
 
-		
 		public int GetPadNumber(Point point)
 		{
 			int y = point.Y;
@@ -1666,6 +1574,6 @@ namespace FreeQuant.FinChart
 			return -1;
 		}
 
-		private delegate void I9hOMiynBlKXwGeySC(int firstIndex,int lastIndex);
+		private delegate void I9hOMiynBlKXwGeySC(int firstIndex, int lastIndex);
 	}
 }

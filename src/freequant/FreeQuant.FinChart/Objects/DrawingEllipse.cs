@@ -4,131 +4,126 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FinChart.Objects
 {
-  public class DrawingEllipse : IUpdatable
-  {
-    private DateTime QbJy0TUwFX;
-    private DateTime kA4yrTb50K;
-    private double GjOyKRGd06;
-    private double l36yibjrFV;
-    public bool rangeY;
-    private Color Un1yXhicQO;
-    private int eJXyDMSI7d;
+	public class DrawingEllipse : IUpdatable
+	{
+		private DateTime x1;
+		private DateTime x2;
+		private double y1;
+		private double y2;
+		public bool rangeY;
+		private Color color;
+		private int width;
 
-    public bool RangeY
-    {
-       get
-      {
-        return this.rangeY;
-      }
-       set
-      {
-        this.rangeY = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public bool RangeY
+		{
+			get
+			{
+				return this.rangeY;
+			}
+			set
+			{
+				this.rangeY = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public Color Color
-    {
-       get
-      {
-        return this.Un1yXhicQO;
-      }
-       set
-      {
-        this.Un1yXhicQO = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public Color Color
+		{
+			get
+			{
+				return this.color; 
+			}
+			set
+			{
+				this.color = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public int Width
-    {
-       get
-      {
-        return this.eJXyDMSI7d;
-      }
-       set
-      {
-        this.eJXyDMSI7d = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public int Width
+		{
+			get
+			{
+				return this.width; 
+			}
+			set
+			{
+				this.width = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public string Name {  get;  private set; }
+		public string Name { get; private set; }
 
-    public DateTime X1
-    {
-       get
-      {
-        return this.QbJy0TUwFX;
-      }
-       set
-      {
-        this.QbJy0TUwFX = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public DateTime X1
+		{
+			get
+			{
+				return this.x1; 
+			}
+			set
+			{
+				this.x1 = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public DateTime X2
-    {
-       get
-      {
-        return this.kA4yrTb50K;
-      }
-       set
-      {
-        this.kA4yrTb50K = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public DateTime X2
+		{
+			get
+			{
+				return this.x2; 
+			}
+			set
+			{
+				this.x2 = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public double Y1
-    {
-       get
-      {
-        return this.GjOyKRGd06;
-      }
-       set
-      {
-        this.GjOyKRGd06 = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public double Y1
+		{
+			get
+			{
+				return this.y1; 
+			}
+			set
+			{
+				this.y1 = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public double Y2
-    {
-       get
-      {
-        return this.l36yibjrFV;
-      }
-       set
-      {
-        this.l36yibjrFV = value;
-        this.uvbyJ2XdPh();
-      }
-    }
+		public double Y2
+		{
+			get
+			{
+				return this.y2; 
+			}
+			set
+			{
+				this.y2 = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public event EventHandler Updated;
+		public event EventHandler Updated;
 
-    
-    public DrawingEllipse(DateTime x1, double y1, DateTime x2, double y2, string name)
-    {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.eJXyDMSI7d = 1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.Name = name;
-      this.QbJy0TUwFX = x1;
-      this.GjOyKRGd06 = y1;
-      this.kA4yrTb50K = x2;
-      this.l36yibjrFV = y2;
-    }
+		public DrawingEllipse(DateTime x1, double y1, DateTime x2, double y2, string name) : base()
+		{
+			this.width = 1;
+			this.Name = name;
+			this.x1 = x1;
+			this.y1 = y1;
+			this.x2 = x2;
+			this.y2 = y2;
+		}
 
-    
-    private void uvbyJ2XdPh()
-    {
-      if (this.raxySEVyyA == null)
-        return;
-      this.raxySEVyyA((object) this, EventArgs.Empty);
-    }
-  }
+		private void EmitUpdated()
+		{
+			if (this.Updated == null)
+				return;
+			this.Updated(this, EventArgs.Empty);
+		}
+	}
 }

@@ -60,7 +60,7 @@ namespace OpenQuant.API.Quant
 			}
 		}
 
-		public double this [int row, int col]
+		public double this[int row, int col]
 		{
 			get
 			{

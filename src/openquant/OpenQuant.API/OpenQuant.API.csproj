@@ -201,7 +201,6 @@
     <Compile Include="Indicators\RegressionDistanceMode.cs" />
     <Compile Include="Indicators\RSI.cs" />
     <Compile Include="Indicators\PDM.cs" />
-    <Compile Include="Indicators\PCL.cs" />
     <Compile Include="Indicators\MarketFI.cs" />
     <Compile Include="Indicators\CCI.cs" />
     <Compile Include="Indicators\SMA.cs" />
@@ -278,6 +277,7 @@
     <Compile Include="Plugins\FQProviderTypeDescriptor.cs" />
     <Compile Include="Plugins\FQProviderPropertyDescriptor.cs" />
     <Compile Include="Plugins\FQProviderTypeDescriptionProvider.cs" />
+    <Compile Include="Indicators\PCL.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Design\AltSourceForm.resx" />

@@ -9,8 +9,6 @@ namespace FreeQuant.Charting
   [Serializable]
   public class Histogram : IDrawable
   {
-    private string P6F6OEmA1G;
-    private string fcj6JIiZTq;
     protected int fNBins;
     protected double[] fBins;
     protected double fBinSize;
@@ -20,111 +18,42 @@ namespace FreeQuant.Charting
     protected double fYMax;
     protected double[] fIntegral;
     protected bool fIntegralChanged;
-    private Color s8O6MasiY2;
-    private Color igE6PbVkgQ;
+
     [NonSerialized]
     private Brush Dea6GTXBpE;
-    private bool x7V6RqhcoW;
-    private string vOM6NxrdQt;
 
-    public string Name
-    {
-       get
-      {
-        return this.P6F6OEmA1G;
-      }
-       set
-      {
-        this.P6F6OEmA1G = value;
-      }
-    }
+		public string Name { get; set; }
+		public string Title { get; set; }
+		public bool ToolTipEnabled { get; set; }
+		public string ToolTipFormat { get; set; }
+		public Color LineColor { get; set; }
+		public Color FillColor { get; set; }
 
-    public string Title
-    {
-       get
-      {
-        return this.fcj6JIiZTq;
-      }
-       set
-      {
-        this.fcj6JIiZTq = value;
-      }
-    }
-
-    public bool ToolTipEnabled
-    {
-       get
-      {
-        return this.x7V6RqhcoW;
-      }
-       set
-      {
-        this.x7V6RqhcoW = value;
-      }
-    }
-
-    public string ToolTipFormat
-    {
-       get
-      {
-        return this.vOM6NxrdQt;
-      }
-       set
-      {
-        this.vOM6NxrdQt = value;
-      }
-    }
-
-    public Color LineColor
-    {
-       get
-      {
-        return this.s8O6MasiY2;
-      }
-       set
-      {
-        this.s8O6MasiY2 = value;
-      }
-    }
-
-    public Color FillColor
-    {
-       get
-      {
-        return this.igE6PbVkgQ;
-      }
-       set
-      {
-        this.igE6PbVkgQ = value;
-      }
-    }
-
-
-    public Histogram(string Name, string Title, int NBins, double XMin, double XMax):base()
+    public Histogram(string name, string title, int nBins, double XMin, double XMax):base()
     {
 
-      this.P6F6OEmA1G = Name;
-      this.fcj6JIiZTq = Title;
-      this.aVo6FRVaPQ(NBins, XMin, XMax);
+			this.Name = name;
+			this.Title = title;
+      this.Init(nBins, XMin, XMax);
     }
 
     
-    public Histogram(string Name, int NBins, double XMin, double XMax):base()
+    public Histogram(string name, int NBins, double XMin, double XMax):base()
     {
 
-      this.P6F6OEmA1G = Name;
-      this.aVo6FRVaPQ(NBins, XMin, XMax);
+			this.Name = name;
+      this.Init(NBins, XMin, XMax);
     }
 
 
     public Histogram(int NBins, double XMin, double XMax):base()
     {
 
-      this.aVo6FRVaPQ(NBins, XMin, XMax);
+      this.Init(NBins, XMin, XMax);
     }
 
     
-    private void aVo6FRVaPQ([In] int obj0, [In] double obj1, [In] double obj2)
+    private void Init([In] int obj0, [In] double obj1, [In] double obj2)
     {
       this.fNBins = obj0;
       this.fBins = new double[this.fNBins];
@@ -143,8 +72,8 @@ namespace FreeQuant.Charting
       }
       this.fYMin = 0.0;
       this.fYMax = 0.0;
-      this.s8O6MasiY2 = Color.Black;
-      this.igE6PbVkgQ = Color.Blue;
+			this.LineColor = Color.Black;
+			this.FillColor = Color.Blue;
       this.Dea6GTXBpE = (Brush) null;
       this.fIntegral = new double[this.fNBins];
       this.fIntegralChanged = false;
@@ -276,31 +205,31 @@ namespace FreeQuant.Charting
 				Canvas canvas = new Canvas("Ca Name", "Ca Title");
       }
       Chart.Pad.Add((IDrawable) this);
-      Chart.Pad.Title.Add(this.P6F6OEmA1G, this.igE6PbVkgQ);
-      Chart.Pad.Legend.Add(this.P6F6OEmA1G, this.igE6PbVkgQ);
+			Chart.Pad.Title.Add(this.Name, this.FillColor);
+			Chart.Pad.Legend.Add(this.Name, this.FillColor);
 			if (Option.ToLower().IndexOf("what") >= 0)
         return;
       Chart.Pad.SetRange(this.fXMin, this.fXMax, this.fYMin - (this.fYMax - this.fYMin) / 10.0, this.fYMax + (this.fYMax - this.fYMin) / 10.0);
     }
 
     
-    public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
+    public virtual void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
     {
-      Pen Pen = new Pen(this.s8O6MasiY2);
-      Brush brush = this.Dea6GTXBpE != null ? this.Dea6GTXBpE : (Brush) new SolidBrush(this.igE6PbVkgQ);
+			Pen Pen = new Pen(this.LineColor);
+			Brush brush = this.Dea6GTXBpE != null ? this.Dea6GTXBpE : (Brush) new SolidBrush(this.FillColor);
       for (int Index = 0; Index < this.fNBins; ++Index)
       {
-        Pad.Graphics.FillRectangle(brush, Pad.ClientX(this.GetBinMin(Index)), Pad.ClientY(this.fBins[Index]), Math.Abs(Pad.ClientX(this.GetBinMax(Index)) - Pad.ClientX(this.GetBinMin(Index))), Math.Abs(Pad.ClientY(this.fBins[Index]) - Pad.ClientY(0.0)));
-        Pad.DrawLine(Pen, this.GetBinMin(Index), 0.0, this.GetBinMin(Index), this.fBins[Index]);
-        Pad.DrawLine(Pen, this.GetBinMin(Index), this.fBins[Index], this.GetBinMax(Index), this.fBins[Index]);
-        Pad.DrawLine(Pen, this.GetBinMax(Index), this.fBins[Index], this.GetBinMax(Index), 0.0);
+        pad.Graphics.FillRectangle(brush, pad.ClientX(this.GetBinMin(Index)), pad.ClientY(this.fBins[Index]), Math.Abs(pad.ClientX(this.GetBinMax(Index)) - pad.ClientX(this.GetBinMin(Index))), Math.Abs(pad.ClientY(this.fBins[Index]) - pad.ClientY(0.0)));
+        pad.DrawLine(Pen, this.GetBinMin(Index), 0.0, this.GetBinMin(Index), this.fBins[Index]);
+        pad.DrawLine(Pen, this.GetBinMin(Index), this.fBins[Index], this.GetBinMax(Index), this.fBins[Index]);
+        pad.DrawLine(Pen, this.GetBinMax(Index), this.fBins[Index], this.GetBinMax(Index), 0.0);
       }
     }
 
     
     public TDistance Distance(double X, double Y)
     {
-      return (TDistance) null;
+      return null;
     }
   }
 }

@@ -2,6 +2,9 @@
 
 namespace OpenQuant.API
 {
+	/// <summary>
+	/// The Chart class is used to modify visual appearence of the project's BarChart.
+	/// </summary>
 	public class Chart
 	{
 		private Color chartBackColor = Color.Transparent;
@@ -22,6 +25,13 @@ namespace OpenQuant.API
 		private Color rightAxisTextColor = Color.Transparent;
 		private Color rightAxisMinorTicksColor = Color.Transparent;
 		private Color rightAxisMajorTicksColor = Color.Transparent;
+
+		/// <summary>
+		/// Initializes a new instance of this class
+		/// </summary>
+		public Chart()
+		{
+		}
 
 		public Color ForeColor
 		{

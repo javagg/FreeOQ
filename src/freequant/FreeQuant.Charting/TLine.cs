@@ -1,32 +1,31 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting
 {
   [Serializable]
   public class TLine : IDrawable
   {
-    private double sJtCYICQXO;
-    private double h5GCBxGygl;
-    private double PufClO5avv;
-    private double ow8CKw3ueB;
-    private Color esOCfcSMpP;
-    private int RbYCFcVuCb;
-    private DashStyle EbYCO1lcN4;
-    private bool HrpCJRNn2N;
-    private string QC5CM77ORT;
+    private double x1;
+    private double y1;
+    private double x2;
+    private double y2;
+    private Color color;
+    private int width;
+    private DashStyle dashStyle;
+    private bool toolTipEnabled;
+    private string toolTipFormat;
 
-    public bool ToolTipEnabled
+		public bool ToolTipEnabled 
     {
        get
       {
-        return this.HrpCJRNn2N;
+				return this.toolTipEnabled; 
       }
        set
       {
-        this.HrpCJRNn2N = value;
+        this.toolTipEnabled = value;
       }
     }
 
@@ -34,11 +33,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.QC5CM77ORT;
+				return this.toolTipFormat; 
       }
        set
       {
-        this.QC5CM77ORT = value;
+        this.toolTipFormat = value;
       }
     }
 
@@ -46,11 +45,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.sJtCYICQXO;
+				return this.x1; 
       }
        set
       {
-        this.sJtCYICQXO = value;
+        this.x1 = value;
       }
     }
 
@@ -58,11 +57,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.h5GCBxGygl;
+				return this.y1; 
       }
        set
       {
-        this.h5GCBxGygl = value;
+        this.y1 = value;
       }
     }
 
@@ -70,11 +69,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.PufClO5avv;
+				return this.x2; 
       }
        set
       {
-        this.PufClO5avv = value;
+        this.x2 = value;
       }
     }
 
@@ -82,11 +81,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.ow8CKw3ueB;
+				return this.y2; 
       }
        set
       {
-        this.ow8CKw3ueB = value;
+        this.y2 = value;
       }
     }
 
@@ -94,11 +93,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.EbYCO1lcN4;
+				return this.dashStyle; 
       }
        set
       {
-        this.EbYCO1lcN4 = value;
+        this.dashStyle = value;
       }
     }
 
@@ -106,11 +105,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.esOCfcSMpP;
+				return this.color; 
       }
        set
       {
-        this.esOCfcSMpP = value;
+        this.color = value;
       }
     }
 
@@ -118,36 +117,36 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.RbYCFcVuCb;
+				return this.width; 
       }
        set
       {
-        this.RbYCFcVuCb = value;
+        this.width = value;
       }
     }
 
     
     public TLine(double X1, double Y1, double X2, double Y2)
     {
-      this.sJtCYICQXO = X1;
-      this.h5GCBxGygl = Y1;
-      this.PufClO5avv = X2;
-      this.ow8CKw3ueB = Y2;
-      this.esOCfcSMpP = Color.Black;
-      this.EbYCO1lcN4 = DashStyle.Solid;
-      this.RbYCFcVuCb = 1;
+      this.x1 = X1;
+      this.y1 = Y1;
+      this.x2 = X2;
+      this.y2 = Y2;
+      this.color = Color.Black;
+      this.dashStyle = DashStyle.Solid;
+      this.width = 1;
     }
 
     
     public TLine(DateTime X1, double Y1, DateTime X2, double Y2)
     {
-      this.sJtCYICQXO = (double) X1.Ticks;
-      this.h5GCBxGygl = Y1;
-      this.PufClO5avv = (double) X2.Ticks;
-      this.ow8CKw3ueB = Y2;
-      this.esOCfcSMpP = Color.Black;
-      this.EbYCO1lcN4 = DashStyle.Solid;
-      this.RbYCFcVuCb = 1;
+      this.x1 = X1.Ticks;
+      this.y1 = Y1;
+      this.x2 = X2.Ticks;
+      this.y2 = Y2;
+      this.color = Color.Black;
+      this.dashStyle = DashStyle.Solid;
+      this.width = 1;
     }
 
     
@@ -157,17 +156,17 @@ namespace FreeQuant.Charting
       {
 				Canvas canvas = new Canvas("d", "d");
       }
-      Chart.Pad.Add((IDrawable) this);
+      Chart.Pad.Add(this);
     }
 
     
     public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
     {
-      Pad.DrawLine(new Pen(this.esOCfcSMpP)
+      Pad.DrawLine(new Pen(this.color)
       {
-        Width = (float) this.RbYCFcVuCb,
-        DashStyle = this.EbYCO1lcN4
-      }, this.sJtCYICQXO, this.h5GCBxGygl, this.PufClO5avv, this.ow8CKw3ueB);
+        Width = (float) this.width,
+        DashStyle = this.dashStyle
+      }, this.x1, this.y1, this.x2, this.y2);
     }
 
     

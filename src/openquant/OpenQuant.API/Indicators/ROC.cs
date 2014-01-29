@@ -5,65 +5,65 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class ROC : Indicator
-  {
-    [Description("Length")]
-    [Category("Parameters")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as ROC).get_Length();
-      }
-      set
-      {
-        (this.indicator as ROC).set_Length(value);
-      }
-    }
+	public class ROC : Indicator
+	{
+		[Description("Length")]
+		[Category("Parameters")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.ROC).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.ROC).Length = value;
+			}
+		}
 
-    private ROC()
-    {
-      this.indicator = (Indicator) new ROC();
-    }
+		private ROC()
+		{
+			this.indicator = new FreeQuant.Indicators.ROC();
+		}
 
-    public ROC(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public ROC(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(series.series, length);
+		}
 
-    public ROC(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public ROC(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(indicator.indicator, length);
+		}
 
-    public ROC(OpenQuant.API.BarSeries series, int length, BarData option)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public ROC(BarSeries series, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(series.series, length, EnumConverter.Convert(option));
+		}
 
-    public ROC(Indicator indicator, int length, BarData option)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public ROC(Indicator indicator, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(indicator.indicator, length, EnumConverter.Convert(option));
+		}
 
-    public ROC(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public ROC(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(series.series, length, color);
+		}
 
-    public ROC(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public ROC(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(indicator.indicator, length, color);
+		}
 
-    public ROC(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public ROC(BarSeries series, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(series.series, length, EnumConverter.Convert(option), color);
+		}
 
-    public ROC(Indicator indicator, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new ROC((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
-  }
+		public ROC(Indicator indicator, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ROC(indicator.indicator, length, EnumConverter.Convert(option), color);
+		}
+	}
 }

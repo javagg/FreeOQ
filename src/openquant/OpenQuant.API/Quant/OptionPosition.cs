@@ -7,6 +7,6 @@
 	{
 		InTheMoney,
 		AtTheMoney,
-		OutOfTheMoney,
+		OutOfTheMoney
 	}
 }

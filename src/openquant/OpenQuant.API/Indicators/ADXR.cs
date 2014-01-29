@@ -5,57 +5,57 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class ADXR : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as ADXR).get_Length();
-      }
-      set
-      {
-        (this.indicator as ADXR).set_Length(value);
-      }
-    }
+	public class ADXR : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.ADXR).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.ADXR).Length = value;
+			}
+		}
 
-    public IndicatorStyle Style
-    {
-      get
-      {
-        return OpenQuant.API.EnumConverter.Convert((this.indicator as ADXR).get_Style());
-      }
-      set
-      {
-        (this.indicator as ADXR).set_Style(OpenQuant.API.EnumConverter.Convert(value));
-      }
-    }
+		public IndicatorStyle Style
+		{
+			get
+			{
+				return EnumConverter.Convert((this.indicator as FreeQuant.Indicators.ADXR).Style);
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.ADXR).Style = EnumConverter.Convert(value);
+			}
+		}
 
-    private ADXR()
-    {
-      this.indicator = (Indicator) new ADXR();
-    }
+		private ADXR()
+		{
+			this.indicator = new FreeQuant.Indicators.ADXR();
+		}
 
-    public ADXR(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new ADXR((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public ADXR(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.ADXR(series.series, length);
+		}
 
-    public ADXR(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new ADXR((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public ADXR(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.ADXR(indicator.indicator, length);
+		}
 
-    public ADXR(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new ADXR((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public ADXR(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ADXR(series.series, length, color);
+		}
 
-    public ADXR(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new ADXR((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public ADXR(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ADXR(indicator.indicator, length, color);
+		}
+	}
 }

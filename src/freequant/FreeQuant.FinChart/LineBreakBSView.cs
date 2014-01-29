@@ -8,8 +8,8 @@ namespace FreeQuant.FinChart
 {
   public class LineBreakBSView : SeriesView
   {
-    private BarSeries VD8SifY3I2;
-    private LineBreak oeSSXpxoDy;
+		private BarSeries barSeries; 
+		private LineBreak lineBreak; 
 
     public override Color Color
     {
@@ -26,7 +26,7 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return this.VD8SifY3I2[this.lastDate, EIndexOption.Prev].Close;
+        return this.barSeries[this.lastDate, EIndexOption.Prev].Close;
       }
     }
 
@@ -34,27 +34,24 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return (TimeSeries) this.oeSSXpxoDy;
+        return (TimeSeries) this.lineBreak;
       }
     }
 
     
-    public LineBreakBSView(Pad pad, BarSeries series)
+		public LineBreakBSView(Pad pad, BarSeries series) : base(pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
-      this.VD8SifY3I2 = series;
+      this.barSeries = series;
       this.pad = pad;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3380);
-      this.oeSSXpxoDy = new LineBreak(series, 3);
-      this.oeSSXpxoDy.Calculate();
+			this.ToolTipFormat = "toooll";
+      this.lineBreak = new LineBreak(series, 3);
+      this.lineBreak.Calculate();
     }
 
     
     public override PadRange GetPadRangeY(Pad Pad)
     {
-      return new PadRange(this.oeSSXpxoDy.LowestLow(this.firstDate, this.lastDate), this.oeSSXpxoDy.HighestHigh(this.firstDate, this.lastDate));
+      return new PadRange(this.lineBreak.LowestLow(this.firstDate, this.lastDate), this.lineBreak.HighestHigh(this.firstDate, this.lastDate));
     }
 
     
@@ -65,8 +62,8 @@ namespace FreeQuant.FinChart
       Pen pen3 = new Pen(Color.Yellow);
       SolidBrush solidBrush1 = new SolidBrush(Color.White);
       SolidBrush solidBrush2 = new SolidBrush(Color.Black);
-      int index1 = this.oeSSXpxoDy.GetIndex(this.firstDate);
-      int index2 = this.oeSSXpxoDy.GetIndex(this.lastDate);
+      int index1 = this.lineBreak.GetIndex(this.firstDate);
+      int index2 = this.lineBreak.GetIndex(this.lastDate);
       if (index2 == -1 || index2 == -1)
         return;
       int width = Math.Max(2, (int) this.pad.IntervalWidth);
@@ -74,9 +71,9 @@ namespace FreeQuant.FinChart
         return;
       for (int index3 = index1; index3 <= index2; ++index3)
       {
-        int num = this.pad.ClientX(this.oeSSXpxoDy.GetDateTime(index3));
-        double open = this.oeSSXpxoDy[index3].Open;
-        double close = this.oeSSXpxoDy[index3].Close;
+        int num = this.pad.ClientX(this.lineBreak.GetDateTime(index3));
+        double open = this.lineBreak[index3].Open;
+        double close = this.lineBreak[index3].Close;
         int height = Math.Abs(this.pad.ClientY(open) - this.pad.ClientY(close));
         if (open > close)
         {
@@ -97,15 +94,15 @@ namespace FreeQuant.FinChart
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();
-      Bar bar = this.oeSSXpxoDy[this.pad.GetDateTime(x)];
+      Bar bar = this.lineBreak[this.pad.GetDateTime(x)];
       distance.DX = 0.0;
       if (y >= bar.Low && y <= bar.High)
         distance.DY = 0.0;
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.VD8SifY3I2.Name, (object) this.VD8SifY3I2.Title, (object) bar.DateTime.ToString(this.VD8SifY3I2.ToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
-      distance.ToolTipText = ((object) stringBuilder).ToString();
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.barSeries.Name, (object) this.barSeries.Title, (object) bar.DateTime.ToString(this.barSeries.ToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
+			distance.ToolTipText =  stringBuilder.ToString();
       return distance;
     }
   }

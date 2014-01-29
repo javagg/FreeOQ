@@ -9,6 +9,6 @@
 		American,
 		Exotic,
 		Bermudian,
-		Digial,
+		Digial
 	}
 }

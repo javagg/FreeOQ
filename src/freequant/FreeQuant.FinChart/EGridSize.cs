@@ -2,10 +2,10 @@ namespace FreeQuant.FinChart
 {
   public enum EGridSize : long
   {
-    sec1 = 10000000L,
-    sec2 = 20000000L,
-    sec5 = 50000000L,
-    sec10 = 100000000L,
+    sec1 = 10000000,
+    sec2 = 20000000,
+    sec5 = 50000000,
+    sec10 = 100000000,
     sec20 = 200000000L,
     sec30 = 300000000L,
     min1 = 600000000L,

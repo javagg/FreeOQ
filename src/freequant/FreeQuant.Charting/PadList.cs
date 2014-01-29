@@ -1,160 +1,139 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting
 {
-  [Serializable]
-  public class PadList : IList, ICollection, IEnumerable
-  {
-    private ArrayList WTQm1qtT9;
-
-    public bool IsReadOnly
-    {
-       get
-      {
-        return this.WTQm1qtT9.IsReadOnly;
-      }
-    }
-
-    public bool IsFixedSize
-    {
-       get
-      {
-        return this.WTQm1qtT9.IsFixedSize;
-      }
-    }
-
-    public bool IsSynchronized
-    {
-       get
-      {
-        return this.WTQm1qtT9.IsSynchronized;
-      }
-    }
-
-    public int Count
-    {
-       get
-      {
-        return this.WTQm1qtT9.Count;
-      }
-    }
-
-    public object SyncRoot
-    {
-       get
-      {
-        return this.WTQm1qtT9.SyncRoot;
-      }
-    }
-
-//    public Pad this[int index]
-//    {
-//       get
-//      {
-//        return this.WTQm1qtT9[index] as Pad;
-//      }
-//    }
-
-	public object this[int index]
+	[Serializable]
+	public class PadList : IList, ICollection
 	{
-		get
+		private ArrayList pads;
+
+		public bool IsReadOnly
 		{
-			return this.WTQm1qtT9[index];
-		}
-			set 
+			get
 			{
-				this.WTQm1qtT9[index] = value;
+				return this.pads.IsReadOnly;
 			}
+		}
+
+		public bool IsFixedSize
+		{
+			get
+			{
+				return this.pads.IsFixedSize;
+			}
+		}
+
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.pads.IsSynchronized;
+			}
+		}
+
+		public int Count
+		{
+			get
+			{
+				return this.pads.Count;
+			}
+		}
+
+		public object SyncRoot
+		{
+			get
+			{
+				return this.pads.SyncRoot;
+			}
+		}
+
+		public Pad this [int index]
+		{
+			get
+			{
+				return this.pads[index] as Pad;
+			}
+			set
+			{
+				this.pads[index] = value as Pad;
+			}
+		}
+
+		object IList.this[int index]
+		{
+			get
+			{
+				return this.pads[index];
+			}
+			set
+			{
+				this.pads[index] = value;
+			}
+		}
+
+		public PadList() : base()
+		{
+			this.pads = new ArrayList();
+		}
+
+		public void RemoveAt(int index)
+		{
+			this.pads.RemoveAt(index);
+		}
+
+		void IList.Insert(int index, object value)
+		{
+		}
+
+		void IList.Remove(object value)
+		{
+			this.Remove(value as Pad);
+		}
+
+		bool IList.Contains(object value)
+		{
+			return this.pads.Contains(value);
+		}
+
+		public void Clear()
+		{
+			this.pads.Clear();
+		}
+
+		int IList.IndexOf(object value)
+		{
+			return this.IndexOf(value as Pad);
+		}
+
+		int IList.Add(object value)
+		{
+			return this.Add(value as Pad);
+		}
+
+		public void CopyTo(Array array, int index)
+		{
+			this.pads.CopyTo(array, index);
+		}
+
+		public IEnumerator GetEnumerator()
+		{
+			return this.pads.GetEnumerator();
+		}
+
+		public int Add(Pad pad)
+		{
+			return this.pads.Add(pad);
+		}
+
+		public void Remove(Pad pad)
+		{
+			this.pads.Remove(pad);
+		}
+
+		public int IndexOf(Pad pad)
+		{
+			return this.pads.IndexOf(pad);
+		}
 	}
-    public PadList():base()
-    {
-
-      this.WTQm1qtT9 = new ArrayList();
-
-    }
-
-    
-//    object IList.get_Item(int index)
-//    {
-//      return (object) this[index];
-//    }
-//
-//    
-//    void IList.set_Item(int index, object value)
-//    {
-//    }
-
-    
-    public void RemoveAt(int index)
-    {
-      this.WTQm1qtT9.RemoveAt(index);
-    }
-
-    
-    void IList.Insert(int index, object value)
-    {
-    }
-
-    
-    void IList.Remove(object value)
-    {
-      this.Remove(value as Pad);
-    }
-
-    
-    bool IList.Contains(object value)
-    {
-      return this.WTQm1qtT9.Contains(value);
-    }
-
-    
-    public void Clear()
-    {
-      this.WTQm1qtT9.Clear();
-    }
-
-    
-    int IList.IndexOf(object value)
-    {
-      return this.IndexOf(value as Pad);
-    }
-
-    
-    int IList.Add(object value)
-    {
-      return this.Add(value as Pad);
-    }
-
-    
-    public void CopyTo(Array array, int index)
-    {
-      this.WTQm1qtT9.CopyTo(array, index);
-    }
-
-    
-    public IEnumerator GetEnumerator()
-    {
-      return this.WTQm1qtT9.GetEnumerator();
-    }
-
-    
-    public int Add(Pad pad)
-    {
-      return this.WTQm1qtT9.Add((object) pad);
-    }
-
-    
-    public void Remove(Pad pad)
-    {
-      this.WTQm1qtT9.Remove((object) pad);
-    }
-
-    
-    public int IndexOf(Pad pad)
-    {
-      return this.WTQm1qtT9.IndexOf((object) pad);
-    }
-  }
 }

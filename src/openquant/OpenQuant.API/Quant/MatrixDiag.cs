@@ -9,7 +9,7 @@ namespace OpenQuant.API.Quant
 	{
 		internal Matrix fMatrix;
 
-		public double this [int i]
+		public double this[int i]
 		{
 			get
 			{

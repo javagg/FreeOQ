@@ -4,101 +4,96 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FinChart.Objects
 {
-  public class DrawingRay : IUpdatable
-  {
-    private DateTime Kn1cVWc3xb;
-    private double PWrc2Yc2ux;
-    public bool rangeY;
-    private Color tCDcgHkw96;
-    private int aYvcHmNWdj;
+	public class DrawingRay : IUpdatable
+	{
+		private DateTime x;
+		private double y;
+		public bool rangeY;
+		private Color color;
+		private int width;
 
-    public bool RangeY
-    {
-       get
-      {
-        return this.rangeY;
-      }
-       set
-      {
-        this.rangeY = value;
-        this.jh0csqQXMr();
-      }
-    }
+		public bool RangeY
+		{
+			get
+			{
+				return this.rangeY;
+			}
+			set
+			{
+				this.rangeY = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public Color Color
-    {
-       get
-      {
-        return this.tCDcgHkw96;
-      }
-       set
-      {
-        this.tCDcgHkw96 = value;
-        this.jh0csqQXMr();
-      }
-    }
+		public Color Color
+		{
+			get
+			{
+				return this.color; 
+			}
+			set
+			{
+				this.color = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public int Width
-    {
-       get
-      {
-        return this.aYvcHmNWdj;
-      }
-       set
-      {
-        this.aYvcHmNWdj = value;
-        this.jh0csqQXMr();
-      }
-    }
+		public int Width
+		{
+			get
+			{
+				return this.width; 
+			}
+			set
+			{
+				this.width = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public string Name {  get;  private set; }
+		public string Name { get; private set; }
 
-    public DateTime X
-    {
-       get
-      {
-        return this.Kn1cVWc3xb;
-      }
-       set
-      {
-        this.Kn1cVWc3xb = value;
-        this.jh0csqQXMr();
-      }
-    }
+		public DateTime X
+		{
+			get
+			{
+				return this.x; 
+			}
+			set
+			{
+				this.x = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public double Y
-    {
-       get
-      {
-        return this.PWrc2Yc2ux;
-      }
-       set
-      {
-        this.PWrc2Yc2ux = value;
-        this.jh0csqQXMr();
-      }
-    }
+		public double Y
+		{
+			get
+			{
+				return this.y;  
+			}
+			set
+			{
+				this.y = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public event EventHandler Updated;
+		public event EventHandler Updated;
 
-    
-    public DrawingRay(DateTime x, double y, string name)
-    {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.aYvcHmNWdj = 1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.Name = name;
-      this.Kn1cVWc3xb = x;
-      this.PWrc2Yc2ux = y;
-    }
+		public DrawingRay(DateTime x, double y, string name) : base()
+		{
+			this.width = 1;
+			this.Name = name;
+			this.x = x;
+			this.y = y;
+		}
 
-    
-    private void jh0csqQXMr()
-    {
-      if (this.aLlcqjt4gV == null)
-        return;
-      this.aLlcqjt4gV((object) this, EventArgs.Empty);
-    }
-  }
+		private void EmitUpdated()
+		{
+			if (this.Updated == null)
+				return;
+			this.Updated(this, EventArgs.Empty);
+		}
+	}
 }

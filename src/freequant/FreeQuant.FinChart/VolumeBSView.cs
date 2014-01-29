@@ -9,19 +9,19 @@ namespace FreeQuant.FinChart
 {
   public class VolumeBSView : SeriesView
   {
-    private DoubleSeries cNQwO6AHR;
-    private Color sxtcYpgtQ;
+		private DoubleSeries series; 
+    private Color color;
 
     [Category("Drawing Style")]
     public override Color Color
     {
       get
       {
-        return this.sxtcYpgtQ;
+				return this.color; 
       }
       set
       {
-        this.sxtcYpgtQ = value;
+        this.color = value;
       }
     }
 
@@ -37,7 +37,7 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return this.MainSeries.Name + FJDHryrxb1WIq5jBAt.mT707pbkgT(50);
+				return this.MainSeries.Name + "";
       }
     }
 
@@ -45,7 +45,7 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return (TimeSeries) this.cNQwO6AHR;
+        return this.series;
       }
     }
 
@@ -53,26 +53,23 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return ((TimeSeries) this.cNQwO6AHR)[this.cNQwO6AHR.GetIndex(this.lastDate, EIndexOption.Prev), BarData.Volume];
+        return ((TimeSeries) this.series)[this.series.GetIndex(this.lastDate, EIndexOption.Prev), BarData.Volume];
       }
     }
 
     
-    public VolumeBSView(Pad pad, DoubleSeries series)
+		public VolumeBSView(Pad pad, DoubleSeries series) : base(pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.sxtcYpgtQ = Color.SteelBlue;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
-      this.cNQwO6AHR = series;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(0);
+		this.Color = Color.SteelBlue;
+      this.series = series;
+		this.ToolTipFormat = "";
     }
 
     
     public override PadRange GetPadRangeY(Pad Pad)
     {
-      double min = this.cNQwO6AHR.GetMin(this.firstDate, this.lastDate, BarData.Volume);
-      double max = this.cNQwO6AHR.GetMax(this.firstDate, this.lastDate, BarData.Volume);
+      double min = this.series.GetMin(this.firstDate, this.lastDate, BarData.Volume);
+      double max = this.series.GetMax(this.firstDate, this.lastDate, BarData.Volume);
       if (min >= max)
       {
         double num = min / 10.0;
@@ -85,9 +82,9 @@ namespace FreeQuant.FinChart
     
     public override void Paint()
     {
-      SolidBrush solidBrush = new SolidBrush(this.sxtcYpgtQ);
-      int index1 = this.cNQwO6AHR.GetIndex(this.firstDate);
-      int index2 = this.cNQwO6AHR.GetIndex(this.lastDate);
+      SolidBrush solidBrush = new SolidBrush(this.color);
+      int index1 = this.series.GetIndex(this.firstDate);
+      int index2 = this.series.GetIndex(this.lastDate);
       if (index1 == -1 || index2 == -1)
         return;
       int val2_1 = this.pad.ClientY(0.0);
@@ -96,13 +93,13 @@ namespace FreeQuant.FinChart
       int num1 = (int) Math.Max(2.0, (double) (int) this.pad.IntervalWidth / 1.2);
       for (int index3 = index1; index3 <= index2; ++index3)
       {
-        int num2 = this.pad.ClientX(this.cNQwO6AHR.GetDateTime(index3));
-        int val1 = this.pad.ClientY(((TimeSeries) this.cNQwO6AHR)[index3, BarData.Volume]);
+        int num2 = this.pad.ClientX(this.series.GetDateTime(index3));
+        int val1 = this.pad.ClientY(((TimeSeries) this.series)[index3, BarData.Volume]);
         float y = (float) Math.Max(Math.Min(val1, val2_1), val2_2);
         float num3 = (float) Math.Min(Math.Max(val1, val2_1), val2_3);
         if ((double) num3 - (double) y < 1.0)
           y = num3 - 1f;
-        this.pad.Graphics.FillRectangle((Brush) new SolidBrush(this.sxtcYpgtQ), (float) (num2 - num1 / 2), y, (float) num1, Math.Abs(y - num3));
+        this.pad.Graphics.FillRectangle((Brush) new SolidBrush(this.color), (float) (num2 - num1 / 2), y, (float) num1, Math.Abs(y - num3));
       }
     }
 
@@ -111,15 +108,15 @@ namespace FreeQuant.FinChart
     {
       Distance distance = new Distance();
       DateTime dateTime = this.pad.GetDateTime(x);
-      int index = this.cNQwO6AHR.GetIndex(dateTime);
+      int index = this.series.GetIndex(dateTime);
       distance.DX = 0.0;
-      if (y <= ((TimeSeries) this.cNQwO6AHR)[index, BarData.Volume])
+      if (y <= ((TimeSeries) this.series)[index, BarData.Volume])
         distance.DY = 0.0;
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.cNQwO6AHR.Name, (object) this.cNQwO6AHR.Title, (object) dateTime.ToString(this.cNQwO6AHR.ToolTipDateTimeFormat), (object) ((TimeSeries) this.cNQwO6AHR)[index, BarData.Volume]);
-      distance.ToolTipText = ((object) stringBuilder).ToString();
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.series.Name, (object) this.series.Title, (object) dateTime.ToString(this.series.ToolTipDateTimeFormat), (object) ((TimeSeries) this.series)[index, BarData.Volume]);
+			distance.ToolTipText =  stringBuilder.ToString();
       return distance;
     }
   }

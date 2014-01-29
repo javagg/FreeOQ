@@ -13,7 +13,7 @@ namespace OpenQuant.API
 		public static BarSeries GetHistoricalBars(Instrument instrument, DateTime begin, DateTime end, BarType barType, long barSize)
 		{
 			FreeQuant.Instruments.Instrument instrument1 = Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument;
-			if (barSize == 86400L)
+			if (barSize == 86400)
 				return new BarSeries((FreeQuant.Series.BarSeries)FreeQuant.Instruments.DataManager.GetDailySeries(instrument1, begin, end));
 			else
 				return new BarSeries(FreeQuant.Instruments.DataManager.GetBarSeries(instrument1, begin, end, EnumConverter.Convert(barType), barSize));

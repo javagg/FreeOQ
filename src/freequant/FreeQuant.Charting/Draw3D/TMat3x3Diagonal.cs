@@ -4,7 +4,6 @@ namespace FreeQuant.Charting.Draw3D
 	{
 		public TMat3x3Diagonal(double lx, double ly, double lz) : base()
 		{
-
 			this.SetDiagonal(lx, ly, lz);
 		}
 	}

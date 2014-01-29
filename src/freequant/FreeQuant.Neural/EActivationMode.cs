@@ -1,8 +1,4 @@
 namespace FreeQuant.Neural
 {
-	public enum EActivationMode
-	{
-		Approximation,
-		Classification,
-	}
+	public enum EActivationMode {	Approximation, Classification	}
 }

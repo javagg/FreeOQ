@@ -2,7 +2,6 @@ using FreeQuant;
 using FreeQuant.Series;
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
@@ -37,20 +36,8 @@ namespace FreeQuant.Instruments
       }
     }
 
-    public bool Enabled
-    {
-       get
-      {
-				return this.enabled; 
-      }
-       set
-      {
-        this.enabled = value;
-      }
-    }
-
+		public bool Enabled { get; set; }
     public bool CalculatePnL {  get;  set; }
-
     public bool CalculateDrawdown {  get;  set; }
 
     public TimeSpan UpdateInterval {  get;  set; }

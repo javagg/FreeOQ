@@ -8,6 +8,6 @@ namespace FreeQuant.FinChart
 		Kagi,
 		Ranko,
 		LineBreak,
-		PointAndFigure,
+		PointAndFigure
 	}
 }

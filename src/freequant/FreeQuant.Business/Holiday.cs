@@ -5,57 +5,15 @@ namespace FreeQuant.Business
 	[Serializable]
 	public class Holiday
 	{
-		private string name;
-		private string description;
-		private DateTime date;
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public DateTime Date { get; set; }
 
-		public string Name
+		public Holiday(DateTime date, string name, string description = null)
 		{
-			get
-			{
-				return this.name; 
-			}
-			set
-			{
-				this.name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return this.description; 
-			}
-			set
-			{
-				this.description = value;
-			}
-		}
-
-		public DateTime Date
-		{
-			get
-			{
-				return this.date; 
-			}
-			set
-			{
-				this.date = value;
-			}
-		}
-
-		public Holiday(DateTime date, string name)
-		{
-			this.date = this.Date;
-			this.name = name;
-		}
-
-		public Holiday(DateTime date, string name, string description)
-		{
-			this.date = date;
-			this.name = name;
-			this.description = description;
+			this.Date = date;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

@@ -2,39 +2,9 @@
 {
 	public class BarRequest
 	{
-//		private long barSize;
-//		private BarType barType;
-//		private bool isBarFactoryRequest;
-
-		public long BarSize
-		{
-			get;
-//			{
-//				return this.barSize;
-//			}
-			private set;
-		}
-
-		public BarType BarType
-		{
-			get;
-//			{
-//				return this.barType;
-//			}
-			private set;
-		}
-
-		public bool IsBarFactoryRequest
-		{
-			get;
-//			{
-//				return this.isBarFactoryRequest;
-//			}
-			set;
-//			{
-//				this.isBarFactoryRequest = value;
-//			}
-		}
+		public long BarSize { get; private set; }
+		public BarType BarType { get; private set; }
+		public bool IsBarFactoryRequest { get; set; }
 
 		public BarRequest(BarType barType, long barSize, bool isBarFactoryRequest)
 		{

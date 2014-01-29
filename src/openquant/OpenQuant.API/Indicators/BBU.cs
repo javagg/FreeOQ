@@ -5,89 +5,89 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class BBU : Indicator
-  {
-    [Description("Length")]
-    [Category("Parameters")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as BBU).get_Length();
-      }
-      set
-      {
-        (this.indicator as BBU).set_Length(value);
-      }
-    }
+	public class BBU : Indicator
+	{
+		[Description("Length")]
+		[Category("Parameters")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.BBU).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.BBU).Length = value;
+			}
+		}
 
-    [Category("Parameters")]
-    [Description("K")]
-    public double K
-    {
-      get
-      {
-        return (this.indicator as BBU).get_K();
-      }
-      set
-      {
-        (this.indicator as BBU).set_K(value);
-      }
-    }
+		[Category("Parameters")]
+		[Description("K")]
+		public double K
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.BBU).K;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.BBU).K = value;
+			}
+		}
 
-    private BBU()
-    {
-      this.indicator = (Indicator) new BBU();
-    }
+		private BBU()
+		{
+			this.indicator = new FreeQuant.Indicators.BBU();
+		}
 
-    public BBU(OpenQuant.API.BarSeries series, int length, double k)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) series.series, length, k);
-    }
+		public BBU(BarSeries series, int length, double k)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(series.series, length, k);
+		}
 
-    public BBU(Indicator indicator, int length, double k)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) indicator.indicator, length, k);
-    }
+		public BBU(Indicator indicator, int length, double k)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(indicator.indicator, length, k);
+		}
 
-    public BBU(OpenQuant.API.BarSeries series, int length, double k, BarData option)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) series.series, length, k, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public BBU(BarSeries series, int length, double k, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(series.series, length, k, EnumConverter.Convert(option));
+		}
 
-    public BBU(Indicator indicator, int length, double k, BarData option)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) indicator.indicator, length, k, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public BBU(Indicator indicator, int length, double k, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(indicator.indicator, length, k, EnumConverter.Convert(option));
+		}
 
-    public BBU(OpenQuant.API.BarSeries series, int length, double k, Color color)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) series.series, length, k, color);
-    }
+		public BBU(BarSeries series, int length, double k, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(series.series, length, k, color);
+		}
 
-    public BBU(Indicator indicator, int length, double k, Color color)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) indicator.indicator, length, k, color);
-    }
+		public BBU(Indicator indicator, int length, double k, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(indicator.indicator, length, k, color);
+		}
 
-    public BBU(OpenQuant.API.BarSeries series, int length, double k, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) series.series, length, k, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public BBU(BarSeries series, int length, double k, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(series.series, length, k, EnumConverter.Convert(option), color);
+		}
 
-    public BBU(Indicator indicator, int length, double k, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) indicator.indicator, length, k, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public BBU(Indicator indicator, int length, double k, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(indicator.indicator, length, k, EnumConverter.Convert(option), color);
+		}
 
-    public BBU(OpenQuant.API.TimeSeries series, int length, double k)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) series.series, length, k);
-    }
+		public BBU(TimeSeries series, int length, double k)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(series.series, length, k);
+		}
 
-    public BBU(OpenQuant.API.TimeSeries series, int length, double k, Color color)
-    {
-      this.indicator = (Indicator) new BBU((SmartQuant.Series.TimeSeries) series.series, length, k, color);
-    }
-  }
+		public BBU(TimeSeries series, int length, double k, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.BBU(series.series, length, k, color);
+		}
+	}
 }

@@ -13,23 +13,17 @@ namespace FreeQuant.FinChart
     private int nWoDvrxxo;
 
     
-    public LineBreak(BarSeries BarArray)
+		public LineBreak(BarSeries BarArray) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.couXtHe2A = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.lySiCl1si = BarArray;
       this.lySiCl1si.ItemAdded += new ItemAddedEventHandler(this.d2ors9hOM);
     }
 
     
-    public LineBreak(BarSeries BarArray, int NumberOfLines)
+		public LineBreak(BarSeries BarArray, int NumberOfLines) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.couXtHe2A = true;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.lySiCl1si = BarArray;
       this.inBKlKXwG = NumberOfLines;
       this.lySiCl1si.ItemAdded += new ItemAddedEventHandler(this.d2ors9hOM);

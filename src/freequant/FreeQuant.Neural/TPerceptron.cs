@@ -2,7 +2,6 @@ using FreeQuant.Charting;
 using System;
 using System.Collections;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Neural
 {
@@ -131,7 +130,6 @@ namespace FreeQuant.Neural
 			this.XOwvCEen2.Title = "title";
       this.XOwvCEen2.LineColor = Color.Blue;
     }
-
    
     public override void Reset()
     {
@@ -139,7 +137,6 @@ namespace FreeQuant.Neural
       this.ResetError();
     }
 
-   
     public void AddHiddenLayer(int NHidden)
     {
       TNeuralLayer Layer1 = (TNeuralLayer) this.rCHgEckPw[this.rCHgEckPw.Count - 1];

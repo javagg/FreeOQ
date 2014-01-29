@@ -2,6 +2,6 @@ namespace FreeQuant.Charting
 {
 	public interface IMovable
 	{
-		void Move(double X, double Y, double dX, double dY);
+		void Move(double x, double y, double dx, double dy);
 	}
 }

@@ -1,59 +1,20 @@
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
+using System.ComponentModel;
 
 namespace FreeQuant.Charting
 {
-  [Serializable]
-  public class TTitleItem
-  {
-    private string IXv0bEUjj;
-    private Color RGgaNDXfm;
+	[Serializable]
+	public class TTitleItem
+	{
+		public string Text { get; set; }
+		//		[DefaultValue(Color.Black)]
+		public Color Color { get; set; }
 
-    public string Text
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.IXv0bEUjj;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.IXv0bEUjj = value;
-      }
-    }
-
-    public Color Color
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.RGgaNDXfm;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.RGgaNDXfm = value;
-      }
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitleItem():base()
-    {
-      this.IXv0bEUjj = "";
-      this.RGgaNDXfm = Color.Black;
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitleItem(string Text):base()
-    {
-
-      this.IXv0bEUjj = Text;
-      this.RGgaNDXfm = Color.Black;
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public TTitleItem(string Text, Color Color):base()
-    {
-      this.IXv0bEUjj = Text;
-      this.RGgaNDXfm = Color;
-    }
-  }
+		public TTitleItem(string text = null, Color color = default(Color))
+		{
+			this.Text = text ?? String.Empty;
+			this.Color = color;
+		}
+	}
 }

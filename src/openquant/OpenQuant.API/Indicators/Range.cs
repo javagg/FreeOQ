@@ -5,45 +5,45 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class Range : Indicator
-  {
-    [Description("Length")]
-    [Category("Parameters")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as Range).get_Length();
-      }
-      set
-      {
-        (this.indicator as Range).set_Length(value);
-      }
-    }
+	public class Range : Indicator
+	{
+		[Description("Length")]
+		[Category("Parameters")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.Range).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.Rang).Length = value;
+			}
+		}
 
-    private Range()
-    {
-      this.indicator = (Indicator) new Range();
-    }
+		private Range()
+		{
+			this.indicator = new FreeQuant.Indicators.Rang();
+		}
 
-    public Range(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new Range((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public Range(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.Rang(series.series, length);
+		}
 
-    public Range(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new Range((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public Range(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.Rang(indicator.indicator, length);
+		}
 
-    public Range(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new Range((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public Range(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.Rang(series.series, length, color);
+		}
 
-    public Range(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new Range((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public Range(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.Rang(indicator.indicator, length, color);
+		}
+	}
 }

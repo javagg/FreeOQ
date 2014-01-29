@@ -7,6 +7,6 @@ namespace FreeQuant.Charting
 		Top,
 		Bottom,
 		Centre,
-		None,
+		None
 	}
 }

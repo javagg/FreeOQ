@@ -5,23 +5,15 @@ namespace FreeQuant.FinChart
 	[Serializable]
 	public class PadRange
 	{
-		public double Min;
-		public double Max;
-		protected bool isValid;
-
-		public bool IsValid
-		{
-			get
-			{
-				return this.isValid;
-			}
-		}
+		public double Min { get; set; }
+		public double Max { get; set; }
+		public bool IsValid  { get; private set; }
 
 		public PadRange(double min, double max)
 		{
 			this.Min = min;
 			this.Max = max;
-			this.isValid = max - min > 4.94065645841247E-324;
+			this.IsValid = max - min > 4.94065645841247E-324;
 		}
 	}
 }

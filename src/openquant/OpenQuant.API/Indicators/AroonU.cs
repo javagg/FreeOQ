@@ -5,55 +5,55 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class AroonU : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as AroonU).get_Length();
-      }
-      set
-      {
-        (this.indicator as AroonU).set_Length(value);
-      }
-    }
+	public class AroonU : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.AroonU).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.AroonU).Length = value;
+			}
+		}
 
-    private AroonU()
-    {
-      this.indicator = (Indicator) new AroonU();
-    }
+		private AroonU()
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU();
+		}
 
-    public AroonU(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new AroonU((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public AroonU(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU(series.series, length);
+		}
 
-    public AroonU(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new AroonU((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public AroonU(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU(indicator.indicator, length);
+		}
 
-    public AroonU(OpenQuant.API.TimeSeries series, int length)
-    {
-      this.indicator = (Indicator) new AroonU((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public AroonU(TimeSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU(series.series, length);
+		}
 
-    public AroonU(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new AroonU((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public AroonU(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU(series.series, length, color);
+		}
 
-    public AroonU(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new AroonU((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public AroonU(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU(indicator.indicator, length, color);
+		}
 
-    public AroonU(OpenQuant.API.TimeSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new AroonU((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
-  }
+		public AroonU(TimeSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.AroonU(series.series, length, color);
+		}
+	}
 }

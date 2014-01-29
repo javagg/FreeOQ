@@ -4,10 +4,10 @@ namespace FreeQuant.Charting
 {
 	public interface IChartTransformation
 	{
-		double CalculateNotInSessionTicks(double X, double Y);
-		double CalculateRealQuantityOfTicks_Right(double X, double Y);
-		double CalculateRealQuantityOfTicks_Left(double X, double Y);
-		void GetFirstGridDivision(ref EGridSize GridSize, ref double Min, ref double Max, ref DateTime FirstDateTime);
-		double GetNextGridDivision(double FirstTick, double PrevMajor, int MajorCount, EGridSize GridSize);
+		double CalculateNotInSessionTicks(double x, double y);
+		double CalculateRealQuantityOfTicks_Right(double x, double y);
+		double CalculateRealQuantityOfTicks_Left(double x, double y);
+		void GetFirstGridDivision(ref EGridSize gridSize, ref double min, ref double max, ref DateTime firstDateTime);
+		double GetNextGridDivision(double firstTick, double prevMajor, int majorCount, EGridSize gridSize);
 	}
 }

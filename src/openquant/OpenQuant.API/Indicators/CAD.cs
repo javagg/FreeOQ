@@ -13,11 +13,11 @@ namespace OpenQuant.API.Indicators
 		{
 			get
 			{
-				return (this.indicator as CAD).get_Length1();
+				return (this.indicator as FreeQuant.Indicators.CAD).Length1;
 			}
 			set
 			{
-				(this.indicator as CAD).set_Length1(value);
+				(this.indicator as FreeQuant.Indicators.CAD).Length1 = value;
 			}
 		}
 
@@ -27,37 +27,37 @@ namespace OpenQuant.API.Indicators
 		{
 			get
 			{
-				return (this.indicator as CAD).get_Length2();
+				return (this.indicator as FreeQuant.Indicators.CAD).Length2;
 			}
 			set
 			{
-				(this.indicator as CAD).set_Length2(value);
+				(this.indicator as FreeQuant.Indicators.CAD).Length2 = value;
 			}
 		}
 
 		private CAD()
 		{
-			this.indicator = (Indicator)new CAD();
+			this.indicator = new FreeQuant.Indicators.CAD();
 		}
 
-		public CAD(OpenQuant.API.BarSeries series, int length1, int lenght2)
+		public CAD(BarSeries series, int length1, int lenght2)
 		{
-			this.indicator = (Indicator)new CAD((SmartQuant.Series.TimeSeries)series.series, length1, lenght2);
+			this.indicator = new FreeQuant.Indicators.CAD(series.series, length1, lenght2);
 		}
 
 		public CAD(Indicator indicator, int length1, int lenght2)
 		{
-			this.indicator = (Indicator)new CAD((SmartQuant.Series.TimeSeries)indicator.indicator, length1, lenght2);
+			this.indicator = new FreeQuant.Indicators.CAD(indicator.indicator, length1, lenght2);
 		}
 
-		public CAD(OpenQuant.API.BarSeries series, int length1, int lenght2, Color color)
+		public CAD(BarSeries series, int length1, int lenght2, Color color)
 		{
-			this.indicator = (Indicator)new CAD((SmartQuant.Series.TimeSeries)series.series, length1, lenght2, color);
+			this.indicator = new FreeQuant.Indicators.CAD(series.series, length1, lenght2, color);
 		}
 
 		public CAD(Indicator indicator, int length1, int lenght2, Color color)
 		{
-			this.indicator = (Indicator)new CAD((SmartQuant.Series.TimeSeries)indicator.indicator, length1, lenght2, color);
+			this.indicator = new FreeQuant.Indicators.CAD(indicator.indicator, length1, lenght2, color);
 		}
 	}
 }

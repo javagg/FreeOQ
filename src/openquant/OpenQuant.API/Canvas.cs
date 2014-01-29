@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace OpenQuant.API
 {
+	/// <summary>
+	/// A canvas
+	/// </summary>
 	public class Canvas
 	{
 		private FreeQuant.Charting.Canvas canvas;
@@ -34,7 +36,7 @@ namespace OpenQuant.API
 
 		public void Add(Indicator indicator)
 		{
-			((FreeQuant.Series.TimeSeries)indicator.indicator).Draw();
+			indicator.indicator.Draw();
 		}
 
 		public void Add(TradeSeries tradeSeries)
@@ -59,7 +61,7 @@ namespace OpenQuant.API
 
 		public void Run()
 		{
-			Application.Run((Form)this.canvas);
+			Application.Run(this.canvas);
 		}
 
 		public void Cd(int pad)

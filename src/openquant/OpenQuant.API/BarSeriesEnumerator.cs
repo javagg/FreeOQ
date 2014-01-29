@@ -12,7 +12,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return (object)new Bar(this.enumerator.Current as FreeQuant.Data.Bar);
+				return new Bar(this.enumerator.Current as FreeQuant.Data.Bar);
 			}
 		}
 

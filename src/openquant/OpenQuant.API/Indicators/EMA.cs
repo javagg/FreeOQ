@@ -5,75 +5,75 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class EMA : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as EMA).Length;
-      }
-      set
-      {
-        (this.indicator as EMA).set_Length(value);
-      }
-    }
+	public class EMA : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.EMA).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.EMA).Length = value;
+			}
+		}
 
-    private EMA()
-    {
-      this.indicator = (Indicator) new EMA();
-    }
+		private EMA()
+		{
+			this.indicator = new FreeQuant.Indicators.EMA();
+		}
 
-    public EMA(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public EMA(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(series.series, length);
+		}
 
-    public EMA(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public EMA(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(indicator.indicator, length);
+		}
 
-    public EMA(OpenQuant.API.BarSeries series, int length, BarData option)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public EMA(BarSeries series, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(series.series, length, EnumConverter.Convert(option));
+		}
 
-    public EMA(Indicator indicator, int length, BarData option)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public EMA(Indicator indicator, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(indicator.indicator, length, EnumConverter.Convert(option));
+		}
 
-    public EMA(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public EMA(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(series.series, length, color);
+		}
 
-    public EMA(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public EMA(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(indicator.indicator, length, color);
+		}
 
-    public EMA(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public EMA(BarSeries series, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(series.series, length, EnumConverter.Convert(option), color);
+		}
 
-    public EMA(Indicator indicator, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public EMA(Indicator indicator, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(indicator.indicator, length, EnumConverter.Convert(option), color);
+		}
 
-    public EMA(OpenQuant.API.TimeSeries series, int length)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public EMA(TimeSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(series.series, length);
+		}
 
-    public EMA(OpenQuant.API.TimeSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new EMA((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
-  }
+		public EMA(TimeSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.EMA(series.series, length, color);
+		}
+	}
 }

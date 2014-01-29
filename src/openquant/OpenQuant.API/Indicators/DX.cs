@@ -38,7 +38,7 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new DX();
     }
 
-    public DX(OpenQuant.API.BarSeries series, int length)
+    public DX(BarSeries series, int length)
     {
       this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) series.series, length);
     }
@@ -48,7 +48,7 @@ namespace OpenQuant.API.Indicators
       this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) indicator.indicator, length);
     }
 
-    public DX(OpenQuant.API.BarSeries series, int length, Color color)
+    public DX(BarSeries series, int length, Color color)
     {
       this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) series.series, length, color);
     }

@@ -9,7 +9,7 @@ namespace FreeQuant.FinChart.Objects
     private double JPXyR8VTA9;
     private Image aipyEffZDd;
 
-    public string Name {  get;  private set; }
+    public string Name { get; private set; }
 
     public DateTime X
     {
@@ -52,12 +52,8 @@ namespace FreeQuant.FinChart.Objects
 
     public event EventHandler Updated;
 
-    
     public DrawingImage(DateTime x, double y, Image image, string name)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Name = name;
       this.kK7y702WDY = x;
       this.JPXyR8VTA9 = y;
@@ -67,9 +63,9 @@ namespace FreeQuant.FinChart.Objects
     
     private void hw2ybdMqpF()
     {
-      if (this.enQyncNsH9 == null)
+			if (this.Updated == null)
         return;
-      this.enQyncNsH9((object) this, EventArgs.Empty);
+			this.Updated(this, EventArgs.Empty);
     }
   }
 }

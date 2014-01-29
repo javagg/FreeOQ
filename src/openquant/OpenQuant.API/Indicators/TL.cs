@@ -4,31 +4,31 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class TL : Indicator
-  {
-    private TL()
-    {
-      this.indicator = (Indicator) new TL();
-    }
+	public class TL : Indicator
+	{
+		private TL()
+		{
+			this.indicator = new FreeQuant.Indicators.TL();
+		}
 
-    public TL(OpenQuant.API.BarSeries series)
-    {
-      this.indicator = (Indicator) new TL((SmartQuant.Series.TimeSeries) series.series);
-    }
+		public TL(BarSeries series)
+		{
+			this.indicator = new FreeQuant.Indicators.TL(series.series);
+		}
 
-    public TL(Indicator indicator)
-    {
-      this.indicator = (Indicator) new TL((SmartQuant.Series.TimeSeries) indicator.indicator);
-    }
+		public TL(Indicator indicator)
+		{
+			this.indicator = new FreeQuant.Indicators.TL(indicator.indicator);
+		}
 
-    public TL(OpenQuant.API.BarSeries series, Color color)
-    {
-      this.indicator = (Indicator) new TL((SmartQuant.Series.TimeSeries) series.series, color);
-    }
+		public TL(BarSeries series, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.TL(series.series, color);
+		}
 
-    public TL(Indicator indicator, Color color)
-    {
-      this.indicator = (Indicator) new TL((SmartQuant.Series.TimeSeries) indicator.indicator, color);
-    }
-  }
+		public TL(Indicator indicator, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.TL(indicator.indicator, color);
+		}
+	}
 }

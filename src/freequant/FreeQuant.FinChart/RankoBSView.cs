@@ -9,7 +9,7 @@ namespace FreeQuant.FinChart
 {
   public class RankoBSView : SeriesView
   {
-    private BarSeries rPoS1WavBw;
+		private BarSeries  barSeries;
 		private Ranko ranko; 
 
     public override Color Color
@@ -27,7 +27,7 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return this.rPoS1WavBw[this.lastDate, EIndexOption.Prev].Close;
+        return this.barSeries[this.lastDate, EIndexOption.Prev].Close;
       }
     }
 
@@ -35,30 +35,27 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return (TimeSeries) this.ranko;
+        return this.ranko;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public RankoBSView(Pad pad, BarSeries series)
+    
+		public RankoBSView(Pad pad, BarSeries series) : base(pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
-      this.rPoS1WavBw = series;
+      this.barSeries = series;
       this.pad = pad;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3504);
+			this.ToolTipFormat = "dfsfdfs";
       this.ranko = new Ranko(series, 0.3);
       this.ranko.Calculate();
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
       return new PadRange(this.ranko.LowestLow(this.firstDate, this.lastDate), this.ranko.HighestHigh(this.firstDate, this.lastDate));
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint()
     {
       Pen pen1 = new Pen(Color.Black);
@@ -101,7 +98,7 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();
@@ -112,7 +109,7 @@ namespace FreeQuant.FinChart
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.rPoS1WavBw.Name, (object) this.rPoS1WavBw.Title, (object) bar.DateTime.ToString(this.rPoS1WavBw.ToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.barSeries.Name, (object) this.barSeries.Title, (object) bar.DateTime.ToString(this.barSeries.ToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
       distance.ToolTipText = ((object) stringBuilder).ToString();
       return distance;
     }

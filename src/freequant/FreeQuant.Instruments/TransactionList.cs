@@ -28,7 +28,7 @@ namespace FreeQuant.Instruments
 				if (this.transactions.Count != 0)
 					return this.transactions[0] as Transaction;
 				else
-					return (Transaction)null;
+					return null;
 			}
 		}
 
@@ -37,13 +37,13 @@ namespace FreeQuant.Instruments
 			get
 			{
 				if (this.transactions.Count != 0)
-					return this.transactions[this.transactions.Count - 1] as Transaction;
+					return this.transactions[this.transactions.Count-1] as Transaction;
 				else
-					return (Transaction)null;
+					return null;
 			}
 		}
 
-		public Transaction this [int index]
+		public Transaction this[int index]
 		{
 			get
 			{
@@ -94,7 +94,7 @@ namespace FreeQuant.Instruments
 
 		public void Add(Transaction transaction, bool sort)
 		{
-			this.transactions.Add((object)transaction);
+			this.transactions.Add(transaction);
 			if (!sort || this.transactions.Count == 1 || !(transaction.DateTime < this[this.transactions.Count - 2].DateTime))
 				return;
 			this.transactions.Sort();
@@ -102,7 +102,7 @@ namespace FreeQuant.Instruments
 
 		public void Remove(Transaction transaction)
 		{
-			this.transactions.Remove((object)transaction);
+			this.transactions.Remove(transaction);
 		}
 
 		public void RemoveAt(int index)
@@ -117,7 +117,7 @@ namespace FreeQuant.Instruments
 
 		public bool Contains(Transaction transaction)
 		{
-			return this.transactions.Contains((object)transaction);
+			return this.transactions.Contains(transaction);
 		}
 
 		public void Sort()
@@ -146,12 +146,12 @@ namespace FreeQuant.Instruments
 
 		public TDistance Distance(double X, double Y)
 		{
-			Transaction transaction1 = (Transaction)null;
+			Transaction transaction1 = null;
 			double num1 = double.MaxValue;
 			TDistance tdistance = new TDistance();
 			foreach (Transaction transaction2 in this)
 			{
-				double num2 = Math.Abs((double)transaction2.DateTime.Ticks - X);
+				double num2 = Math.Abs(transaction2.DateTime.Ticks - X);
 				if (num2 < num1)
 				{
 					num1 = num2;
@@ -160,16 +160,16 @@ namespace FreeQuant.Instruments
 			}
 			if (transaction1 != null)
 			{
-				tdistance.X = (double)transaction1.DateTime.Ticks;
+				tdistance.X = transaction1.DateTime.Ticks;
 				tdistance.Y = transaction1.Price;
 				tdistance.dX = Math.Abs(X - tdistance.X);
 				tdistance.dY = Math.Abs(Y - tdistance.Y);
 				StringBuilder stringBuilder = new StringBuilder();
 				if (transaction1.DateTime.Second != 0 || transaction1.DateTime.Minute != 0 || transaction1.DateTime.Hour != 0)
-					stringBuilder.AppendFormat(this.toolTipFormat, (object)((object)transaction1.Side).ToString(), (object)transaction1.Instrument.Symbol, (object)transaction1.Qty, (object)transaction1.Price, (object)transaction1.DateTime);
+					stringBuilder.AppendFormat(this.toolTipFormat, transaction1.Side.ToString(), transaction1.Instrument.Symbol, (object)transaction1.Qty, (object)transaction1.Price, (object)transaction1.DateTime);
 				else
-					stringBuilder.AppendFormat(this.toolTipFormat, (object)((object)transaction1.Side).ToString(), (object)transaction1.Instrument.Symbol, (object)transaction1.Qty, (object)transaction1.Price, (object)transaction1.DateTime.ToShortDateString());
-				tdistance.ToolTipText = ((object)stringBuilder).ToString();
+					stringBuilder.AppendFormat(this.toolTipFormat, transaction1.Side.ToString(), transaction1.Instrument.Symbol, (object)transaction1.Qty, (object)transaction1.Price, (object)transaction1.DateTime.ToShortDateString());
+				tdistance.ToolTipText = stringBuilder.ToString();
 			}
 			else
 			{
@@ -197,7 +197,7 @@ namespace FreeQuant.Instruments
 
 		public PadRange GetPadRangeY(Pad pad)
 		{
-			return (PadRange)null;
+			return null;
 		}
 
 		public bool IsPadRangeX()
@@ -207,7 +207,7 @@ namespace FreeQuant.Instruments
 
 		public PadRange GetPadRangeX(Pad pad)
 		{
-			return (PadRange)null;
+			return null;
 		}
 	}
 }

@@ -1,8 +1,8 @@
 namespace FreeQuant.Charting
 {
-  public enum EVerticalGridStyle
-  {
-    ByDateTime,
-    NotByDateTime,
-  }
+	public enum EVerticalGridStyle
+	{
+		ByDateTime,
+		NotByDateTime
+	}
 }

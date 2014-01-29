@@ -13,13 +13,13 @@ namespace FreeQuant.Charting.Draw3D
 		private TMat3x3 QaLoUk71gW;
 		private TMat3x3 E6Oo4awtTa;
 		private TVec3 mWHorsKIXa;
-		private TVec3 ChSocYiS9U;
-		private TVec3 r5aoyRs2R6;
-		private TVec3 dh1oWxfoJC;
-		private int GCfos5Afjc;
-		private int EAFop8PmWt;
-		private int zbLodsGi9E;
-		private double kucoxKFTGF;
+		private TVec3 lx;
+		private TVec3 ly;
+		private TVec3 lz;
+		private int left;
+		private int top;
+		private int h;
+		private double scaleZ;
 		private static TMat3x3 rQFoIpIoe9;
 		private static TMat3x3 miCoqACXHl;
 		private static TMat3x3 R8ootJZDc1;
@@ -28,7 +28,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.GCfos5Afjc;
+				return this.left; 
 			}
 		}
 
@@ -36,7 +36,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.EAFop8PmWt;
+				return this.top; 
 			}
 		}
 
@@ -44,7 +44,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.zbLodsGi9E;
+				return this.h; 
 			}
 		}
 
@@ -60,7 +60,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.ChSocYiS9U;
+				return this.lx; 
 			}
 		}
 
@@ -68,7 +68,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.r5aoyRs2R6;
+				return this.ly;
 			}
 		}
 
@@ -76,7 +76,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.dh1oWxfoJC;
+				return this.lz;
 			}
 		}
 
@@ -84,14 +84,14 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return this.kucoxKFTGF;
+				return this.scaleZ;
 			}
 			set
 			{
 				if (value < 0.0)
-					this.kucoxKFTGF = 1.0;
+					this.scaleZ = 1.0;
 				else
-					this.kucoxKFTGF = value;
+					this.scaleZ = value;
 			}
 		}
 
@@ -105,7 +105,7 @@ namespace FreeQuant.Charting.Draw3D
 		public TView()
 		{
 			this.Light = new TLight();
-			this.kucoxKFTGF = 1.0;
+			this.scaleZ = 1.0;
 			this.SetProjectionSpecial(-2.0, Math.PI / 6.0);
 		}
 
@@ -132,20 +132,20 @@ namespace FreeQuant.Charting.Draw3D
 
 		public void CalculateAxes(Pad Pad, int Left, int Top, int H)
 		{
-			this.GCfos5Afjc = Left;
-			this.EAFop8PmWt = Top;
-			this.zbLodsGi9E = H;
+			this.left = Left;
+			this.top = Top;
+			this.h = H;
 			this.mWHorsKIXa = new TVec3((double)(Left + H / 2), (double)(Top + 3 * H / 4), 0.0);
 			if (this.ScaleZ < 1.0)
 				this.mWHorsKIXa.y -= (1.0 - this.ScaleZ) * 0.25 * (double)H;
 			double num = 0.7 * (double)H;
 			double Z = 0.5 * this.ScaleZ * (double)H;
-			this.ChSocYiS9U = new TVec3(num, 0.0, 0.0);
-			this.r5aoyRs2R6 = new TVec3(0.0, num, 0.0);
-			this.dh1oWxfoJC = new TVec3(0.0, 0.0, Z);
-			this.ChSocYiS9U = this.E6Oo4awtTa * this.Lx;
-			this.r5aoyRs2R6 = this.E6Oo4awtTa * this.Ly;
-			this.dh1oWxfoJC = this.E6Oo4awtTa * this.Lz;
+			this.lx = new TVec3(num, 0.0, 0.0);
+			this.ly = new TVec3(0.0, num, 0.0);
+			this.lz = new TVec3(0.0, 0.0, Z);
+			this.lx = this.E6Oo4awtTa * this.Lx;
+			this.ly = this.E6Oo4awtTa * this.Ly;
+			this.lz = this.E6Oo4awtTa * this.Lz;
 		}
 
 		private static void lF6ovwu8P3([In] Pad obj0)

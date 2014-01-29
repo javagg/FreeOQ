@@ -5,65 +5,65 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class VWAP : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as VWAP).get_Length();
-      }
-      set
-      {
-        (this.indicator as VWAP).set_Length(value);
-      }
-    }
+	public class VWAP : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.VWAP).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.VWAP).Length = value;
+			}
+		}
 
-    private VWAP()
-    {
-      this.indicator = (Indicator) new VWAP();
-    }
+		private VWAP()
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP();
+		}
 
-    public VWAP(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public VWAP(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(series.series, length);
+		}
 
-    public VWAP(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public VWAP(Indicator indicator, int length)
+		{
+			this.indicator = (Indicator)new FreeQuant.Indicators.VWAP((SmartQuant.Series.TimeSeries)indicator.indicator, length);
+		}
 
-    public VWAP(OpenQuant.API.BarSeries series, int length, BarData option)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public VWAP(BarSeries series, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(series.series, length, EnumConverter.Convert(option));
+		}
 
-    public VWAP(Indicator indicator, int length, BarData option)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public VWAP(Indicator indicator, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(indicator.indicator, length, EnumConverter.Convert(option));
+		}
 
-    public VWAP(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public VWAP(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(series.series, length, color);
+		}
 
-    public VWAP(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public VWAP(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(indicator.indicator, length, color);
+		}
 
-    public VWAP(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public VWAP(BarSeries series, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(series.series, length, EnumConverter.Convert(option), color);
+		}
 
-    public VWAP(Indicator indicator, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new VWAP((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
-  }
+		public VWAP(Indicator indicator, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.VWAP(indicator.indicator, length, EnumConverter.Convert(option), color);
+		}
+	}
 }

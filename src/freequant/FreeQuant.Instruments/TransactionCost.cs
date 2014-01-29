@@ -60,7 +60,7 @@ namespace FreeQuant.Instruments
 				case CommType.Absolute:
 					return this.Commission;
 				default:
-					throw new NotSupportedException("" + (object)this.commType);
+					throw new NotSupportedException("" + this.commType);
 			}
 		}
 	}

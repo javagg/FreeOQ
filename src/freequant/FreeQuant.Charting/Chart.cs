@@ -433,7 +433,6 @@ namespace FreeQuant.Charting
         pad.SetRangeY(Min, Max);
     }
 
-    
     public virtual Pad AddPad(double X1, double Y1, double X2, double Y2)
     {
       Chart.fPad = new Pad(this, X1, Y1, X2, Y2);
@@ -465,7 +464,7 @@ namespace FreeQuant.Charting
         return;
       foreach (Pad pad in this.fPads)
       {
-        if (e.fZoomUnzoom)
+        if (e.ZoomUnzoom)
         {
           pad.AxisBottom.SetRange(e.XMin, e.XMax);
           pad.AxisTop.SetRange(e.XMin, e.XMax);
@@ -823,7 +822,7 @@ namespace FreeQuant.Charting
     }
 
     
-    protected override void OnMouseDown(MouseEventArgs e)
+		protected override void OnMouseDown(MouseEventArgs e)
     {
       foreach (Pad pad in this.fPads)
       {
@@ -839,11 +838,11 @@ namespace FreeQuant.Charting
         if (pad.X1 <= e.X && pad.X2 >= e.X && (pad.Y1 <= e.Y && pad.Y2 >= e.Y))
           pad.MouseDown(e);
       }
-      base.OnMouseDown(e);
+		base.OnMouseDown(e);
     }
 
     
-    protected override void OnMouseUp(MouseEventArgs e)
+		protected override void OnMouseUp(MouseEventArgs e)
     {
       if (this.fPadSplit)
       {
@@ -856,7 +855,7 @@ namespace FreeQuant.Charting
       {
         foreach (Pad pad in this.fPads)
           pad.MouseUp(e);
-        base.OnMouseUp(e);
+			base.OnMouseUp(e);
       }
     }
 

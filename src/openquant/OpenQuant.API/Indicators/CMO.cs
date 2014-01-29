@@ -5,65 +5,65 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class CMO : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as CMO).get_Length();
-      }
-      set
-      {
-        (this.indicator as CMO).set_Length(value);
-      }
-    }
+	public class CMO : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.CMO).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.CMO).Length = value;
+			}
+		}
 
-    private CMO()
-    {
-      this.indicator = (Indicator) new CMO();
-    }
+		private CMO()
+		{
+			this.indicator = new FreeQuant.Indicators.CMO();
+		}
 
-    public CMO(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public CMO(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(series.series, length);
+		}
 
-    public CMO(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public CMO(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(indicator.indicator, length);
+		}
 
-    public CMO(OpenQuant.API.BarSeries series, int length, BarData option)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public CMO(BarSeries series, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(series.series, length, EnumConverter.Convert(option));
+		}
 
-    public CMO(Indicator indicator, int length, BarData option)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public CMO(Indicator indicator, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(indicator.indicator, length, EnumConverter.Convert(option));
+		}
 
-    public CMO(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public CMO(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(series.series, length, color);
+		}
 
-    public CMO(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public CMO(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(indicator.indicator, length, color);
+		}
 
-    public CMO(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
+		public CMO(BarSeries series, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(series.series, length, EnumConverter.Convert(option), color);
+		}
 
-    public CMO(Indicator indicator, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new CMO((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
-  }
+		public CMO(Indicator indicator, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CMO(indicator.indicator, length, EnumConverter.Convert(option), color);
+		}
+	}
 }

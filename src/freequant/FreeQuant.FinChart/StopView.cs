@@ -111,18 +111,13 @@ namespace FreeQuant.FinChart
     
     public StopView(ATSStop stop, Pad pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.J5OcWhbyeL = Color.Yellow;
       this.jxFcFido6J = Color.MediumSeaGreen;
       this.nFpcIDd3Ej = Color.Gray;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.nkbcpi5r41 = stop;
       this.pad = pad;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(2144) + stop.Position.Instrument.PriceDisplay + FJDHryrxb1WIq5jBAt.mT707pbkgT(2182);
+			this.ToolTipEnabled = true;
+			this.ToolTipFormat = stop.Position.Instrument.PriceDisplay;
       int index1 = pad.Series.GetIndex(stop.CreationTime, EIndexOption.Prev);
       if (index1 == -1)
         return;
@@ -249,8 +244,8 @@ namespace FreeQuant.FinChart
       if (num2 > this.pad.Y2)
         return;
       int num3 = (int) Math.Max(2.0, (double) (int) this.pad.IntervalWidth / 1.2);
-      string str = FJDHryrxb1WIq5jBAt.mT707pbkgT(2188) + worldY.ToString(this.nkbcpi5r41.Instrument.PriceDisplay) + FJDHryrxb1WIq5jBAt.mT707pbkgT(2208) + ((object) this.nkbcpi5r41.Status).ToString() + FJDHryrxb1WIq5jBAt.mT707pbkgT(2216);
-      Font font = new Font(FJDHryrxb1WIq5jBAt.mT707pbkgT(2222), 8f);
+      string str = worldY.ToString(this.nkbcpi5r41.Instrument.PriceDisplay) + ((object) this.nkbcpi5r41.Status).ToString();
+			Font font = new Font("Arial", 8);
       Color color = this.nFpcIDd3Ej;
       switch (this.nkbcpi5r41.Status)
       {
@@ -312,7 +307,7 @@ namespace FreeQuant.FinChart
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.nkbcpi5r41.Status).ToString(), (object) FJDHryrxb1WIq5jBAt.mT707pbkgT(2236), (object) dateTime.ToString(), (object) num);
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.nkbcpi5r41.Status.ToString(), dateTime.ToString(), num);
       distance.ToolTipText = ((object) stringBuilder).ToString();
       return distance;
     }
@@ -339,7 +334,7 @@ namespace FreeQuant.FinChart
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return distance;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.nkbcpi5r41.Status).ToString(), (object) FJDHryrxb1WIq5jBAt.mT707pbkgT(2248), (object) "", (object) num3);
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.nkbcpi5r41.Status.ToString(), (object) num3);
       distance.ToolTipText = ((object) stringBuilder).ToString();
       return distance;
     }

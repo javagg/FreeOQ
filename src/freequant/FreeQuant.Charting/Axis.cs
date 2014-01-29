@@ -10,7 +10,7 @@ namespace FreeQuant.Charting
   [Serializable]
   public class Axis
   {
-		private Pad pad; 
+	private Pad pad; 
     private EAxisType jF56ZqlDUA;
     private EAxisPosition gck6XUIeCg;
     private EAxisTitlePosition ejS6gv5Ug7;

@@ -6,6 +6,6 @@ namespace FreeQuant.Charting
 		Right,
 		Top,
 		Bottom,
-		None,
+		None
 	}
 }

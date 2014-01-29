@@ -10,93 +10,90 @@ namespace FreeQuant.FinChart
 {
   public class SimpleBSView : SeriesView
   {
-    private BarSeries Ex2yZhZNKM;
-    private SimpleBSStyle qPty45mcMb;
-    private Color AeEyfmW3gV;
-    private Color gj0yGh3mZ7;
+		private BarSeries barSeries; 
+    private SimpleBSStyle style;
+    private Color upColor;
+    private Color downColor;
 
     [Category("Drawing Style")]
     public Color UpColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.AeEyfmW3gV;
+				return this.upColor; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.AeEyfmW3gV = value;
+        this.upColor = value;
       }
     }
 
     [Category("Drawing Style")]
     public Color DownColor
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.gj0yGh3mZ7;
+				return this.downColor; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.gj0yGh3mZ7 = value;
+        this.downColor = value;
       }
     }
 
     public SimpleBSStyle Style
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.qPty45mcMb;
+				return this.style; 
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
-        this.qPty45mcMb = value;
+        this.style = value;
       }
     }
 
     public override TimeSeries MainSeries
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return (TimeSeries) this.Ex2yZhZNKM;
+        return this.barSeries;
       }
     }
 
     [Browsable(false)]
     public override Color Color
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.gj0yGh3mZ7;
+        return this.downColor;
       }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
+       set
       {
       }
     }
 
     public override double LastValue
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
+       get
       {
-        return this.Ex2yZhZNKM[this.lastDate, EIndexOption.Prev].Close;
+        return this.barSeries[this.lastDate, EIndexOption.Prev].Close;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SimpleBSView(Pad pad, BarSeries series)
+    
+		public SimpleBSView(Pad pad, BarSeries series)  : base(pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.AeEyfmW3gV = Color.Black;
-      this.gj0yGh3mZ7 = Color.Lime;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
-      this.Ex2yZhZNKM = series;
+      this.upColor = Color.Black;
+      this.downColor = Color.Lime;
+      this.barSeries = series;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override PadRange GetPadRangeY(Pad Pad)
     {
-      double min = this.Ex2yZhZNKM.LowestLow(this.firstDate, this.lastDate);
-      double max = this.Ex2yZhZNKM.HighestHigh(this.firstDate, this.lastDate);
+      double min = this.barSeries.LowestLow(this.firstDate, this.lastDate);
+      double max = this.barSeries.HighestHigh(this.firstDate, this.lastDate);
       if (min >= max)
       {
         double num = min / 10.0;
@@ -106,32 +103,32 @@ namespace FreeQuant.FinChart
       return new PadRange(min, max);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override void Paint()
     {
-      Color color = this.gj0yGh3mZ7;
+      Color color = this.downColor;
       Pen pen1 = new Pen(color);
       Pen pen2 = new Pen(color);
       Pen pen3 = new Pen(color);
-      Brush brush1 = (Brush) new SolidBrush(this.gj0yGh3mZ7);
-      Brush brush2 = (Brush) new SolidBrush(this.AeEyfmW3gV);
+      Brush brush1 = (Brush) new SolidBrush(this.downColor);
+      Brush brush2 = (Brush) new SolidBrush(this.upColor);
       long num1 = -1L;
       long num2 = -1L;
-      int index1 = this.Ex2yZhZNKM.GetIndex(this.firstDate);
-      int index2 = this.Ex2yZhZNKM.GetIndex(this.lastDate);
+      int index1 = this.barSeries.GetIndex(this.firstDate);
+      int index2 = this.barSeries.GetIndex(this.lastDate);
       if (index1 == -1 || index2 == -1)
         return;
       int width = (int) Math.Max(2.0, (double) (int) this.pad.IntervalWidth / 1.4);
       int num3 = 0;
       for (int index3 = index1; index3 <= index2; ++index3)
       {
-        int num4 = this.pad.ClientX(this.Ex2yZhZNKM.GetDateTime(index3));
-        Bar bar = this.Ex2yZhZNKM[index3];
+        int num4 = this.pad.ClientX(this.barSeries.GetDateTime(index3));
+        Bar bar = this.barSeries[index3];
         double high = bar.High;
         double low = bar.Low;
         double open = bar.Open;
         double close = bar.Close;
-        if (this.qPty45mcMb == SimpleBSStyle.Candle)
+        if (this.style == SimpleBSStyle.Candle)
         {
           this.pad.Graphics.DrawLine(pen1, num4, this.pad.ClientY(low), num4, this.pad.ClientY(high));
           if (open != 0.0 && close != 0.0)
@@ -153,13 +150,13 @@ namespace FreeQuant.FinChart
             }
           }
         }
-        if (this.qPty45mcMb == SimpleBSStyle.Bar)
+        if (this.style == SimpleBSStyle.Bar)
         {
           this.pad.Graphics.DrawLine(pen1, num4, this.pad.ClientY(low), num4, this.pad.ClientY(high));
           this.pad.Graphics.DrawLine(pen1, num4 - width / 2, this.pad.ClientY(open), num4, this.pad.ClientY(open));
           this.pad.Graphics.DrawLine(pen1, num4 + width / 2, this.pad.ClientY(close), num4, this.pad.ClientY(close));
         }
-        if (this.qPty45mcMb == SimpleBSStyle.Line)
+        if (this.style == SimpleBSStyle.Line)
         {
           long num5 = (long) num4;
           int num6 = this.pad.ClientY(bar.Close);
@@ -172,20 +169,20 @@ namespace FreeQuant.FinChart
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public override Distance Distance(int x, double y)
     {
       Distance distance = new Distance();
-      Bar bar = this.Ex2yZhZNKM[this.pad.GetDateTime(x)];
+      Bar bar = this.barSeries[this.pad.GetDateTime(x)];
       distance.DX = 0.0;
       if (y >= bar.Low && y <= bar.High)
         distance.DY = 0.0;
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(2834);
-      this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2958), this.pad.Chart.LabelDigitsCount.ToString());
+			this.ToolTipFormat = "sdfdfs";
+//			this.ToolTipFormat = this.ToolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2958), this.pad.Chart.LabelDigitsCount.ToString());
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.Ex2yZhZNKM.Name, (object) this.Ex2yZhZNKM.Title, (object) bar.DateTime, (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.barSeries.Name, (object) this.barSeries.Title, (object) bar.DateTime, (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
       distance.ToolTipText = ((object) stringBuilder).ToString();
       return distance;
     }

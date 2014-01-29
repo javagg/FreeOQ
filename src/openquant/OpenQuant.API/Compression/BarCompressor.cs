@@ -14,7 +14,6 @@ namespace OpenQuant.API.Compression
 
 		protected BarCompressor()
 		{
-			this.bar = (Bar)null;
 		}
 
 		public static BarCompressor GetCompressor(BarType barType, long oldBarSize, long newBarSize)
@@ -23,16 +22,16 @@ namespace OpenQuant.API.Compression
 			switch (barType)
 			{
 					case BarType.Time:
-					barCompressor = (BarCompressor)new TimeBarCompressor();
+					barCompressor = new TimeBarCompressor();
 					break;
 					case  BarType.Tick:
-					barCompressor = (BarCompressor)new TickBarCompressor();
+					barCompressor = new TickBarCompressor();
 					break;
 					case  BarType.Volume:
-					barCompressor = (BarCompressor)new VolumeBarCompressor();
+					barCompressor = new VolumeBarCompressor();
 					break;
 					case BarType.Range:
-					barCompressor = (BarCompressor)new RangeBarCompressor();
+					barCompressor = new RangeBarCompressor();
 					break;
 				default:
 					throw new ArgumentException(string.Format("Unknown bar type - {0}", (object)barType));

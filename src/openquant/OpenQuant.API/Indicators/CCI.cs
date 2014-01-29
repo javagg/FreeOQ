@@ -5,55 +5,55 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class CCI : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as CCI).get_Length();
-      }
-      set
-      {
-        (this.indicator as CCI).set_Length(value);
-      }
-    }
+	public class CCI : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.CCI).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.CCI).Length = value;
+			}
+		}
 
-    private CCI()
-    {
-      this.indicator = (Indicator) new CCI();
-    }
+		private CCI()
+		{
+			this.indicator = new FreeQuant.Indicators.CCI();
+		}
 
-    public CCI(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new CCI((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public CCI(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.CCI(series.series, length);
+		}
 
-    public CCI(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new CCI((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public CCI(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.CCI(indicator.indicator, length);
+		}
 
-    public CCI(OpenQuant.API.TimeSeries series, int length)
-    {
-      this.indicator = (Indicator) new CCI((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public CCI(TimeSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.CCI(series.series, length);
+		}
 
-    public CCI(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new CCI((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public CCI(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CCI(series.series, length, color);
+		}
 
-    public CCI(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new CCI((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public CCI(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CCI(indicator.indicator, length, color);
+		}
 
-    public CCI(OpenQuant.API.TimeSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new CCI((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
-  }
+		public CCI(TimeSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.CCI(series.series, length, color);
+		}
+	}
 }

@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FreeQuant.Charting
@@ -343,7 +342,6 @@ namespace FreeQuant.Charting
 
     public TMarker(double X, double Y):base()
     {
-
       this.fBuyColor = Color.Blue;
       this.fSellColor = Color.Red;
       this.fSellShortColor = Color.Yellow;
@@ -352,7 +350,7 @@ namespace FreeQuant.Charting
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
     }
 
     
@@ -366,7 +364,7 @@ namespace FreeQuant.Charting
       this.fX = (double) X.Ticks;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
     }
 
     
@@ -380,7 +378,7 @@ namespace FreeQuant.Charting
       this.fX = (double) DateTime.Parse(X).Ticks;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
     }
 
 
@@ -395,7 +393,7 @@ namespace FreeQuant.Charting
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
       this.fColor = Color;
     }
 
@@ -411,7 +409,7 @@ namespace FreeQuant.Charting
       this.fX = X;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
       this.fStyle = Style;
       if (this.fStyle != EMarkerStyle.Buy && this.fStyle != EMarkerStyle.Sell && (this.fStyle != EMarkerStyle.SellShort && this.fStyle != EMarkerStyle.BuyShort))
         return;
@@ -430,7 +428,7 @@ namespace FreeQuant.Charting
       this.fX = (double) X.Ticks;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
       this.fStyle = Style;
       if (this.fStyle != EMarkerStyle.Buy && this.fStyle != EMarkerStyle.Sell && (this.fStyle != EMarkerStyle.SellShort && this.fStyle != EMarkerStyle.BuyShort))
         return;
@@ -449,7 +447,7 @@ namespace FreeQuant.Charting
       this.fX = (double) DateTime.Parse(X).Ticks;
       this.fY = Y;
       this.fZ = 0.0;
-      this.syl3vbh6Kv();
+      this.Init();
       this.fStyle = Style;
       if (this.fStyle != EMarkerStyle.Buy && this.fStyle != EMarkerStyle.Sell && (this.fStyle != EMarkerStyle.SellShort && this.fStyle != EMarkerStyle.BuyShort))
         return;
@@ -468,7 +466,7 @@ namespace FreeQuant.Charting
       this.fX = X;
       this.fY = Y;
       this.fZ = Z;
-      this.syl3vbh6Kv();
+      this.Init();
     }
 
 
@@ -483,7 +481,7 @@ namespace FreeQuant.Charting
       this.fX = X;
       this.fY = Y;
       this.fZ = Z;
-      this.syl3vbh6Kv();
+      this.Init();
       this.fColor = Color;
     }
 
@@ -503,7 +501,7 @@ namespace FreeQuant.Charting
       this.fLow = Low;
       this.fOpen = Open;
       this.fClose = Close;
-      this.syl3vbh6Kv();
+      this.Init();
     }
 
 
@@ -522,12 +520,12 @@ namespace FreeQuant.Charting
       this.fLow = Low;
       this.fOpen = Open;
       this.fClose = Close;
-      this.syl3vbh6Kv();
+      this.Init();
       this.fColor = Color;
     }
 
     
-    private void syl3vbh6Kv()
+    private void Init()
     {
       this.fStyle = EMarkerStyle.Rectangle;
       this.fColor = Color.Black;
@@ -551,8 +549,7 @@ namespace FreeQuant.Charting
       }
       Chart.Pad.Add((IDrawable) this);
     }
-
-    
+		 
     public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
     {
       int num1 = Pad.ClientX(this.fX);

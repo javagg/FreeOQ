@@ -51,17 +51,14 @@ namespace FreeQuant.FinChart.Objects
     }
 
     
-    public RayView(DrawingRay ray, Pad pad)
+		public RayView(DrawingRay ray, Pad pad) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.toolTipEnabled = true;
       this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.mYYSbcj8S = ray;
       this.Pad = pad;
       this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(68);
+			this.toolTipFormat = "tootl";
       int index = pad.Series.GetIndex(ray.X, EIndexOption.Prev);
       if (index == -1)
         return;
@@ -133,8 +130,8 @@ namespace FreeQuant.FinChart.Objects
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) FJDHryrxb1WIq5jBAt.mT707pbkgT(112), (object) this.mYYSbcj8S.Name, (object) dateTime.ToString(), (object) y);
-      distance.ToolTipText = ((object) stringBuilder).ToString();
+			stringBuilder.AppendFormat(this.ToolTipFormat, "", this.mYYSbcj8S.Name, dateTime.ToString(), y);
+      distance.ToolTipText = stringBuilder.ToString();
       return distance;
     }
 

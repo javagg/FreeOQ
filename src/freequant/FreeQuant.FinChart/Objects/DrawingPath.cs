@@ -5,102 +5,94 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FinChart.Objects
 {
-  public class DrawingPath : IUpdatable
-  {
-    private List<DrawingPoint> ClmJzNuC37;
-    public bool rangeY;
-    private Color MxJyt9xxYT;
-    private int mQKywhWq1Y;
+	public class DrawingPath : IUpdatable
+	{
+		private List<DrawingPoint> points;
+		public bool rangeY;
+		private Color color;
+		private int width;
 
-    public bool RangeY
-    {
-       get
-      {
-        return this.rangeY;
-      }
-       set
-      {
-        this.rangeY = value;
-        this.U0XJWirHHb();
-      }
-    }
+		public bool RangeY
+		{
+			get
+			{
+				return this.rangeY;
+			}
+			set
+			{
+				this.rangeY = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public Color Color
-    {
-       get
-      {
-        return this.MxJyt9xxYT;
-      }
-       set
-      {
-        this.MxJyt9xxYT = value;
-        this.U0XJWirHHb();
-      }
-    }
+		public Color Color
+		{
+			get
+			{
+				return this.color; 
+			}
+			set
+			{
+				this.color = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public int Width
-    {
-       get
-      {
-        return this.mQKywhWq1Y;
-      }
-       set
-      {
-        this.mQKywhWq1Y = value;
-        this.U0XJWirHHb();
-      }
-    }
+		public int Width
+		{
+			get
+			{
+				return this.width; 
+			}
+			set
+			{
+				this.width = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public string Name {  get;  private set; }
+		public string Name { get; private set; }
 
-    public List<DrawingPoint> Points
-    {
-       get
-      {
-        return this.ClmJzNuC37;
-      }
-    }
+		public List<DrawingPoint> Points
+		{
+			get
+			{
+				return this.points; 
+			}
+		}
 
-    public event EventHandler Updated;
+		public event EventHandler Updated;
 
-    
-    public DrawingPath(string name)
-    {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.mQKywhWq1Y = 1;
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.Name = name;
-      this.ClmJzNuC37 = new List<DrawingPoint>();
-    }
+		public DrawingPath(string name) : base()
+		{
+			this.width = 1;
+			this.Name = name;
+			this.points = new List<DrawingPoint>();
+		}
 
-    
-    public void Add(DateTime x, double y)
-    {
-      this.ClmJzNuC37.Add(new DrawingPoint(x, y));
-      this.U0XJWirHHb();
-    }
+		public void Add(DateTime x, double y)
+		{
+			this.points.Add(new DrawingPoint(x, y));
+			this.EmitUpdated();
+		}
 
-    
-    public void RemoveAt(int index)
-    {
-      this.ClmJzNuC37.RemoveAt(index);
-      this.U0XJWirHHb();
-    }
+		public void RemoveAt(int index)
+		{
+			this.points.RemoveAt(index);
+			this.EmitUpdated();
+		}
 
-    
-    public void Insert(int index, DateTime x, double y)
-    {
-      this.ClmJzNuC37.Insert(index, new DrawingPoint(x, y));
-      this.U0XJWirHHb();
-    }
+		public void Insert(int index, DateTime x, double y)
+		{
+			this.points.Insert(index, new DrawingPoint(x, y));
+			this.EmitUpdated();
+		}
 
-    
-    private void U0XJWirHHb()
-    {
-      if (this.SApJIWaiSB == null)
-        return;
-      this.SApJIWaiSB((object) this, EventArgs.Empty);
-    }
-  }
+		private void EmitUpdated()
+		{
+			if (this.Updated == null)
+				return;
+			this.Updated(this, EventArgs.Empty);
+		}
+	}
 }

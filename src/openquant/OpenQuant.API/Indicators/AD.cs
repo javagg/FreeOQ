@@ -4,41 +4,41 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class AD : Indicator
-  {
-    private AD()
-    {
-      this.indicator = (Indicator) new AD();
-    }
+	public class AD : Indicator
+	{
+		private AD()
+		{
+			this.indicator = new FreeQuant.Indicators.AD();
+		}
 
-    public AD(OpenQuant.API.BarSeries series)
-    {
-      this.indicator = (Indicator) new AD((SmartQuant.Series.TimeSeries) series.series);
-    }
+		public AD(BarSeries series)
+		{
+			this.indicator = new FreeQuant.Indicators.AD(series.series);
+		}
 
-    public AD(Indicator indicator)
-    {
-      this.indicator = (Indicator) new AD((SmartQuant.Series.TimeSeries) indicator.indicator);
-    }
+		public AD(Indicator indicator)
+		{
+			this.indicator = new FreeQuant.Indicators.AD(indicator.indicator);
+		}
 
-    public AD(OpenQuant.API.TimeSeries series)
-    {
-      this.indicator = (Indicator) new AD((SmartQuant.Series.TimeSeries) series.series);
-    }
+		public AD(TimeSeries series)
+		{
+			this.indicator = new FreeQuant.Indicators.AD(series.series);
+		}
 
-    public AD(OpenQuant.API.BarSeries series, Color color)
-    {
-      this.indicator = (Indicator) new AD((SmartQuant.Series.TimeSeries) series.series, color);
-    }
+		public AD(BarSeries series, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.AD(series.series, color);
+		}
 
-    public AD(Indicator indicator, Color color)
-    {
-      this.indicator = (Indicator) new AD((SmartQuant.Series.TimeSeries) indicator.indicator, color);
-    }
+		public AD(Indicator indicator, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.AD(indicator.indicator, color);
+		}
 
-    public AD(OpenQuant.API.TimeSeries series, Color color)
-    {
-      this.indicator = (Indicator) new AD((SmartQuant.Series.TimeSeries) series.series, color);
-    }
-  }
+		public AD(TimeSeries series, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.AD(series.series, color);
+		}
+	}
 }

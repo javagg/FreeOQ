@@ -184,13 +184,13 @@ namespace OpenQuant.API.Plugins
 			return base.Contains(bar);
 		}
 
-		public override bool CrossesBelow(OpenQuant.API.BarSeries series, Bar bar)
+		public override bool CrossesBelow(BarSeries series, Bar bar)
 		{
 			this.Init();
 			return base.CrossesBelow(series, bar);
 		}
 
-		public override bool CrossesAbove(OpenQuant.API.BarSeries series, Bar bar)
+		public override bool CrossesAbove(BarSeries series, Bar bar)
 		{
 			this.Init();
 			return base.CrossesAbove(series, bar);
@@ -214,7 +214,7 @@ namespace OpenQuant.API.Plugins
 			return base.Crosses(indicator, bar);
 		}
 
-		public override Cross Crosses(OpenQuant.API.BarSeries series, Bar bar)
+		public override Cross Crosses(BarSeries series, Bar bar)
 		{
 			this.Init();
 			return base.Crosses(series, bar);

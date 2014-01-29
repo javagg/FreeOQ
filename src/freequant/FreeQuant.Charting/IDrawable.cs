@@ -3,13 +3,9 @@ namespace FreeQuant.Charting
 	public interface IDrawable
 	{
 		bool ToolTipEnabled { get; set; }
-
 		string ToolTipFormat { get; set; }
-
 		void Draw();
-
-		void Paint(Pad Pad, double MinX, double MaxX, double MinY, double MaxY);
-
-		TDistance Distance(double X, double Y);
+		void Paint(Pad pad, double minX, double maxX, double minY, double maxY);
+		TDistance Distance(double x, double y);
 	}
 }

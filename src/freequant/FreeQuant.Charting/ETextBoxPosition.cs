@@ -1,10 +1,10 @@
 namespace FreeQuant.Charting
 {
-  public enum ETextBoxPosition
-  {
-    TopRight,
-    TopLeft,
-    BottomRight,
-    BottomLeft,
-  }
+	public enum ETextBoxPosition
+	{
+		TopRight,
+		TopLeft,
+		BottomRight,
+		BottomLeft
+	}
 }

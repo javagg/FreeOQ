@@ -1,57 +1,51 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FinChart.Objects
 {
-  public class DrawingPoint : IUpdatable
-  {
-    private DateTime JR7lupXYK;
-    private double nFZvlSOb4;
+	public class DrawingPoint : IUpdatable
+	{
+		private DateTime x;
+		private double y;
 
-    public DateTime X
-    {
-       get
-      {
-        return this.JR7lupXYK;
-      }
-       set
-      {
-        this.JR7lupXYK = value;
-        this.pyg1tbWWC();
-      }
-    }
+		public DateTime X
+		{
+			get
+			{
+				return this.x; 
+			}
+			set
+			{
+				this.x = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public double Y
-    {
-       get
-      {
-        return this.nFZvlSOb4;
-      }
-       set
-      {
-        this.nFZvlSOb4 = value;
-        this.pyg1tbWWC();
-      }
-    }
+		public double Y
+		{
+			get
+			{
+				return this.y; 
+			}
+			set
+			{
+				this.y = value;
+				this.EmitUpdated();
+			}
+		}
 
-    public event EventHandler Updated;
+		public event EventHandler Updated;
 
-    
-    public DrawingPoint(DateTime x, double y)
-    {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.JR7lupXYK = x;
-      this.nFZvlSOb4 = y;
-    }
+		public DrawingPoint(DateTime x, double y) : base()
+		{
+			this.x = x;
+			this.y = y;
+		}
 
-    
-    private void pyg1tbWWC()
-    {
-      if (this.zNnUwXbKs == null)
-        return;
-      this.zNnUwXbKs((object) this, EventArgs.Empty);
-    }
-  }
+		private void EmitUpdated()
+		{
+			if (this.Updated == null)
+				return;
+			this.Updated(this, EventArgs.Empty);
+		}
+	}
 }

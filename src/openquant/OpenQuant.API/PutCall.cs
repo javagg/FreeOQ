@@ -1,8 +1,4 @@
 ﻿namespace OpenQuant.API
 {
-  public enum PutCall
-  {
-    Put,
-    Call
-  }
+	public enum PutCall { Put, Call }
 }

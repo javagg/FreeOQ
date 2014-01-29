@@ -26,11 +26,11 @@ namespace FreeQuant.Charting
 		[Category("ToolTip")]
 		public string ToolTipFormat { get; set; }
 
-		public TImage(Image Image, double X, double Y) : base()
+		public TImage(Image Image, double x, double y)
 		{
 			this.image = Image;
-			this.X = X;
-			this.Y = Y;
+			this.X = x;
+			this.Y = y;
 			this.yee3w4ff2w();
 		}
 
@@ -42,17 +42,17 @@ namespace FreeQuant.Charting
 			this.yee3w4ff2w();
 		}
 
-		public TImage(string FileName, double X, double Y) : base()
+		public TImage(string FileName, double x, double y) : base()
 		{
 			this.image = Image.FromFile(FileName);
-			this.X = X;
-			this.Y = Y;
+			this.X = x;
+			this.Y = y;
 			this.yee3w4ff2w();
 		}
 
-		public TImage(string FileName, DateTime X, double Y) : base()
+		public TImage(string filename, DateTime X, double Y) : base()
 		{
-			this.image = Image.FromFile(FileName);
+			this.image = Image.FromFile(filename);
 			this.X = X.Ticks;
 			this.Y = Y;
 			this.yee3w4ff2w();
@@ -82,33 +82,33 @@ namespace FreeQuant.Charting
 			{
 				Canvas canvas = new Canvas("Canvas Name", "Canvas Title");
 			}
-			Chart.Pad.Add((IDrawable)this);
+			Chart.Pad.Add(this);
 		}
 
-		public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
+		public virtual void Paint(Pad pad, double xMin, double xMax, double yMin, double yMax)
 		{
-			int x = Pad.ClientX(this.X);
-			int y = Pad.ClientY(this.Y);
-			Pad.Graphics.DrawImage(this.image, x, y);
+			int x = pad.ClientX(this.X);
+			int y = pad.ClientY(this.Y);
+			pad.Graphics.DrawImage(this.image, x, y);
 		}
 
-		public TDistance Distance(double X, double Y)
+		public TDistance Distance(double x, double y)
 		{
 			TDistance tdistance = new TDistance();
 			tdistance.X = this.X;
 			tdistance.Y = this.Y;
-			tdistance.dX = Math.Abs(X - this.X);
-			tdistance.dY = Math.Abs(Y - this.Y);
+			tdistance.dX = Math.Abs(x - this.X);
+			tdistance.dY = Math.Abs(y - this.Y);
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.AppendFormat(this.ToolTipFormat, this.X, this.Y);
 			tdistance.ToolTipText = stringBuilder.ToString();
 			return tdistance;
 		}
 
-		public void Move(double X, double Y, double dX, double dY)
+		public void Move(double x, double y, double dx, double dy)
 		{
-			this.X += dX;
-			this.Y += dY;
+			this.X += dx;
+			this.Y += dy;
 		}
 	}
 }

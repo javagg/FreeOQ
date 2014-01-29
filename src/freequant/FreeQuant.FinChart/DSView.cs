@@ -11,29 +11,29 @@ namespace FreeQuant.FinChart
 {
   public class DSView : SeriesView
   {
-    private DoubleSeries J3CyTcOdfO;
+    private DoubleSeries mainSeries;
     private Color KNRy1kSrcC;
-    private SimpleDSStyle FfryUetNii;
-    private EIndexOption KQFylhRfSj;
+    private SimpleDSStyle style;
+    private EIndexOption options;
     private SmoothingMode IXfyvDxxVL;
 
     public EIndexOption Option
     {
        get
       {
-        return this.KQFylhRfSj;
+				return this.options; 
       }
     }
 
-    public SimpleDSStyle Style
+		public SimpleDSStyle Style 
     {
        get
       {
-        return this.FfryUetNii;
+				return this.style; 
       }
        set
       {
-        this.FfryUetNii = value;
+        this.style = value;
       }
     }
 
@@ -41,7 +41,7 @@ namespace FreeQuant.FinChart
     {
        get
       {
-        return (TimeSeries) this.J3CyTcOdfO;
+				return this.mainSeries; 
       }
     }
 
@@ -49,11 +49,11 @@ namespace FreeQuant.FinChart
     {
        get
       {
-        return this.J3CyTcOdfO.Color;
+        return this.mainSeries.Color;
       }
        set
       {
-        this.J3CyTcOdfO.Color = value;
+        this.mainSeries.Color = value;
       }
     }
 
@@ -61,68 +61,57 @@ namespace FreeQuant.FinChart
     {
        get
       {
-        if (this.J3CyTcOdfO.Count == 0 || this.lastDate < this.J3CyTcOdfO.FirstDateTime)
+        if (this.mainSeries.Count == 0 || this.lastDate < this.mainSeries.FirstDateTime)
           return double.NaN;
-        if (this.KQFylhRfSj == EIndexOption.Null)
-          return this.J3CyTcOdfO[this.lastDate, EIndexOption.Prev];
-        if (this.KQFylhRfSj == EIndexOption.Next)
-          return this.J3CyTcOdfO[this.lastDate.AddTicks(1L), EIndexOption.Next];
+        if (this.options == EIndexOption.Null)
+          return this.mainSeries[this.lastDate, EIndexOption.Prev];
+        if (this.options == EIndexOption.Next)
+          return this.mainSeries[this.lastDate.AddTicks(1L), EIndexOption.Next];
         else
           return -1.0;
       }
     }
 
     
-    public DSView(Pad pad, DoubleSeries series)
+		public DSView(Pad pad, DoubleSeries series) : this(pad, series, EIndexOption.Null)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(pad, series, EIndexOption.Null);
-      this.J3CyTcOdfO = series;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(2666);
-      this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2702), pad.Chart.LabelDigitsCount.ToString());
+      this.mainSeries = series;
+			this.ToolTipFormat = "toool";
+//			this.ToolTipFormat = this.ToolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2702), pad.Chart.LabelDigitsCount.ToString());
     }
 
     
-    public DSView(Pad pad, DoubleSeries series, Color color)
+		public DSView(Pad pad, DoubleSeries series, Color color) :  this(pad, series, color, EIndexOption.Null, SmoothingMode.AntiAlias)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      this.\u002Ector(pad, series, color, EIndexOption.Null, SmoothingMode.AntiAlias);
-      this.J3CyTcOdfO = series;
+      this.mainSeries = series;
       this.KNRy1kSrcC = color;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(2708);
-      this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2744), pad.Chart.LabelDigitsCount.ToString());
+			this.ToolTipFormat = "toool";
+//			this.ToolTipFormat = this.ToolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2744), pad.Chart.LabelDigitsCount.ToString());
     }
 
     
-    public DSView(Pad pad, DoubleSeries series, EIndexOption option)
+		public DSView(Pad pad, DoubleSeries series, EIndexOption option): base(pad)
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.KNRy1kSrcC = Color.White;
       this.IXfyvDxxVL = SmoothingMode.AntiAlias;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
-      this.J3CyTcOdfO = series;
-      this.KQFylhRfSj = option;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(2750);
-      this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2786), pad.Chart.LabelDigitsCount.ToString());
+      this.mainSeries = series;
+      this.options = option;
+			this.ToolTipFormat = "toool";
+//			this.ToolTipFormat = this.ToolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2786), pad.Chart.LabelDigitsCount.ToString());
     }
 
     
     public DSView(Pad pad, DoubleSeries series, Color color, EIndexOption option, SmoothingMode smoothing)
-    {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
+			: base(pad) 
+		{
       this.KNRy1kSrcC = Color.White;
       this.IXfyvDxxVL = SmoothingMode.AntiAlias;
-      // ISSUE: explicit constructor call
-      base.\u002Ector(pad);
-      this.J3CyTcOdfO = series;
-      this.KQFylhRfSj = option;
+      this.mainSeries = series;
+      this.options = option;
       this.KNRy1kSrcC = color;
       this.IXfyvDxxVL = smoothing;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(2792);
-      this.toolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2828), pad.Chart.LabelDigitsCount.ToString());
+			this.ToolTipFormat = "toool";
+//			this.ToolTipFormat = this.toolTipFormat.Replace(FJDHryrxb1WIq5jBAt.mT707pbkgT(2828), pad.Chart.LabelDigitsCount.ToString());
     }
 
     
@@ -130,26 +119,26 @@ namespace FreeQuant.FinChart
     {
       DateTime dateTime1;
       DateTime dateTime2;
-      if (this.KQFylhRfSj == EIndexOption.Null)
+      if (this.options == EIndexOption.Null)
       {
         dateTime1 = this.firstDate;
         dateTime2 = this.lastDate;
       }
       else
       {
-        int index1 = this.J3CyTcOdfO.GetIndex(this.firstDate.AddTicks(1L), EIndexOption.Next);
-        int index2 = this.J3CyTcOdfO.GetIndex(this.lastDate.AddTicks(1L), EIndexOption.Next);
+        int index1 = this.mainSeries.GetIndex(this.firstDate.AddTicks(1L), EIndexOption.Next);
+        int index2 = this.mainSeries.GetIndex(this.lastDate.AddTicks(1L), EIndexOption.Next);
         if (index1 == -1 || index2 == -1)
           return new PadRange(0.0, 0.0);
-        dateTime1 = this.J3CyTcOdfO.GetDateTime(index1);
-        dateTime2 = this.J3CyTcOdfO.GetDateTime(index2);
+        dateTime1 = this.mainSeries.GetDateTime(index1);
+        dateTime2 = this.mainSeries.GetDateTime(index2);
       }
-      if (this.J3CyTcOdfO.Count == 0 || !(this.J3CyTcOdfO.LastDateTime >= dateTime1) || !(this.J3CyTcOdfO.FirstDateTime <= dateTime2))
+      if (this.mainSeries.Count == 0 || !(this.mainSeries.LastDateTime >= dateTime1) || !(this.mainSeries.FirstDateTime <= dateTime2))
         return new PadRange(0.0, 0.0);
-      int index3 = this.J3CyTcOdfO.GetIndex(dateTime1, EIndexOption.Next);
-      int index4 = this.J3CyTcOdfO.GetIndex(dateTime2, EIndexOption.Prev);
-      double min = this.J3CyTcOdfO.GetMin(Math.Min(index3, index4), Math.Max(index3, index4));
-      double max = this.J3CyTcOdfO.GetMax(Math.Min(index3, index4), Math.Max(index3, index4));
+      int index3 = this.mainSeries.GetIndex(dateTime1, EIndexOption.Next);
+      int index4 = this.mainSeries.GetIndex(dateTime2, EIndexOption.Prev);
+      double min = this.mainSeries.GetMin(Math.Min(index3, index4), Math.Max(index3, index4));
+      double max = this.mainSeries.GetMax(Math.Min(index3, index4), Math.Max(index3, index4));
       if (min >= max)
       {
         double num = Math.Abs(min) / 1000.0;
@@ -162,7 +151,7 @@ namespace FreeQuant.FinChart
     
     public override void Paint()
     {
-      Pen pen = new Pen(this.J3CyTcOdfO.Color, (float) this.J3CyTcOdfO.DrawWidth);
+      Pen pen = new Pen(this.mainSeries.Color, (float) this.mainSeries.DrawWidth);
       int num1 = 0;
       GraphicsPath path = new GraphicsPath();
       List<Point> list = new List<Point>();
@@ -192,23 +181,23 @@ namespace FreeQuant.FinChart
         if (this.selected)
           arrayList.Add((object) dateTime);
         long ticks2 = dateTime.Ticks;
-        if (this.KQFylhRfSj == EIndexOption.Null)
+        if (this.options == EIndexOption.Null)
         {
-          if (this.J3CyTcOdfO.Contains(dateTime))
-            worldY1 = this.J3CyTcOdfO[dateTime, EIndexOption.Next];
+          if (this.mainSeries.Contains(dateTime))
+            worldY1 = this.mainSeries[dateTime, EIndexOption.Next];
           else
             continue;
         }
-        if (this.KQFylhRfSj == EIndexOption.Next)
+        if (this.options == EIndexOption.Next)
         {
-          if (this.J3CyTcOdfO.Contains(dateTime.AddTicks(1L)))
-            worldY1 = this.J3CyTcOdfO[dateTime.AddTicks(1L), EIndexOption.Null];
-          else if (dateTime.AddTicks(1L) >= this.J3CyTcOdfO.FirstDateTime)
-            worldY1 = this.J3CyTcOdfO[dateTime.AddTicks(1L), EIndexOption.Next];
+          if (this.mainSeries.Contains(dateTime.AddTicks(1L)))
+            worldY1 = this.mainSeries[dateTime.AddTicks(1L), EIndexOption.Null];
+          else if (dateTime.AddTicks(1L) >= this.mainSeries.FirstDateTime)
+            worldY1 = this.mainSeries[dateTime.AddTicks(1L), EIndexOption.Next];
           else
             continue;
         }
-        if (this.FfryUetNii == SimpleDSStyle.Line)
+        if (this.style == SimpleDSStyle.Line)
         {
           if (num1 != 0)
           {
@@ -227,21 +216,21 @@ namespace FreeQuant.FinChart
           worldY2 = worldY1;
           list.Add(new Point(this.pad.ClientX(new DateTime(ticks1)), this.pad.ClientY(worldY2)));
         }
-        if (this.FfryUetNii == SimpleDSStyle.Bar)
+        if (this.style == SimpleDSStyle.Bar)
         {
           x1 = this.pad.ClientX(new DateTime(ticks2));
           num2 = this.pad.ClientY(worldY1);
           float y = (float) Math.Max(Math.Min(num2, val2_1), val2_2);
           float num8 = (float) Math.Min(Math.Max(num2, val2_1), val2_3);
-          this.pad.Graphics.FillRectangle((Brush) new SolidBrush(this.J3CyTcOdfO.Color), (float) (x1 - num7 / 2), y, (float) num7, Math.Abs(y - num8));
+          this.pad.Graphics.FillRectangle((Brush) new SolidBrush(this.mainSeries.Color), (float) (x1 - num7 / 2), y, (float) num7, Math.Abs(y - num8));
         }
-        if (this.FfryUetNii == SimpleDSStyle.Circle)
+        if (this.style == SimpleDSStyle.Circle)
         {
           x1 = this.pad.ClientX(new DateTime(ticks2));
           num2 = this.pad.ClientY(worldY1);
           Math.Max(Math.Min(num2, val2_1), val2_2);
           Math.Min(Math.Max(num2, val2_1), val2_3);
-          this.pad.Graphics.FillEllipse((Brush) new SolidBrush(this.J3CyTcOdfO.Color), x1 - this.J3CyTcOdfO.DrawWidth, num2 - this.J3CyTcOdfO.DrawWidth, this.J3CyTcOdfO.DrawWidth * 2, this.J3CyTcOdfO.DrawWidth * 2);
+          this.pad.Graphics.FillEllipse((Brush) new SolidBrush(this.mainSeries.Color), x1 - this.mainSeries.DrawWidth, num2 - this.mainSeries.DrawWidth, this.mainSeries.DrawWidth * 2, this.mainSeries.DrawWidth * 2);
         }
         ++num1;
       }
@@ -252,16 +241,16 @@ namespace FreeQuant.FinChart
         while (index3 < arrayList.Count)
         {
           int num9 = this.pad.ClientX(new DateTime(((DateTime) arrayList[index3]).Ticks));
-          if (this.J3CyTcOdfO.Contains((DateTime) arrayList[index3]))
+          if (this.mainSeries.Contains((DateTime) arrayList[index3]))
           {
-            int num10 = this.pad.ClientY(this.J3CyTcOdfO[(DateTime) arrayList[index3], EIndexOption.Null]);
+            int num10 = this.pad.ClientY(this.mainSeries[(DateTime) arrayList[index3], EIndexOption.Null]);
             Color midnightBlue = Color.MidnightBlue;
             this.pad.Graphics.FillRectangle((Brush) new SolidBrush(Color.FromArgb((int) midnightBlue.R ^ (int) byte.MaxValue, (int) midnightBlue.G ^ (int) byte.MaxValue, (int) midnightBlue.B ^ (int) byte.MaxValue)), num9 - 2, num10 - 2, 4, 4);
           }
           index3 += num8;
         }
       }
-      if (this.FfryUetNii != SimpleDSStyle.Line)
+      if (this.style != SimpleDSStyle.Line)
         return;
       SmoothingMode smoothingMode = this.pad.Graphics.SmoothingMode;
       this.pad.Graphics.SmoothingMode = this.IXfyvDxxVL;
@@ -275,27 +264,27 @@ namespace FreeQuant.FinChart
       Distance distance = new Distance();
       DateTime dateTime = this.pad.GetDateTime(x);
       double num = 0.0;
-      if (this.KQFylhRfSj == EIndexOption.Null)
+      if (this.options == EIndexOption.Null)
       {
-        if (!this.J3CyTcOdfO.Contains(dateTime))
+        if (!this.mainSeries.Contains(dateTime))
           return (Distance) null;
-        num = this.J3CyTcOdfO[dateTime];
+        num = this.mainSeries[dateTime];
       }
-      if (this.KQFylhRfSj == EIndexOption.Next)
+      if (this.options == EIndexOption.Next)
       {
-        if (this.J3CyTcOdfO.LastDateTime < dateTime.AddTicks(1L))
+        if (this.mainSeries.LastDateTime < dateTime.AddTicks(1L))
           return (Distance) null;
-        num = this.J3CyTcOdfO[dateTime.AddTicks(1L), EIndexOption.Next];
+        num = this.mainSeries[dateTime.AddTicks(1L), EIndexOption.Next];
       }
       distance.X = (double) x;
       distance.Y = num;
       distance.DX = 0.0;
       distance.DY = Math.Abs(y - num);
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
-        return (Distance) null;
+        return null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.J3CyTcOdfO.Name, (object) this.J3CyTcOdfO.Title, (object) dateTime.ToString(), (object) distance.Y);
-      distance.ToolTipText = ((object) stringBuilder).ToString();
+			stringBuilder.AppendFormat(this.ToolTipFormat, (object) this.mainSeries.Name, (object) this.mainSeries.Title, (object) dateTime.ToString(), (object) distance.Y);
+      distance.ToolTipText = stringBuilder.ToString();
       return distance;
     }
   }

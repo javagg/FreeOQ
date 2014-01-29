@@ -2,7 +2,6 @@ using System;
 using FreeQuant;
 using System.Collections;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace FreeQuant.Optimization

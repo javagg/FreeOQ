@@ -1,8 +1,7 @@
 ﻿namespace OpenQuant.API
 {
-	public enum OrderSide
-	{
-		Buy,
-		Sell
-	}
+	/// <summary>
+	/// Order side (buy or sell)
+	/// </summary>
+	public enum OrderSide {	Buy, Sell }
 }

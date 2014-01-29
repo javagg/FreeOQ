@@ -10,7 +10,7 @@ namespace FreeQuant.Charting
     private long J4aCZhipID;
     private long dthCXcGNNp;
     private long gWjCgJN3TA;
-    private bool kQZCbKa8jb;
+    private bool sessionGridEnabled;
 
     public long FirstSessionTick
     {
@@ -50,25 +50,25 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.kQZCbKa8jb;
+				return this.sessionGridEnabled; 
       }
        set
       {
-        this.kQZCbKa8jb = value;
+        this.sessionGridEnabled = value;
       }
     }
 
     
     public TIntradayTransformation()
     {
-      this.kQZCbKa8jb = true;
+			this.SessionGridEnabled = true;
       this.SetSessionBounds(0, 864000000000);
     }
 
     
     public TIntradayTransformation(long FirstSessionTick, long LastSessionTick)
     {
-      this.kQZCbKa8jb = true;
+			this.SessionGridEnabled = true;
       this.SetSessionBounds(FirstSessionTick, LastSessionTick);
     }
 

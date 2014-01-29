@@ -5,57 +5,57 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class ATR : Indicator
-  {
-    [Description("Length")]
-    [Category("Parameters")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as ATR).get_Length();
-      }
-      set
-      {
-        (this.indicator as ATR).set_Length(value);
-      }
-    }
+	public class ATR : Indicator
+	{
+		[Description("Length")]
+		[Category("Parameters")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.ATR).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.ATR).Length = value;
+			}
+		}
 
-    public IndicatorStyle Style
-    {
-      get
-      {
-        return OpenQuant.API.EnumConverter.Convert((this.indicator as ATR).get_Style());
-      }
-      set
-      {
-        (this.indicator as ATR).set_Style(OpenQuant.API.EnumConverter.Convert(value));
-      }
-    }
+		public IndicatorStyle Style
+		{
+			get
+			{
+				return EnumConverter.Convert((this.indicator as FreeQuant.Indicators.ATR).Style);
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.ATR).Style = EnumConverter.Convert(value);
+			}
+		}
 
-    private ATR()
-    {
-      this.indicator = (Indicator) new ATR();
-    }
+		private ATR()
+		{
+			this.indicator = new FreeQuant.Indicators.ATR();
+		}
 
-    public ATR(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new ATR((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public ATR(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.ATR(series.series, length);
+		}
 
-    public ATR(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new ATR((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public ATR(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.ATR(indicator.indicator, length);
+		}
 
-    public ATR(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new ATR((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public ATR(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ATR(series.series, length, color);
+		}
 
-    public ATR(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new ATR((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public ATR(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.ATR(indicator.indicator, length, color);
+		}
+	}
 }

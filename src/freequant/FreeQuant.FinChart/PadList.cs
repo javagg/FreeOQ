@@ -1,154 +1,140 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.FinChart
 {
-  [Serializable]
-  public class PadList : IList, ICollection, IEnumerable
-  {
-    private ArrayList VogJtCTLfO;
+	[Serializable]
+	public class PadList : IList
+	{
+		private ArrayList pads; 
 
-    public bool IsReadOnly
-    {
-       get
-      {
-        return this.VogJtCTLfO.IsReadOnly;
-      }
-    }
+		public bool IsReadOnly
+		{
+			get
+			{
+				return this.pads.IsReadOnly;
+			}
+		}
 
-    public bool IsFixedSize
-    {
-       get
-      {
-        return this.VogJtCTLfO.IsFixedSize;
-      }
-    }
+		public bool IsFixedSize
+		{
+			get
+			{
+				return this.pads.IsFixedSize;
+			}
+		}
 
-    public bool IsSynchronized
-    {
-       get
-      {
-        return this.VogJtCTLfO.IsSynchronized;
-      }
-    }
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.pads.IsSynchronized;
+			}
+		}
 
-    public int Count
-    {
-       get
-      {
-        return this.VogJtCTLfO.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.pads.Count;
+			}
+		}
 
-    public object SyncRoot
-    {
-       get
-      {
-        return this.VogJtCTLfO.SyncRoot;
-      }
-    }
+		public object SyncRoot
+		{
+			get
+			{
+				return this.pads.SyncRoot;
+			}
+		}
 
-    public Pad this[int index]
-    {
-       get
-      {
-        return this.VogJtCTLfO[index] as Pad;
-      }
-    }
+		public Pad this[int index]
+		{
+			get
+			{
+				return this.pads[index] as Pad;
+			}
+		}
 
-    
-    public PadList()
-    {
-      this.VogJtCTLfO = new ArrayList();
-    }
+		public PadList()
+		{
+			this.pads = new ArrayList();
+		}
 
-    
-    object IList.get_Item(int index)
-    {
-      return (object) this[index];
-    }
+		object IList.this[int index]
+		{
+			get
+			{
+				return this[index];
+			}
+			set
+			{
+//				this[index] = value;
+			}
+		}
 
-    
-    void IList.set_Item(int index, object value)
-    {
-    }
+		public void RemoveAt(int index)
+		{
+			this.pads.RemoveAt(index);
+		}
 
-    
-    public void RemoveAt(int index)
-    {
-      this.VogJtCTLfO.RemoveAt(index);
-    }
+		void IList.Insert(int index, object value)
+		{
+		}
 
-    
-    void IList.Insert(int index, object value)
-    {
-    }
+		void IList.Remove(object value)
+		{
+			this.Remove(value as Pad);
+		}
 
-    
-    void IList.Remove(object value)
-    {
-      this.Remove(value as Pad);
-    }
+		bool IList.Contains(object value)
+		{
+			return this.pads.Contains(value);
+		}
 
-    
-    bool IList.Contains(object value)
-    {
-      return this.VogJtCTLfO.Contains(value);
-    }
+		public void Clear()
+		{
+			this.pads.Clear();
+		}
 
-    
-    public void Clear()
-    {
-      this.VogJtCTLfO.Clear();
-    }
+		int IList.IndexOf(object value)
+		{
+			return this.IndexOf(value as Pad);
+		}
 
-    
-    int IList.IndexOf(object value)
-    {
-      return this.IndexOf(value as Pad);
-    }
+		int IList.Add(object value)
+		{
+			return this.Add(value as Pad);
+		}
 
-    
-    int IList.Add(object value)
-    {
-      return this.Add(value as Pad);
-    }
+		public void CopyTo(Array array, int index)
+		{
+			this.pads.CopyTo(array, index);
+		}
 
-    
-    public void CopyTo(Array array, int index)
-    {
-      this.VogJtCTLfO.CopyTo(array, index);
-    }
+		public IEnumerator GetEnumerator()
+		{
+			return this.pads.GetEnumerator();
+		}
 
-    
-    public IEnumerator GetEnumerator()
-    {
-      return this.VogJtCTLfO.GetEnumerator();
-    }
+		public int Add(Pad pad)
+		{
+			return this.pads.Add(pad);
+		}
 
-    
-    public int Add(Pad pad)
-    {
-      return this.VogJtCTLfO.Add((object) pad);
-    }
+		public void Remove(Pad pad)
+		{
+			this.pads.Remove(pad);
+		}
 
-    
-    public void Remove(Pad pad)
-    {
-      this.VogJtCTLfO.Remove((object) pad);
-    }
+		public void Insert(int index, Pad pad)
+		{
+			this.pads.Insert(index, pad);
+		}
 
-    
-    public void Insert(int index, Pad pad)
-    {
-      this.VogJtCTLfO.Insert(index, (object) pad);
-    }
-
-    
-    public int IndexOf(Pad pad)
-    {
-      return this.VogJtCTLfO.IndexOf((object) pad);
-    }
-  }
+		public int IndexOf(Pad pad)
+		{
+			return this.pads.IndexOf(pad);
+		}
+	}
 }

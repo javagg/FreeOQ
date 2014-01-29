@@ -1,7 +1,4 @@
 namespace FreeQuant.Neural
 {
-  public enum EWeightInitMode
-  {
-    Random,
-  }
+	public enum EWeightInitMode {	Random }
 }

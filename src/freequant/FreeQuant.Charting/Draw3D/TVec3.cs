@@ -1,6 +1,5 @@
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting.Draw3D
 {
@@ -10,7 +9,7 @@ namespace FreeQuant.Charting.Draw3D
 		public double y;
 		public double z;
 
-		public double this [int i]
+		public double this[int i]
 		{
 			get
 			{

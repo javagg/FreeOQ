@@ -55,7 +55,7 @@ namespace OpenQuant.API
 		///<summary>
 		///  Gets bar at specified index in the series 
 		///</summary>
-		public Bar this [int index]
+		public Bar this[int index]
 		{
 			get
 			{
@@ -66,13 +66,13 @@ namespace OpenQuant.API
 		///<summary>
 		///  Gets bar with specified time stamp in the series
 		///</summary>
-		public Bar this [DateTime dateTime]
+		public Bar this[DateTime dateTime]
 		{
 			get
 			{
 				FreeQuant.Data.Bar bar = this.series[dateTime];
 				if (bar == null)
-					return (Bar)null;
+					return null;
 				else
 					return new Bar(bar);
 			}
@@ -81,7 +81,7 @@ namespace OpenQuant.API
 		///<summary>
 		///  Gets value with specified time stamp and bar data in the series 
 		///</summary>
-		public double this [DateTime dateTime, BarData barData]
+		public double this[DateTime dateTime, BarData barData]
 		{
 			get
 			{
@@ -109,7 +109,7 @@ namespace OpenQuant.API
 					case BarData.OpenInt:
 						return (double)bar.OpenInt;
 					default:
-						throw new NotSupportedException("BarData " + (object)barData + " is not supported");
+						throw new NotSupportedException("BarData " + barData + " is not supported");
 				}
 			}
 		}
@@ -117,7 +117,7 @@ namespace OpenQuant.API
 		///<summary>
 		///  Gets value with specified index and bar data in the series  
 		///</summary>
-		public double this [int index, BarData barData]
+		public double this[int index, BarData barData]
 		{
 			get
 			{
@@ -128,7 +128,7 @@ namespace OpenQuant.API
 		///<summary>
 		///  Gets value with specified time stamp and search option  
 		///</summary>
-		public Bar this [DateTime dateTime, SearchOption searchOption]
+		public Bar this[DateTime dateTime, SearchOption searchOption]
 		{
 			get
 			{
@@ -251,7 +251,7 @@ namespace OpenQuant.API
 		///</summary>
 		public virtual Cross Crosses(TimeSeries series, DateTime dateTime)
 		{
-			return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries)series.series, dateTime));
+			return EnumConverter.Convert(this.series.Crosses(series.series, dateTime));
 		}
 
 		///<summary>
@@ -259,7 +259,7 @@ namespace OpenQuant.API
 		///</summary>
 		public virtual bool CrossesBelow(TimeSeries series, DateTime dateTime)
 		{
-			return this.series.CrossesBelow((FreeQuant.Series.TimeSeries)series.series, dateTime);
+			return this.series.CrossesBelow(series.series, dateTime);
 		}
 
 		///<summary>
@@ -267,7 +267,7 @@ namespace OpenQuant.API
 		///</summary>
 		public virtual bool CrossesAbove(TimeSeries series, DateTime dateTime)
 		{
-			return this.series.CrossesAbove((FreeQuant.Series.TimeSeries)series.series, dateTime);
+			return this.series.CrossesAbove(series.series, dateTime);
 		}
 
 		///<summary>
@@ -275,7 +275,7 @@ namespace OpenQuant.API
 		///</summary>
 		public bool CrossesBelow(BarSeries series, Bar bar)
 		{
-			return this.series.CrossesBelow((FreeQuant.Series.TimeSeries)series.series, bar.bar);
+			return this.series.CrossesBelow(series.series, bar.bar);
 		}
 
 		///<summary>
@@ -283,7 +283,7 @@ namespace OpenQuant.API
 		///</summary>
 		public bool CrossesAbove(BarSeries series, Bar bar)
 		{
-			return this.series.CrossesAbove((FreeQuant.Series.TimeSeries)series.series, bar.bar);
+			return this.series.CrossesAbove(series.series, bar.bar);
 		}
 
 		///<summary>
@@ -291,7 +291,7 @@ namespace OpenQuant.API
 		///</summary>
 		public bool CrossesBelow(Indicator indicator, Bar bar)
 		{
-			return this.series.CrossesBelow((FreeQuant.Series.TimeSeries)indicator.indicator, bar.bar);
+			return this.series.CrossesBelow(indicator.indicator, bar.bar);
 		}
 
 		///<summary>
@@ -299,7 +299,7 @@ namespace OpenQuant.API
 		///</summary>
 		public bool CrossesAbove(Indicator indicator, Bar bar)
 		{
-			return this.series.CrossesAbove((FreeQuant.Series.TimeSeries)indicator.indicator, bar.bar);
+			return this.series.CrossesAbove(indicator.indicator, bar.bar);
 		}
 
 		///<summary>
@@ -307,7 +307,7 @@ namespace OpenQuant.API
 		///</summary>
 		public Cross Crosses(Indicator indicator, Bar bar)
 		{
-			return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries)indicator.indicator, bar.bar));
+			return EnumConverter.Convert(this.series.Crosses(indicator.indicator, bar.bar));
 		}
 
 		///<summary>
@@ -315,7 +315,7 @@ namespace OpenQuant.API
 		///</summary>
 		public Cross Crosses(BarSeries series, Bar bar)
 		{
-			return EnumConverter.Convert(this.series.Crosses((FreeQuant.Series.TimeSeries)series.series, bar.bar));
+			return EnumConverter.Convert(this.series.Crosses(series.series, bar.bar));
 		}
 
 		///<summary>
@@ -419,7 +419,7 @@ namespace OpenQuant.API
 		///</summary>
 		public IEnumerator GetEnumerator()
 		{
-			return (IEnumerator)new BarSeriesEnumerator(this.series);
+			return new BarSeriesEnumerator(this.series);
 		}
 
 		double ISeries.Ago(int n)

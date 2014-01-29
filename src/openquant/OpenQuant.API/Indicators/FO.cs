@@ -5,79 +5,79 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class FO : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as FO).get_Length();
-      }
-      set
-      {
-        (this.indicator as FO).set_Length(value);
-      }
-    }
+	public class FO : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.FO).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.FO).Length = value;
+			}
+		}
 
-    [Description("Distance Mode")]
-    [Category("Parameters")]
-    public RegressionDistanceMode DistanceMode
-    {
-      get
-      {
-        return OpenQuant.API.EnumConverter.Convert((this.indicator as FO).get_DistanceMode());
-      }
-      set
-      {
-        (this.indicator as FO).set_DistanceMode(OpenQuant.API.EnumConverter.Convert(value));
-      }
-    }
+		[Description("Distance Mode")]
+		[Category("Parameters")]
+		public RegressionDistanceMode DistanceMode
+		{
+			get
+			{
+				return EnumConverter.Convert((this.indicator as FreeQuant.Indicators.FO).DistanceMode);
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.FO).DistanceMode = EnumConverter.Convert(value);
+			}
+		}
 
-    private FO()
-    {
-      this.indicator = (Indicator) new FO();
-    }
+		private FO()
+		{
+			this.indicator = new FreeQuant.Indicators.FO();
+		}
 
-    public FO(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public FO(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(series.series, length);
+		}
 
-    public FO(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public FO(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(indicator.indicator, length);
+		}
 
-    public FO(OpenQuant.API.TimeSeries series, int length)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public FO(TimeSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(series.series, length);
+		}
 
-    public FO(OpenQuant.API.BarSeries series, int length, BarData option)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public FO(BarSeries series, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(series.series, length, EnumConverter.Convert(option));
+		}
 
-    public FO(Indicator indicator, int length, BarData option)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
-    }
+		public FO(Indicator indicator, int length, BarData option)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(indicator.indicator, length, EnumConverter.Convert(option));
+		}
 
-    public FO(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public FO(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(series.series, length, color);
+		}
 
-    public FO(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
+		public FO(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(indicator.indicator, length, color);
+		}
 
-    public FO(OpenQuant.API.BarSeries series, int length, BarData option, Color color)
-    {
-      this.indicator = (Indicator) new FO((SmartQuant.Series.TimeSeries) series.series, length, OpenQuant.API.EnumConverter.Convert(option), color);
-    }
-  }
+		public FO(BarSeries series, int length, BarData option, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.FO(series.series, length, EnumConverter.Convert(option), color);
+		}
+	}
 }

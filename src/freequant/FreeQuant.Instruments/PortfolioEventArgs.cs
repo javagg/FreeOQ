@@ -1,24 +1,14 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Instruments
 {
-  public class PortfolioEventArgs : EventArgs
-  {
-    private Portfolio portfolio;
+	public class PortfolioEventArgs : EventArgs
+	{
+		public Portfolio Portfolio { get; private set; }
 
-    public Portfolio Portfolio
-    {
-       get
-      {
-        return this.portfolio;
-      }
-    }
-
-    
-		public PortfolioEventArgs(Portfolio portfolio):base()
+		public PortfolioEventArgs(Portfolio portfolio) : base()
 		{
-       this.portfolio = portfolio;
-    }
-  }
+			this.Portfolio = portfolio;
+		}
+	}
 }

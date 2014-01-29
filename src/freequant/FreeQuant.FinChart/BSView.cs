@@ -7,7 +7,6 @@ namespace FreeQuant.FinChart
 {
   public abstract class BSView : SeriesView
   {
-    
 		public BSView(Pad pad) : base(pad)
     {
     }
@@ -37,8 +36,8 @@ namespace FreeQuant.FinChart
       if (distance.DX == double.MaxValue || distance.DY == double.MaxValue)
         return (Distance) null;
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(this.toolTipFormat, (object) this.MainSeries.Name, (object) this.MainSeries.Title, (object) bar.DateTime.ToString((this.MainSeries as BarSeries).ToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
-      distance.ToolTipText = ((object) stringBuilder).ToString();
+			stringBuilder.AppendFormat(this.ToolTipFormat, this.MainSeries.Name, (object) this.MainSeries.Title, (object) bar.DateTime.ToString((this.MainSeries as BarSeries).ToolTipDateTimeFormat), (object) bar.High, (object) bar.Low, (object) bar.Open, (object) bar.Close, (object) bar.Volume);
+      distance.ToolTipText = stringBuilder.ToString();
       return distance;
     }
   }

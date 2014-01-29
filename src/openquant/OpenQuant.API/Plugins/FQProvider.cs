@@ -21,7 +21,7 @@ namespace OpenQuant.API.Plugins
     private UserProvider provider;
     private IBarFactory barFactory;
     private Dictionary<Order, OrderRecord> orderRecords;
-    private Dictionary<string, OpenQuant.API.HistoricalDataRequest> historicalDataRequests;
+    private Dictionary<string, HistoricalDataRequest> historicalDataRequests;
 
     internal UserProvider UserProvider
     {
@@ -358,7 +358,7 @@ namespace OpenQuant.API.Plugins
       }
     }
 
-    public void EmitTrade(OpenQuant.API.Instrument instrument, DateTime time, byte providerId, double price, int size)
+    public void EmitTrade(Instrument instrument, DateTime time, byte providerId, double price, int size)
     {
       FreeQuant.Data.Trade trade = new FreeQuant.Data.Trade(time, price, size);
       trade.ProviderId = providerId;
@@ -373,7 +373,7 @@ namespace OpenQuant.API.Plugins
       this.barFactory.OnNewTrade((IFIXInstrument) instrument.instrument, trade);
     }
 
-    public void EmitQuote(OpenQuant.API.Instrument instrument, DateTime time, byte providerId, double bid, int bidSize, double ask, int askSize)
+    public void EmitQuote(Instrument instrument, DateTime time, byte providerId, double bid, int bidSize, double ask, int askSize)
     {
       FreeQuant.Data.Quote quote = new FreeQuant.Data.Quote(time, bid, bidSize, ask, askSize);
       quote.ProviderId = providerId;
@@ -388,7 +388,7 @@ namespace OpenQuant.API.Plugins
       this.barFactory.OnNewQuote((IFIXInstrument) instrument.instrument, quote);
     }
 
-    public void EmitMarketDepth(OpenQuant.API.Instrument instrument, DateTime time, BidAsk side, OrderBookAction action, double price, int size, int position)
+    public void EmitMarketDepth(Instrument instrument, DateTime time, BidAsk side, OrderBookAction action, double price, int size, int position)
     {
       MarketDepth marketDepth = new MarketDepth(time, string.Empty, position, OpenQuant.API.EnumConverter.Convert(action), OpenQuant.API.EnumConverter.Convert(side), price, size);
       if (this.NewMarketDepth == null)
@@ -396,7 +396,7 @@ namespace OpenQuant.API.Plugins
       this.NewMarketDepth((object) this, new MarketDepthEventArgs(marketDepth, (IFIXInstrument) instrument.instrument, (IMarketDataProvider) this));
     }
 
-    public void EmitBarOpen(OpenQuant.API.Instrument instrument, OpenQuant.API.BarType barType, long barSize, DateTime beginDateTime, DateTime endDateTime, double open, double high, double low, double close, long volume)
+    public void EmitBarOpen(Instrument instrument, BarType barType, long barSize, DateTime beginDateTime, DateTime endDateTime, double open, double high, double low, double close, long volume)
     {
       FreeQuant.Data.Bar bar = new FreeQuant.Data.Bar(OpenQuant.API.EnumConverter.Convert(barType), barSize, beginDateTime, endDateTime, open, high, low, close, volume, 0L);
       if (this.MarketDataFilter != null)
@@ -406,7 +406,7 @@ namespace OpenQuant.API.Plugins
       this.EmitBarOpen((IFIXInstrument) instrument.instrument, bar);
     }
 
-    public void EmitBar(OpenQuant.API.Instrument instrument, OpenQuant.API.BarType barType, long barSize, DateTime beginDateTime, DateTime endDateTime, double open, double high, double low, double close, long volume)
+    public void EmitBar(Instrument instrument, BarType barType, long barSize, DateTime beginDateTime, DateTime endDateTime, double open, double high, double low, double close, long volume)
     {
       FreeQuant.Data.Bar bar = new FreeQuant.Data.Bar(OpenQuant.API.EnumConverter.Convert(barType), barSize, beginDateTime, endDateTime, open, high, low, close, volume, 0L);
       if (this.MarketDataFilter != null)
@@ -676,21 +676,21 @@ namespace OpenQuant.API.Plugins
       this.provider.CallCancelHistoricalData(request);
     }
 
-    public void EmitHistoricalTrade(OpenQuant.API.HistoricalDataRequest request, DateTime datetime, double price, int size)
+    public void EmitHistoricalTrade(HistoricalDataRequest request, DateTime datetime, double price, int size)
     {
       if (this.NewHistoricalTrade == null)
         return;
       this.NewHistoricalTrade((object) this, new HistoricalTradeEventArgs(new FreeQuant.Data.Trade(datetime, price, size), request.request.RequestId, request.request.Instrument, (IHistoricalDataProvider) this, 0));
     }
 
-    public void EmitHistoricalQuote(OpenQuant.API.HistoricalDataRequest request, DateTime datetime, double bid, int bidSize, double ask, int askSize)
+    public void EmitHistoricalQuote(HistoricalDataRequest request, DateTime datetime, double bid, int bidSize, double ask, int askSize)
     {
       if (this.NewHistoricalQuote == null)
         return;
       this.NewHistoricalQuote((object) this, new HistoricalQuoteEventArgs(new FreeQuant.Data.Quote(datetime, bid, bidSize, ask, askSize), request.request.RequestId, request.request.Instrument, (IHistoricalDataProvider) this, 0));
     }
 
-    public void EmitHistoricalBar(OpenQuant.API.HistoricalDataRequest request, DateTime datetime, double open, double high, double low, double close, long volume)
+    public void EmitHistoricalBar(HistoricalDataRequest request, DateTime datetime, double open, double high, double low, double close, long volume)
     {
       if (this.NewHistoricalBar == null)
         return;
@@ -704,21 +704,21 @@ namespace OpenQuant.API.Plugins
       this.NewHistoricalMarketDepth((object) this, new HistoricalMarketDepthEventArgs((MarketDepth) null, (string) null, (IFIXInstrument) null, (IHistoricalDataProvider) this, 0));
     }
 
-    public void EmitHistoricalDataCompleted(OpenQuant.API.HistoricalDataRequest request)
+    public void EmitHistoricalDataCompleted(HistoricalDataRequest request)
     {
       if (this.HistoricalDataRequestCompleted == null)
         return;
       this.HistoricalDataRequestCompleted((object) this, new HistoricalDataEventArgs(request.request.RequestId, request.request.Instrument, (IHistoricalDataProvider) this, 0));
     }
 
-    public void EmitHistoricalDataCancelled(OpenQuant.API.HistoricalDataRequest request)
+    public void EmitHistoricalDataCancelled(HistoricalDataRequest request)
     {
       if (this.HistoricalDataRequestCancelled == null)
         return;
       this.HistoricalDataRequestCancelled((object) this, new HistoricalDataEventArgs(request.request.RequestId, request.request.Instrument, (IHistoricalDataProvider) this, 0));
     }
 
-    public void EmitHistoricalDataError(OpenQuant.API.HistoricalDataRequest request, string message)
+    public void EmitHistoricalDataError(HistoricalDataRequest request, string message)
     {
       if (this.HistoricalDataRequestError == null)
         return;

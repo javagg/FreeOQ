@@ -8,6 +8,6 @@
 		BlackScholes,
 		Binomial,
 		Trinomial,
-		MonteCarlo,
+		MonteCarlo
 	}
 }

@@ -1,13 +1,11 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Charting.Draw3D
 {
 	public class TRotX : TMat3x3
 	{
-		public TRotX(double Angle) : base()
+		public TRotX(double angle) : base()
 		{
 
-			this.SetRotX(Angle);
+			this.SetRotX(angle);
 		}
 	}
 }

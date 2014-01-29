@@ -1,5 +1,5 @@
-using SmartQuant.Data;
-using SmartQuant.Series;
+using FreeQuant.Data;
+using FreeQuant.Series;
 using System;
 
 

@@ -59,7 +59,7 @@ namespace FreeQuant.Instruments
 
 		public IEnumerator GetEnumerator()
 		{
-			return (IEnumerator)this.trades.GetEnumerator();
+			return this.trades.GetEnumerator();
 		}
 
 		public void Clear(bool dataOnly)

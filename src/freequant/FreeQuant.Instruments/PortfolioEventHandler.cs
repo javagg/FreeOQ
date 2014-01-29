@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.Instruments
+namespace FreeQuant.Instruments
 {
-  public delegate void PortfolioEventHandler(PortfolioEventArgs args);
+	public delegate void PortfolioEventHandler(PortfolioEventArgs args);
 }

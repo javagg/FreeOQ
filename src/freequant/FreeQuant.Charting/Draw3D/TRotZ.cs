@@ -2,9 +2,9 @@ namespace FreeQuant.Charting.Draw3D
 {
 	public class TRotZ : TMat3x3
 	{
-		public TRotZ(double Angle) : base()
+		public TRotZ(double angle) : base()
 		{
-			this.SetRotZ(Angle);
+			this.SetRotZ(angle);
 		}
 	}
 }

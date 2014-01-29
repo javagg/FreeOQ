@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Optimization
 {
@@ -313,7 +312,7 @@ namespace FreeQuant.Optimization
       return this.fIsParamFixed[NParam];
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public int GetNFixedParam()
     {
       int num = 0;

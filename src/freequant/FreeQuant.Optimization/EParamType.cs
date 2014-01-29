@@ -6,6 +6,6 @@ namespace FreeQuant.Optimization
 	public enum EParamType
 	{
 		Int,
-		Float,
+		Float
 	}
 }

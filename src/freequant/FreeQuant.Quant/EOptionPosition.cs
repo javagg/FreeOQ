@@ -4,6 +4,6 @@ namespace FreeQuant.Quant
 	{
 		InTheMoney,
 		AtTheMoney,
-		OutOfTheMoney,
+		OutOfTheMoney
 	}
 }

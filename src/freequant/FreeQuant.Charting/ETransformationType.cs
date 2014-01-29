@@ -1,8 +1,8 @@
 namespace FreeQuant.Charting
 {
-  public enum ETransformationType
-  {
-    Empty,
-    Intraday,
-  }
+	public enum ETransformationType
+	{
+		Empty,
+		Intraday
+	}
 }

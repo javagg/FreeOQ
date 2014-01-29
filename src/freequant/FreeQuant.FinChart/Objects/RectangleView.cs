@@ -49,17 +49,12 @@ namespace FreeQuant.FinChart.Objects
     }
 
     
-    public RectangleView(DrawingRectangle rect, Pad pad)
+		public RectangleView(DrawingRectangle rect, Pad pad) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.toolTipEnabled = true;
-      this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.nQNSrDsxti = rect;
       this.Pad = pad;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3336);
+			this.ToolTipEnabled = true;
+			this.ToolTipFormat = "";
     }
 
     
@@ -104,7 +99,7 @@ namespace FreeQuant.FinChart.Objects
     
     private Distance hoRS0fZTTW([In] int obj0, [In] double obj1)
     {
-      return (Distance) null;
+      return null;
     }
 
     

@@ -1,4 +1,4 @@
-using SmartQuant.FinChart;
+using FreeQuant.FinChart;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -9,7 +9,7 @@ namespace FreeQuant.FinChart.Objects
 {
   public class EllipseView : IChartDrawable, IZoomable
   {
-    private DrawingEllipse yVLScw9Zgj;
+		private DrawingEllipse drawingEllipse;
     protected DateTime firstDate;
     protected DateTime lastDate;
     protected bool toolTipEnabled;
@@ -49,17 +49,12 @@ namespace FreeQuant.FinChart.Objects
     }
 
     
-    public EllipseView(DrawingEllipse rect, Pad pad)
+		public EllipseView(DrawingEllipse rect, Pad pad) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      this.toolTipEnabled = true;
-      this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.yVLScw9Zgj = rect;
+      this.drawingEllipse = rect;
       this.Pad = pad;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3292);
+			this.ToolTipEnabled = true;
+			this.ToolTipFormat = "dfdsd";
     }
 
     
@@ -94,11 +89,11 @@ namespace FreeQuant.FinChart.Objects
     
     private void nxXStT7oM2()
     {
-      int val1_1 = this.Pad.ClientX(this.yVLScw9Zgj.X1);
-      int val2_1 = this.Pad.ClientX(this.yVLScw9Zgj.X2);
-      int val1_2 = this.Pad.ClientY(this.yVLScw9Zgj.Y1);
-      int val2_2 = this.Pad.ClientY(this.yVLScw9Zgj.Y2);
-      this.Pad.Graphics.DrawEllipse(new Pen(this.yVLScw9Zgj.Color, (float) this.yVLScw9Zgj.Width), Math.Min(val1_1, val2_1), Math.Min(val1_2, val2_2), Math.Abs(val2_1 - val1_1), Math.Abs(val2_2 - val1_2));
+      int val1_1 = this.Pad.ClientX(this.drawingEllipse.X1);
+      int val2_1 = this.Pad.ClientX(this.drawingEllipse.X2);
+      int val1_2 = this.Pad.ClientY(this.drawingEllipse.Y1);
+      int val2_2 = this.Pad.ClientY(this.drawingEllipse.Y2);
+      this.Pad.Graphics.DrawEllipse(new Pen(this.drawingEllipse.Color, (float) this.drawingEllipse.Width), Math.Min(val1_1, val2_1), Math.Min(val1_2, val2_2), Math.Abs(val2_1 - val1_1), Math.Abs(val2_2 - val1_2));
     }
 
     

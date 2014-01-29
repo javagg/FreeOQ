@@ -1,8 +1,8 @@
 namespace FreeQuant.Charting
 {
-  public enum EPrintLayout
-  {
-    Portrait,
-    Landscape,
-  }
+	public enum EPrintLayout
+	{
+		Portrait,
+		Landscape
+	}
 }

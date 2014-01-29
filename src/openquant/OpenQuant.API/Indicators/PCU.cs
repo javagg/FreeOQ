@@ -5,45 +5,45 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class PCU : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as PCU).get_Length();
-      }
-      set
-      {
-        (this.indicator as PCU).set_Length(value);
-      }
-    }
+	public class PCU : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.PCU).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.PCU).Length = value;
+			}
+		}
 
-    private PCU()
-    {
-      this.indicator = (Indicator) new PCU();
-    }
+		private PCU()
+		{
+			this.indicator = new FreeQuant.Indicators.PCU();
+		}
 
-    public PCU(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new PCU((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public PCU(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.PCU(series.series, length);
+		}
 
-    public PCU(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new PCU((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public PCU(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.PCU(indicator.indicator, length);
+		}
 
-    public PCU(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new PCU((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public PCU(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.PCU(series.series, length, color);
+		}
 
-    public PCU(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new PCU((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public PCU(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.PCU(indicator.indicator, length, color);
+		}
+	}
 }

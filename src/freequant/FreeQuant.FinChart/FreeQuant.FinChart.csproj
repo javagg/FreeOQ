@@ -102,7 +102,6 @@
     <Compile Include="Objects\PathView.cs" />
     <Compile Include="Objects\RayView.cs" />
     <Compile Include="Objects\RectangleView.cs" />
-    <Compile Include="Properties\Resources.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -111,7 +110,6 @@
     <None Include="ChartToolStrip.resx" />
     <None Include="PropertyForm.resx" />
     <None Include="ToolBar.resx" />
-    <None Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -130,6 +128,26 @@
     <ProjectReference Include="..\FreeQuant.Trading\FreeQuant.Trading.csproj">
       <Project>{89EA8C8E-0CC0-4E94-8401-5EAAA57792C5}</Project>
       <Name>FreeQuant.Trading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Indicators\FreeQuant.Indicators.csproj">
+      <Project>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</Project>
+      <Name>FreeQuant.Indicators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,48 +1,37 @@
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace FreeQuant.Optimization
 {
   public class CoordinateDescent : Optimizer
   {
-    private double rMbL3XWM4;
+    private double descentStepSize;
     private double PjEutIlEM;
     private double kdBSOWhfq;
 
-    public double DescentStepSize
-    {
-       get
-      {
-        return this.rMbL3XWM4;
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        this.rMbL3XWM4 = value;
-      }
-    }
+		public double DescentStepSize { get; set; }
 
 	public CoordinateDescent(IOptimizable Optimizable) : base(Optimizable)
     {
 
       this.fType = EOptimizerType.CoordinateDescent;
-      this.rMbL3XWM4 = 0.01;
+			this.DescentStepSize = 0.01;
     }
 
     public double GetDescentStepSize()
     {
-      return this.rMbL3XWM4;
+			return this.DescentStepSize;
     }
 
-    public void SetDescentStepSize(double DescentStepSize)
+		public void SetDescentStepSize(double descentStepSize)
     {
-      this.rMbL3XWM4 = DescentStepSize;
+			this.DescentStepSize = descentStepSize;
     }
 
     private bool ytt95IRFu([In] int obj0)
     {
       double num1 = this.fParam[obj0];
-      double num2 = this.fSteps[obj0] == 0.0 ? this.rMbL3XWM4 : this.fSteps[obj0];
+			double num2 = this.fSteps[obj0] == 0.0 ? this.DescentStepSize : this.fSteps[obj0];
       bool flag1 = false;
       bool flag2 = false;
       this.Update();
@@ -96,7 +85,7 @@ namespace FreeQuant.Optimization
     public override void Print()
     {
       base.Print();
-      Console.WriteLine(this.rMbL3XWM4);
+			Console.WriteLine(this.DescentStepSize);
     }
   }
 }

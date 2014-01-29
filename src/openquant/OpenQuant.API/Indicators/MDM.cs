@@ -4,31 +4,31 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class MDM : Indicator
-  {
-    private MDM()
-    {
-      this.indicator = (Indicator) new MDM();
-    }
+	public class MDM : Indicator
+	{
+		private MDM()
+		{
+			this.indicator = new FreeQuant.Indicators.MDM();
+		}
 
-    public MDM(OpenQuant.API.BarSeries series)
-    {
-      this.indicator = (Indicator) new MDM((SmartQuant.Series.TimeSeries) series.series);
-    }
+		public MDM(BarSeries series)
+		{
+			this.indicator = new FreeQuant.Indicators.MDM(series.series);
+		}
 
-    public MDM(Indicator indicator)
-    {
-      this.indicator = (Indicator) new MDM((SmartQuant.Series.TimeSeries) indicator.indicator);
-    }
+		public MDM(Indicator indicator)
+		{
+			this.indicator = new FreeQuant.Indicators.MDM(indicator.indicator);
+		}
 
-    public MDM(OpenQuant.API.BarSeries series, Color color)
-    {
-      this.indicator = (Indicator) new MDM((SmartQuant.Series.TimeSeries) series.series, color);
-    }
+		public MDM(BarSeries series, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.MDM(series.series, color);
+		}
 
-    public MDM(Indicator indicator, Color color)
-    {
-      this.indicator = (Indicator) new MDM((SmartQuant.Series.TimeSeries) indicator.indicator, color);
-    }
-  }
+		public MDM(Indicator indicator, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.MDM(indicator.indicator, color);
+		}
+	}
 }

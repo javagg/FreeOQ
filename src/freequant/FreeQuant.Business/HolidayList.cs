@@ -29,7 +29,7 @@ namespace FreeQuant.Business
     {
       get
       {
-        return this.pn3aaRDhM[(object) date] as Holiday;
+        return this.pn3aaRDhM[date] as Holiday;
       }
     }
 
@@ -41,14 +41,14 @@ namespace FreeQuant.Business
 
     public void Add(Holiday holiday)
     {
-      if (this.pn3aaRDhM.Contains((object) holiday.Date))
-				throw new ApplicationException("" + (object) holiday.Date);
-      this.pn3aaRDhM.Add((object) holiday.Date, (object) holiday);
+      if (this.pn3aaRDhM.Contains(holiday.Date))
+				throw new ApplicationException("" + holiday.Date);
+      this.pn3aaRDhM.Add(holiday.Date, holiday);
     }
 
     public void Remove(Holiday holiday)
     {
-      this.pn3aaRDhM.Remove((object) holiday.Date);
+      this.pn3aaRDhM.Remove(holiday.Date);
     }
 
     public void RemoveAt(int index)
@@ -63,12 +63,12 @@ namespace FreeQuant.Business
 
     public bool Contains(DateTime date)
     {
-      return this.pn3aaRDhM.Contains((object) date);
+      return this.pn3aaRDhM.Contains(date);
     }
 
     public bool Contains(Holiday holiday)
     {
-      return this.pn3aaRDhM.ContainsValue((object) holiday);
+      return this.pn3aaRDhM.ContainsValue(holiday);
     }
 
     public IEnumerator GetEnumerator()

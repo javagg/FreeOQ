@@ -10,7 +10,7 @@ namespace FreeQuant.FinChart
 {
   public class SignalView : IChartDrawable, IDateDrawable
   {
-    private Signal VP3yN9Uek6;
+		private Signal signal; 
     private Color JVpy8D2xUR;
     private Color zMOyBnpkt3;
     private Color tHoyjarrU1;
@@ -106,38 +106,33 @@ namespace FreeQuant.FinChart
     {
       get
       {
-        return this.VP3yN9Uek6.DateTime;
+        return this.signal.DateTime;
       }
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public SignalView(Signal signal, Pad pad)
+    
+		public SignalView(Signal signal, Pad pad) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.JVpy8D2xUR = Color.SkyBlue;
       this.zMOyBnpkt3 = Color.SkyBlue;
       this.tHoyjarrU1 = Color.Pink;
       this.XNayo9fgOU = Color.Red;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
-      this.VP3yN9Uek6 = signal;
+      this.signal = signal;
       this.pad = pad;
-      this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(3144);
+			this.ToolTipEnabled = true;
+			this.ToolTipFormat = "dfdfs";
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Paint()
     {
-      if (this.VP3yN9Uek6.DateTime < this.firstDate || this.VP3yN9Uek6.DateTime > this.lastDate)
+      if (this.signal.DateTime < this.firstDate || this.signal.DateTime > this.lastDate)
         return;
-      int num1 = this.pad.ClientX(this.pad.MainSeries.GetDateTime(this.pad.MainSeries.GetIndex(this.VP3yN9Uek6.DateTime, EIndexOption.Next)));
-      int num2 = this.pad.ClientY(this.VP3yN9Uek6.Price);
-      Font font = new Font(FJDHryrxb1WIq5jBAt.mT707pbkgT(3194), 8f);
+      int num1 = this.pad.ClientX(this.pad.MainSeries.GetDateTime(this.pad.MainSeries.GetIndex(this.signal.DateTime, EIndexOption.Next)));
+      int num2 = this.pad.ClientY(this.signal.Price);
+			Font font = new Font("Arial", 8);
       Color color = this.JVpy8D2xUR;
-      switch (this.VP3yN9Uek6.Side)
+      switch (this.signal.Side)
       {
         case SignalSide.Buy:
           color = this.JVpy8D2xUR;
@@ -157,39 +152,39 @@ namespace FreeQuant.FinChart
       this.pad.Graphics.DrawEllipse(pen, num1 - num3 / 2, num2 - num3 / 2, num3, num3);
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void SetInterval(DateTime minDate, DateTime maxDate)
     {
       this.firstDate = minDate;
       this.lastDate = maxDate;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public Distance Distance(int x, double y)
     {
-      if (this.VP3yN9Uek6.DateTime < this.firstDate || this.VP3yN9Uek6.DateTime > this.lastDate)
+      if (this.signal.DateTime < this.firstDate || this.signal.DateTime > this.lastDate)
         return (Distance) null;
       Distance distance = new Distance();
-      int index = this.pad.MainSeries.GetIndex(this.VP3yN9Uek6.DateTime, EIndexOption.Next);
+      int index = this.pad.MainSeries.GetIndex(this.signal.DateTime, EIndexOption.Next);
       distance.X = (double) this.pad.ClientX(this.pad.MainSeries.GetDateTime(index));
-      distance.Y = this.VP3yN9Uek6.Price;
+      distance.Y = this.signal.Price;
       distance.DX = Math.Abs((double) x - distance.X);
       distance.DY = Math.Abs(y - distance.Y);
       StringBuilder stringBuilder = new StringBuilder();
-      if (this.VP3yN9Uek6.DateTime.Second != 0 || this.VP3yN9Uek6.DateTime.Minute != 0 || this.VP3yN9Uek6.DateTime.Hour != 0)
-        stringBuilder.AppendFormat(this.toolTipFormat, (object) FJDHryrxb1WIq5jBAt.mT707pbkgT(3208), (object) ((object) this.VP3yN9Uek6.Side).ToString(), (object) this.VP3yN9Uek6.Instrument.Symbol, (object) this.VP3yN9Uek6.Price, (object) this.VP3yN9Uek6.DateTime, (object) ((object) this.VP3yN9Uek6.Status).ToString());
+      if (this.signal.DateTime.Second != 0 || this.signal.DateTime.Minute != 0 || this.signal.DateTime.Hour != 0)
+				stringBuilder.AppendFormat(this.ToolTipFormat, "",  this.signal.Side.ToString(), this.signal.Instrument.Symbol, (object) this.signal.Price, (object) this.signal.DateTime, (object) ((object) this.signal.Status).ToString());
       else
-        stringBuilder.AppendFormat(this.toolTipFormat, (object) FJDHryrxb1WIq5jBAt.mT707pbkgT(3228), (object) ((object) this.VP3yN9Uek6.Side).ToString(), (object) this.VP3yN9Uek6.Instrument.Symbol, (object) this.VP3yN9Uek6.Price, (object) this.VP3yN9Uek6.DateTime.ToShortDateString(), (object) ((object) this.VP3yN9Uek6.Status).ToString());
+				stringBuilder.AppendFormat(this.ToolTipFormat, "", this.signal.Side.ToString(), this.signal.Instrument.Symbol, (object) this.signal.Price, (object) this.signal.DateTime.ToShortDateString(), (object) ((object) this.signal.Status).ToString());
       distance.ToolTipText = ((object) stringBuilder).ToString();
       return distance;
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void Select()
     {
     }
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
+    
     public void UnSelect()
     {
     }

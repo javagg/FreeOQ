@@ -5,59 +5,59 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class MASS : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as MASS).get_Length();
-      }
-      set
-      {
-        (this.indicator as MASS).set_Length(value);
-      }
-    }
+	public class MASS : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.MASS).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.MASS).Length = value;
+			}
+		}
 
-    [Category("Parameters")]
-    [Description("Order")]
-    public int Order
-    {
-      get
-      {
-        return (this.indicator as MASS).get_Order();
-      }
-      set
-      {
-        (this.indicator as MASS).set_Order(value);
-      }
-    }
+		[Category("Parameters")]
+		[Description("Order")]
+		public int Order
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.MASS).Order;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.MASS).Order = value;
+			}
+		}
 
-    private MASS()
-    {
-      this.indicator = (Indicator) new MASS();
-    }
+		private MASS()
+		{
+			this.indicator = new FreeQuant.Indicators.MASS();
+		}
 
-    public MASS(OpenQuant.API.BarSeries series, int length, int order)
-    {
-      this.indicator = (Indicator) new MASS((SmartQuant.Series.TimeSeries) series.series, length, order);
-    }
+		public MASS(BarSeries series, int length, int order)
+		{
+			this.indicator = new FreeQuant.Indicators.MASS(series.series, length, order);
+		}
 
-    public MASS(Indicator indicator, int length, int order)
-    {
-      this.indicator = (Indicator) new MASS((SmartQuant.Series.TimeSeries) indicator.indicator, length, order);
-    }
+		public MASS(Indicator indicator, int length, int order)
+		{
+			this.indicator = new FreeQuant.Indicators.MASS(indicator.indicator, length, order);
+		}
 
-    public MASS(OpenQuant.API.BarSeries series, int length, int order, Color color)
-    {
-      this.indicator = (Indicator) new MASS((SmartQuant.Series.TimeSeries) series.series, length, order, color);
-    }
+		public MASS(BarSeries series, int length, int order, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.MASS(series.series, length, order, color);
+		}
 
-    public MASS(Indicator indicator, int length, int order, Color color)
-    {
-      this.indicator = (Indicator) new MASS((SmartQuant.Series.TimeSeries) indicator.indicator, length, order, color);
-    }
-  }
+		public MASS(Indicator indicator, int length, int order, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.MASS(indicator.indicator, length, order, color);
+		}
+	}
 }

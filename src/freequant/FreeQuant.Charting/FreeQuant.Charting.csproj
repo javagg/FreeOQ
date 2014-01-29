@@ -116,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Draw3D\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreeQuant.Quant\FreeQuant.Quant.csproj">

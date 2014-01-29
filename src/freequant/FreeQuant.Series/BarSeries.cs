@@ -153,9 +153,9 @@ namespace FreeQuant.Series
 			return base.Clone(DateTime1, DateTime2) as BarSeries;
 		}
 
-		public bool Contains(Bar Bar)
+		public bool Contains(Bar bar)
 		{
-			return base.Contains(Bar.DateTime);
+			return base.Contains(bar.DateTime);
 		}
 
 		public void Add(Bar bar)
@@ -164,9 +164,9 @@ namespace FreeQuant.Series
 			this.EmitItemAdded(bar.DateTime);
 		}
 
-		public void Remove(Bar Bar)
+		public void Remove(Bar bar)
 		{
-			this.fArray.Remove(Bar.DateTime);
+			this.fArray.Remove(bar.DateTime);
 		}
 
 		new public BarSeries Shift(int offset)

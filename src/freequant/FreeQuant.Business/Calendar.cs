@@ -4,33 +4,10 @@ namespace FreeQuant.Business
 {
 	public class Calendar
 	{
-		private string name;
-		private string description;
 		private HolidayList holidays;
 
-		public string Name
-		{
-			get
-			{
-				return this.name; 
-			}
-			set
-			{
-				this.name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return this.description; 
-			}
-			set
-			{
-				this.description = value;
-			}
-		}
+		public string Name { get; set; }
+		public string Description { get; set; }
 
 		public HolidayList Holidays
 		{
@@ -45,16 +22,10 @@ namespace FreeQuant.Business
 			this.Init();
 		}
 
-		public Calendar(string name, string description)
+		public Calendar(string name, string description = null)
 		{
-			this.name = name;
-			this.description = description;
-			this.Init();
-		}
-
-		public Calendar(string name)
-		{
-			this.name = name;
+			this.Name = name;
+			this.Description = description;
 			this.Init();
 		}
 

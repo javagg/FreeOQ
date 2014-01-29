@@ -17,33 +17,24 @@ namespace FreeQuant.FinChart
     private bool QI6TpeujS;
 
     
-    public Kagi(BarSeries BarArray)
+		public Kagi(BarSeries BarArray) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Yq5njBAtJ = BarArray;
       this.R1Tbjal9J = EKagiStyle.Percent;
       this.Yq5njBAtJ.ItemAdded += new ItemAddedEventHandler(this.zGqhj5LH6);
     }
 
     
-    public Kagi(BarSeries BarArray, EKagiStyle Style)
+		public Kagi(BarSeries BarArray, EKagiStyle Style) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Yq5njBAtJ = BarArray;
       this.R1Tbjal9J = Style;
       this.Yq5njBAtJ.ItemAdded += new ItemAddedEventHandler(this.zGqhj5LH6);
     }
 
     
-    public Kagi(BarSeries BarArray, double RevAmount)
+		public Kagi(BarSeries BarArray, double RevAmount) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Yq5njBAtJ = BarArray;
       this.R1Tbjal9J = EKagiStyle.Percent;
       this.jHreyxb1W = RevAmount;
@@ -51,11 +42,8 @@ namespace FreeQuant.FinChart
     }
 
     
-    public Kagi(BarSeries BarArray, EKagiStyle Style, double RevAmount)
+		public Kagi(BarSeries BarArray, EKagiStyle Style, double RevAmount) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.Yq5njBAtJ = BarArray;
       this.R1Tbjal9J = Style;
       this.jHreyxb1W = RevAmount;

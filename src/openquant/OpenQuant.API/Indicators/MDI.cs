@@ -5,57 +5,57 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class MDI : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as MDI).get_Length();
-      }
-      set
-      {
-        (this.indicator as MDI).set_Length(value);
-      }
-    }
+	public class MDI : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.MDI).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.MDI).Length = value;
+			}
+		}
 
-    public IndicatorStyle Style
-    {
-      get
-      {
-        return OpenQuant.API.EnumConverter.Convert((this.indicator as MDI).get_Style());
-      }
-      set
-      {
-        (this.indicator as MDI).set_Style(OpenQuant.API.EnumConverter.Convert(value));
-      }
-    }
+		public IndicatorStyle Style
+		{
+			get
+			{
+				return OpenQuant.API.EnumConverter.Convert((this.indicator as FreeQuant.Indicators.MDI).Style);
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.MDI).Style = OpenQuant.API.EnumConverter.Convert(value);
+			}
+		}
 
-    private MDI()
-    {
-      this.indicator = (Indicator) new MDI();
-    }
+		private MDI()
+		{
+			this.indicator = new FreeQuant.Indicators.MDI();
+		}
 
-    public MDI(OpenQuant.API.BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new MDI((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public MDI(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.MDI(series.series, length);
+		}
 
-    public MDI(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new MDI((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public MDI(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.MDI(indicator.indicator, length);
+		}
 
-    public MDI(OpenQuant.API.BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new MDI((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public MDI(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.MDI(series.series, length, color);
+		}
 
-    public MDI(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new MDI((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public MDI(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.MDI(indicator.indicator, length, color);
+		}
+	}
 }

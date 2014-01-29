@@ -123,21 +123,18 @@ namespace FreeQuant.FinChart
     }
 
     
-    public TransactionView(Transaction transaction, Pad pad)
+		public TransactionView(Transaction transaction, Pad pad) : base()
     {
-      xlHX4q73elwpX9fKZc.pdv4sYgzFgCoc();
       this.aPewsePQDS = Color.Blue;
       this.lZ5wLD8PkC = Color.Red;
       this.xEkwqNT82W = Color.Yellow;
       this.T1lwVYQLqj = true;
       this.toolTipEnabled = true;
       this.toolTipFormat = "";
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.AMKwObevl9 = transaction;
       this.pad = pad;
       this.toolTipEnabled = true;
-      this.toolTipFormat = FJDHryrxb1WIq5jBAt.mT707pbkgT(216);
+			this.toolTipFormat = "";
     }
 
     [SpecialName]
@@ -170,8 +167,8 @@ namespace FreeQuant.FinChart
         }
       }
       float num3 = 8f;
-      string str = ((object) this.AMKwObevl9.Side).ToString() + (object) FJDHryrxb1WIq5jBAt.mT707pbkgT(270) + (string) (object) this.AMKwObevl9.Qty + FJDHryrxb1WIq5jBAt.mT707pbkgT(276) + this.AMKwObevl9.Price.ToString(this.AMKwObevl9.Instrument.PriceDisplay);
-      Font font = !this.selected ? new Font(FJDHryrxb1WIq5jBAt.mT707pbkgT(300), 7f) : new Font(FJDHryrxb1WIq5jBAt.mT707pbkgT(286), 9f);
+      string str = ((object) this.AMKwObevl9.Side).ToString() + (string) (object) this.AMKwObevl9.Qty + this.AMKwObevl9.Price.ToString(this.AMKwObevl9.Instrument.PriceDisplay);
+			Font font = !this.selected ? new Font("Arial", 7) : new Font("Arial", 9f);
       int y = this.AMKwObevl9.Side != Side.Buy ? num1 - 5 : num1 + 5;
       switch (this.AMKwObevl9.Side)
       {
