@@ -33,7 +33,7 @@ namespace OpenQuant.API.Indicators
 
 		public VWAP(Indicator indicator, int length)
 		{
-			this.indicator = (Indicator)new FreeQuant.Indicators.VWAP((SmartQuant.Series.TimeSeries)indicator.indicator, length);
+			this.indicator = new FreeQuant.Indicators.VWAP(indicator.indicator, length);
 		}
 
 		public VWAP(BarSeries series, int length, BarData option)

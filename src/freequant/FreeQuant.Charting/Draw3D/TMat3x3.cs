@@ -6,7 +6,7 @@ namespace FreeQuant.Charting.Draw3D
 	{
 		private double[,] data;
 
-		public double this [int i, int j]
+		public double this[int i, int j]
 		{
 			get
 			{
@@ -151,11 +151,7 @@ namespace FreeQuant.Charting.Draw3D
 
 		public static bool operator ==(TMat3x3 b, TMat3x3 a)
 		{
-			return b.xx == a.xx && b.xy == a.xy && (b.xz == a.xz && b.yx == a.yx) && (b.yy == a.yy && b.yz == a.xz && (b.zx == a.zx && b.zy == a.zy) && b.zz == a.xz);
-//			if (b.xx == a.xx && b.xy == a.xy && (b.xz == a.xz && b.yx == a.yx) && (b.yy == a.yy && b.yz == a.xz && (b.zx == a.zx && b.zy == a.zy)))
-//				return b.zz == a.xz;
-//			else
-//				return false;
+			return b.xx == a.xx && b.xy == a.xy && b.xz == a.xz && b.yx == a.yx && b.yy == a.yy && b.yz == a.xz && b.zx == a.zx && b.zy == a.zy && b.zz == a.xz;
 		}
 
 		public static bool operator !=(TMat3x3 b, TMat3x3 a)
@@ -170,27 +166,27 @@ namespace FreeQuant.Charting.Draw3D
 
 		public static TMat3x3 operator *(TMat3x3 b, TMat3x3 a)
 		{
-			TMat3x3 tmat3x3 = new TMat3x3();
-			for (int index1 = 0; index1 < 3; ++index1)
+			TMat3x3 m = new TMat3x3();
+			for (int i = 0; i < 3; ++i)
 			{
-				for (int index2 = 0; index2 < 3; ++index2)
+				for (int j = 0; j < 3; ++j)
 				{
-					for (int index3 = 0; index3 < 3; ++index3)
-						tmat3x3[index1, index2] += b[index1, index3] * a[index3, index2];
+					for (int k = 0; k < 3; ++k)
+						m[i, j] += b[i, k] * a[k, j];
 				}
 			}
-			return tmat3x3;
+			return m;
 		}
 
 		public static TMat3x3 operator *(double k, TMat3x3 m)
 		{
-			TMat3x3 tmat3x3 = new TMat3x3();
-			for (int index1 = 0; index1 < 3; ++index1)
+			TMat3x3 m33 = new TMat3x3();
+			for (int i = 0; i < 3; ++i)
 			{
-				for (int index2 = 0; index2 < 3; ++index2)
-					tmat3x3[index1, index2] = k * m[index1, index2];
+				for (int j = 0; j < 3; ++j)
+					m33[i, j] = k * m[i, j];
 			}
-			return tmat3x3;
+			return m33;
 		}
 
 		public static TMat3x3 operator *(TMat3x3 m, double k)
@@ -200,40 +196,40 @@ namespace FreeQuant.Charting.Draw3D
 
 		public static TVec3 operator *(TMat3x3 m, TVec3 v)
 		{
-			TVec3 tvec3 = new TVec3();
-			for (int index1 = 0; index1 < 3; ++index1)
+			TVec3 v3 = new TVec3();
+			for (int i = 0; i < 3; ++i)
 			{
-				for (int index2 = 0; index2 < 3; ++index2)
-					tvec3[index1] += m[index1, index2] * v[index2];
+				for (int j = 0; j < 3; ++j)
+					v3[i] += m[i, j] * v[j];
 			}
-			return tvec3;
+			return v3;
 		}
 
 		public static TVec3 operator *(TVec3 v, TMat3x3 m)
 		{
-			TVec3 tvec3 = new TVec3();
-			for (int index1 = 0; index1 < 3; ++index1)
+			TVec3 v3 = new TVec3();
+			for (int i = 0; i < 3; ++i)
 			{
-				for (int index2 = 0; index2 < 3; ++index2)
-					tvec3[index2] += v[index1] * m[index1, index2];
+				for (int j = 0; j < 3; ++j)
+					v3[j] += v[i] * m[i, j];
 			}
-			return tvec3;
+			return v3;
 		}
 
 		public void SetZero()
 		{
-			for (int index1 = 0; index1 < 3; ++index1)
+			for (int i = 0; i < 3; ++i)
 			{
-				for (int index2 = 0; index2 < 3; ++index2)
-					this.data[index1, index2] = 0.0;
+				for (int j = 0; j < 3; ++j)
+					this.data[i, j] = 0.0;
 			}
 		}
 
 		public void SetNumber(double k)
 		{
 			this.SetZero();
-			for (int index = 0; index < 3; ++index)
-				this.data[index, index] = k;
+			for (int i = 0; i < 3; ++i)
+				this.data[i, i] = k;
 		}
 
 		public void SetUnit()
@@ -249,41 +245,41 @@ namespace FreeQuant.Charting.Draw3D
 			this.zz = lz;
 		}
 
-		public void SetRot(int i1, int i2, double Angle)
+		public void SetRot(int i1, int i2, double angle)
 		{
 			this.SetUnit();
-			this.data[i1, i1] = this.data[i2, i2] = Math.Cos(Angle);
-			this.data[i1, i2] = -(this.data[i2, i1] = Math.Sin(Angle));
+			this.data[i1, i1] = this.data[i2, i2] = Math.Cos(angle);
+			this.data[i1, i2] = -(this.data[i2, i1] = Math.Sin(angle));
 		}
 
-		public void SetRotYZ(double Angle)
+		public void SetRotYZ(double angle)
 		{
-			this.SetRot(1, 2, Angle);
+			this.SetRot(1, 2, angle);
 		}
 
-		public void SetRotZX(double Angle)
+		public void SetRotZX(double angle)
 		{
-			this.SetRot(2, 0, Angle);
+			this.SetRot(2, 0, angle);
 		}
 
-		public void SetRotXY(double Angle)
+		public void SetRotXY(double angle)
 		{
-			this.SetRot(0, 1, Angle);
+			this.SetRot(0, 1, angle);
 		}
 
-		public void SetRotX(double Angle)
+		public void SetRotX(double angle)
 		{
-			this.SetRotYZ(Angle);
+			this.SetRotYZ(angle);
 		}
 
-		public void SetRotY(double Angle)
+		public void SetRotY(double angle)
 		{
-			this.SetRotZX(Angle);
+			this.SetRotZX(angle);
 		}
 
-		public void SetRotZ(double Angle)
+		public void SetRotZ(double angle)
 		{
-			this.SetRotXY(Angle);
+			this.SetRotXY(angle);
 		}
 
 		public void SetExchangeAxes(int i, int j)
@@ -298,10 +294,10 @@ namespace FreeQuant.Charting.Draw3D
 			this.SetExchangeAxes(1, 2);
 		}
 
-		public void SetSpecialProjection(double Angle)
+		public void SetSpecialProjection(double angle)
 		{
 			this.SetUnit();
-			this.zy = Math.Sin(Angle);
+			this.zy = Math.Sin(angle);
 		}
 	}
 }

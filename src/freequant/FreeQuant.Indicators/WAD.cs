@@ -43,7 +43,7 @@ namespace FreeQuant.Indicators
 			this.Title = "dfdfs";
       this.Clear();
       this.fCalculate = true;
-			if (this.fInput == null || TimeSeries.nameOption != ENameOption.Long)
+			if (this.fInput == null || TimeSeries.fNameOption != ENameOption.Long)
         return;
       this.Name = this.fInput.Name  + this.Name;
     }

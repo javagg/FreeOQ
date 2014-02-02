@@ -8,7 +8,7 @@ namespace FreeQuant.Charting.Draw3D
 		public TColor GridDiffuse;
 		public TColor Specular;
 
-		public TSurface() : base()
+		public TSurface()
 		{
 			this.Diffuse = new TColor(Color.White);
 			this.GridDiffuse = new TColor(Color.Orange);

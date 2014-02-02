@@ -26,51 +26,49 @@ namespace FreeQuant.Charting
 		[Category("ToolTip")]
 		public string ToolTipFormat { get; set; }
 
-		public TImage(Image Image, double x, double y)
+		public TImage(Image image, double x, double y)
 		{
-			this.image = Image;
+			this.image = image;
 			this.X = x;
 			this.Y = y;
-			this.yee3w4ff2w();
+			this.Init();
 		}
 
-		public TImage(Image Image, DateTime X, double Y) : base()
+		public TImage(Image image, DateTime x, double y) : base()
 		{
-			this.image = Image;
-			this.X = (double)X.Ticks;
-			this.Y = Y;
-			this.yee3w4ff2w();
-		}
-
-		public TImage(string FileName, double x, double y) : base()
-		{
-			this.image = Image.FromFile(FileName);
-			this.X = x;
+			this.image = image;
+			this.X = x.Ticks;
 			this.Y = y;
-			this.yee3w4ff2w();
+			this.Init();
 		}
 
-		public TImage(string filename, DateTime X, double Y) : base()
+		public TImage(string filename, double x, double y) : base()
 		{
 			this.image = Image.FromFile(filename);
-			this.X = X.Ticks;
-			this.Y = Y;
-			this.yee3w4ff2w();
+			this.X = x;
+			this.Y = y;
+			this.Init();
 		}
 
-		[SpecialName] 
-		private Image T343SKhwwY()
+		public TImage(string filename, DateTime x, double y) : base()
+		{
+			this.image = Image.FromFile(filename);
+			this.X = x.Ticks;
+			this.Y = y;
+			this.Init();
+		}
+
+		private Image getImage()
 		{
 			return this.image;
 		}
 
-		[SpecialName]
-		private void uYZ3jN1m5i(Image value)
+		private void setImage(Image value)
 		{
 			this.image = value;
 		}
 
-		private void yee3w4ff2w()
+		private void Init()
 		{
 			this.ToolTipEnabled = true;
 			this.ToolTipFormat = "{0} {1}";  //FIXME:
@@ -99,9 +97,9 @@ namespace FreeQuant.Charting
 			tdistance.Y = this.Y;
 			tdistance.dX = Math.Abs(x - this.X);
 			tdistance.dY = Math.Abs(y - this.Y);
-			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.AppendFormat(this.ToolTipFormat, this.X, this.Y);
-			tdistance.ToolTipText = stringBuilder.ToString();
+			StringBuilder sb = new StringBuilder();
+			sb.AppendFormat(this.ToolTipFormat, this.X, this.Y);
+			tdistance.ToolTipText = sb.ToString();
 			return tdistance;
 		}
 

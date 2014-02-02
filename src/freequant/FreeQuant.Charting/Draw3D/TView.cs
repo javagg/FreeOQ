@@ -109,11 +109,11 @@ namespace FreeQuant.Charting.Draw3D
 			this.SetProjectionSpecial(-2.0, Math.PI / 6.0);
 		}
 
-		public static TView View(Pad Pad)
+		public static TView View(Pad pad)
 		{
-			if (Pad.View3D == null)
-				Pad.View3D = (object)new TView();
-			return (TView)Pad.View3D;
+			if (pad.View3D == null)
+				pad.View3D = new TView();
+			return (TView)pad.View3D;
 		}
 
 		public void SetProjectionOrthogonal(double AngleXY, double ViewAngle)

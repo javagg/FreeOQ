@@ -2,19 +2,11 @@ namespace FreeQuant.Execution
 {
 	public class OrderEventArgs
 	{
-		private SingleOrder order;
-
-		public SingleOrder Order
-		{
-			get
-			{
-				return this.order; 
-			}
-		}
+		public SingleOrder Order { get; private set; }
 
 		public OrderEventArgs(SingleOrder order)
 		{
-			this.order = order;
+			this.Order = order;
 		}
 	}
 }

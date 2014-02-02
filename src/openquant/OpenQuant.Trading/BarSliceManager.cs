@@ -6,20 +6,9 @@ namespace OpenQuant.Trading
 {
 	public class BarSliceManager
 	{
-		private int instrumentsCount;
 		private Dictionary<long, BarSlice> table;
 
-		public int InstrumentsCount
-		{
-			get
-			{
-				return this.instrumentsCount;
-			}
-			set
-			{
-				this.instrumentsCount = value;
-			}
-		}
+		public int InstrumentsCount { get; set; }
 
 		public BarSliceManager()
 		{
@@ -49,7 +38,7 @@ namespace OpenQuant.Trading
 
 		internal BarSlice GetSlice(long barSize)
 		{
-			BarSlice barSlice = (BarSlice)null;
+			BarSlice barSlice = null;
 			this.table.TryGetValue(barSize, out barSlice);
 			return barSlice;
 		}

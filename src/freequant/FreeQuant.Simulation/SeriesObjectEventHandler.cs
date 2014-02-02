@@ -1,4 +1,4 @@
 namespace FreeQuant.Simulation
 {
-  public delegate void SeriesObjectEventHandler(SeriesObjectEventArgs args);
+	public delegate void SeriesObjectEventHandler(SeriesObjectEventArgs args);
 }

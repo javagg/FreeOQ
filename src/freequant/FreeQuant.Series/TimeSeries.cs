@@ -19,7 +19,7 @@ namespace FreeQuant.Series
 		protected string toolTipFormat = "";
 		protected string toolTipDateTimeFormat = "";
 		protected ArrayList children = new ArrayList();
-		public static ENameOption nameOption;
+		public static ENameOption fNameOption;
 
 		protected internal IDataSeries fArray = new MemorySeries<object>();
 

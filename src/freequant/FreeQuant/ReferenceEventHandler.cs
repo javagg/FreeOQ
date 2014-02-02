@@ -1,6 +1,4 @@
-using System.ComponentModel;
-
 namespace FreeQuant
 {
-  public delegate void ReferenceEventHandler(ReferenceEventArgs args);
+	public delegate void ReferenceEventHandler(ReferenceEventArgs args);
 }

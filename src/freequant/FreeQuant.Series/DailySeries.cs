@@ -1,6 +1,5 @@
 using FreeQuant.Data;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Series
 {

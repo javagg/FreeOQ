@@ -750,7 +750,7 @@ namespace FreeQuant.FinChart
 			this.ResumeLayout(false);
 		}
 
-		internal TimeSeries OkdNNmbiw()
+		internal TimeSeries GetSeries()
 		{
 			return this.series;
 		}
@@ -792,9 +792,9 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				DSView local_0 = new DSView(this.pads[padNumber], series, color, option, this.doubleSeriesSmoothingMode);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				DSView view = new DSView(this.pads[padNumber], series, color, option, this.doubleSeriesSmoothingMode);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -815,10 +815,10 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				DSView local_0 = new DSView(this.pads[padNumber], series, color, option, smoothingMode);
-				local_0.Style = style;
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				DSView view = new DSView(this.pads[padNumber], series, color, option, smoothingMode);
+				view.Style = style;
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -829,9 +829,9 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				TransactionView local_0 = new TransactionView(transaction, this.pads[padNumber]);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				TransactionView view = new TransactionView(transaction, this.pads[padNumber]);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 			}
 		}
 
@@ -841,15 +841,15 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				RayView local_0 = new RayView(ray, this.pads[padNumber]);
+				RayView view = new RayView(ray, this.pads[padNumber]);
 				ray.Updated += new EventHandler(this.Xsr5a43Ll);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
 
-		private void Xsr5a43Ll([In] object obj0, [In] EventArgs obj1)
+		private void Xsr5a43Ll(object sender, EventArgs e)
 		{
 			this.contentUpdated = true;
 			this.Invalidate();
@@ -861,10 +861,10 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				LineView local_0 = new LineView(line, this.pads[padNumber]);
+				LineView view = new LineView(line, this.pads[padNumber]);
 				line.Updated += new EventHandler(this.Xsr5a43Ll);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				this.pads[padNumber].AddPrimitive((IChartDrawable)view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -875,10 +875,10 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				EllipseView local_0 = new EllipseView(circle, this.pads[padNumber]);
+				EllipseView view = new EllipseView(circle, this.pads[padNumber]);
 				circle.Updated += new EventHandler(this.Xsr5a43Ll);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -889,10 +889,10 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				RectangleView local_0 = new RectangleView(rect, this.pads[padNumber]);
+				RectangleView view = new RectangleView(rect, this.pads[padNumber]);
 				rect.Updated += new EventHandler(this.Xsr5a43Ll);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -903,10 +903,10 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				PathView local_0 = new PathView(path, this.pads[padNumber]);
+				PathView view = new PathView(path, this.pads[padNumber]);
 				path.Updated += new EventHandler(this.Xsr5a43Ll);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -917,10 +917,10 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				ImageView local_0 = new ImageView(image, this.pads[padNumber]);
+				ImageView view = new ImageView(image, this.pads[padNumber]);
 				image.Updated += new EventHandler(this.Xsr5a43Ll);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 				this.contentUpdated = true;
 			}
 		}
@@ -931,9 +931,9 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				SignalView local_0 = new SignalView(signal, this.pads[padNumber]);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				SignalView view = new SignalView(signal, this.pads[padNumber]);
+				this.pads[padNumber].AddPrimitive(view);
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 			}
 		}
 
@@ -947,12 +947,12 @@ namespace FreeQuant.FinChart
 			{
 				if (!this.volumePadShown && padNumber > 1)
 					--padNumber;
-				StopView local_0 = new StopView(stop, this.pads[padNumber]);
-				this.pads[padNumber].AddPrimitive((IChartDrawable)local_0);
-				local_0.ExecutedColor = this.executedStopColor;
-				local_0.ActiveColor = this.activeStopColor;
-				local_0.CanceledColor = this.canceledStopColor;
-				local_0.SetInterval(this.leftDateTime, this.rightDateTime);
+				StopView view = new StopView(stop, this.pads[padNumber]);
+				this.pads[padNumber].AddPrimitive(view);
+				view.ExecutedColor = this.executedStopColor;
+				view.ActiveColor = this.activeStopColor;
+				view.CanceledColor = this.canceledStopColor;
+				view.SetInterval(this.leftDateTime, this.rightDateTime);
 			}
 		}
 
@@ -1451,10 +1451,10 @@ namespace FreeQuant.FinChart
 			this.lastIndex = -1;
 		}
 
-		private bool vA32MRaPG(BSStyle obj0, bool obj1)
+		private bool vA32MRaPG(BSStyle style, bool obj1)
 		{
 			bool flag = true;
-			if (obj0 == BSStyle.Candle || obj0 == BSStyle.Bar || obj0 == BSStyle.Line)
+			if (style == BSStyle.Candle || style == BSStyle.Bar || style == BSStyle.Line)
 			{
 				if (!(this.mainSeriesView is SimpleBSView) || obj1)
 				{
@@ -1467,14 +1467,14 @@ namespace FreeQuant.FinChart
 				}
 				else
 					flag = false;
-				if (obj0 == BSStyle.Candle)
+				if (style == BSStyle.Candle)
 					(this.mainSeriesView as SimpleBSView).Style = SimpleBSStyle.Candle;
-				if (obj0 == BSStyle.Bar)
+				if (style == BSStyle.Bar)
 					(this.mainSeriesView as SimpleBSView).Style = SimpleBSStyle.Bar;
-				if (obj0 == BSStyle.Line)
+				if (style == BSStyle.Line)
 					(this.mainSeriesView as SimpleBSView).Style = SimpleBSStyle.Line;
 			}
-			else if (obj0 == BSStyle.Kagi)
+			else if (style == BSStyle.Kagi)
 			{
 				if (!(this.mainSeriesView is KagiBaView) || obj1)
 				{
@@ -1484,7 +1484,7 @@ namespace FreeQuant.FinChart
 					this.pads[0].AddPrimitive((IChartDrawable)this.mainSeriesView);
 				}
 			}
-			else if (obj0 == BSStyle.LineBreak)
+			else if (style == BSStyle.LineBreak)
 			{
 				if (!(this.mainSeriesView is LineBreakBSView) || obj1)
 				{
@@ -1494,7 +1494,7 @@ namespace FreeQuant.FinChart
 					this.pads[0].AddPrimitive((IChartDrawable)this.mainSeriesView);
 				}
 			}
-			else if (obj0 == BSStyle.Ranko)
+			else if (style == BSStyle.Ranko)
 			{
 				if (!(this.mainSeriesView is RankoBSView) || obj1)
 				{
@@ -1504,7 +1504,7 @@ namespace FreeQuant.FinChart
 					this.pads[0].AddPrimitive((IChartDrawable)this.mainSeriesView);
 				}
 			}
-			else if (obj0 == BSStyle.PointAndFigure && (!(this.mainSeriesView is PnFBSView) || obj1))
+			else if (style == BSStyle.PointAndFigure && (!(this.mainSeriesView is PnFBSView) || obj1))
 			{
 				this.pads[0].RemovePrimitive((IChartDrawable)this.mainSeriesView);
 				this.mainSeriesView = (SeriesView)this.AaUga350I(this.pads[0], this.series as BarSeries);
@@ -1515,38 +1515,41 @@ namespace FreeQuant.FinChart
 		}
 
 		
-		private PnFBSView AaUga350I([In] Pad obj0, [In] BarSeries obj1)
+		private PnFBSView AaUga350I(Pad pad, BarSeries series)
 		{
-			return new PnFBSView(obj0, obj1, 1.0, 3);
+			return new PnFBSView(pad, series, 1.0, 3);
 		}
 
 		
 		private void EmitUpdateStyleChanged()
 		{
-			if (this.UpdateStyleChanged == null)
-				return;
-			this.UpdateStyleChanged(this, EventArgs.Empty);
+			if (this.UpdateStyleChanged != null)
+				this.UpdateStyleChanged(this, EventArgs.Empty);
 		}
 
 		
 		private void EmitVolumeVisibleChanged()
 		{
-			if (this.VolumeVisibleChanged != null) this.VolumeVisibleChanged(this, EventArgs.Empty);
+			if (this.VolumeVisibleChanged != null) 
+				this.VolumeVisibleChanged(this, EventArgs.Empty);
 		}
 
 		private void EmitBarSeriesStyleChanged()
 		{
-			if (this.BarSeriesStyleChanged != null) this.BarSeriesStyleChanged(this, EventArgs.Empty);
+			if (this.BarSeriesStyleChanged != null)
+				this.BarSeriesStyleChanged(this, EventArgs.Empty);
 		}
 
 		private void EmitActionTypeChanged()
 		{
-			if (this.ActionTypeChanged != null) this.ActionTypeChanged(this, EventArgs.Empty);
+			if (this.ActionTypeChanged != null)
+				this.ActionTypeChanged(this, EventArgs.Empty);
 		}
 
 		private void EmitScaleStyleChanged()
 		{
-			if (this.ScaleStyleChanged != null) this.ScaleStyleChanged(this, EventArgs.Empty);
+			if (this.ScaleStyleChanged != null)
+				this.ScaleStyleChanged(this, EventArgs.Empty);
 		}
 
 		public void EnsureVisible(Transaction transaction)
@@ -1566,10 +1569,10 @@ namespace FreeQuant.FinChart
 		public int GetPadNumber(Point point)
 		{
 			int y = point.Y;
-			for (int index = 0; index < this.pads.Count; ++index)
+			for (int i = 0; i < this.pads.Count; ++i)
 			{
-				if (this.pads[index].Y1 <= y && this.pads[index].Y2 >= y)
-					return index;
+				if (this.pads[i].Y1 <= y && y <= this.pads[i].Y2)
+					return i;
 			}
 			return -1;
 		}

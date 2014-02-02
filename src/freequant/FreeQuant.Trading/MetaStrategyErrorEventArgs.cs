@@ -1,38 +1,16 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  public class MetaStrategyErrorEventArgs : EventArgs
-  {
-    private Exception lfjir9QWdQ;
-    private bool PMmiI44IpQ;
+	public class MetaStrategyErrorEventArgs : EventArgs
+	{
+		public Exception Exception { get; private set; }
+		public bool Ignore { get; set; }
 
-    public Exception Exception
-    {
-       get
-      {
-        return this.lfjir9QWdQ;
-      }
-    }
-
-    public bool Ignore
-    {
-       get
-      {
-        return this.PMmiI44IpQ;
-      }
-       set
-      {
-        this.PMmiI44IpQ = value;
-      }
-    }
-
-    
-		public MetaStrategyErrorEventArgs(Exception exception):base()
-    {
-      this.lfjir9QWdQ = exception;
-      this.PMmiI44IpQ = false;
-    }
-  }
+		public MetaStrategyErrorEventArgs(Exception exception) : base()
+		{
+			this.Exception = exception;
+			this.Ignore = false;
+		}
+	}
 }

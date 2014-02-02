@@ -9,7 +9,7 @@ namespace OpenQuant.API.Engine
 	public class Statistics
 	{
 		private PortfolioStatistics statistics;
-		private Portfolio portfolio;
+		private FreeQuant.Instruments.Portfolio portfolio;
 
 		internal bool IsCalculated { get; set; }
 
@@ -202,7 +202,7 @@ namespace OpenQuant.API.Engine
 			}
 		}
 
-		internal Statistics(Portfolio portfolio)
+		internal Statistics(FreeQuant.Instruments.Portfolio portfolio)
 		{
 			this.portfolio = portfolio;
 		}

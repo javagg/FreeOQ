@@ -7,7 +7,7 @@ namespace FreeQuant.FIXData
 {
 	public class Fundamental : FIXGroup, IDataObject, ISeriesObject
 	{
-		private const byte sc1R9Co0v = (byte)1;
+		private const byte sc1R9Co0v = 1;
 		public double EarningsPerShare
 		{
 			get
@@ -81,7 +81,6 @@ namespace FreeQuant.FIXData
 		}
 
 		public byte ProviderId { get; set; }
-
 		public DateTime DateTime { get; set; }
 
 		public ISeriesObject NewInstance()

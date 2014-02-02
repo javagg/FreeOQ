@@ -2,31 +2,15 @@
 
 namespace OpenQuant.Trading
 {
-  public class StrategyError
-  {
-    private DateTime datetime;
-    private Exception exception;
+	public class StrategyError
+	{
+		public DateTime DateTime { get; private set; }
+		public Exception Exception { get; private set; }
 
-    public DateTime DateTime
-    {
-      get
-      {
-        return this.datetime;
-      }
-    }
-
-    public Exception Exception
-    {
-      get
-      {
-        return this.exception;
-      }
-    }
-
-    public StrategyError(DateTime datetime, Exception exception)
-    {
-      this.datetime = datetime;
-      this.exception = exception;
-    }
-  }
+		public StrategyError(DateTime datetime, Exception exception)
+		{
+			this.DateTime = datetime;
+			this.Exception = exception;
+		}
+	}
 }

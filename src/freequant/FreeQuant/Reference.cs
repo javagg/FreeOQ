@@ -16,7 +16,7 @@ namespace FreeQuant
     {
       get
       {
-        return (AssemblyName) null;
+        return null;
       }
     }
 
@@ -52,7 +52,7 @@ namespace FreeQuant
     {
       get
       {
-        return (string) null;
+        return null;
       }
     }
 
@@ -61,9 +61,7 @@ namespace FreeQuant
     {
     }
 
-    [SpecialName]
-    
-    internal void sq01wopyU(Configuration value)
+		    internal void sq01wopyU(Configuration value)
     {
     }
   }

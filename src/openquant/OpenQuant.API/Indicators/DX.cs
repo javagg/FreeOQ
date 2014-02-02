@@ -5,57 +5,57 @@ using System.Drawing;
 
 namespace OpenQuant.API.Indicators
 {
-  public class DX : Indicator
-  {
-    [Category("Parameters")]
-    [Description("Length")]
-    public int Length
-    {
-      get
-      {
-        return (this.indicator as DX).get_Length();
-      }
-      set
-      {
-        (this.indicator as DX).set_Length(value);
-      }
-    }
+	public class DX : Indicator
+	{
+		[Category("Parameters")]
+		[Description("Length")]
+		public int Length
+		{
+			get
+			{
+				return (this.indicator as FreeQuant.Indicators.DX).Length;
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.DX).Length = value;
+			}
+		}
 
-    public IndicatorStyle Style
-    {
-      get
-      {
-        return OpenQuant.API.EnumConverter.Convert((this.indicator as DX).get_Style());
-      }
-      set
-      {
-        (this.indicator as DX).set_Style(OpenQuant.API.EnumConverter.Convert(value));
-      }
-    }
+		public IndicatorStyle Style
+		{
+			get
+			{
+				return EnumConverter.Convert((this.indicator as FreeQuant.Indicators.DX).Style);
+			}
+			set
+			{
+				(this.indicator as FreeQuant.Indicators.DX).Style = EnumConverter.Convert(value);
+			}
+		}
 
-    private DX()
-    {
-      this.indicator = (Indicator) new DX();
-    }
+		private DX()
+		{
+			this.indicator = new FreeQuant.Indicators.DX();
+		}
 
-    public DX(BarSeries series, int length)
-    {
-      this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) series.series, length);
-    }
+		public DX(BarSeries series, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.DX(series.series, length);
+		}
 
-    public DX(Indicator indicator, int length)
-    {
-      this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) indicator.indicator, length);
-    }
+		public DX(Indicator indicator, int length)
+		{
+			this.indicator = new FreeQuant.Indicators.DX(indicator.indicator, length);
+		}
 
-    public DX(BarSeries series, int length, Color color)
-    {
-      this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) series.series, length, color);
-    }
+		public DX(BarSeries series, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.DX(series.series, length, color);
+		}
 
-    public DX(Indicator indicator, int length, Color color)
-    {
-      this.indicator = (Indicator) new DX((SmartQuant.Series.TimeSeries) indicator.indicator, length, color);
-    }
-  }
+		public DX(Indicator indicator, int length, Color color)
+		{
+			this.indicator = new FreeQuant.Indicators.DX(indicator.indicator, length, color);
+		}
+	}
 }

@@ -11,7 +11,8 @@ namespace FreeQuant.Instruments
 		{
 			get
 			{
-				return CurrencyManager.Currencies[Framework.Configuration.DefaultCurrency];
+//				return CurrencyManager.Currencies[Framework.Configuration.DefaultCurrency];
+				return CurrencyManager.Currencies["USD"];
 			}
 		}
 

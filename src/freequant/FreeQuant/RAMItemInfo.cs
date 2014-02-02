@@ -4,12 +4,6 @@ namespace FreeQuant
 {
 	public class RAMItemInfo : InfoItemBase
 	{
-		public long Capacity
-		{
-			get
-			{
-				return 0L;
-			}
-		}
+		public long Capacity	{ get	{ return 0;	} }
 	}
 }

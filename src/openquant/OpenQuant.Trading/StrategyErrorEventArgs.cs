@@ -2,21 +2,13 @@
 
 namespace OpenQuant.Trading
 {
-  public class StrategyErrorEventArgs : EventArgs
-  {
-    private StrategyError error;
+	public class StrategyErrorEventArgs : EventArgs
+	{
+		public StrategyError Error { get; private set; }
 
-    public StrategyError Error
-    {
-      get
-      {
-        return this.error;
-      }
-    }
-
-    public StrategyErrorEventArgs(StrategyError error)
-    {
-      this.error = error;
-    }
-  }
+		public StrategyErrorEventArgs(StrategyError error)
+		{
+			this.Error = error;
+		}
+	}
 }

@@ -1,4 +1,4 @@
 namespace FreeQuant.Simulation
 {
-  public delegate void IntervalEventHandler(IntervalEventArgs args);
+	public delegate void IntervalEventHandler(IntervalEventArgs args);
 }

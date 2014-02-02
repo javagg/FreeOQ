@@ -108,7 +108,7 @@ namespace FreeQuant.Indicators
       this.Clear();
       this.rDfv3IEXe();
       this.fCalculate = true;
-			if (this.fInput == null || TimeSeries.nameOption != ENameOption.Long)
+			if (this.fInput == null || TimeSeries.fNameOption != ENameOption.Long)
         return;
 			this.Name = this.fInput.Name + this.Name;
     }

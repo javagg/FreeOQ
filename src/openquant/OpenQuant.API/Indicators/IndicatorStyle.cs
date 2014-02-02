@@ -4,6 +4,7 @@ namespace OpenQuant.API.Indicators
 	{
 		SmartQuant,
 		MetaStock,
+		QuantStudio,
 		FreeQuant
 	}
 }

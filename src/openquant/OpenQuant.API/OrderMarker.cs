@@ -77,11 +77,11 @@ namespace OpenQuant.API
         return;
       DateTime now = Clock.Now;
       Color color1 = Color.Green;
-      Pen pen1 = this.order.get_OrdStatus() == OrdStatus.Cancelled || this.order.get_OrdStatus() == OrdStatus.Rejected ? new Pen(this.limitCancelColor, 2f) : new Pen(this.limitColor, 2f);
+      Pen pen1 = this.order.OrdStatus == OrdStatus.Cancelled || this.order.OrdStatus == OrdStatus.Rejected ? new Pen(this.limitCancelColor, 2f) : new Pen(this.limitColor, 2f);
       pen1.DashStyle = DashStyle.Dash;
-      Pen pen2 = this.order.get_OrdStatus() == OrdStatus.Cancelled || this.order.get_OrdStatus() == OrdStatus.Rejected ? new Pen(this.stopCancelColor, 2f) : new Pen(this.stopColor, 2f);
+      Pen pen2 = this.order.OrdStatus == OrdStatus.Cancelled || this.order.OrdStatus == OrdStatus.Rejected ? new Pen(this.stopCancelColor, 2f) : new Pen(this.stopColor, 2f);
       pen2.DashStyle = DashStyle.Dash;
-      switch (this.order.get_OrdStatus())
+      switch (this.order.OrdStatus)
       {
         case OrdStatus.Filled:
           color1 = Color.Green;
@@ -100,42 +100,42 @@ namespace OpenQuant.API
       DateTime dateTime4 = new DateTime(1, 1, 1);
       float num1 = 12f;
       DateTime dateTime5 = DateTime.MaxValue;
-      if (this.order.get_OrdStatus() == OrdStatus.Cancelled || this.order.get_OrdStatus() == OrdStatus.Rejected || (this.order.get_OrdStatus() == OrdStatus.PendingNew || this.order.get_OrdStatus() == OrdStatus.Filled))
-        dateTime5 = this.order.get_Reports()[this.order.get_Reports().Count - 1].TransactTime;
+      if (this.order.OrdStatus == OrdStatus.Cancelled || this.order.OrdStatus == OrdStatus.Rejected || (this.order.OrdStatus == OrdStatus.PendingNew || this.order.OrdStatus == OrdStatus.Filled))
+        dateTime5 = this.order.Reports[this.order.Reports.Count - 1].TransactTime;
       if (((NewOrderSingle) this.order).OrdType == OrdType.Stop || ((NewOrderSingle) this.order).OrdType == OrdType.StopLimit)
       {
-        dateTime1 = this.order.get_Reports()[0].TransactTime;
-        dateTime2 = this.order.get_OrdStatus() != OrdStatus.PendingNew ? new DateTime(Math.Min(now.Ticks, dateTime5.Ticks)) : new DateTime(Math.Min(now.Ticks, (long) MaxX));
+        dateTime1 = this.order.Reports[0].TransactTime;
+        dateTime2 = this.order.OrdStatus != OrdStatus.PendingNew ? new DateTime(Math.Min(now.Ticks, dateTime5.Ticks)) : new DateTime(Math.Min(now.Ticks, (long) MaxX));
         if ((double) dateTime1.Ticks > MaxX || (double) dateTime2.Ticks <= MinX)
           return;
         float num2 = (float) pad.ClientY(((FIXNewOrderSingle) this.order).StopPx);
         float x1 = (float) pad.ClientX((double) dateTime1.Ticks);
         float x2 = (float) pad.ClientX((double) dateTime2.Ticks);
         pad.Graphics.DrawLine(pen2, x1, num2, x2, num2);
-        string priceDisplay = this.order.get_Instrument().PriceDisplay;
-        string str = this.order.get_OrdStatus() != OrdStatus.Filled ? (this.order.get_OrdStatus() != OrdStatus.Cancelled ? (this.order.get_OrdStatus() != OrdStatus.Rejected ? ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Pending)" : ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Rejected)") : ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Canceled)") : ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Executed)";
-        Font font = new Font("Arial", 8f);
+        string priceDisplay = this.order.Instrument.PriceDisplay;
+        string str = this.order.OrdStatus != OrdStatus.Filled ? (this.order.OrdStatus != OrdStatus.Cancelled ? (this.order.OrdStatus != OrdStatus.Rejected ? ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Pending)" : ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Rejected)") : ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Canceled)") : ((object) ((NewOrderSingle) this.order).Side).ToString() + " Stop at " + ((FIXNewOrderSingle) this.order).StopPx.ToString(priceDisplay) + " (Executed)";
+        Font font = new Font("Arial", 8);
         double num3 = ((NewOrderSingle) this.order).Side != Side.Buy ? (double) num2 + 2.0 : (double) num2 - 2.0 - (double) (int) pad.Graphics.MeasureString(str, font).Height;
         double num4 = (double) x2 - (double) (int) pad.Graphics.MeasureString(str, font).Width - 2.0;
         pad.Graphics.DrawString(str, font, Brushes.Black, (float) num4, (float) num3);
       }
       if (((NewOrderSingle) this.order).OrdType == OrdType.Limit || ((NewOrderSingle) this.order).OrdType == OrdType.StopLimit)
       {
-        dateTime3 = this.order.get_Reports()[0].TransactTime;
-        dateTime4 = this.order.get_OrdStatus() != OrdStatus.New ? new DateTime(Math.Min(now.Ticks, dateTime5.Ticks)) : new DateTime(Math.Min(now.Ticks, (long) MaxX));
+        dateTime3 = this.order.Reports[0].TransactTime;
+        dateTime4 = this.order.OrdStatus != OrdStatus.New ? new DateTime(Math.Min(now.Ticks, dateTime5.Ticks)) : new DateTime(Math.Min(now.Ticks, (long) MaxX));
         if ((double) dateTime3.Ticks > MaxX || (double) dateTime4.Ticks <= MinX)
           return;
         float num2 = (float) pad.ClientY(((FIXNewOrderSingle) this.order).Price);
         float x1 = (float) pad.ClientX((double) dateTime3.Ticks);
         float x2 = (float) pad.ClientX((double) dateTime4.Ticks);
         pad.Graphics.DrawLine(pen1, x1, num2, x2, num2);
-        string priceDisplay = this.order.get_Instrument().PriceDisplay;
+        string priceDisplay = this.order.Instrument.PriceDisplay;
         string str;
-        if (this.order.get_OrdStatus() == OrdStatus.Filled)
+        if (this.order.OrdStatus == OrdStatus.Filled)
           str = ((object) ((NewOrderSingle) this.order).Side).ToString() + " Limit at " + ((FIXNewOrderSingle) this.order).Price.ToString(priceDisplay) + " (Executed)";
-        else if (this.order.get_OrdStatus() == OrdStatus.Cancelled)
+        else if (this.order.OrdStatus == OrdStatus.Cancelled)
           str = ((object) ((NewOrderSingle) this.order).Side).ToString() + " Limit at " + ((FIXNewOrderSingle) this.order).Price.ToString(priceDisplay) + " (Canceled)";
-        else if (this.order.get_OrdStatus() == OrdStatus.Rejected)
+        else if (this.order.OrdStatus == OrdStatus.Rejected)
         {
           str = ((object) ((NewOrderSingle) this.order).Side).ToString() + " Limit at " + ((FIXNewOrderSingle) this.order).Price.ToString(priceDisplay) + " (Rejected)";
         }
@@ -144,9 +144,9 @@ namespace OpenQuant.API
           bool flag = false;
           if (((NewOrderSingle) this.order).OrdType == OrdType.StopLimit)
           {
-            for (int index = 0; index < this.order.get_Reports().Count; ++index)
+            for (int index = 0; index < this.order.Reports.Count; ++index)
             {
-              if (this.order.get_Reports()[index].OrdStatus == OrdStatus.PendingNew)
+              if (this.order.Reports[index].OrdStatus == OrdStatus.PendingNew)
               {
                 flag = true;
                 break;
@@ -160,9 +160,9 @@ namespace OpenQuant.API
         double num4 = (double) x2 - (double) (int) pad.Graphics.MeasureString(str, font).Width - 2.0;
         pad.Graphics.DrawString(str, font, Brushes.Black, (float) num4, (float) num3);
       }
-      if (this.order.get_OrdStatus() != OrdStatus.Filled)
+      if (this.order.OrdStatus != OrdStatus.Filled)
         return;
-      double avgPx = this.order.get_AvgPx();
+      double avgPx = this.order.AvgPx;
       int y = pad.ClientY(avgPx);
       int x = pad.ClientX((double) dateTime5.Ticks);
       if (!this.drawArrow)
@@ -240,11 +240,11 @@ namespace OpenQuant.API
       tdistance.X = X;
       tdistance.Y = num1;
       FIXExecutionReport fixExecutionReport = (FIXExecutionReport) null;
-      if (this.order.get_Reports().Count != 0)
-        fixExecutionReport = (FIXExecutionReport) this.order.get_Reports()[this.order.get_Reports().Count - 1];
+      if (this.order.Reports.Count != 0)
+        fixExecutionReport = (FIXExecutionReport) this.order.Reports[this.order.Reports.Count - 1];
       if (fixExecutionReport == null)
         return (TDistance) null;
-      if (((NewOrderSingle) this.order).OrdType == OrdType.Market && this.order.get_OrdStatus() != OrdStatus.Filled)
+      if (((NewOrderSingle) this.order).OrdType == OrdType.Market && this.order.OrdStatus != OrdStatus.Filled)
         return (TDistance) null;
       StringBuilder stringBuilder = (StringBuilder) null;
       if (((NewOrderSingle) this.order).OrdType == OrdType.Market)
@@ -255,39 +255,39 @@ namespace OpenQuant.API
         tdistance.dY = Math.Abs(Y - tdistance.Y);
         stringBuilder = new StringBuilder();
         if (fixExecutionReport.TransactTime.Second != 0 || fixExecutionReport.TransactTime.Minute != 0 || fixExecutionReport.TransactTime.Hour != 0)
-          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.get_OrdStatus()).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.get_Instrument().Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Market ", (object) this.order.get_AvgPx(), (object) fixExecutionReport.TransactTime);
+          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.OrdStatus).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.Instrument.Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Market ", (object) this.order.AvgPx, (object) fixExecutionReport.TransactTime);
         else
-          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.get_OrdStatus()).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.get_Instrument().Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Market ", (object) this.order.get_AvgPx(), (object) fixExecutionReport.TransactTime.ToShortDateString());
+          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.OrdStatus).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.Instrument.Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Market ", (object) this.order.AvgPx, (object) fixExecutionReport.TransactTime.ToShortDateString());
       }
       if (((NewOrderSingle) this.order).OrdType == OrdType.Stop || ((NewOrderSingle) this.order).OrdType == OrdType.StopLimit)
       {
         double num2 = Math.Abs(((FIXNewOrderSingle) this.order).StopPx);
         tdistance.X = X;
         tdistance.Y = num2;
-        DateTime transactTime = this.order.get_Reports()[0].TransactTime;
-        tdistance.dX = X < (double) transactTime.Ticks || (this.order.get_OrdStatus() == OrdStatus.Filled || this.order.get_OrdStatus() == OrdStatus.Cancelled || (this.order.get_OrdStatus() == OrdStatus.Rejected || X > (double) now.Ticks)) && X > (double) fixExecutionReport.TransactTime.Ticks ? double.MaxValue : 0.0;
+        DateTime transactTime = this.order.Reports[0].TransactTime;
+        tdistance.dX = X < (double) transactTime.Ticks || (this.order.OrdStatus == OrdStatus.Filled || this.order.OrdStatus == OrdStatus.Cancelled || (this.order.OrdStatus == OrdStatus.Rejected || X > (double) now.Ticks)) && X > (double) fixExecutionReport.TransactTime.Ticks ? double.MaxValue : 0.0;
         tdistance.dY = Math.Abs(Y - tdistance.Y);
         stringBuilder = new StringBuilder();
         if (transactTime.Second != 0 || transactTime.Minute != 0 || transactTime.Hour != 0)
-          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.get_OrdStatus()).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.get_Instrument().Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Stop At ", (object) num2, (object) fixExecutionReport.TransactTime);
+					stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.OrdStatus).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.Instrument.Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Stop At ", (object) num2, (object) fixExecutionReport.TransactTime);
         else
-          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.get_OrdStatus()).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.get_Instrument().Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Stop At ", (object) num2, (object) fixExecutionReport.TransactTime.ToShortDateString());
+          stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.OrdStatus).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.Instrument.Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Stop At ", (object) num2, (object) fixExecutionReport.TransactTime.ToShortDateString());
       }
       if (((NewOrderSingle) this.order).OrdType == OrdType.Limit || ((NewOrderSingle) this.order).OrdType == OrdType.StopLimit)
       {
         double num2 = Math.Abs(((FIXNewOrderSingle) this.order).Price);
         tdistance.X = X;
         tdistance.Y = num2;
-        DateTime transactTime = this.order.get_Reports()[0].TransactTime;
-        tdistance.dX = X < (double) transactTime.Ticks || (this.order.get_OrdStatus() == OrdStatus.Filled || this.order.get_OrdStatus() == OrdStatus.Cancelled || (this.order.get_OrdStatus() == OrdStatus.Rejected || X > (double) now.Ticks)) && X > (double) fixExecutionReport.TransactTime.Ticks ? double.MaxValue : 0.0;
+        DateTime transactTime = this.order.Reports[0].TransactTime;
+        tdistance.dX = X < (double) transactTime.Ticks || (this.order.OrdStatus == OrdStatus.Filled || this.order.OrdStatus == OrdStatus.Cancelled || (this.order.OrdStatus == OrdStatus.Rejected || X > (double) now.Ticks)) && X > (double) fixExecutionReport.TransactTime.Ticks ? double.MaxValue : 0.0;
         if (tdistance.dY > Math.Abs(Y - tdistance.Y))
         {
           tdistance.dY = Math.Abs(Y - tdistance.Y);
           stringBuilder = new StringBuilder();
           if (transactTime.Second != 0 || transactTime.Minute != 0 || transactTime.Hour != 0)
-            stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.get_OrdStatus()).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.get_Instrument().Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Limit At ", (object) num2, (object) fixExecutionReport.TransactTime);
+            stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.OrdStatus).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.Instrument.Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Limit At ", (object) num2, (object) fixExecutionReport.TransactTime);
           else
-            stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.get_OrdStatus()).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.get_Instrument().Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Limit At ", (object) num2, (object) fixExecutionReport.TransactTime.ToShortDateString());
+            stringBuilder.AppendFormat(this.toolTipFormat, (object) ((object) this.order.OrdStatus).ToString(), (object) ((object) ((NewOrderSingle) this.order).Side).ToString(), (object) this.order.Instrument.Symbol, (object) ((FIXNewOrderSingle) this.order).OrderQty, (object) "Limit At ", (object) num2, (object) fixExecutionReport.TransactTime.ToShortDateString());
         }
       }
       if (stringBuilder != null)
@@ -297,7 +297,7 @@ namespace OpenQuant.API
 
     public void Draw()
     {
-      SmartQuant.Charting.Chart.Pad.Add((IDrawable) this);
+			FreeQuant.Charting.Chart.Pad.Add(this);
     }
 
     public bool IsPadRangeY()
@@ -309,21 +309,21 @@ namespace OpenQuant.API
     {
       DateTime now = Clock.Now;
       FIXExecutionReport fixExecutionReport1 = (FIXExecutionReport) null;
-      if (this.order.get_Reports().Count != 0)
-        fixExecutionReport1 = (FIXExecutionReport) this.order.get_Reports()[this.order.get_Reports().Count - 1];
+      if (this.order.Reports.Count != 0)
+        fixExecutionReport1 = (FIXExecutionReport) this.order.Reports[this.order.Reports.Count - 1];
       if (fixExecutionReport1 == null)
         return new PadRange(0.0, 0.0);
-      if (((NewOrderSingle) this.order).OrdType == OrdType.Market && this.order.get_OrdStatus() != OrdStatus.Filled)
+      if (((NewOrderSingle) this.order).OrdType == OrdType.Market && this.order.OrdStatus != OrdStatus.Filled)
         return new PadRange(0.0, 0.0);
-      FIXExecutionReport fixExecutionReport2 = (FIXExecutionReport) this.order.get_Reports()[0];
+      FIXExecutionReport fixExecutionReport2 = (FIXExecutionReport) this.order.Reports[0];
       DateTime dateTime1 = new DateTime((long) pad.XMin);
       DateTime dateTime2 = new DateTime((long) pad.XMax);
       DateTime transactTime = fixExecutionReport2.TransactTime;
-      DateTime dateTime3 = this.order.get_OrdStatus() == OrdStatus.Filled || this.order.get_OrdStatus() == OrdStatus.Cancelled || this.order.get_OrdStatus() == OrdStatus.Rejected ? fixExecutionReport1.TransactTime : now;
-      if (!(dateTime1 <= dateTime3) || !(dateTime2 >= transactTime) || (this.order.get_OrdStatus() == OrdStatus.Cancelled || this.order.get_OrdStatus() == OrdStatus.Rejected))
+      DateTime dateTime3 = this.order.OrdStatus == OrdStatus.Filled || this.order.OrdStatus == OrdStatus.Cancelled || this.order.OrdStatus == OrdStatus.Rejected ? fixExecutionReport1.TransactTime : now;
+      if (!(dateTime1 <= dateTime3) || !(dateTime2 >= transactTime) || (this.order.OrdStatus == OrdStatus.Cancelled || this.order.OrdStatus == OrdStatus.Rejected))
         return new PadRange(0.0, 0.0);
-      double val1 = this.order.get_AvgPx() - 0.0 / 1.0;
-      double val2 = this.order.get_AvgPx() + 0.0 / 1.0;
+      double val1 = this.order.AvgPx - 0.0 / 1.0;
+      double val2 = this.order.AvgPx + 0.0 / 1.0;
       if (((NewOrderSingle) this.order).OrdType == OrdType.Limit)
       {
         int ClientY = pad.ClientY(((FIXNewOrderSingle) this.order).Price);

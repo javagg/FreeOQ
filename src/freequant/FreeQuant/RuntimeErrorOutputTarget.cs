@@ -1,11 +1,4 @@
-using System.ComponentModel;
-
 namespace FreeQuant
 {
-  public enum RuntimeErrorOutputTarget
-  {
-    Console,
-    PopupWindow,
-    LogFileOnly,
-  }
+	public enum RuntimeErrorOutputTarget { Console, PopupWindow, LogFileOnly }
 }

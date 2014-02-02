@@ -102,7 +102,7 @@ namespace FreeQuant.Indicators
         return;
       if (this.fInput is BarSeries)
 				this.name =  this.Length  + (string) (object) this.fOption;
-			if (TimeSeries.nameOption != ENameOption.Long)
+			if (TimeSeries.fNameOption != ENameOption.Long)
         return;
 			this.name = this.fInput.Name + this.name;
     }

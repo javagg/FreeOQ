@@ -34,9 +34,9 @@ namespace FreeQuant.Charting
     private Histogram2D.XD9QjcfMcOLK0nS6xp MUK33qPZeB;
     public ESmoothing Smoothing;
     [NonSerialized]
-    private Brush[] rd83CuHQyb;
-    private bool NZs361RjTx;
-    private string iP93YhTalh;
+		private Brush[] brushes; 
+    private bool toolTipEnabled;
+    private string toolTipFormat;
     public bool Multicolor3D;
 
     public EChartLook Look
@@ -111,30 +111,10 @@ namespace FreeQuant.Charting
       }
     }
 
-    public bool ToolTipEnabled
-    {
-       get
-      {
-        return this.NZs361RjTx;
-      }
-       set
-      {
-        this.NZs361RjTx = value;
-      }
-    }
+		public bool ToolTipEnabled { get; set; }
 
-    public string ToolTipFormat
-    {
-       get
-      {
-        return this.iP93YhTalh;
-      }
-       set
-      {
-        this.iP93YhTalh = value;
-      }
-    }
-
+		public string ToolTipFormat { get; set; }
+   
     public double dX
     {
        get
@@ -525,9 +505,9 @@ namespace FreeQuant.Charting
     
     private void EWno7H6yQR()
     {
-      this.rd83CuHQyb = new Brush[this.fNColors];
+      this.brushes = new Brush[this.fNColors];
       for (int index = 0; index < this.fNColors; ++index)
-        this.rd83CuHQyb[index] = (Brush) new SolidBrush(this.fPalette[index]);
+        this.brushes[index] = (Brush) new SolidBrush(this.fPalette[index]);
     }
 
     

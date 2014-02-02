@@ -4,73 +4,50 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant
 {
-  public class RuntimeError
-  {
-    private DateTime m82rNY2iEt;
-    private RuntimeErrorLevel aahrHnStOQ;
-    private string Fc3rxRwXEh;
-    private string wEjrwRQkkw;
-    private object BrHrhWyjZW;
+	public class RuntimeError
+	{
+		private DateTime datetime;
+		private RuntimeErrorLevel level;
+		private string description;
+		private string details;
+		private object source;
+		public DateTime DateTime { get { return datetime; } }
+		public RuntimeErrorLevel Level { get { return level; } }
+		public string Description { get { return description; } }
+		public string Details { get { return details; } }
+		public object Source { get { return source; } }
+	
+		public RuntimeError(DateTime datetime, RuntimeErrorLevel level, string description, string details, object source)
+		{
+			this.datetime = datetime;
+			this.level = level;
+			this.description = description;
+			this.details = details;
+			this.source = source;
+		}
 
-    public DateTime DateTime
-    {
-       get
-      {
-				return m82rNY2iEt;
-      }
-    }
+		public RuntimeError(RuntimeErrorLevel level, string description, string details, object source)
+		{
+			this.level = level;
+			this.description = description;
+			this.details = details;
+			this.source = source;
+		}
 
-    public RuntimeErrorLevel Level
-    {
-       get
-      {
-				return aahrHnStOQ;
-      }
-    }
+		public RuntimeError(RuntimeErrorLevel level, Exception e, object source)
+		{
+			this.level = level;
+			this.source = source;
+		}
 
-    public string Description
-    {
-       get
-      {
-        return null;
-      }
-    }
+		public RuntimeError(RuntimeErrorLevel level, Exception e)
+		{
+			this.level = level;
+		}
 
-    public string Details
-    {
-      get
-      {
-        return (string) null;
-      }
-    }
-
-    public object Source
-    {
-      get
-      {
-        return (object) null;
-      }
-    }
-
-    public RuntimeError(DateTime datetime, RuntimeErrorLevel level, string description, string details, object source)
-    {
-    }
-
-    public RuntimeError(RuntimeErrorLevel level, string description, string details, object source)
-    {
-    }
-
-    public RuntimeError(RuntimeErrorLevel level, Exception e, object source)
-    {
-    }
-
-    public RuntimeError(RuntimeErrorLevel level, Exception e)
-    {
-    }
-
-    public override string ToString()
-    {
-      return (string) null;
-    }
-  }
+		public override string ToString()
+		{
+			return description;
+		}
+	}
 }

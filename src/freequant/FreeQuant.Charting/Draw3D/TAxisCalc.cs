@@ -5,72 +5,70 @@ namespace FreeQuant.Charting.Draw3D
 {
 	public class TAxisCalc
 	{
-		private TVec3 FO4HKfjf8;
-		private TVec3 BHevbMLA7;
-		private double J7AUgXK5a;
-		private double Usn4mA9ly;
-		private int z6NrSRxNZ;
-		private TAxisCalc.TTick[] BTvciJZkJ;
+		private TVec3 origin;
+		private TVec3 end;
+		private double valO;
+		private double valE;
+		private int nticks;
+		private TAxisCalc.TTick[] tticks;
 		private double SM2ynsEBp;
 
 		public int nTicks
 		{
 			get
 			{
-				return this.z6NrSRxNZ;
+				return this.nticks; 
 			}
 		}
 
-		public TAxisCalc(TVec3 Origin, TVec3 End, double ValO, double ValEnd, int nTicks) : base()
+		public TAxisCalc(TVec3 origin, TVec3 end, double valO, double valE, int nticks)
 		{
-
-			this.BTvciJZkJ = new TAxisCalc.TTick[0];
-
-			this.FO4HKfjf8 = Origin;
-			this.BHevbMLA7 = End;
-			this.J7AUgXK5a = ValO;
-			this.Usn4mA9ly = ValEnd;
-			this.z6NrSRxNZ = nTicks;
+			this.tticks = new TAxisCalc.TTick[0];
+			this.origin = origin;
+			this.end = end;
+			this.valO = valO;
+			this.valE = valE;
+			this.nticks = nticks;
 			this.mXvbWEhZj();
 			this.CKSEVIHa4();
 		}
 
 		public double TickVal(int i)
 		{
-			return this.BTvciJZkJ[i].Value;
+			return this.tticks[i].Value;
 		}
 
 		public TVec3 TickPos(int i)
 		{
-			return new TVec3(this.BTvciJZkJ[i].Position);
+			return new TVec3(this.tticks[i].Position);
 		}
 
-		public bool TickPassed(ref TAxisCalc.TTick Tick, double Val)
+		public bool TickPassed(ref TAxisCalc.TTick tick, double val)
 		{
-			foreach (TAxisCalc.TTick ttick in this.BTvciJZkJ)
+			foreach (TAxisCalc.TTick ttick in this.tticks)
 			{
-				if (Val == ttick.Value || (Val - ttick.Value) * (this.SM2ynsEBp - ttick.Value) < 0.0)
+				if (val == ttick.Value || (val - ttick.Value) * (this.SM2ynsEBp - ttick.Value) < 0.0)
 				{
-					Tick = ttick;
-					this.SM2ynsEBp = Val;
+					tick = ttick;
+					this.SM2ynsEBp = val;
 					return true;
 				}
 			}
-			this.SM2ynsEBp = Val;
+			this.SM2ynsEBp = val;
 			return false;
 		}
 
-		public bool TickPassed(double Val)
+		public bool TickPassed(double val)
 		{
-			foreach (TAxisCalc.TTick ttick in this.BTvciJZkJ)
+			foreach (TAxisCalc.TTick ttick in this.tticks)
 			{
-				if (Val == ttick.Value || (Val - ttick.Value) * (this.SM2ynsEBp - ttick.Value) < 0.0)
+				if (val == ttick.Value || (val - ttick.Value) * (this.SM2ynsEBp - ttick.Value) < 0.0)
 				{
-					this.SM2ynsEBp = Val;
+					this.SM2ynsEBp = val;
 					return true;
 				}
 			}
-			this.SM2ynsEBp = Val;
+			this.SM2ynsEBp = val;
 			return false;
 		}
 
@@ -89,27 +87,27 @@ namespace FreeQuant.Charting.Draw3D
 
 		private void mXvbWEhZj()
 		{
-			double d = TAxisCalc.Round(Math.Abs(this.Usn4mA9ly - this.J7AUgXK5a) / (double)this.z6NrSRxNZ);
-			double num1 = TAxisCalc.Ceiling(this.J7AUgXK5a, d);
-			this.z6NrSRxNZ = (int)(Math.Abs(this.Usn4mA9ly - num1) / d) + 1;
-			if (this.z6NrSRxNZ < 3)
-				this.z6NrSRxNZ = 3;
-			this.BTvciJZkJ = new TAxisCalc.TTick[this.z6NrSRxNZ];
-			if (this.z6NrSRxNZ == 3)
+			double d = TAxisCalc.Round(Math.Abs(this.valE - this.valO) / (double)this.nticks);
+			double num1 = TAxisCalc.Ceiling(this.valO, d);
+			this.nticks = (int)(Math.Abs(this.valE - num1) / d) + 1;
+			if (this.nticks < 3)
+				this.nticks = 3;
+			this.tticks = new TAxisCalc.TTick[this.nticks];
+			if (this.nticks == 3)
 			{
-				this.BTvciJZkJ[0].Value = this.J7AUgXK5a;
-				this.BTvciJZkJ[1].Value = 0.5 * (this.J7AUgXK5a + this.Usn4mA9ly);
-				this.BTvciJZkJ[2].Value = this.Usn4mA9ly;
+				this.tticks[0].Value = this.valO;
+				this.tticks[1].Value = 0.5 * (this.valO + this.valE);
+				this.tticks[2].Value = this.valE;
 			}
 			else
 			{
 				double num2 = num1;
-				if (this.Usn4mA9ly < this.J7AUgXK5a)
+				if (this.valE < this.valO)
 					d = -d;
 				int index = 0;
-				while (index < this.z6NrSRxNZ)
+				while (index < this.nticks)
 				{
-					this.BTvciJZkJ[index].Value = num2;
+					this.tticks[index].Value = num2;
 					++index;
 					num2 += d;
 				}
@@ -118,8 +116,8 @@ namespace FreeQuant.Charting.Draw3D
 
 		private void CKSEVIHa4()
 		{
-			for (int index = 0; index < this.BTvciJZkJ.Length; ++index)
-				this.BTvciJZkJ[index].Position = this.FO4HKfjf8 + (this.BHevbMLA7 - this.FO4HKfjf8) * (this.BTvciJZkJ[index].Value - this.J7AUgXK5a) / (this.Usn4mA9ly - this.J7AUgXK5a);
+			for (int i = 0; i < this.tticks.Length; ++i)
+				this.tticks[i].Position = this.origin + (this.end - this.origin) * (this.tticks[i].Value - this.valO) / (this.valE - this.valO);
 		}
 
 		public struct TTick

@@ -2,15 +2,15 @@
 
 namespace OpenQuant.Trading
 {
-  internal class BarRequestItem
-  {
-    public BarType BarType;
-    public long BarSize;
+	internal class BarRequestItem
+	{
+		public BarType BarType;
+		public long BarSize;
 
-    public BarRequestItem(BarType barType, long barSize)
-    {
-      this.BarType = barType;
-      this.BarSize = barSize;
-    }
-  }
+		public BarRequestItem(BarType barType, long barSize)
+		{
+			this.BarType = barType;
+			this.BarSize = barSize;
+		}
+	}
 }

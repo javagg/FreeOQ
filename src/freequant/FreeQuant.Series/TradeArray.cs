@@ -2,7 +2,6 @@ using FreeQuant.Charting;
 using FreeQuant.Data;
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FreeQuant.Series

@@ -5,52 +5,50 @@ using System.Runtime.InteropServices;
 
 namespace FreeQuant
 {
-  public class Trace
-  {
-    private const string awU4pgv4HD = "Framework";
-    private static TraceSwitch e7F4dsWbmw;
+	public class Trace
+	{
+		private const string awU4pgv4HD = "Framework";
+		private static TraceSwitch e7F4dsWbmw;
 
-    public static TraceListenerCollection Listeners
-    {
-       get
-      {
-        return (TraceListenerCollection) null;
-      }
-    }
+		public static TraceListenerCollection Listeners
+		{
+			get
+			{
+				return (TraceListenerCollection)null;
+			}
+		}
 
-    static Trace()
-    {
+		static Trace()
+		{
 			Trace.e7F4dsWbmw = new TraceSwitch("", "");
-      Trace.e7F4dsWbmw.Level = System.Diagnostics.TraceLevel.Error;
-      Trace.Listeners.Clear();
-    }
+			Trace.e7F4dsWbmw.Level = System.Diagnostics.TraceLevel.Error;
+			Trace.Listeners.Clear();
+		}
 
-    public Trace()
-    {
-    }
+		public Trace()
+		{
+		}
 
-    public static bool IsLevelEnabled(System.Diagnostics.TraceLevel level)
-    {
-      return true;
-    }
+		public static bool IsLevelEnabled(System.Diagnostics.TraceLevel level)
+		{
+			return true;
+		}
 
-    public static void WriteLine(string message)
-    {
-    }
+		public static void WriteLine(string message)
+		{
+		}
 
-    internal static void Bin4gt8pGp([In] System.Diagnostics.TraceLevel obj0)
-    {
-    }
+		internal static void Bin4gt8pGp([In] System.Diagnostics.TraceLevel level)
+		{
+		}
 
-    [SpecialName]
-    internal static bool G5l4bxXPvB()
-    {
-      return true;
-    }
+		internal static bool G5l4bxXPvB()
+		{
+			return true;
+		}
 
-    [SpecialName]
-    internal static void xIP4v5HAgN(bool value)
-    {
-    }
-  }
+		internal static void xIP4v5HAgN(bool value)
+		{
+		}
+	}
 }

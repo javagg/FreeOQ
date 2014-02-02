@@ -26,7 +26,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.stop.get_FillPrice();
+				return this.stop.FillPrice;
 			}
 		}
 
@@ -37,7 +37,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.stop.get_StopPrice();
+				return this.stop.StopPrice;
 			}
 		}
 
@@ -48,7 +48,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return ((StopBase)this.stop).get_Level();
+				return ((StopBase)this.stop).Level;
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return EnumConverter.Convert(((StopBase)this.stop).get_Type());
+				return EnumConverter.Convert(((StopBase)this.stop).Type);
 			}
 		}
 
@@ -70,7 +70,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return EnumConverter.Convert(((StopBase)this.stop).get_Mode());
+				return EnumConverter.Convert(((StopBase)this.stop).Mode);
 			}
 		}
 
@@ -81,7 +81,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return EnumConverter.Convert(((StopBase)this.stop).get_Status());
+				return EnumConverter.Convert(((StopBase)this.stop).Status);
 			}
 		}
 
@@ -92,11 +92,11 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return ((StopBase)this.stop).get_TraceOnBar();
+				return ((StopBase)this.stop).TraceOnBar;
 			}
 			set
 			{
-				((StopBase)this.stop).set_TraceOnBar(value);
+				((StopBase)this.stop).TraceOnBar = value;
 			}
 		}
 
@@ -107,11 +107,11 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return ((StopBase)this.stop).get_TraceOnTrade();
+				return ((StopBase)this.stop).TraceOnTrade;
 			}
 			set
 			{
-				((StopBase)this.stop).set_TraceOnTrade(value);
+				((StopBase)this.stop).TraceOnTrade = value;
 			}
 		}
 
@@ -122,11 +122,11 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return ((StopBase)this.stop).get_TraceOnQuote();
+				return ((StopBase)this.stop).TraceOnQuote;
 			}
 			set
 			{
-				((StopBase)this.stop).set_TraceOnQuote(value);
+				((StopBase)this.stop).TraceOnQuote = value;
 			}
 		}
 
@@ -137,7 +137,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return ((StopBase)this.stop).get_CreationTime();
+				return ((StopBase)this.stop).CreationTime;
 			}
 		}
 
@@ -148,7 +148,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return ((StopBase)this.stop).get_CompletionTime();
+				return ((StopBase)this.stop).CompletionTime;
 			}
 		}
 
@@ -156,24 +156,24 @@ namespace OpenQuant.API
 		{
 			this.position = position;
 			this.stop = new ATSStop(position.position, dateTime);
-			((StopBase)this.stop).set_TrailOnHighLow(true);
-			((StopBase)this.stop).set_TraceOnBarOpen(true);
-			((StopBase)this.stop).set_TraceOnBar(true);
-			((StopBase)this.stop).set_TraceOnQuote(true);
-			((StopBase)this.stop).set_TraceOnTrade(true);
+			((StopBase)this.stop).TrailOnHighLow = true;
+			((StopBase)this.stop).TraceOnBarOpen = true;
+			((StopBase)this.stop).TraceOnBar = true;
+			((StopBase)this.stop).TraceOnQuote = true;
+			((StopBase)this.stop).TraceOnTrade = true;
 		}
 
 		internal Stop(Position position, double level, StopType type, StopMode mode)
 		{
 			this.position = position;
-			StopType stopType = EnumConverter.Convert(type);
-			StopMode stopMode = EnumConverter.Convert(mode);
+			FreeQuant.Trading.StopType stopType = EnumConverter.Convert(type);
+			FreeQuant.Trading.StopMode stopMode = EnumConverter.Convert(mode);
 			this.stop = new ATSStop(position.position, level, stopType, stopMode);
-			((StopBase)this.stop).set_TrailOnHighLow(true);
-			((StopBase)this.stop).set_TraceOnBarOpen(true);
-			((StopBase)this.stop).set_TraceOnBar(true);
-			((StopBase)this.stop).set_TraceOnQuote(true);
-			((StopBase)this.stop).set_TraceOnTrade(true);
+			((StopBase)this.stop).TrailOnHighLow = true;
+			((StopBase)this.stop).TraceOnBarOpen = true;
+			((StopBase)this.stop).TraceOnBar = true;
+			((StopBase)this.stop).TraceOnQuote = true;
+			((StopBase)this.stop).TraceOnTrade = true;
 		}
 
 		///<summary>

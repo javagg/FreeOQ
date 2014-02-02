@@ -23,7 +23,7 @@ namespace OpenQuant.API.Design
       {
         AltIDGroup altIdGroup = (AltIDGroup) context.Instance;
         selector.Clear();
-        foreach (IProvider provider1 in SmartQuant.Providers.ProviderManager.Providers)
+				foreach (IProvider provider1 in FreeQuant.Providers.ProviderManager.Providers)
           selector.AddNode(provider1.Name, (object) provider1.Name, (ObjectSelectorEditor.SelectorNode) null);
         selector.Sort();
         foreach (ObjectSelectorEditor.SelectorNode selectorNode in selector.Nodes)

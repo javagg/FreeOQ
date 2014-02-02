@@ -124,13 +124,13 @@ namespace OpenQuant.API.Plugins
 		public UserIndicator(ISeries input)
 		{
 			this.input = input;
-			if (input is OpenQuant.API.TimeSeries)
-				this.series = (FreeQuant.Series.TimeSeries)(input as OpenQuant.API.TimeSeries).series;
-			if (input is OpenQuant.API.BarSeries)
-				this.series = (FreeQuant.Series.TimeSeries)(input as OpenQuant.API.BarSeries).series;
+			if (input is TimeSeries)
+				this.series = (FreeQuant.Series.TimeSeries)(input as TimeSeries).series;
+			if (input is BarSeries)
+				this.series = (FreeQuant.Series.TimeSeries)(input as BarSeries).series;
 			if (input is Indicator)
 				this.series = (FreeQuant.Series.TimeSeries)(input as Indicator).indicator;
-			this.indicator = new Indicator(this.series);
+			this.indicator = new FreeQuant.Indicators.Indicator(this.series);
 		}
 
 		///<summary>

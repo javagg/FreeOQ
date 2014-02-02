@@ -1,7 +1,4 @@
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-
-namespace SmartQuant
+namespace FreeQuant
 {
 	public class TraceLevel
 	{
@@ -18,10 +15,6 @@ namespace SmartQuant
 			TraceLevel.Warning = System.Diagnostics.TraceLevel.Warning;
 			TraceLevel.Info = System.Diagnostics.TraceLevel.Info;
 			TraceLevel.Verbose = System.Diagnostics.TraceLevel.Verbose;
-		}
-
-		public TraceLevel()
-		{
 		}
 	}
 }

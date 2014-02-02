@@ -9,18 +9,18 @@ namespace FreeQuant
 {
 	public class Framework
 	{
-		private static Configuration Jmtw8dmK6;
-		private static Installation DGghk9Nln;
-		private static Storage HhVs2ITrn;
-		private static Runtime DVVyxKgnL;
-		private static Mutex mDOEiS9EL;
-		private static bool mY0TnM837;
+		private static Configuration configuration;
+		private static Installation installation;
+		private static Storage storage;
+		private static Runtime runtime; 
+		private static Mutex mutex; 
+		private static bool isAlreadyRunning; 
 
 		public static bool IsAlreadyRunning
 		{
 			get
 			{
-				return true;
+				return isAlreadyRunning; 
 			}
 		}
 
@@ -28,7 +28,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (Configuration)null;
+				return configuration;
 			}
 		}
 
@@ -36,7 +36,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (Installation)null;
+				return installation;
 			}
 		}
 
@@ -44,7 +44,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (Storage)null;
+				return storage;
 			}
 		}
 
@@ -52,18 +52,19 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (Runtime)null;
+				return runtime;
 			}
 		}
 
 		static Framework()
 		{
-			Framework.mDOEiS9EL = new Mutex(false, Framework.Installation.QUANTAPP.FullName.Replace('\\', ':').Replace('/', ':'));
-			Framework.mY0TnM837 = !Framework.mDOEiS9EL.WaitOne(0);
-			if (Framework.mY0TnM837)
+			Framework.mutex = new Mutex(false, Framework.Installation.QUANTAPP.FullName.Replace('\\', ':').Replace('/', ':'));
+			Framework.isAlreadyRunning = !Framework.mutex.WaitOne(0);
+			if (Framework.isAlreadyRunning)
 				return;
 			switch (Framework.Installation.Edition)
 			{
+				case Edition.OpenSource:
 				case Edition.Demo:
 					if (!Framework.Installation.tnABvXFOOP() && !Framework.Installation.c7kBpxixDa())
 						break;

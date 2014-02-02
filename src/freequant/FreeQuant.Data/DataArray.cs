@@ -79,6 +79,8 @@ namespace FreeQuant.Data
 		public void Clear()
 		{
 			this.list.Clear();
+			if (Cleared != null)
+				Cleared(this, EventArgs.Empty);
 		}
 
 		public bool Contains(IDataObject obj)

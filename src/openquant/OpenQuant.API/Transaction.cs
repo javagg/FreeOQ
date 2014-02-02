@@ -29,10 +29,10 @@ namespace OpenQuant.API
 			{
 				switch (this.transaction.Side)
 				{
-					case Side.Buy:
+					case FreeQuant.FIX.Side.Buy:
 						return TransactionSide.Buy;
-					case Side.Sell:
-					case Side.SellShort:
+					case FreeQuant.FIX.Side.Sell:
+					case FreeQuant.FIX.Side.SellShort:
 						return TransactionSide.Sell;
 					default:
 						throw new NotImplementedException("Unknown TransactionSide : " + (object)this.transaction.Side);

@@ -4,175 +4,62 @@ using System.Drawing.Drawing2D;
 
 namespace FreeQuant.Charting
 {
-  [Serializable]
-  public class TLine : IDrawable
-  {
-    private double x1;
-    private double y1;
-    private double x2;
-    private double y2;
-    private Color color;
-    private int width;
-    private DashStyle dashStyle;
-    private bool toolTipEnabled;
-    private string toolTipFormat;
+	[Serializable]
+	public class TLine : IDrawable
+	{
+		public bool ToolTipEnabled { get; set; }
+		public string ToolTipFormat { get; set; }
+		public double X1 { get; set; }
+		public double Y1 { get; set; }
+		public double X2 { get; set; }
+		public double Y2 { get; set; }
+		public DashStyle DashStyle  { get; set; }
+		public Color Color { get; set; }
+		public int Width { get; set; }
 
-		public bool ToolTipEnabled 
-    {
-       get
-      {
-				return this.toolTipEnabled; 
-      }
-       set
-      {
-        this.toolTipEnabled = value;
-      }
-    }
+		public TLine(double x1, double y1, double x2, double y2)
+		{
+			this.X1 = x1;
+			this.Y1 = y1;
+			this.X2 = x2;
+			this.Y2 = y2;
+			this.Color = Color.Black;
+			this.DashStyle = DashStyle.Solid;
+			this.Width = 1;
+		}
 
-    public string ToolTipFormat
-    {
-       get
-      {
-				return this.toolTipFormat; 
-      }
-       set
-      {
-        this.toolTipFormat = value;
-      }
-    }
+		public TLine(DateTime x1, double y1, DateTime x2, double y2)
+		{
+			this.X1 = x1.Ticks;
+			this.Y1 = y1;
+			this.X2 = x2.Ticks;
+			this.Y2 = y2;
+			this.Color = Color.Black;
+			this.DashStyle = DashStyle.Solid;
+			this.Width = 1;
+		}
 
-    public double X1
-    {
-       get
-      {
-				return this.x1; 
-      }
-       set
-      {
-        this.x1 = value;
-      }
-    }
-
-    public double Y1
-    {
-       get
-      {
-				return this.y1; 
-      }
-       set
-      {
-        this.y1 = value;
-      }
-    }
-
-    public double X2
-    {
-       get
-      {
-				return this.x2; 
-      }
-       set
-      {
-        this.x2 = value;
-      }
-    }
-
-    public double Y2
-    {
-       get
-      {
-				return this.y2; 
-      }
-       set
-      {
-        this.y2 = value;
-      }
-    }
-
-    public DashStyle DashStyle
-    {
-       get
-      {
-				return this.dashStyle; 
-      }
-       set
-      {
-        this.dashStyle = value;
-      }
-    }
-
-    public Color Color
-    {
-       get
-      {
-				return this.color; 
-      }
-       set
-      {
-        this.color = value;
-      }
-    }
-
-    public int Width
-    {
-       get
-      {
-				return this.width; 
-      }
-       set
-      {
-        this.width = value;
-      }
-    }
-
-    
-    public TLine(double X1, double Y1, double X2, double Y2)
-    {
-      this.x1 = X1;
-      this.y1 = Y1;
-      this.x2 = X2;
-      this.y2 = Y2;
-      this.color = Color.Black;
-      this.dashStyle = DashStyle.Solid;
-      this.width = 1;
-    }
-
-    
-    public TLine(DateTime X1, double Y1, DateTime X2, double Y2)
-    {
-      this.x1 = X1.Ticks;
-      this.y1 = Y1;
-      this.x2 = X2.Ticks;
-      this.y2 = Y2;
-      this.color = Color.Black;
-      this.dashStyle = DashStyle.Solid;
-      this.width = 1;
-    }
-
-    
-    public virtual void Draw()
-    {
-      if (Chart.Pad == null)
-      {
+		public virtual void Draw()
+		{
+			if (Chart.Pad == null)
+			{
 				Canvas canvas = new Canvas("d", "d");
-      }
-      Chart.Pad.Add(this);
-    }
+			}
+			Chart.Pad.Add(this);
+		}
 
-    
-    public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
-    {
-      Pad.DrawLine(new Pen(this.color)
-      {
-        Width = (float) this.width,
-        DashStyle = this.dashStyle
-      }, this.x1, this.y1, this.x2, this.y2);
-    }
+		public virtual void Paint(Pad pad, double xMin, double xMax, double yMin, double yMax)
+		{
+			pad.DrawLine(new Pen(this.Color)
+			{
+				Width = this.Width,
+				DashStyle = this.DashStyle
+			}, this.X1, this.Y1, this.X2, this.Y2);
+		}
 
-    
-    public TDistance Distance(double X, double Y)
-    {
-      return (TDistance) null;
-    }
-  }
+		public TDistance Distance(double x, double y)
+		{
+			return null;
+		}
+	}
 }

@@ -17,33 +17,33 @@ namespace OpenQuant.API.Indicators
 			}
 			set
 			{
-				(this.indicator as FreeQuant.Indicators.Rang).Length = value;
+				(this.indicator as FreeQuant.Indicators.Range).Length = value;
 			}
 		}
 
 		private Range()
 		{
-			this.indicator = new FreeQuant.Indicators.Rang();
+			this.indicator = new FreeQuant.Indicators.Range();
 		}
 
 		public Range(BarSeries series, int length)
 		{
-			this.indicator = new FreeQuant.Indicators.Rang(series.series, length);
+			this.indicator = new FreeQuant.Indicators.Range(series.series, length);
 		}
 
 		public Range(Indicator indicator, int length)
 		{
-			this.indicator = new FreeQuant.Indicators.Rang(indicator.indicator, length);
+			this.indicator = new FreeQuant.Indicators.Range(indicator.indicator, length);
 		}
 
 		public Range(BarSeries series, int length, Color color)
 		{
-			this.indicator = new FreeQuant.Indicators.Rang(series.series, length, color);
+			this.indicator = new FreeQuant.Indicators.Range(series.series, length, color);
 		}
 
 		public Range(Indicator indicator, int length, Color color)
 		{
-			this.indicator = new FreeQuant.Indicators.Rang(indicator.indicator, length, color);
+			this.indicator = new FreeQuant.Indicators.Range(indicator.indicator, length, color);
 		}
 	}
 }

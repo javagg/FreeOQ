@@ -4,7 +4,7 @@ namespace FreeQuant.Instruments
 {
 	public class LegList : FIXGroupList
 	{
-		public Leg this[int index]
+		new public Leg this[int index]
 		{
 			get
 			{

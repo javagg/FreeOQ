@@ -4,7 +4,6 @@ namespace FreeQuant.Charting.Draw3D
 	{
 		public TRotX(double angle) : base()
 		{
-
 			this.SetRotX(angle);
 		}
 	}

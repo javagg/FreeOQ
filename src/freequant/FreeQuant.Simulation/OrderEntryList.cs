@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Simulation
 {
 //  [Editor(typeof (PoNb77rWV1athRPm6K), typeof (UITypeEditor))]
-  public class OrderEntryList : ICollection, IEnumerable
+  public class OrderEntryList : ICollection
   {
     private SortedList<DateTime, List<OrderEntry>> h8JysE0Edj;
     private List<OrderEntry> ET2yt9EkNR;
@@ -33,7 +32,7 @@ namespace FreeQuant.Simulation
     {
        get
       {
-        return (object) null;
+        return null;
       }
     }
 
@@ -65,7 +64,7 @@ namespace FreeQuant.Simulation
     
     public IEnumerator GetEnumerator()
     {
-      return (IEnumerator) this.ET2yt9EkNR.GetEnumerator();
+      return this.ET2yt9EkNR.GetEnumerator();
     }
 
     

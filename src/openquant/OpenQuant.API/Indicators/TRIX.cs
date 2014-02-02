@@ -38,12 +38,12 @@ namespace OpenQuant.API.Indicators
 
 		public TRIX(BarSeries series, int length, BarData option)
 		{
-			this.indicator = new FreeQuant.Indicators.TRIX(series.series, length, OpenQuant.API.EnumConverter.Convert(option));
+			this.indicator = new FreeQuant.Indicators.TRIX(series.series, length, EnumConverter.Convert(option));
 		}
 
 		public TRIX(Indicator indicator, int length, BarData option)
 		{
-			this.indicator = new FreeQuant.Indicators.TRIX(indicator.indicator, length, OpenQuant.API.EnumConverter.Convert(option));
+			this.indicator = new FreeQuant.Indicators.TRIX(indicator.indicator, length, EnumConverter.Convert(option));
 		}
 
 		public TRIX(BarSeries series, int length, Color color)

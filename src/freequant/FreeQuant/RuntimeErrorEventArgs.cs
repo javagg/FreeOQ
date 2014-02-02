@@ -1,24 +1,16 @@
 using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant
 {
-  public class RuntimeErrorEventArgs : EventArgs
-  {
-    private RuntimeError tsbB2GyRjd;
+	public class RuntimeErrorEventArgs : EventArgs
+	{
+		private RuntimeError error;
 
-    public RuntimeError Error
-    {
-      get
-      {
-        return (RuntimeError) null;
-      }
-    }
+		public RuntimeError Error { get { return error;	} }
 
-
-    public RuntimeErrorEventArgs(RuntimeError error)
-    {
-    }
-  }
+		public RuntimeErrorEventArgs(RuntimeError error)
+		{
+			this.error = error;
+		}
+	}
 }

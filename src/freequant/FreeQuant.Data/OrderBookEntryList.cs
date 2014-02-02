@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Data
 {
@@ -90,12 +89,12 @@ namespace FreeQuant.Data
 			this.orders.Clear();
 		}
 
-		internal void Insert([In] int index, [In] OrderBookEntry entry)
+		internal void Insert(int index, OrderBookEntry entry)
 		{
 			this.orders.Insert(index, entry);
 		}
 
-		internal void RemoveAt([In] int index)
+		internal void RemoveAt(int index)
 		{
 			this.orders.RemoveAt(index);
 		}

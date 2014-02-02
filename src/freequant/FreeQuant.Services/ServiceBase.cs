@@ -31,22 +31,19 @@ namespace FreeQuant.Services
 		}
 
 		public abstract void Start();
-
 		public abstract void Stop();
 
 		protected void SetServiceStatus(ServiceStatus status)
 		{
 			this.status = status;
-//      if (this.JqfcuNWXs == null)
-//        return;
-//      this.JqfcuNWXs((object) this, EventArgs.Empty);
+			if (this.StatusChanged != null)
+				this.StatusChanged(this, EventArgs.Empty);
 		}
 
 		protected void EmitServiceError(ServiceError error)
 		{
-//      if (this.FrJZfqUgi == null)
-//        return;
-//      this.FrJZfqUgi((object) this, new ServiceErrorEventArgs(error));
+			if (this.Error != null)
+				this.Error(this, new ServiceErrorEventArgs(error));
 		}
 
 		protected void EmitServiceError(string text)
@@ -64,9 +61,9 @@ namespace FreeQuant.Services
 			this.EhoB2ppPe(ServiceErrorType.Message, text);
 		}
 
-		private void EhoB2ppPe([In] ServiceErrorType obj0, [In] string obj1)
+		private void EhoB2ppPe(ServiceErrorType type, string obj1)
 		{
-			this.EmitServiceError(new ServiceError((IService)this, obj0, Clock.Now, obj1));
+			this.EmitServiceError(new ServiceError(this, type, DateTime.Now, obj1));
 		}
 	}
 }

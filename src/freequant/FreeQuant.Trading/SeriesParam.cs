@@ -1,30 +1,28 @@
+using System.Collections;
 using FreeQuant.Instruments;
 using FreeQuant.Series;
-using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  public class SeriesParam
-  {
-    private Hashtable BxPphSSHW;
+	public class SeriesParam
+	{
+		private Hashtable serieses; 
 
-    public TimeSeries this[Instrument instrument]
-    {
-       get
-      {
-        return (TimeSeries) this.BxPphSSHW[(object) instrument];
-      }
-       set
-      {
-        this.BxPphSSHW[(object) instrument] = (object) value;
-      }
-    }
+		public TimeSeries this [Instrument instrument]
+		{
+			get
+			{
+				return this.serieses[instrument] as TimeSeries;
+			}
+			set
+			{
+				this.serieses[instrument] = value;
+			}
+		}
 
-    
-		public SeriesParam():base()
-    {
-      this.BxPphSSHW = new Hashtable();
-    }
-  }
+		public SeriesParam() : base()
+		{
+			this.serieses = new Hashtable();
+		}
+	}
 }

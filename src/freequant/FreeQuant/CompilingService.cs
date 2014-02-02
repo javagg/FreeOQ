@@ -8,7 +8,7 @@ namespace FreeQuant
 	{
 		public static CompilerResults Compile(string[] files, string[] references, bool generateEXE, bool generateInMemory, string output)
 		{
-			return (CompilerResults)null;
+			return null;
 		}
 
 		public static CompilerResults Compile(string[] files, string[] references, bool generateEXE)

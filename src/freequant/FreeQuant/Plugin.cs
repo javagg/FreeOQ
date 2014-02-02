@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant
 {
@@ -65,7 +64,6 @@ namespace FreeQuant
       return (object) null;
     }
 
-    [SpecialName]
     internal void ixymUtLVYL(Configuration value)
     {
     }

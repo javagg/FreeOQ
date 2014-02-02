@@ -1,4 +1,4 @@
 namespace FreeQuant.Trading
 {
-  public delegate void EntryEventHandler(object sender, EntryEventArgs args);
+	public delegate void EntryEventHandler(object sender, EntryEventArgs args);
 }

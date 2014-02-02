@@ -85,23 +85,23 @@ namespace OpenQuant.API
 			FreeQuant.Instruments.InstrumentManager.InstrumentRemoved += new InstrumentEventHandler(OpenQuant.SQInstrumentManager_InstrumentRemoved);
 			foreach (FreeQuant.Instruments.Portfolio sq_portfolio in PortfolioManager.Portfolios)
 				OpenQuant.AddPortfolio(sq_portfolio);
-			PortfolioManager.PortfolioAdded += new PortfolioEventHandler(OpenQuant.SQ_PortfolioManager_PortfolioAdded);
-			OpenQuant.InitOrders();
-			// ISSUE: method pointer
-			OrderManager.add_NewOrder(new OrderEventHandler((object)null, __methodptr(SQ_OrderManager_NewOrder)));
-			// ISSUE: method pointer
-			OrderManager.add_OrderRemoved(new OrderEventHandler((object)null, __methodptr(SQ_OrderManager_OrderRemoved)));
-			OrderManager.add_OrderListUpdated(new EventHandler(OpenQuant.SQ_OrderManager_OrderListUpdated));
+//			PortfolioManager.PortfolioAdded += new PortfolioEventHandler(OpenQuant.FQ_PortfolioManager_PortfolioAdded);
+//			OpenQuant.InitOrders();
+//			// ISSUE: method pointer
+//			OrderManager.NewOrder += new OrderEventHandler(null, __methodptr(FQ_OrderManager_NewOrder));
+//			// ISSUE: method pointer
+//			OrderManager.OrderRemoved += new OrderEventHandler(null, __methodptr(FQ_OrderManager_OrderRemoved));
+//			OrderManager.OrderListUpdated += new EventHandler(OpenQuant.FQ_OrderManager_OrderListUpdated);
 		}
 
 		private static void InitOrders()
 		{
-			foreach (SingleOrder order in (FIXGroupList) ((InstrumentOrderListTable) OrderManager.get_Orders()).get_All())
+			foreach (SingleOrder order in (FIXGroupList) ((InstrumentOrderListTable) OrderManager.Orders).All)
 			{
 				Order wrapper = Order.CreateWrapper(order);
 				OpenQuant.orders.Add(wrapper);
-				Map.OQ_SQ_Order[(object)wrapper] = (object)order;
-				Map.SQ_OQ_Order[(object)order] = (object)wrapper;
+				Map.OQ_SQ_Order[wrapper] = order;
+				Map.SQ_OQ_Order[order] = wrapper;
 			}
 		}
 
@@ -110,37 +110,37 @@ namespace OpenQuant.API
 			OpenQuant.orders.Clear();
 			Map.OQ_SQ_Order.Clear();
 			Map.SQ_OQ_Order.Clear();
-			foreach (SingleOrder order1 in (FIXGroupList) ((InstrumentOrderListTable) OrderManager.get_Orders()).get_All())
+			foreach (SingleOrder order1 in (FIXGroupList) ((InstrumentOrderListTable) OrderManager.Orders).All)
 			{
 				Order order2 = new Order(order1);
 				OpenQuant.orders.Add(order2);
-				Map.OQ_SQ_Order[(object)order2] = (object)order1;
-				Map.SQ_OQ_Order[(object)order1] = (object)order2;
+				Map.OQ_SQ_Order[order2] = order1;
+				Map.SQ_OQ_Order[order1] = order2;
 			}
 		}
 
-		private static void SQ_OrderManager_NewOrder(OrderEventArgs args)
+		private static void SQ_OrderManager_NewOrder(OrderEventArgs e)
 		{
 			Order order;
-			if (Map.SQ_OQ_Order.ContainsKey((object)args.get_Order()))
+			if (Map.SQ_OQ_Order.ContainsKey(e.Order))
 			{
-				order = Map.SQ_OQ_Order[(object)args.get_Order()] as Order;
+				order = Map.SQ_OQ_Order[e.Order] as Order;
 			}
 			else
 			{
-				order = new Order(args.get_Order());
-				Map.OQ_SQ_Order[(object)order] = (object)args.get_Order();
-				Map.SQ_OQ_Order[(object)args.get_Order()] = (object)order;
+				order = new Order(e.Order);
+				Map.OQ_SQ_Order[order] = e.Order;
+				Map.SQ_OQ_Order[e.Order] = order;
 			}
 			OpenQuant.orders.Add(order);
 		}
 
-		private static void SQ_OrderManager_OrderRemoved(OrderEventArgs args)
+		private static void SQ_OrderManager_OrderRemoved(OrderEventArgs e)
 		{
-			Order order = Map.SQ_OQ_Order[(object)args.get_Order()] as Order;
+			Order order = Map.SQ_OQ_Order[e.Order] as Order;
 			OpenQuant.orders.Remove(order);
-			Map.SQ_OQ_Order.Remove((object)args.get_Order());
-			Map.OQ_SQ_Order.Remove((object)order);
+			Map.SQ_OQ_Order.Remove(e.Order);
+			Map.OQ_SQ_Order.Remove(order);
 		}
 
 		private static void SQInstrumentManager_InstrumentAdded(InstrumentEventArgs args)
@@ -165,7 +165,7 @@ namespace OpenQuant.API
 		{
 			OpenQuant.instruments.Remove(sq_instrument.Symbol);
 			Instrument instrument = Map.SQ_OQ_Instrument[(object)sq_instrument] as Instrument;
-			Map.OQ_SQ_Instrument.Remove((object)instrument);
+			Map.OQ_SQ_Instrument.Remove(instrument);
 			Map.SQ_OQ_Instrument.Remove((object)sq_instrument);
 		}
 
@@ -177,8 +177,8 @@ namespace OpenQuant.API
 		private static void AddPortfolio(FreeQuant.Instruments.Portfolio sq_portfolio)
 		{
 			Portfolio portfolio = new Portfolio(sq_portfolio);
-			Map.OQ_SQ_Portfolio[(object)portfolio] = (object)sq_portfolio;
-			Map.SQ_OQ_Portfolio[(object)sq_portfolio] = (object)portfolio;
+			Map.OQ_SQ_Portfolio[portfolio] = sq_portfolio;
+			Map.SQ_OQ_Portfolio[sq_portfolio] = portfolio;
 		}
 	}
 }

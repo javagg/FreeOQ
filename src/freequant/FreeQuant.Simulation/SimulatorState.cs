@@ -4,6 +4,6 @@ namespace FreeQuant.Simulation
 	{
 		Stopped,
 		Running,
-		Paused,
+		Paused
 	}
 }

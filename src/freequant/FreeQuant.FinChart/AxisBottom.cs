@@ -101,10 +101,10 @@ namespace FreeQuant.FinChart
 			this.y = y;
 		}
 
-		private long c9T0e1qB80([In] DateTime obj0, [In] EGridSize obj1)
+		private long c9T0e1qB80(DateTime obj0, EGridSize gridSize)
 		{
 			long num;
-			switch (obj1)
+			switch (gridSize)
 			{
 				case EGridSize.year5:
 					num = new DateTime(obj0.Year, 1, 1).AddYears(1 + (4 - obj0.Year % 5)).Ticks;
@@ -228,7 +228,7 @@ namespace FreeQuant.FinChart
 					num = new DateTime(obj0.Year, obj0.Month, obj0.Day, obj0.Hour, obj0.Minute, obj0.Second).AddSeconds((double)(1 + (1 - (int)new TimeSpan(obj0.Ticks).TotalSeconds % 2))).Ticks;
 					break;
 				default:
-					num = (long)(obj0.Ticks + obj1);
+					num = (long)(obj0.Ticks + gridSize);
 					break;
 			}
 			return num;
@@ -250,9 +250,9 @@ namespace FreeQuant.FinChart
 			long ticks1 = minDate.Ticks;
 			long ticks2 = maxDate.Ticks;
 			DateTime dateTime1 = new DateTime(Math.Max(0, ticks1));
-			EGridSize GridSize = AxisBottom.CalculateSize(ticks2 - ticks1);
+			EGridSize gridSize = AxisBottom.CalculateSize(ticks2 - ticks1);
 			long num1 = 0L;
-			long num2 = this.c9T0e1qB80(dateTime1, GridSize);
+			long num2 = this.c9T0e1qB80(dateTime1, gridSize);
 			int num3 = 0;
 			long num4 = num2;
 			long num5 = 0L;
@@ -262,7 +262,7 @@ namespace FreeQuant.FinChart
 			while (num4 < num7)
 			{
 				if (num6 != 0)
-					num4 = AxisBottom.GetNextMajor(num5, GridSize);
+					num4 = AxisBottom.GetNextMajor(num5, gridSize);
 				long num9 = num4;
 				int index = this.chart.MainSeries.GetIndex(new DateTime(num4 - 1L), EIndexOption.Next);
 				if (num8 == index)
@@ -325,7 +325,7 @@ namespace FreeQuant.FinChart
 					}
 				}
 			}
-			if (this.chart.SessionGridEnabled && (EGridSize)(this.chart.SessionEnd - this.chart.SessionStart).Ticks >= GridSize)
+			if (this.chart.SessionGridEnabled && (EGridSize)(this.chart.SessionEnd - this.chart.SessionStart).Ticks >= gridSize)
 			{
 				int num9 = 0;
 				long num10;
@@ -339,12 +339,12 @@ namespace FreeQuant.FinChart
 			double num16 = (double)this.chart.Graphics.MeasureString(this.title, this.titleFont).Height;
 			int num17 = (int)this.chart.Graphics.MeasureString(this.title, this.titleFont).Width;
 			if (this.titlePosition == EAxisTitlePosition.Left)
-				this.chart.Graphics.DrawString(this.title, this.titleFont, (Brush)solidBrush1, (float)(int)this.x1, (float)(int)(this.y + (double)this.labelOffset + (double)num14 + (double)this.titleOffset));
+				this.chart.Graphics.DrawString(this.title, this.titleFont, solidBrush1, (float)(int)this.x1, (float)(int)(this.y + (double)this.labelOffset + (double)num14 + (double)this.titleOffset));
 			if (this.titlePosition == EAxisTitlePosition.Right)
-				this.chart.Graphics.DrawString(this.title, this.titleFont, (Brush)solidBrush1, (float)((int)this.x2 - num17), (float)(int)(this.y + (double)this.labelOffset + (double)num14 + (double)this.titleOffset));
+				this.chart.Graphics.DrawString(this.title, this.titleFont, solidBrush1, (float)((int)this.x2 - num17), (float)(int)(this.y + (double)this.labelOffset + (double)num14 + (double)this.titleOffset));
 			if (this.titlePosition != EAxisTitlePosition.Centre)
 				return;
-			this.chart.Graphics.DrawString(this.title, this.titleFont, (Brush)solidBrush1, (float)(int)(this.x1 + (this.x2 - this.x1 - (double)num17) / 2.0), (float)(int)(this.y + (double)this.labelOffset + (double)num14 + (double)this.titleOffset));
+			this.chart.Graphics.DrawString(this.title, this.titleFont, solidBrush1, (float)(int)(this.x1 + (this.x2 - this.x1 - (double)num17) / 2.0), (float)(int)(this.y + (double)this.labelOffset + (double)num14 + (double)this.titleOffset));
 		}
 
 		public static EGridSize CalculateSize(double ticks)
@@ -463,49 +463,49 @@ namespace FreeQuant.FinChart
 			return num39 >= (double)num2 && num39 <= (double)num1 ? EGridSize.year20 : EGridSize.year20;
 		}
 
-		public static long GetNextMajor(long PrevMajor, EGridSize GridSize)
+		public static long GetNextMajor(long prevMajor, EGridSize gridSize)
 		{
 			long num;
-			switch (GridSize)
+			switch (gridSize)
 			{
 				case EGridSize.year5:
-					num = new DateTime(PrevMajor).AddYears(5).Ticks;
+					num = new DateTime(prevMajor).AddYears(5).Ticks;
 					break;
 				case EGridSize.year10:
-					num = new DateTime(PrevMajor).AddYears(10).Ticks;
+					num = new DateTime(prevMajor).AddYears(10).Ticks;
 					break;
 				case EGridSize.year20:
-					num = new DateTime(PrevMajor).AddYears(20).Ticks;
+					num = new DateTime(prevMajor).AddYears(20).Ticks;
 					break;
 				case EGridSize.year2:
-					num = new DateTime(PrevMajor).AddYears(2).Ticks;
+					num = new DateTime(prevMajor).AddYears(2).Ticks;
 					break;
 				case EGridSize.year3:
-					num = new DateTime(PrevMajor).AddYears(3).Ticks;
+					num = new DateTime(prevMajor).AddYears(3).Ticks;
 					break;
 				case EGridSize.year4:
-					num = new DateTime(PrevMajor).AddYears(4).Ticks;
+					num = new DateTime(prevMajor).AddYears(4).Ticks;
 					break;
 				case EGridSize.month4:
-					num = new DateTime(PrevMajor).AddMonths(4).Ticks;
+					num = new DateTime(prevMajor).AddMonths(4).Ticks;
 					break;
 				case EGridSize.month6:
-					num = new DateTime(PrevMajor).AddMonths(6).Ticks;
+					num = new DateTime(prevMajor).AddMonths(6).Ticks;
 					break;
 				case EGridSize.year1:
-					num = new DateTime(PrevMajor).AddYears(1).Ticks;
+					num = new DateTime(prevMajor).AddYears(1).Ticks;
 					break;
 				case EGridSize.month1:
-					num = new DateTime(PrevMajor).AddMonths(1).Ticks;
+					num = new DateTime(prevMajor).AddMonths(1).Ticks;
 					break;
 				case EGridSize.month2:
-					num = new DateTime(PrevMajor).AddMonths(2).Ticks;
+					num = new DateTime(prevMajor).AddMonths(2).Ticks;
 					break;
 				case EGridSize.month3:
-					num = new DateTime(PrevMajor).AddMonths(3).Ticks;
+					num = new DateTime(prevMajor).AddMonths(3).Ticks;
 					break;
 				default:
-					num = (long)(PrevMajor + GridSize);
+					num = (long)(prevMajor + gridSize);
 					break;
 			}
 			return num;

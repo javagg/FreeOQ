@@ -52,12 +52,12 @@ namespace OpenQuant.API.Indicators
 
 		public OSC(BarSeries series, int length1, int length2, BarData option)
 		{
-			this.indicator = new FreeQuant.Indicators.OSC(series.series, length1, length2, OpenQuant.API.EnumConverter.Convert(option));
+			this.indicator = new FreeQuant.Indicators.OSC(series.series, length1, length2, EnumConverter.Convert(option));
 		}
 
 		public OSC(Indicator indicator, int length1, int length2, BarData option)
 		{
-			this.indicator = new FreeQuant.Indicators.OSC(indicator.indicator, length1, length2, OpenQuant.API.EnumConverter.Convert(option));
+			this.indicator = new FreeQuant.Indicators.OSC(indicator.indicator, length1, length2, EnumConverter.Convert(option));
 		}
 
 		public OSC(BarSeries series, int length1, int length2, Color color)
@@ -72,12 +72,12 @@ namespace OpenQuant.API.Indicators
 
 		public OSC(BarSeries series, int length1, int length2, BarData option, Color color)
 		{
-			this.indicator = new FreeQuant.Indicators.OSC(series.series, length1, length2, OpenQuant.API.EnumConverter.Convert(option), color);
+			this.indicator = new FreeQuant.Indicators.OSC(series.series, length1, length2, EnumConverter.Convert(option), color);
 		}
 
 		public OSC(Indicator indicator, int length1, int length2, BarData option, Color color)
 		{
-			this.indicator = new FreeQuant.Indicators.OSC(indicator.indicator, length1, length2, OpenQuant.API.EnumConverter.Convert(option), color);
+			this.indicator = new FreeQuant.Indicators.OSC(indicator.indicator, length1, length2, EnumConverter.Convert(option), color);
 		}
 	}
 }

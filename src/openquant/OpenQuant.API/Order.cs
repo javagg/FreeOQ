@@ -43,9 +43,9 @@ namespace OpenQuant.API
 			{
 				switch (((NewOrderSingle)this.order).Side)
 				{
-					case Side.Buy:
+					case FreeQuant.FIX.Side.Buy:
 						return OrderSide.Buy;
-					case Side.Sell:
+					case FreeQuant.FIX.Side.Sell:
 						return OrderSide.Sell;
 					default:
 						throw new NotImplementedException("OrderSide is not supported : " + (object)((NewOrderSingle)this.order).Side);
@@ -203,7 +203,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return EnumConverter.Convert(this.order.get_OrdStatus());
+				return EnumConverter.Convert(this.order.OrdStatus);
 			}
 		}
 
@@ -216,10 +216,10 @@ namespace OpenQuant.API
 			}
 			set
 			{
-				if (!this.order.get_IsSent())
+				if (!this.order.IsSent)
 					((FIXNewOrderSingle)this.order).OrderQty = value;
 				else
-					this.order.get_ReplaceOrder().OrderQty = value;
+					this.order.ReplaceOrder.OrderQty = value;
 			}
 		}
 
@@ -228,7 +228,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_LastQty();
+				return this.order.LastQty;
 			}
 		}
 
@@ -237,7 +237,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_LeavesQty();
+				return this.order.LeavesQty;
 			}
 		}
 
@@ -246,7 +246,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_CumQty();
+				return this.order.CumQty;
 			}
 		}
 
@@ -259,10 +259,10 @@ namespace OpenQuant.API
 			}
 			set
 			{
-				if (!this.order.get_IsSent())
+				if (!this.order.IsSent)
 					((FIXNewOrderSingle)this.order).Price = value;
 				else
-					this.order.get_ReplaceOrder().Price = value;
+					this.order.ReplaceOrder.Price = value;
 			}
 		}
 
@@ -275,10 +275,10 @@ namespace OpenQuant.API
 			}
 			set
 			{
-				if (!this.order.get_IsSent())
+				if (!this.order.IsSent)
 					((FIXNewOrderSingle)this.order).StopPx = value;
 				else
-					this.order.get_ReplaceOrder().StopPx = value;
+					this.order.ReplaceOrder.StopPx = value;
 			}
 		}
 
@@ -291,10 +291,10 @@ namespace OpenQuant.API
 			}
 			set
 			{
-				if (!this.order.get_IsSent())
+				if (!this.order.IsSent)
 					((FIXNewOrderSingle)this.order).TrailingAmt = value;
 				else
-					this.order.get_ReplaceOrder().TrailingAmt = value;
+					this.order.ReplaceOrder.TrailingAmt = value;
 			}
 		}
 
@@ -303,7 +303,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_AvgPx();
+				return this.order.AvgPx;
 			}
 		}
 
@@ -312,7 +312,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_LastPx();
+				return this.order.LastPx;
 			}
 		}
 
@@ -346,11 +346,11 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_OrderID();
+				return this.order.OrderID;
 			}
 			set
 			{
-				this.order.set_OrderID(value);
+				this.order.OrderID = value;
 			}
 		}
 
@@ -371,7 +371,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsNew();
+				return this.order.IsNew;
 			}
 		}
 
@@ -380,7 +380,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsPendingNew();
+				return this.order.IsPendingNew;
 			}
 		}
 
@@ -389,7 +389,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsFilled();
+				return this.order.IsFilled;
 			}
 		}
 
@@ -398,7 +398,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsPartiallyFilled();
+				return this.order.IsPartiallyFilled;
 			}
 		}
 
@@ -407,7 +407,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsPendingCancel();
+				return this.order.IsPendingCancel;
 			}
 		}
 
@@ -416,7 +416,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsCancelled();
+				return this.order.IsCancelled;
 			}
 		}
 
@@ -425,7 +425,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsExpired();
+				return this.order.IsExpired;
 			}
 		}
 
@@ -434,7 +434,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsPendingReplace();
+				return this.order.IsPendingReplace;
 			}
 		}
 
@@ -443,7 +443,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsRejected();
+				return this.order.IsRejected;
 			}
 		}
 
@@ -452,7 +452,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_IsDone();
+				return this.order.IsDone;
 			}
 		}
 
@@ -483,9 +483,9 @@ namespace OpenQuant.API
 			get
 			{
 				List<FIXMessage> messages = new List<FIXMessage>();
-				foreach (FIXMessage fixMessage in (FIXGroupList) this.order.get_Reports())
+				foreach (FIXMessage fixMessage in (FIXGroupList) this.order.Reports)
 					messages.Add(fixMessage);
-				foreach (FIXMessage fixMessage in (FIXGroupList) this.order.get_Rejects())
+				foreach (FIXMessage fixMessage in (FIXGroupList) this.order.Rejects)
 					messages.Add(fixMessage);
 				messages.Sort((Comparison<FIXMessage>)((message1, message2) => message1.GetDateTimeValue(60).CompareTo(message2.GetDateTimeValue(60))));
 				return new ExecutionReportList(messages);
@@ -496,12 +496,12 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return Map.SQ_OQ_Portfolio[(object)this.order.get_Portfolio()] as Portfolio;
+				return Map.SQ_OQ_Portfolio[(object)this.order.Portfolio] as Portfolio;
 			}
 			set
 			{
-				this.order.set_Portfolio(value.portfolio);
-				this.order.set_Persistent(value.portfolio.Persistent);
+				this.order.Portfolio = value.portfolio;
+				this.order.Persistent = value.portfolio.Persistent;
 			}
 		}
 
@@ -509,11 +509,11 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_StrategyFill();
+				return this.order.StrategyFill;
 			}
 			set
 			{
-				this.order.set_StrategyFill(value);
+				this.order.StrategyFill = value;
 			}
 		}
 
@@ -521,11 +521,11 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_StrategyPrice();
+				return this.order.StrategyPrice;
 			}
 			set
 			{
-				this.order.set_StrategyPrice(value);
+				this.order.StrategyPrice = value;
 			}
 		}
 
@@ -533,7 +533,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.order.get_ReplaceOrder();
+				return this.order.ReplaceOrder;
 			}
 		}
 
@@ -564,12 +564,12 @@ namespace OpenQuant.API
 		internal Order(SingleOrder order)
 		{
 			this.order = order;
-			this.instrument = Map.SQ_OQ_Instrument[(object)order.get_Instrument()] as Instrument;
+			this.instrument = Map.SQ_OQ_Instrument[(object)order.Instrument] as Instrument;
 			this.ibEx = new IBEx(order);
-			if (order.get_Provider() != null)
+			if (order.Provider != null)
 				return;
-			order.set_Provider(Configuration.Active.ExecutionProvider);
-			order.set_StrategyMode(ConfigurationModeConverter.ModeToChar(Configuration.ActiveMode));
+			order.Provider = Configuration.Active.ExecutionProvider;
+			order.StrategyMode = ConfigurationModeConverter.ModeToChar(Configuration.ActiveMode);
 		}
 
 		private Order()
@@ -581,7 +581,7 @@ namespace OpenQuant.API
 			return new Order()
 			{
 				order = order,
-				instrument = Map.SQ_OQ_Instrument[(object)order.get_Instrument()] as Instrument,
+				instrument = Map.SQ_OQ_Instrument[(object)order.Instrument] as Instrument,
 				ibEx = new IBEx(order)
 			};
 		}

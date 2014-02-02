@@ -100,7 +100,7 @@ namespace OpenQuant.API
 
 		internal bool Contains(string name, string currency)
 		{
-			Dictionary<string, SmartQuant.Providers.BrokerAccountField> dictionary;
+			Dictionary<string, FreeQuant.Providers.BrokerAccountField> dictionary;
 			if (this.table.TryGetValue(name, out dictionary))
 				return dictionary.ContainsKey(currency);
 			else

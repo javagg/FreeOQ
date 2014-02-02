@@ -4,63 +4,63 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant
 {
-  public class SystemInfo
-  {
-    private static SystemInfo aeGNnq1YC;
+	public class SystemInfo
+	{
+		private static SystemInfo systemInfo;
 
-    public static SystemInfo CurrentSystem
-    {
-      get
-      {
-        return (SystemInfo) null;
-      }
-    }
+		public static SystemInfo CurrentSystem
+		{
+			get
+			{
+				return systemInfo;
+			}
+		}
 
-    public OperatingSystem OperatingSystem
-    {
-      get
-      {
-        return (OperatingSystem) null;
-      }
-    }
+		public OperatingSystem OperatingSystem
+		{
+			get
+			{
+				return (OperatingSystem)null;
+			}
+		}
 
-    public CPUInfo CPU
-    {
-       get
-      {
-        return (CPUInfo) null;
-      }
-       private set
-      {
-      }
-    }
+		public CPUInfo CPU
+		{
+			get
+			{
+				return (CPUInfo)null;
+			}
+			private set
+			{
+			}
+		}
 
-    public RAMInfo RAM
-    {
-       get
-      {
-        return (RAMInfo) null;
-      }
-       private set
-      {
-      }
-    }
+		public RAMInfo RAM
+		{
+			get
+			{
+				return (RAMInfo)null;
+			}
+			private set
+			{
+			}
+		}
 
-    public Version RuntimeVersion
-    {
-       get
-      {
-        return (Version) null;
-      }
-    }
+		public Version RuntimeVersion
+		{
+			get
+			{
+				return (Version)null;
+			}
+		}
 
-    static SystemInfo()
-    {
-      SystemInfo.aeGNnq1YC = (SystemInfo) null;
-    }
+		static SystemInfo()
+		{
+			SystemInfo.systemInfo = (SystemInfo)null;
+		}
 
-    private SystemInfo()
-    {
-    }
-  }
+		private SystemInfo()
+		{
+		}
+	}
 }

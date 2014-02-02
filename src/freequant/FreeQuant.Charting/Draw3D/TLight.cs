@@ -9,12 +9,12 @@ namespace FreeQuant.Charting.Draw3D
 		public TLight.TSource[] ParallelBeams;
 		public TLight.TSource[] NearSources;
 
-		public TLight() : base()
+		public TLight()
 		{
 			this.Ambient = new TColor(Color.PaleTurquoise);
 			this.ParallelBeams = new TLight.TSource[1]
 			{
-				new TLight.TSource(new TVec3(3.0, -2.0, 2.0), (TColor)Color.LightYellow)
+				new TLight.TSource(new TVec3(3, -2, 2), (TColor)Color.LightYellow)
 			};
 			this.NearSources = new TLight.TSource[0];
 
@@ -44,15 +44,15 @@ namespace FreeQuant.Charting.Draw3D
 
 		public void SetShadowSources(double K)
 		{
-			TLight.TSource[] tsourceArray = new TLight.TSource[2 * this.ParallelBeams.Length];
-			for (int index1 = 0; index1 < this.ParallelBeams.Length; ++index1)
+			TLight.TSource[] tsources = new TLight.TSource[2 * this.ParallelBeams.Length];
+			for (int i = 0; i < this.ParallelBeams.Length; ++i)
 			{
-				int index2 = 2 * index1;
-				tsourceArray[index2] = this.ParallelBeams[index1];
-				tsourceArray[index2 + 1].o = -tsourceArray[index2].o;
-				tsourceArray[index2 + 1].c = -K * tsourceArray[index2].c;
+				int i2 = 2 * i;
+				tsources[i2] = this.ParallelBeams[i];
+				tsources[i2 + 1].o = -tsources[i2].o;
+				tsources[i2 + 1].c = -K * tsources[i2].c;
 			}
-			this.ParallelBeams = tsourceArray;
+			this.ParallelBeams = tsources;
 		}
 
 		public virtual TColor Result(TVec3 r, TVec3 n, TColor Diffuse)

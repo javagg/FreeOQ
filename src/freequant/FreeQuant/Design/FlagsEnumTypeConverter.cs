@@ -5,9 +5,13 @@ namespace FreeQuant.Design
 {
   public class FlagsEnumTypeConverter : ExpandableObjectConverter
   {
-//    public override PropertyDescriptorCollection GetProperties(ITypeDescriptorContext context, object value, Attribute[] attributes)
-//    {
-//      return (PropertyDescriptorCollection) null;
-//    }
+		public FlagsEnumTypeConverter()
+		{
+		}
+
+		public override PropertyDescriptorCollection GetProperties(ITypeDescriptorContext context, object value, Attribute[] attributes)
+		{
+			return null;
+		}
   }
 }

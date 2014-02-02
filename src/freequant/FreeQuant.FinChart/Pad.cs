@@ -156,7 +156,7 @@ namespace FreeQuant.FinChart
 		{
 			get
 			{
-				return this.chart.OkdNNmbiw();
+				return this.chart.GetSeries();
 			}
 		}
 

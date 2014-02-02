@@ -28,14 +28,12 @@ namespace FreeQuant.Charting.Draw3D
 		private TVec3 gcU3NtonPe;
 		private bool hH1321Stt8;
 
-		public TFunction() : base()
+		public TFunction()
 		{
-
 			this.MaxX = 1.0;
 			this.MaxY = 1.0;
 			this.Surface = new TSurface();
 			this.hH1321Stt8 = true;
-  
 			this.Surface.Diffuse = 0.59 * new TColor(0.5, 0.7, 1.0);
 		}
 
@@ -46,9 +44,9 @@ namespace FreeQuant.Charting.Draw3D
 			return this.Surface.Diffuse;
 		}
 
-		public unsafe void Paint(Pad Pad)
+		public unsafe void Paint(Pad pad)
 		{
-			TView tview = TView.View(Pad);
+			TView tview = TView.View(pad);
 			this.uq63OYZaax = tview.Left;
 			this.FP43FHdtWy = tview.Top;
 			this.Jm23JdRAV2 = tview.H;
@@ -61,17 +59,17 @@ namespace FreeQuant.Charting.Draw3D
 			if (this.Look == EChartLook.SurfaceOnly)
 				this.hH1321Stt8 = false;
 			Bitmap bitmap = new Bitmap(this.Jm23JdRAV2, this.C843M1JDuK, PixelFormat.Format32bppRgb);
-			this.qDx3lDiW7U(Pad, bitmap);
+			this.qDx3lDiW7U(pad, bitmap);
 			Rectangle rect = new Rectangle(0, 0, this.Jm23JdRAV2, this.C843M1JDuK);
 			BitmapData bitmapdata = bitmap.LockBits(rect, this.hH1321Stt8 ? ImageLockMode.WriteOnly : ImageLockMode.ReadWrite, PixelFormat.Format32bppRgb);
 			this.Pnx3KTVZoc((int*)bitmapdata.Scan0.ToPointer());
 			bitmap.UnlockBits(bitmapdata);
 			Color transparentColor = Color.FromArgb((int)byte.MaxValue, 0, 0, 0);
 			bitmap.MakeTransparent(transparentColor);
-			Pad.Graphics.DrawImage((Image)bitmap, this.uq63OYZaax, this.FP43FHdtWy);
+			pad.Graphics.DrawImage((Image)bitmap, this.uq63OYZaax, this.FP43FHdtWy);
 		}
 
-		private TColor E0C3BMxUWS([In] double obj0, [In] double obj1, [In] double obj2, [In] double obj3, [In] TColor obj4)
+		private TColor E0C3BMxUWS(double obj0, double obj1, double obj2, double obj3, TColor obj4)
 		{
 			TVec3 n = new TVec3(obj2, 0.0, this.f(obj0 + obj2, obj1) - this.f(obj0, obj1)) ^ new TVec3(0.0, obj3, this.f(obj0, obj1 + obj3) - this.f(obj0, obj1));
 			return this.trP3fdnMpS.Result(new TVec3(obj0, obj1, this.f(obj0, obj1)), n, obj4);

@@ -80,7 +80,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return new TVec3(0.0, 0.0, 0.0);
+				return new TVec3(0, 0, 0);
 			}
 		}
 
@@ -88,7 +88,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return new TVec3(1.0, 0.0, 0.0);
+				return new TVec3(1, 0, 0);
 			}
 		}
 
@@ -96,7 +96,7 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return new TVec3(0.0, 1.0, 0.0);
+				return new TVec3(0, 1, 0);
 			}
 		}
 
@@ -104,15 +104,15 @@ namespace FreeQuant.Charting.Draw3D
 		{
 			get
 			{
-				return new TVec3(0.0, 0.0, 1.0);
+				return new TVec3(0, 0, 1);
 			}
 		}
 
-		public TVec3(double X, double Y, double Z)
+		public TVec3(double x, double y, double z)
 		{
-			this.x = X;
-			this.y = Y;
-			this.z = Z;
+			this.x = x;
+			this.y = y;
+			this.z = z;
 		}
 
 		public TVec3(TVec3 v)
@@ -179,10 +179,10 @@ namespace FreeQuant.Charting.Draw3D
 
 		public static Point[] PointArray(TVec3[] v)
 		{
-			Point[] pointArray = new Point[v.Length];
-			for (int index = 0; index < pointArray.Length; ++index)
-				pointArray[index] = (Point)v[index];
-			return pointArray;
+			Point[] points = new Point[v.Length];
+			for (int i = 0; i < points.Length; ++i)
+				points[i] = (Point)v[i];
+			return points;
 		}
 	}
 }

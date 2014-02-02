@@ -8,7 +8,7 @@ namespace OpenQuant.API.Indicators
 	{
 		private OBV()
 		{
-			this.indicator = (Indicator)new FreeQuant.Indicators.OBV();
+			this.indicator = new FreeQuant.Indicators.OBV();
 		}
 
 		public OBV(BarSeries series)

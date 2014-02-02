@@ -12,7 +12,7 @@ namespace FreeQuant.Charting
   {
 	private Pad pad; 
     private EAxisType jF56ZqlDUA;
-    private EAxisPosition gck6XUIeCg;
+		private EAxisPosition position; 
     private EAxisTitlePosition ejS6gv5Ug7;
     private EVerticalGridStyle QeC6bMjpbe;
     private bool MbS6EH3Dtx;
@@ -137,11 +137,11 @@ namespace FreeQuant.Charting
     {
        get
       {
-        return this.gck6XUIeCg;
+        return this.position;
       }
        set
       {
-        this.gck6XUIeCg = value;
+        this.position = value;
       }
     }
 
@@ -603,12 +603,12 @@ namespace FreeQuant.Charting
     {
 
       this.pad = Pad;
-      this.gck6XUIeCg = EAxisPosition.None;
+      this.position = EAxisPosition.None;
       this.jiR6jl13Bb = 0.0;
       this.WvY61ob0Xo = 0.0;
       this.Eo969HTsnQ = 0.0;
       this.ied6e07F0D = 0.0;
-      this.zNh621NQso();
+      this.Init();
     }
 
  
@@ -616,12 +616,12 @@ namespace FreeQuant.Charting
     {
 
       this.pad = Pad;
-      this.gck6XUIeCg = Position;
+      this.position = Position;
       this.jiR6jl13Bb = 0.0;
       this.WvY61ob0Xo = 0.0;
       this.Eo969HTsnQ = 0.0;
       this.ied6e07F0D = 0.0;
-      this.zNh621NQso();
+      this.Init();
     }
 
 
@@ -629,16 +629,16 @@ namespace FreeQuant.Charting
     {
 
       this.pad = Pad;
-      this.gck6XUIeCg = EAxisPosition.None;
+      this.position = EAxisPosition.None;
       this.jiR6jl13Bb = X1;
       this.WvY61ob0Xo = X2;
       this.Eo969HTsnQ = Y1;
       this.ied6e07F0D = Y2;
-      this.zNh621NQso();
+      this.Init();
     }
 
     
-    private void zNh621NQso()
+    private void Init()
     {
       this.MbS6EH3Dtx = true;
       this.fmn6HKQKNH = false;
@@ -683,7 +683,6 @@ namespace FreeQuant.Charting
       this.ljAYKLwBlc = -1;
     }
 
-    
     public void SetLocation(double X1, double Y1, double X2, double Y2)
     {
       this.jiR6jl13Bb = X1;
@@ -726,7 +725,7 @@ namespace FreeQuant.Charting
     
     public void UnZoom()
     {
-      switch (this.gck6XUIeCg)
+      switch (this.position)
       {
         case EAxisPosition.Left:
           this.SetRange(this.pad.YMin, this.pad.YMax);
@@ -791,7 +790,6 @@ namespace FreeQuant.Charting
       return num;
     }
 
-    
     public static EGridSize CalculateSize(double ticks)
     {
       int num1 = 10;
@@ -1132,7 +1130,7 @@ label_47:
               solidBrush2 = new SolidBrush(Color.Black);
             }
           }
-          if (this.gck6XUIeCg == EAxisPosition.Bottom)
+          if (this.position == EAxisPosition.Bottom)
           {
             if (this.TRd6qNDWBJ)
               this.pad.DrawVerticalGrid(Pen2, num17);
@@ -1159,7 +1157,7 @@ label_47:
               }
             }
           }
-          if (this.gck6XUIeCg == EAxisPosition.Left || this.gck6XUIeCg == EAxisPosition.Right)
+          if (this.position == EAxisPosition.Left || this.position == EAxisPosition.Right)
           {
             if (this.TRd6qNDWBJ)
               this.pad.DrawHorizontalGrid(Pen2, num17);
@@ -1192,20 +1190,20 @@ label_47:
             double num21 = num18 + this.pad.Transformation.CalculateRealQuantityOfTicks_Right(num18, num18 + (double) index * num19);
             if (num21 < Max)
             {
-              if (this.gck6XUIeCg == EAxisPosition.Bottom)
+              if (this.position == EAxisPosition.Bottom)
               {
                 if (this.nYl6mPBuBs)
                   this.pad.DrawVerticalGrid(Pen3, num21);
                 if (this.raP6AFh3ta)
                   this.pad.DrawVerticalTick(Pen4, num21, this.ied6e07F0D, -2);
               }
-              if (this.gck6XUIeCg == EAxisPosition.Left)
+              if (this.position == EAxisPosition.Left)
               {
                 if (this.nYl6mPBuBs)
                   this.pad.DrawHorizontalGrid(Pen3, num21);
                 if (this.raP6AFh3ta)
                   this.pad.DrawHorizontalTick(Pen5, this.jiR6jl13Bb, num21, 2);
-                if (this.gck6XUIeCg == EAxisPosition.Right)
+                if (this.position == EAxisPosition.Right)
                 {
                   if (this.nYl6mPBuBs)
                     this.pad.DrawHorizontalGrid(Pen3, num21);
@@ -1226,14 +1224,14 @@ label_47:
         double num21 = num2 + this.pad.Transformation.CalculateRealQuantityOfTicks_Left(num2, num2 - (double) index * num19);
         if (num21 > this.CJf67aSqFG)
         {
-          if (this.gck6XUIeCg == EAxisPosition.Bottom)
+          if (this.position == EAxisPosition.Bottom)
           {
             if (this.nYl6mPBuBs)
               this.pad.DrawVerticalGrid(Pen3, num21);
             if (this.raP6AFh3ta)
               this.pad.DrawVerticalTick(Pen4, num21, this.ied6e07F0D, -2);
           }
-          if (this.gck6XUIeCg == EAxisPosition.Left)
+          if (this.position == EAxisPosition.Left)
           {
             if (this.nYl6mPBuBs)
               this.pad.DrawHorizontalGrid(Pen3, num21);
@@ -1251,12 +1249,12 @@ label_47:
       }
       if (this.J2nYCsqgZK)
       {
-        if (this.gck6XUIeCg == EAxisPosition.Bottom)
+        if (this.position == EAxisPosition.Bottom)
         {
           this.pad.DrawVerticalGrid(new Pen(Color.Green), this.pad.WorldX(this.Se1Y6TOkWX));
           this.pad.DrawVerticalGrid(new Pen(Color.Green), this.pad.WorldX(this.UElYYuNU1W));
         }
-        if (this.gck6XUIeCg == EAxisPosition.Left)
+        if (this.position == EAxisPosition.Left)
         {
           this.pad.DrawHorizontalGrid(new Pen(Color.Green), this.pad.WorldY(this.Se1Y6TOkWX));
           this.pad.DrawHorizontalGrid(new Pen(Color.Green), this.pad.WorldY(this.UElYYuNU1W));
@@ -1268,7 +1266,7 @@ label_47:
 			int num26 = (int) this.pad.Graphics.MeasureString(this.gDw6zAT8dQ.ToString("%d"), this.Lju6sLD21e).Width;
       int num27 = (int) this.pad.Graphics.MeasureString(this.title, this.font).Height;
       int num28 = (int) this.pad.Graphics.MeasureString(this.title, this.font).Width;
-      if (this.gck6XUIeCg == EAxisPosition.Bottom)
+      if (this.position == EAxisPosition.Bottom)
       {
         if (this.ejS6gv5Ug7 == EAxisTitlePosition.Left)
           this.pad.Graphics.DrawString(this.title, this.font, (Brush) solidBrush1, (float) (int) this.jiR6jl13Bb, (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
@@ -1277,7 +1275,7 @@ label_47:
         if (this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
           this.pad.Graphics.DrawString(this.title, this.font, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb + (this.WvY61ob0Xo - this.jiR6jl13Bb - (double) num28) / 2.0), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num25 + (double) this.MU36yJxSD6));
       }
-      if (this.gck6XUIeCg != EAxisPosition.Left || this.ejS6gv5Ug7 != EAxisTitlePosition.Centre)
+      if (this.position != EAxisPosition.Left || this.ejS6gv5Ug7 != EAxisTitlePosition.Centre)
         return;
       this.pad.Graphics.DrawString(this.title, this.font, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb - (double) this.QvE6d9RSdV - (double) num26 - (double) this.MU36yJxSD6 - (double) num27), (float) (int) (this.Eo969HTsnQ + (this.ied6e07F0D - this.Eo969HTsnQ - (double) num28) / 2.0), new StringFormat()
       {
@@ -1347,7 +1345,7 @@ label_47:
 								str2 = this.labelFormat != null ? new DateTime((long) num13).ToString(this.labelFormat) : new DateTime((long)num13).ToString("dss");
                 break;
             }
-            if (this.gck6XUIeCg == EAxisPosition.Bottom)
+            if (this.position == EAxisPosition.Bottom)
             {
               if (this.TRd6qNDWBJ)
                 this.pad.DrawVerticalGrid(Pen1, num13);
@@ -1374,15 +1372,15 @@ label_47:
                 }
               }
             }
-            if (this.gck6XUIeCg == EAxisPosition.Left || this.gck6XUIeCg == EAxisPosition.Right)
+            if (this.position == EAxisPosition.Left || this.position == EAxisPosition.Right)
             {
-              if (this.gck6XUIeCg == EAxisPosition.Left && this.TRd6qNDWBJ)
+              if (this.position == EAxisPosition.Left && this.TRd6qNDWBJ)
                 this.pad.DrawHorizontalGrid(Pen1, num13);
-              if (this.gck6XUIeCg == EAxisPosition.Right && (!this.pad.AxisLeft.Enabled || !this.pad.AxisLeft.GridEnabled) && this.TRd6qNDWBJ)
+              if (this.position == EAxisPosition.Right && (!this.pad.AxisLeft.Enabled || !this.pad.AxisLeft.GridEnabled) && this.TRd6qNDWBJ)
                 this.pad.DrawHorizontalGrid(Pen1, num13);
               if (this.zU26hHtq00)
               {
-                switch (this.gck6XUIeCg)
+                switch (this.position)
                 {
                   case EAxisPosition.Left:
                     this.pad.DrawHorizontalTick(Pen4, this.jiR6jl13Bb + 1.0, num13, this.kfw6LStExd);
@@ -1399,7 +1397,7 @@ label_47:
                 int num15 = (int) sizeF.Height;
                 if (this.H786I1r5BA == EAxisLabelAlignment.Centre)
                 {
-                  switch (this.gck6XUIeCg)
+                  switch (this.position)
                   {
                     case EAxisPosition.Left:
                       num9 = (int) (this.jiR6jl13Bb - (double) num14);
@@ -1423,22 +1421,22 @@ label_47:
               double num14 = num5 + (double) index1 * num3 + (double) index2 * num4;
               if (num14 < this.gDw6zAT8dQ)
               {
-                if (this.gck6XUIeCg == EAxisPosition.Bottom)
+                if (this.position == EAxisPosition.Bottom)
                 {
                   if (this.nYl6mPBuBs)
                     this.pad.DrawVerticalGrid(Pen2, num14);
                   if (this.raP6AFh3ta)
                     this.pad.DrawVerticalTick(Pen3, num14, this.ied6e07F0D - 1.0, -this.BXj6SnOZlQ);
                 }
-                if (this.gck6XUIeCg == EAxisPosition.Left || this.gck6XUIeCg == EAxisPosition.Right)
+                if (this.position == EAxisPosition.Left || this.position == EAxisPosition.Right)
                 {
-                  if (this.gck6XUIeCg == EAxisPosition.Left && this.nYl6mPBuBs)
+                  if (this.position == EAxisPosition.Left && this.nYl6mPBuBs)
                     this.pad.DrawHorizontalGrid(Pen1, num14);
-                  if (this.gck6XUIeCg == EAxisPosition.Right && (!this.pad.AxisLeft.Enabled || !this.pad.AxisLeft.MinorGridEnabled) && this.nYl6mPBuBs)
+                  if (this.position == EAxisPosition.Right && (!this.pad.AxisLeft.Enabled || !this.pad.AxisLeft.MinorGridEnabled) && this.nYl6mPBuBs)
                     this.pad.DrawHorizontalGrid(Pen1, num14);
                   if (this.raP6AFh3ta)
                   {
-                    switch (this.gck6XUIeCg)
+                    switch (this.position)
                     {
                       case EAxisPosition.Left:
                         this.pad.DrawHorizontalTick(Pen3, this.jiR6jl13Bb + 1.0, num14, this.BXj6SnOZlQ);
@@ -1459,22 +1457,22 @@ label_47:
             double num13 = num5 - (double) index * num4;
             if (num13 > this.CJf67aSqFG)
             {
-              if (this.gck6XUIeCg == EAxisPosition.Bottom)
+              if (this.position == EAxisPosition.Bottom)
               {
                 if (this.nYl6mPBuBs)
                   this.pad.DrawVerticalGrid(Pen2, num13);
                 if (this.raP6AFh3ta)
                   this.pad.DrawVerticalTick(Pen3, num13, this.ied6e07F0D - 1.0, -this.BXj6SnOZlQ);
               }
-              if (this.gck6XUIeCg == EAxisPosition.Left || this.gck6XUIeCg == EAxisPosition.Right)
+              if (this.position == EAxisPosition.Left || this.position == EAxisPosition.Right)
               {
-                if (this.gck6XUIeCg == EAxisPosition.Left && this.nYl6mPBuBs)
+                if (this.position == EAxisPosition.Left && this.nYl6mPBuBs)
                   this.pad.DrawHorizontalGrid(Pen1, num13);
-                if (this.gck6XUIeCg == EAxisPosition.Right && (!this.pad.AxisLeft.Enabled || !this.pad.AxisLeft.MinorGridEnabled) && this.nYl6mPBuBs)
+                if (this.position == EAxisPosition.Right && (!this.pad.AxisLeft.Enabled || !this.pad.AxisLeft.MinorGridEnabled) && this.nYl6mPBuBs)
                   this.pad.DrawHorizontalGrid(Pen1, num13);
                 if (this.raP6AFh3ta)
                 {
-                  switch (this.gck6XUIeCg)
+                  switch (this.position)
                   {
                     case EAxisPosition.Left:
                       this.pad.DrawHorizontalTick(Pen3, this.jiR6jl13Bb + 1.0, num13, this.BXj6SnOZlQ);
@@ -1491,12 +1489,12 @@ label_47:
           }
           if (this.J2nYCsqgZK)
           {
-            if (this.gck6XUIeCg == EAxisPosition.Bottom)
+            if (this.position == EAxisPosition.Bottom)
             {
               this.pad.DrawVerticalGrid(new Pen(Color.Green), this.pad.WorldX(this.Se1Y6TOkWX));
               this.pad.DrawVerticalGrid(new Pen(Color.Green), this.pad.WorldX(this.UElYYuNU1W));
             }
-            if (this.gck6XUIeCg == EAxisPosition.Left)
+            if (this.position == EAxisPosition.Left)
             {
               this.pad.DrawHorizontalGrid(new Pen(Color.Green), this.pad.WorldY(this.Se1Y6TOkWX));
               this.pad.DrawHorizontalGrid(new Pen(Color.Green), this.pad.WorldY(this.UElYYuNU1W));
@@ -1508,7 +1506,7 @@ label_47:
 				int num14 = (int) this.pad.Graphics.MeasureString(this.gDw6zAT8dQ.ToString("sffs"), this.Lju6sLD21e).Width;
             int num15 = (int) this.pad.Graphics.MeasureString(this.title, this.font).Height;
             int num16 = (int) this.pad.Graphics.MeasureString(this.title, this.font).Width;
-            if (this.gck6XUIeCg == EAxisPosition.Bottom)
+            if (this.position == EAxisPosition.Bottom)
             {
               if (this.ejS6gv5Ug7 == EAxisTitlePosition.Left)
                 this.pad.Graphics.DrawString(this.title, this.font, (Brush) solidBrush1, (float) (int) this.jiR6jl13Bb, (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
@@ -1517,7 +1515,7 @@ label_47:
               if (this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
                 this.pad.Graphics.DrawString(this.title, this.font, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb + (this.WvY61ob0Xo - this.jiR6jl13Bb - (double) num16) / 2.0), (float) (int) (this.ied6e07F0D + (double) this.QvE6d9RSdV + (double) num13 + (double) this.MU36yJxSD6));
             }
-            if (this.gck6XUIeCg == EAxisPosition.Left && this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
+            if (this.position == EAxisPosition.Left && this.ejS6gv5Ug7 == EAxisTitlePosition.Centre)
             {
               this.pad.Graphics.DrawString(this.title, this.font, (Brush) solidBrush1, (float) (int) (this.jiR6jl13Bb - (double) this.QvE6d9RSdV - (double) num14 - (double) this.MU36yJxSD6 - (double) num15), (float) (int) (this.Eo969HTsnQ + (this.ied6e07F0D - this.Eo969HTsnQ - (double) num16) / 2.0), new StringFormat()
               {
@@ -1543,7 +1541,7 @@ label_47:
     {
       if (!this.abOYnyZNZl)
         return;
-      switch (this.gck6XUIeCg)
+      switch (this.position)
       {
         case EAxisPosition.Left:
           if (!this.pad.MouseZoomYAxisEnabled)
@@ -1565,7 +1563,7 @@ label_47:
     {
       if (Event.Button != MouseButtons.Left)
         return;
-      switch (this.gck6XUIeCg)
+      switch (this.position)
       {
         case EAxisPosition.Left:
           if (!this.pad.MouseZoomYAxisEnabled || this.jiR6jl13Bb - 10.0 > (double) Event.X || (this.jiR6jl13Bb < (double) Event.X || this.Eo969HTsnQ > (double) Event.Y) || this.ied6e07F0D < (double) Event.Y)
@@ -1594,7 +1592,7 @@ label_47:
       this.J2nYCsqgZK = false;
       if (Event.Button == MouseButtons.Right)
       {
-        switch (this.gck6XUIeCg)
+        switch (this.position)
         {
           case EAxisPosition.Left:
             if (this.jiR6jl13Bb - 10.0 <= (double) Event.X && this.jiR6jl13Bb >= (double) Event.X && (this.Eo969HTsnQ <= (double) Event.Y && this.ied6e07F0D >= (double) Event.Y))
@@ -1616,7 +1614,7 @@ label_47:
       }
       if (this.abOYnyZNZl && Event.Button == MouseButtons.Left)
       {
-        switch (this.gck6XUIeCg)
+        switch (this.position)
         {
           case EAxisPosition.Left:
             if (this.pad.MouseZoomYAxisEnabled)

@@ -1,7 +1,4 @@
 using System;
-//using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
 
 namespace FreeQuant.Data
 {
@@ -113,7 +110,7 @@ namespace FreeQuant.Data
 			}
 			catch (Exception ex)
 			{
-				Trace.WriteLine(ex);
+				Console.WriteLine(ex);
 			}
 		}
 
@@ -241,11 +238,11 @@ namespace FreeQuant.Data
 			}
 		}
 
-		private void EmitOrderBookEvent([In] MDSide obj0, [In] MDOperation obj1, [In] int obj2)
+		private void EmitOrderBookEvent(MDSide side, MDOperation operation, int obj2)
 		{
 			if (this.Changed == null)
 				return;
-			this.Changed(this, new OrderBookEventArgs(obj0, obj1, obj2));
+			this.Changed(this, new OrderBookEventArgs(side, operation, obj2));
 		}
 	}
 }

@@ -91,7 +91,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.indicator.get_Item(index);
+				return this.indicator[index];
 			}
 		}
 
@@ -102,7 +102,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.indicator.get_Item(dateTime);
+				return this.indicator[dateTime];
 			}
 		}
 
@@ -125,7 +125,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.indicator.get_Item(bar.DateTime);
+				return this.indicator[bar.DateTime];
 			}
 		}
 
@@ -172,7 +172,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.indicator.get_Item(dateTime);
+				return this.indicator[dateTime];
 			}
 		}
 
@@ -183,7 +183,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return this.indicator.get_Item(index);
+				return this.indicator[index];
 			}
 		}
 

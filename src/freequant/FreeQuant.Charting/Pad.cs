@@ -12,7 +12,7 @@ namespace FreeQuant.Charting
 	[Serializable]
 	public class Pad
 	{
-		private Pad.ut9JGY6223LcaEWEIv VN5zSfcsG;
+		private Pad.AxisManager VN5zSfcsG;
 		[Browsable(false)]
 		public bool Grid3D;
 		protected int fX1;
@@ -97,7 +97,7 @@ namespace FreeQuant.Charting
 		protected IChartTransformation fTransformation;
 		protected Color fSessionGridColor;
 		[NonSerialized]
-		private ContextMenu KtXo3eo8yY;
+		private ContextMenu contextMenu;
 		[NonSerialized]
 		private MenuItem rlboC951ES;
 		[NonSerialized]
@@ -121,11 +121,11 @@ namespace FreeQuant.Charting
 		{
 			get
 			{
-				return this.VN5zSfcsG.NHloRxNAlb;
+				return this.VN5zSfcsG.view3D; 
 			}
 			set
 			{
-				this.VN5zSfcsG.NHloRxNAlb = value;
+				this.VN5zSfcsG.view3D = value;
 			}
 		}
 
@@ -134,7 +134,7 @@ namespace FreeQuant.Charting
 		{
 			get
 			{
-				return this.VN5zSfcsG.K7qoPqVA9V;
+				return this.VN5zSfcsG.axises;
 			}
 		}
 
@@ -143,7 +143,7 @@ namespace FreeQuant.Charting
 		{
 			get
 			{
-				return this.VN5zSfcsG.K7qoPqVA9V[0];
+				return this.VN5zSfcsG.axises[0];
 			}
 		}
 
@@ -152,7 +152,7 @@ namespace FreeQuant.Charting
 		{
 			get
 			{
-				return this.VN5zSfcsG.K7qoPqVA9V[1];
+				return this.VN5zSfcsG.axises[1];
 			}
 		}
 
@@ -161,7 +161,7 @@ namespace FreeQuant.Charting
 		{
 			get
 			{
-				return this.VN5zSfcsG.K7qoPqVA9V[2];
+				return this.VN5zSfcsG.axises[2];
 			}
 		}
 
@@ -1920,7 +1920,7 @@ namespace FreeQuant.Charting
 		{
 			this.fPrimitives = new ArrayList();
 			Chart.Pad = this;
-			this.VN5zSfcsG = new Pad.ut9JGY6223LcaEWEIv(this);
+			this.VN5zSfcsG = new Pad.AxisManager(this);
 			this.fBackColor = Color.LightGray;
 			this.fForeColor = Color.White;
 			this.fX1 = 0;
@@ -1993,13 +1993,13 @@ namespace FreeQuant.Charting
 
 		private void yxJj9CwXy()
 		{
-			if (this.KtXo3eo8yY != null)
+			if (this.contextMenu != null)
 				return;
-			this.KtXo3eo8yY = new ContextMenu();
+			this.contextMenu = new ContextMenu();
 			this.rlboC951ES = new MenuItem();
 			this.kpXo6pj5Cs = new MenuItem();
 			MenuItem menuItem = new MenuItem();
-			this.KtXo3eo8yY.MenuItems.AddRange(new MenuItem[3]
+			this.contextMenu.MenuItems.AddRange(new MenuItem[3]
 			{
 				this.rlboC951ES,
 				menuItem,
@@ -2695,7 +2695,7 @@ namespace FreeQuant.Charting
 				{
 					this.yxJj9CwXy();
 					this.rlboC951ES.Text = "mnu1textqq" + this.fSelectedPrimitive.GetType().Name;
-					this.KtXo3eo8yY.Show((Control)this.fChart, new Point(Event.X, Event.Y));
+					this.contextMenu.Show((Control)this.fChart, new Point(Event.X, Event.Y));
 				}
 			}
 			this.fAxisLeft.MouseDown(Event);
@@ -2791,9 +2791,8 @@ namespace FreeQuant.Charting
 
 		public static void EmitNewTick(DateTime datetime)
 		{
-//      if (Pad.LFkonyUD7i == null)
-//        return;
-//      Pad.LFkonyUD7i((object) null, new NewTickEventArgs(datetime));
+			if (Pad.NewTick != null)
+				Pad.NewTick(null, new NewTickEventArgs(datetime));
 		}
 
 		private void H0Y9o0pgX([In] object obj0, [In] NewTickEventArgs obj1)
@@ -2819,14 +2818,13 @@ namespace FreeQuant.Charting
 
 		public void EmitZoom(bool zoom)
 		{
-//      if (this.EEZoo0ML5l == null)
-//        return;
-//      this.EEZoo0ML5l((object) null, new ZoomEventArgs(this.XMin, this.XMax, this.YMin, this.YMax, zoom));
+			if (this.Zoom != null)
+				this.Zoom(null, new ZoomEventArgs(this.XMin, this.XMax, this.YMin, this.YMax, zoom));
 		}
 
-		private void ruLesQ5Xv([In] object obj0, [In] EventArgs obj1)
+		private void ruLesQ5Xv(object sender, EventArgs e)
 		{
-			this.fPrimitives.Remove((object)this.fSelectedPrimitive);
+			this.fPrimitives.Remove(this.fSelectedPrimitive);
 			this.Update();
 		}
 
@@ -2836,67 +2834,65 @@ namespace FreeQuant.Charting
 		}
 
 		[Serializable]
-		private class ut9JGY6223LcaEWEIv
+		private class AxisManager
 		{
-			private Pad lAkoJHQf6Z;
-			private Pad.ut9JGY6223LcaEWEIv.joI5FOYuNJBoRabUZ0 z7ooMblc8S;
-			public Axis[] K7qoPqVA9V;
+			private Pad pad;
+			private Pad.AxisManager.joI5FOYuNJBoRabUZ0 z7ooMblc8S;
+			public Axis[] axises;
 			private bool om3oGeDKrb;
-			public object NHloRxNAlb;
+			public object view3D;
 
-			public ut9JGY6223LcaEWEIv([In] Pad obj0)
+			public AxisManager(Pad pad)
 			{
-				this.lAkoJHQf6Z = obj0;
-				this.z7ooMblc8S = new Pad.ut9JGY6223LcaEWEIv.joI5FOYuNJBoRabUZ0(obj0);
-				this.K7qoPqVA9V = new Axis[3]
+				this.pad = pad;
+				this.z7ooMblc8S = new Pad.AxisManager.joI5FOYuNJBoRabUZ0(pad);
+				this.axises = new Axis[3]
 				{
-					new Axis(obj0),
-					new Axis(obj0),
-					new Axis(obj0)
+					new Axis(pad),
+					new Axis(pad),
+					new Axis(pad)
 				};
-				for (int index = 0; index < this.K7qoPqVA9V.Length; ++index)
+				for (int index = 0; index < this.axises.Length; ++index)
 				{
-					this.K7qoPqVA9V[index].Max = 1.0;
-					this.K7qoPqVA9V[index].Min = 0.0;
+					this.axises[index].Max = 1.0;
+					this.axises[index].Min = 0.0;
 				}
 			}
 
-			[SpecialName]
 			public bool uRWofxiHHl()
 			{
 				return this.om3oGeDKrb;
 			}
 
-			[SpecialName]
-			public void jYkoFPyqxe([In] bool obj0)
+			public void jYkoFPyqxe(bool obj0)
 			{
 				this.om3oGeDKrb = obj0;
 				if (obj0)
 				{
 					this.z7ooMblc8S.PmGoDE5hSO();
-					this.lAkoJHQf6Z.ForeColor = this.lAkoJHQf6Z.BackColor;
-					this.lAkoJHQf6Z.AntiAliasingEnabled = true;
+					this.pad.ForeColor = this.pad.BackColor;
+					this.pad.AntiAliasingEnabled = true;
 				}
 				else
 					this.z7ooMblc8S.DXRo8T6EZV();
 			}
 
-			public void DmboYWaZgW([In] double obj0, [In] double obj1)
+			public void DmboYWaZgW(double obj0, double obj1)
 			{
-				this.K7qoPqVA9V[0].SetRange(obj0, obj1);
+				this.axises[0].SetRange(obj0, obj1);
 			}
 
-			public void ebUoB1tdv8([In] double obj0, [In] double obj1)
+			public void ebUoB1tdv8(double obj0, double obj1)
 			{
-				this.K7qoPqVA9V[1].SetRange(obj0, obj1);
+				this.axises[1].SetRange(obj0, obj1);
 			}
 
-			public void YKPolLFPSm([In] double obj0, [In] double obj1)
+			public void YKPolLFPSm(double obj0, double obj1)
 			{
-				this.K7qoPqVA9V[2].SetRange(obj0, obj1);
+				this.axises[2].SetRange(obj0, obj1);
 			}
 
-			public void iGDoKyjUVx([In] double obj0, [In] double obj1, [In] double obj2, [In] double obj3)
+			public void iGDoKyjUVx(double obj0, double obj1, double obj2, double obj3)
 			{
 				this.DmboYWaZgW(obj0, obj1);
 				this.ebUoB1tdv8(obj2, obj3);
@@ -2905,70 +2901,70 @@ namespace FreeQuant.Charting
 			[Serializable]
 			private class joI5FOYuNJBoRabUZ0
 			{
-				private Pad Tk3oZwwj0J;
+				private Pad pad;
 				private bool g1aoXGuoJh;
-				private Axis a32og8iTgD;
-				private Axis pnGobIDDW0;
-				private Axis WvtoESv7Qa;
-				private Axis MsZoH8cva0;
+				private Axis axisTop;
+				private Axis axisBottom;
+				private Axis axisLeft;
+				private Axis axisRight;
 
-				public joI5FOYuNJBoRabUZ0([In] Pad obj0)
+				public joI5FOYuNJBoRabUZ0(Pad pad)
 				{
-					this.Tk3oZwwj0J = obj0;
-					this.a32og8iTgD = new Axis(obj0);
-					this.pnGobIDDW0 = new Axis(obj0);
-					this.WvtoESv7Qa = new Axis(obj0);
-					this.MsZoH8cva0 = new Axis(obj0);
+					this.pad = pad;
+					this.axisTop = new Axis(pad);
+					this.axisBottom = new Axis(pad);
+					this.axisLeft = new Axis(pad);
+					this.axisRight = new Axis(pad);
 				}
 
-				private void LPYoNcQSe0([In] Axis obj0, [In] Axis obj1)
+				private void CopyAxis(Axis axis1, Axis axis2)
 				{
-					obj0.LabelEnabled = obj1.LabelEnabled;
-					obj0.MajorTicksEnabled = obj1.MajorTicksEnabled;
-					obj0.MinorTicksEnabled = obj1.MinorTicksEnabled;
-					obj0.GridEnabled = obj1.GridEnabled;
-					obj0.MinorGridEnabled = obj1.MinorGridEnabled;
-					obj0.SetRange(obj1.Min, obj1.Max);
-					obj0.Enabled = obj1.Enabled;
+					axis1.LabelEnabled = axis2.LabelEnabled;
+					axis1.MajorTicksEnabled = axis2.MajorTicksEnabled;
+					axis1.MinorTicksEnabled = axis2.MinorTicksEnabled;
+					axis1.GridEnabled = axis2.GridEnabled;
+					axis1.MinorGridEnabled = axis2.MinorGridEnabled;
+					axis1.SetRange(axis2.Min, axis2.Max);
+					axis1.Enabled = axis2.Enabled;
 				}
 
-				private void FGko2VPp2g([In] Axis obj0)
+				private void ResetAxis(Axis axis)
 				{
-					obj0.LabelEnabled = false;
-					obj0.MajorTicksEnabled = false;
-					obj0.MinorTicksEnabled = false;
-					obj0.GridEnabled = false;
-					obj0.MinorGridEnabled = false;
-					obj0.SetRange(0.0, 1.0);
-					obj0.Enabled = false;
+					axis.LabelEnabled = false;
+					axis.MajorTicksEnabled = false;
+					axis.MinorTicksEnabled = false;
+					axis.GridEnabled = false;
+					axis.MinorGridEnabled = false;
+					axis.SetRange(0.0, 1.0);
+					axis.Enabled = false;
 				}
 
 				public void fGloiQPWIx()
 				{
-					this.LPYoNcQSe0(this.a32og8iTgD, this.Tk3oZwwj0J.fAxisTop);
-					this.LPYoNcQSe0(this.pnGobIDDW0, this.Tk3oZwwj0J.fAxisBottom);
-					this.LPYoNcQSe0(this.WvtoESv7Qa, this.Tk3oZwwj0J.fAxisLeft);
-					this.LPYoNcQSe0(this.MsZoH8cva0, this.Tk3oZwwj0J.fAxisRight);
+					this.CopyAxis(this.axisTop, this.pad.fAxisTop);
+					this.CopyAxis(this.axisBottom, this.pad.fAxisBottom);
+					this.CopyAxis(this.axisLeft, this.pad.fAxisLeft);
+					this.CopyAxis(this.axisRight, this.pad.fAxisRight);
 					this.g1aoXGuoJh = true;
 				}
 
 				public void PmGoDE5hSO()
 				{
 					this.fGloiQPWIx();
-					this.FGko2VPp2g(this.Tk3oZwwj0J.AxisTop);
-					this.FGko2VPp2g(this.Tk3oZwwj0J.AxisBottom);
-					this.FGko2VPp2g(this.Tk3oZwwj0J.AxisLeft);
-					this.FGko2VPp2g(this.Tk3oZwwj0J.AxisRight);
+					this.ResetAxis(this.pad.AxisTop);
+					this.ResetAxis(this.pad.AxisBottom);
+					this.ResetAxis(this.pad.AxisLeft);
+					this.ResetAxis(this.pad.AxisRight);
 				}
 
 				public void DXRo8T6EZV()
 				{
 					if (!this.g1aoXGuoJh)
 						return;
-					this.LPYoNcQSe0(this.Tk3oZwwj0J.fAxisTop, this.a32og8iTgD);
-					this.LPYoNcQSe0(this.Tk3oZwwj0J.fAxisBottom, this.pnGobIDDW0);
-					this.LPYoNcQSe0(this.Tk3oZwwj0J.fAxisLeft, this.WvtoESv7Qa);
-					this.LPYoNcQSe0(this.Tk3oZwwj0J.fAxisRight, this.MsZoH8cva0);
+					this.CopyAxis(this.pad.fAxisTop, this.axisTop);
+					this.CopyAxis(this.pad.fAxisBottom, this.axisBottom);
+					this.CopyAxis(this.pad.fAxisLeft, this.axisLeft);
+					this.CopyAxis(this.pad.fAxisRight, this.axisRight);
 				}
 			}
 		}

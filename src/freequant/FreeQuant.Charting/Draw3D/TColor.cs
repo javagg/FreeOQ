@@ -29,9 +29,9 @@ namespace FreeQuant.Charting.Draw3D
 			this.b = b; 
 		}
 
-		public TColor(double Gray)
+		public TColor(double gray)
 		{
-			this.r = this.g = this.b = Gray;
+			this.r = this.g = this.b = gray;
 		}
 
 		public TColor(Color c)
@@ -68,10 +68,10 @@ namespace FreeQuant.Charting.Draw3D
 
 		public int Get888()
 		{
-			return ((int)((double)byte.MaxValue * this.r) << 16) + ((int)((double)byte.MaxValue * this.g) << 8) + (int)((double)byte.MaxValue * this.b);
+			return ((int)(byte.MaxValue * this.r) << 16) + ((int)(byte.MaxValue * this.g) << 8) + (int)(byte.MaxValue * this.b);
 		}
 
-		private void K7ICoOhHGw([In] ref double obj0)
+		private void K7ICoOhHGw(ref double obj0)
 		{
 			if (obj0 < 1.0 / 254.0)
 				obj0 = 1.0 / 254.0;

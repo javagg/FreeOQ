@@ -1,7 +1,6 @@
 ﻿using OpenQuant.API.Indicators;
 using FreeQuant.Data;
 using FreeQuant.FIX;
-using FreeQuant.Indicators;
 using FreeQuant.Series;
 using FreeQuant.Trading;
 using System;
@@ -247,32 +246,31 @@ namespace OpenQuant.API
 			}
 		}
 
-//		internal static RegressionDistanceMode Convert(FreeQuant.Indicators.RegressionDistanceMode mode)
-//		{
-//			return mode;
-//			switch ((int)mode)
-//			{
-//				case 0:
-//					return RegressionDistanceMode.Time;
-//				case 1:
-//					return RegressionDistanceMode.Index;
-//				default:
-//					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
-//			}
-//		}
+		internal static RegressionDistanceMode Convert(FreeQuant.Indicators.RegressionDistanceMode mode)
+		{
+			switch (mode)
+			{
+				case FreeQuant.Indicators.RegressionDistanceMode.Time:
+					return RegressionDistanceMode.Time;
+				case FreeQuant.Indicators.RegressionDistanceMode.Index:
+					return RegressionDistanceMode.Index;
+				default:
+					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
+			}
+		}
 
-//		internal static RegressionDistanceMode Convert(FreeQuant.Indicators.RegressionDistanceMode mode)
-//		{
-//			switch (mode)
-//			{
-//				case RegressionDistanceMode.Time:
-//					return (RegressionDistanceMode)0;
-//				case RegressionDistanceMode.Index:
-//					return (RegressionDistanceMode)1;
-//				default:
-//					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
-//			}
-//		}
+		internal static FreeQuant.Indicators.RegressionDistanceMode Convert(RegressionDistanceMode mode)
+		{
+			switch (mode)
+			{
+				case RegressionDistanceMode.Time:
+					return FreeQuant.Indicators.RegressionDistanceMode.Time;
+				case RegressionDistanceMode.Index:
+					return FreeQuant.Indicators.RegressionDistanceMode.Index;
+				default:
+					throw new NotImplementedException("RegressionDistanceMode is not supported : " + (object)mode);
+			}
+		}
 
 		internal static FreeQuant.Data.BarData Convert(BarData barData)
 		{
@@ -333,78 +331,75 @@ namespace OpenQuant.API
 			}
 		}
 
-		internal static StopType Convert(StopType stopType)
+		internal static StopType Convert(FreeQuant.Trading.StopType stopType)
 		{
-			return stopType;
-//			switch (stopType)
-//			{
-//				case StopType.Fixed:
-//					return (StopType)0;
-//				case StopType.Trailing:
-//					return (StopType)1;
-//				case StopType.Time:
-//					return (StopType)2;
-//				default:
-//					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
-//			}
+			switch (stopType)
+			{
+				case FreeQuant.Trading.StopType.Fixed:
+					return StopType.Fixed;
+				case FreeQuant.Trading.StopType.Trailing:
+					return StopType.Trailing;
+				case FreeQuant.Trading.StopType.Time:
+					return StopType.Time;
+				default:
+					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
+			}
 		}
 
-//		internal static StopType Convert(StopType stopType)
-//		{
-//			switch ((int)stopType)
-//			{
-//				case 0:
-//					return StopType.Fixed;
-//				case 1:
-//					return StopType.Trailing;
-//				case 2:
-//					return StopType.Time;
-//				default:
-//					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
-//			}
-//		}
-
-		internal static StopMode Convert(StopMode stopMode)
+		internal static FreeQuant.Trading.StopType Convert(StopType stopType)
 		{
-			return stopMode;
-//			switch (stopMode)
-//			{
-//				case StopMode.Absolute:
-//					return (StopMode)0;
-//				case StopMode.Percent:
-//					return (StopMode)1;
-//				default:
-//					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
-//			}
+			switch (stopType)
+			{
+				case StopType.Fixed:
+					return FreeQuant.Trading.StopType.Fixed;
+				case StopType.Trailing:
+					return FreeQuant.Trading.StopType.Trailing;
+				case StopType.Time:
+					return FreeQuant.Trading.StopType.Time;
+				default:
+					throw new NotImplementedException("Stop type is not supported : " + (object)stopType);
+			}
 		}
 
-//		internal static StopMode Convert(StopMode stopMode)
-//		{
-//			switch ((int)stopMode)
-//			{
-//				case 0:
-//					return StopMode.Absolute;
-//				case 1:
-//					return StopMode.Percent;
-//				default:
-//					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
-//			}
-//		}
-
-		internal static StopStatus Convert(StopStatus stopStatus)
+		internal static StopMode Convert(FreeQuant.Trading.StopMode stopMode)
 		{
-			return stopStatus;
-//			switch (stopStatus)
-//			{
-//				case StopStatus.Active:
-//					return (StopStatus)0;
-//				case StopStatus.Executed:
-//					return (StopStatus)1;
-//				case StopStatus.Canceled:
-//					return (StopStatus)2;
-//				default:
-//					throw new NotImplementedException("Stop status is not supported : " + (object)stopStatus);
-//			}
+			switch (stopMode)
+			{
+				case FreeQuant.Trading.StopMode.Absolute:
+					return StopMode.Absolute;
+				case FreeQuant.Trading.StopMode.Percent:
+					return StopMode.Percent;
+				default:
+					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
+			}
+		}
+
+		internal static FreeQuant.Trading.StopMode Convert(StopMode stopMode)
+		{
+			switch (stopMode)
+			{
+				case StopMode.Absolute:
+					return FreeQuant.Trading.StopMode.Absolute;
+				case StopMode.Percent:
+					return FreeQuant.Trading.StopMode.Percent;
+				default:
+					throw new NotImplementedException("Stop mode is not supported : " + (object)stopMode);
+			}
+		}
+
+		internal static StopStatus Convert(FreeQuant.Trading.StopStatus stopStatus)
+		{
+			switch (stopStatus)
+			{
+				case FreeQuant.Trading.StopStatus.Active:
+					return StopStatus.Active;
+				case FreeQuant.Trading.StopStatus.Executed:
+					return StopStatus.Executed;
+				case FreeQuant.Trading.StopStatus.Canceled:
+					return StopStatus.Canceled;
+				default:
+					throw new NotImplementedException("Stop status is not supported : " + (object)stopStatus);
+			}
 		}
 
 		internal static PutCall Convert(PutOrCall value)
@@ -433,31 +428,35 @@ namespace OpenQuant.API
 			}
 		}
 
-		internal static IndicatorStyle Convert(EIndicatorStyle indicatorStyle)
+		internal static IndicatorStyle Convert(FreeQuant.Indicators.EIndicatorStyle indicatorStyle)
 		{
-			switch ((int)indicatorStyle)
+			switch (indicatorStyle)
 			{
-				case 0:
+				case FreeQuant.Indicators.EIndicatorStyle.SmartQuant:
 					return IndicatorStyle.SmartQuant;
-				case 1:
+				case FreeQuant.Indicators.EIndicatorStyle.MetaStock:
 					return IndicatorStyle.MetaStock;
-				case 2:
+				case FreeQuant.Indicators.EIndicatorStyle.FreeQuant:
 					return IndicatorStyle.FreeQuant;
+				case FreeQuant.Indicators.EIndicatorStyle.QuantStudio:
+					return IndicatorStyle.QuantStudio;
 				default:
 					throw new NotImplementedException("Indicator style is not supported: " + indicatorStyle);
 			}
 		}
 
-		internal static EIndicatorStyle Convert(IndicatorStyle indicatorStyle)
+		internal static FreeQuant.Indicators.EIndicatorStyle Convert(IndicatorStyle indicatorStyle)
 		{
 			switch (indicatorStyle)
 			{
 				case IndicatorStyle.SmartQuant:
-					return (EIndicatorStyle)0;
+					return FreeQuant.Indicators.EIndicatorStyle.SmartQuant;
 				case IndicatorStyle.MetaStock:
-					return (EIndicatorStyle)1;
+					return FreeQuant.Indicators.EIndicatorStyle.MetaStock;
+				case IndicatorStyle.QuantStudio:
+					return FreeQuant.Indicators.EIndicatorStyle.QuantStudio;
 				case IndicatorStyle.FreeQuant:
-					return (EIndicatorStyle)2;
+					return FreeQuant.Indicators.EIndicatorStyle.FreeQuant;
 				default:
 					throw new NotSupportedException(string.Format("IndicatorStyle is not supported - {0}", indicatorStyle));
 			}

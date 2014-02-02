@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using Configuration = OpenQuant.Config.Configuration;
 
 namespace OpenQuant.API
 {
@@ -72,7 +73,7 @@ namespace OpenQuant.API
     {
       get
       {
-        switch (OpenQuant.Config.Configuration.ActiveMode)
+				switch (Configuration.ActiveMode)
         {
           case ConfigurationMode.Simulation:
             return StrategyMode.Simulation;
@@ -90,7 +91,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return new ExecutionProvider(OpenQuant.Config.Configuration.Active.ExecutionProvider);
+				return new ExecutionProvider(Configuration.Active.ExecutionProvider);
       }
     }
 
@@ -98,7 +99,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return new MarketDataProvider(OpenQuant.Config.Configuration.Active.MarketDataProvider);
+				return new MarketDataProvider(Configuration.Active.MarketDataProvider);
       }
     }
 
@@ -596,7 +597,7 @@ namespace OpenQuant.API
     public Order MarketOrder(OrderSide side, double qty, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new MarketOrder(this.sq_Instrument, Side.Sell, qty, text) : (SingleOrder) new MarketOrder(this.sq_Instrument, Side.Buy, qty, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -622,7 +623,7 @@ namespace OpenQuant.API
     public Order StopOrder(OrderSide side, double qty, double stopPrice, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new StopOrder(this.sq_Instrument, Side.Sell, qty, stopPrice, text) : (SingleOrder) new StopOrder(this.sq_Instrument, Side.Buy, qty, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -648,7 +649,7 @@ namespace OpenQuant.API
     public Order LimitOrder(OrderSide side, double qty, double limitPrice, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new LimitOrder(this.sq_Instrument, Side.Sell, qty, limitPrice, text) : (SingleOrder) new LimitOrder(this.sq_Instrument, Side.Buy, qty, limitPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -674,7 +675,7 @@ namespace OpenQuant.API
     public Order StopLimitOrder(OrderSide side, double qty, double limitPrice, double stopPrice, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new StopLimitOrder(this.sq_Instrument, Side.Sell, qty, limitPrice, stopPrice, text) : (SingleOrder) new StopLimitOrder(this.sq_Instrument, Side.Buy, qty, limitPrice, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -700,7 +701,7 @@ namespace OpenQuant.API
     public Order MarketOrder(Instrument instrument, OrderSide side, double qty, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new MarketOrder(instrument.instrument, Side.Sell, qty, text) : (SingleOrder) new MarketOrder(instrument.instrument, Side.Buy, qty, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -726,7 +727,7 @@ namespace OpenQuant.API
     public Order StopOrder(Instrument instrument, OrderSide side, double qty, double stopPrice, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new StopOrder(instrument.instrument, Side.Sell, qty, stopPrice, text) : (SingleOrder) new StopOrder(instrument.instrument, Side.Buy, qty, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -752,7 +753,7 @@ namespace OpenQuant.API
     public Order LimitOrder(Instrument instrument, OrderSide side, double qty, double limitPrice, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new LimitOrder(instrument.instrument, Side.Sell, qty, limitPrice, text) : (SingleOrder) new LimitOrder(instrument.instrument, Side.Buy, qty, limitPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -778,7 +779,7 @@ namespace OpenQuant.API
     public Order StopLimitOrder(Instrument instrument, OrderSide side, double qty, double limitPrice, double stopPrice, string text)
     {
       SingleOrder order1 = side != OrderSide.Buy ? (SingleOrder) new StopLimitOrder(instrument.instrument, Side.Sell, qty, limitPrice, stopPrice, text) : (SingleOrder) new StopLimitOrder(instrument.instrument, Side.Buy, qty, limitPrice, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -804,7 +805,7 @@ namespace OpenQuant.API
     public Order BuyOrder(double qty, string text)
     {
       SingleOrder order1 = (SingleOrder) new MarketOrder(this.sq_Instrument, Side.Buy, qty, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -815,7 +816,7 @@ namespace OpenQuant.API
     public Order SellOrder(double qty, string text)
     {
       SingleOrder order1 = (SingleOrder) new MarketOrder(this.sq_Instrument, Side.Sell, qty, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -856,7 +857,7 @@ namespace OpenQuant.API
     public Order BuyStopOrder(double qty, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopOrder(this.sq_Instrument, Side.Buy, qty, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -867,7 +868,7 @@ namespace OpenQuant.API
     public Order SellStopOrder(double qty, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopOrder(this.sq_Instrument, Side.Sell, qty, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -908,7 +909,7 @@ namespace OpenQuant.API
     public Order BuyLimitOrder(double qty, double limitPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new LimitOrder(this.sq_Instrument, Side.Buy, qty, limitPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -919,7 +920,7 @@ namespace OpenQuant.API
     public Order SellLimitOrder(double qty, double limitPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new LimitOrder(this.sq_Instrument, Side.Sell, qty, limitPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -960,7 +961,7 @@ namespace OpenQuant.API
     public Order BuyStopLimitOrder(double qty, double limitPrice, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopLimitOrder(this.sq_Instrument, Side.Buy, qty, limitPrice, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -971,7 +972,7 @@ namespace OpenQuant.API
     public Order SellStopLimitOrder(double qty, double limitPrice, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopLimitOrder(this.sq_Instrument, Side.Sell, qty, limitPrice, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1012,7 +1013,7 @@ namespace OpenQuant.API
     public Order BuyOrder(Instrument instrument, double qty, string text)
     {
       SingleOrder order1 = (SingleOrder) new MarketOrder(instrument.instrument, Side.Buy, qty, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1023,7 +1024,7 @@ namespace OpenQuant.API
     public Order SellOrder(Instrument instrument, double qty, string text)
     {
       SingleOrder order1 = (SingleOrder) new MarketOrder(instrument.instrument, Side.Sell, qty, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1064,7 +1065,7 @@ namespace OpenQuant.API
     public Order BuyStopOrder(Instrument instrument, double qty, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopOrder(instrument.instrument, Side.Buy, qty, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1075,7 +1076,7 @@ namespace OpenQuant.API
     public Order SellStopOrder(Instrument instrument, double qty, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopOrder(instrument.instrument, Side.Sell, qty, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1116,7 +1117,7 @@ namespace OpenQuant.API
     public Order BuyLimitOrder(Instrument instrument, double qty, double limitPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new LimitOrder(instrument.instrument, Side.Buy, qty, limitPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1127,7 +1128,7 @@ namespace OpenQuant.API
     public Order SellLimitOrder(Instrument instrument, double qty, double limitPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new LimitOrder(instrument.instrument, Side.Sell, qty, limitPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1168,7 +1169,7 @@ namespace OpenQuant.API
     public Order BuyStopLimitOrder(Instrument instrument, double qty, double limitPrice, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopLimitOrder(instrument.instrument, Side.Buy, qty, limitPrice, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1179,7 +1180,7 @@ namespace OpenQuant.API
     public Order SellStopLimitOrder(Instrument instrument, double qty, double limitPrice, double stopPrice, string text)
     {
       SingleOrder order1 = (SingleOrder) new StopLimitOrder(instrument.instrument, Side.Sell, qty, limitPrice, stopPrice, text);
-      order1.set_Strategy(this.strategyName);
+			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
       Map.OQ_SQ_Order[(object) order2] = (object) order1;
@@ -1357,7 +1358,7 @@ namespace OpenQuant.API
     {
       foreach (SingleOrder singleOrder in Enumerable.ToArray<SingleOrder>(Enumerable.Select<Order, SingleOrder>(Enumerable.Cast<Order>((IEnumerable) OpenQuant.Orders), (Func<Order, SingleOrder>) (o => o.order))))
       {
-        if (!singleOrder.get_IsDone() && singleOrder.get_Strategy() == this.strategyName && singleOrder.get_Instrument() == this.instrument.instrument)
+        if (!singleOrder.IsDone && singleOrder.Strategy == this.strategyName && singleOrder.Instrument == this.instrument.instrument)
           singleOrder.Cancel();
       }
     }
@@ -1369,7 +1370,7 @@ namespace OpenQuant.API
         while (enumerator.MoveNext())
         {
           SingleOrder current = enumerator.Current;
-          if (!current.get_IsDone() && current.get_Strategy() == this.strategyName)
+          if (!current.IsDone && current.Strategy == this.strategyName)
             current.Cancel();
         }
       }
@@ -1390,7 +1391,7 @@ namespace OpenQuant.API
     public void Draw(Indicator indicator)
     {
       int padNumber = -1;
-      switch ((int) indicator.indicator.get_Type())
+      switch ((int) indicator.indicator.Type)
       {
         case 0:
         case 2:
@@ -1425,7 +1426,7 @@ namespace OpenQuant.API
     public void Draw(Indicator indicator, DrawStyle style)
     {
       int padNumber = -1;
-      switch ((int) indicator.indicator.get_Type())
+      switch ((int) indicator.indicator.Type)
       {
         case 0:
         case 2:

@@ -4,16 +4,16 @@ using System.Runtime.CompilerServices;
 
 namespace FreeQuant
 {
-  public class PluginEventArgs : EventArgs
-  {
-    private Plugin rT6maA5OHc;
+	public class PluginEventArgs : EventArgs
+	{
+		private Plugin plugin = null;
 
-    public Plugin Plugin
-    {
-        get
-      {
-        return (Plugin) null;
-      }
-    }
-  }
+		public Plugin Plugin
+		{
+			get
+			{
+				return plugin;
+			}
+		}
+	}
 }

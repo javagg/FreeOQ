@@ -1,7 +1,6 @@
 using FreeQuant.Series;
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -70,17 +69,16 @@ namespace FreeQuant.Testing.TesterItems
     public event TesterItemEventHandler PropertyChanged;
 
    
-		public TesterItem():  base()
+		public TesterItem()
     {
-      this.name = "";
-      this.description = "";
+			this.name = String.Empty;
+			this.description = String.Empty;
 
     }
 
    
-		public TesterItem(string name):  base()
+		public TesterItem(string name)
     {
-      this.name = "";
       this.description = "";
       this.name = name;
     }
@@ -97,8 +95,8 @@ namespace FreeQuant.Testing.TesterItems
 			if (!(format.ToLower() != "sdd"))
         return this.DateTimeValueToString();
       StringBuilder stringBuilder = new StringBuilder();
-      stringBuilder.AppendFormat(format, (object) this.LastValue);
-      return ((object) stringBuilder).ToString();
+      stringBuilder.AppendFormat(format, this.LastValue);
+      return stringBuilder.ToString();
     }
 
    

@@ -40,7 +40,7 @@ namespace OpenQuant.API
 			if (FreeQuant.Providers.ProviderManager.HistoricalDataProviders.Contains(provider))
 			{
 				IHistoricalDataProvider provider1 = FreeQuant.Providers.ProviderManager.HistoricalDataProviders[provider];
-				foreach (FreeQuant.Data.Bar bar in size != 86400 ? (SmartQuant.Series.TimeSeries) FreeQuant.Instruments.DataManager.GetHistoricalBars(provider1, instrument.instrument, begin, end, (long) size) : (SmartQuant.Series.TimeSeries) SmartQuant.Instruments.DataManager.GetHistoricalDailies(provider1, instrument.instrument, begin, end))
+				foreach (FreeQuant.Data.Bar bar in size != 86400 ? (FreeQuant.Series.TimeSeries) FreeQuant.Instruments.DataManager.GetHistoricalBars(provider1, instrument.instrument, begin, end, (long) size) : (FreeQuant.Series.TimeSeries) FreeQuant.Instruments.DataManager.GetHistoricalDailies(provider1, instrument.instrument, begin, end))
 					barSeries.series.Add(bar);
 			}
 			return barSeries;
@@ -60,9 +60,9 @@ namespace OpenQuant.API
 		public static QuoteSeries GetHistoricalQuotes(string provider, Instrument instrument, DateTime begin, DateTime end)
 		{
 			QuoteSeries quoteSeries = new QuoteSeries();
-			if (SmartQuant.Providers.ProviderManager.HistoricalDataProviders.Contains(provider))
+			if (FreeQuant.Providers.ProviderManager.HistoricalDataProviders.Contains(provider))
 			{
-				foreach (SmartQuant.Data.Quote quote in (DataArray) SmartQuant.Instruments.DataManager.GetHistoricalQuotes(SmartQuant.Providers.ProviderManager.HistoricalDataProviders[provider], instrument.instrument, begin, end))
+				foreach (FreeQuant.Data.Quote quote in (DataArray) FreeQuant.Instruments.DataManager.GetHistoricalQuotes(FreeQuant.Providers.ProviderManager.HistoricalDataProviders[provider], instrument.instrument, begin, end))
 					quoteSeries.series.Add((IDataObject)quote);
 			}
 			return quoteSeries;
@@ -122,7 +122,7 @@ namespace OpenQuant.API
 
 		public static void Add(Instrument instrument, DateTime datetime, double open, double high, double low, double close, long volume, long size)
 		{
-			DataManager.Add(instrument, new Bar(new SmartQuant.Data.Bar(datetime, open, high, low, close, volume, size)));
+			DataManager.Add(instrument, new Bar(new FreeQuant.Data.Bar(datetime, open, high, low, close, volume, size)));
 		}
 
 		public static void Add(Instrument instrument, Trade trade)

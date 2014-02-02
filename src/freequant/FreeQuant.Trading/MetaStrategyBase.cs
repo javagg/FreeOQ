@@ -22,7 +22,6 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
 
-
 namespace FreeQuant.Trading
 {
   public abstract class MetaStrategyBase : IOptimizable
@@ -935,40 +934,40 @@ namespace FreeQuant.Trading
     }
 
    
-    internal void zeFW20hc2d([In] Instrument obj0, [In] IDrawable obj1, [In] int obj2)
+    internal void zeFW20hc2d(Instrument instrument, IDrawable primitive, int padNumber)
     {
-      if (!this.drawingPrimitives.ContainsKey((object) obj0))
+      if (!this.drawingPrimitives.ContainsKey(instrument))
       {
-        this.drawingPrimitives.Add((object) obj0, (object) new SortedList()
+        this.drawingPrimitives.Add(instrument, new SortedList()
         {
           {
-            (object) obj2,
-            (object) new ArrayList()
+            padNumber,
+            new ArrayList()
             {
-              (object) obj1
+              primitive
             }
           }
         });
       }
       else
       {
-        SortedList sortedList = this.drawingPrimitives[(object) obj0] as SortedList;
-        if (!sortedList.ContainsKey((object) obj2))
+        SortedList sortedList = this.drawingPrimitives[instrument] as SortedList;
+        if (!sortedList.ContainsKey(padNumber))
         {
-          sortedList.Add((object) obj2, (object) new ArrayList()
+					sortedList.Add(padNumber, new ArrayList()
           {
-            (object) obj1
+            primitive
           });
         }
         else
         {
-          ArrayList arrayList = sortedList[(object) obj2] as ArrayList;
+          ArrayList arrayList = sortedList[padNumber] as ArrayList;
           bool flag = true;
-          if (obj1 is TimeSeries)
+          if (primitive is TimeSeries)
           {
-            for (int index = 0; index < arrayList.Count; ++index)
+						for (int i = 0; i < arrayList.Count; ++i)
             {
-              if (arrayList[index] is TimeSeries && (obj1 as TimeSeries).Name == (arrayList[index] as TimeSeries).Name && (obj1 as TimeSeries).Name != "")
+              if (arrayList[i] is TimeSeries && (primitive as TimeSeries).Name == (arrayList[i] as TimeSeries).Name && (primitive as TimeSeries).Name != "")
               {
                 flag = false;
                 break;
@@ -977,7 +976,7 @@ namespace FreeQuant.Trading
           }
           if (!flag)
             return;
-          arrayList.Add((object) obj1);
+          arrayList.Add(primitive);
         }
       }
     }

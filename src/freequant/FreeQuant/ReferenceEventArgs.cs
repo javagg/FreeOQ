@@ -1,23 +1,14 @@
 using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant
 {
-  public class ReferenceEventArgs : EventArgs
-  {
-    private Reference aOxkpmRNt;
+	public class ReferenceEventArgs : EventArgs
+	{
+		public Reference Reference { get; private set; }
 
-    public Reference Reference
-    {
-       get
-      {
-        return (Reference) null;
-      }
-    }
-
-    public ReferenceEventArgs(Reference reference)
-    {
-    }
-  }
+		public ReferenceEventArgs(Reference reference)
+		{
+			this.Reference = reference;
+		}
+	}
 }

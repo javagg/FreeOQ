@@ -102,7 +102,7 @@ namespace FreeQuant.Indicators
     
     protected override void Init()
     {
-			this.Name = "SMA"+ (object) this.fLength ;
+			this.Name = "SMA"+ this.fLength ;
 			this.Title ="SMA";
       this.fType = EIndicatorType.Price;
       this.Clear();
@@ -110,8 +110,8 @@ namespace FreeQuant.Indicators
       if (this.fInput == null)
         return;
       if (this.fInput is BarSeries)
-				this.Name =  (object) this.fLength +  (string) (object) this.fOption ;
-			if (TimeSeries.nameOption != ENameOption.Long)
+				this.Name = ""+ this.fLength + this.fOption ;
+			if (TimeSeries.fNameOption != ENameOption.Long)
         return;
       this.Name = this.fInput.Name + this.Name;
     }

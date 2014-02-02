@@ -264,7 +264,7 @@ namespace OpenQuant.API.Plugins
       this.provider = provider;
       this.BarFactory = (IBarFactory) new FreeQuant.Providers.BarFactory(false);
       this.orderRecords = new Dictionary<Order, OrderRecord>();
-      this.historicalDataRequests = new Dictionary<string, OpenQuant.API.HistoricalDataRequest>();
+      this.historicalDataRequests = new Dictionary<string, HistoricalDataRequest>();
     }
 
     public void Connect(int timeout)
@@ -343,7 +343,7 @@ namespace OpenQuant.API.Plugins
       for (int i = 0; i < request.NoRelatedSym; ++i)
       {
         FreeQuant.Instruments.Instrument instrument1 = FreeQuant.Instruments.InstrumentManager.Instruments[request.GetRelatedSymGroup(i).Symbol];
-        OpenQuant.API.Instrument instrument2 = Map.SQ_OQ_Instrument[(object) instrument1] as OpenQuant.API.Instrument;
+        Instrument instrument2 = Map.SQ_OQ_Instrument[(object) instrument1] as Instrument;
         switch (request.SubscriptionRequestType)
         {
           case '1':
@@ -390,7 +390,7 @@ namespace OpenQuant.API.Plugins
 
     public void EmitMarketDepth(Instrument instrument, DateTime time, BidAsk side, OrderBookAction action, double price, int size, int position)
     {
-      MarketDepth marketDepth = new MarketDepth(time, string.Empty, position, OpenQuant.API.EnumConverter.Convert(action), OpenQuant.API.EnumConverter.Convert(side), price, size);
+      MarketDepth marketDepth = new MarketDepth(time, string.Empty, position, EnumConverter.Convert(action), EnumConverter.Convert(side), price, size);
       if (this.NewMarketDepth == null)
         return;
       this.NewMarketDepth((object) this, new MarketDepthEventArgs(marketDepth, (IFIXInstrument) instrument.instrument, (IMarketDataProvider) this));
@@ -398,7 +398,7 @@ namespace OpenQuant.API.Plugins
 
     public void EmitBarOpen(Instrument instrument, BarType barType, long barSize, DateTime beginDateTime, DateTime endDateTime, double open, double high, double low, double close, long volume)
     {
-      FreeQuant.Data.Bar bar = new FreeQuant.Data.Bar(OpenQuant.API.EnumConverter.Convert(barType), barSize, beginDateTime, endDateTime, open, high, low, close, volume, 0L);
+      FreeQuant.Data.Bar bar = new FreeQuant.Data.Bar(EnumConverter.Convert(barType), barSize, beginDateTime, endDateTime, open, high, low, close, volume, 0L);
       if (this.MarketDataFilter != null)
         bar = this.MarketDataFilter.FilterBarOpen(bar, instrument.Symbol);
       if (bar == null)
@@ -408,7 +408,7 @@ namespace OpenQuant.API.Plugins
 
     public void EmitBar(Instrument instrument, BarType barType, long barSize, DateTime beginDateTime, DateTime endDateTime, double open, double high, double low, double close, long volume)
     {
-      FreeQuant.Data.Bar bar = new FreeQuant.Data.Bar(OpenQuant.API.EnumConverter.Convert(barType), barSize, beginDateTime, endDateTime, open, high, low, close, volume, 0L);
+      FreeQuant.Data.Bar bar = new FreeQuant.Data.Bar(EnumConverter.Convert(barType), barSize, beginDateTime, endDateTime, open, high, low, close, volume, 0L);
       if (this.MarketDataFilter != null)
         bar = this.MarketDataFilter.FilterBar(bar, instrument.Symbol);
       if (bar == null)
@@ -488,13 +488,13 @@ namespace OpenQuant.API.Plugins
 
     public void SendOrderCancelReplaceRequest(OrderCancelReplaceRequest request)
     {
-      IOrder iorder = ((InstrumentOrderListTable) OrderManager.get_Orders()).get_All().get_Item(request.OrigClOrdID);
+			IOrder iorder = ((InstrumentOrderListTable) OrderManager.Orders).All[request.OrigClOrdID];
       this.provider.CallReplace(Map.SQ_OQ_Order[(object) iorder] as Order);
     }
 
     public void SendOrderCancelRequest(OrderCancelRequest request)
     {
-      IOrder iorder = ((InstrumentOrderListTable) OrderManager.get_Orders()).get_All().get_Item(request.OrigClOrdID);
+			IOrder iorder = ((InstrumentOrderListTable) OrderManager.Orders).All[request.OrigClOrdID];
       this.provider.CallCancel(Map.SQ_OQ_Order[(object) iorder] as Order);
     }
 
@@ -553,7 +553,7 @@ namespace OpenQuant.API.Plugins
       report.TransactTime = Clock.Now;
       report.ClOrdID = ((FIXNewOrderSingle) record.Order).ClOrdID;
       report.OrigClOrdID = ((FIXNewOrderSingle) record.Order).ClOrdID;
-      report.OrderID = record.Order.get_OrderID();
+      report.OrderID = record.Order.OrderID;
       report.Symbol = ((FIXNewOrderSingle) record.Order).Symbol;
       report.SecurityType = ((FIXNewOrderSingle) record.Order).SecurityType;
       report.SecurityExchange = ((FIXNewOrderSingle) record.Order).SecurityExchange;
@@ -563,11 +563,11 @@ namespace OpenQuant.API.Plugins
       report.Side = ((NewOrderSingle) record.Order).Side;
       if (ordStatus == OrdStatus.Replaced)
       {
-        report.OrdType = record.Order.get_ReplaceOrder().ContainsField(40) ? record.Order.get_ReplaceOrder().OrdType : ((NewOrderSingle) record.Order).OrdType;
-        report.TimeInForce = record.Order.get_ReplaceOrder().ContainsField(59) ? record.Order.get_ReplaceOrder().TimeInForce : ((NewOrderSingle) record.Order).TimeInForce;
-        report.OrderQty = record.Order.get_ReplaceOrder().ContainsField(38) ? record.Order.get_ReplaceOrder().OrderQty : ((FIXNewOrderSingle) record.Order).OrderQty;
-        report.Price = record.Order.get_ReplaceOrder().ContainsField(44) ? record.Order.get_ReplaceOrder().Price : ((FIXNewOrderSingle) record.Order).Price;
-        report.StopPx = record.Order.get_ReplaceOrder().ContainsField(99) ? record.Order.get_ReplaceOrder().StopPx : ((FIXNewOrderSingle) record.Order).StopPx;
+				report.OrdType = record.Order.ReplaceOrder.ContainsField(40) ? record.Order.ReplaceOrder.OrdType : ((NewOrderSingle) record.Order).OrdType;
+				report.TimeInForce = record.Order.ReplaceOrder.ContainsField(59) ? record.Order.ReplaceOrder.TimeInForce : ((NewOrderSingle) record.Order).TimeInForce;
+				report.OrderQty = record.Order.ReplaceOrder.ContainsField(38) ? record.Order.ReplaceOrder.OrderQty : ((FIXNewOrderSingle) record.Order).OrderQty;
+				report.Price = record.Order.ReplaceOrder.ContainsField(44) ? record.Order.ReplaceOrder.Price : ((FIXNewOrderSingle) record.Order).Price;
+				report.StopPx = record.Order.ReplaceOrder.ContainsField(99) ? record.Order.ReplaceOrder.StopPx : ((FIXNewOrderSingle) record.Order).StopPx;
         record.LeavesQty = (int) report.OrderQty - record.CumQty;
       }
       else
@@ -663,14 +663,14 @@ namespace OpenQuant.API.Plugins
 
     public void SendHistoricalDataRequest(FreeQuant.Providers.HistoricalDataRequest request)
     {
-      OpenQuant.API.HistoricalDataRequest request1 = new OpenQuant.API.HistoricalDataRequest(request);
+      HistoricalDataRequest request1 = new HistoricalDataRequest(request);
       this.historicalDataRequests.Add(request.RequestId, request1);
       this.provider.CallRequestHistoricalData(request1);
     }
 
     public void CancelHistoricalDataRequest(string requestId)
     {
-      OpenQuant.API.HistoricalDataRequest request;
+      HistoricalDataRequest request;
       if (!this.historicalDataRequests.TryGetValue(requestId, out request))
         return;
       this.provider.CallCancelHistoricalData(request);

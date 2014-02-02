@@ -1,4 +1,4 @@
 namespace FreeQuant.Simulation
 {
-  public delegate void ExceptionEventHandler(ExceptionEventArgs args);
+	public delegate void ExceptionEventHandler(ExceptionEventArgs args);
 }

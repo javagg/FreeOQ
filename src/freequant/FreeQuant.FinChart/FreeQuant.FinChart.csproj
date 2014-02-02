@@ -145,9 +145,5 @@
       <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
       <Name>FreeQuant.Charting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FreeQuant\FreeQuant.csproj">
-      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
-      <Name>FreeQuant</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -68,7 +68,6 @@
     <Compile Include="LicenseInfo.cs" />
     <Compile Include="Installation.cs" />
     <Compile Include="InfoItemBase.cs" />
-    <Compile Include="InfoBase`1.cs" />
     <Compile Include="IInstallReferenceItem.cs" />
     <Compile Include="IInstallReferenceEnum.cs" />
     <Compile Include="IAssemblyName.cs" />
@@ -89,6 +88,8 @@
     <Compile Include="Clock.cs" />
     <Compile Include="Design\FlagsEnumTypeConverter.cs" />
     <Compile Include="FreeQuantReference.cs" />
+    <Compile Include="ClockMode.cs" />
+    <Compile Include="InfoBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

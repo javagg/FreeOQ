@@ -1,25 +1,14 @@
-
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  public class StopEventArgs : EventArgs
-  {
-    private IStop RAG6ls89dA;
+	public class StopEventArgs : EventArgs
+	{
+		public IStop Stop { get; private set; }
 
-    public IStop Stop
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return this.RAG6ls89dA;
-      }
-    }
-
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public StopEventArgs(IStop stop)
-    {
-      this.RAG6ls89dA = stop;
-    }
-  }
+		public StopEventArgs(IStop stop)
+		{
+			this.Stop = stop;
+		}
+	}
 }

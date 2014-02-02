@@ -7,27 +7,21 @@ namespace FreeQuant.Charting
 	[Serializable]
 	public class TLegendItem
 	{
-		private Color color;
-		private Font font;
-
 		public string Text { get; set; }
-
 		public Color Color { get; set; }
-
 		public Font Font { get; set; }
-
-		public TLegendItem(string Text, Color Color, Font Font) : base()
+		public TLegendItem(string text, Color color, Font font)
 		{
-			this.Text = Text;
-			this.Color = Color;
-			this.Font = Font;
+			this.Text = text;
+			this.Color = color;
+			this.Font = font;
 		}
 
-		public TLegendItem(string Text, Color Color) : base()
+		public TLegendItem(string text, Color color)
 		{
-			this.Text = Text;
-			this.Color = Color;
-			this.font = new Font("Arial", 8);
+			this.Text = text;
+			this.Color = color;
+			this.Font = new Font("Arial", 8);
 		}
 	}
 }

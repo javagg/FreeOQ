@@ -52,12 +52,12 @@ namespace OpenQuant.API.Indicators
 
 		public BBL(BarSeries series, int length, double k, BarData option)
 		{
-			this.indicator = new FreeQuant.Indicators.BBL(series.series, length, k, OpenQuant.API.EnumConverter.Convert(option));
+			this.indicator = new FreeQuant.Indicators.BBL(series.series, length, k, EnumConverter.Convert(option));
 		}
 
 		public BBL(Indicator indicator, int length, double k, BarData option)
 		{
-			this.indicator = new FreeQuant.Indicators.BBL(indicator.indicator, length, k, OpenQuant.API.EnumConverter.Convert(option));
+			this.indicator = new FreeQuant.Indicators.BBL(indicator.indicator, length, k, EnumConverter.Convert(option));
 		}
 
 		public BBL(BarSeries series, int length, double k, Color color)

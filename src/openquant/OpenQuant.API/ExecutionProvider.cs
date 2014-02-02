@@ -7,9 +7,9 @@ namespace OpenQuant.API
 	/// </summary>
 	public class ExecutionProvider : Provider
 	{
-		internal ExecutionProvider(IExecutionProvider provider) : base((IProvider)provider)
+		internal ExecutionProvider(IExecutionProvider provider) : base(provider)
 		{
-			this.provider = (IProvider)provider;
+			this.provider = provider;
 		}
 	}
 }

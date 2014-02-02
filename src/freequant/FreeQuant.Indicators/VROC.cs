@@ -70,7 +70,7 @@ namespace FreeQuant.Indicators
       this.fType = EIndicatorType.Volume;
       this.Clear();
       this.fCalculate = true;
-			if (this.Input == null || TimeSeries.nameOption != ENameOption.Long)
+			if (this.Input == null || TimeSeries.fNameOption != ENameOption.Long)
         return;
       this.Name = this.fInput.Name + this.Name;
     }

@@ -1,8 +1,7 @@
-
 namespace FreeQuant.Trading
 {
-  public interface IStop
-  {
-    void Disconnect();
-  }
+	public interface IStop
+	{
+		void Disconnect();
+	}
 }

@@ -35,8 +35,11 @@ namespace FreeQuant.Charting
 		}
 
 		public static bool FileEnabled { get; set; }
+
 		public static string FileDir { get; set; }
+
 		public static string FileNamePrefix { get; set; }
+
 		public static string FileNameSuffix { get; set; }
 
 		public bool GroupZoomEnabled
@@ -199,92 +202,59 @@ namespace FreeQuant.Charting
 			Canvas.FileEnabled = false;
 		}
 
-		public Canvas(string Name = "CanvasName", string Title = "CanvasText") : base()
+		public Canvas(string name, string title) : this(name, title, null)
 		{
-			this.CNA6nGRr44();
-			this.Name = Name;
-			this.Text = Title;
-			this.Wnm6oPv8qu();
-			CanvasManager.Add(this);
-			if (Canvas.FileEnabled)
-				return;
-			this.Show();
 		}
 
-		public Canvas(string name) : base()
+		public Canvas(string name) : this(name, name, null)
 		{
-
-			this.CNA6nGRr44();
-			this.Name = name;
-			this.Text = name;
-			this.Wnm6oPv8qu();
-			CanvasManager.Add(this);
-			if (Canvas.FileEnabled)
-				return;
-			((Control)this).Show();
 		}
 
 		public Canvas(string name, string title, string fileName) : base()
 		{
-
-			this.CNA6nGRr44();
+			this.InitializeComponent();
 			this.Name = name;
 			this.Text = title;
-			this.Wnm6oPv8qu();
+			if (Canvas.FileEnabled)
+			{
+				this.chart.FileName = Canvas.FileDir + "dd" + Canvas.FileNamePrefix + this.Name + DateTime.Now.ToString("D") + Canvas.FileNameSuffix + "dd";
+			}
 			this.chart.FileName = fileName;
 			CanvasManager.Add(this);
+			if (!Canvas.FileEnabled)
+			{
+				this.Show();
+			}
 		}
 
-		public Canvas(string name, string title, int width, int height) : base()
+		public Canvas(string name, string title, int width, int height) : this(name, title, null, width, height)
 		{
-			this.CNA6nGRr44();
+		}
+
+		public Canvas(string name, int width, int height) : this(name, name, null, width, height)
+		{
+		}
+
+		public Canvas(string name, string title, string fileName, int width, int height) : base()
+		{
+			this.InitializeComponent();
 			this.Name = name;
 			this.Text = title;
-			this.Wnm6oPv8qu();
+			if (Canvas.FileEnabled)
+			{
+				this.chart.FileName = Canvas.FileDir + Canvas.FileNamePrefix + this.Name + DateTime.Now.ToString("D") + Canvas.FileNameSuffix;
+			}
+			if (fileName != null) 
+			{
+				this.chart.FileName = fileName;
+			}
 			CanvasManager.Add(this);
 			this.Width = width;
 			this.Height = height;
-			if (Canvas.FileEnabled)
-				return;
-			((Control)this).Show();
-		}
-
-		public Canvas(string Name, int Width, int Height) : base()
-		{
-			this.CNA6nGRr44();
-			this.Name = Name;
-			this.Text = Name;
-			this.Wnm6oPv8qu();
-			CanvasManager.Add(this);
-			this.Width = Width;
-			this.Height = Height;
-			if (Canvas.FileEnabled)
-				return;
-			this.Show();
-		}
-
-		public Canvas(string Name, string Title, string FileName, int Width, int Height) : base()
-		{
-			this.CNA6nGRr44();
-			this.Name = Name;
-			this.Text = Title;
-			this.Wnm6oPv8qu();
-			this.chart.FileName = FileName;
-			CanvasManager.Add(this);
-			this.Width = Width;
-			this.Height = Height;
-		}
-
-		private void CNA6nGRr44()
-		{
-			this.drh63ZfGFV();
-		}
-
-		private void Wnm6oPv8qu()
-		{
 			if (!Canvas.FileEnabled)
-				return;
-			this.chart.FileName = Canvas.FileDir + "dd" + Canvas.FileNamePrefix + this.Name + DateTime.Now.ToString("D") + Canvas.FileNameSuffix + "dd";
+			{
+				this.Show();
+			}
 		}
 
 		public Pad cd(int pad)
@@ -351,7 +321,7 @@ namespace FreeQuant.Charting
 			this.chart.PrintPageSetup();
 		}
 
-		private void drh63ZfGFV()
+		private void InitializeComponent()
 		{
 			this.helpProvider = new HelpProvider();
 			this.chart = new Chart();
@@ -359,12 +329,12 @@ namespace FreeQuant.Charting
 			this.chart.AntiAliasingEnabled = false;
 			this.chart.Dock = DockStyle.Fill;
 			this.chart.DoubleBufferingEnabled = true;
-			this.chart.FileName = (string)null;
+			this.chart.FileName = null;
 			this.chart.GroupLeftMarginEnabled = false;
 			this.chart.GroupZoomEnabled = false;
 			this.chart.ImeMode = ImeMode.Off;
 			this.chart.Location = new Point(0, 0);
-			this.chart.Name = "Text11w1";
+			this.chart.Name = "ChartName";
 			this.chart.PrintAlign = EPrintAlign.None;
 			this.chart.PrintHeight = 400;
 			this.chart.PrintLayout = EPrintLayout.Portrait;
@@ -376,9 +346,7 @@ namespace FreeQuant.Charting
 			this.chart.TabIndex = 0;
 			this.AutoScaleBaseSize = new Size(5, 13);
 			this.ClientSize = new Size(488, 293);
-			this.Controls.Add((Control)this.chart);
-			this.Name = "Name";
-			this.Text = "Text111";
+			this.Controls.Add(this.chart);
 			this.ResumeLayout(false);
 		}
 	}

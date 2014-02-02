@@ -9,37 +9,41 @@ namespace OpenQuant.Trading
 		private int instrumentCount;
 		private Dictionary<Instrument, Bar> table;
 
-		public Dictionary<Instrument, Bar> Table {
-			get {
+		public Dictionary<Instrument, Bar> Table
+		{
+			get
+			{
 				return this.table;
 			}
 		}
 
-		public bool IsComplete {
-			get {
+		public bool IsComplete
+		{
+			get
+			{
 				return this.table.Count == this.instrumentCount;
 			}
 		}
 
-		internal BarSlice (int instrumentCount)
+		internal BarSlice(int instrumentCount)
 		{
 			this.instrumentCount = instrumentCount;
-			this.Init ();
+			this.Init();
 		}
 
-		private void Init ()
+		private void Init()
 		{
-			this.table = new Dictionary<Instrument, Bar> ();
+			this.table = new Dictionary<Instrument, Bar>();
 		}
 
-		internal void AddBar (Instrument instrument, Bar bar)
+		internal void AddBar(Instrument instrument, Bar bar)
 		{
-			this.table [instrument] = bar;
+			this.table[instrument] = bar;
 		}
 
-		internal void Reset ()
+		internal void Reset()
 		{
-			this.table.Clear ();
+			this.table.Clear();
 		}
 	}
 }

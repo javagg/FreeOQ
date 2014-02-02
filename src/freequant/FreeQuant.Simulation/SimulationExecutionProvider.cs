@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 namespace FreeQuant.Simulation
 {
   [TypeConverter(typeof (ExpandableObjectConverter))]
-  public class SimulationExecutionProvider : IExecutionProvider, IProvider
+  public class SimulationExecutionProvider : IExecutionProvider
   {
     private const string IpgPGddVVV = "Simulator(execution)";
     private const string XmtPajagWB = "Simulation Execution Provider";

@@ -18,10 +18,6 @@ namespace OpenQuant.Trading
 		public static event EventHandler<UserCommandEventArgs> NewCommand;
 		public static event EventHandler Cleared;
 
-		static UserCommandManager()
-		{
-		}
-
 		internal static void Clear()
 		{
 			UserCommandManager.commands.Clear();

@@ -4,7 +4,6 @@ namespace FreeQuant.Charting
 {
 	public class CanvasManager
 	{
-
 		public static CanvasList Canvases { get; private set; }
 		static CanvasManager()
 		{

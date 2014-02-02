@@ -9,7 +9,7 @@
       double price = entry.Items[0].Price;
       if (this.bar == null)
       {
-        this.CreateNewBar(OpenQuant.API.BarType.Range, entry.DateTime, entry.DateTime, price);
+        this.CreateNewBar(BarType.Range, entry.DateTime, entry.DateTime, price);
       }
       else
       {
@@ -20,7 +20,7 @@
         {
           if (10000.0 * (this.bar.High - this.bar.Low) >= (double) this.newBarSize)
           {
-            OpenQuant.API.Bar bar = new OpenQuant.API.Bar(new SmartQuant.Data.Bar(SmartQuant.Data.BarType.Range, this.newBarSize, entry.DateTime, entry.DateTime, price, price, price, price, 0L, 0L));
+						Bar bar = new Bar(new FreeQuant.Data.Bar(FreeQuant.Data.BarType.Range, this.newBarSize, entry.DateTime, entry.DateTime, price, price, price, price, 0L, 0L));
             if (this.bar.High == price)
             {
               this.bar.bar.High = this.bar.Low + (double) this.newBarSize / 10000.0;
@@ -34,7 +34,7 @@
               bar.bar.High = this.bar.Low;
             }
             this.EmitNewCompressedBar();
-            this.bar = bar;
+				this.bar = bar;
             flag = 10000.0 * (this.bar.High - this.bar.Low) < (double) this.newBarSize;
           }
           else

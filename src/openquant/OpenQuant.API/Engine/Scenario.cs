@@ -1,6 +1,7 @@
 ﻿using OpenQuant.API;
 using OpenQuant.Config;
 using System;
+using FreeQuant.Instruments;
 
 namespace OpenQuant.API.Engine
 {

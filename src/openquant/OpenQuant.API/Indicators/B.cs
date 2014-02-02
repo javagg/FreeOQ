@@ -77,7 +77,7 @@ namespace OpenQuant.API.Indicators
 
 		public B(Indicator indicator, int length, double k, BarData option, Color color)
 		{
-			this.indicator = new B(indicator.indicator, length, k, EnumConverter.Convert(option), color);
+			this.indicator = new FreeQuant.Indicators.B(indicator.indicator, length, k, EnumConverter.Convert(option), color);
 		}
 	}
 }

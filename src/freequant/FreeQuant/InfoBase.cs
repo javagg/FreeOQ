@@ -10,7 +10,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (T[])null;
+				return items.ToArray();
 			}
 		}
 	}

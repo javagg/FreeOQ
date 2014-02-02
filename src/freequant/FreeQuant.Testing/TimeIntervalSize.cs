@@ -1,4 +1,4 @@
-﻿namespace FreeQuant.Testing
+namespace FreeQuant.Testing
 {
   public enum TimeIntervalSize : long
   {

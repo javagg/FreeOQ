@@ -38,7 +38,7 @@ namespace OpenQuant.API.Indicators
 
 		public WMA(Indicator indicator, int length)
 		{
-			this.indicator = new WMA((FreeQuant.Series.TimeSeries)indicator.indicator, length);
+			this.indicator = new FreeQuant.Indicators.WMA((FreeQuant.Series.TimeSeries)indicator.indicator, length);
 		}
 
 		public WMA(BarSeries series, int length, BarData option)

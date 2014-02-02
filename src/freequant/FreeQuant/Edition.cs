@@ -6,5 +6,7 @@ namespace FreeQuant
 		Research,
 		Professional,
 		Enterprise,
+
+		OpenSource
 	}
 }

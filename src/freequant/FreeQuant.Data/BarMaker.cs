@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Data
 {
@@ -149,7 +148,7 @@ namespace FreeQuant.Data
 			}
 		}
 
-		private static DateTime qtghhEheM([In] DateTime obj0, [In] long obj1)
+		private static DateTime qtghhEheM(DateTime obj0, long obj1)
 		{
 			long num = (long)obj0.TimeOfDay.TotalSeconds / obj1 * obj1;
 			return obj0.Date.AddSeconds((double)num);

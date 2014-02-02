@@ -1,6 +1,5 @@
 using FreeQuant.Testing.TesterItems;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Testing.MathStatistics
 {

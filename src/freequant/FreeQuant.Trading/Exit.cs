@@ -26,7 +26,7 @@ namespace FreeQuant.Trading
     public virtual SingleOrder LongExit(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
-        return (SingleOrder) null;
+        return null;
       Signal signal = new Signal(Clock.Now, ComponentType.Exit, SignalType.Market, SignalSide.Sell, instrument, text);
       if (!this.HasPosition || this.Position.Side != PositionSide.Long)
       {

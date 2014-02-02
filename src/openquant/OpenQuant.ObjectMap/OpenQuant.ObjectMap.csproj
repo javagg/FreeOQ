@@ -53,5 +53,9 @@
       <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
       <Name>FreeQuant.Providers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

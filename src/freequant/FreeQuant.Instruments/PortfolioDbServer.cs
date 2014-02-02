@@ -52,7 +52,7 @@ namespace FreeQuant.Instruments
         portfolio.Name = string3;
         portfolio.Description = string4;
         portfolio.U70sR7lQYS(flag);
-        portfolioList.VJDEDjQE7o(portfolio);
+        portfolioList.Add(portfolio);
       }
       dataReader.Close();
       command.Dispose();

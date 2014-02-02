@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using System.IO;
 
 namespace FreeQuant
@@ -11,11 +10,11 @@ namespace FreeQuant
 		{
 			get
 			{
-				return null;
+				return file.DirectoryName + file.FullName;
 			}
 		}
 
-		protected CustomReference(FileInfo file, ReferenceType referenceType, bool enabled):base(referenceType, enabled)
+		protected CustomReference(FileInfo file, ReferenceType referenceType, bool enabled) : base(referenceType, enabled)
 		{
 		}
 	}

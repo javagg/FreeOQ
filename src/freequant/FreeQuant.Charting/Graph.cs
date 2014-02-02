@@ -12,19 +12,13 @@ namespace FreeQuant.Charting
 	public class Graph : IDrawable, IZoomable, IMovable
 	{
 		private ArrayList points;
-		private EGraphStyle style;
-		private bool markerEnabled;
 		private EMarkerStyle markerStyle;
 		private int markerSize;
 		private Color markerColor;
-		private bool lineEnabled;
 		private double minX;
 		private double maxX;
 		private double minY;
 		private double maxY;
-		private int barWidth;
-		private bool toolTipEnabled;
-		private string toolTipFormat;
 
 		public string Name { get; set; }
 		public string Title { get; set; }
@@ -296,38 +290,38 @@ namespace FreeQuant.Charting
 			this.Draw("");
 		}
 
-		public virtual void Paint(Pad Pad, double XMin, double XMax, double YMin, double YMax)
+		public virtual void Paint(Pad pad, double xMin, double xMax, double yMin, double yMax)
 		{
-			if (this.style == EGraphStyle.Line && this.lineEnabled)
+			if (this.Style == EGraphStyle.Line && this.LineEnabled)
 			{
-				Pen Pen = new Pen(this.LineColor);
-				Pen.DashStyle = this.LineDashStyle;
+				Pen pen = new Pen(this.LineColor);
+				pen.DashStyle = this.LineDashStyle;
 				double X1 = 0.0;
 				double Y1 = 0.0;
 				bool flag = true;
 				foreach (TMarker tmarker in this.points)
 				{
 					if (!flag)
-						Pad.DrawLine(Pen, X1, Y1, tmarker.X, tmarker.Y);
+						pad.DrawLine(pen, X1, Y1, tmarker.X, tmarker.Y);
 					else
 						flag = false;
 					X1 = tmarker.X;
 					Y1 = tmarker.Y;
 				}
 			}
-			if ((this.style == EGraphStyle.Line || this.style == EGraphStyle.Scatter) && this.markerEnabled)
+			if ((this.Style == EGraphStyle.Line || this.Style == EGraphStyle.Scatter) && this.MarkerEnabled)
 			{
 				foreach (TMarker tmarker in this.points)
-					tmarker.Paint(Pad, XMin, XMax, YMin, YMax);
+					tmarker.Paint(pad, xMin, xMax, yMin, yMax);
 			}
-			if (this.style != EGraphStyle.Bar)
+			if (this.Style != EGraphStyle.Bar)
 				return;
 			foreach (TMarker tmarker in this.points)
 			{
 				if (tmarker.Y > 0.0)
-					Pad.Graphics.FillRectangle((Brush)new SolidBrush(Color.Black), Pad.ClientX(tmarker.X) - this.barWidth / 2, Pad.ClientY(tmarker.Y), this.barWidth, Pad.ClientY(0.0) - Pad.ClientY(tmarker.Y));
+					pad.Graphics.FillRectangle(new SolidBrush(Color.Black), pad.ClientX(tmarker.X) - this.BarWidth / 2, pad.ClientY(tmarker.Y), this.BarWidth, pad.ClientY(0.0) - pad.ClientY(tmarker.Y));
 				else
-					Pad.Graphics.FillRectangle((Brush)new SolidBrush(Color.Black), Pad.ClientX(tmarker.X) - this.barWidth / 2, Pad.ClientY(0.0), this.barWidth, Pad.ClientY(tmarker.Y) - Pad.ClientY(0.0));
+					pad.Graphics.FillRectangle(new SolidBrush(Color.Black), pad.ClientX(tmarker.X) - this.BarWidth / 2, pad.ClientY(0.0), this.BarWidth, pad.ClientY(tmarker.Y) - pad.ClientY(0.0));
 			}
 		}
 
@@ -343,8 +337,8 @@ namespace FreeQuant.Charting
 			if (tdistance1 != null)
 			{
 				StringBuilder stringBuilder = new StringBuilder();
-				stringBuilder.AppendFormat(this.toolTipFormat, this.Name, this.Title, (object)tdistance1.X, (object)tdistance1.Y);
-				tdistance1.ToolTipText = ((object)stringBuilder).ToString();
+				stringBuilder.AppendFormat(this.ToolTipFormat, this.Name, this.Title, (object)tdistance1.X, (object)tdistance1.Y);
+				tdistance1.ToolTipText = stringBuilder.ToString();
 			}
 			return tdistance1;
 		}

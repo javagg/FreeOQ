@@ -15,8 +15,6 @@ namespace FreeQuant.Charting
 		protected ETextPosition fPosition;
 		protected Font fFont;
 		protected Color fColor;
-		private bool toolTipEnabled;
-		private string toolTipFormat;
 
 		[Description("")]
 		[Category("ToolTip")]

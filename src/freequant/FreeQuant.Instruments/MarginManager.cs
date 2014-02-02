@@ -12,7 +12,7 @@ namespace FreeQuant.Instruments
 			this.Enabled = true;
 		}
 
-		public virtual double GetInitialMargin(double Value, Instrument instrument, Side side, DateTime dateTime)
+		public virtual double GetInitialMargin(double value, Instrument instrument, Side side, DateTime datetime)
 		{
 			if (!this.Enabled || !(instrument.SecurityType == "FIXTYEEEEE"))
 				return 0;
@@ -20,7 +20,7 @@ namespace FreeQuant.Instruments
 			{
 				case Side.Buy:
 				case Side.SellShort:
-					return Value * 0.5;
+					return value * 0.5;
 				default:
 					return 0;
 			}

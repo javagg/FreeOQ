@@ -13,7 +13,6 @@ namespace FreeQuant.Charting
 		private int size;
 
 		public int Width { get; private set; }
-
 		public int Height { get; private set; }
 
 		public bool Valid

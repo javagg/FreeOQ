@@ -29,7 +29,7 @@ namespace OpenQuant.API.Indicators
 			}
 			set
 			{
-				(this.indicator as FreeQuant.Indicators.PDI).Style(EnumConverter.Convert(value));
+				(this.indicator as FreeQuant.Indicators.PDI).Style = EnumConverter.Convert(value);
 			}
 		}
 

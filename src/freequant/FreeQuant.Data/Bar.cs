@@ -5,7 +5,7 @@ using System.IO;
 namespace FreeQuant.Data
 {
 	[Serializable]
-	public class Bar : IDataObject, ISeriesObject
+	public partial class Bar : IDataObject, ISeriesObject
 	{
 		protected DateTime beginTime;
 		protected DateTime endTime;

@@ -28,7 +28,7 @@ namespace FreeQuant.Trading
     public virtual SingleOrder LongEntry(Instrument instrument, string text)
     {
       if (!this.Strategy.IsInstrumentActive(instrument))
-        return (SingleOrder) null;
+        return null;
       else
         return this.Strategy.BgvpSPpUAD(new Signal(Clock.Now, ComponentType.CrossEntry, SignalType.Market, SignalSide.Buy, instrument, text));
     }

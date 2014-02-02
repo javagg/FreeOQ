@@ -25,11 +25,11 @@ namespace OpenQuant.API.Indicators
 		{
 			get
 			{
-				return OpenQuant.API.EnumConverter.Convert((this.indicator as FreeQuant.Indicators.MDI).Style);
+				return EnumConverter.Convert((this.indicator as FreeQuant.Indicators.MDI).Style);
 			}
 			set
 			{
-				(this.indicator as FreeQuant.Indicators.MDI).Style = OpenQuant.API.EnumConverter.Convert(value);
+				(this.indicator as FreeQuant.Indicators.MDI).Style = EnumConverter.Convert(value);
 			}
 		}
 

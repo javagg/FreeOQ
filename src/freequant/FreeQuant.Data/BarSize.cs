@@ -1,5 +1,3 @@
-using System;
-
 namespace FreeQuant.Data
 {
 	public class BarSize

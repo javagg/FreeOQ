@@ -10,7 +10,6 @@ namespace FreeQuant.Charting
 
 		public TTextBoxItem(string text, Color color, Font font = null)
 		{
-
 			this.Text = text;
 			this.Color = color;
 			this.Font = font ?? new Font("Arial", 8);

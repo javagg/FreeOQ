@@ -500,7 +500,7 @@ namespace FreeQuant.Series
 			return this.fSum;
 		}
 
-		public override double GetSum(int index1, int index2, int row)
+		public override double GetSum(int index1, int index2, int row = 0)
 		{
 //			if (index1 >= index2)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5716));
@@ -568,7 +568,7 @@ namespace FreeQuant.Series
 			return this.fVariance;
 		}
 
-		public override double GetVariance(int index1, int index2, int row)
+		public override double GetVariance(int index1, int index2, int row = 0)
 		{
 //			if (this.Count <= 1)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6702));
@@ -585,7 +585,7 @@ namespace FreeQuant.Series
 			return num / (double)(index2 - index1);
 		}
 
-		public override double GetPositiveVariance(int index1, int index2, int row)
+		public override double GetPositiveVariance(int index1, int index2, int row = 0)
 		{
 //			if (this.Count <= 1)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7020));
@@ -615,7 +615,7 @@ namespace FreeQuant.Series
 			return num4 / (double)num1;
 		}
 
-		public override double GetNegativeVariance(int index1, int index2, int row)
+		public override double GetNegativeVariance(int index1, int index2, int row = 0)
 		{
 //			if (this.Count <= 1)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7338));
@@ -645,7 +645,7 @@ namespace FreeQuant.Series
 			return num4 / (double)num1;
 		}
 
-		public override double GetMoment(int k, int index1, int index2, int row)
+		public override double GetMoment(int k, int index1, int index2, int row = 0)
 		{
 //			if (this.Count <= 0)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7656) + this.name + oK6F3TB73XXXGhdieP.wF6SgrNUO(7730));
@@ -669,7 +669,7 @@ namespace FreeQuant.Series
 				return num3 / (double)num2;
 		}
 
-		public override double GetAsymmetry(int index1, int index2, int row)
+		public override double GetAsymmetry(int index1, int index2, int row = 0)
 		{
 //			if (this.Count <= 0)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7922) + this.name + oK6F3TB73XXXGhdieP.wF6SgrNUO(7998));
@@ -686,7 +686,7 @@ namespace FreeQuant.Series
 				return this.GetMoment(3, index1, index2, row) / Math.Pow(stdDev, 3.0);
 		}
 
-		public override double GetExcess(int index1, int index2, int row)
+		public override double GetExcess(int index1, int index2, int row = 0)
 		{
 //			if (this.Count <= 0)
 //				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8190) + this.name + oK6F3TB73XXXGhdieP.wF6SgrNUO(8260));

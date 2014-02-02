@@ -1,8 +1,8 @@
 ﻿namespace OpenQuant.Trading
 {
-  public enum StrategyMode
-  {
-    Live,
-    Simulation
-  }
+	public enum StrategyMode
+	{
+		Live,
+		Simulation
+	}
 }

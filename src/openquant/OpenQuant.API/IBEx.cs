@@ -53,15 +53,15 @@ namespace OpenQuant.API
 			{
 				switch (((NewOrderSingle)this.order).FaMethod)
 				{
-					case FaMethod.PctChange:
+					case FreeQuant.FIX.FaMethod.PctChange:
 						return IBFaMethod.PctChange;
-					case FaMethod.AvailableEquity:
+					case FreeQuant.FIX.FaMethod.AvailableEquity:
 						return IBFaMethod.AvailableEquity;
-					case FaMethod.NetLiq:
+					case FreeQuant.FIX.FaMethod.NetLiq:
 						return IBFaMethod.NetLiq;
-					case FaMethod.EqualQuantity:
+					case FreeQuant.FIX.FaMethod.EqualQuantity:
 						return IBFaMethod.EqualQuantity;
-					case FaMethod.Undefined:
+					case FreeQuant.FIX.FaMethod.Undefined:
 						return IBFaMethod.Undefined;
 					default:
 						throw new ArgumentException(string.Format("Unknown method - {0}", (object)((NewOrderSingle)this.order).FaMethod));
@@ -72,16 +72,16 @@ namespace OpenQuant.API
 				switch (value)
 				{
 					case IBFaMethod.PctChange:
-						((NewOrderSingle)this.order).FaMethod = FaMethod.PctChange;
+						((NewOrderSingle)this.order).FaMethod = FreeQuant.FIX.FaMethod.PctChange;
 						break;
 					case IBFaMethod.AvailableEquity:
-						((NewOrderSingle)this.order).FaMethod = FaMethod.AvailableEquity;
+						((NewOrderSingle)this.order).FaMethod = FreeQuant.FIX.FaMethod.AvailableEquity;
 						break;
 					case IBFaMethod.NetLiq:
-						((NewOrderSingle)this.order).FaMethod = FaMethod.NetLiq;
+						((NewOrderSingle)this.order).FaMethod = FreeQuant.FIX.FaMethod.NetLiq;
 						break;
 					case IBFaMethod.EqualQuantity:
-						((NewOrderSingle)this.order).FaMethod = FaMethod.EqualQuantity;
+						((NewOrderSingle)this.order).FaMethod = FreeQuant.FIX.FaMethod.EqualQuantity;
 						break;
 					case IBFaMethod.Undefined:
 						break;

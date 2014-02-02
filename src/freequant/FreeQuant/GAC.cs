@@ -4,45 +4,37 @@ using System.Runtime.InteropServices;
 
 namespace FreeQuant
 {
-  public class GAC
-  {
-    private static AssemblyName[] MbbrEjYP5S;
+	public class GAC
+	{
+		private static AssemblyName[] assemblies; 
 
-    public static AssemblyName[] Assemblies
-    {
-      get
-      {
-        return (AssemblyName[]) null;
-      }
-    }
+		public static AssemblyName[] Assemblies {	get {	return assemblies; }	}
+		//    static GAC()
+		//    {
+		//			GAC.MbbrEjYP5S = "fsf";
+		//    }
+		private GAC()
+		{
+		}
 
-//    static GAC()
-//    {
-//			GAC.MbbrEjYP5S = "fsf";
-//    }
+		public static bool Exists(AssemblyName assemblyName)
+		{
+			return true;
+		}
 
-    private GAC()
-    {
-    }
+		public static string GetPath(AssemblyName assemblyName)
+		{
+			return null;
+		}
 
-    public static bool Exists(AssemblyName assemblyName)
-    {
-      return true;
-    }
+		private static string Bvrrsgbgvu([In] byte[] obj0)
+		{
+			return null;
+		}
 
-    public static string GetPath(AssemblyName assemblyName)
-    {
-      return (string) null;
-    }
-
-    private static string Bvrrsgbgvu([In] byte[] obj0)
-    {
-      return (string) null;
-    }
-
-    private static AssemblyName gBsryCXKL7([In] IAssemblyName obj0)
-    {
-      return (AssemblyName) null;
-    }
-  }
+		private static AssemblyName gBsryCXKL7([In] IAssemblyName obj0)
+		{
+			return null;
+		}
+	}
 }

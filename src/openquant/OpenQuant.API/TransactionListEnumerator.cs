@@ -12,7 +12,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return (object) new Transaction(this.enumerator.Current as FreeQuant.Instruments.Transaction);
+        return new Transaction(this.enumerator.Current as FreeQuant.Instruments.Transaction);
       }
     }
 

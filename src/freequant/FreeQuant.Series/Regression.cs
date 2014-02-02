@@ -1,6 +1,5 @@
 using FreeQuant.Charting;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Series
 {

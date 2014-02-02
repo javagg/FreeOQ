@@ -151,7 +151,8 @@ namespace FreeQuant.FinChart
 			if (this.order.OrdType == OrdType.Stop || this.order.OrdType == OrdType.StopLimit)
 			{
 				DateTime transactTime = this.order.Reports[0].TransactTime;
-				dateTime2 = new DateTime(Math.Min(Clock.Now.Ticks, dateTime5.Ticks));
+//				dateTime2 = new DateTime(Math.Min(Clock.Now.Ticks, dateTime5.Ticks));
+				dateTime2 = new DateTime(Math.Min(DateTime.Now.Ticks, dateTime5.Ticks));
 				float num2 = (float)this.pad.ClientY(this.order.StopPx);
 				int index1 = this.pad.MainSeries.GetIndex(transactTime, EIndexOption.Prev);
 				int index2 = this.pad.MainSeries.GetIndex(dateTime2, EIndexOption.Prev);
@@ -170,7 +171,8 @@ namespace FreeQuant.FinChart
 			if (this.order.OrdType != OrdType.Limit && this.order.OrdType != OrdType.StopLimit)
 				return;
 			DateTime transactTime1 = this.order.Reports[0].TransactTime;
-			dateTime4 = new DateTime(Math.Min(Clock.Now.Ticks, dateTime5.Ticks));
+//			dateTime4 = new DateTime(Math.Min(Clock.Now.Ticks, dateTime5.Ticks));
+			dateTime4 = new DateTime(Math.Min(DateTime.Now.Ticks, dateTime5.Ticks));
 			float num7 = (float)this.pad.ClientY(this.order.Price);
 			int index3 = this.pad.MainSeries.GetIndex(transactTime1, EIndexOption.Prev);
 			int index4 = this.pad.MainSeries.GetIndex(dateTime4, EIndexOption.Prev);
