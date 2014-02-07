@@ -6,9 +6,9 @@ namespace FreeQuant.Trading
 {
 	public class SeriesParam
 	{
-		private Hashtable serieses; 
+		private Hashtable serieses;
 
-		public TimeSeries this [Instrument instrument]
+		public TimeSeries this[Instrument instrument]
 		{
 			get
 			{

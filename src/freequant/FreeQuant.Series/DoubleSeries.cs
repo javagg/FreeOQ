@@ -67,19 +67,27 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public double First
+		public new double First
 		{
 			get
 			{
+				if (this.Count <= 0)
+				{
+					throw new ApplicationException("Count <= 0");
+				}
 				return (double)this[0];
 			}
 		}
 
-		new public double Last
+		public new double Last
 		{
 			get
 			{
-				return (double)this[this.Count - 1];
+				if (this.Count <= 0)
+				{
+					throw new ApplicationException("Count <= 0");
+				}
+				return (double)this[this.Count-1];
 			}
 		}
 
@@ -107,7 +115,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public double this[int index]
+		public new double this[int index]
 		{
 			get
 			{
@@ -115,31 +123,35 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public double this [DateTime dateTime]
+		public new double this[DateTime datetime]
 		{
 			get
 			{
-				object obj = base[dateTime];
+				object obj = base[datetime];
+				if (obj == null)
+				{
+					throw new Exception("Invalid datetime: " + datetime);
+				}
 				return (double)obj;
 			}
 			set
 			{
-				this.Add(dateTime, value);
+				this.Add(datetime, value);
 			}
 		}
 
-		new public double this [DateTime dateTime, EIndexOption option]
+		public new double this[DateTime datetime, EIndexOption option]
 		{
 			get
 			{
-				object obj = base[dateTime, option];
+				object obj = base[datetime, option];
 				if (obj != null)
 					return (double)obj;
-				throw new Exception("" + dateTime + option);
+				throw new Exception("invalid datetime or option" + datetime + option);
 			}
 		}
 
-		public override double this [int col, int row]
+		public override double this[int col, int row]
 		{
 			get
 			{
@@ -153,11 +165,11 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.toolTipEnabled;
+				return this.fToolTipEnabled;
 			}
 			set
 			{
-				this.toolTipEnabled = value;
+				this.fToolTipEnabled = value;
 			}
 		}
 
@@ -167,11 +179,11 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.toolTipFormat;
+				return this.fToolTipFormat;
 			}
 			set
 			{
-				this.toolTipFormat = value;
+				this.fToolTipFormat = value;
 			}
 		}
 
@@ -181,11 +193,11 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.toolTipDateTimeFormat;
+				return this.fToolTipDateTimeFormat;
 			}
 			set
 			{
-				this.toolTipDateTimeFormat = value;
+				this.fToolTipDateTimeFormat = value;
 			}
 		}
 
@@ -201,189 +213,191 @@ namespace FreeQuant.Series
 			this.fVariance = double.NaN;
 			this.splitDate = DateTime.MaxValue;
 
-//			this.fArray = (IDataSeries)new MemorySeries<double>();
+			// This override base definition.
+			this.fArray = new MemorySeries<double>();
 		}
 
-		public DoubleSeries(string name) : this(name, String.Empty)
+		public DoubleSeries(string name) : this(name, string.Empty)
 		{
 		}
 
-		public DoubleSeries() : base(string.Empty)
+		public DoubleSeries() : this(string.Empty)
 		{
 		}
 
 		public static DoubleSeries operator +(DoubleSeries series1, DoubleSeries series2)
 		{
 			if (series1 == null || series2 == null)
-				throw new ArgumentException("series1=null");
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name + "");
+				throw new ArgumentException("series1 = null || series2 == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name);
 			for (int index = 0; index < series1.Count; ++index)
 			{
-				DateTime dateTime = series1.GetDateTime(index);
-				if (series2.Contains(dateTime))
-					doubleSeries.Add(dateTime, series1[dateTime, EIndexOption.Null] + series2[dateTime, EIndexOption.Null]);
+				DateTime dt = series1.GetDateTime(index);
+				if (series2.Contains(dt))
+					ds.Add(dt, series1[dt, EIndexOption.Null] + series2[dt, EIndexOption.Null]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public static DoubleSeries operator -(DoubleSeries series1, DoubleSeries series2)
 		{
-//			if (series1 == null || series2 == null)
-//				throw new ArgumentException("series1=null");
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name + "");
-			for (int index = 0; index < series1.Count; ++index)
+			if (series1 == null || series2 == null)
+				throw new ArgumentException("series1 = null || series2 == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name);
+			for (int i = 0; i < series1.Count; ++i)
 			{
-				DateTime dateTime = series1.GetDateTime(index);
-				if (series2.Contains(dateTime))
-					doubleSeries.Add(dateTime, series1[dateTime, EIndexOption.Null] - series2[dateTime, EIndexOption.Null]);
+				DateTime dt = series1.GetDateTime(i);
+				if (series2.Contains(dt))
+					ds.Add(dt, series1[dt, EIndexOption.Null] - series2[dt, EIndexOption.Null]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public static DoubleSeries operator *(DoubleSeries series1, DoubleSeries series2)
 		{
-//			if (series1 == null || series2 == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9396));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name + "");
-			for (int index = 0; index < series1.Count; ++index)
+			if (series1 == null || series2 == null)
+				throw new ArgumentException("series1 = null || series2 == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name);
+			for (int i = 0; i < series1.Count; ++i)
 			{
-				DateTime dateTime = series1.GetDateTime(index);
-				if (series2.Contains(dateTime))
-					doubleSeries.Add(dateTime, series1[dateTime, EIndexOption.Null] * series2[dateTime, EIndexOption.Null]);
+				DateTime dt = series1.GetDateTime(i);
+				if (series2.Contains(dt))
+					ds.Add(dt, series1[dt, EIndexOption.Null] * series2[dt, EIndexOption.Null]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public static DoubleSeries operator /(DoubleSeries series1, DoubleSeries series2)
 		{
-//			if (series1 == null || series2 == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9484));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name + "");
-			for (int index = 0; index < series1.Count; ++index)
+			if (series1 == null || series2 == null)
+				throw new ArgumentException("series1 = null || series2 == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series1.Name + "series2.Name" + series2.Name);
+			for (int i = 0; i < series1.Count; ++i)
 			{
-				DateTime dateTime = series1.GetDateTime(index);
-				if (series2.Contains(dateTime) && series2[dateTime] != 0.0)
-					doubleSeries.Add(dateTime, series1[dateTime, EIndexOption.Null] / series2[dateTime, EIndexOption.Null]);
+				DateTime dt = series1.GetDateTime(i);
+				if (series2.Contains(dt) && series2[dt] != 0.0)
+					ds.Add(dt, series1[dt, EIndexOption.Null] / series2[dt, EIndexOption.Null]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
-		public static DoubleSeries operator +(DoubleSeries series, double Value)
+		public static DoubleSeries operator +(DoubleSeries series, double val)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9572));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), ((TimeSeries)series)[index, 0] + Value);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), series[i, 0] + val);
+			return ds;
 		}
 
-		public static DoubleSeries operator -(DoubleSeries series, double Value)
+		public static DoubleSeries operator -(DoubleSeries series, double val)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9668));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), ((TimeSeries)series)[index, 0] - Value);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), series[i, 0] - val);
+			return ds;
 		}
 
-		public static DoubleSeries operator *(DoubleSeries series, double Value)
+		public static DoubleSeries operator *(DoubleSeries series, double val)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9764));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), ((TimeSeries)series)[index, 0] * Value);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), series[i, 0] * val);
+			return ds;
 		}
 
-		public static DoubleSeries operator /(DoubleSeries series, double Value)
+		public static DoubleSeries operator /(DoubleSeries series, double val)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9860));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), ((TimeSeries)series)[index, 0] / Value);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), series[i, 0] / val);
+			return ds;
 		}
 
-		public static DoubleSeries operator +(double Value, DoubleSeries series)
+		public static DoubleSeries operator +(double val, DoubleSeries series)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(9956));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), Value + ((TimeSeries)series)[index, 0]);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), val + series[i, 0]);
+			return ds;
 		}
 
-		public static DoubleSeries operator -(double Value, DoubleSeries series)
+		public static DoubleSeries operator -(double val, DoubleSeries series)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10052));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), Value - ((TimeSeries)series)[index, 0]);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), val - series[i, 0]);
+			return ds;
 		}
 
-		public static DoubleSeries operator *(double Value, DoubleSeries series)
+		public static DoubleSeries operator *(double val, DoubleSeries series)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10148));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
-				doubleSeries.Add(series.GetDateTime(index), Value * ((TimeSeries)series)[index, 0]);
-			return doubleSeries;
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
+				ds.Add(series.GetDateTime(i), val * series[i, 0]);
+			return ds;
 		}
 
-		public static DoubleSeries operator /(double Value, DoubleSeries series)
+		public static DoubleSeries operator /(double val, DoubleSeries series)
 		{
-//			if (series == null)
-//				throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(10244));
-			DoubleSeries doubleSeries = new DoubleSeries("series1.Name" + series.Name);
-			for (int index = 0; index < series.Count; ++index)
+			if (series == null)
+				throw new ArgumentException("series == null");
+			DoubleSeries ds = new DoubleSeries("series1.Name" + series.Name);
+			for (int i = 0; i < series.Count; ++i)
 			{
-				if (((TimeSeries)series)[index, 0] != 0.0)
-					doubleSeries.Add(series.GetDateTime(index), Value / ((TimeSeries)series)[index, 0]);
+				if (series[i, 0] != 0.0)
+					ds.Add(series.GetDateTime(i), val / series[i, 0]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
-		new public DoubleSeries Clone()
+		public new DoubleSeries Clone()
 		{
 			return base.Clone() as DoubleSeries;
 		}
 
-		new public DoubleSeries Clone(int index1, int index2)
+		public new DoubleSeries Clone(int index1, int index2)
 		{
 			return base.Clone(index1, index2) as DoubleSeries;
 		}
 
-		new public DoubleSeries Clone(DateTime DateTime1, DateTime DateTime2)
+		public new DoubleSeries Clone(DateTime datetime1, DateTime datetime2)
 		{
-			return base.Clone(DateTime1, DateTime2) as DoubleSeries;
+			return base.Clone(datetime1, datetime2) as DoubleSeries;
 		}
 
-		public virtual void Add(DateTime DateTime, double Data)
+		public virtual void Add(DateTime datetime, double data)
 		{
-			this.fArray[DateTime] = (object)Data;
-			this.changed = true;
-			this.EmitItemAdded(DateTime);
+			this.fArray[datetime] = data;
+			this.fChanged = true;
+			this.EmitItemAdded(datetime);
 		}
 
 		public override double GetMin(int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4516));
-			if (this.changed)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+
+			if (this.fChanged)
 			{
 				this.fMin = double.MaxValue;
-				for (int index = 0; index < this.Count; ++index)
+				for (int i = 0; i < this.Count; i++)
 				{
-					if (base[index, row] < this.fMin)
-						this.fMin = base[index, row];
+					if (this[i, row] < this.fMin)
+						this.fMin = this[i, row];
 				}
 			}
 			return this.fMin;
@@ -391,15 +405,16 @@ namespace FreeQuant.Series
 
 		public override double GetMax(int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4598));
-			if (this.changed)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+
+			if (this.fChanged)
 			{
 				this.fMax = double.MinValue;
-				for (int index = 0; index < this.Count; ++index)
+				for (int i = 0; i < this.Count; ++i)
 				{
-					if (base[index, row] > this.fMax)
-						this.fMax = base[index, row];
+					if (this[i, row] > this.fMax)
+						this.fMax = this[i, row];
 				}
 			}
 			return this.fMax;
@@ -407,224 +422,251 @@ namespace FreeQuant.Series
 
 		public override double GetMin(int index1, int index2, int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4680));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4762));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4834));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4882));
-			double num = double.MaxValue;
-			for (int index = index1; index <= index2; ++index)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			double min = double.MaxValue;
+			for (int i = index1; i <= index2; ++i)
 			{
-				if (base[index, row] < num)
-					num = base[index, row];
+				if (this[i, row] < min)
+					min = this[i, row];
 			}
-			return num;
+			return min;
 		}
 
 		public override double GetMax(int index1, int index2, int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4930));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5012));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5084));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5132));
-			double num = double.MinValue;
-			for (int index = index1; index <= index2; ++index)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			double max = double.MinValue;
+			for (int i = index1; i <= index2; ++i)
 			{
-				if (base[index, row] > num)
-					num = base[index, row];
+				if (this[i, row] > max)
+					max = this[i, row];
 			}
-			return num;
+			return max;
 		}
 
 		public override int GetMinIndex(int index1, int index2, int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5180));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5280));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5352));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5400));
-			int num1 = -1;
-			double num2 = double.MaxValue;
-			for (int index = index1; index <= index2; ++index)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			int res = -1;
+			double min = double.MaxValue;
+			for (int i = index1; i <= index2; ++i)
 			{
-				if (base[index, row] < num2)
+				if (this[i, row] < min)
 				{
-					num2 = base[index, row];
-					num1 = index;
+					min = this[i, row];
+					res = i;
 				}
 			}
-			return num1;
+			return res;
 		}
 
 		public override int GetMaxIndex(int index1, int index2, int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5448));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5548));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5620));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5668));
-			int num1 = -1;
-			double num2 = double.MinValue;
-			for (int index = index1; index <= index2; ++index)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			int res = -1;
+			double max = double.MinValue;
+			for (int i = index1; i <= index2; ++i)
 			{
-				if (base[index, row] > num2)
+				if (this[i, row] > max)
 				{
-					num2 = base[index, row];
-					num1 = index;
+					max = this[i, row];
+					res = i;
 				}
 			}
-			return num1;
+			return res;
 		}
 
 		public override double GetSum()
 		{
-			if (this.changed)
+			if (this.fChanged)
 			{
 				this.fSum = 0.0;
-				for (int index = 0; index < this.Count; ++index)
-					this.fSum += base[index, 0];
+				for (int i = 0; i < this.Count; ++i)
+					this.fSum += this[i, 0];
 			}
 			return this.fSum;
 		}
 
 		public override double GetSum(int index1, int index2, int row = 0)
 		{
-//			if (index1 >= index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5716));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5788));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(5836));
-			double num = 0.0;
-			for (int index = index1; index <= index2; ++index)
-				num += base[index, row];
-			return num;
+			if (index1 >= index2)
+				throw new ApplicationException("index1 >= index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			double sum = 0.0;
+			for (int i = index1; i <= index2; ++i)
+				sum += this[i, row];
+			return sum;
 		}
 
 		public override double GetMean()
 		{
-			if (this.changed)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+
+			if (this.fChanged)
 				this.fMean = this.GetMean(0, this.Count - 1);
 			return this.fMean;
 		}
 
 		public override double GetMean(int index1, int index2, int row)
 		{
-			double num = 0.0;
-			for (int index = index1; index <= index2; ++index)
-				num += base[index, row];
-			return num / (double)(index2 - index1 + 1);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			double sum = 0.0;
+			for (int i = index1; i <= index2; ++i)
+				sum += this[i, row];
+
+			return sum / (index2 - index1 + 1);
 		}
 
 		public override double GetMedian()
 		{
-			if (this.changed)
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+
+			if (this.fChanged)
 				this.fMedian = this.GetMedian(0, this.Count - 1);
+
 			return this.fMedian;
 		}
 
-		public override double GetMedian(int index1, int index2, int row = 0)
+		public override double GetMedian(int index1, int index2, int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6302));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6384));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6456));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6504));
-			ArrayList arrayList = new ArrayList();
-			for (int index = index1; index <= index2; ++index)
-				arrayList.Add((object)base[index, row]);
-			arrayList.Sort();
-			return (double)arrayList[arrayList.Count / 2];
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			ArrayList list = new ArrayList();
+			for (int i = index1; i <= index2; ++i)
+				list.Add(this[i, row]);
+			list.Sort();
+			return (double)list[list.Count / 2];
 		}
 
 		public override double GetVariance()
 		{
-//			if (this.Count <= 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6552));
-			if (this.changed)
+			if (this.Count <= 1)
+				throw new ApplicationException("Count <= 1");
+
+			if (this.fChanged)
 			{
 				double mean = this.GetMean();
 				this.fVariance = 0.0;
-				for (int index = 0; index < this.Count; ++index)
-					this.fVariance += (mean - base[index, 0]) * (mean - base[index, 0]);
+				for (int i = 0; i < this.Count; ++i)
+					this.fVariance += (mean - this[i, 0]) * (mean - this[i, 0]);
 				this.fVariance /= (double)(this.Count - 1);
 			}
 			return this.fVariance;
 		}
 
-		public override double GetVariance(int index1, int index2, int row = 0)
+		public override double GetVariance(int index1, int index2, int row)
 		{
-//			if (this.Count <= 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6702));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6852));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6924));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(6972));
+			if (this.Count <= 1)
+				throw new ApplicationException("Count <= 1");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
 			double mean = this.GetMean(index1, index2, row);
-			double num = 0.0;
-			for (int index = index1; index <= index2; ++index)
-				num += (mean - base[index, row]) * (mean - base[index, row]);
-			return num / (double)(index2 - index1);
+			double res = 0.0;
+			for (int i = index1; i <= index2; ++i)
+				res += (mean - base[i, row]) * (mean - base[i, row]);
+			return res / (index2 - index1);
 		}
 
 		public override double GetPositiveVariance(int index1, int index2, int row = 0)
 		{
-//			if (this.Count <= 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7020));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7170));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7242));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7290));
-			int num1 = 0;
-			double num2 = 0.0;
-			for (int index = index1; index <= index2; ++index)
+			if (this.Count <= 1)
+				throw new ApplicationException("Count <= 1");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
+			int n = 0;
+			double sum = 0.0;
+			for (int i = index1; i <= index2; ++i)
 			{
-				if (base[index, row] > 0.0)
+				if (this[i, row] > 0.0)
 				{
-					num2 += base[index, row];
-					++num1;
+					sum += this[i, row];
+					++n;
 				}
 			}
-			double num3 = num2 / (double)num1;
-			double num4 = 0.0;
-			for (int index = index1; index <= index2; ++index)
+			double mean = sum / n;
+			double res = 0.0;
+			for (int i = index1; i <= index2; ++i)
 			{
-				if (base[index, row] > 0.0)
-					num4 += (num3 - base[index, row]) * (num3 - base[index, row]);
+				if (base[i, row] > 0.0)
+					res += (mean - this[i, row]) * (mean - this[i, row]);
 			}
-			return num4 / (double)num1;
+			return res / n;
 		}
 
 		public override double GetNegativeVariance(int index1, int index2, int row = 0)
 		{
-//			if (this.Count <= 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7338));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7488));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7560));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7608));
+			if (this.Count <= 1)
+				throw new ApplicationException("Count <= 1");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
 			int num1 = 0;
 			double num2 = 0.0;
 			for (int index = index1; index <= index2; ++index)
@@ -647,20 +689,21 @@ namespace FreeQuant.Series
 
 		public override double GetMoment(int k, int index1, int index2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7656) + this.name + oK6F3TB73XXXGhdieP.wF6SgrNUO(7730));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7754));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7826));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7874));
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
 			double num1 = k != 1 ? this.GetMean(index1, index2, row) : 0.0;
 			int num2 = 0;
 			double num3 = 0.0;
-			for (int index = index1; index <= index2; ++index)
+			for (int i = index1; i <= index2; ++i)
 			{
-				num3 += Math.Pow(base[index, row] - num1, (double)k);
+				num3 += Math.Pow(base[i, row] - num1, (double)k);
 				++num2;
 			}
 			if (num2 == 0)
@@ -671,14 +714,15 @@ namespace FreeQuant.Series
 
 		public override double GetAsymmetry(int index1, int index2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(7922) + this.name + oK6F3TB73XXXGhdieP.wF6SgrNUO(7998));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8022));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8094));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8142));
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
 			double stdDev = this.GetStdDev(index1, index2, row);
 			if (stdDev == 0.0)
 				return 0.0;
@@ -688,14 +732,15 @@ namespace FreeQuant.Series
 
 		public override double GetExcess(int index1, int index2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8190) + this.name + oK6F3TB73XXXGhdieP.wF6SgrNUO(8260));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8284));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8356));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8404));
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
 			double stdDev = this.GetStdDev(index1, index2, row);
 			if (stdDev == 0.0)
 				return 0.0;
@@ -705,14 +750,15 @@ namespace FreeQuant.Series
 
 		public override double GetCovariance(int row1, int row2, int index1, int index2)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8452));
-//			if (index1 > index2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8546));
-//			if (index1 < 0 || index1 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8618));
-//			if (index2 < 0 || index2 > this.Count - 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(8666));
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (index1 > index2)
+				throw new ApplicationException("index1 > index2");
+			if (index1 < 0 || index1 > this.Count - 1)
+				throw new ApplicationException("index 1 out of range");
+			if (index2 < 0 || index2 > this.Count - 1)
+				throw new ApplicationException("index 2 out of range");
+
 			double mean1 = this.GetMean(index1, index2, row1);
 			double mean2 = this.GetMean(index1, index2, row2);
 			double num1 = 0.0;
@@ -738,29 +784,30 @@ namespace FreeQuant.Series
 			return this.GetCovariance(series, this.FirstDateTime, this.LastDateTime);
 		}
 
-		public override double GetCovariance(TimeSeries series, DateTime dateTime1, DateTime dateTime2)
+		public override double GetCovariance(TimeSeries series, DateTime datetime1, DateTime datetime2)
 		{
 			if (!(series is DoubleSeries))
 				throw new ArgumentException("not a DoubleSeries");
+
 			double mean1 = this.GetMean();
 			double mean2 = series.GetMean();
-			double num1 = 0.0;
-			double num2 = 0.0;
-			int index1 = series.GetIndex(dateTime1, EIndexOption.Next);
-			int index2 = series.GetIndex(dateTime2, EIndexOption.Prev);
-			for (int index3 = index1; index3 <= index2; ++index3)
+			double n = 0.0;
+			double sum = 0.0;
+			int index1 = series.GetIndex(datetime1, EIndexOption.Next);
+			int index2 = series.GetIndex(datetime2, EIndexOption.Prev);
+			for (int i = index1; i <= index2; ++i)
 			{
-				DateTime dateTime = this.GetDateTime(index3);
-				if (series.Contains(dateTime))
+				DateTime dt = this.GetDateTime(i);
+				if (series.Contains(dt))
 				{
-					num2 += (this[index3] - mean1) * ((double)series[dateTime] - mean2);
-					++num1;
+					sum += (this[i] - mean1) * ((double)series[dt] - mean2);
+					++n;
 				}
 			}
-			if (num1 <= 1.0)
+			if (n <= 1.0)
 				return 0.0;
-			else
-				return num2 / (num1 - 1.0);
+
+			return sum / (n - 1.0);
 		}
 
 		public override double GetCorrelation(TimeSeries series)
@@ -775,169 +822,177 @@ namespace FreeQuant.Series
 
 		public virtual DoubleSeries Log()
 		{
-			DoubleSeries doubleSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
-			doubleSeries.name = this.name;
-			doubleSeries.title = this.title;
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this.GetDateTime(index), Math.Log(base[index, 0]));
-			return doubleSeries;
+			DoubleSeries ds = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
+			ds.fName = this.fName;
+			ds.fTitle = this.fTitle;
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this.GetDateTime(i), Math.Log(this[i, 0]));
+			return ds;
 		}
 
 		public DoubleSeries Log10()
 		{
-			DoubleSeries doubleSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
-			doubleSeries.name =  this.name;
-			doubleSeries.title = this.title;
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this.GetDateTime(index), Math.Log10(base[index, 0]));
-			return doubleSeries;
+			DoubleSeries ds = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
+			ds.fName =  this.fName;
+			ds.fTitle = this.fTitle;
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this.GetDateTime(i), Math.Log10(this[i, 0]));
+			return ds;
 		}
 
 		public DoubleSeries Sqrt()
 		{
-			DoubleSeries doubleSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
-			doubleSeries.name =  this.name;
-			doubleSeries.title = this.title;
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this.GetDateTime(index), Math.Sqrt(base[index, 0]));
-			return doubleSeries;
+			DoubleSeries ds = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
+			ds.fName = this.fName;
+			ds.fTitle = this.fTitle;
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this.GetDateTime(i), Math.Sqrt(this[i, 0]));
+			return ds;
 		}
 
 		public DoubleSeries Exp()
 		{
-			DoubleSeries doubleSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
-			doubleSeries.name =  this.name;
-			doubleSeries.title = this.title;
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this.GetDateTime(index), Math.Exp(base[index, 0]));
-			return doubleSeries;
+			DoubleSeries ds = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
+			ds.fName = this.fName;
+			ds.fTitle = this.fTitle;
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this.GetDateTime(i), Math.Exp(this[i, 0]));
+			return ds;
 		}
 
 		public DoubleSeries Pow(double Pow)
 		{
-			DoubleSeries doubleSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
-			doubleSeries.name =  this.name;
-			doubleSeries.Title = this.title;
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this.GetDateTime(index), Math.Pow(base[index, 0], Pow));
-			return doubleSeries;
+			DoubleSeries ds = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as DoubleSeries;
+			ds.fName = this.fName;
+			ds.fTitle = this.fTitle;
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this.GetDateTime(i), Math.Pow(this[i, 0], Pow));
+			return ds;
 		}
 
-		public virtual double GetAutoCovariance(int Lag)
+		public virtual double GetAutoCovariance(int lag)
 		{
-			if (Lag >= this.Count)
-				throw new ApplicationException("Lag >= this.Count");
-			double mean = this.GetMean();
-			double num = 0.0;
-			for (int index = Lag; index < this.Count; ++index)
-				num += (base[index, 0] - mean) * (base[index - Lag, 0] - mean);
-			return num / (double)(this.Count - Lag);
+			if (lag >= this.Count)
+			{
+				throw new ApplicationException("lag >= Count");
+			}
+			double m = this.GetMean();
+			double sum = 0.0;
+			for (int i = lag; i < this.Count; ++i)
+				sum += (this[i, 0] - m) * (this[i - lag, 0] - m);
+			return sum / (this.Count - lag);
 		}
 
-		public double GetAutoCorrelation(int Lag)
+		public double GetAutoCorrelation(int lag)
 		{
-			return this.GetAutoCovariance(Lag) / this.GetVariance();
+			return this.GetAutoCovariance(lag) / this.GetVariance();
 		}
 
-		public Graph GetCorrelogram(int Lag1, int Lag2)
+		public Graph GetCorrelogram(int lag1, int lag2)
 		{
 			Graph graph = new Graph();
-			for (int Lag = Lag1; Lag <= Lag2; ++Lag)
-				graph.Add((double)Lag, this.GetAutoCorrelation(Lag));
+			for (int i = lag1; i <= lag2; ++i)
+				graph.Add((double)i, this.GetAutoCorrelation(i));
 			return graph;
 		}
 
-		public Graph GetCorrelogram(int Lag)
+		public Graph GetCorrelogram(int lag)
 		{
-			return this.GetCorrelogram(Lag, this.Count / 4);
+			return this.GetCorrelogram(lag, this.Count / 4);
 		}
 
 		public virtual DoubleSeries GetReturnSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.name, this.title);
+			DoubleSeries ds = new DoubleSeries(this.fName, this.fTitle);
 			if (this.Count > 1)
 			{
-				double num1 = this[0];
-				for (int index = 0; index < this.Count; ++index)
+				double t0 = this[0];
+				for (int i = 0; i < this.Count; ++i)
 				{
-					DateTime dateTime = this.GetDateTime(index);
-					double num2 = this[index];
-					if (num1 != 0.0)
-						doubleSeries.Add(dateTime, num2 / num1);
+					DateTime dt = this.GetDateTime(i);
+					double t1 = this[i];
+					if (t0 != 0.0)
+						ds.Add(dt, t1 / t0);
 					else
-						doubleSeries.Add(dateTime, 0.0);
-					num1 = num2;
+						ds.Add(dt, 0.0);
+					t0 = t1;
 				}
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public virtual DoubleSeries GetPercentReturnSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.name, this.title);
+			DoubleSeries ds = new DoubleSeries(this.fName, this.fTitle);
 			if (this.Count > 1)
 			{
-				double num1 = this[0];
-				for (int index = 0; index < this.Count; ++index)
+				double t0 = this[0];
+				for (int i = 0; i < this.Count; ++i)
 				{
-					DateTime dateTime = this.GetDateTime(index);
-					double num2 = this[index];
-					if (num1 != 0.0)
-						doubleSeries.Add(dateTime, (num2 / num1 - 1.0) * 100.0);
+					DateTime dt = this.GetDateTime(i);
+					double t1 = this[i];
+					if (t0 != 0.0)
+						ds.Add(dt, (t1 / t0 - 1.0) * 100.0);
 					else
-						doubleSeries.Add(dateTime, 0.0);
-					num1 = num2;
+						ds.Add(dt, 0.0);
+					t0 = t1;
 				}
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public virtual DoubleSeries GetPositiveSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries();
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries();
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index] > 0.0)
-					doubleSeries.Add(this.GetDateTime(index), this[index]);
+				if (this[i] > 0.0)
+					ds.Add(this.GetDateTime(i), this[i]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public virtual DoubleSeries GetNegativeSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries();
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries();
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index] < 0.0)
-					doubleSeries.Add(this.GetDateTime(index), this[index]);
+				if (this[i] < 0.0)
+					ds.Add(this.GetDateTime(i), this[i]);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
-//		public DoubleSeries Shift(int offset)
-//		{
-//			DoubleSeries doubleSeries = new DoubleSeries(this.Name, this.Title);
-//			int num1 = 0;
-//			if (offset < 0)
-//				num1 += Math.Abs(offset);
-//			for (int index1 = num1; index1 < this.Count; ++index1)
-//			{
-//				int index2 = index1 + offset;
-//				if (index2 < this.Count)
-//				{
-//					DateTime dateTime = this.GetDateTime(index2);
-//					double num2 = this[index1];
-//					doubleSeries[dateTime] = num2;
-//				}
-//				else
-//					break;
-//			}
-//			return doubleSeries;
-//		}
+		public new DoubleSeries Shift(int offset)
+		{
+			DoubleSeries ds = new DoubleSeries(base.Name, base.Title);
+			int num = 0;
+			if (offset < 0)
+			{
+				num += Math.Abs(offset);
+			}
+
+			for (int i = num; i < this.Count; i++)
+			{
+				int num2 = i + offset;
+				if (num2 >= this.Count)
+				{
+					break;
+				}
+				DateTime dateTime = this.GetDateTime(num2);
+				double value = this[i];
+				ds[dateTime] = value;
+			}
+			return ds;
+		}
 
 		public double Ago(int n)
 		{
 			int index = this.Count - 1 - n;
+			if (index < 0)
+			{
+				throw new ArgumentException("count - 1 - n < 0");
+			}
 			return this[index];
 		}
 
@@ -948,65 +1003,72 @@ namespace FreeQuant.Series
 
 		public bool IsPadRangeY()
 		{
-			return this.monitored || this.fAutoZoom;
+			return this.fMonitored || this.fAutoZoom;
 		}
 
 		public virtual PadRange GetPadRangeX(Pad pad)
 		{
-			return (PadRange)null;
+			return null;
 		}
 
 		public virtual PadRange GetPadRangeY(Pad pad)
 		{
 			if (this.Count == 0)
 				return new PadRange(0.0, 0.0);
-			DateTime dateTime1 = new DateTime((long)pad.XMin);
-			DateTime dateTime2 = new DateTime((long)pad.XMax);
-			return new PadRange(this.GetMin(dateTime1, dateTime2), this.GetMax(dateTime1, dateTime2));
+			DateTime dt1 = new DateTime((long)pad.XMin);
+			DateTime dt2 = new DateTime((long)pad.XMax);
+			return new PadRange(this.GetMin(dt1, dt2), this.GetMax(dt1, dt2));
 		}
 
-//		public override void Draw(string Option)
-//		{
-//			if (Chart.Pad == null)
-//			{
-//				Canvas canvas = new Canvas("CanName", "CanTtile");
-//			}
-//			if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(10372)) != -1)
-//				this.fDrawStyle = EDrawStyle.Bar;
-//			if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(10378)) != -1)
-//				this.fDrawStyle = EDrawStyle.Circle;
-//			if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(10384)) != -1)
-//				this.fDrawStyle = EDrawStyle.Line;
-//			Chart.Pad.Add((IDrawable)this);
-//			Chart.Pad.Title.Add(this.name, this.color);
-//			Chart.Pad.Legend.Add(this.name, this.color);
-//			Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
-//			Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10390);
-//			if (this.Count <= 0)
-//				return;
-//			if ((this.LastDateTime - this.FirstDateTime).TotalSeconds / (double)(this.Count - 1) >= 86400.0)
-//			{
-//				Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10426);
-//				this.toolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10450);
-//			}
-//			else
-//			{
-//				Chart.Pad.AxisBottom.LabelFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10474);
-//				this.toolTipDateTimeFormat = oK6F3TB73XXXGhdieP.wF6SgrNUO(10488);
-//			}
-//			if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(10502)) != -1)
-//				return;
-//			Chart.Pad.SetRange((double)this.FirstDateTime.Ticks, (double)this.LastDateTime.Ticks, this.GetMin(), this.GetMax());
-//		}
+		public override void Draw(string option)
+		{
+			if (Chart.Pad == null)
+			{
+				new Canvas("Canvas Name", "Canvas Title");
+			}
+			if (option.ToLower().IndexOf("DrawStyle=Bar") != -1)
+				this.fDrawStyle = EDrawStyle.Bar;
+			if (option.ToLower().IndexOf("DrawStyle=Circle") != -1)
+				this.fDrawStyle = EDrawStyle.Circle;
+			if (option.ToLower().IndexOf("DrawStyle=Line") != -1)
+				this.fDrawStyle = EDrawStyle.Line;
+			Chart.Pad.Add(this);
+			Chart.Pad.Title.Add(this.Name, this.Color);
+			Chart.Pad.Legend.Add(this.Name, this.Color);
+			Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
+			Chart.Pad.AxisBottom.LabelFormat = "";
+			if (this.Count > 0)
+			{
+				if ((this.LastDateTime-this.FirstDateTime).TotalSeconds / (double)(this.Count - 1) >= 86400.0)
+				{
+					Chart.Pad.AxisBottom.LabelFormat = "";
+					this.ToolTipDateTimeFormat = "";
+				}
+				else
+				{
+					Chart.Pad.AxisBottom.LabelFormat = "";
+					this.ToolTipDateTimeFormat = "";
+				}
+
+				if (option.ToLower().IndexOf("Range") == -1)
+				{
+					double xMin = (double)this.FirstDateTime.Ticks;
+					double xMax = (double)this.LastDateTime.Ticks;
+					double min = this.GetMin();
+					double max = this.GetMax();
+					Chart.Pad.SetRange(xMin, xMax, min, max);
+				}
+			}
+		}
 
 		public override void Draw()
 		{
-			this.Draw(String.Empty);
+			this.Draw(string.Empty);
 		}
 
-		public virtual void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
+		public virtual void Paint(Pad pad, double xMin, double xMax, double yMin, double yMax)
 		{
-			Pen pen1 = new Pen(this.color, (float)this.fDrawWidth);
+			Pen pen1 = new Pen(this.Color, (float)this.DrawWidth);
 			int num1 = 0;
 			double num2 = 0.0;
 			double num3 = 0.0;
@@ -1018,8 +1080,8 @@ namespace FreeQuant.Series
 			int num5 = 0;
 			int num6 = 0;
 			int num7 = 0;
-			DateTime dateTime1 = new DateTime((long)XMin);
-			DateTime dateTime2 = new DateTime((long)XMax);
+			DateTime dateTime1 = new DateTime((long)xMin);
+			DateTime dateTime2 = new DateTime((long)xMax);
 			int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
 			int index2 = this.GetIndex(dateTime2, EIndexOption.Prev);
 			if (index1 == -1 || index2 == -1)
@@ -1033,7 +1095,7 @@ namespace FreeQuant.Series
 						double num8 = (double)dateTime3.Ticks;
 						double num9 = base[index3, 0];
 						if (dateTime3 > this.splitDate)
-							pen1 = new Pen(this.secondColor, (float)this.fDrawWidth);
+							pen1 = new Pen(this.secondColor, (float)this.DrawWidth);
 						if (num1 != 0)
 						{
 							x1 = pad.ClientX(num2);
@@ -1063,9 +1125,9 @@ namespace FreeQuant.Series
 							Pen pen2 = new Pen(this.secondColor, (float)this.fDrawWidth);
 						}
 						if (WorldY > 0.0)
-							pad.Graphics.FillRectangle((Brush)new SolidBrush(this.color), pad.ClientX(WorldX) - (this.fDrawWidth + 1) / 2, pad.ClientY(WorldY), this.fDrawWidth + 1, pad.ClientY(0.0) - pad.ClientY(WorldY));
+							pad.Graphics.FillRectangle((Brush)new SolidBrush(this.fColor), pad.ClientX(WorldX) - (this.fDrawWidth + 1) / 2, pad.ClientY(WorldY), this.fDrawWidth + 1, pad.ClientY(0.0) - pad.ClientY(WorldY));
 						else
-							pad.Graphics.FillRectangle((Brush)new SolidBrush(this.color), pad.ClientX(WorldX) - (this.fDrawWidth + 1) / 2, pad.ClientY(0.0), this.fDrawWidth + 1, pad.ClientY(WorldY) - pad.ClientY(0.0));
+							pad.Graphics.FillRectangle((Brush)new SolidBrush(this.fColor), pad.ClientX(WorldX) - (this.fDrawWidth + 1) / 2, pad.ClientY(0.0), this.fDrawWidth + 1, pad.ClientY(WorldY) - pad.ClientY(0.0));
 					}
 					break;
 				case EDrawStyle.Circle:
@@ -1074,33 +1136,33 @@ namespace FreeQuant.Series
 						DateTime dateTime3 = this.GetDateTime(index3);
 						double WorldX = (double)dateTime3.Ticks;
 						double WorldY = base[index3, 0];
-						SolidBrush solidBrush = !(dateTime3 > this.splitDate) ? new SolidBrush(this.color) : new SolidBrush(this.secondColor);
+						SolidBrush solidBrush = !(dateTime3 > this.splitDate) ? new SolidBrush(this.fColor) : new SolidBrush(this.secondColor);
 						pad.Graphics.FillEllipse((Brush)solidBrush, pad.ClientX(WorldX) - this.fDrawWidth / 2, pad.ClientY(WorldY) - this.fDrawWidth / 2, this.fDrawWidth, this.fDrawWidth);
 					}
 					break;
 			}
 		}
 
-		public virtual TDistance Distance(double X, double Y)
+		public virtual TDistance Distance(double x, double y)
 		{
-			if (X < 0.0)
-				return (TDistance)null;
+			if (x < 0.0)
+				return null;
 			TDistance tdistance = new TDistance();
-			int index1 = this.GetIndex(new DateTime((long)X), EIndexOption.Next);
-			int index2 = this.GetIndex(new DateTime((long)X), EIndexOption.Prev);
+			int index1 = this.GetIndex(new DateTime((long)x), EIndexOption.Next);
+			int index2 = this.GetIndex(new DateTime((long)x), EIndexOption.Prev);
 			if (index1 != -1)
 			{
 				DateTime dateTime = this.GetDateTime(index1);
-				tdistance.dX = Math.Abs(X - (double)dateTime.Ticks);
-				tdistance.dY = Math.Abs(Y - this[dateTime]);
+				tdistance.dX = Math.Abs(x - (double)dateTime.Ticks);
+				tdistance.dY = Math.Abs(y - this[dateTime]);
 				tdistance.X = (double)dateTime.Ticks;
 				tdistance.Y = this[dateTime];
 			}
 			if (index2 != -1)
 			{
 				DateTime dateTime = this.GetDateTime(index2);
-				double num1 = Math.Abs(X - (double)dateTime.Ticks);
-				double num2 = Math.Abs(Y - this[dateTime]);
+				double num1 = Math.Abs(x - (double)dateTime.Ticks);
+				double num2 = Math.Abs(y - this[dateTime]);
 				if (num1 < tdistance.dX && num2 < tdistance.dY)
 				{
 					tdistance.dX = num1;
@@ -1110,11 +1172,11 @@ namespace FreeQuant.Series
 				}
 			}
 			if (tdistance.dX == double.MaxValue || tdistance.dY == double.MaxValue)
-				return (TDistance)null;
+				return null;
 			DateTime dateTime1 = new DateTime((long)tdistance.X);
 			StringBuilder stringBuilder = new StringBuilder();
-			if (this.toolTipFormat != null && this.toolTipDateTimeFormat != null)
-				stringBuilder.AppendFormat(this.toolTipFormat, (object)this.name, (object)this.title, (object)dateTime1.ToString(this.toolTipDateTimeFormat), (object)tdistance.Y);
+			if (this.fToolTipFormat != null && this.fToolTipDateTimeFormat != null)
+				stringBuilder.AppendFormat(this.fToolTipFormat, (object)this.fName, (object)this.fTitle, (object)dateTime1.ToString(this.fToolTipDateTimeFormat), (object)tdistance.Y);
 			tdistance.ToolTipText = ((object)stringBuilder).ToString();
 			return tdistance;
 		}

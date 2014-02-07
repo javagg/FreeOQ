@@ -1,105 +1,92 @@
-
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  public class StopList : ICollection, IEnumerable
-  {
-    private ArrayList qA2WAo3yMW;
+	public class StopList : ICollection
+	{
+		private ArrayList stops; 
 
-    public bool IsSynchronized
-    {
-      get
-      {
-        return this.qA2WAo3yMW.IsSynchronized;
-      }
-    }
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.stops.IsSynchronized;
+			}
+		}
 
-    public int Count
-    {
-      get
-      {
-        return this.qA2WAo3yMW.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.stops.Count;
+			}
+		}
 
-    public object SyncRoot
-    {
-      get
-      {
-        return this.qA2WAo3yMW.SyncRoot;
-      }
-    }
+		public object SyncRoot
+		{
+			get
+			{
+				return this.stops.SyncRoot;
+			}
+		}
 
-    public IStop this[int index]
-    {
-      get
-      {
-        return this.qA2WAo3yMW[index] as IStop;
-      }
-    }
+		public IStop this[int index]
+		{
+			get
+			{
+				return this.stops[index] as IStop;
+			}
+		}
 
-   
-    public StopList()
-    {
+		public StopList()
+		{
+			this.stops = new ArrayList();
+		}
 
-      this.qA2WAo3yMW = new ArrayList();
-    }
+		public void CopyTo(Array array, int index)
+		{
+			this.stops.CopyTo(array, index);
+		}
 
-   
-    public void CopyTo(Array array, int index)
-    {
-      this.qA2WAo3yMW.CopyTo(array, index);
-    }
+		public IEnumerator GetEnumerator()
+		{
+			return this.stops.GetEnumerator();
+		}
 
-   
-    public IEnumerator GetEnumerator()
-    {
-      return this.qA2WAo3yMW.GetEnumerator();
-    }
+		public void Add(IStop stop)
+		{
+			this.Add(stop, true);
+		}
 
-   
-    public void Add(IStop stop)
-    {
-      this.Add(stop, true);
-    }
+		public void Add(IStop stop, bool sort)
+		{
+			this.stops.Add(stop);
+		}
 
-   
-    public void Add(IStop stop, bool sort)
-    {
-      this.qA2WAo3yMW.Add((object) stop);
-    }
+		public void Remove(IStop stop)
+		{
+			this.stops.Remove(stop);
+		}
 
-   
-    public void Remove(IStop stop)
-    {
-      this.qA2WAo3yMW.Remove((object) stop);
-    }
+		public void RemoveAt(int index)
+		{
+			this.stops.RemoveAt(index);
+		}
 
-   
-    public void RemoveAt(int index)
-    {
-      this.qA2WAo3yMW.RemoveAt(index);
-    }
+		public void Clear()
+		{
+			this.stops.Clear();
+		}
 
-   
-    public void Clear()
-    {
-      this.qA2WAo3yMW.Clear();
-    }
+		public bool Contains(IStop stop)
+		{
+			return this.stops.Contains(stop);
+		}
 
-   
-    public bool Contains(IStop stop)
-    {
-      return this.qA2WAo3yMW.Contains((object) stop);
-    }
-
-   
-    public void Sort()
-    {
-      this.qA2WAo3yMW.Sort();
-    }
-  }
+		public void Sort()
+		{
+			this.stops.Sort();
+		}
+	}
 }

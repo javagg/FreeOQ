@@ -1,6 +1,5 @@
 using FreeQuant.Instruments;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
@@ -12,11 +11,8 @@ namespace FreeQuant.Trading
     {
        get
       {
-        object obj = this.GCRR8QLLE5[(object) instrument];
-        if (obj != null)
-          return (bool) obj;
-        else
-          return false;
+        object obj = this.GCRR8QLLE5[instrument];
+				return (obj != null) ? (bool)obj : false;
       }
        set
       {

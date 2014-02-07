@@ -14,8 +14,6 @@ namespace FreeQuant.Trading
 		{
 			this.GUID = new Guid(guid);
 			this.Type = type;
-//			this.Name = null;
-//			this.Description = null;
 		}
 	}
 }

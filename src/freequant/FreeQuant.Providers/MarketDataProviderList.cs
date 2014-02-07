@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Providers
 {
 	public class MarketDataProviderList : ProviderList

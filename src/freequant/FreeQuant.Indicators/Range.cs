@@ -49,7 +49,7 @@ namespace FreeQuant.Indicators
       this.length = 14;
       this.length = length;
       this.Init();
-			this.color = color;
+			this.fColor = color;
     }
 
     
@@ -58,7 +58,7 @@ namespace FreeQuant.Indicators
       this.length = 14;
       this.length = length;
       this.Init();
-			this.color = color;
+			this.fColor = color;
       this.fDrawStyle = drawStyle;
     }
 

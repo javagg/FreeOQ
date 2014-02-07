@@ -48,7 +48,7 @@ namespace FreeQuant.FIX
 			}
 		}
 
-		object IList.this[int index]
+		object IList.this [int index]
 		{
 			get
 			{
@@ -60,7 +60,7 @@ namespace FreeQuant.FIX
 			}
 		}
 
-		public FIXGroup this[int index]
+		public FIXGroup this [int index]
 		{
 			get
 			{

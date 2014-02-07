@@ -31,6 +31,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="nunit.framework" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -67,5 +68,8 @@
     <Compile Include="Trade.cs" />
     <Compile Include="ViewAttribute.cs" />
     <Compile Include="MemorySeries.cs" />
+    <Compile Include="OrderBookEventArgs.cs" />
+    <Compile Include="OrderBookEntry.cs" />
+    <Compile Include="OrderBookEventHandler.cs" />
   </ItemGroup>
 </Project>

@@ -13,6 +13,8 @@ namespace FreeQuant.FinChart
 		protected bool isMarkEnable;
 		protected bool selected;
 		protected bool displayNameEnabled;
+		protected string toolTipFormat;
+		protected bool toolTipEnabled;
 
 		public virtual string DisplayName
 		{
@@ -22,8 +24,29 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		public virtual bool DisplayNameEnabled { get; set; }
-		public bool IsMarkEnable { get; set; }
+		public virtual bool DisplayNameEnabled
+		{ 
+			get
+			{
+				return this.displayNameEnabled;
+			}
+			set
+			{
+				this.displayNameEnabled = value;
+			}
+		}
+
+		public bool IsMarkEnable 
+		{
+			get
+			{
+				return this.isMarkEnable;
+			}
+			set
+			{
+				this.isMarkEnable = value;
+			}
+		}
 
 		public virtual int LabelDigitsCount
 		{
@@ -33,8 +56,28 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		public bool ToolTipEnabled { get; set; }
-		public string ToolTipFormat { get; set; }
+		public bool ToolTipEnabled
+		{
+			get
+			{
+				return this.toolTipEnabled;
+			}
+			set
+			{
+				this.toolTipEnabled = value;
+			}
+		}
+		public string ToolTipFormat
+		{ get
+			{
+				return this.toolTipFormat;
+			}
+			set
+			{
+				this.toolTipFormat = value;
+			}
+		}
+
 		public abstract Color Color { get; set; }
 
 		[Browsable(false)]
@@ -45,10 +88,10 @@ namespace FreeQuant.FinChart
 
 		public SeriesView(Pad pad)
 		{
-			this.IsMarkEnable = true;
-			this.ToolTipEnabled = true;
-			this.ToolTipFormat = String.Empty;
-			this.DisplayNameEnabled = true;
+			this.isMarkEnable = true;
+			this.toolTipEnabled = true;
+			this.toolTipFormat = string.Empty;
+			this.displayNameEnabled = true;
 			this.pad = pad;
 		}
 

@@ -60,31 +60,38 @@ namespace FreeQuant.Data
 				this.size = value;
 			}
 		}
-		public Trade(){
+
+		public Trade() : this(DateTime.MinValue, 0.0, 0)
+		{
 		}
+
 		public Trade(DateTime datetime, double price, int size)
 		{
 			this.datetime = datetime;
 			this.price = price;
 			this.size = size;
+			this.providerId = 0;
 		}
 
 		public Trade(Trade trade) : this(trade.datetime, trade.price, trade.size)
 		{
 			this.providerId = trade.providerId;
 		}
-		//    public override string ToString()
-		//    {
-		//      return string.Format(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(1080), (object) this.datetime, (object) this.price, (object) this.size);
-		//    }
+
+		// TODO:
+		public override string ToString()
+		{
+			return string.Format("", this.datetime, this.price, this.size);
+		}
+
 		public virtual ISeriesObject NewInstance()
 		{
-			return (ISeriesObject)new Trade();
+			return new Trade();
 		}
 
 		public virtual object Clone()
 		{
-			return (object)new Trade(this);
+			return new Trade(this);
 		}
 
 		public virtual void WriteTo(BinaryWriter writer)
@@ -94,7 +101,7 @@ namespace FreeQuant.Data
 			writer.Write(this.size);
 			writer.Write(this.providerId);
 		}
-
+		// TODO:
 		public virtual void ReadFrom(BinaryReader reader)
 		{
 			this.datetime = new DateTime(reader.ReadInt64());

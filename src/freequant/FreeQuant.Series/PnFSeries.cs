@@ -18,11 +18,11 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this[this.Count - 1]  as PnF;
+				return this[this.Count-1]  as PnF;
 			}
 		}
 
-		new  public PnF this [int i]
+		public new PnF this[int i]
 		{
 			get
 			{
@@ -30,220 +30,221 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public PnF this [DateTime DateTime]
+		public new PnF this[DateTime datetime]
 		{
 			get
 			{
-				return ((TimeSeries)this)[DateTime] as PnF;
+				return ((TimeSeries)this)[datetime] as PnF;
 			}
 		}
 
-		new public PnF this [DateTime DateTime, EIndexOption Option]
+		public new PnF this[DateTime datetime, EIndexOption option]
 		{
 			get
 			{
-				return ((TimeSeries)this)[DateTime, Option] as PnF;
+				return ((TimeSeries)this)[datetime, option] as PnF;
 			}
 		}
 
-		public override double this [int Index, int BarData]
+		public override double this[int index, int barData]
 		{
 			get
 			{
-				return this[Index][BarData];
+				return this[index][barData];
 			}
 		}
 
-		public override double this [int Index, BarData BarData]
+		public override double this[int index, BarData barData]
 		{
 			get
 			{
-				return this[Index][BarData];
+				return this[index][barData];
 			}
 		}
 
 		public PnFSeries(string name, string title) : base(name, title)
 		{
-			this.fArray = (IDataSeries)new MemorySeries<PnF>();
+			this.fArray = new MemorySeries<PnF>();
 		}
 
-		public PnFSeries(string name) : this(name, String.Empty)
+		public PnFSeries(string name) : this(name, string.Empty)
 		{
-
 		}
 
 		public PnFSeries() : this("PnFSeries")
 		{
 		}
-		//    public PnFSeries Clone()
-		//    {
-		//      return base.Clone() as PnFSeries;
-		//    }
-		//    public PnFSeries Clone(int Index1, int Index2)
-		//    {
-		//      return base.Clone(Index1, Index2) as PnFSeries;
-		//    }
-		//
-		//    public PnFSeries Clone(DateTime DateTime1, DateTime DateTime2)
-		//    {
-		//      return base.Clone(DateTime1, DateTime2) as PnFSeries;
-		//    }
-		public bool Contains(PnF PnF)
+
+		public new PnFSeries Clone()
 		{
-			return base.Contains(PnF.DateTime);
+			return base.Clone() as PnFSeries;
+		}
+
+		public new PnFSeries Clone(int index1, int index2)
+		{
+			return base.Clone(index1, index2) as PnFSeries;
+		}
+
+		public new PnFSeries Clone(DateTime datetime1, DateTime datetime2)
+		{
+			return base.Clone(datetime1, datetime2) as PnFSeries;
+		}
+
+		public bool Contains(PnF pnF)
+		{
+			return base.Contains(pnF.DateTime);
 		}
 
 		public void Add(PnF pnF)
 		{
-			this.fArray[pnF.DateTime] = (object)pnF;
+			this.fArray[pnF.DateTime] = pnF;
 			this.EmitItemAdded(pnF.DateTime);
 		}
 
-		public void Remove(PnF PnF)
+		public void Remove(PnF pnF)
 		{
-			this.fArray.Remove(PnF.DateTime);
-		}
-		//
-		//    public PnFSeries Shift(int offset)
-		//    {
-		//      PnFSeries pnFseries = new PnFSeries(this.Name, this.Title);
-		//      int num = 0;
-		//      if (offset < 0)
-		//        num += Math.Abs(offset);
-		//      for (int index1 = num; index1 < this.Count; ++index1)
-		//      {
-		//        int index2 = index1 + offset;
-		//        if (index2 < this.Count)
-		//        {
-		//          DateTime dateTime = this.GetDateTime(index2);
-		//          pnFseries.Add(new PnF(this[index1])
-		//          {
-		//            DateTime = dateTime
-		//          });
-		//        }
-		//        else
-		//          break;
-		//      }
-		//      return pnFseries;
-		//    }
-		//
-		//
-		//    public PnF Ago(int n)
-		//    {
-		//      int index = this.Count - 1 - n;
-		//      if (index < 0)
-		//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(12490) + (object) n + oK6F3TB73XXXGhdieP.wF6SgrNUO(12532));
-		//      else
-		//        return this[index];
-		//    }
-		public DoubleSeries GetArray(BarData BarData)
-		{
-			return this.GetArray(0, this.Count - 1, BarData);
+			this.fArray.Remove(pnF.DateTime);
 		}
 
-		public DoubleSeries GetArray(int Index1, int Index2, BarData BarData)
+		public new PnFSeries Shift(int offset)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries();
-			for (int index = Index1; index <= Index2; ++index)
-				doubleSeries.Add(this.GetDateTime(index), ((TimeSeries)this)[index, BarData]);
-			return doubleSeries;
+			PnFSeries pnFseries = new PnFSeries(this.Name, this.Title);
+			int num = 0;
+			if (offset < 0)
+				num += Math.Abs(offset);
+			for (int index1 = num; index1 < this.Count; ++index1)
+			{
+				int index2 = index1 + offset;
+				if (index2 < this.Count)
+				{
+					DateTime dateTime = this.GetDateTime(index2);
+					pnFseries.Add(new PnF(this[index1])
+					{
+						DateTime = dateTime
+					});
+				}
+				else
+					break;
+			}
+			return pnFseries;
 		}
 
-		public DoubleSeries GetArray(DateTime DateTime1, DateTime DateTime2, BarData BarData)
+		public new PnF Ago(int n)
 		{
-			return this.GetArray(this.GetIndex(DateTime1, EIndexOption.Next), this.GetIndex(DateTime2, EIndexOption.Prev), BarData);
+			int index = this.Count - 1 - n;
+			if (index < 0)
+				throw new ArgumentException("index < Count-1-n");
+			else
+				return this[index];
+		}
+		public DoubleSeries GetArray(BarData barData)
+		{
+			return this.GetArray(0, this.Count - 1, barData);
+		}
+
+		public DoubleSeries GetArray(int index1, int index2, BarData barData)
+		{
+			DoubleSeries ds = new DoubleSeries();
+			for (int i = index1; i <= index2; ++i)
+				ds.Add(this.GetDateTime(i), this[i, barData]);
+			return ds;
+		}
+
+		public DoubleSeries GetArray(DateTime datetime1, DateTime datetime2, BarData barData)
+		{
+			return this.GetArray(this.GetIndex(datetime1, EIndexOption.Next), this.GetIndex(datetime2, EIndexOption.Prev), barData);
 		}
 
 		public DoubleSeries GetHighSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].High);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].High);
+			return ds;
 		}
 
 		public DoubleSeries GetLowSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].Low);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].Low);
+			return ds;
 		}
 
 		public DoubleSeries GetOpenSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].Open);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].Open);
+			return ds;
 		}
 
 		public DoubleSeries GetCloseSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].Close);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].Close);
+			return ds;
 		}
 
 		public DoubleSeries GetVolumeSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, (double)this[index].Volume);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].Volume);
+			return ds;
 		}
 
 		public DoubleSeries GetOpenIntSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, (double)this[index].OpenInt);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].OpenInt);
+			return ds;
 		}
 
 		public DoubleSeries GetHighSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].High);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].High);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetLowSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].Low);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].Low);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetOpenSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].Open);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].Open);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetCloseSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name);
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name);
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].Close);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].Close);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetVolumeSeries(DateTime date1, DateTime date2)

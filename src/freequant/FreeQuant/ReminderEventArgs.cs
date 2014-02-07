@@ -4,10 +4,7 @@ namespace FreeQuant
 {
 	public class ReminderEventArgs : EventArgs
 	{
-		private DateTime signalTime = DateTime.MaxValue;
-		private object data = null;
-
-		public DateTime SignalTime { get { return signalTime; } }
-		public object Data  { get { return data; } }
+		public DateTime SignalTime { get; private set; }
+		public object Data  { get; private set; }
 	}
 }

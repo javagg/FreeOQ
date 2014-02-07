@@ -3,7 +3,6 @@ using FreeQuant.Series;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Indicators
 {
@@ -12,14 +11,15 @@ namespace FreeQuant.Indicators
 	{
 		protected TimeSeries fInput;
 		protected EIndicatorType fType;
-		protected bool fCalculate;
-		protected bool fDrawEnabled;
+		protected bool fCalculate = true;
+		protected bool fDrawEnabled = true;
 		protected int fFirstIndex;
 		protected int fLastIndex;
 		protected static bool fSyncIndex;
-		private bool rbmJhWudB;
 
-		protected int fRealCount
+		private bool inputCalculate;
+
+   	protected int fRealCount
 		{
 			get
 			{
@@ -34,7 +34,7 @@ namespace FreeQuant.Indicators
 			{
 				this.Calculate();
 				if (this.fRealCount <= 0)
-					throw new ApplicationException("");
+					throw new ApplicationException("fRealCount <= 0");
 				else
 					return this.GetDateTime(this.fFirstIndex);
 			}
@@ -97,12 +97,12 @@ namespace FreeQuant.Indicators
 		{
 			get
 			{
-				return this.Monitored;
+				return this.fMonitored;
 			}
 			set
 			{
-				this.Monitored = value;
-				if (this.Monitored)
+				this.fMonitored = value;
+				if (this.fMonitored)
 					this.fInput.ItemAdded += new ItemAddedEventHandler(this.OnInputItemAdded2);
 				else
 					this.fInput.ItemAdded -= new ItemAddedEventHandler(this.OnInputItemAdded2);
@@ -161,63 +161,57 @@ namespace FreeQuant.Indicators
 			}
 		}
 
-		public new double this [int Index]
+		public new double this[int index]
 		{
 			get
 			{
 				this.Calculate();
-				return base[Index];
+				return base[index];
 			}
 		}
 
-		public new double this [DateTime DateTime]
+		public new double this[DateTime datetime]
 		{
 			get
 			{
 				this.Calculate();
-				return base[DateTime];
+				return base[datetime];
 			}
 		}
 
-		public new double this [DateTime DateTime, EIndexOption Option]
+		public new double this[DateTime datetime, EIndexOption option]
 		{
 			get
 			{
 				this.Calculate();
-				return base[DateTime, Option];
+				return base[datetime, option];
 			}
 		}
 
-		public override double this [int Col, int Row]
+		public override double this[int col, int row]
 		{
 			get
 			{
 				this.Calculate();
-				return base[Col, Row];
+				return base[col, row];
 			}
 		}
 
 		public Indicator() : base()
 		{
-			this.fCalculate = true;
-			this.fDrawEnabled = true;
 		}
 
 		public Indicator(TimeSeries Input) : base()
 		{
-			this.fCalculate = true;
-			this.fDrawEnabled = true;
-
 			this.fInput = Input;
-			this.fInput.Children.Add((object)this);
+			this.fInput.Children.Add(this);
 			this.Connect();
 		}
 
 		protected virtual void Connect()
 		{
-			if (this.fInput == null)
-				return;
-			this.fInput.ItemAdded += new ItemAddedEventHandler(this.OnInputItemAdded2);
+			if (this.fInput != null)
+				this.fInput.ItemAdded += new ItemAddedEventHandler(this.OnInputItemAdded2);
 		}
 
 		protected void Disconnect()
@@ -228,105 +222,110 @@ namespace FreeQuant.Indicators
 		public virtual void Detach()
 		{
 			this.Disconnect();
-			this.fInput.Children.Remove((object)this);
+			this.fInput.Children.Remove(this);
 		}
 
 		protected virtual void Init()
 		{
-			this.fFirstIndex = 1073741823;
-			this.fLastIndex = -1073741824;
+			this.fFirstIndex = 2 ^ 30 - 1; //1073741823
+			this.fLastIndex = -(2 ^ 30);   //-1073741824;
 		}
 
-		protected virtual void OnInputItemAdded2(object sender, DateTimeEventArgs EventArgs)
+		protected virtual void OnInputItemAdded2(object sender, DateTimeEventArgs e)
 		{
-			if (this.rbmJhWudB)
-				return;
+			if (this.inputCalculate) return;
 			if (this.fCalculate)
 				this.Calculate();
-			this.OnInputItemAdded(sender, EventArgs);
+			this.OnInputItemAdded(sender, e);
 		}
 
-		public virtual void OnInputItemAdded(object sender, DateTimeEventArgs EventArgs)
+		public virtual void OnInputItemAdded(object sender, DateTimeEventArgs e)
 		{
-			if (!this.Monitored)
-				return;
-			int index = this.fInput.GetIndex(EventArgs.DateTime);
-			if (index == -1)
-				return;
+			if (!this.fMonitored) return;
+
+			int index = this.fInput.GetIndex(e.DateTime);
+			if (index == -1) return;
+
 			this.Calculate(index);
 		}
 
 		public virtual void Calculate()
 		{
-			if (!this.fCalculate)
-				return;
+			if (!this.fCalculate) return;
+
 			this.fCalculate = false;
-			this.rbmJhWudB = true;
+			this.inputCalculate = true;
 			if (this.fInput is Indicator)
+			{
 				(this.fInput as Indicator).Calculate();
-			this.rbmJhWudB = false;
-			for (int Index = 0; Index < this.fInput.Count; ++Index)
-				this.Calculate(Index);
+			}
+			this.inputCalculate = false;
+			for (int i = 0; i < this.fInput.Count; ++i)
+			{
+				this.Calculate(i);
+			}
 		}
 
-		public virtual void Calculate(bool Force)
+		public virtual void Calculate(bool force)
 		{
-			if (Force)
+			if (force)
+			{
 				this.fCalculate = true;
+			}
 			this.Calculate();
 		}
 
-		protected virtual void Calculate(int Index)
+		protected virtual void Calculate(int index)
 		{
 		}
 
-		public override void Add(DateTime DateTime, double Data)
+		public override void Add(DateTime datetime, double data)
 		{
-			if (!Indicator.fSyncIndex && double.IsNaN(Data))
-				return;
-			this.fArray.Remove(DateTime);
-			this.fArray.Add(DateTime, (object)Data);
-			int num = this.fArray.IndexOf(DateTime);
+			if (!Indicator.fSyncIndex && double.IsNaN(data)) return;
+
+			this.fArray.Remove(datetime);
+			this.fArray.Add(datetime, data);
+			int num = this.fArray.IndexOf(datetime);
 			if (num < this.fFirstIndex)
 			{
-				if (!double.IsNaN(Data))
+				if (!double.IsNaN(data))
 					this.fFirstIndex = num;
 				else
 					++this.fFirstIndex;
 			}
 			if (num > this.fLastIndex)
 			{
-				if (!double.IsNaN(Data))
+				if (!double.IsNaN(data))
 					this.fLastIndex = num;
 				else
 					--this.fLastIndex;
 			}
-			this.changed = true;
-			this.EmitItemAdded(DateTime);
+			this.fChanged = true;
+			this.EmitItemAdded(datetime);
 		}
 
-		public override void Remove(int Index)
+		public override void Remove(int index)
 		{
-			if (Index < this.fFirstIndex)
+			if (index < this.fFirstIndex)
 				--this.fFirstIndex;
-			if (Index <= this.fLastIndex)
+			if (index <= this.fLastIndex)
 				--this.fLastIndex;
-			this.fArray.RemoveAt(Index);
-			this.changed = true;
+			this.fArray.RemoveAt(index);
+			this.fChanged = true;
 		}
 
 		public override void Clear()
 		{
 			this.fArray.Clear();
-			this.fFirstIndex = 1073741823;
-			this.fLastIndex = -1073741824;
-			this.changed = true;
+			this.fFirstIndex = 2 ^ 30 - 1; //1073741823
+			this.fLastIndex = -(2 ^ 30);   //-1073741824;
+			this.fChanged = true;
 		}
 
-		public override bool Contains(DateTime dateTime)
+		public override bool Contains(DateTime datetime)
 		{
 			this.Calculate();
-			return base.Contains(dateTime);
+			return base.Contains(datetime);
 		}
 
 		public override bool Contains(int index)
@@ -335,28 +334,28 @@ namespace FreeQuant.Indicators
 			return base.Contains(index);
 		}
 
-		public override DateTime GetDateTime(int Index)
+		public override DateTime GetDateTime(int index)
 		{
 			this.Calculate();
-			return base.GetDateTime(Index);
+			return base.GetDateTime(index);
 		}
 
-		public override int GetIndex(DateTime DateTime)
+		public override int GetIndex(DateTime datetime)
 		{
 			this.Calculate();
-			return base.GetIndex(DateTime);
+			return base.GetIndex(datetime);
 		}
 
-		public override int GetIndex(DateTime DateTime, EIndexOption Option)
+		public override int GetIndex(DateTime datetime, EIndexOption option)
 		{
 			this.Calculate();
-			return base.GetIndex(DateTime, Option);
+			return base.GetIndex(datetime, option);
 		}
 
-		public override void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
+		public override void Paint(Pad pad, double xMin, double xMax, double yMin, double yMax)
 		{
-			Pen pen = new Pen(this.Color, (float)this.fDrawWidth);
-			Brush brush = (Brush)new SolidBrush(this.Color);
+			Pen pen = new Pen(this.Color, this.fDrawWidth);
+			Brush brush = new SolidBrush(this.Color);
 			int num1 = 0;
 			double num2 = 0.0;
 			double num3 = 0.0;
@@ -368,8 +367,8 @@ namespace FreeQuant.Indicators
 			int num5 = 0;
 			int num6 = 0;
 			int num7 = 0;
-			DateTime dateTime1 = new DateTime((long)XMin);
-			DateTime dateTime2 = new DateTime((long)XMax);
+			DateTime dateTime1 = new DateTime((long)xMin);
+			DateTime dateTime2 = new DateTime((long)xMax);
 			int num8 = !(dateTime1 < this.FirstDateTime) ? this.GetIndex(dateTime1, EIndexOption.Next) : this.fFirstIndex;
 			int num9 = !(dateTime2 > this.LastDateTime) ? this.GetIndex(dateTime2, EIndexOption.Prev) : this.fLastIndex;
 			if (num8 == -1 || num9 == -1)
@@ -423,174 +422,181 @@ namespace FreeQuant.Indicators
 
 		public override double GetSum()
 		{
-			if (this.changed)
+			if (this.fChanged)
 			{
 				this.fSum = 0.0;
-				for (int index = this.fFirstIndex; index < this.fLastIndex; ++index)
+				for (int i = this.fFirstIndex; i < this.fLastIndex; ++i)
 				{
-					Indicator indicator = this;
-					double num = indicator.fSum + ((TimeSeries)this)[index, 0];
-					indicator.fSum = num;
+					this.fSum +=  this[i, 0];;
 				}
 			}
 			return this.fSum;
 		}
 
-		public override double GetSum(int Row)
+		public override double GetSum(int row)
 		{
-			return this.GetSum(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetSum(this.fFirstIndex, this.fLastIndex, row);
 		}
 
 		public override double GetMean()
 		{
 			if (this.Count <= 0)
-				throw new ApplicationException("this.Count <= 0");
-			if (this.changed)
+				throw new ApplicationException("Count <= 0");
+			if (this.fChanged)
+			{
 				this.fMean = this.GetMean(this.fFirstIndex, this.fLastIndex);
+			}
 			return this.fMean;
 		}
 
-		public override double GetMean(int Row)
+		public override double GetMean(int row)
 		{
-			return this.GetMean(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetMean(this.fFirstIndex, this.fLastIndex, row);
 		}
 
 		public override double GetMedian()
 		{
 			if (this.Count <= 0)
-				throw new ApplicationException("this.Count <= 0");
-			if (this.changed)
+				throw new ApplicationException("Count <= 0");
+			if (this.fChanged)
+			{
 				this.fMedian = this.GetMedian(this.fFirstIndex, this.fLastIndex);
+			}
 			return this.fMedian;
 		}
 
-		public override double GetMedian(int Row)
+		public override double GetMedian(int row)
 		{
-			return this.GetMedian(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetMedian(this.fFirstIndex, this.fLastIndex, row);
 		}
 
 		public override double GetVariance()
 		{
 			if (this.fRealCount <= 1)
-				throw new ApplicationException("this.fRealCount <= 1");
-			if (this.changed)
+				throw new ApplicationException("fRealCount <= 1");
+
+			if (this.fChanged)
 			{
 				double mean = this.GetMean();
 				this.fVariance = 0.0;
-				for (int index = this.fFirstIndex; index < this.fLastIndex; ++index)
+				for (int i = this.fFirstIndex; i < this.fLastIndex; ++i)
 				{
-					Indicator indicator = this;
-					double num = indicator.fVariance + (mean - ((TimeSeries)this)[index, 0]) * (mean - ((TimeSeries)this)[index, 0]);
-					indicator.fVariance = num;
+					this.fVariance += (mean - this[i, 0]) * (mean - this[i, 0]);
 				}
-				Indicator indicator1 = this;
-				double num1 = indicator1.fVariance / (double)(this.fRealCount - 1);
-				indicator1.fVariance = num1;
+				this.fVariance /= (double)(this.fRealCount - 1);
 			}
 			return this.fVariance;
 		}
 
-		public override double GetVariance(int Row)
+		public override double GetVariance(int row)
 		{
-			return this.GetVariance(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetVariance(this.fFirstIndex, this.fLastIndex, row);
 		}
 
-		public override double GetPositiveVariance(int Row)
+		public override double GetPositiveVariance(int row)
 		{
-			return this.GetPositiveVariance(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetPositiveVariance(this.fFirstIndex, this.fLastIndex, row);
 		}
 
-		public override double GetNegativeVariance(int Row)
+		public override double GetNegativeVariance(int row)
 		{
-			return this.GetNegativeVariance(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetNegativeVariance(this.fFirstIndex, this.fLastIndex, row);
 		}
 
-		public override double GetMoment(int k, int Row)
+		public override double GetMoment(int k, int row)
 		{
-			return this.GetMoment(k, this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetMoment(k, this.fFirstIndex, this.fLastIndex, row);
 		}
 
-		public override double GetAsymmetry(int Row)
+		public override double GetAsymmetry(int row)
 		{
-			return this.GetAsymmetry(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetAsymmetry(this.fFirstIndex, this.fLastIndex, row);
 		}
 
-		public override double GetExcess(int Row)
+		public override double GetExcess(int row)
 		{
-			return this.GetExcess(this.fFirstIndex, this.fLastIndex, Row);
+			return this.GetExcess(this.fFirstIndex, this.fLastIndex, row);
 		}
 
-		public override double GetAutoCovariance(int Lag)
+		public override double GetAutoCovariance(int lag)
 		{
-			if (Lag >= this.fRealCount)
-				throw new ApplicationException("Lag >= this.fRealCount");
-			double mean = this.GetMean();
-			double num = 0.0;
-			for (int index = Lag + this.fFirstIndex; index < this.fLastIndex; ++index)
-				num += (((TimeSeries)this)[index, 0] - mean) * (((TimeSeries)this)[index - Lag, 0] - mean);
-			return num / (double)(this.fLastIndex - Lag);
+			if (lag >= this.fRealCount)
+			{
+				throw new ApplicationException("lag >= fRealCount");
+			}
+			double m = this.GetMean();
+			double sum = 0.0;
+			for (int i = lag + this.fFirstIndex; i < this.fLastIndex; ++i)
+			{
+				sum += (this[i, 0] - m) * (this[i - lag, 0] - m);
+			}
+			return sum / (double)(this.fLastIndex - lag);
 		}
 
 		public override DoubleSeries GetReturnSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name, this.Title);
+			DoubleSeries ds = new DoubleSeries(this.Name, this.Title);
 			if (this.Count > 1)
 			{
-				double num1 = this[0];
-				for (int index = this.fFirstIndex; index < this.fLastIndex; ++index)
+				double t0 = this[0];
+				for (int i = this.fFirstIndex; i < this.fLastIndex; ++i)
 				{
-					DateTime dateTime = this.GetDateTime(index);
-					double num2 = this[index];
-					if (num1 != 0.0)
-						doubleSeries.Add(dateTime, num2 / num1);
+					DateTime dt = this.GetDateTime(i);
+					double t1 = this[i];
+					if (t0 != 0.0)
+						ds.Add(dt, t1 / t0);
 					else
-						doubleSeries.Add(dateTime, 0.0);
-					num1 = num2;
+						ds.Add(dt, 0.0);
+					t0 = t1;
 				}
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public override DoubleSeries GetPercentReturnSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name, this.Title);
+			DoubleSeries ds = new DoubleSeries(this.Name, this.Title);
 			if (this.fRealCount > 1)
 			{
-				double num1 = this[0];
-				for (int index = this.fFirstIndex; index < this.fLastIndex; ++index)
+				double t0 = this[0];
+				for (int i = this.fFirstIndex; i < this.fLastIndex; ++i)
 				{
-					DateTime dateTime = this.GetDateTime(index);
-					double num2 = this[index];
-					if (num1 != 0.0)
-						doubleSeries.Add(dateTime, (num2 / num1 - 1.0) * 100.0);
+					DateTime dt = this.GetDateTime(i);
+					double t1 = this[i];
+					if (t0 != 0.0)
+						ds.Add(dt, (t1 / t0 - 1.0) * 100.0);
 					else
-						doubleSeries.Add(dateTime, 0.0);
-					num1 = num2;
+						ds.Add(dt, 0.0);
+					t0 = t1;
 				}
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public override DoubleSeries GetPositiveSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries();
-			for (int index = this.fFirstIndex; index < this.fLastIndex; ++index)
+			DoubleSeries ds = new DoubleSeries();
+			for (int i = this.fFirstIndex; i < this.fLastIndex; ++i)
 			{
-				if (this[index] > 0.0)
-					doubleSeries.Add(this.GetDateTime(index), this[index]);
+				if (this[i] > 0.0)
+				{
+					ds.Add(this.GetDateTime(i), this[i]);
+				}
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public override DoubleSeries GetNegativeSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries();
-			for (int index = this.fFirstIndex; index < this.fLastIndex; ++index)
+			DoubleSeries ds = new DoubleSeries();
+			for (int i = this.fFirstIndex; i < this.fLastIndex; ++i)
 			{
-				if (this[index] < 0.0)
-					doubleSeries.Add(this.GetDateTime(index), this[index]);
+				if (this[i] < 0.0)
+				{
+					ds.Add(this.GetDateTime(i), this[i]);
+				}
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public void Dispose()

@@ -10,11 +10,11 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.DateTime;
+				return base.DateTime;
 			}
 			set
 			{
-				this.DateTime = value.Date;
+				base.DateTime = value.Date;
 			}
 		}
 
@@ -43,13 +43,13 @@ namespace FreeQuant.Data
 		public override void WriteTo(BinaryWriter writer)
 		{
 			base.WriteTo(writer);
-			writer.Write((byte)1);
+			writer.Write(1);
 		}
 
 		public override void ReadFrom(BinaryReader reader)
 		{
 			base.ReadFrom(reader);
-			//      int num = (int) reader.ReadByte();
+			reader.ReadByte();
 		}
 
 		public override object Clone()

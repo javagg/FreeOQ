@@ -27,10 +27,10 @@ namespace FreeQuant.Trading
     private MoneyManager vicpsU5DyG;
     private RiskManager m8Hp4wyAlm;
     private ExposureManager ayRpJCTRPY;
-    private Dictionary<Instrument, Entry> jmsp03fjcW;
-    private Dictionary<Instrument, Exit> oqypvRmD9v;
-    private Dictionary<Instrument, MoneyManager> dJypEOsaUc;
-    private Dictionary<Instrument, RiskManager> OirpVoEMJx;
+    private Dictionary<Instrument, Entry> entries;
+    private Dictionary<Instrument, Exit> exits;
+    private Dictionary<Instrument, MoneyManager> moneyManagers;
+		private Dictionary<Instrument, RiskManager> riskManagers; 
 
     [Browsable(false)]
     public MetaStrategy MetaStrategy
@@ -254,10 +254,10 @@ namespace FreeQuant.Trading
 			this.MoneyManager = StrategyComponentManager.GetComponent("GetComponent", (object) this) as MoneyManager;
 			this.RiskManager = StrategyComponentManager.GetComponent("GetComponent", (object) this) as RiskManager;
 			this.ExposureManager = StrategyComponentManager.GetComponent("GetComponent", (object) this) as ExposureManager;
-      this.jmsp03fjcW = new Dictionary<Instrument, Entry>();
-      this.oqypvRmD9v = new Dictionary<Instrument, Exit>();
-      this.dJypEOsaUc = new Dictionary<Instrument, MoneyManager>();
-      this.OirpVoEMJx = new Dictionary<Instrument, RiskManager>();
+      this.entries = new Dictionary<Instrument, Entry>();
+      this.exits = new Dictionary<Instrument, Exit>();
+      this.moneyManagers = new Dictionary<Instrument, MoneyManager>();
+      this.riskManagers = new Dictionary<Instrument, RiskManager>();
       this.componentTypeList.Add(ComponentType.Entry);
       this.componentTypeList.Add(ComponentType.Exit);
       this.componentTypeList.Add(ComponentType.CrossEntry);
@@ -272,41 +272,42 @@ namespace FreeQuant.Trading
     {
     }
 
-    [SpecialName]
     
-    internal Dictionary<Instrument, Entry> IagpTj6FwB()
+    
+    internal Dictionary<Instrument, Entry> GetEntries()
     {
-      return this.jmsp03fjcW;
+			return this.entries; 
     }
 
-    [SpecialName]
     
-    internal Dictionary<Instrument, Exit> AGBpIpCa2Y()
+    
+    internal Dictionary<Instrument, Exit> GetExits()
     {
-      return this.oqypvRmD9v;
+			return this.exits; 
     }
 
-    [SpecialName]
     
-    internal Dictionary<Instrument, MoneyManager> VmmphY7grH()
+    
+    internal Dictionary<Instrument, MoneyManager> GetMoneyManagers()
     {
-      return this.dJypEOsaUc;
+			return this.moneyManagers;  
     }
 
-    [SpecialName]
     
-    internal Dictionary<Instrument, RiskManager> kEApCnqU3X()
+    
+    internal Dictionary<Instrument, RiskManager> GetRiskManagers()
     {
-      return this.OirpVoEMJx;
+      return this.riskManagers;
     }
 
     
     protected override void OnInit()
     {
-      this.jmsp03fjcW.Clear();
-      this.oqypvRmD9v.Clear();
-      this.dJypEOsaUc.Clear();
-      this.OirpVoEMJx.Clear();
+      this.entries.Clear();
+      this.exits.Clear();
+      this.moneyManagers.Clear();
+      this.riskManagers.Clear();
+
       this.HeHpDewVKD = Activator.CreateInstance(this.CX2pXhZQGN.GetType()) as CrossEntry;
       this.A6MpF2380O = Activator.CreateInstance(this.hP7pPwnfQ7.GetType()) as CrossExit;
       this.HeHpDewVKD.StrategyBase = (StrategyBase) this;
@@ -339,10 +340,10 @@ namespace FreeQuant.Trading
         exit.Init();
         moneyManager.Init();
         riskManager.Init();
-        this.jmsp03fjcW.Add(instrument, entry);
-        this.oqypvRmD9v.Add(instrument, exit);
-        this.dJypEOsaUc.Add(instrument, moneyManager);
-        this.OirpVoEMJx.Add(instrument, riskManager);
+        this.entries.Add(instrument, entry);
+        this.exits.Add(instrument, exit);
+        this.moneyManagers.Add(instrument, moneyManager);
+        this.riskManagers.Add(instrument, riskManager);
       }
     }
 
@@ -351,26 +352,26 @@ namespace FreeQuant.Trading
     {
       this.HeHpDewVKD.OnStrategyStop();
       this.A6MpF2380O.OnStrategyStop();
-      foreach (ComponentBase componentBase in this.jmsp03fjcW.Values)
+      foreach (ComponentBase componentBase in this.entries.Values)
         componentBase.OnStrategyStop();
-      foreach (ComponentBase componentBase in this.oqypvRmD9v.Values)
+      foreach (ComponentBase componentBase in this.exits.Values)
         componentBase.OnStrategyStop();
-      foreach (ComponentBase componentBase in this.dJypEOsaUc.Values)
+      foreach (ComponentBase componentBase in this.moneyManagers.Values)
         componentBase.OnStrategyStop();
-      foreach (ComponentBase componentBase in this.OirpVoEMJx.Values)
+      foreach (ComponentBase componentBase in this.riskManagers.Values)
         componentBase.OnStrategyStop();
       this.ayRpJCTRPY.OnStrategyStop();
     }
 
     
-    internal SingleOrder BgvpSPpUAD([In] Signal obj0)
+    internal SingleOrder BgvpSPpUAD(Signal obj0)
     {
       obj0.Strategy = this;
-      double positionSize = this.dJypEOsaUc[obj0.Instrument].GetPositionSize(obj0);
+      double positionSize = this.moneyManagers[obj0.Instrument].GetPositionSize(obj0);
       if (positionSize > 0.0)
       {
         obj0.Qty = positionSize;
-        if (!this.OirpVoEMJx[obj0.Instrument].Validate(obj0))
+        if (!this.riskManagers[obj0.Instrument].Validate(obj0))
         {
           obj0.Status = SignalStatus.Rejected;
           obj0.Rejecter = ComponentType.RiskManager;
@@ -400,10 +401,10 @@ namespace FreeQuant.Trading
       this.A6MpF2380O.OnTrade(instrument, trade);
       this.HeHpDewVKD.OnTrade(instrument, trade);
       this.marketManager.OnTrade(instrument, trade);
-      this.oqypvRmD9v[instrument].OnTrade(trade);
-      this.jmsp03fjcW[instrument].OnTrade(trade);
-      this.dJypEOsaUc[instrument].OnTrade(trade);
-      this.OirpVoEMJx[instrument].OnTrade(trade);
+      this.exits[instrument].OnTrade(trade);
+      this.entries[instrument].OnTrade(trade);
+      this.moneyManagers[instrument].OnTrade(trade);
+      this.riskManagers[instrument].OnTrade(trade);
     }
 
     
@@ -417,10 +418,10 @@ namespace FreeQuant.Trading
       this.A6MpF2380O.OnQuote(instrument, quote);
       this.HeHpDewVKD.OnQuote(instrument, quote);
       this.marketManager.OnQuote(instrument, quote);
-      this.oqypvRmD9v[instrument].OnQuote(quote);
-      this.jmsp03fjcW[instrument].OnQuote(quote);
-      this.dJypEOsaUc[instrument].OnQuote(quote);
-      this.OirpVoEMJx[instrument].OnQuote(quote);
+      this.exits[instrument].OnQuote(quote);
+      this.entries[instrument].OnQuote(quote);
+      this.moneyManagers[instrument].OnQuote(quote);
+      this.riskManagers[instrument].OnQuote(quote);
     }
 
     
@@ -429,10 +430,10 @@ namespace FreeQuant.Trading
       this.A6MpF2380O.OnMarketDepth(instrument, marketDepth);
       this.HeHpDewVKD.OnMarketDepth(instrument, marketDepth);
       this.marketManager.OnMarketDepth(instrument, marketDepth);
-      this.oqypvRmD9v[instrument].OnMarketDepth(marketDepth);
-      this.jmsp03fjcW[instrument].OnMarketDepth(marketDepth);
-      this.dJypEOsaUc[instrument].OnMarketDepth(marketDepth);
-      this.OirpVoEMJx[instrument].OnMarketDepth(marketDepth);
+      this.exits[instrument].OnMarketDepth(marketDepth);
+      this.entries[instrument].OnMarketDepth(marketDepth);
+      this.moneyManagers[instrument].OnMarketDepth(marketDepth);
+      this.riskManagers[instrument].OnMarketDepth(marketDepth);
     }
 
     
@@ -440,8 +441,8 @@ namespace FreeQuant.Trading
     {
       this.A6MpF2380O.OnFundamental(instrument, fundamental);
       this.HeHpDewVKD.OnFundamental(instrument, fundamental);
-      this.oqypvRmD9v[instrument].OnFundamental(fundamental);
-      this.jmsp03fjcW[instrument].OnFundamental(fundamental);
+      this.exits[instrument].OnFundamental(fundamental);
+      this.entries[instrument].OnFundamental(fundamental);
     }
 
     
@@ -451,10 +452,10 @@ namespace FreeQuant.Trading
       this.HeHpDewVKD.OnCorporateAction(instrument, corporateAction);
       this.marketManager.OnCorporateAction(instrument, corporateAction);
       this.ayRpJCTRPY.OnCorporateAction(instrument, corporateAction);
-      this.oqypvRmD9v[instrument].OnCorporateAction(corporateAction);
-      this.jmsp03fjcW[instrument].OnCorporateAction(corporateAction);
-      this.dJypEOsaUc[instrument].OnCorporateAction(corporateAction);
-      this.OirpVoEMJx[instrument].OnCorporateAction(corporateAction);
+      this.exits[instrument].OnCorporateAction(corporateAction);
+      this.entries[instrument].OnCorporateAction(corporateAction);
+      this.moneyManagers[instrument].OnCorporateAction(corporateAction);
+      this.riskManagers[instrument].OnCorporateAction(corporateAction);
     }
 
     
@@ -468,10 +469,10 @@ namespace FreeQuant.Trading
       this.A6MpF2380O.OnBarOpen(instrument, bar);
       this.HeHpDewVKD.OnBarOpen(instrument, bar);
       this.marketManager.OnBarOpen(instrument, bar);
-      this.oqypvRmD9v[instrument].OnBarOpen(bar);
-      this.jmsp03fjcW[instrument].OnBarOpen(bar);
-      this.dJypEOsaUc[instrument].OnBarOpen(bar);
-      this.OirpVoEMJx[instrument].OnBarOpen(bar);
+      this.exits[instrument].OnBarOpen(bar);
+      this.entries[instrument].OnBarOpen(bar);
+      this.moneyManagers[instrument].OnBarOpen(bar);
+      this.riskManagers[instrument].OnBarOpen(bar);
     }
 
     
@@ -485,10 +486,10 @@ namespace FreeQuant.Trading
       this.A6MpF2380O.OnBar(instrument, bar);
       this.HeHpDewVKD.OnBar(instrument, bar);
       this.marketManager.OnBar(instrument, bar);
-      this.oqypvRmD9v[instrument].OnBar(bar);
-      this.jmsp03fjcW[instrument].OnBar(bar);
-      this.dJypEOsaUc[instrument].OnBar(bar);
-      this.OirpVoEMJx[instrument].OnBar(bar);
+      this.exits[instrument].OnBar(bar);
+      this.entries[instrument].OnBar(bar);
+      this.moneyManagers[instrument].OnBar(bar);
+      this.riskManagers[instrument].OnBar(bar);
     }
 
     
@@ -530,10 +531,10 @@ namespace FreeQuant.Trading
       this.HeHpDewVKD.OnPositionOpened(position);
       this.ayRpJCTRPY.OnPositionOpened(position);
       Instrument instrument = position.Instrument;
-      this.oqypvRmD9v[instrument].OnPositionOpened();
-      this.jmsp03fjcW[instrument].OnPositionOpened();
-      this.dJypEOsaUc[instrument].OnPositionOpened();
-      this.OirpVoEMJx[instrument].OnPositionOpened();
+      this.exits[instrument].OnPositionOpened();
+      this.entries[instrument].OnPositionOpened();
+      this.moneyManagers[instrument].OnPositionOpened();
+      this.riskManagers[instrument].OnPositionOpened();
     }
 
     
@@ -543,10 +544,10 @@ namespace FreeQuant.Trading
       this.HeHpDewVKD.OnPositionChanged(position);
       this.ayRpJCTRPY.OnPositionChanged(position);
       Instrument instrument = position.Instrument;
-      this.oqypvRmD9v[instrument].OnPositionChanged();
-      this.jmsp03fjcW[instrument].OnPositionChanged();
-      this.dJypEOsaUc[instrument].OnPositionChanged();
-      this.OirpVoEMJx[instrument].OnPositionChanged();
+      this.exits[instrument].OnPositionChanged();
+      this.entries[instrument].OnPositionChanged();
+      this.moneyManagers[instrument].OnPositionChanged();
+      this.riskManagers[instrument].OnPositionChanged();
     }
 
     
@@ -561,10 +562,10 @@ namespace FreeQuant.Trading
       this.HeHpDewVKD.OnPositionClosed(position);
       this.ayRpJCTRPY.OnPositionClosed(position);
       Instrument instrument = position.Instrument;
-      this.oqypvRmD9v[instrument].OnPositionClosed();
-      this.jmsp03fjcW[instrument].OnPositionClosed();
-      this.dJypEOsaUc[instrument].OnPositionClosed();
-      this.OirpVoEMJx[instrument].OnPositionClosed();
+      this.exits[instrument].OnPositionClosed();
+      this.entries[instrument].OnPositionClosed();
+      this.moneyManagers[instrument].OnPositionClosed();
+      this.riskManagers[instrument].OnPositionClosed();
     }
 
     
@@ -577,10 +578,10 @@ namespace FreeQuant.Trading
       this.HeHpDewVKD.OnPortfolioValueChanged(position);
       this.ayRpJCTRPY.OnPortfolioValueChanged(position);
       Instrument instrument = position.Instrument;
-      this.oqypvRmD9v[instrument].OnPositionValueChanged();
-      this.jmsp03fjcW[instrument].OnPositionValueChanged();
-      this.dJypEOsaUc[instrument].OnPositionValueChanged();
-      this.OirpVoEMJx[instrument].OnPositionValueChanged();
+      this.exits[instrument].OnPositionValueChanged();
+      this.entries[instrument].OnPositionValueChanged();
+      this.moneyManagers[instrument].OnPositionValueChanged();
+      this.riskManagers[instrument].OnPositionValueChanged();
     }
 
     
@@ -606,8 +607,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnNewOrder(order);
       this.A6MpF2380O.OnNewOrder(order);
-      this.jmsp03fjcW[instrument].OnNewOrder(order);
-      this.oqypvRmD9v[instrument].OnNewOrder(order);
+      this.entries[instrument].OnNewOrder(order);
+      this.exits[instrument].OnNewOrder(order);
     }
 
     
@@ -616,8 +617,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnExecutionReport(order, report);
       this.A6MpF2380O.OnExecutionReport(order, report);
-      this.jmsp03fjcW[instrument].OnExecutionReport(order, report);
-      this.oqypvRmD9v[instrument].OnExecutionReport(order, report);
+      this.entries[instrument].OnExecutionReport(order, report);
+      this.exits[instrument].OnExecutionReport(order, report);
     }
 
     
@@ -626,8 +627,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnOrderPartiallyFilled(order);
       this.A6MpF2380O.OnOrderPartiallyFilled(order);
-      this.jmsp03fjcW[instrument].OnOrderPartiallyFilled(order);
-      this.oqypvRmD9v[instrument].OnOrderPartiallyFilled(order);
+      this.entries[instrument].OnOrderPartiallyFilled(order);
+      this.exits[instrument].OnOrderPartiallyFilled(order);
     }
 
     
@@ -636,8 +637,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnOrderStatusChanged(order);
       this.A6MpF2380O.OnOrderStatusChanged(order);
-      this.jmsp03fjcW[instrument].OnOrderStatusChanged(order);
-      this.oqypvRmD9v[instrument].OnOrderStatusChanged(order);
+      this.entries[instrument].OnOrderStatusChanged(order);
+      this.exits[instrument].OnOrderStatusChanged(order);
     }
 
     
@@ -646,8 +647,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnOrderFilled(order);
       this.A6MpF2380O.OnOrderFilled(order);
-      this.jmsp03fjcW[instrument].OnOrderFilled(order);
-      this.oqypvRmD9v[instrument].OnOrderFilled(order);
+      this.entries[instrument].OnOrderFilled(order);
+      this.exits[instrument].OnOrderFilled(order);
     }
 
     
@@ -656,8 +657,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnOrderCancelled(order);
       this.A6MpF2380O.OnOrderCancelled(order);
-      this.jmsp03fjcW[instrument].OnOrderCancelled(order);
-      this.oqypvRmD9v[instrument].OnOrderCancelled(order);
+      this.entries[instrument].OnOrderCancelled(order);
+      this.exits[instrument].OnOrderCancelled(order);
     }
 
     
@@ -666,8 +667,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnOrderRejected(order);
       this.A6MpF2380O.OnOrderRejected(order);
-      this.jmsp03fjcW[instrument].OnOrderRejected(order);
-      this.oqypvRmD9v[instrument].OnOrderRejected(order);
+      this.entries[instrument].OnOrderRejected(order);
+      this.exits[instrument].OnOrderRejected(order);
     }
 
     
@@ -676,8 +677,8 @@ namespace FreeQuant.Trading
       Instrument instrument = order.Instrument;
       this.HeHpDewVKD.OnOrderDone(order);
       this.A6MpF2380O.OnOrderDone(order);
-      this.jmsp03fjcW[instrument].OnOrderDone(order);
-      this.oqypvRmD9v[instrument].OnOrderDone(order);
+      this.entries[instrument].OnOrderDone(order);
+      this.exits[instrument].OnOrderDone(order);
     }
 
     

@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 
 namespace FreeQuant.Simulation
@@ -12,8 +11,6 @@ namespace FreeQuant.Simulation
 	//  [TypeConverter(typeof (YYAsqAaDblBde0lNpo))]
 	public class BarFilter
 	{
-		private List<BarFilterItem> items;
-
 		[DefaultValue(false)]
 		public bool Enabled { get; set; }
 		//    [Editor(typeof (BarFilterItemListEditor), typeof (UITypeEditor))]
@@ -27,12 +24,12 @@ namespace FreeQuant.Simulation
 
 		public bool Contains(BarType barType, long barSize)
 		{
-			if (!this.Enabled)
-				return true;
-			foreach (BarFilterItem barFilterItem in this.items)
+			if (!this.Enabled) return true;
+
+			foreach (BarFilterItem item in this.Items)
 			{
-				if (barFilterItem.BarType == barType && barFilterItem.BarSize == barSize)
-					return barFilterItem.Enabled;
+				if (item.BarType == barType && item.BarSize == barSize)
+					return item.Enabled;
 			}
 			return false;
 		}
@@ -52,7 +49,7 @@ namespace FreeQuant.Simulation
 			return string.Join(",", list.ToArray());
 		}
 
-		internal void Vx1yomJJIf([In] string obj0)
+		internal void Vx1yomJJIf(string obj0)
 		{
 			try
 			{
@@ -74,8 +71,8 @@ namespace FreeQuant.Simulation
 			}
 			catch (Exception ex)
 			{
-//        if (Trace.IsLevelEnabled(TraceLevel.Error))
-//          Trace.WriteLine(ex);
+        if (Trace.IsLevelEnabled(TraceLevel.Error))
+					Trace.WriteLine(ex.ToString());
 				this.Reset();
 			}
 		}

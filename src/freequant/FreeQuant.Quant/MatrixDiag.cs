@@ -6,7 +6,7 @@ namespace FreeQuant.Quant
 	{
 		internal Matrix matrix;
 
-		public double this [int i]
+		public double this[int i]
 		{
 			get
 			{

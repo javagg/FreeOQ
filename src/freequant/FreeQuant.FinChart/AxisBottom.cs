@@ -2,7 +2,6 @@ using FreeQuant.Series;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.FinChart
 {
@@ -312,7 +311,7 @@ namespace FreeQuant.FinChart
 									int num13 = (int)(this.y + (double)this.labelOffset);
 									if (num6 == 0 || num12 - num3 >= 1)
 									{
-										this.chart.Graphics.DrawString(str, this.labelFont, (Brush)solidBrush2, (float)num12, (float)num13);
+										this.chart.Graphics.DrawString(str, this.labelFont, solidBrush2, (float)num12, (float)num13);
 										num3 = num12 + num10;
 									}
 								}

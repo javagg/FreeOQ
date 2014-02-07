@@ -1,8 +1,4 @@
 namespace FreeQuant.Quant
 {
-  public enum EPutCall
-  {
-    Call,
-    Put,
-  }
+	public enum EPutCall { Call, Put	}
 }

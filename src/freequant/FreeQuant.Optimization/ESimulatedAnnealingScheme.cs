@@ -1,9 +1,4 @@
 namespace FreeQuant.Optimization
 {
-	public enum ESimulatedAnnealingScheme
-	{
-		Portfolio,
-		EfficientFrontier,
-		Perceptron
-	}
+	public enum ESimulatedAnnealingScheme { Portfolio, EfficientFrontier, Perceptron }
 }

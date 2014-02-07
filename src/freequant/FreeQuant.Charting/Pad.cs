@@ -3,9 +3,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting
 {
@@ -2493,7 +2491,7 @@ namespace FreeQuant.Charting
 			this.fGraphics.DrawString(Text, Font, Brush, (float)X, (float)Y);
 		}
 
-		private bool RUo1ChdWx([In] int obj0, [In] int obj1)
+		private bool RUo1ChdWx(int obj0, int obj1)
 		{
 			if (obj0 > this.fClientX && obj0 < this.fClientX + this.fClientWidth && obj1 > this.fClientY)
 				return obj1 < this.fClientY + this.fClientHeight;
@@ -2795,7 +2793,7 @@ namespace FreeQuant.Charting
 				Pad.NewTick(null, new NewTickEventArgs(datetime));
 		}
 
-		private void H0Y9o0pgX([In] object obj0, [In] NewTickEventArgs obj1)
+		private void H0Y9o0pgX(object obj0, NewTickEventArgs obj1)
 		{
 			if (!this.fMonitored)
 				return;
@@ -2828,7 +2826,7 @@ namespace FreeQuant.Charting
 			this.Update();
 		}
 
-		private void hMr7kanRQ([In] object obj0, [In] EventArgs obj1)
+		private void hMr7kanRQ(object obj0, EventArgs obj1)
 		{
 			int num = (int)new PadProperyForm(this.fSelectedPrimitive, this).ShowDialog();
 		}

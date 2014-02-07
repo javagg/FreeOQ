@@ -23,7 +23,7 @@ namespace FreeQuant.Quant
 			}
 		}
 
-		public double this [int index]
+		public double this[int index]
 		{
 			get
 			{
@@ -35,11 +35,6 @@ namespace FreeQuant.Quant
 			}
 		}
 
-		public Vector()
-		{
-			this.nrows = -1;
-		}
-
 		public Vector(int nrows)
 		{
 			this.nrows = nrows;
@@ -48,10 +43,10 @@ namespace FreeQuant.Quant
 
 		public static double operator *(Vector v1, Vector v2)
 		{
-			double num = 0.0;
-			for (int index = 0; index < v1.nrows; ++index)
-				num += v1[index] * v2[index];
-			return num;
+			double sum = 0.0;
+			for (int i = 0; i < v1.nrows; ++i)
+				sum += v1[i] * v2[i];
+			return sum;
 		}
 
 		public static Vector operator *(Vector vector, double val)
@@ -65,32 +60,32 @@ namespace FreeQuant.Quant
 		public static Vector operator +(Vector vector, double val)
 		{
 			Vector vector1 = new Vector(vector.nrows);
-			for (int index = 0; index < vector.nrows; ++index)
-				vector1[index] = vector[index] + val;
+			for (int i = 0; i < vector.nrows; ++i)
+				vector1[i] = vector[i] + val;
 			return vector1;
 		}
 
 		public static Vector operator -(Vector vector, double val)
 		{
 			Vector vector1 = new Vector(vector.nrows);
-			for (int index = 0; index < vector.nrows; ++index)
-				vector1[index] = vector[index] - val;
+			for (int i = 0; i < vector.nrows; ++i)
+				vector1[i] = vector[i] - val;
 			return vector1;
 		}
 
 		public static Vector operator +(Vector target, Vector source)
 		{
 			Vector vector = new Vector(target.nrows);
-			for (int index = 0; index < target.nrows; ++index)
-				vector[index] = target[index] + source[index];
+			for (int i = 0; i < target.nrows; ++i)
+				vector[i] = target[i] + source[i];
 			return vector;
 		}
 
 		public static Vector operator -(Vector target, Vector source)
 		{
 			Vector vector = new Vector(target.nrows);
-			for (int index = 0; index < target.nrows; ++index)
-				vector[index] = target[index] - source[index];
+			for (int i = 0; i < target.nrows; ++i)
+				vector[i] = target[i] - source[i];
 			return vector;
 		}
 
@@ -106,16 +101,16 @@ namespace FreeQuant.Quant
 
 		public void Zero()
 		{
-			for (int index = 0; index < this.nrows; ++index)
-				this.elements[index] = 0.0;
+			for (int i = 0; i < this.nrows; ++i)
+				this.elements[i] = 0.0;
 		}
 
 		public void ResizeTo(int newNRows)
 		{
 			double[] numArray = new double[newNRows];
 			int num = Math.Min(this.nrows, newNRows);
-			for (int index = 0; index < num; ++index)
-				numArray[index] = this.elements[index];
+			for (int i = 0; i < num; ++i)
+				numArray[i] = this.elements[i];
 			this.nrows = newNRows;
 			this.elements = numArray;
 		}
@@ -146,41 +141,41 @@ namespace FreeQuant.Quant
 
 		public Vector Abs()
 		{
-			Vector vector = new Vector(this.nrows);
-			for (int index = 0; index < this.nrows; ++index)
-				vector[index] = Math.Abs(this.elements[index]);
-			return vector;
+			Vector v = new Vector(this.nrows);
+			for (int i = 0; i < this.nrows; ++i)
+				v[i] = Math.Abs(this.elements[i]);
+			return v;
 		}
 
 		public Vector Sqr()
 		{
-			Vector vector = new Vector(this.nrows);
-			for (int index = 0; index < this.nrows; ++index)
-				vector[index] = this.elements[index] * this.elements[index];
-			return vector;
+			Vector v = new Vector(this.nrows);
+			for (int i = 0; i < this.nrows; ++i)
+				v[i] = this.elements[i] * this.elements[i];
+			return v;
 		}
 
 		public Vector Sqrt()
 		{
-			Vector vector = new Vector(this.nrows);
-			for (int index = 0; index < this.nrows; ++index)
-				vector[index] = Math.Sqrt(this.elements[index]);
-			return vector;
+			Vector v = new Vector(this.nrows);
+			for (int i = 0; i < this.nrows; ++i)
+				v[i] = Math.Sqrt(this.elements[i]);
+			return v;
 		}
 
 		public Vector ElementMult(Vector target, Vector source)
 		{
-			Vector vector = new Vector(target.nrows);
-			for (int index = 0; index < this.nrows; ++index)
-				vector[index] = target[index] * source[index];
-			return vector;
+			Vector v = new Vector(target.nrows);
+			for (int i = 0; i < this.nrows; ++i)
+				v[i] = target[i] * source[i];
+			return v;
 		}
 
 		public Vector ElementDiv(Vector target, Vector source)
 		{
 			Vector vector = new Vector(target.nrows);
-			for (int index = 0; index < this.nrows; ++index)
-				vector[index] = target[index] / source[index];
+			for (int i = 0; i < this.nrows; ++i)
+				vector[i] = target[i] / source[i];
 			return vector;
 		}
 
@@ -189,9 +184,9 @@ namespace FreeQuant.Quant
 			Vector vector1 = (Vector)vector;
 			if (this.nrows != vector1.nrows)
 				return false;
-			for (int index = 0; index < vector1.nrows; ++index)
+			for (int i = 0; i < vector1.nrows; ++i)
 			{
-				if (this[index] != vector1[index])
+				if (this[i] != vector1[i])
 					return false;
 			}
 			return true;
@@ -214,8 +209,8 @@ namespace FreeQuant.Quant
 
 		public void Print(string Format)
 		{
-			for (int index = 0; index < this.nrows; ++index)
-				Console.WriteLine(this.elements[index].ToString(Format) + String.Empty);
+			for (int i = 0; i < this.nrows; ++i)
+				Console.WriteLine(this.elements[i].ToString(Format));
 		}
 	}
 }

@@ -1,22 +1,36 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Optimization
 {
 	public struct TwoParams
 	{
-		public double Param1 { get; private set; }
-		public double Param2 { get; private set; }
+		private double param1;
+		private double param2;
 
-		public TwoParams(double param1 = 0, double param2 = 0) : this()
+		public double Param1
 		{
-			this.Param1 = param1;
-			this.Param2 = param2;
+			get
+			{
+				return param1;
+			}
+		}
+
+		public double Param2 
+		{
+			get
+			{
+				return param2;
+			}
+		}
+
+		public TwoParams(double param1, double param2)
+		{
+			this.param1 = param1;
+			this.param2 = param2;
 		}
 
 		public override bool Equals(object obj)
 		{
-			TwoParams twoParams = (TwoParams)obj;
-			return (twoParams.Param1 == this.Param1) && (twoParams.Param2 == this.Param2);
+			TwoParams that = (TwoParams)obj;
+			return (that.Param1 == this.Param1) && (that.Param2 == this.Param2);
 		}
 
 		public override int GetHashCode()

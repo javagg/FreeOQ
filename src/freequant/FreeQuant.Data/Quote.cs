@@ -6,7 +6,6 @@ namespace FreeQuant.Data
 	[Serializable]
 	public class Quote : IDataObject, ISeriesObject
 	{
-		private const byte IoDDKr799 = 2;
 		protected DateTime datetime;
 		protected byte providerId;
 		protected double bid;
@@ -90,7 +89,7 @@ namespace FreeQuant.Data
 			}
 		}
 
-		public Quote()
+		public Quote() : this(DateTime.MinValue, 0.0, 0, 0.0, 0)
 		{
 		}
 
@@ -101,6 +100,7 @@ namespace FreeQuant.Data
 			this.ask = ask;
 			this.bidSize = bidSize;
 			this.askSize = askSize;
+			this.providerId = 0;
 		}
 
 		public Quote(Quote quote) : this(quote.datetime, quote.bid, quote.bidSize, quote.ask, quote.askSize)
@@ -110,7 +110,7 @@ namespace FreeQuant.Data
 
 		public virtual void WriteTo(BinaryWriter writer)
 		{
-			writer.Write((byte)2);
+			writer.Write(2);
 			writer.Write(this.datetime.Ticks);
 			writer.Write(this.bid);
 			writer.Write(this.ask);
@@ -124,7 +124,7 @@ namespace FreeQuant.Data
 			byte num = reader.ReadByte();
 			switch (num)
 			{
-				case (byte) 1:
+				case 1:
 					this.datetime = new DateTime(reader.ReadInt64());
 					this.bid = Math.Round((double)reader.ReadSingle(), 4);
 					this.bidSize = reader.ReadInt32();
@@ -132,7 +132,7 @@ namespace FreeQuant.Data
 					this.askSize = reader.ReadInt32();
 					this.providerId = reader.ReadByte();
 					break;
-				case (byte) 2:
+				case 2:
 					this.datetime = new DateTime(reader.ReadInt64());
 					this.bid = reader.ReadDouble();
 					this.ask = reader.ReadDouble();

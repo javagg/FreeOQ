@@ -362,7 +362,7 @@ namespace FreeQuant.FinChart
 				this.axisGap = -1;
 		}
 
-		internal void WxfJR1jrge(Graphics obj0)
+		internal void PaintContent(Graphics obj0)
 		{
 			if (this.chart.MainSeries == null || this.chart.MainSeries.Count == 0)
 				return;

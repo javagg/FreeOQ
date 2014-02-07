@@ -10,11 +10,6 @@ namespace FreeQuant.Simulation
 		[Category("Parameter")]
 		public double Slippage { get; set; }
 
-		public SlippageProvider()
-		{
-
-		}
-
 		public double GetExecutionPrice(ExecutionReport report)
 		{
 			double avgPx = report.AvgPx;

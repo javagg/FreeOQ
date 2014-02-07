@@ -32,6 +32,7 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="nunit.framework" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SlippageProvider.cs" />
@@ -61,6 +62,9 @@
     <Compile Include="BarFilterItem.cs" />
     <Compile Include="BarFilter.cs" />
     <Compile Include="Properties\Resources.cs" />
+    <Compile Include="ReversibleArrayList.cs" />
+    <Compile Include="SimpleDataObject.cs" />
+    <Compile Include="zo21q6cy3fImtUHATQ.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

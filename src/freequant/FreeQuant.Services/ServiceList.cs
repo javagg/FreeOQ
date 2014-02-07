@@ -41,9 +41,10 @@ namespace FreeQuant.Services
 			{
 				IService service;
 				if (this.servicesByName.TryGetValue(name, out service))
+				{
 					return service;
-				else
-					return null;
+				}
+				return null;
 			}
 		}
 
@@ -53,9 +54,10 @@ namespace FreeQuant.Services
 			{
 				IService service;
 				if (this.servicesById.TryGetValue(id, out service))
+				{
 					return service;
-				else
-					return null;
+				}
+				return null;
 			}
 		}
 
@@ -76,10 +78,10 @@ namespace FreeQuant.Services
 			return this.services.GetEnumerator();
 		}
 
-		internal void Add([In] IService obj0)
+		internal void Add(IService service)
 		{
-			this.servicesByName.Add(obj0.Name, obj0);
-			this.servicesById.Add(obj0.Id, obj0);
+			this.servicesByName.Add(service.Name, service);
+			this.servicesById.Add(service.Id, service);
 			this.Refresh();
 		}
 

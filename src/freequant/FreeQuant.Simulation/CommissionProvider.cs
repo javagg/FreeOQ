@@ -65,9 +65,9 @@ namespace FreeQuant.Simulation
 
 		public virtual FIXCommissionData GetCommissionData(FIXExecutionReport report)
 		{
-			FIXCommissionData fixCommissionData = new FIXCommissionData();
-			fixCommissionData.CommType = FIXCommType.ToFIX(this.fCommType);
-			fixCommissionData.Commission = this.fCommission;
+			FIXCommissionData data = new FIXCommissionData();
+			data.CommType = FIXCommType.ToFIX(this.fCommType);
+			data.Commission = this.fCommission;
 			if (this.fMinCommission != 0.0)
 			{
 				double num;
@@ -87,11 +87,11 @@ namespace FreeQuant.Simulation
 				}
 				if (num < this.fMinCommission)
 				{
-					fixCommissionData.CommType = '3';
-					fixCommissionData.Commission = this.fMinCommission;
+					data.CommType = '3';
+					data.Commission = this.fMinCommission;
 				}
 			}
-			return fixCommissionData;
+			return data;
 		}
 
 		public override string ToString()

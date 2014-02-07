@@ -286,7 +286,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return new TradeSeries((Map.OQ_SQ_Instrument[(object) this.instrument] as FreeQuant.Instruments.Instrument).Trades);
+        return new TradeSeries((Map.OQ_FQ_Instrument[(object) this.instrument] as FreeQuant.Instruments.Instrument).Trades);
       }
     }
 
@@ -294,7 +294,7 @@ namespace OpenQuant.API
     {
       get
       {
-        return new QuoteSeries((Map.OQ_SQ_Instrument[(object) this.instrument] as FreeQuant.Instruments.Instrument).Quotes);
+        return new QuoteSeries((Map.OQ_FQ_Instrument[(object) this.instrument] as FreeQuant.Instruments.Instrument).Quotes);
       }
     }
 
@@ -367,9 +367,9 @@ namespace OpenQuant.API
     private void Init(FreeQuant.Instruments.Portfolio sq_Portfolio, FreeQuant.Instruments.Portfolio sq_MetaPortfolio, FreeQuant.Instruments.Instrument sq_Instrument, DataRequests strategyRequests, string strategyName, IStrategyLogManager strategyLogManager)
     {
       this.sq_Instrument = sq_Instrument;
-      this.instrument = Map.SQ_OQ_Instrument[(object) sq_Instrument] as Instrument;
-      this.portfolio = Map.SQ_OQ_Portfolio[(object) sq_Portfolio] as Portfolio;
-      this.metaPortfolio = Map.SQ_OQ_Portfolio[(object) sq_MetaPortfolio] as Portfolio;
+      this.instrument = Map.FQ_OQ_Instrument[(object) sq_Instrument] as Instrument;
+      this.portfolio = Map.FQ_OQ_Portfolio[(object) sq_Portfolio] as Portfolio;
+      this.metaPortfolio = Map.FQ_OQ_Portfolio[(object) sq_MetaPortfolio] as Portfolio;
       this.performance = new Performance(this.portfolio);
       this.metaPerformance = new Performance(this.metaPortfolio);
       this.dataRequests = strategyRequests;
@@ -409,12 +409,12 @@ namespace OpenQuant.API
 
     public QuoteSeries GetQuotes(Instrument instrument)
     {
-      return new QuoteSeries((Map.OQ_SQ_Instrument[(object) instrument] as FreeQuant.Instruments.Instrument).Quotes);
+      return new QuoteSeries((Map.OQ_FQ_Instrument[(object) instrument] as FreeQuant.Instruments.Instrument).Quotes);
     }
 
     public TradeSeries GetTrades(Instrument instrument)
     {
-      return new TradeSeries((Map.OQ_SQ_Instrument[(object) instrument] as FreeQuant.Instruments.Instrument).Trades);
+      return new TradeSeries((Map.OQ_FQ_Instrument[(object) instrument] as FreeQuant.Instruments.Instrument).Trades);
     }
 
     public BarSeries GetHistoricalBars(DateTime begin, DateTime end, BarType barType, long barSize)
@@ -600,8 +600,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -626,8 +626,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -652,8 +652,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -678,8 +678,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -704,8 +704,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -730,8 +730,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -756,8 +756,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -782,8 +782,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -808,8 +808,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -819,8 +819,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -860,8 +860,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -871,8 +871,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -912,8 +912,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -923,8 +923,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -964,8 +964,8 @@ namespace OpenQuant.API
 		order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -975,8 +975,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1016,8 +1016,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1027,8 +1027,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1068,8 +1068,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1079,8 +1079,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1120,8 +1120,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1131,8 +1131,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1172,8 +1172,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1183,8 +1183,8 @@ namespace OpenQuant.API
 			order1.Strategy = this.strategyName;
       Order order2 = new Order(order1);
       order2.Portfolio = this.portfolio;
-      Map.OQ_SQ_Order[(object) order2] = (object) order1;
-      Map.SQ_OQ_Order[(object) order1] = (object) order2;
+      Map.OQ_FQ_Order[(object) order2] = (object) order1;
+      Map.FQ_OQ_Order[(object) order1] = (object) order2;
       return order2;
     }
 
@@ -1225,8 +1225,8 @@ namespace OpenQuant.API
     public Stop SetStop(Position position, double level, StopType type, StopMode mode)
     {
       Stop stop = new Stop(position, level, type, mode);
-      Map.OQ_SQ_Stop[(object) stop] = (object) stop.stop;
-      Map.SQ_OQ_Stop[(object) stop.stop] = (object) stop;
+      Map.OQ_FQ_Stop[(object) stop] = (object) stop.stop;
+      Map.FQ_OQ_Stop[(object) stop.stop] = (object) stop;
       Map.AddStop((object) stop.stop, this.strategyName);
       stop.TraceOnBar = this.stopTraceOnBar;
       stop.TraceOnTrade = this.stopTraceOnTrade;
@@ -1242,8 +1242,8 @@ namespace OpenQuant.API
     public Stop SetStop(Position position, DateTime dateTime)
     {
       Stop stop = new Stop(position, dateTime);
-      Map.OQ_SQ_Stop[(object) stop] = (object) stop.stop;
-      Map.SQ_OQ_Stop[(object) stop.stop] = (object) stop;
+      Map.OQ_FQ_Stop[(object) stop] = (object) stop.stop;
+      Map.FQ_OQ_Stop[(object) stop.stop] = (object) stop;
       Map.AddStop((object) stop.stop, this.strategyName);
       stop.TraceOnBar = this.stopTraceOnBar;
       stop.TraceOnTrade = this.stopTraceOnTrade;

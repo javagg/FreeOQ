@@ -7,7 +7,7 @@ namespace FreeQuant.Trading
 
 		public double GetPositionRisk()
 		{
-			return this.Strategy.kEApCnqU3X()[this.Instrument].GetPositionRisk();
+			return this.Strategy.GetRiskManagers()[this.Instrument].GetPositionRisk();
 		}
 
 		public virtual double GetPositionSize(Signal signal)

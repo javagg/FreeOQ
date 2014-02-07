@@ -9,503 +9,451 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 
 namespace FreeQuant.Simulation
 {
-  public class SimulationDataProvider : ISimulationMarketDataProvider, IMarketDataProvider, IProvider
-  {
-    private const string nWGyg9yZVO = "Simulator(market data)";
-    private const string U6ByembQOS = "Simulation data provider";
-    private const string wHoyyeM6ef = "http://www.FreeQuant.com";
-    private const byte FhJy0jACT6 = (byte) 1;
-    private const string clQyPVFekp = "Information";
-    private const string JgPyFjZLOy = "Status";
-    private Simulator d2YymsvbJ5;
-    private bool Gsgyf9JvhJ;
-    private ProviderStatus tnvyBO3Dib;
-    private IBarFactory arZykcjuVw;
-    private Hashtable z1tyr7wr0l;
-    private Dictionary<long, int> iSFyRrCNfO;
-//    private SortedList<DateTime, sTqplWAhZEpULyK2Wh> Il6yEpdoR8;
+	public class SimulationDataProvider : ISimulationMarketDataProvider, IMarketDataProvider, IProvider
+	{
+		private const string nWGyg9yZVO = "Simulator(market data)";
+		private const string PROVIDER_NAME = "Simulation data provider";
+		private const string CURL = "http://www.FreeQuant.com";
+		private const byte PROVIDER_ID = 1;
+		private const string CATEGORY_INFORMATION = "Information";
+		private const string CATEGORY_STATUS = "Status";
+		private IBarFactory barFactory;
+		private Hashtable z1tyr7wr0l;
+		private Dictionary<long, int> iSFyRrCNfO;
+		private SortedList<DateTime, SimpleDataObject> Il6yEpdoR8;
 
-    public IBarFactory BarFactory
-    {
-      get
-      {
-        return this.arZykcjuVw;
-      }
-      set
-      {
-        if (this.arZykcjuVw != null)
-        {
-          this.arZykcjuVw.NewBar -= new BarEventHandler(this.wGKext6dJq);
-          this.arZykcjuVw.NewBarOpen -= new BarEventHandler(this.iC1eQuSAJx);
-          this.arZykcjuVw.NewBarSlice -= new BarSliceEventHandler(this.OgUezdlsKf);
-        }
-        this.arZykcjuVw = value;
-        if (this.arZykcjuVw == null)
-          return;
-        this.arZykcjuVw.NewBar += new BarEventHandler(this.wGKext6dJq);
-        this.arZykcjuVw.NewBarOpen += new BarEventHandler(this.iC1eQuSAJx);
-        this.arZykcjuVw.NewBarSlice += new BarSliceEventHandler(this.OgUezdlsKf);
-      }
-    }
+		public IBarFactory BarFactory
+		{
+			get
+			{
+				return this.barFactory; 
+			}
+			set
+			{
+				if (this.barFactory != null)
+				{
+					this.barFactory.NewBar -= new BarEventHandler(this.OnNewBar);
+					this.barFactory.NewBarOpen -= new BarEventHandler(this.OnNewBarOpen);
+					this.barFactory.NewBarSlice -= new BarSliceEventHandler(this.OnNewBarSlice);
+				}
+				this.barFactory = value;
+				if (this.barFactory != null)
+				{
+					this.barFactory.NewBar += new BarEventHandler(this.OnNewBar);
+					this.barFactory.NewBarOpen += new BarEventHandler(this.OnNewBarOpen);
+					this.barFactory.NewBarSlice += new BarSliceEventHandler(this.OnNewBarSlice);
+				}
+			}
+		}
 
-    [Browsable(false)]
-    public IMarketDataFilter MarketDataFilter { get; set; }
+		[Browsable(false)]
+		public IMarketDataFilter MarketDataFilter { get; set; }
 
-    [Category("Information")]
-    public string Name
-    {
-      get
-      {
+		[Category("Information")]
+		public string Name
+		{
+			get
+			{
 				return "Name";
-      }
-    }
+			}
+		}
 
-    [Category("Information")]
-    public string Title
-    {
-      get
-      {
+		[Category("Information")]
+		public string Title
+		{
+			get
+			{
 				return "Title";
-      }
-    }
+			}
+		}
 
-    [Category("Information")]
-    public byte Id
-    {
-      get
-      {
-        return 1;
-      }
-    }
+		[Category("Information")]
+		public byte Id
+		{
+			get
+			{
+				return PROVIDER_ID;
+			}
+		}
 
-    [Category("Information")]
-    public string URL
-    {
-      get
-      {
-				return "URL";
-      }
-    }
+		[Category("Information")]
+		public string URL
+		{
+			get
+			{
+				return CURL;
+			}
+		}
 
-    [Category("Status")]
-    public bool IsConnected
-    {
-      get
-      {
-        return this.Gsgyf9JvhJ;
-      }
-    }
+		[Category("Status")]
+		public bool IsConnected { get; private set; }
 
-    [Category("Status")]
-    public ProviderStatus Status
-    {
-      get
-      {
-        return this.tnvyBO3Dib;
-      }
-    }
+		[Category("Status")]
+		public ProviderStatus Status { get; private set; }
+		//    [Editor(typeof (sgWeWhHGgY7IAm2Btf), typeof (UITypeEditor))]
+		public Simulator Simulator { get; private set; }
 
-//    [Editor(typeof (sgWeWhHGgY7IAm2Btf), typeof (UITypeEditor))]
-    public Simulator Simulator
-    {
-      get
-      {
-        return this.d2YymsvbJ5;
-      }
-    }
+		public event MarketDataRequestRejectEventHandler MarketDataRequestReject;
+		public event MarketDataEventHandler NewMarketData;
+		public event BarEventHandler NewBar;
+		public event BarEventHandler NewBarOpen;
+		public event BarSliceEventHandler NewBarSlice;
+		public event QuoteEventHandler NewQuote;
+		public event TradeEventHandler NewTrade;
+		public event MarketDepthEventHandler NewMarketDepth;
+		public event FundamentalEventHandler NewFundamental;
+		public event CorporateActionEventHandler NewCorporateAction;
+		public event MarketDataSnapshotEventHandler MarketDataSnapshot;
+		public event BarEventHandler NewMarketBar;
+		public event EventHandler Connected;
+		public event EventHandler Disconnected;
+		public event ProviderErrorEventHandler Error;
+		public event EventHandler StatusChanged;
 
-    public event MarketDataRequestRejectEventHandler MarketDataRequestReject;
+		public SimulationDataProvider() : this(PROVIDER_NAME, 100)
+		{
+		}
 
-    public event MarketDataEventHandler NewMarketData;
+		public SimulationDataProvider(string name, int id) : base()
+		{
+			this.Simulator = new Simulator();
+			this.Simulator.Error += (e) =>
+			{
+				if (this.Error != null)
+				{
+					this.Error(new ProviderErrorEventArgs(new ProviderError(DateTime.Now, this, -1, -1, e.Exception.ToString())));
+				}
+			};
+			this.Simulator.NewObject += new SeriesObjectEventHandler(this.HandleNewObject);
+			this.Simulator.LeaveInterval += (e) =>
+			{
+				this.iSFyRrCNfO.Clear();
+			};
+	
+			this.IsConnected = false;
+			this.Status = ProviderStatus.Unknown;
+			this.BarFactory = new BarFactory(false);
+			this.z1tyr7wr0l = new Hashtable();
+			this.iSFyRrCNfO = new Dictionary<long, int>();
+			this.Il6yEpdoR8 = new SortedList<DateTime, SimpleDataObject>();
+			ProviderManager.Add(this);
+			ProviderManager.MarketDataSimulator = this;
+		}
 
-    public event BarEventHandler NewBar;
+		public void SendMarketDataRequest(FIXMarketDataRequest request)
+		{
+			bool flag = (int)request.SubscriptionRequestType == 49;
+			for (int i = 0; i < request.NoRelatedSym; ++i)
+				this.V6Aetvk5jr(InstrumentManager.Instruments[request.GetRelatedSymGroup(i).Symbol], request.GetRelatedSymGroup(i).GetStringValue(10001), flag);
+		}
 
-    public event BarEventHandler NewBarOpen;
+		public void Connect()
+		{
+			lock (this)
+			{
+				if (this.IsConnected)
+					return;
+				this.ChangeStatus(ProviderStatus.Connecting);
+				this.IsConnected = true;
+				this.ChangeStatus(ProviderStatus.Connected);
+				this.EmitConnected();
+				this.ChangeStatus(ProviderStatus.LoggingIn);
+				this.ChangeStatus(ProviderStatus.LoggedIn);
+			}
+		}
 
-    public event BarSliceEventHandler NewBarSlice;
+		public void Connect(int timeout)
+		{
+			this.Connect();
+			ProviderManager.WaitConnected(this, timeout);
+		}
 
-    public event QuoteEventHandler NewQuote;
+		public void Disconnect()
+		{
+			lock (this)
+			{
+				if (!this.IsConnected)
+					return;
+				this.Simulator.Stop();
+				this.IsConnected = false;
+				this.ChangeStatus(ProviderStatus.Disconnected);
+				this.EmitDisconnected();
+			}
+		}
 
-    public event TradeEventHandler NewTrade;
+		public void Shutdown()
+		{
+			this.Disconnect();
+		}
 
-    public event MarketDepthEventHandler NewMarketDepth;
+		public override string ToString()
+		{
+			return this.Name;
+		}
 
-    public event FundamentalEventHandler NewFundamental;
+		public void AddTrade(Trade trade, Instrument instrument)
+		{
+			this.Il6yEpdoR8.Add(trade.DateTime, new SimpleDataObject(instrument, trade));
+		}
 
-    public event CorporateActionEventHandler NewCorporateAction;
+		public void AddQuote(Quote quote, Instrument instrument)
+		{
+			this.Il6yEpdoR8.Add(quote.DateTime, new SimpleDataObject(instrument, quote));
+		}
 
-    public event MarketDataSnapshotEventHandler MarketDataSnapshot;
+		private void EmitConnected()
+		{
+			if (this.Connected != null)
+			{
+				this.Connected(this, EventArgs.Empty);
+			}
+		}
 
-    public event BarEventHandler NewMarketBar;
+		private void EmitDisconnected()
+		{
+			if (this.Disconnected != null)
+			{
+				this.Disconnected(this, EventArgs.Empty);
+			}
+		}
 
-    public event EventHandler Connected;
+		private void ChangeStatus(ProviderStatus status)
+		{
+			this.Status = status;
+			this.EmitStatusChanged();
+		}
 
-    public event EventHandler Disconnected;
+		private void EmitStatusChanged()
+		{
+			if (this.StatusChanged != null)
+			{
+				this.StatusChanged(this, EventArgs.Empty);
+			}
+		}
 
-    public event ProviderErrorEventHandler Error;
+		// TODO: read
+		private void HandleNewObject(SeriesObjectEventArgs e)
+		{
+//			if (e.Object is SimpleDataObject)
+//			{
+//				SimpleDataObject dataObject = e.Object as SimpleDataObject;
+//				if (dataObject.DataType == 0)
+//				{
+//					// ISSUE: reference to a compiler-generated method
+//					this.EmitNewTrade(dataObject.Instrument, dataObject.VahFT29LTg());
+//				}
+//				else
+//				{
+//					// ISSUE: reference to a compiler-generated method
+//					this.EmitNewQuote(dataObject.Instrument, dataObject.YcmFObcjsv());
+//				}
+//			}
+//			else
+//			{
+//				Instrument instrument = this.z1tyr7wr0l[e.Series] as Instrument ?? InstrumentManager.Instruments[e.Series.Name.Substring(0, e.Series.Name.IndexOf('.'))];
+//				IDataObject @object = e.Object;
+//				if (@object is Bar)
+//				{
+//					Bar bar = @object as Bar;
+//					if (bar.IsComplete)
+//					{
+//						if (this.MarketDataFilter != null)
+//							bar = this.MarketDataFilter.FilterBar(bar, instrument.Symbol);
+//						if (bar == null)
+//							return;
+//						this.EmitNewBar(instrument, bar);
+//						if (bar.BarType != BarType.Time)
+//							return;
+//						Dictionary<long, int> dictionary;
+//						long size;
+//						(dictionary = this.iSFyRrCNfO)[size = bar.Size] = dictionary[size] - 1;
+//						if (this.iSFyRrCNfO[bar.Size] != 0)
+//							return;
+//						this.EmitNewBarSlice(bar.Size);
+//					}
+//					else
+//					{
+//						if (this.MarketDataFilter != null)
+//							bar = this.MarketDataFilter.FilterBarOpen(bar, instrument.Symbol);
+//						if (bar == null)
+//							return;
+//						this.EmitNewBarOpen(instrument, bar);
+//						if (bar.BarType != BarType.Time)
+//							return;
+//						if (!this.iSFyRrCNfO.ContainsKey(bar.Size))
+//							this.iSFyRrCNfO[bar.Size] = 0;
+//						Dictionary<long, int> dictionary;
+//						long size;
+//						(dictionary = this.iSFyRrCNfO)[size = bar.Size] = dictionary[size] + 1;
+//					}
+//				}
+//				else if (@object is Trade)
+//				{
+//					Trade trade = @object as Trade;
+//					if (this.MarketDataFilter != null)
+//						trade = this.MarketDataFilter.FilterTrade(@object as Trade, instrument.Symbol);
+//					if (trade == null)
+//						return;
+//					this.EmitNewTrade(instrument, trade);
+//				}
+//				else if (@object is Quote)
+//				{
+//					Quote quote = @object as Quote;
+//					if (this.MarketDataFilter != null)
+//						quote = this.MarketDataFilter.FilterQuote(@object as Quote, instrument.Symbol);
+//					if (quote == null)
+//						return;
+//					this.EmitNewQuote(instrument, quote);
+//				}
+//				else if (@object is MarketDepth)
+//					this.HiaeqOcUjh(instrument, @object as MarketDepth);
+//				else if (@object is Fundamental)
+//				{
+//					this.YejeMsdynK(instrument, @object as Fundamental);
+//				}
+//				else
+//				{
+//					if (!(@object is CorporateAction))
+//						return;
+//					this.NQyesH3ccX(instrument, @object as CorporateAction);
+//				}
+//			}
+		}
 
-    public event EventHandler StatusChanged;
+		private void EmitNewBarSlice(long barSize)
+		{
+			if (this.NewBarSlice != null)
+			{
+				this.NewBarSlice(this, new BarSliceEventArgs(barSize, this));
+			}
+		}
 
-   
-		public SimulationDataProvider():this("simprovider", 100)
-    {
-    }
+		private void EmitNewBar(IFIXInstrument instrument, Bar bar)
+		{
+			if (this.NewBar != null)
+			{
+				this.NewBar(this, new BarEventArgs(bar, instrument, this));
+			}
+		}
 
-   
-		public SimulationDataProvider(string name, int id):base()
-    {
-      this.d2YymsvbJ5 = new Simulator();
-      this.d2YymsvbJ5.Error += new ExceptionEventHandler(this.LAceiZ6F3C);
-      this.d2YymsvbJ5.NewObject += new SeriesObjectEventHandler(this.QVVeAUpp2O);
-      this.d2YymsvbJ5.LeaveInterval += new IntervalEventHandler(this.Db5eVnQ9kG);
-      this.Gsgyf9JvhJ = false;
-      this.tnvyBO3Dib = ProviderStatus.Unknown;
-      this.BarFactory = (IBarFactory) new BarFactory(false);
-      this.z1tyr7wr0l = new Hashtable();
-      this.iSFyRrCNfO = new Dictionary<long, int>();
-//      this.Il6yEpdoR8 = new SortedList<DateTime, sTqplWAhZEpULyK2Wh>();
-      ProviderManager.Add((IProvider) this);
-      ProviderManager.MarketDataSimulator = (IMarketDataProvider) this;
-    }
+		private void EmitNewBarOpen(IFIXInstrument instrument, Bar bar)
+		{
+			if (this.NewBarOpen != null)
+			{
+				this.NewBarOpen(this, new BarEventArgs(bar, instrument, this));
+			}
+		}
 
-   
-    public void SendMarketDataRequest(FIXMarketDataRequest request)
-    {
-      bool flag = (int) request.SubscriptionRequestType == 49;
-      for (int i = 0; i < request.NoRelatedSym; ++i)
-        this.V6Aetvk5jr(InstrumentManager.Instruments[request.GetRelatedSymGroup(i).Symbol], request.GetRelatedSymGroup(i).GetStringValue(10001), flag);
-    }
+		private void EmitNewTrade(IFIXInstrument instrument, Trade trade)
+		{
+			if (this.NewTrade != null)
+			{
+				this.NewTrade(this, new TradeEventArgs(trade, instrument, this));
+			}
+			if (this.barFactory != null)
+			{
+				this.barFactory.OnNewTrade(instrument, trade);
+			}
+		}
 
-   
-    public void Connect()
-    {
-      lock (this)
-      {
-        if (this.Gsgyf9JvhJ)
-          return;
-        this.HxJehe481y(ProviderStatus.Connecting);
-        this.Gsgyf9JvhJ = true;
-        this.HxJehe481y(ProviderStatus.Connected);
-        this.n6Le9jcnlS();
-        this.HxJehe481y(ProviderStatus.LoggingIn);
-        this.HxJehe481y(ProviderStatus.LoggedIn);
-      }
-    }
+		private void EmitNewQuote(IFIXInstrument instrument, Quote quote)
+		{
+			if (this.NewQuote != null)
+			{
+				this.NewQuote(this, new QuoteEventArgs(quote, instrument, this));
+			}
+			if (this.barFactory != null)
+			{
+				this.barFactory.OnNewQuote(instrument, quote);
+			}
+		}
 
-   
-    public void Connect(int timeout)
-    {
-      this.Connect();
-      ProviderManager.WaitConnected((IProvider) this, timeout);
-    }
+		private void HiaeqOcUjh(IFIXInstrument instrument, MarketDepth md)
+		{
+			if (this.NewMarketDepth != null)
+			{
+				this.NewMarketDepth(this, new MarketDepthEventArgs(md, instrument, this));
+			}
+		}
 
-   
-    public void Disconnect()
-    {
-      lock (this)
-      {
-        if (!this.Gsgyf9JvhJ)
-          return;
-        this.d2YymsvbJ5.Stop();
-        this.Gsgyf9JvhJ = false;
-        this.HxJehe481y(ProviderStatus.Disconnected);
-        this.cXHepEJgmE();
-      }
-    }
+		private void YejeMsdynK(IFIXInstrument instrument, Fundamental fundamental)
+		{
+			if (this.NewFundamental != null)
+			{
+				this.NewFundamental(this, new FundamentalEventArgs(fundamental, instrument, this));
+			}
+		}
 
-   
-    public void Shutdown()
-    {
-      this.Disconnect();
-    }
+		private void NQyesH3ccX(IFIXInstrument instrument, CorporateAction action)
+		{
+			if (this.NewCorporateAction != null)
+			{
+				this.NewCorporateAction(this, new CorporateActionEventArgs(action, instrument, this));
+			}
+		}
 
-   
-    public override string ToString()
-    {
-      return this.Name;
-    }
+		// TODO: read
+		private void V6Aetvk5jr(Instrument instrument, string obj1, bool obj2)
+		{
+			DataSeriesList dataSeries = instrument.GetDataSeries();
+//			Regex regex = new Regex(obj1);
+			foreach (IDataSeries series in dataSeries)
+			{
+				if (series.Name.Substring(instrument.Symbol.Length + 1) == obj1)
+				{
+					if (obj2)
+					{
+						if (!this.Simulator.InputSeries.Contains(series))
+						{
+							this.Simulator.InputSeries.Add(series);
+							if (!this.z1tyr7wr0l.Contains(series))
+								this.z1tyr7wr0l.Add(series, instrument);
+						}
+					}
+					else
+					{
+						this.Simulator.InputSeries.Remove(series);
+						this.z1tyr7wr0l.Remove(series);
+					}
+				}
+			}
+		}
 
-   
-    public void AddTrade(Trade trade, Instrument instrument)
-    {
-//      this.Il6yEpdoR8.Add(trade.DateTime, new sTqplWAhZEpULyK2Wh((IFIXInstrument) instrument, trade));
-    }
+		private void OnNewBar(object sender, BarEventArgs e)
+		{
+			if (this.NewBar != null)
+			{
+				this.NewBar(this, new BarEventArgs(e.Bar, e.Instrument, this));
+			}
+		}
 
-   
-    public void AddQuote(Quote quote, Instrument instrument)
-    {
-//      this.Il6yEpdoR8.Add(quote.DateTime, new sTqplWAhZEpULyK2Wh((IFIXInstrument) instrument, quote));
-    }
+		private void OnNewBarOpen(object sender, BarEventArgs e)
+		{
+			if (this.NewBarOpen != null)
+			{
+				this.NewBarOpen(this, new BarEventArgs(e.Bar, e.Instrument, this));
+			}
+		}
 
-   
-    private void n6Le9jcnlS()
-    {
-//      if (this.nX0yZ30caU == null)
-//        return;
-//      this.nX0yZ30caU((object) this, EventArgs.Empty);
-    }
+		private void OnNewBarSlice(object sender, BarSliceEventArgs e)
+		{
+			if (this.NewBarSlice != null)
+			{
+				this.NewBarSlice(this, new BarSliceEventArgs(e.BarSize, this));
+			}
+		}
 
-   
-    private void cXHepEJgmE()
-    {
-//      if (this.rYsy8LbfoT == null)
-//        return;
-//      this.rYsy8LbfoT((object) this, EventArgs.Empty);
-    }
+		public void EmitTrade(IFIXInstrument instrument, Trade trade)
+		{
+			this.Simulator.nNp9oHTwk(new SimpleDataObject(instrument, trade));
+		}
 
-   
-    private void HxJehe481y([In] ProviderStatus obj0)
-    {
-      this.tnvyBO3Dib = obj0;
-      this.DRxe52yCXc();
-    }
-
-   
-    private void DRxe52yCXc()
-    {
-//      if (this.py9yuCA5Te == null)
-//        return;
-//      this.py9yuCA5Te((object) this, EventArgs.Empty);
-    }
-
-   
-    private void LAceiZ6F3C([In] ExceptionEventArgs obj0)
-    {
-//      if (this.vgjyjHHd2O == null)
-//        return;
-//      this.vgjyjHHd2O(new ProviderErrorEventArgs(new ProviderError(Clock.Now, (IProvider) this, -1, -1, ((object) obj0.Exception).ToString())));
-    }
-
-   
-    private void QVVeAUpp2O([In] SeriesObjectEventArgs obj0)
-    {
-//      if (obj0.Object is sTqplWAhZEpULyK2Wh)
-//      {
-//        sTqplWAhZEpULyK2Wh tqplWahZepUlyK2Wh = obj0.Object as sTqplWAhZEpULyK2Wh;
-//        if (tqplWahZepUlyK2Wh.KNNFdwuabW == 0)
-//        {
-//          // ISSUE: reference to a compiler-generated method
-//          this.NijeKZTPBN(tqplWahZepUlyK2Wh.Instrument, tqplWahZepUlyK2Wh.VahFT29LTg());
-//        }
-//        else
-//        {
-//          // ISSUE: reference to a compiler-generated method
-//          this.RS5eD2QuOd(tqplWahZepUlyK2Wh.Instrument, tqplWahZepUlyK2Wh.YcmFObcjsv());
-//        }
-//      }
-//      else
-//      {
-//        Instrument instrument = this.z1tyr7wr0l[(object) obj0.Series] as Instrument ?? InstrumentManager.Instruments[obj0.Series.Name.Substring(0, obj0.Series.Name.IndexOf('.'))];
-//        IDataObject @object = obj0.Object;
-//        if (@object is Bar)
-//        {
-//          Bar bar = @object as Bar;
-//          if (bar.IsComplete)
-//          {
-//            if (this.MarketDataFilter != null)
-//              bar = this.MarketDataFilter.FilterBar(bar, instrument.Symbol);
-//            if (bar == null)
-//              return;
-//            this.k38e3T3by9((IFIXInstrument) instrument, bar);
-//            if (bar.BarType != BarType.Time)
-//              return;
-//            Dictionary<long, int> dictionary;
-//            long size;
-//            (dictionary = this.iSFyRrCNfO)[size = bar.Size] = dictionary[size] - 1;
-//            if (this.iSFyRrCNfO[bar.Size] != 0)
-//              return;
-//            this.liIenLMabF(bar.Size);
-//          }
-//          else
-//          {
-//            if (this.MarketDataFilter != null)
-//              bar = this.MarketDataFilter.FilterBarOpen(bar, instrument.Symbol);
-//            if (bar == null)
-//              return;
-//            this.HBde253tvr((IFIXInstrument) instrument, bar);
-//            if (bar.BarType != BarType.Time)
-//              return;
-//            if (!this.iSFyRrCNfO.ContainsKey(bar.Size))
-//              this.iSFyRrCNfO[bar.Size] = 0;
-//            Dictionary<long, int> dictionary;
-//            long size;
-//            (dictionary = this.iSFyRrCNfO)[size = bar.Size] = dictionary[size] + 1;
-//          }
-//        }
-//        else if (@object is Trade)
-//        {
-//          Trade trade = @object as Trade;
-//          if (this.MarketDataFilter != null)
-//            trade = this.MarketDataFilter.FilterTrade(@object as Trade, instrument.Symbol);
-//          if (trade == null)
-//            return;
-//          this.NijeKZTPBN((IFIXInstrument) instrument, trade);
-//        }
-//        else if (@object is Quote)
-//        {
-//          Quote quote = @object as Quote;
-//          if (this.MarketDataFilter != null)
-//            quote = this.MarketDataFilter.FilterQuote(@object as Quote, instrument.Symbol);
-//          if (quote == null)
-//            return;
-//          this.RS5eD2QuOd((IFIXInstrument) instrument, quote);
-//        }
-//        else if (@object is MarketDepth)
-//          this.HiaeqOcUjh((IFIXInstrument) instrument, @object as MarketDepth);
-//        else if (@object is Fundamental)
-//        {
-//          this.YejeMsdynK((IFIXInstrument) instrument, @object as Fundamental);
-//        }
-//        else
-//        {
-//          if (!(@object is CorporateAction))
-//            return;
-//          this.NQyesH3ccX((IFIXInstrument) instrument, @object as CorporateAction);
-//        }
-//      }
-    }
-
-   
-    private void Db5eVnQ9kG([In] IntervalEventArgs obj0)
-    {
-      this.iSFyRrCNfO.Clear();
-    }
-
-   
-    private void liIenLMabF([In] long obj0)
-    {
-//      if (this.xLdyJCfw8a == null)
-//        return;
-//      this.xLdyJCfw8a((object) this, new BarSliceEventArgs(obj0, (IMarketDataProvider) this));
-    }
-
-   
-    private void k38e3T3by9([In] IFIXInstrument obj0, [In] Bar obj1)
-    {
-//      if (this.H91yCHx5ct == null)
-//        return;
-//      this.H91yCHx5ct((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) this));
-    }
-
-   
-    private void HBde253tvr([In] IFIXInstrument obj0, [In] Bar obj1)
-    {
-//      if (this.luIylJLmnN == null)
-//        return;
-//      this.luIylJLmnN((object) this, new BarEventArgs(obj1, obj0, (IMarketDataProvider) this));
-    }
-
-   
-    private void NijeKZTPBN([In] IFIXInstrument obj0, [In] Trade obj1)
-    {
-//      if (this.DQ7yGgKkyX != null)
-//        this.DQ7yGgKkyX((object) this, new TradeEventArgs(obj1, obj0, (IMarketDataProvider) this));
-      if (this.arZykcjuVw == null)
-        return;
-      this.arZykcjuVw.OnNewTrade(obj0, obj1);
-    }
-
-   
-    private void RS5eD2QuOd([In] IFIXInstrument obj0, [In] Quote obj1)
-    {
-//      if (this.C5cy7WVXIx != null)
-//        this.C5cy7WVXIx((object) this, new QuoteEventArgs(obj1, obj0, (IMarketDataProvider) this));
-      if (this.arZykcjuVw == null)
-        return;
-      this.arZykcjuVw.OnNewQuote(obj0, obj1);
-    }
-
-   
-    private void HiaeqOcUjh([In] IFIXInstrument obj0, [In] MarketDepth obj1)
-    {
-//      if (this.TF9ya7cnm4 == null)
-//        return;
-//      this.TF9ya7cnm4((object) this, new MarketDepthEventArgs(obj1, obj0, (IMarketDataProvider) this));
-    }
-
-   
-    private void YejeMsdynK([In] IFIXInstrument obj0, [In] Fundamental obj1)
-    {
-//      if (this.jCoyvcREkw == null)
-//        return;
-//      this.jCoyvcREkw((object) this, new FundamentalEventArgs(obj1, obj0, (IMarketDataProvider) this));
-    }
-
-   
-    private void NQyesH3ccX([In] IFIXInstrument obj0, [In] CorporateAction obj1)
-    {
-//      if (this.a7Zy4TJaPL == null)
-//        return;
-//      this.a7Zy4TJaPL((object) this, new CorporateActionEventArgs(obj1, obj0, (IMarketDataProvider) this));
-    }
-
-   
-    private void V6Aetvk5jr([In] Instrument obj0, [In] string obj1, [In] bool obj2)
-    {
-      DataSeriesList dataSeries = obj0.GetDataSeries();
-      Regex regex = new Regex(obj1);
-      foreach (IDataSeries series in dataSeries)
-      {
-        if (series.Name.Substring(obj0.Symbol.Length + 1) == obj1)
-        {
-          if (obj2)
-          {
-            if (!this.d2YymsvbJ5.InputSeries.Contains(series))
-            {
-              this.d2YymsvbJ5.InputSeries.Add(series);
-              if (!this.z1tyr7wr0l.Contains((object) series))
-                this.z1tyr7wr0l.Add((object) series, (object) obj0);
-            }
-          }
-          else
-          {
-            this.d2YymsvbJ5.InputSeries.Remove(series);
-            this.z1tyr7wr0l.Remove((object) series);
-          }
-        }
-      }
-    }
-
-   
-    private void wGKext6dJq([In] object obj0, [In] BarEventArgs obj1)
-    {
-//      if (this.H91yCHx5ct == null)
-//        return;
-//      this.H91yCHx5ct((object) this, new BarEventArgs(obj1.Bar, obj1.Instrument, (IMarketDataProvider) this));
-    }
-
-   
-    private void iC1eQuSAJx([In] object obj0, [In] BarEventArgs obj1)
-    {
-//      if (this.luIylJLmnN == null)
-//        return;
-//      this.luIylJLmnN((object) this, new BarEventArgs(obj1.Bar, obj1.Instrument, (IMarketDataProvider) this));
-    }
-
-   
-    private void OgUezdlsKf([In] object obj0, [In] BarSliceEventArgs obj1)
-    {
-//      if (this.xLdyJCfw8a == null)
-//        return;
-//      this.xLdyJCfw8a((object) this, new BarSliceEventArgs(obj1.BarSize, (IMarketDataProvider) this));
-    }
-
-   
-    public void EmitTrade(IFIXInstrument instrument, Trade trade)
-    {
-//      this.d2YymsvbJ5.nNp9oHTwk(new sTqplWAhZEpULyK2Wh(instrument, trade));
-    }
-
-   
-    public void EmitQuote(IFIXInstrument instrument, Quote quote)
-    {
-//      this.d2YymsvbJ5.nNp9oHTwk(new sTqplWAhZEpULyK2Wh(instrument, quote));
-    }
-  }
+		public void EmitQuote(IFIXInstrument instrument, Quote quote)
+		{
+			this.Simulator.nNp9oHTwk(new SimpleDataObject(instrument, quote));
+		}
+	}
 }

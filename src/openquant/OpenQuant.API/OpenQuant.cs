@@ -100,47 +100,47 @@ namespace OpenQuant.API
 			{
 				Order wrapper = Order.CreateWrapper(order);
 				OpenQuant.orders.Add(wrapper);
-				Map.OQ_SQ_Order[wrapper] = order;
-				Map.SQ_OQ_Order[order] = wrapper;
+				Map.OQ_FQ_Order[wrapper] = order;
+				Map.FQ_OQ_Order[order] = wrapper;
 			}
 		}
 
 		private static void SQ_OrderManager_OrderListUpdated(object sender, EventArgs e)
 		{
 			OpenQuant.orders.Clear();
-			Map.OQ_SQ_Order.Clear();
-			Map.SQ_OQ_Order.Clear();
+			Map.OQ_FQ_Order.Clear();
+			Map.FQ_OQ_Order.Clear();
 			foreach (SingleOrder order1 in (FIXGroupList) ((InstrumentOrderListTable) OrderManager.Orders).All)
 			{
 				Order order2 = new Order(order1);
 				OpenQuant.orders.Add(order2);
-				Map.OQ_SQ_Order[order2] = order1;
-				Map.SQ_OQ_Order[order1] = order2;
+				Map.OQ_FQ_Order[order2] = order1;
+				Map.FQ_OQ_Order[order1] = order2;
 			}
 		}
 
 		private static void SQ_OrderManager_NewOrder(OrderEventArgs e)
 		{
 			Order order;
-			if (Map.SQ_OQ_Order.ContainsKey(e.Order))
+			if (Map.FQ_OQ_Order.ContainsKey(e.Order))
 			{
-				order = Map.SQ_OQ_Order[e.Order] as Order;
+				order = Map.FQ_OQ_Order[e.Order] as Order;
 			}
 			else
 			{
 				order = new Order(e.Order);
-				Map.OQ_SQ_Order[order] = e.Order;
-				Map.SQ_OQ_Order[e.Order] = order;
+				Map.OQ_FQ_Order[order] = e.Order;
+				Map.FQ_OQ_Order[e.Order] = order;
 			}
 			OpenQuant.orders.Add(order);
 		}
 
 		private static void SQ_OrderManager_OrderRemoved(OrderEventArgs e)
 		{
-			Order order = Map.SQ_OQ_Order[e.Order] as Order;
+			Order order = Map.FQ_OQ_Order[e.Order] as Order;
 			OpenQuant.orders.Remove(order);
-			Map.SQ_OQ_Order.Remove(e.Order);
-			Map.OQ_SQ_Order.Remove(order);
+			Map.FQ_OQ_Order.Remove(e.Order);
+			Map.OQ_FQ_Order.Remove(order);
 		}
 
 		private static void SQInstrumentManager_InstrumentAdded(InstrumentEventArgs args)
@@ -157,16 +157,16 @@ namespace OpenQuant.API
 		{
 			Instrument instrument = new Instrument(sq_instrument);
 			OpenQuant.instruments.Add(sq_instrument.Symbol, instrument);
-			Map.OQ_SQ_Instrument[(object)instrument] = sq_instrument;
-			Map.SQ_OQ_Instrument[(object)sq_instrument] = (object)instrument;
+			Map.OQ_FQ_Instrument[(object)instrument] = sq_instrument;
+			Map.FQ_OQ_Instrument[(object)sq_instrument] = (object)instrument;
 		}
 
 		private static void RemoveInstrument(FreeQuant.Instruments.Instrument sq_instrument)
 		{
 			OpenQuant.instruments.Remove(sq_instrument.Symbol);
-			Instrument instrument = Map.SQ_OQ_Instrument[(object)sq_instrument] as Instrument;
-			Map.OQ_SQ_Instrument.Remove(instrument);
-			Map.SQ_OQ_Instrument.Remove((object)sq_instrument);
+			Instrument instrument = Map.FQ_OQ_Instrument[(object)sq_instrument] as Instrument;
+			Map.OQ_FQ_Instrument.Remove(instrument);
+			Map.FQ_OQ_Instrument.Remove((object)sq_instrument);
 		}
 
 		private static void SQ_PortfolioManager_PortfolioAdded(PortfolioEventArgs args)
@@ -177,8 +177,8 @@ namespace OpenQuant.API
 		private static void AddPortfolio(FreeQuant.Instruments.Portfolio sq_portfolio)
 		{
 			Portfolio portfolio = new Portfolio(sq_portfolio);
-			Map.OQ_SQ_Portfolio[portfolio] = sq_portfolio;
-			Map.SQ_OQ_Portfolio[sq_portfolio] = portfolio;
+			Map.OQ_FQ_Portfolio[portfolio] = sq_portfolio;
+			Map.FQ_OQ_Portfolio[sq_portfolio] = portfolio;
 		}
 	}
 }

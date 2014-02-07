@@ -5,31 +5,41 @@ using System.IO;
 namespace FreeQuant.Data
 {
 	[Serializable]
-	public partial class Bar : IDataObject, ISeriesObject
+	public class Bar : IDataObject, ISeriesObject
 	{
+		protected byte providerId;
+		protected BarType barType;
+		protected Color color;
+		protected bool isComplete;
+		protected long size;
+		protected long openInt;
+		protected long volume;
 		protected DateTime beginTime;
 		protected DateTime endTime;
 		protected double high;
 		protected double low;
 		protected double open;
 		protected double close;
-		protected long volume;
-		protected long openInt;
-		protected long size;
-		protected bool isComplete;
-		protected Color color;
-		protected BarType barType;
 
-		public byte ProviderId { get; set; }
-		public DateTime DateTime
+		public double Average
 		{
 			get
 			{
-				return this.beginTime;
+				return (this.High + this.Low + this.Open + this.Close) / 4;
 			}
+		}
+
+		[View]
+		public BarType BarType
+		{
+			get
+			{
+				return this.barType;
+			}
+			
 			set
 			{
-				this.beginTime = value;
+				this.barType = value;
 			}
 		}
 
@@ -41,22 +51,43 @@ namespace FreeQuant.Data
 			}
 		}
 
-		[View]
-		public virtual DateTime EndTime
+		[PriceView]
+		public double Close
 		{
 			get
 			{
-				if (!(this.endTime == DateTime.MinValue))
-					return this.endTime;
-				if (this.barType == BarType.Time && this.size > 0L)
-					return this.beginTime.AddSeconds((double)this.size);
-				else
-					throw new InvalidOperationException();// throw new InvalidOperationException(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(192));
+				return this.close;
 			}
-     
+			
 			set
 			{
-				this.endTime = value;
+				this.close = value;
+			}
+		}
+
+		public Color Color
+		{
+			get
+			{
+				return this.color;
+			}
+			
+			set
+			{
+				this.color = value;
+			}
+		}
+
+		public DateTime DateTime
+		{	
+			get
+			{
+				return this.beginTime;
+			}
+			
+			set
+			{
+				this.beginTime = value;
 			}
 		}
 
@@ -69,16 +100,25 @@ namespace FreeQuant.Data
 			}
 		}
 
-		[PriceView]
-		public double Open
+		[View]
+		public virtual DateTime EndTime
 		{
 			get
 			{
-				return this.open;
+				if (!(this.endTime == DateTime.MinValue))
+				{
+					return this.endTime;
+				}
+				if (this.barType == BarType.Time && this.size > 0)
+				{
+					return this.beginTime.AddSeconds(this.size);
+				}
+				throw new InvalidOperationException("");
 			}
+			
 			set
 			{
-				this.open = value;
+				this.endTime = value;
 			}
 		}
 
@@ -89,9 +129,23 @@ namespace FreeQuant.Data
 			{
 				return this.high;
 			}
+			
 			set
 			{
 				this.high = value;
+			}
+		}
+
+		public bool IsComplete
+		{
+			get
+			{
+				return this.isComplete;
+			}
+			
+			set
+			{
+				this.isComplete = value;
 			}
 		}
 
@@ -102,35 +156,32 @@ namespace FreeQuant.Data
 			{
 				return this.low;
 			}
+			
 			set
 			{
 				this.low = value;
 			}
 		}
 
-		[PriceView]
-		public double Close
+		public double Median
 		{
 			get
 			{
-				return this.close;
-			}
-			set
-			{
-				this.close = value;
+				return (this.High + this.Low) / 2;
 			}
 		}
 
-		[View]
-		public long Volume
+		[PriceView]
+		public double Open
 		{
 			get
 			{
-				return this.volume;
+				return this.open;
 			}
+			
 			set
 			{
-				this.volume = value;
+				this.open = value;
 			}
 		}
 
@@ -140,9 +191,23 @@ namespace FreeQuant.Data
 			{
 				return this.openInt;
 			}
+			
 			set
 			{
 				this.openInt = value;
+			}
+		}
+
+		public byte ProviderId
+		{
+			get
+			{
+				return this.providerId;
+			}
+			
+			set
+			{
+				this.providerId = value;
 			}
 		}
 
@@ -153,42 +218,10 @@ namespace FreeQuant.Data
 			{
 				return this.size;
 			}
+			
 			set
 			{
 				this.size = value;
-			}
-		}
-
-		public bool IsComplete
-		{
-			get
-			{
-				return this.isComplete;
-			}
-			set
-			{
-				this.isComplete = value;
-			}
-		}
-
-		[View]
-		public BarType BarType
-		{
-			get
-			{
-				return this.barType;
-			}
-			set
-			{
-				this.barType = value;
-			}
-		}
-
-		public double Median
-		{
-			get
-			{
-				return (this.High + this.Low) / 2.0;
 			}
 		}
 
@@ -196,7 +229,21 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return (this.High + this.Low + this.Close) / 3.0;
+				return (this.High + this.Low + this.Close) / 3;
+			}
+		}
+
+		[View]
+		public long Volume
+		{
+			get
+			{
+				return this.volume;
+			}
+			
+			set
+			{
+				this.volume = value;
 			}
 		}
 
@@ -204,31 +251,11 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return (this.High + this.Low + 2.0 * this.Close) / 4.0;
+				return (this.High + this.Low + 2 * this.Close) / 4;
 			}
 		}
 
-		public double Average
-		{
-			get
-			{
-				return (this.High + this.Low + this.Open + this.Close) / 4.0;
-			}
-		}
-
-		public Color Color
-		{
-			get
-			{
-				return this.color;
-			}
-			set
-			{
-				this.color = value;
-			}
-		}
-
-		public double this[int barData]
+		public double this [int barData]
 		{
 			get
 			{
@@ -260,12 +287,27 @@ namespace FreeQuant.Data
 			}
 		}
 
-		public double this[BarData barData]
+		public double this [BarData barData]
 		{
 			get
 			{
 				return this[(int)barData];
 			}
+		}
+
+		public Bar() : this(DateTime.MinValue, 0.0, 0.0, 0.0, 0.0, 0, 0)
+		{
+		}
+
+		public Bar(Bar bar) : this(bar.barType, bar.size, bar.beginTime, bar.endTime, bar.open, bar.high, bar.low, bar.close, bar.volume, bar.openInt)
+		{
+			this.providerId = bar.providerId;
+			this.color = bar.color;
+			this.isComplete = bar.isComplete;
+		}
+
+		public Bar(DateTime datetime, double open, double high, double low, double close, long volume, long size) : this(BarType.Time, size, datetime, datetime.AddSeconds(size), open, high, low, close, volume, 0)
+		{
 		}
 
 		public Bar(BarType barType, long size, DateTime beginTime, DateTime endTime, double open, double high, double low, double close, long volume, long openInt)
@@ -280,93 +322,72 @@ namespace FreeQuant.Data
 			this.close = close;
 			this.volume = volume;
 			this.openInt = openInt;
-			this.ProviderId = 0;
+			this.providerId = 0;
 			this.color = Color.Empty;
 			this.isComplete = false;
 		}
 
-		public Bar(DateTime datetime, double open, double high, double low, double close, long volume, long size) : this(BarType.Time, size, datetime, datetime.AddSeconds(size), open, high, low, close, volume, 0)
+		public virtual object Clone()
 		{
-		}
-
-		public Bar(Bar bar) : this(bar.barType, bar.size, bar.beginTime, bar.endTime, bar.open, bar.high, bar.low, bar.close, bar.volume, bar.openInt)
-		{
-			this.ProviderId = bar.ProviderId;
-			this.color = bar.color;
-			this.isComplete = bar.isComplete;
-		}
-
-		public Bar() : this(DateTime.MinValue, 0.0, 0.0, 0.0, 0.0, 0, 0)
-		{
+			return new Bar(this);
 		}
 
 		public double GetPrice(BarPrice option)
 		{
-			double num = 0.0;
+			double result = 0.0;
 			switch (option)
 			{
 				case BarPrice.High:
-					num = this.High;
+					result = this.High;
 					break;
 				case BarPrice.Low:
-					num = this.Low;
+					result = this.Low;
 					break;
 				case BarPrice.Open:
-					num = this.Open;
+					result = this.Open;
 					break;
 				case BarPrice.Close:
-					num = this.Close;
+					result = this.Close;
 					break;
 				case BarPrice.Median:
-					num = this.Median;
+					result = this.Median;
 					break;
 				case BarPrice.Typical:
-					num = this.Typical;
+					result = this.Typical;
 					break;
 				case BarPrice.Weighted:
-					num = this.Weighted;
+					result = this.Weighted;
 					break;
 			}
-			return num;
+			return result;
 		}
 
-		public virtual void WriteTo(BinaryWriter writer)
+		public virtual ISeriesObject NewInstance()
 		{
-			writer.Write((byte)2);
-			writer.Write(this.BeginTime.Ticks);
-			writer.Write(this.EndTime.Ticks);
-			writer.Write((byte)this.BarType);
-			writer.Write(this.Size);
-			writer.Write(this.High);
-			writer.Write(this.Low);
-			writer.Write(this.Open);
-			writer.Write(this.Close);
-			writer.Write(this.Volume);
-			writer.Write(this.OpenInt);
-			writer.Write(this.ProviderId);
+			return new Bar();
 		}
 
 		public virtual void ReadFrom(BinaryReader reader)
 		{
-			byte num = reader.ReadByte();
-			switch (num)
+			byte b = reader.ReadByte();
+			switch (b)
 			{
-				case (byte) 1:
+				case 1:
 					this.beginTime = new DateTime(reader.ReadInt64());
-					this.EndTime = new DateTime(reader.ReadInt64());
-					this.BarType = (BarType)reader.ReadByte();
-					this.Size = reader.ReadInt64();
-					this.High = Math.Round((double)reader.ReadSingle(), 4);
-					this.Low = Math.Round((double)reader.ReadSingle(), 4);
-					this.Open = Math.Round((double)reader.ReadSingle(), 4);
-					this.Close = Math.Round((double)reader.ReadSingle(), 4);
-					this.Volume = reader.ReadInt64();
-					this.OpenInt = reader.ReadInt64();
-					this.ProviderId = reader.ReadByte();
-					break;
-				case (byte) 2:
+					this.endTime = new DateTime(reader.ReadInt64());
+					this.barType = (BarType)reader.ReadByte();
+					this.size = reader.ReadInt64();
+					this.high = Math.Round((double)reader.ReadSingle(), 4);
+					this.low = Math.Round((double)reader.ReadSingle(), 4);
+					this.open = Math.Round((double)reader.ReadSingle(), 4);
+					this.close = Math.Round((double)reader.ReadSingle(), 4);
+					this.volume = reader.ReadInt64();
+					this.openInt = reader.ReadInt64();
+					this.providerId = reader.ReadByte();
+					return;
+				case 2:
 					this.beginTime = new DateTime(reader.ReadInt64());
-					this.EndTime = new DateTime(reader.ReadInt64());
+					this.endTime = new DateTime(reader.ReadInt64());
 					this.barType = (BarType)reader.ReadByte();
 					this.size = reader.ReadInt64();
 					this.high = reader.ReadDouble();
@@ -375,21 +396,44 @@ namespace FreeQuant.Data
 					this.close = reader.ReadDouble();
 					this.volume = reader.ReadInt64();
 					this.openInt = reader.ReadInt64();
-					this.ProviderId = reader.ReadByte();
-					break;
+					this.providerId = reader.ReadByte();
+					return;
 				default:
-					throw new Exception("Version doesn't Match. Version: " + num);
+					throw new Exception("version" + b);
 			}
 		}
 
-		public virtual ISeriesObject NewInstance()
+		public override string ToString()
 		{
-			return new Bar();
+			return string.Format("", new object[]
+			{
+				this.beginTime,
+				this.endTime,
+				this.barType,
+				this.open,
+				this.high,
+				this.low,
+				this.close,
+				this.volume,
+				this.openInt,
+				this.size
+			});
 		}
 
-		public virtual object Clone()
+		public virtual void WriteTo(BinaryWriter writer)
 		{
-			return new Bar(this);
+			writer.Write(2);
+			writer.Write(this.beginTime.Ticks);
+			writer.Write(this.endTime.Ticks);
+			writer.Write((byte)this.barType);
+			writer.Write(this.size);
+			writer.Write(this.high);
+			writer.Write(this.low);
+			writer.Write(this.open);
+			writer.Write(this.close);
+			writer.Write(this.volume);
+			writer.Write(this.openInt);
+			writer.Write(this.providerId);
 		}
 	}
 }

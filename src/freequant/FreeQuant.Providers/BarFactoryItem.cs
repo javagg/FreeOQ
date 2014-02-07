@@ -6,10 +6,6 @@ namespace FreeQuant.Providers
 {
 	public class BarFactoryItem : IComparable
 	{
-		internal const BarType aYrgwoBvsH = BarType.Time;
-		internal const long l27gtTMOx0 = 60;
-		internal const bool dAxggIVaoI = true;
-
 		[DefaultValue(BarType.Time)]
 		public BarType BarType { get; set; }
 
@@ -32,12 +28,12 @@ namespace FreeQuant.Providers
 
 		public int CompareTo(object obj)
 		{
-			BarFactoryItem barFactoryItem = obj as BarFactoryItem;
-			if (barFactoryItem != null)
+			BarFactoryItem that = obj as BarFactoryItem;
+			if (that != null)
 			{
-				if (this.BarSize > barFactoryItem.BarSize)
+				if (this.BarSize > that.BarSize)
 					return 1;
-				if (this.BarSize < barFactoryItem.BarSize)
+				if (this.BarSize < that.BarSize)
 					return -1;
 			}
 			return 0;
@@ -45,7 +41,7 @@ namespace FreeQuant.Providers
 
 		public override string ToString()
 		{
-			return string.Format("{0}", this.BarType, this.BarSize, this.Enabled);
+			return string.Format("BarType: {0}, BarSize: {1}, Enabled: {2}", this.BarType, this.BarSize, this.Enabled);
 		}
 	}
 }

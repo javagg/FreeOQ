@@ -1,9 +1,4 @@
 namespace FreeQuant.File.Indexing
 {
-	public enum IndexStatus
-	{
-		None,
-		Valid,
-		Old,
-	}
+	public enum IndexStatus { None, Valid, Old }
 }

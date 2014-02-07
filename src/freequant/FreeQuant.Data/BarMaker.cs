@@ -144,7 +144,7 @@ namespace FreeQuant.Data
 					barSeries.Flush();
 					break;
 				default:
-					throw new NotImplementedException("" + barType); //throw new NotImplementedException(SgtGY0EZpHQ7maRIwn.MEKJ4a3Ol(0) + ((object) barType).ToString());
+					throw new NotImplementedException("" + barType);
 			}
 		}
 

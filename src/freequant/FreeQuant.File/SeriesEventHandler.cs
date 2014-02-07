@@ -1,4 +1,5 @@
 using System;
+
 namespace FreeQuant.File
 {
 	public class SeriesEventArgs : EventArgs

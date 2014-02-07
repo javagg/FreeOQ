@@ -21,20 +21,20 @@ namespace OpenQuant.API.Compression
 			BarCompressor barCompressor;
 			switch (barType)
 			{
-					case BarType.Time:
+				case BarType.Time:
 					barCompressor = new TimeBarCompressor();
 					break;
-					case  BarType.Tick:
+				case  BarType.Tick:
 					barCompressor = new TickBarCompressor();
 					break;
-					case  BarType.Volume:
+				case  BarType.Volume:
 					barCompressor = new VolumeBarCompressor();
 					break;
-					case BarType.Range:
+				case BarType.Range:
 					barCompressor = new RangeBarCompressor();
 					break;
 				default:
-					throw new ArgumentException(string.Format("Unknown bar type - {0}", (object)barType));
+					throw new ArgumentException(string.Format("Unknown bar type - {0}", barType));
 			}
 			barCompressor.oldBarSize = oldBarSize;
 			barCompressor.newBarSize = newBarSize;
@@ -42,6 +42,7 @@ namespace OpenQuant.API.Compression
 		}
 
 		protected abstract void Add(DataEntry entry);
+
 		protected void AddItemsToBar(PriceSizeItem[] items)
 		{
 			foreach (PriceSizeItem priceSizeItem in items)
@@ -50,23 +51,22 @@ namespace OpenQuant.API.Compression
 
 		protected void CreateNewBar(BarType barType, DateTime beginTime, DateTime endTime, double price)
 		{
-			if (barType == BarType.Time && this.newBarSize == 86400L)
-					this.bar = new Bar((FreeQuant.Data.Bar)new Daily(beginTime, price, price, price, price, 0L));
+			if (barType == BarType.Time && this.newBarSize == 86400)
+				this.bar = new Bar(new FreeQuant.Data.Daily(beginTime, price, price, price, price, 0));
 			else
-					this.bar = new Bar(new FreeQuant.Data.Bar(EnumConverter.Convert(barType), this.newBarSize, beginTime, endTime, price, price, price, price, 0L, 0L));
+				this.bar = new Bar(new FreeQuant.Data.Bar(EnumConverter.Convert(barType), this.newBarSize, beginTime, endTime, price, price, price, price, 0, 0));
 		}
 
 		protected void EmitNewCompressedBar()
 		{
-			if (this.NewCompressedBar == null)
-				return;
-			this.NewCompressedBar((object)this, new CompressedBarEventArgs(this.bar));
+			if (this.NewCompressedBar != null)
+				this.NewCompressedBar(this, new CompressedBarEventArgs(this.bar));
 		}
 
 		public BarSeries Compress(DataEntryEnumerator enumerator)
 		{
 			BarSeries series = new BarSeries();
-			this.NewCompressedBar += (CompressedBarEventHandler)((sender, args) => series.Add(args.Bar));
+			this.NewCompressedBar += (sender, args) => series.Add(args.Bar);
 			while (enumerator.MoveNext())
 				this.Add(enumerator.Current);
 			this.Flush();
@@ -80,14 +80,13 @@ namespace OpenQuant.API.Compression
 			if (item.Price > this.bar.High)
 				this.bar.bar.High = item.Price;
 			this.bar.bar.Close = item.Price;
-			this.bar.bar.Volume += (long)item.Size;
+			this.bar.bar.Volume += item.Size;
 		}
 
 		private void Flush()
 		{
-			if (this.bar == null)
-				return;
-			this.EmitNewCompressedBar();
+			if (this.bar != null)
+				this.EmitNewCompressedBar();
 		}
 	}
 }

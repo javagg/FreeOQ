@@ -2,66 +2,60 @@ using FreeQuant.Testing;
 using FreeQuant.Testing.TesterItems;
 using System.Collections;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  [StrategyComponent("{5E7810DC-C9C1-427f-8CD9-1DFFE26E59B5}", ComponentType.ReportManager, Description = "", Name = "Default_ReportManager")]
-  public class ReportManager : ComponentBase
-  {
-    public const string GUID = "{5E7810DC-C9C1-427f-8CD9-1DFFE26E59B5}";
-    protected LiveTester tester;
+	[StrategyComponent("{5E7810DC-C9C1-427f-8CD9-1DFFE26E59B5}", ComponentType.ReportManager, Description = "", Name = "Default_ReportManager")]
+	public class ReportManager : ComponentBase
+	{
+		public const string GUID = "{5E7810DC-C9C1-427f-8CD9-1DFFE26E59B5}";
+		protected LiveTester tester;
 
-    [Browsable(false)]
-    public LiveTester Tester
-    {
-       get
-      {
-        return this.tester;
-      }
-       set
-      {
-        this.tester = value;
-      }
-    }
+		[Browsable(false)]
+		public LiveTester Tester
+		{
+			get
+			{
+				return this.tester;
+			}
+			set
+			{
+				this.tester = value;
+			}
+		}
 
-    
-		public ReportManager():base()
-    {
-    }
+		public ReportManager() : base()
+		{
+		}
 
-    
-    protected void RemoveAllStatistics()
-    {
-      foreach (TesterItem testerItem in this.tester.Components)
-      {
-        if (testerItem is SeriesTesterItem)
-          (testerItem as SeriesTesterItem).Enabled = false;
-      }
-    }
+		protected void RemoveAllStatistics()
+		{
+			foreach (TesterItem testerItem in this.tester.Components)
+			{
+				if (testerItem is SeriesTesterItem)
+					(testerItem as SeriesTesterItem).Enabled = false;
+			}
+		}
 
-    
-    protected void AddAllStatistics()
-    {
-      foreach (TesterItem testerItem in this.tester.Components)
-      {
-        if (testerItem is SeriesTesterItem)
-          (testerItem as SeriesTesterItem).Enabled = true;
-      }
-    }
+		protected void AddAllStatistics()
+		{
+			foreach (TesterItem testerItem in this.tester.Components)
+			{
+				if (testerItem is SeriesTesterItem)
+					(testerItem as SeriesTesterItem).Enabled = true;
+			}
+		}
 
-    
-    protected void AddStatistics(string name)
-    {
-      TesterItem testerItem = this.tester.Components[name];
-      if (!(testerItem is SeriesTesterItem))
-        return;
-      (testerItem as SeriesTesterItem).Enabled = true;
-    }
+		protected void AddStatistics(string name)
+		{
+			TesterItem testerItem = this.tester.Components[name];
+			if (!(testerItem is SeriesTesterItem))
+				return;
+			(testerItem as SeriesTesterItem).Enabled = true;
+		}
 
-    
-    protected void AddComponentSet(string setName)
-    {
+		protected void AddComponentSet(string setName)
+		{
 //      if (setName == USaG3GpjZagj1iVdv4u.Y4misFk9D9(5526))
 //      {
 //        this.tester.EnableComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(5570));
@@ -207,6 +201,6 @@ namespace FreeQuant.Trading
 //        this.tester.EnableComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(9954) + name);
 //        this.tester.EnableComponent(USaG3GpjZagj1iVdv4u.Y4misFk9D9(9972) + name);
 //      }
-    }
-  }
+		}
+	}
 }

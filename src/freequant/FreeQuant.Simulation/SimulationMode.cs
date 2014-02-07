@@ -1,8 +1,4 @@
 namespace FreeQuant.Simulation
 {
-	public enum SimulationMode
-	{
-		UserDefinedSpeed,
-		MaxSpeed,
-	}
+	public enum SimulationMode { UserDefinedSpeed, MaxSpeed }
 }

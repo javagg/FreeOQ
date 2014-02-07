@@ -1,22 +1,14 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  public class SignalEventArgs : EventArgs
-  {
-    private Signal cKQi5NVTD4;
+	public class SignalEventArgs : EventArgs
+	{
+		public Signal Signal { get; private set; }
 
-    public Signal Signal
-    {
-       get
-      {
-        return this.cKQi5NVTD4;
-      }
-    }
-		public SignalEventArgs(Signal signal) :base()
-    {
-      this.cKQi5NVTD4 = signal;
-    }
-  }
+		public SignalEventArgs(Signal signal) : base()
+		{
+			this.Signal = signal;
+		}
+	}
 }

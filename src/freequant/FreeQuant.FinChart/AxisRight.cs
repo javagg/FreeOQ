@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.FinChart
 {
@@ -197,7 +196,7 @@ namespace FreeQuant.FinChart
 			}
 		}
 
-		private bool UvocmIoHmQ([In] Color obj0, [In] Color obj1)
+		private bool UvocmIoHmQ(Color obj0, Color obj1)
 		{
 			if ((int)obj0.A == (int)obj1.A && (int)obj0.R == (int)obj1.R && (int)obj0.G == (int)obj1.G)
 				return (int)obj0.B == (int)obj1.B;
@@ -205,7 +204,7 @@ namespace FreeQuant.FinChart
 				return false;
 		}
 
-		private static double O3Qc3nfpkF([In] double obj0)
+		private static double O3Qc3nfpkF(double obj0)
 		{
 			double num1 = obj0 > 0.0 ? 1.0 : -1.0;
 			if (obj0 == 0.0)
@@ -217,7 +216,7 @@ namespace FreeQuant.FinChart
 			return num1 * num3;
 		}
 
-		private static double kBKcNuxFwi([In] double obj0)
+		private static double kBKcNuxFwi(double obj0)
 		{
 			double num1 = obj0 > 0.0 ? 1.0 : -1.0;
 			if (obj0 == 0.0)

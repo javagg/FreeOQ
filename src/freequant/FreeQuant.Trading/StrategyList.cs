@@ -1,83 +1,74 @@
-
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Trading
 {
-  public class StrategyList : ICollection, IEnumerable
-  {
-    private SortedList mTZpGjqLyG;
+	public class StrategyList : ICollection
+	{
+		private SortedList strategies; 
 
-    public bool IsSynchronized
-    {
-       get
-      {
-        return this.mTZpGjqLyG.IsSynchronized;
-      }
-    }
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.strategies.IsSynchronized;
+			}
+		}
 
-    public object SyncRoot
-    {
-       get
-      {
-        return this.mTZpGjqLyG.SyncRoot;
-      }
-    }
+		public object SyncRoot
+		{
+			get
+			{
+				return this.strategies.SyncRoot;
+			}
+		}
 
-    public int Count
-    {
-       get
-      {
-        return this.mTZpGjqLyG.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.strategies.Count;
+			}
+		}
 
-    public StrategyBase this[string name]
-    {
-       get
-      {
-        return this.mTZpGjqLyG[(object) name] as StrategyBase;
-      }
-    }
+		public StrategyBase this[string name]
+		{
+			get
+			{
+				return this.strategies[name] as StrategyBase;
+			}
+		}
 
-    
-		internal StrategyList():base()
-    {
-      this.mTZpGjqLyG = new SortedList();
-    }
+		internal StrategyList()
+		{
+			this.strategies = new SortedList();
+		}
 
-    
-    public void CopyTo(Array array, int index)
-    {
-      this.mTZpGjqLyG.CopyTo(array, index);
-    }
+		public void CopyTo(Array array, int index)
+		{
+			this.strategies.CopyTo(array, index);
+		}
 
-    
-    public IEnumerator GetEnumerator()
-    {
-      return this.mTZpGjqLyG.Values.GetEnumerator();
-    }
+		public IEnumerator GetEnumerator()
+		{
+			return this.strategies.Values.GetEnumerator();
+		}
 
-    
-    internal void sHVpbkHDLx([In] StrategyBase obj0)
-    {
-      if (this.mTZpGjqLyG.Contains((object) obj0.Name))
-        throw new ApplicationException( obj0.Name);
-      this.mTZpGjqLyG.Add((object) obj0.Name, (object) obj0);
-    }
+		internal void Add(StrategyBase strategy)
+		{
+			if (this.strategies.Contains(strategy.Name))
+				throw new ApplicationException(strategy.Name);
+			this.strategies.Add(strategy.Name, strategy);
+		}
 
-    
-    internal void Sg6pybMZlM([In] StrategyBase obj0)
-    {
-      this.mTZpGjqLyG.Remove((object) obj0.Name);
-    }
+		internal void Remove(StrategyBase strategy)
+		{
+			this.strategies.Remove(strategy.Name);
+		}
 
-    
-    public bool Contains(string name)
-    {
-      return this.mTZpGjqLyG.ContainsKey((object) name);
-    }
-  }
+		public bool Contains(string name)
+		{
+			return this.strategies.ContainsKey(name);
+		}
+	}
 }

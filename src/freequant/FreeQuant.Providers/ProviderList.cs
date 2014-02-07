@@ -69,14 +69,14 @@ namespace FreeQuant.Providers
 			return this.providerNames.Values.GetEnumerator();
 		}
 
-		internal void HH8tS7bFw(IProvider obj0)
+		internal void AddProvider(IProvider provider)
 		{
-//      if (this.providerNames.ContainsKey((object) obj0.Name))
-//        throw new ArgumentException(GojrKtfk5NMi1fou68.a17L2Y7Wnd(0) + obj0.Name);
-//      if (this.providerIds.Contains((object) obj0.Id))
-//        throw new ArgumentException(GojrKtfk5NMi1fou68.a17L2Y7Wnd(142) + (object) obj0.Id);
-			this.providerNames.Add(obj0.Name, obj0);
-			this.providerIds.Add(obj0.Id, obj0);
+			if (this.providerNames.ContainsKey(provider.Name))
+				throw new ArgumentException("Already Added: " + provider.Name);
+			if (this.providerIds.Contains(provider.Id))
+				throw new ArgumentException("Already Added: " + provider.Id);
+			this.providerNames.Add(provider.Name, provider);
+			this.providerIds.Add(provider.Id, provider);
 		}
 
 		public bool Contains(string name)

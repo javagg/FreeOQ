@@ -9,8 +9,6 @@ namespace OpenQuant.Trading
 	{
 		private bool isBarFactoryRequest = true;
 		public const bool DefaultIsBarFactoryRequest = true;
-		private BarType type;
-		private long size;
 
 		[Browsable(false)]
 		public BarType BarType { get; private set; }
@@ -38,8 +36,8 @@ namespace OpenQuant.Trading
 
 		public BarRequest(BarType type, long size) : base(RequestType.Bar)
 		{
-			this.Type = type;
-			this.Size = size;
+			this.BarType = type;
+			this.BarSize = size;
 			this.isBarFactoryRequest = true;
 		}
 
@@ -50,15 +48,15 @@ namespace OpenQuant.Trading
 		public BarRequest(string request) : base("Bar")
 		{
 			string[] strArray = request.Split(new char[1] {	'.' });
-			this.Type = (BarType)Enum.Parse(typeof(BarType), strArray[1]);
-			this.Size = long.Parse(strArray[2]);
+			this.BarType = (BarType)Enum.Parse(typeof(BarType), strArray[1]);
+			this.BarSize = long.Parse(strArray[2]);
 			this.isBarFactoryRequest = true;
 		}
 
 		public override bool Equals(object obj)
 		{
 			BarRequest barRequest = obj as BarRequest;
-			return barRequest != null && barRequest.BarType == this.type && barRequest.BarSize == this.size;
+			return barRequest != null && barRequest.BarType == this.BarType && barRequest.BarSize == this.BarSize;
 		}
 
 		public override int GetHashCode()
@@ -68,7 +66,7 @@ namespace OpenQuant.Trading
 
 		public override string GetSeriesSuffix()
 		{
-			return "Bar." + this.Type.ToString() + "." + this.Size.ToString();
+			return "Bar." + this.BarType.ToString() + "." + this.BarSize.ToString();
 		}
 
 		public override string GetName()
@@ -78,10 +76,10 @@ namespace OpenQuant.Trading
 
 		public override string ToString()
 		{
-			switch (this.Type)
+			switch (this.BarType)
 			{
 				case BarType.Time:
-					switch (this.Size)
+					switch (this.BarSize)
 					{
 						case 21600:
 							return "Bars 6 hours";
@@ -111,9 +109,9 @@ namespace OpenQuant.Trading
 							return this.GetSeriesSuffix();
 					}
 				case BarType.Tick:
-					return "Bars " + this.Size + " ticks";
+					return "Bars " + this.BarSize + " ticks";
 				case BarType.Volume:
-					return "Bars " + this.Size + " volume";
+					return "Bars " + this.BarSize + " volume";
 				default:
 					return this.GetSeriesSuffix();
 			}

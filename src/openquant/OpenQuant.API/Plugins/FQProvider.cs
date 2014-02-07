@@ -343,7 +343,7 @@ namespace OpenQuant.API.Plugins
       for (int i = 0; i < request.NoRelatedSym; ++i)
       {
         FreeQuant.Instruments.Instrument instrument1 = FreeQuant.Instruments.InstrumentManager.Instruments[request.GetRelatedSymGroup(i).Symbol];
-        Instrument instrument2 = Map.SQ_OQ_Instrument[(object) instrument1] as Instrument;
+        Instrument instrument2 = Map.FQ_OQ_Instrument[(object) instrument1] as Instrument;
         switch (request.SubscriptionRequestType)
         {
           case '1':
@@ -481,7 +481,7 @@ namespace OpenQuant.API.Plugins
 
     public void SendNewOrderSingle(NewOrderSingle order)
     {
-      Order order1 = Map.SQ_OQ_Order[(object) order] as Order;
+      Order order1 = Map.FQ_OQ_Order[(object) order] as Order;
       this.orderRecords.Add(order1, new OrderRecord(order as SingleOrder));
       this.provider.CallSend(order1);
     }
@@ -489,13 +489,13 @@ namespace OpenQuant.API.Plugins
     public void SendOrderCancelReplaceRequest(OrderCancelReplaceRequest request)
     {
 			IOrder iorder = ((InstrumentOrderListTable) OrderManager.Orders).All[request.OrigClOrdID];
-      this.provider.CallReplace(Map.SQ_OQ_Order[(object) iorder] as Order);
+      this.provider.CallReplace(Map.FQ_OQ_Order[(object) iorder] as Order);
     }
 
     public void SendOrderCancelRequest(OrderCancelRequest request)
     {
 			IOrder iorder = ((InstrumentOrderListTable) OrderManager.Orders).All[request.OrigClOrdID];
-      this.provider.CallCancel(Map.SQ_OQ_Order[(object) iorder] as Order);
+      this.provider.CallCancel(Map.FQ_OQ_Order[(object) iorder] as Order);
     }
 
     public void SendOrderStatusRequest(OrderStatusRequest request)

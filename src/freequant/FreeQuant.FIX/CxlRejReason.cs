@@ -1,10 +1,10 @@
-﻿namespace FreeQuant.FIX
+namespace FreeQuant.FIX
 {
-  public enum CxlRejReason
-  {
-    TooLateToCancel,
-    UnknownOrder,
-    BrokerOption,
-    AlreadyPending,
-  }
+	public enum CxlRejReason
+	{
+		TooLateToCancel,
+		UnknownOrder,
+		BrokerOption,
+		AlreadyPending,
+	}
 }

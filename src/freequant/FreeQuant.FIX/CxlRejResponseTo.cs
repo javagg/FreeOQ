@@ -1,8 +1,8 @@
-﻿namespace FreeQuant.FIX
+namespace FreeQuant.FIX
 {
-  public enum CxlRejResponseTo
-  {
-    CancelRequest,
-    CancelReplaceRequest,
-  }
+	public enum CxlRejResponseTo
+	{
+		CancelRequest,
+		CancelReplaceRequest,
+	}
 }

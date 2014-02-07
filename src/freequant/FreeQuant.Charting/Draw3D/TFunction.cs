@@ -1,7 +1,6 @@
 using FreeQuant.Charting;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Charting.Draw3D
 {
@@ -75,15 +74,15 @@ namespace FreeQuant.Charting.Draw3D
 			return this.trP3fdnMpS.Result(new TVec3(obj0, obj1, this.f(obj0, obj1)), n, obj4);
 		}
 
-		private void qDx3lDiW7U([In] Pad obj0, [In] Bitmap obj1)
+		private void qDx3lDiW7U(Pad pad, Bitmap bitmap)
 		{
 			if (this.Look != EChartLook.SurfaceOnly)
 				return;
-			Graphics g = Graphics.FromImage((Image)obj1);
-			TView.View(obj0).PaintAxes(g, obj0, 0, 0, this.C843M1JDuK);
+			Graphics g = Graphics.FromImage(bitmap);
+			TView.View(pad).PaintAxes(g, pad, 0, 0, this.C843M1JDuK);
 		}
 
-		private unsafe void Pnx3KTVZoc([In] int* obj0)
+		private unsafe void Pnx3KTVZoc(int* obj0)
 		{
 			int[,] numArray = new int[this.Jm23JdRAV2, this.C843M1JDuK];
 			if (!this.hH1321Stt8)

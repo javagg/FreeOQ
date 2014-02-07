@@ -1,9 +1,4 @@
 namespace FreeQuant.Simulation
 {
-	public enum SimulatorState
-	{
-		Stopped,
-		Running,
-		Paused
-	}
+	public enum SimulatorState { Stopped, Running, Paused }
 }

@@ -144,16 +144,15 @@ namespace FreeQuant.Optimization
 			this.fNObjectiveCalls = 0;
 			this.optimal1DList = new SortedList[this.fNParamSubset];
 			this.optimal2DList = new Hashtable[this.fNParamSubset, this.fNParamSubset];
-			for (int index = 0; index < this.fNParamSubset; ++index)
-				this.optimal1DList[index] = new SortedList();
-			for (int index1 = 0; index1 < this.fNParamSubset; ++index1)
+			for (int i = 0; i < this.fNParamSubset; ++i)
+				this.optimal1DList[i] = new SortedList();
+			for (int i = 0; i < this.fNParamSubset; ++i)
 			{
-				for (int index2 = 0; index2 < this.fNParamSubset; ++index2)
-					this.optimal2DList[index1, index2] = new Hashtable();
+				for (int j = 0; j < this.fNParamSubset; ++j)
+					this.optimal2DList[i, j] = new Hashtable();
 			}
-//      if (this.YE5X4qsts == null)
-//        return;
-//      this.YE5X4qsts((object) this, EventArgs.Empty);
+			if (this.Inited != null)
+				this.Inited(this, EventArgs.Empty);
 		}
 
 		public virtual double Objective()
@@ -163,20 +162,20 @@ namespace FreeQuant.Optimization
 				return double.NaN;
 			double num = this.fOptimizable.Objective();
 			this.fLastObjective = num;
-//      if (this.ewWNFr3xJ != null)
-//        this.ewWNFr3xJ((object) this, EventArgs.Empty);
-			for (int index1 = 0; index1 < this.fNParamSubset; ++index1)
+			if (this.ObjectiveCalled != null)
+				this.ObjectiveCalled(this, EventArgs.Empty);
+			for (int i = 0; i < this.fNParamSubset; ++i)
 			{
-				double d1 = this[index1];
+				double d1 = this[i];
 				if (!double.IsNaN(d1))
 				{
-					if (!this.optimal1DList[index1].ContainsKey((object)d1) || (double)this.optimal1DList[index1][(object)d1] > num)
-						this.optimal1DList[index1][(object)d1] = (object)num;
-					for (int index2 = index1 + 1; index2 < this.fNParamSubset; ++index2)
+					if (!this.optimal1DList[i].ContainsKey(d1) || (double)this.optimal1DList[i][(object)d1] > num)
+						this.optimal1DList[i][d1] = num;
+					for (int j = i + 1; j < this.fNParamSubset; ++j)
 					{
-						double d2 = this[index2];
-						if (!double.IsNaN(d2) && (!this.optimal2DList[index1, index2].ContainsKey((object)new TwoParams(d1, d2)) || (double)this.optimal2DList[index1, index2][(object)new TwoParams(d1, d2)] > num))
-							this.optimal2DList[index1, index2][(object)new TwoParams(d1, d2)] = (object)num;
+						double d2 = this[j];
+						if (!double.IsNaN(d2) && (!this.optimal2DList[i, j].ContainsKey(new TwoParams(d1, d2)) || (double)this.optimal2DList[i, j][new TwoParams(d1, d2)] > num))
+							this.optimal2DList[i, j][new TwoParams(d1, d2)] = num;
 					}
 				}
 			}
@@ -185,32 +184,32 @@ namespace FreeQuant.Optimization
 
 		public virtual void OnStep()
 		{
-			if (this.fOptimizable == null)
-				return;
-			this.fOptimizable.OnStep();
-//      if (this.Ragi6Xbmw == null)
-//        return;
-//      this.Ragi6Xbmw((object) this, EventArgs.Empty);
+			if (this.fOptimizable != null)
+			{
+				this.fOptimizable.OnStep();
+				if (this.StepCalled != null)
+					this.StepCalled(this, EventArgs.Empty);
+			}
 		}
 
 		public virtual void OnCircle()
 		{
-			if (this.fOptimizable == null)
-				return;
-			this.fOptimizable.OnCircle();
-//      if (this.kWMpbkyoR == null)
-//        return;
-//      this.kWMpbkyoR((object) this, EventArgs.Empty);
+			if (this.fOptimizable != null)
+			{
+				this.fOptimizable.OnCircle();
+				if (this.CircleCalled != null)
+					this.CircleCalled(this, EventArgs.Empty);
+			}
 		}
 
 		public virtual void Update()
 		{
-			if (this.fOptimizable == null)
-				return;
-			this.fOptimizable.Update((ParamSet)this);
-//      if (this.uCrgfMwL4 == null)
-//        return;
-//      this.uCrgfMwL4((object) this, EventArgs.Empty);
+			if (this.fOptimizable != null)
+			{
+				this.fOptimizable.Update(this);
+				if (this.UpdateCalled != null)
+					this.UpdateCalled(this, EventArgs.Empty);
+			}
 		}
 
 		public void Stop()
@@ -220,16 +219,14 @@ namespace FreeQuant.Optimization
 
 		protected void EmitCompleted()
 		{
-//      if (this.dljHVKBFX == null)
-//        return;
-//      this.dljHVKBFX((object) this, EventArgs.Empty);
+			if (this.OptimizationCompleted != null)
+				this.OptimizationCompleted(this, EventArgs.Empty);
 		}
 
 		protected void EmitBestObjectiveReceived()
 		{
-//      if (this.UrKFYUM7X == null)
-//        return;
-//      this.UrKFYUM7X((object) this, EventArgs.Empty);
+			if (this.BestObjectiveReceived != null)
+				this.BestObjectiveReceived(this, EventArgs.Empty);
 		}
 
 		public virtual void Print()

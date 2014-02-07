@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Services
 {
@@ -47,9 +46,9 @@ namespace FreeQuant.Services
 			return this.serviceErrors.GetEnumerator();
 		}
 
-		internal void EJUWWWMFm([In] ServiceError obj0)
+		internal void Add(ServiceError error)
 		{
-			this.serviceErrors.Add((object)obj0);
+			this.serviceErrors.Add(error);
 		}
 	}
 }

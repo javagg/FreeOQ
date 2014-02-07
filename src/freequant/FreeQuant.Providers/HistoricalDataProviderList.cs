@@ -1,10 +1,8 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.Providers
 {
 	public class HistoricalDataProviderList : ProviderList
 	{
-		new public IHistoricalDataProvider this [string name]
+		public new IHistoricalDataProvider this[string name]
 		{
 			get
 			{
@@ -12,7 +10,7 @@ namespace FreeQuant.Providers
 			}
 		}
 
-		new public IHistoricalDataProvider this [byte id]
+		public new IHistoricalDataProvider this[byte id]
 		{
 			get
 			{

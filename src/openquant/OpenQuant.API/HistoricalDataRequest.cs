@@ -18,7 +18,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return Map.SQ_OQ_Instrument[(object)this.request.Instrument] as Instrument;
+				return Map.FQ_OQ_Instrument[(object)this.request.Instrument] as Instrument;
 			}
 		}
 

@@ -1,9 +1,4 @@
 namespace FreeQuant.Indicators
 {
-	public enum EIndicatorType
-	{
-		Oscillator,
-		Price,
-		Volume,
-	}
+	public enum EIndicatorType { Oscillator, Price, Volume }
 }

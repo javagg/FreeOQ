@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Providers.Design
 {
@@ -10,7 +9,6 @@ namespace FreeQuant.Providers.Design
 	{
 		public BarSizesTypeConverter() : base()
 		{
-
 		}
 
 		public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
@@ -20,30 +18,36 @@ namespace FreeQuant.Providers.Design
 
 		public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
 		{
-			if (!(destinationType == typeof(string)) || !(value is int[]))
-				return base.ConvertTo(context, culture, value, destinationType);
-			List<string> list = new List<string>();
-			int[] numArray = (int[])value;
-			if (numArray.Length == 0)
+			if (destinationType == typeof(string) && value is int[])
 			{
-				list.Add(GojrKtfk5NMi1fou68.a17L2Y7Wnd(1262));
+				List<string> list = new List<string>();
+				int[] array = (int[])value;
+				if (array.Length == 0)
+				{
+					list.Add("Nothing");
+				}
+				else
+				{
+					int[] array2 = array;
+					for (int i = 0; i < array2.Length; i++)
+					{
+						int num = array2[i];
+						list.Add(this.EOeLijj0q1(num));
+					}
+				}
+				return string.Join(culture.TextInfo.ListSeparator, list.ToArray());
 			}
-			else
-			{
-				foreach (int num in numArray)
-					list.Add(this.EOeLijj0q1(num));
-			}
-			return (object)string.Join(culture.TextInfo.ListSeparator, list.ToArray());
+			return base.ConvertTo(context, culture, value, destinationType);
 		}
 
-		private string EOeLijj0q1([In] int obj0)
+		private string EOeLijj0q1(int obj0)
 		{
 			if (obj0 % 3600 == 0)
-				return string.Format("dfsf", (object)(obj0 / 3600));
+				return string.Format("Hours", obj0 / 3600);
 			if (obj0 % 60 == 0)
-				return string.Format("sffs", (object)(obj0 / 60));
+				return string.Format("Minutes", obj0 / 60);
 			else
-				return string.Format("sdfsd", (object)obj0);
+				return string.Format("Seconds", obj0);
 		}
 	}
 }

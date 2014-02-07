@@ -8,6 +8,6 @@ namespace FreeQuant.Data
 		Close,
 		Median,
 		Typical,
-		Weighted,
+		Weighted
 	}
 }

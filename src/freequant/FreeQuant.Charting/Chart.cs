@@ -5,8 +5,6 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Drawing.Text;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace FreeQuant.Charting
@@ -710,24 +708,24 @@ namespace FreeQuant.Charting
 			}.ShowDialog();
 		}
 
-		private void DrZCe67Y7d([In] object obj0, [In] PrintPageEventArgs obj1)
+		private void DrZCe67Y7d(object sender, PrintPageEventArgs e)
 		{
 			int X = this.fPrintX;
 			int Y = this.fPrintY;
 			switch (this.fPrintAlign)
 			{
 				case EPrintAlign.Veritcal:
-					Y = (obj1.PageBounds.Height - this.fPrintHeight) / 2;
+					Y = (e.PageBounds.Height - this.fPrintHeight) / 2;
 					break;
 				case EPrintAlign.Horizontal:
-					X = (obj1.PageBounds.Width - this.fPrintWidth) / 2;
+					X = (e.PageBounds.Width - this.fPrintWidth) / 2;
 					break;
 				case EPrintAlign.Center:
-					X = (obj1.PageBounds.Width - this.fPrintWidth) / 2;
-					Y = (obj1.PageBounds.Height - this.fPrintHeight) / 2;
+					X = (e.PageBounds.Width - this.fPrintWidth) / 2;
+					Y = (e.PageBounds.Height - this.fPrintHeight) / 2;
 					break;
 			}
-			this.UpdatePads(obj1.Graphics, X, Y, this.fPrintWidth, this.fPrintHeight);
+			this.UpdatePads(e.Graphics, X, Y, this.fPrintWidth, this.fPrintHeight);
 		}
 
 		protected void InitializeComponent()

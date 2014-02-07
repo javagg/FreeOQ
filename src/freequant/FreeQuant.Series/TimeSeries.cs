@@ -9,23 +9,34 @@ namespace FreeQuant.Series
 	[Serializable]
 	public class TimeSeries : IEnumerable
 	{
-		protected EIndexOption indexOption;
-		protected string name;
-		protected string title;
-		protected Color color = Color.Black;
-		protected bool monitored = true;
-		protected bool changed;
-		protected bool toolTipEnabled = true;
-		protected string toolTipFormat = "";
-		protected string toolTipDateTimeFormat = "";
-		protected ArrayList children = new ArrayList();
+		protected EIndexOption fIndexOption;
+		protected string fName;
+		protected string fTitle;
+		protected Color fColor;
+		protected bool fMonitored;
+		protected bool fChanged;
+		protected bool fToolTipEnabled;
+		protected string fToolTipFormat;
+		protected string fToolTipDateTimeFormat;
+		protected ArrayList fChildren;
+
 		public static ENameOption fNameOption;
 
 		protected internal IDataSeries fArray = new MemorySeries<object>();
 
 		[Description("")]
 		[Category("Description")]
-		public string Name { get; set; }
+		public string Name
+		{
+			get
+			{
+				return this.fName; 
+			}
+			set
+			{
+				this.fName = value;
+			}
+		}
 
 		[Category("Description")]
 		[Description("")]
@@ -33,11 +44,11 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.title; 
+				return this.fTitle; 
 			}
 			set
 			{
-				this.title = value;
+				this.fTitle = value;
 			}
 		}
 
@@ -48,11 +59,11 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.color;
+				return this.fColor;
 			}
 			set
 			{
-				this.color = value;
+				this.fColor = value;
 			}
 		}
 
@@ -79,7 +90,7 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.GetDateTime(this.Count - 1);
+				return this.GetDateTime(this.Count-1);
 			}
 		}
 
@@ -115,7 +126,7 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.Count - 1;
+				return this.Count-1;
 			}
 		}
 
@@ -131,7 +142,7 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this[this.Count - 1];
+				return this[this.Count-1];
 			}
 		}
 
@@ -149,7 +160,7 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.children;
+				return this.fChildren;
 			}
 		}
 
@@ -185,15 +196,15 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this[index, barData];
+				return this[index, (int)barData];
 			}
 		}
 
-		public object this[DateTime dateTime]
+		public object this[DateTime datetime]
 		{
 			get
 			{
-				int index = this.GetIndex(dateTime);
+				int index = this.GetIndex(datetime);
 				if (index != -1)
 					return this.fArray[index];
 				else
@@ -201,11 +212,11 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public object this[DateTime dateTime, EIndexOption option]
+		public object this[DateTime datetime, EIndexOption option]
 		{
 			get
 			{
-				int index = this.GetIndex(dateTime, option);
+				int index = this.GetIndex(datetime, option);
 				if (index != -1)
 					return this.fArray[index];
 				else
@@ -218,11 +229,23 @@ namespace FreeQuant.Series
 
 		public TimeSeries(string name, string title)
 		{
-			this.name = name;
-			this.title = title;
+			this.fColor = Color.Black;
+			this.fMonitored = true;
+			this.fToolTipEnabled = true;
+			this.fToolTipFormat = "";
+			this.fToolTipDateTimeFormat = "";
+			this.fChildren = new ArrayList();
+
+			this.fName = name;
+			this.fTitle = title;
+			this.fArray = new MemorySeries<object>();
 		}
 
-		public TimeSeries(string name) : this(name, String.Empty)
+		public TimeSeries(string name) : this(name, string.Empty)
+		{
+		}
+
+		public TimeSeries() : this(string.Empty)
 		{
 		}
 
@@ -233,62 +256,65 @@ namespace FreeQuant.Series
 
 		public virtual TimeSeries Clone(int index1, int index2)
 		{
-			TimeSeries timeSeries = this.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as TimeSeries;
-			timeSeries.name = this.name;
-			timeSeries.title = this.title;
-			for (int index = index1; index <= index2; ++index)
-				timeSeries.Add(this.GetDateTime(index), this[index]);
-			return timeSeries;
+			TimeSeries ts = base.GetType().GetConstructor(new Type[0]).Invoke(new object[0]) as TimeSeries;
+			ts.fName = this.fName;
+			ts.fTitle = this.fTitle;
+			for (int i = index1; i <= index2; ++i)
+			{
+				ts.Add(this.GetDateTime(i), this[i]);
+			}
+			return ts;
 		}
 
-		public virtual TimeSeries Clone(DateTime dateTime1, DateTime dateTime2)
+		public virtual TimeSeries Clone(DateTime datetime1, DateTime datetime2)
 		{
-			int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
-			int index2 = this.GetIndex(dateTime2, EIndexOption.Prev);
-			if (index1 == -1)
-				index1 = 0;
-			if (index2 == -1)
-				index2 = 0;
+			int index1 = this.GetIndex(datetime1, EIndexOption.Next);
+			int index2 = this.GetIndex(datetime2, EIndexOption.Prev);
+			if (index1 == -1) index1 = 0;
+			if (index2 == -1) index2 = 0;
 			return this.Clone(index1, index2);
 		}
 
 		public virtual void Clear()
 		{
 			this.fArray.Clear();
-			this.changed = true;
-			if (this.Cleared == null)
-				return;
-			this.Cleared(this, EventArgs.Empty);
+			this.fChanged = true;
+			if (this.Cleared != null)
+			{
+				this.Cleared(this, EventArgs.Empty);
+			}
 		}
 
-		public virtual bool Contains(DateTime dateTime)
+		public virtual bool Contains(DateTime datetime)
 		{
-			return this.fArray.Contains(dateTime);
+			return this.fArray.Contains(datetime);
 		}
 
 		public virtual bool Contains(int index)
 		{
-			return index >= 0 && index <= this.Count - 1;
+			return 0 <= index && index <= this.Count - 1;
 		}
 
-		public void Add(DateTime dateTime, object obj)
+		public void Add(DateTime datetime, object value)
 		{
-			if (this.fArray.Contains(dateTime))
-				this.fArray.Remove(dateTime);
-			this.fArray.Add(dateTime, obj);
-			this.changed = true;
+			if (this.fArray.Contains(datetime))
+			{
+				this.fArray.Remove(datetime);
+			}
+			this.fArray.Add(datetime, value);
+			this.fChanged = true;
 		}
 
-		public void Remove(DateTime dateTime)
+		public void Remove(DateTime datetime)
 		{
-			this.fArray.Remove(dateTime);
-			this.changed = true;
+			this.fArray.Remove(datetime);
+			this.fChanged = true;
 		}
 
 		public virtual void Remove(int index)
 		{
 			this.fArray.RemoveAt(index);
-			this.changed = true;
+			this.fChanged = true;
 		}
 
 		public virtual DateTime GetDateTime(int index)
@@ -296,27 +322,27 @@ namespace FreeQuant.Series
 			return this.fArray.DateTimeAt(index);
 		}
 
-		public virtual int GetIndex(DateTime dateTime)
+		public virtual int GetIndex(DateTime datetime)
 		{
-			return this.GetIndex(dateTime, this.indexOption);
+			return this.GetIndex(datetime, this.fIndexOption);
 		}
 
-		public virtual int GetIndex(DateTime dateTime, EIndexOption option)
+		public virtual int GetIndex(DateTime datetime, EIndexOption option)
 		{
-			int num = this.fArray.IndexOf(dateTime);
-			if (num == -1)
+			int index = this.fArray.IndexOf(datetime);
+			if (index == -1 && option != EIndexOption.Null)
 			{
 				switch (option)
 				{
 					case EIndexOption.Next:
-						num = this.fArray.IndexOf(dateTime, SearchOption.Next);
+						index = this.fArray.IndexOf(datetime, SearchOption.Next);
 						break;
 					case EIndexOption.Prev:
-						num = this.fArray.IndexOf(dateTime, SearchOption.Prev);
+						index = this.fArray.IndexOf(datetime, SearchOption.Prev);
 						break;
 				}
 			}
-			return num;
+			return index;
 		}
 
 		public virtual DateTime GetMinDateTime()
@@ -329,24 +355,24 @@ namespace FreeQuant.Series
 			return this.GetDateTime(this.GetMaxIndex());
 		}
 
-		public virtual double GetMin(DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetMin(DateTime datetime1, DateTime datetime2)
 		{
-			return this.GetMin(dateTime1, dateTime2, 0);
+			return this.GetMin(datetime1, datetime2, 0);
 		}
 
-		public virtual double GetMax(DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetMax(DateTime datetime1, DateTime datetime2)
 		{
-			return this.GetMax(dateTime1, dateTime2, 0);
+			return this.GetMax(datetime1, datetime2, 0);
 		}
 
-		public virtual int GetMinIndex(DateTime dateTime1, DateTime dateTime2)
+		public virtual int GetMinIndex(DateTime datetime1, DateTime datetime2)
 		{
-			return this.GetMinIndex(dateTime1, dateTime2, 0);
+			return this.GetMinIndex(datetime1, datetime2, 0);
 		}
 
-		public virtual int GetMaxIndex(DateTime dateTime1, DateTime dateTime2)
+		public virtual int GetMaxIndex(DateTime datetime1, DateTime datetime2)
 		{
-			return this.GetMaxIndex(dateTime1, dateTime2, 0);
+			return this.GetMaxIndex(datetime1, datetime2, 0);
 		}
 
 		public virtual double GetMin()
@@ -354,9 +380,9 @@ namespace FreeQuant.Series
 			return this.GetMin(0);
 		}
 
-		public virtual double GetMin(int row = 0)
+		public virtual double GetMin(int row)
 		{
-			return this.GetMin(0, this.Count - 1, row);
+			return this.GetMin(0, this.Count-1, row);
 		}
 
 		public virtual double GetMax()
@@ -364,14 +390,14 @@ namespace FreeQuant.Series
 			return this.GetMax(0);
 		}
 
-		public virtual double GetMax(int row = 0)
+		public virtual double GetMax(int row)
 		{
-			return this.GetMax(0, this.Count - 1, row);
+			return this.GetMax(0, this.Count-1, row);
 		}
 
 		public virtual int GetMinIndex(int row = 0)
 		{
-			return this.GetMinIndex(0, this.Count - 1, row);
+			return this.GetMinIndex(0, this.Count-1, row);
 		}
 
 		public virtual int GetMaxIndex(int row = 0)
@@ -384,7 +410,7 @@ namespace FreeQuant.Series
 			return this.GetMin(index1, index2, 0);
 		}
 
-		public virtual double GetMin(int index1, int index2, int row = 0)
+		public virtual double GetMin(int index1, int index2, int row)
 		{
 			return double.NaN;
 		}
@@ -394,7 +420,7 @@ namespace FreeQuant.Series
 			return this.GetMax(index1, index2, 0);
 		}
 
-		public virtual double GetMax(int index1, int index2, int row = 0)
+		public virtual double GetMax(int index1, int index2, int row)
 		{
 			return double.NaN;
 		}
@@ -409,68 +435,72 @@ namespace FreeQuant.Series
 			return -1;
 		}
 
-		public virtual double GetMin(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual double GetMin(DateTime datetime1, DateTime datetime2, int row)
 		{
 			if (this.Count <= 0)
 				throw new ApplicationException("Count < 0");
-			if (dateTime1 > dateTime2)
-				throw new ApplicationException("T1 > T2");
-			int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
-			int index2 = this.GetIndex(dateTime2, EIndexOption.Prev);
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1, EIndexOption.Next);
+			int index2 = this.GetIndex(datetime2, EIndexOption.Prev);
 			if (index1 == -1)
-				throw new ApplicationException("no such index");
+				throw new ApplicationException("index1 == -1");
 			if (index2 == -1)
-				throw new ApplicationException("no such index");
-			else
-				return this.GetMin(index1, index2, row);
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMin(index1, index2, row);
 		}
 
-		public virtual double GetMax(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual double GetMax(DateTime datetime1, DateTime datetime2, int row)
 		{
 			if (this.Count <= 0)
 				throw new ApplicationException("Count < 0");
-			if (dateTime1 > dateTime2)
-				throw new ApplicationException("T1 > T2");
-			int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
-			int index2 = this.GetIndex(dateTime2, EIndexOption.Prev);
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1, EIndexOption.Next);
+			int index2 = this.GetIndex(datetime2, EIndexOption.Prev);
 			if (index1 == -1)
-				throw new ApplicationException("no such index");
+				throw new ApplicationException("index1 == -1");
 			if (index2 == -1)
-				throw new ApplicationException("no such index");
-			else
-				return this.GetMax(index1, index2, row);
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMax(index1, index2, row);
 		}
 
-		public virtual int GetMinIndex(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual int GetMinIndex(DateTime datetime1, DateTime datetime2, int row)
 		{
 			if (this.Count <= 0)
 				throw new ApplicationException("Count < 0");
-			if (dateTime1 >= dateTime2)
-				throw new ApplicationException("dateTime1 >= dateTime2");
-			int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
-			int index2 = this.GetIndex(dateTime2, EIndexOption.Prev);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1318));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1372));
-//			else
-				return this.GetMinIndex(index1, index2, row);
+			if (datetime1 >= datetime2)
+				throw new ApplicationException("datetime1 >= datetime2");
+
+			int index1 = this.GetIndex(datetime1, EIndexOption.Next);
+			int index2 = this.GetIndex(datetime2, EIndexOption.Prev);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMinIndex(index1, index2, row);
 		}
 
-		public virtual int GetMaxIndex(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual int GetMaxIndex(DateTime datetime1, DateTime datetime2, int row)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1426));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1508));
-			int index1 = this.GetIndex(dateTime1, EIndexOption.Next);
-			int index2 = this.GetIndex(dateTime2, EIndexOption.Prev);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1592));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1646));
-//			else
-				return this.GetMaxIndex(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 >= datetime2)
+				throw new ApplicationException("datetime1 >= datetime2");
+
+			int index1 = this.GetIndex(datetime1, EIndexOption.Next);
+			int index2 = this.GetIndex(datetime2, EIndexOption.Prev);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMaxIndex(index1, index2, row);
 		}
 
 		public virtual double GetMin(BarData barData)
@@ -538,7 +568,7 @@ namespace FreeQuant.Series
 			return this.GetSum(0);
 		}
 
-		public virtual double GetSum(int row = 0)
+		public virtual double GetSum(int row)
 		{
 			return this.GetSum(0, this.Count - 1, row);
 		}
@@ -548,18 +578,21 @@ namespace FreeQuant.Series
 			return double.NaN;
 		}
 
-		public double GetSum(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public double GetSum(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1700));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1784));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1838));
-//			else
-				return this.GetSum(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetSum(index1, index2, row);
 		}
 
 		public virtual double GetMean()
@@ -567,7 +600,7 @@ namespace FreeQuant.Series
 			return this.GetMean(0);
 		}
 
-		public virtual double GetMean(int row = 0)
+		public virtual double GetMean(int row)
 		{
 			return this.GetMean(0, this.Count - 1, row);
 		}
@@ -577,25 +610,26 @@ namespace FreeQuant.Series
 			return this.GetMean(index1, index2, 0);
 		}
 
-		public virtual double GetMean(int index1, int index2, int row = 0)
+		public virtual double GetMean(int index1, int index2, int row)
 		{
 			return double.NaN;
 		}
 
-		public double GetMean(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public double GetMean(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1892));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(1974));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2058));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2112));
-//			else
-				return this.GetMean(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMean(index1, index2, row);
 		}
 
 		public virtual double GetMedian()
@@ -603,30 +637,36 @@ namespace FreeQuant.Series
 			return this.GetMedian(0);
 		}
 
-		public virtual double GetMedian(int row = 0)
+		public virtual double GetMedian(int row)
 		{
 			return this.GetMedian(0, this.Count - 1, row);
 		}
 
-		public virtual double GetMedian(int index1, int index2, int row = 0)
+		public virtual double GetMedian(int index1, int index2)
+		{
+			return this.GetMedian(index1, index2, 0);
+		}
+
+		public virtual double GetMedian(int index1, int index2, int row)
 		{
 			return double.NaN;
 		}
 
-		public double GetMedian(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public double GetMedian(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2166));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2248));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2332));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2386));
-//			else
-				return this.GetMedian(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMedian(index1, index2, row);
 		}
 
 		public virtual double GetVariance()
@@ -634,30 +674,41 @@ namespace FreeQuant.Series
 			return this.GetVariance(0);
 		}
 
-		public virtual double GetVariance(int row = 0)
+		public virtual double GetVariance(int row)
 		{
 			return this.GetVariance(0, this.Count - 1, row);
 		}
 
-		public virtual double GetVariance(int index1, int index2, int row = 0)
+		public virtual double GetVariance(int index1, int index2)
+		{
+			return this.GetVariance(0, this.Count - 1, 0);
+		}
+
+		public virtual double GetVariance(int index1, int index2, int row)
 		{
 			return double.NaN;
 		}
 
-		public virtual double GetVariance(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public virtual double GetVariance(DateTime datetime1, DateTime datetime2)
 		{
-//			if (this.Count <= 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2440));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2590));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2674));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(2728));
-//			else
-				return this.GetVariance(index1, index2, row);
+			return this.GetVariance(datetime1, datetime2, 0);
+		}
+
+		public virtual double GetVariance(DateTime datetime1, DateTime datetime2, int row)
+		{
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetVariance(index1, index2, row);
 		}
 
 		public virtual double GetPositiveVariance(int row = 0)
@@ -670,16 +721,21 @@ namespace FreeQuant.Series
 			return double.NaN;
 		}
 
-		public virtual double GetPositiveVariance(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public virtual double GetPositiveVariance(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3016));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3070));
-//			else
-				return this.GetPositiveVariance(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetPositiveVariance(index1, index2, row);
 		}
 
 		public virtual double GetNegativeVariance(int row = 0)
@@ -692,20 +748,21 @@ namespace FreeQuant.Series
 			return double.NaN;
 		}
 
-		public virtual double GetNegativeVariance(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public virtual double GetNegativeVariance(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (this.Count <= 1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3124));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3274));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3358));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3412));
-//			else
-				return this.GetNegativeVariance(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetNegativeVariance(index1, index2, row);
 		}
 
 		public virtual double GetStdDev()
@@ -718,9 +775,9 @@ namespace FreeQuant.Series
 			return Math.Sqrt(this.GetVariance(index1, index2));
 		}
 
-		public virtual double GetStdDev(DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetStdDev(DateTime datetime1, DateTime datetime2)
 		{
-			return Math.Sqrt(this.GetVariance(dateTime1, dateTime2));
+			return Math.Sqrt(this.GetVariance(datetime1, datetime2));
 		}
 
 		public virtual double GetStdDev(int row)
@@ -733,9 +790,9 @@ namespace FreeQuant.Series
 			return Math.Sqrt(this.GetVariance(index1, index2, row));
 		}
 
-		public virtual double GetStdDev(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual double GetStdDev(DateTime datetime1, DateTime datetime2, int row)
 		{
-			return Math.Sqrt(this.GetVariance(dateTime1, dateTime2, row));
+			return Math.Sqrt(this.GetVariance(datetime1, datetime2, row));
 		}
 
 		public virtual double GetPositiveStdDev()
@@ -748,9 +805,9 @@ namespace FreeQuant.Series
 			return Math.Sqrt(this.GetPositiveVariance(index1, index2));
 		}
 
-		public virtual double GetPositiveStdDev(DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetPositiveStdDev(DateTime datetime1, DateTime datetime2)
 		{
-			return Math.Sqrt(this.GetPositiveVariance(dateTime1, dateTime2));
+			return Math.Sqrt(this.GetPositiveVariance(datetime1, datetime2));
 		}
 
 		public virtual double GetPositiveStdDev(int row)
@@ -763,9 +820,9 @@ namespace FreeQuant.Series
 			return Math.Sqrt(this.GetPositiveVariance(index1, index2, row));
 		}
 
-		public virtual double GetPositiveStdDev(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual double GetPositiveStdDev(DateTime datetime1, DateTime datetime2, int row)
 		{
-			return Math.Sqrt(this.GetPositiveVariance(dateTime1, dateTime2, row));
+			return Math.Sqrt(this.GetPositiveVariance(datetime1, datetime2, row));
 		}
 
 		public virtual double GetNegativeStdDev()
@@ -778,9 +835,9 @@ namespace FreeQuant.Series
 			return Math.Sqrt(this.GetNegativeVariance(index1, index2));
 		}
 
-		public virtual double GetNegativeStdDev(DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetNegativeStdDev(DateTime datetime1, DateTime datetime2)
 		{
-			return Math.Sqrt(this.GetNegativeVariance(dateTime1, dateTime2));
+			return Math.Sqrt(this.GetNegativeVariance(datetime1, datetime2));
 		}
 
 		public virtual double GetNegativeStdDev(int row)
@@ -793,9 +850,9 @@ namespace FreeQuant.Series
 			return Math.Sqrt(this.GetNegativeVariance(index1, index2, row));
 		}
 
-		public virtual double GetNegativeStdDev(DateTime dateTime1, DateTime dateTime2, int row)
+		public virtual double GetNegativeStdDev(DateTime datetime1, DateTime datetime2, int row)
 		{
-			return Math.Sqrt(this.GetNegativeVariance(dateTime1, dateTime2, row));
+			return Math.Sqrt(this.GetNegativeVariance(datetime1, datetime2, row));
 		}
 
 		public virtual double GetMoment(int k, int row = 0)
@@ -808,20 +865,20 @@ namespace FreeQuant.Series
 			return double.NaN;
 		}
 
-		public double GetMoment(int k, DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public double GetMoment(int k, DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3466));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3556));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3640));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3694));
-//			else
-				return this.GetMoment(k, index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetMoment(k, index1, index2, row);
 		}
 
 		public virtual double GetAsymmetry(int row = 0)
@@ -834,20 +891,21 @@ namespace FreeQuant.Series
 			return double.NaN;
 		}
 
-		public double GetAsymmetry(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public double GetAsymmetry(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3748));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3840));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3924));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(3978));
-//			else
-				return this.GetAsymmetry(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count <= 0");
+			if (datetime1 >= datetime2)
+				throw new ApplicationException("datetime1 >= datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetAsymmetry(index1, index2, row);
 		}
 
 		public virtual double GetExcess(int row = 0)
@@ -860,20 +918,21 @@ namespace FreeQuant.Series
 			return double.NaN;
 		}
 
-		public double GetExcess(DateTime dateTime1, DateTime dateTime2, int row = 0)
+		public double GetExcess(DateTime datetime1, DateTime datetime2, int row = 0)
 		{
-//			if (this.Count <= 0)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4032));
-//			if (dateTime1 >= dateTime2)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4118));
-			int index1 = this.GetIndex(dateTime1);
-			int index2 = this.GetIndex(dateTime2);
-//			if (index1 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4202));
-//			if (index2 == -1)
-//				throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(4256));
-//			else
-				return this.GetExcess(index1, index2, row);
+			if (this.Count <= 0)
+				throw new ApplicationException("Count < 0");
+			if (datetime1 > datetime2)
+				throw new ApplicationException("datetime1 > datetime2");
+
+			int index1 = this.GetIndex(datetime1);
+			int index2 = this.GetIndex(datetime2);
+			if (index1 == -1)
+				throw new ApplicationException("index1 == -1");
+			if (index2 == -1)
+				throw new ApplicationException("index2 == -1");
+
+			return this.GetExcess(index1, index2, row);
 		}
 
 		public virtual double GetCovariance(int row1, int row2)
@@ -906,12 +965,12 @@ namespace FreeQuant.Series
 			throw new NotSupportedException();
 		}
 
-		public virtual double GetCovariance(TimeSeries series, DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetCovariance(TimeSeries series, DateTime datetime1, DateTime datetime2)
 		{
 			throw new NotSupportedException();
 		}
 
-		public virtual double GetCorrelation(TimeSeries series, DateTime dateTime1, DateTime dateTime2)
+		public virtual double GetCorrelation(TimeSeries series, DateTime datetime1, DateTime datetime2)
 		{
 			throw new NotSupportedException();
 		}
@@ -937,23 +996,31 @@ namespace FreeQuant.Series
 
 		public virtual void Draw(Color color)
 		{
-			this.color = color;
+			this.fColor = color;
 			this.Draw();
 		}
 
 		public virtual void Draw(string option, Color color)
 		{
-			this.color = color;
+			this.fColor = color;
 			this.Draw(option);
 		}
 
 		public ECross Crosses(double level, int index, int row = 0)
 		{
-			if (index <= 0 || index > this.Count - 1)
+			if (index <= 0 || index > this.Count - 1) 
+			{
 				return ECross.None;
-			if (this[index - 1, row] <= level && this[index, row] > level)
+			}
+			if (this[index-1, row] <= level && this[index, row] > level)
+			{
 				return ECross.Above;
-			return this[index - 1, row] >= level && this[index, row] < level ? ECross.Below : ECross.None;
+			}
+			if (this[index-1, row] >= level && this[index, row] < level)
+			{
+				return ECross.Below;
+			}
+			return ECross.None;
 		}
 
 		public ECross Crosses(double level, int index, BarData barData)
@@ -961,26 +1028,29 @@ namespace FreeQuant.Series
 			return this.Crosses(level, index, (int)barData);
 		}
 
-		public ECross Crosses(TimeSeries series, DateTime dateTime, int row = 0)
+		public ECross Crosses(TimeSeries series, DateTime datetime, int row = 0)
 		{
-			int index1 = this.GetIndex(dateTime);
-			int index2 = series.GetIndex(dateTime);
-			if (index1 <= 0 || index1 >= this.Count || (index2 <= 0 || index2 >= series.Count))
-				return ECross.None;
-			DateTime dateTime1 = this.GetDateTime(index1 - 1);
-			DateTime dateTime2 = series.GetDateTime(index2 - 1);
-			if (dateTime1 == dateTime2)
+			int index1 = this.GetIndex(datetime);
+			int index2 = series.GetIndex(datetime);
+			if (index1 <= 0 || index1 >= this.Count || index2 <= 0 || index2 >= series.Count)
 			{
-				if (this[index1 - 1, row] <= series[index2 - 1, row] && this[index1, row] > series[index2, row])
+				return ECross.None;
+			}
+
+			DateTime dt1 = this.GetDateTime(index1 - 1);
+			DateTime dt2 = series.GetDateTime(index2 - 1);
+			if (dt1 == dt2)
+			{
+				if (this[index1-1, row] <= series[index2 - 1, row] && this[index1, row] > series[index2, row])
 					return ECross.Above;
-				if (this[index1 - 1, row] >= series[index2 - 1, row] && this[index1, row] < series[index2, row])
+				if (this[index1-1, row] >= series[index2 - 1, row] && this[index1, row] < series[index2, row])
 					return ECross.Below;
 			}
 			else
 			{
 				double num1;
 				double num2;
-				if (dateTime1 < dateTime2)
+				if (dt1 < dt2)
 				{
 					DateTime dateTime3 = this.GetDateTime(index1 - 1);
 					num1 = this[index1 - 1, row];
@@ -1110,11 +1180,12 @@ namespace FreeQuant.Series
 			return this.Crosses(series, bar.DateTime) == ECross.Above;
 		}
 
-		public virtual void EmitItemAdded(DateTime dateTime)
+		public virtual void EmitItemAdded(DateTime datetime)
 		{
-			if (this.ItemAdded == null)
-				return;
-			this.ItemAdded(this, new DateTimeEventArgs(dateTime));
+			if (this.ItemAdded != null) 
+			{
+				this.ItemAdded(this, new DateTimeEventArgs(datetime));
+			}
 		}
 
 		public IEnumerator GetEnumerator()

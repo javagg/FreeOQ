@@ -15,6 +15,10 @@ namespace FreeQuant.Data
 			}
 		}
 
+		protected SeriesObject()
+		{
+		}
+
 		protected SeriesObject(DateTime datetime)
 		{
 			this.datetime = datetime;
@@ -31,6 +35,7 @@ namespace FreeQuant.Data
 		}
 
 		public abstract ISeriesObject NewInstance();
+
 		public abstract object Clone();
 	}
 }

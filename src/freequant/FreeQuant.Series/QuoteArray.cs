@@ -18,7 +18,7 @@ namespace FreeQuant.Series
 		{
 			get
 			{
-				return this.list[index] as Quote;
+				return base[index] as Quote;
 			}
 		}
 
@@ -178,7 +178,7 @@ namespace FreeQuant.Series
 		{
 			if (Chart.Pad == null)
 			{
-				Canvas canvas = new Canvas("CavName", "Cavtitle");
+				new Canvas("CavName", "Cavtitle");
 			}
 			Chart.Pad.Add(this);
 			Chart.Pad.AxisBottom.Type = EAxisType.DateTime;

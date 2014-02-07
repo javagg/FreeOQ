@@ -1,6 +1,5 @@
 using FreeQuant.Instruments;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
@@ -20,9 +19,10 @@ namespace FreeQuant.Trading
 				if (this.metaStrategyBase != null)
 					this.Disconnect();
 				this.metaStrategyBase = value;
-				if (this.metaStrategyBase == null)
-					return;
-				this.Connect();
+				if (this.metaStrategyBase != null)
+				{
+					this.Connect();
+				}
 			}
 		}
 

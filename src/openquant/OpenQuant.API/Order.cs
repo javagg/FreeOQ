@@ -496,7 +496,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return Map.SQ_OQ_Portfolio[(object)this.order.Portfolio] as Portfolio;
+				return Map.FQ_OQ_Portfolio[(object)this.order.Portfolio] as Portfolio;
 			}
 			set
 			{
@@ -564,7 +564,7 @@ namespace OpenQuant.API
 		internal Order(SingleOrder order)
 		{
 			this.order = order;
-			this.instrument = Map.SQ_OQ_Instrument[(object)order.Instrument] as Instrument;
+			this.instrument = Map.FQ_OQ_Instrument[(object)order.Instrument] as Instrument;
 			this.ibEx = new IBEx(order);
 			if (order.Provider != null)
 				return;
@@ -581,7 +581,7 @@ namespace OpenQuant.API
 			return new Order()
 			{
 				order = order,
-				instrument = Map.SQ_OQ_Instrument[(object)order.Instrument] as Instrument,
+				instrument = Map.FQ_OQ_Instrument[(object)order.Instrument] as Instrument,
 				ibEx = new IBEx(order)
 			};
 		}

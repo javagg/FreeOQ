@@ -3,7 +3,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 using System.Text;
 
 namespace FreeQuant.Charting
@@ -160,7 +159,7 @@ namespace FreeQuant.Charting
 			this.Init();
 		}
 
-		private void UX36ku1gb([In] double obj0, [In] double obj1)
+		private void UX36ku1gb(double obj0, double obj1)
 		{
 			this.minX = Math.Min(this.minX, obj0);
 			this.minY = Math.Min(this.minY, obj1);

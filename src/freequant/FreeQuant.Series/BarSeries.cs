@@ -50,23 +50,31 @@ namespace FreeQuant.Series
 		[Category("Candle")]
 		public Color CandleBorderColor { get; set; }
 
-		new public Bar First
+		public new Bar First
 		{
 			get
 			{
+				if (this.Count <= 0)
+				{
+					throw new ApplicationException("Count <= 0");
+				}
 				return this[0];
 			}
 		}
 
-		new public Bar Last
+		public new Bar Last
 		{
 			get
 			{
+				if (this.Count <= 0)
+				{
+					throw new ApplicationException("Count <= 0");
+				}
 				return this[this.Count - 1];
 			}
 		}
 
-		new public Bar this [int i]
+		public new Bar this[int i]
 		{
 			get
 			{
@@ -74,23 +82,23 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public Bar this [DateTime DateTime]
+		public new Bar this[DateTime datetime]
 		{
 			get
 			{
-				return ((TimeSeries)this)[DateTime] as Bar;
+				return ((TimeSeries)this)[datetime] as Bar;
 			}
 		}
 
-		new public Bar this [DateTime DateTime, EIndexOption Option]
+		public new Bar this[DateTime datetime, EIndexOption option]
 		{
 			get
 			{
-				return ((TimeSeries)this)[DateTime, Option] as Bar;
+				return ((TimeSeries)this)[datetime, option] as Bar;
 			}
 		}
 
-		public override double this [int index, int barData]
+		public override double this[int index, int barData]
 		{
 			get
 			{
@@ -98,7 +106,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public override double this [int index, BarData barData]
+		public override double this[int index, BarData barData]
 		{
 			get
 			{
@@ -118,39 +126,35 @@ namespace FreeQuant.Series
 			this.CandleBlackColor = Color.Black;
 			this.CandleWhiteColor = Color.White;
 			this.CandleBorderColor = Color.Black;
-			this.j3Tk73XXX();
+			this.ToolTipEnabled = true;
+			this.ToolTipFormat = "tooltip";
+			this.ToolTipDateTimeFormat = "tooltipDatFormat";
+
 			this.fArray = new MemorySeries<Bar>();
 		}
 
-		public BarSeries(string name) : this(name, String.Empty)
+		public BarSeries(string name) : this(name, string.Empty)
 		{
 		}
 
-		public BarSeries() : this(String.Empty)
+		public BarSeries() : this(string.Empty)
 		{
-			this.name = "barSeries1";
+			this.fName = "barSeries1";
 		}
 
-		private void j3Tk73XXX()
-		{
-			this.toolTipEnabled = true;
-			this.toolTipFormat = "tooltip";
-			this.toolTipDateTimeFormat = "tooltipDatFormat";
-		}
-
-		new public BarSeries Clone()
+		public new BarSeries Clone()
 		{
 			return base.Clone() as BarSeries;
 		}
 
-		new public BarSeries Clone(int Index1, int Index2)
+		public new BarSeries Clone(int index1, int index2)
 		{
-			return base.Clone(Index1, Index2) as BarSeries;
+			return base.Clone(index1, index2) as BarSeries;
 		}
 
-		new   public BarSeries Clone(DateTime DateTime1, DateTime DateTime2)
+		public new BarSeries Clone(DateTime datetime1, DateTime datetime2)
 		{
-			return base.Clone(DateTime1, DateTime2) as BarSeries;
+			return base.Clone(datetime1, datetime2) as BarSeries;
 		}
 
 		public bool Contains(Bar bar)
@@ -169,59 +173,60 @@ namespace FreeQuant.Series
 			this.fArray.Remove(bar.DateTime);
 		}
 
-		new public BarSeries Shift(int offset)
+		public new BarSeries Shift(int offset)
 		{
-			BarSeries barSeries = new BarSeries(this.Name, this.Title);
+			BarSeries bs = new BarSeries(this.Name, this.Title);
 			int num = 0;
 			if (offset < 0)
 				num += Math.Abs(offset);
-			for (int index1 = num; index1 < this.Count; ++index1)
+			for (int i = num; i < this.Count; ++i)
 			{
-				int index2 = index1 + offset;
-				if (index2 < this.Count)
+				int j = i + offset;
+				if (j < this.Count)
 				{
-					DateTime dateTime = this.GetDateTime(index2);
-					barSeries.Add(new Bar(this[index1])
-					{
-						DateTime = dateTime
-					});
+					DateTime dt = this.GetDateTime(j);
+					bs.Add(new Bar(this[i]) { DateTime = dt });
 				}
 				else
 					break;
 			}
-			return barSeries;
+			return bs;
 		}
 
-		new public Bar Ago(int n)
+		public new Bar Ago(int n)
 		{
 			int index = this.Count - 1 - n;
+			if (index < 0)
+			{
+				throw new ArgumentException("index < Count-1-n");
+			}
 			return this[index];
 		}
 
-		public DoubleSeries GetArray(BarData BarData)
+		public DoubleSeries GetArray(BarData barData)
 		{
-			return this.GetArray(0, this.Count - 1, BarData);
+			return this.GetArray(0, this.Count-1, barData);
 		}
 
-		public DoubleSeries GetArray(int Index1, int Index2, BarData BarData)
+		public DoubleSeries GetArray(int index1, int index2, BarData barData)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries();
-			for (int index = Index1; index <= Index2; ++index)
-				doubleSeries.Add(this.GetDateTime(index), ((TimeSeries)this)[index, BarData]);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries();
+			for (int i = index1; i <= index2; ++i)
+				ds.Add(this.GetDateTime(i), this[i, barData]);
+			return ds;
 		}
 
-		public DoubleSeries GetArray(DateTime DateTime1, DateTime DateTime2, BarData BarData)
+		public DoubleSeries GetArray(DateTime datetime1, DateTime datetime2, BarData barData)
 		{
-			return this.GetArray(this.GetIndex(DateTime1, EIndexOption.Next), this.GetIndex(DateTime2, EIndexOption.Prev), BarData);
+			return this.GetArray(this.GetIndex(datetime1, EIndexOption.Next), this.GetIndex(datetime2, EIndexOption.Prev), barData);
 		}
 
 		public DoubleSeries GetHighSeries()
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "HighSeries");
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].High);
-			return doubleSeries;
+			DoubleSeries ds = new DoubleSeries(this.Name + "HighSeries");
+			for (int i = 0; i < this.Count; ++i)
+				ds.Add(this[i].DateTime, this[i].High);
+			return ds;
 		}
 
 		public DoubleSeries GetLowSeries()
@@ -235,75 +240,75 @@ namespace FreeQuant.Series
 		public DoubleSeries GetOpenSeries()
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenSeries");
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].Open);
+			for (int i = 0; i < this.Count; ++i)
+				doubleSeries.Add(this[i].DateTime, this[i].Open);
 			return doubleSeries;
 		}
 
 		public DoubleSeries GetCloseSeries()
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "CloseSeries");
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, this[index].Close);
+			for (int i = 0; i < this.Count; ++i)
+				doubleSeries.Add(this[i].DateTime, this[i].Close);
 			return doubleSeries;
 		}
 
 		public DoubleSeries GetVolumeSeries()
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "VolumeSeries");
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, (double)this[index].Volume);
+			for (int i = 0; i < this.Count; ++i)
+				doubleSeries.Add(this[i].DateTime, (double)this[i].Volume);
 			return doubleSeries;
 		}
 
 		public DoubleSeries GetOpenIntSeries()
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenIntSeries");
-			for (int index = 0; index < this.Count; ++index)
-				doubleSeries.Add(this[index].DateTime, (double)this[index].OpenInt);
+			for (int i = 0; i < this.Count; ++i)
+				doubleSeries.Add(this[i].DateTime, (double)this[i].OpenInt);
 			return doubleSeries;
 		}
 
 		public DoubleSeries GetHighSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "HighSeries");
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name + "HighSeries");
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].High);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].High);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetLowSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "LowSeries");
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name + "LowSeries");
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].Low);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].Low);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetOpenSeries(DateTime date1, DateTime date2)
 		{
-			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenSeries");
-			for (int index = 0; index < this.Count; ++index)
+			DoubleSeries ds = new DoubleSeries(this.Name + "OpenSeries");
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].Open);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					ds.Add(this[i].DateTime, this[i].Open);
 			}
-			return doubleSeries;
+			return ds;
 		}
 
 		public DoubleSeries GetCloseSeries(DateTime date1, DateTime date2)
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "CloseSeries");
-			for (int index = 0; index < this.Count; ++index)
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, this[index].Close);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					doubleSeries.Add(this[i].DateTime, this[i].Close);
 			}
 			return doubleSeries;
 		}
@@ -311,10 +316,10 @@ namespace FreeQuant.Series
 		public DoubleSeries GetVolumeSeries(DateTime date1, DateTime date2)
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "VolumeSeries");
-			for (int index = 0; index < this.Count; ++index)
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, (double)this[index].Volume);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					doubleSeries.Add(this[i].DateTime, (double)this[i].Volume);
 			}
 			return doubleSeries;
 		}
@@ -322,10 +327,10 @@ namespace FreeQuant.Series
 		public DoubleSeries GetOpenIntSeries(DateTime date1, DateTime date2)
 		{
 			DoubleSeries doubleSeries = new DoubleSeries(this.Name + "OpenIntSeries");
-			for (int index = 0; index < this.Count; ++index)
+			for (int i = 0; i < this.Count; ++i)
 			{
-				if (this[index].DateTime >= date1 && this[index].DateTime <= date2)
-					doubleSeries.Add(this[index].DateTime, (double)this[index].OpenInt);
+				if (this[i].DateTime >= date1 && this[i].DateTime <= date2)
+					doubleSeries.Add(this[i].DateTime, (double)this[i].OpenInt);
 			}
 			return doubleSeries;
 		}
@@ -341,17 +346,17 @@ namespace FreeQuant.Series
 //      if (Index2 < 0 || Index2 > this.Count - 1)
 //        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11300));
 			Bar bar = this[Index1];
-			for (int index = Index1 + 1; index <= Index2; ++index)
+			for (int i = Index1 + 1; i <= Index2; ++i)
 			{
-				if (this[index].High > bar.High)
-					bar = this[index];
+				if (this[i].High > bar.High)
+					bar = this[i];
 			}
 			return bar;
 		}
 
-		public Bar HighestHighBar(DateTime DateTime1, DateTime DateTime2)
+		public Bar HighestHighBar(DateTime datetime1, DateTime datetime2)
 		{
-			return this.HighestHighBar(this.GetIndex(DateTime1, EIndexOption.Next), this.GetIndex(DateTime2, EIndexOption.Prev));
+			return this.HighestHighBar(this.GetIndex(datetime1, EIndexOption.Next), this.GetIndex(datetime2, EIndexOption.Prev));
 		}
 
 		public Bar HighestHighBar()
@@ -370,10 +375,10 @@ namespace FreeQuant.Series
 //      if (Index2 < 0 || Index2 > this.Count - 1)
 //        throw new ApplicationException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11560));
 			Bar bar = this[Index1];
-			for (int index = Index1 + 1; index <= Index2; ++index)
+			for (int i = Index1 + 1; i <= Index2; ++i)
 			{
-				if (this[index].Low < bar.Low)
-					bar = this[index];
+				if (this[i].Low < bar.Low)
+					bar = this[i];
 			}
 			return bar;
 		}
@@ -1038,12 +1043,12 @@ namespace FreeQuant.Series
 			if (this.Count <= 0)
 				return barSeries;
 			long size = this[0].Size;
-//      if (NewBarSize < size)
-//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11608));
+			if (NewBarSize < size)
+				throw new ArgumentException("NewBarSize < size");
 			long result;
 			Math.DivRem(NewBarSize, size, out result);
-//      if (result != 0L)
-//        throw new ArgumentException(oK6F3TB73XXXGhdieP.wF6SgrNUO(11728));
+			if (result != 0)
+				throw new ArgumentException("result != 0");
 			if (NewBarSize == size)
 				return this;
 			double num1 = 0.0;
@@ -1061,25 +1066,25 @@ namespace FreeQuant.Series
 				DateTime dateTime2;
 				switch (NewBarSize)
 				{
-					case 604800L:
+					case 604800:
 						datetime = new DateTime(dateTime1.Year, dateTime1.Month, dateTime1.Day).AddDays((double)(-(int)(6 + dateTime1.DayOfWeek) % 7));
 						dateTime2 = datetime.AddDays(7.0);
 						break;
-					case 2419200L:
+					case 2419200:
 						datetime = new DateTime(dateTime1.Year, dateTime1.Month, 1);
 						dateTime2 = datetime.AddMonths(1);
 						break;
-					case 29030400L:
+					case 29030400:
 						datetime = new DateTime(dateTime1.Year, 1, 1);
 						dateTime2 = datetime.AddYears(1);
 						break;
 					default:
-						datetime = new DateTime(dateTime1.Ticks / (10000000L * NewBarSize) * (10000000L * NewBarSize));
+						datetime = new DateTime(dateTime1.Ticks / (10000000 * NewBarSize) * (10000000 * NewBarSize));
 						dateTime2 = datetime.AddSeconds((double)NewBarSize);
 						break;
 				}
-				int index2 = this.GetIndex(dateTime2.AddTicks(-1L), EIndexOption.Prev);
-				Bar bar = (Bar)null;
+				int index2 = this.GetIndex(dateTime2.AddTicks(-1), EIndexOption.Prev);
+				Bar bar = null;
 				for (int index3 = index1; index3 <= index2; ++index3)
 				{
 					bar = this[index3];
@@ -1232,7 +1237,7 @@ namespace FreeQuant.Series
 
 		public override PadRange GetPadRangeX(Pad pad)
 		{
-			return (PadRange)null;
+			return null;
 		}
 
 		public override PadRange GetPadRangeY(Pad pad)
@@ -1257,48 +1262,52 @@ namespace FreeQuant.Series
 				max = this.GetMax(dateTime1, dateTime2, BarData.Open);
 			return new PadRange(min, max);
 		}
-		//    public override void Draw(string Option)
-		//    {
-		//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12194)) != -1)
-		//        this.uhdhiePNX = ChartStyle.Candle;
-		//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12200)) != -1)
-		//        this.uhdhiePNX = ChartStyle.Bar;
-		//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12206)) != -1)
-		//        this.uhdhiePNX = ChartStyle.Line;
-		//      if (Option.ToLower().IndexOf(oK6F3TB73XXXGhdieP.wF6SgrNUO(12212)) == -1 && this.Count > 0)
-		//        Chart.Pad.SetRange((double) this.FirstDateTime.Ticks, (double) (this.LastDateTime.Ticks + this.Last.EndTime.Ticks - this.Last.BeginTime.Ticks), this.LowestLowBar().Low, this.HighestHighBar().High);
-		//      if (Chart.Pad == null)
-		//      {
-		//				Canvas canvas = new Canvas("CavName", "CavTitle");
-		//      }
-		//      Chart.Pad.Add((IDrawable) this);
-		//      Chart.Pad.Title.Add(this.name, this.color);
-		//      Chart.Pad.Legend.Add(this.name, this.color);
-		//      Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
-		//      if (Chart.Pad.AxisBottom.LabelFormat == "")
-		//      {
-		//				Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
-		//      }
-		//      else
-		//      {
-		//        if (this.Count <= 0)
-		//          return;
-		//        if ((this.LastDateTime - this.FirstDateTime).TotalSeconds / (double) this.Count >= 86400.0)
-		//        {
-		//					Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
-		//					this.toolTipDateTimeFormat = "toolTipFormat";
-		//        }
-		//        else
-		//        {
-		//					Chart.Pad.AxisBottom.LabelFormat = "lblFormat";
-		//					this.toolTipDateTimeFormat = "toolTipFormat";
-		//        }
-		//      }
-		//    }
-		//
+
+		public override void Draw(string option)
+		{
+			if (option.ToLower().IndexOf("ChartStyle=Candle") != -1)
+				this.ChartStyle = ChartStyle.Candle;
+			if (option.ToLower().IndexOf("ChartStyle=Bar") != -1)
+				this.ChartStyle = ChartStyle.Bar;
+			if (option.ToLower().IndexOf("ChartStyle=Line") != -1)
+				this.ChartStyle = ChartStyle.Line;
+			if (option.ToLower().IndexOf("ChartStyle=Figure") == -1 && this.Count > 0)
+			{
+				double xMin = this.FirstDateTime.Ticks;
+				double xMax = (double)(this.LastDateTime.Ticks + this.Last.EndTime.Ticks - this.Last.BeginTime.Ticks);
+				double low = this.LowestLowBar().Low;
+				double high = this.HighestHighBar().High;
+				Chart.Pad.SetRange(xMin, xMax, low, high);
+			}
+			if (Chart.Pad == null)
+			{
+				new Canvas("Canvas Name", "Canvas Title");
+			}
+			Chart.Pad.Add(this);
+			Chart.Pad.Title.Add(this.Name, this.Color);
+			Chart.Pad.Legend.Add(this.Name, this.Color);
+			Chart.Pad.AxisBottom.Type = EAxisType.DateTime;
+			if (Chart.Pad.AxisBottom.LabelFormat == "")
+			{
+				Chart.Pad.AxisBottom.LabelFormat = "TODO:LabelFormat";
+				return;
+			}
+			if (this.Count > 0)
+			{
+				if ((this.LastDateTime - this.FirstDateTime).TotalSeconds / (double)this.Count >= 86400.0)
+				{
+					Chart.Pad.AxisBottom.LabelFormat = "TODO:LabelFormat";
+					this.ToolTipDateTimeFormat = "";
+					return;
+				}
+				Chart.Pad.AxisBottom.LabelFormat = "";
+				this.ToolTipDateTimeFormat = "";
+			}
+		}
+
 		public override void Draw()
 		{
-			this.Draw(String.Empty);
+			this.Draw("");
 		}
 
 		public override void Paint(Pad pad, double XMin, double XMax, double YMin, double YMax)
@@ -1307,8 +1316,8 @@ namespace FreeQuant.Series
 			Pen pen2 = new Pen(this.Color);
 			Pen pen3 = new Pen(this.CandleColor);
 			Pen pen4 = new Pen(this.CandleBorderColor);
-			Brush brush1 = (Brush)new SolidBrush(this.CandleWhiteColor);
-			Brush brush2 = (Brush)new SolidBrush(this.CandleBlackColor);
+			Brush brush1 = new SolidBrush(this.CandleWhiteColor);
+			Brush brush2 = new SolidBrush(this.CandleBlackColor);
 			int num1 = 0;
 			double num2 = 0.0;
 			double num3 = 0.0;
@@ -1326,9 +1335,9 @@ namespace FreeQuant.Series
 			int num12 = !(dateTime2 > this.LastDateTime) ? this.GetIndex(dateTime2, EIndexOption.Next) : this.Count - 1;
 			if (num11 == -1 || num12 == -1)
 				return;
-			for (int index = num11; index <= num12; ++index)
+			for (int i = num11; i <= num12; ++i)
 			{
-				Bar bar = this[index];
+				Bar bar = this[i];
 				long num13 = bar.BeginTime.Ticks;
 				long num14 = bar.EndTime.Ticks;
 				double num15 = (double)(num13 + (num14 - num13) / 2L);
@@ -1440,22 +1449,22 @@ namespace FreeQuant.Series
 			}
 		}
 
-		public override TDistance Distance(double X, double Y)
+		public override TDistance Distance(double x, double y)
 		{
 			TDistance tdistance = new TDistance();
-			int index = this.GetIndex(new DateTime((long)X), EIndexOption.Prev);
+			int index = this.GetIndex(new DateTime((long)x), EIndexOption.Prev);
 			if (index == -1)
-				return (TDistance)null;
+				return null;
 			Bar bar = this[index];
-			tdistance.dX = X < (double)bar.DateTime.Ticks || X > (double)(bar.DateTime.Ticks + bar.Size * 10000000L) ? double.MaxValue : 0.0;
-			tdistance.dY = Y > bar.High || Y < bar.Low ? double.MaxValue : 0.0;
+			tdistance.dX = x < (double)bar.DateTime.Ticks || x > (double)(bar.DateTime.Ticks + bar.Size * 10000000L) ? double.MaxValue : 0.0;
+			tdistance.dY = y > bar.High || y < bar.Low ? double.MaxValue : 0.0;
 			tdistance.X = (double)bar.DateTime.Ticks;
 			tdistance.Y = bar.Close;
 			if (tdistance.dX == double.MaxValue || tdistance.dY == double.MaxValue)
-				return (TDistance)null;
+				return null;
 			DateTime dateTime = new DateTime((long)tdistance.X);
 			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.AppendFormat(this.toolTipFormat, (object)this.name, (object)this.title, (object)bar.DateTime.ToString(this.toolTipDateTimeFormat), (object)bar.High, (object)bar.Low, (object)bar.Open, (object)bar.Close, (object)bar.Volume);
+			stringBuilder.AppendFormat(this.fToolTipFormat, (object)this.fName, (object)this.fTitle, (object)bar.DateTime.ToString(this.fToolTipDateTimeFormat), (object)bar.High, (object)bar.Low, (object)bar.Open, (object)bar.Close, (object)bar.Volume);
 			tdistance.ToolTipText = ((object)stringBuilder).ToString();
 			return tdistance;
 		}

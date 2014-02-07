@@ -4,16 +4,9 @@ namespace OpenQuant.Trading
 {
 	public class MarketDataRequest
 	{
-		private RequestType requestType;
 		private bool enabled;
 
-		public RequestType RequestType
-		{
-			get
-			{
-				return this.requestType;
-			}
-		}
+		public RequestType RequestType { get; private set; }
 
 		public bool Enabled
 		{
@@ -26,9 +19,10 @@ namespace OpenQuant.Trading
 				if (this.enabled == value)
 					return;
 				this.enabled = value;
-				if (this.EnabledChanged == null)
-					return;
-				this.EnabledChanged((object)this, EventArgs.Empty);
+				if (this.EnabledChanged != null)
+				{
+					this.EnabledChanged(this, EventArgs.Empty);
+				}
 			}
 		}
 
@@ -36,7 +30,7 @@ namespace OpenQuant.Trading
 
 		public MarketDataRequest(RequestType requestType)
 		{
-			this.requestType = requestType;
+			this.RequestType = requestType;
 			this.enabled = true;
 		}
 
@@ -44,25 +38,24 @@ namespace OpenQuant.Trading
 		{
 		}
 
-		public MarketDataRequest(string request)
-      : this((RequestType)Enum.Parse(typeof(RequestType), request))
+		public MarketDataRequest(string request) : this((RequestType)Enum.Parse(typeof(RequestType), request))
 		{
 		}
 
 		public override bool Equals(object obj)
 		{
-			MarketDataRequest marketDataRequest = obj as MarketDataRequest;
-			return marketDataRequest != null && marketDataRequest.requestType == this.requestType;
+			MarketDataRequest that = obj as MarketDataRequest;
+			return that != null && that.RequestType == this.RequestType;
 		}
 
 		public override int GetHashCode()
 		{
-			return this.requestType.GetHashCode();
+			return this.RequestType.GetHashCode();
 		}
 
 		public virtual string GetSeriesSuffix()
 		{
-			switch (this.requestType)
+			switch (this.RequestType)
 			{
 				case RequestType.Trade:
 					return "Trade";
@@ -90,7 +83,7 @@ namespace OpenQuant.Trading
 
 		public override string ToString()
 		{
-			return ((object)this.requestType).ToString();
+			return this.RequestType.ToString();
 		}
 	}
 }

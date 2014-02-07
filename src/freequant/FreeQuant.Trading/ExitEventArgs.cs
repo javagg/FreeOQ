@@ -1,6 +1,6 @@
+using System;
 using FreeQuant.Data;
 using FreeQuant.Instruments;
-using System;
 
 namespace FreeQuant.Trading
 {

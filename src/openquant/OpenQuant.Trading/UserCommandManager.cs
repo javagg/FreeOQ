@@ -28,11 +28,11 @@ namespace OpenQuant.Trading
 
 		public static void Send(string strategy, string text)
 		{
-			UserCommand command = new UserCommand(strategy, new OpenQuant.API.UserCommand(SmartQuant.Clock.Now, text));
+			UserCommand command = new UserCommand(strategy, new OpenQuant.API.UserCommand(FreeQuant.Clock.Now, text));
 			UserCommandManager.commands.Add(command);
 			if (UserCommandManager.NewCommand == null)
 				return;
-			UserCommandManager.NewCommand((object)typeof(UserCommandManager), new UserCommandEventArgs(command));
+			UserCommandManager.NewCommand(typeof(UserCommandManager), new UserCommandEventArgs(command));
 		}
 	}
 }

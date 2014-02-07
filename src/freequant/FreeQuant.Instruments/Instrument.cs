@@ -18,7 +18,7 @@ namespace FreeQuant.Instruments
 
 		[Description("Indicates whether an Option is for a put or call.")]
 		[Category("Derivative")]
-		new public PutOrCall PutOrCall
+		public new PutOrCall PutOrCall
 		{
 			get
 			{

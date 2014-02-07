@@ -59,15 +59,15 @@ namespace FreeQuant.Instruments
 		{
 		}
 
-		public Account(string name) : this(name, String.Empty)
+		public Account(string name) : this(name, string.Empty)
 		{
 		}
 
-		public Account(string name, Currency currency) : this(name, String.Empty, currency)
+		public Account(string name, Currency currency) : this(name, string.Empty, currency)
 		{
 		}
 
-		public Account(Currency currency) : this(String.Empty, currency)
+		public Account(Currency currency) : this(string.Empty, currency)
 		{
 		}
 

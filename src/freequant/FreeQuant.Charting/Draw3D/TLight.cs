@@ -1,5 +1,4 @@
 using System.Drawing;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Charting.Draw3D
 {

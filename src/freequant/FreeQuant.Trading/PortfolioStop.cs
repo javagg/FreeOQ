@@ -145,9 +145,9 @@ namespace FreeQuant.Trading
     }
 
     
-    private void AaPRYK2epA([In] ReminderEventArgs obj0)
+		private void AaPRYK2epA(ReminderEventArgs e) 
     {
-      if (obj0.SignalTime > Clock.Now)
+      if (e.SignalTime > Clock.Now)
         return;
       this.FuNRz16ilo = this.ElNRan0isi.GetValue();
       this.sKmRoRmeN5.ClosePortfolio();

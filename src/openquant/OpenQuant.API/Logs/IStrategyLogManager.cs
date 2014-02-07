@@ -1,9 +1,9 @@
 ﻿namespace OpenQuant.API.Logs
 {
-	///<summary>
-	///  IStrategyLogManager interface
-	///</summary>
-	internal interface IStrategyLogManager
+	/// <summary>
+	/// IStrategyLogManager interface
+	/// </summary>
+	public interface IStrategyLogManager
 	{
 		///<summary>
 		///

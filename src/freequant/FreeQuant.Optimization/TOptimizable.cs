@@ -2,10 +2,6 @@ namespace FreeQuant.Optimization
 {
 	public abstract class TOptimizable : IOptimizable
 	{
-		protected TOptimizable() : base()
-		{
-		}
-
 		public virtual void Init(ParamSet paramSet)
 		{
 		}

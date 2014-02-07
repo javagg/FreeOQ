@@ -19,68 +19,33 @@ namespace FreeQuant.Execution
 			this.Text = text;
 		}
 
-		public StopOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double stopPx) : base()
+		public StopOrder(IExecutionProvider provider, Portfolio portfolio, Instrument instrument, Side side, double qty, double stopPx)
+			: this(provider, portfolio, instrument, side, qty, stopPx, null)
 		{
-			this.OrdType = OrdType.Stop;
-			this.Provider = provider;
-			this.Portfolio = portfolio;
-			this.Instrument = instrument;
-			this.Side = side;
-			this.OrderQty = qty;
-			this.StopPx = stopPx;
 		}
 
-		public StopOrder(Instrument instrument, Side side, double qty, double stopPx, string text) : base()
+		public StopOrder(Instrument instrument, Side side, double qty, double stopPx, string text)
+			: this(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, stopPx, text)
 		{
-			this.OrdType = OrdType.Stop;
-			this.Provider = ProviderManager.DefaultExecutionProvider;
-			this.Portfolio = PortfolioManager.DefaultPortfolio;
-			this.Instrument = instrument;
-			this.Side = side;
-			this.OrderQty = qty;
-			this.StopPx = stopPx;
-			this.Text = text;
 		}
 
-		public StopOrder(Instrument instrument, Side side, double qty, double stopPx) : base()
+		public StopOrder(Instrument instrument, Side side, double qty, double stopPx)
+			: this(instrument, side, qty, stopPx, null)
 		{
-			this.OrdType = OrdType.Stop;
-			this.Provider = ProviderManager.DefaultExecutionProvider;
-			this.Portfolio = PortfolioManager.DefaultPortfolio;
-			this.Instrument = instrument;
-			this.Side = side;
-			this.OrderQty = qty;
-			this.StopPx = stopPx;
 		}
 
-		public StopOrder(string symbol, Side side, double qty, double stopPx, string text) : base()
+		public StopOrder(string symbol, Side side, double qty, double stopPx, string text)
+			: this((Instrument)null, side, qty, stopPx, text)
 		{
-			this.OrdType = OrdType.Stop;
 			this.Instrument = InstrumentManager.Instruments[symbol];
 			if (this.Instrument == null)
+			{
 				throw new ArgumentException(symbol);
-			this.Provider = ProviderManager.DefaultExecutionProvider;
-			this.Portfolio = PortfolioManager.DefaultPortfolio;
-			this.Side = side;
-			this.OrderQty = qty;
-			this.StopPx = stopPx;
-			this.Text = text;
+			}
 		}
 
-		public StopOrder(string symbol, Side side, double qty, double stopPx) : base()
-		{
-			this.OrdType = OrdType.Stop;
-			this.Instrument = InstrumentManager.Instruments[symbol];
-			if (this.Instrument == null)
-				throw new ArgumentException(symbol);
-			this.Provider = ProviderManager.DefaultExecutionProvider;
-			this.Portfolio = PortfolioManager.DefaultPortfolio;
-			this.Side = side;
-			this.OrderQty = qty;
-			this.StopPx = stopPx;
-		}
-
-		private StopOrder() : base()
+		public StopOrder(string symbol, Side side, double qty, double stopPx)
+			: this(symbol, side, qty, stopPx, null)
 		{
 		}
 	}

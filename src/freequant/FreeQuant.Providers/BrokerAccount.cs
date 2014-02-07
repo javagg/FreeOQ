@@ -4,7 +4,7 @@ namespace FreeQuant.Providers
 {
 	public class BrokerAccount
 	{
-		private SortedList<string, SortedList<string, string>> accountFields;
+		private SortedList<string, SortedList<string, string>> fields;
 		private List<BrokerPosition> positions;
 		private List<BrokerOrder> orders;
 
@@ -14,7 +14,7 @@ namespace FreeQuant.Providers
 		public BrokerAccount(string name)
 		{
 			this.Name = name;
-			this.accountFields = new SortedList<string, SortedList<string, string>>();
+			this.fields = new SortedList<string, SortedList<string, string>>();
 			this.positions = new List<BrokerPosition>();
 			this.orders = new List<BrokerOrder>();
 		}
@@ -22,10 +22,10 @@ namespace FreeQuant.Providers
 		public void AddField(string name, string currency, string value)
 		{
 			SortedList<string, string> sortedList;
-			if (!this.accountFields.TryGetValue(name, out sortedList))
+			if (!this.fields.TryGetValue(name, out sortedList))
 			{
 				sortedList = new SortedList<string, string>();
-				this.accountFields.Add(name, sortedList);
+				this.fields.Add(name, sortedList);
 			}
 			sortedList.Add(currency, value);
 		}
@@ -37,14 +37,14 @@ namespace FreeQuant.Providers
 
 		public BrokerAccountField[] GetFields()
 		{
-			var fields = new List<BrokerAccountField>();
-			foreach (var account in this.accountFields)
+			var list = new List<BrokerAccountField>();
+			foreach (var field in this.fields)
 			{
-				string key = account.Key;
-				foreach (var field in account.Value)
-					fields.Add(new BrokerAccountField(key, field.Key, field.Value));
+				string key = field.Key;
+				foreach (var pair in field.Value)
+					list.Add(new BrokerAccountField(key, pair.Key, pair.Value));
 			}
-			return fields.ToArray();
+			return list.ToArray();
 		}
 
 		public void AddPosition(BrokerPosition position)

@@ -2,7 +2,6 @@ using FreeQuant;
 using FreeQuant.Execution;
 using FreeQuant.Instruments;
 using FreeQuant.Simulation;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {

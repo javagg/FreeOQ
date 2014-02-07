@@ -60,7 +60,7 @@ namespace FreeQuant.Trading
 		public LimitOrder LimitOrder(Instrument instrument, Side side, double qty, double price)
 		{
 			LimitOrder limitOrder = new LimitOrder(instrument, side, qty, price);
-			this.Strategy.EB2iXBUSFK((SingleOrder)limitOrder);
+			this.Strategy.EB2iXBUSFK(limitOrder);
 			return limitOrder;
 		}
 

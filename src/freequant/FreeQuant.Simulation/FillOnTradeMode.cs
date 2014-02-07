@@ -1,8 +1,4 @@
 namespace FreeQuant.Simulation
 {
-	public enum FillOnTradeMode
-	{
-		LastTrade,
-		NextTrade,
-	}
+	public enum FillOnTradeMode {	LastTrade, NextTrade	}
 }

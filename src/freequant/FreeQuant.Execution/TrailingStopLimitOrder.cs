@@ -19,7 +19,8 @@ namespace FreeQuant.Execution
 			this.Price = limitPrice;
 		}
 
-		public TrailingStopLimitOrder(Instrument instrument, Side side, double qty, double delta, double stopPrice, double limitPrice) : this(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, delta, stopPrice, limitPrice)
+		public TrailingStopLimitOrder(Instrument instrument, Side side, double qty, double delta, double stopPrice, double limitPrice)
+			: this(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, delta, stopPrice, limitPrice)
 		{
 		}
 	}

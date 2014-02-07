@@ -1,11 +1,4 @@
 ﻿namespace OpenQuant.API
 {
-  public enum QuoteData
-  {
-    Bid,
-    Ask,
-    BidAsk,
-    Middle,
-    Spread
-  }
+	public enum QuoteData { Bid, Ask, BidAsk, Middle, Spread	}
 }

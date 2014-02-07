@@ -3,258 +3,238 @@ using FreeQuant.FIX;
 using System;
 using System.IO;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
+using System.Xml;
+using System.Text;
+using System.Collections;
 
 namespace FreeQuant.Providers
 {
-  public class ProviderManager
-  {
-    private const string GbBtlEIZy6 = "provider.properties.xml";
-    private static object Qcht7lAgti;
-    private static bool XwWte6RY39;
-    private static ProviderList rVCt6TF5nk;
-    private static ExecutionProviderList KGXtmeVerO;
-    private static MarketDataProviderList nOmtoMmG6Q;
-    private static InstrumentProviderList ljbtMTjldy;
-    private static HistoricalDataProviderList rlMtpT1jXx;
-    private static IMarketDataProvider marketDataProvider;
-    private static IExecutionProvider executionProvider;
-		private static ProviderErrorCollection errors; 
+	public class ProviderManager
+	{
+		private const string GbBtlEIZy6 = "provider.properties.xml";
+		private static object dataLock;
+		private static bool threadSafe;
+		private static ProviderList providers;
+		private static ExecutionProviderList executionProviders;
+		private static MarketDataProviderList marketDataProviders;
+		private static InstrumentProviderList instrumentProviders;
+		private static HistoricalDataProviderList historicalDataProviders;
+		private static IMarketDataProvider marketDataProvider;
+		private static IExecutionProvider executionProvider;
+		private static ProviderErrorCollection errors;
 
-    public static ProviderList Providers
-    {
-       get
-      {
-        return ProviderManager.rVCt6TF5nk;
-      }
-    }
+		public static ProviderList Providers
+		{
+			get
+			{
+				return ProviderManager.providers;
+			}
+		}
 
-    public static ExecutionProviderList ExecutionProviders
-    {
-       get
-      {
-        return ProviderManager.KGXtmeVerO;
-      }
-    }
+		public static ExecutionProviderList ExecutionProviders
+		{
+			get
+			{
+				return ProviderManager.executionProviders;
+			}
+		}
 
-    public static MarketDataProviderList MarketDataProviders
-    {
-       get
-      {
-        return ProviderManager.nOmtoMmG6Q;
-      }
-    }
+		public static MarketDataProviderList MarketDataProviders
+		{
+			get
+			{
+				return ProviderManager.marketDataProviders;
+			}
+		}
 
-    public static InstrumentProviderList InstrumentProviders
-    {
-       get
-      {
-        return ProviderManager.ljbtMTjldy;
-      }
-    }
+		public static InstrumentProviderList InstrumentProviders
+		{
+			get
+			{
+				return ProviderManager.instrumentProviders; 
+			}
+		}
 
-    public static HistoricalDataProviderList HistoricalDataProviders
-    {
-       get
-      {
-        return ProviderManager.rlMtpT1jXx;
-      }
-    }
+		public static HistoricalDataProviderList HistoricalDataProviders
+		{
+			get
+			{
+				return ProviderManager.historicalDataProviders; 
+			}
+		}
 
-    public static IExecutionProvider DefaultExecutionProvider
-    {
-       get
-      {
-        return ProviderManager.KGXtmeVerO[Framework.Configuration.DefaultExecutionProvider];
-      }
-       set
-      {
-        if (value == null)
-          Framework.Configuration.DefaultExecutionProvider = "";
-        else
-          Framework.Configuration.DefaultExecutionProvider = value.Name;
-      }
-    }
+		public static IExecutionProvider DefaultExecutionProvider
+		{
+			get
+			{
+				return ProviderManager.executionProviders[Framework.Configuration.DefaultExecutionProvider];
+			}
+			set
+			{
+				if (value == null)
+					Framework.Configuration.DefaultExecutionProvider = "";
+				else
+					Framework.Configuration.DefaultExecutionProvider = value.Name;
+			}
+		}
 
-    public static IMarketDataProvider DefaultMarketDataProvider
-    {
-       get
-      {
-        return ProviderManager.nOmtoMmG6Q[Framework.Configuration.DefaultMarketDataProvider];
-      }
-       set
-      {
-        if (value == null)
-          Framework.Configuration.DefaultMarketDataProvider = "";
-        else
-          Framework.Configuration.DefaultMarketDataProvider = value.Name;
-      }
-    }
+		public static IMarketDataProvider DefaultMarketDataProvider
+		{
+			get
+			{
+				return ProviderManager.marketDataProviders[Framework.Configuration.DefaultMarketDataProvider];
+			}
+			set
+			{
+				if (value == null)
+					Framework.Configuration.DefaultMarketDataProvider = "";
+				else
+					Framework.Configuration.DefaultMarketDataProvider = value.Name;
+			}
+		}
 
-    public static IMarketDataProvider MarketDataSimulator
-    {
-       get
-      {
-        return ProviderManager.marketDataProvider;
-      }
-       set
-      {
-        ProviderManager.marketDataProvider = value;
-      }
-    }
+		public static IMarketDataProvider MarketDataSimulator
+		{
+			get
+			{
+				return ProviderManager.marketDataProvider;
+			}
+			set
+			{
+				ProviderManager.marketDataProvider = value;
+			}
+		}
 
-    public static IExecutionProvider ExecutionSimulator
-    {
-       get
-      {
-        return ProviderManager.executionProvider;
-      }
-       set
-      {
-        ProviderManager.executionProvider = value;
-      }
-    }
+		public static IExecutionProvider ExecutionSimulator
+		{
+			get
+			{
+				return ProviderManager.executionProvider;
+			}
+			set
+			{
+				ProviderManager.executionProvider = value;
+			}
+		}
 
-    public static ProviderErrorCollection Errors
-    {
-       get
-      {
-        return ProviderManager.errors;
-      }
-    }
+		public static ProviderErrorCollection Errors
+		{
+			get
+			{
+				return ProviderManager.errors;
+			}
+		}
 
-    public static event ProviderEventHandler Added;
+		public static event ProviderEventHandler Added;
+		public static event ProviderEventHandler Connected;
+		public static event ProviderEventHandler Disconnected;
+		public static event ProviderEventHandler StatusChanged;
+		public static event ProviderErrorEventHandler Error;
+		public static event MarketDataRequestRejectEventHandler MarketDataRequestReject;
+		public static event TradeEventHandler NewTrade;
+		public static event QuoteEventHandler NewQuote;
+		public static event BarEventHandler NewBar;
+		public static event BarEventHandler NewBarOpen;
+		public static event BarSliceEventHandler NewBarSlice;
+		public static event MarketDepthEventHandler NewMarketDepth;
+		public static event FundamentalEventHandler NewFundamental;
+		public static event CorporateActionEventHandler NewCorporateAction;
+		public static event ExecutionReportEventHandler ExecutionReport;
+		public static event OrderCancelRejectEventHandler OrderCancelReject;
 
-    public static event ProviderEventHandler Connected;
-
-    public static event ProviderEventHandler Disconnected;
-
-    public static event ProviderEventHandler StatusChanged;
-
-    public static event ProviderErrorEventHandler Error;
-
-    public static event MarketDataRequestRejectEventHandler MarketDataRequestReject;
-
-    public static event TradeEventHandler NewTrade;
-
-    public static event QuoteEventHandler NewQuote;
-
-    public static event BarEventHandler NewBar;
-
-    public static event BarEventHandler NewBarOpen;
-
-    public static event BarSliceEventHandler NewBarSlice;
-
-    public static event MarketDepthEventHandler NewMarketDepth;
-
-    public static event FundamentalEventHandler NewFundamental;
-
-    public static event CorporateActionEventHandler NewCorporateAction;
-
-    public static event ExecutionReportEventHandler ExecutionReport;
-
-    public static event OrderCancelRejectEventHandler OrderCancelReject;
-
-    
-    static ProviderManager()
-    {
-      ProviderManager.Qcht7lAgti = new object();
-      ProviderManager.XwWte6RY39 = false;
-      ProviderManager.rVCt6TF5nk = new ProviderList();
-      ProviderManager.KGXtmeVerO = new ExecutionProviderList();
-      ProviderManager.nOmtoMmG6Q = new MarketDataProviderList();
-      ProviderManager.ljbtMTjldy = new InstrumentProviderList();
-			ProviderManager.rlMtpT1jXx = new HistoricalDataProviderList();   
+		static ProviderManager()
+		{
+			ProviderManager.dataLock = new object();
+			ProviderManager.executionProviders = new ExecutionProviderList();
+			ProviderManager.marketDataProviders = new MarketDataProviderList();
+			ProviderManager.instrumentProviders = new InstrumentProviderList();
+			ProviderManager.historicalDataProviders = new HistoricalDataProviderList();   
 			ProviderManager.marketDataProvider = null;  
 			ProviderManager.executionProvider = null; 
-      ProviderManager.errors = new ProviderErrorCollection();
-    }
-   
-    public static void Add(IProvider provider)
-    {
-      if (Framework.Installation.Edition == Edition.Research)
-      {
-        switch (provider.Id)
-        {
-          case (byte) 1:
-          case (byte) 2:
-          case (byte) 17:
-          case (byte) 19:
-          case (byte) 25:
-            break;
-          case (byte) 18:
-            return;
-          default:
-            return;
-        }
-      }
-      ProviderManager.rVCt6TF5nk.HH8tS7bFw(provider);
-      if (provider is IExecutionProvider)
-        ProviderManager.KGXtmeVerO.HH8tS7bFw(provider);
-      if (provider is IMarketDataProvider)
-        ProviderManager.nOmtoMmG6Q.HH8tS7bFw(provider);
-      if (provider is IInstrumentProvider)
-        ProviderManager.ljbtMTjldy.HH8tS7bFw(provider);
-      if (provider is IHistoricalDataProvider)
-        ProviderManager.rlMtpT1jXx.HH8tS7bFw(provider);
-      provider.Connected += new EventHandler(ProviderManager.HZ5tYOBVvY);
-      provider.Disconnected += new EventHandler(ProviderManager.gaItsrWC8h);
-      provider.StatusChanged += new EventHandler(ProviderManager.IGntb6qhyP);
-      provider.Error += new ProviderErrorEventHandler(ProviderManager.lT2tdDDwWW);
-      ProviderManager.BKTt94mLeK(provider);
-      IMarketDataProvider marketDataProvider = provider as IMarketDataProvider;
-      if (marketDataProvider != null)
-      {
-        marketDataProvider.NewQuote += new QuoteEventHandler(ProviderManager.sNEtZMdMtX);
-        marketDataProvider.NewTrade += new TradeEventHandler(ProviderManager.Xayt8ev6DF);
-        marketDataProvider.NewBar += new BarEventHandler(ProviderManager.vxOtKbcx3K);
-        marketDataProvider.NewBarOpen += new BarEventHandler(ProviderManager.x7ptud5DXG);
-        marketDataProvider.NewBarSlice += new BarSliceEventHandler(ProviderManager.rcRtiseEP5);
-        marketDataProvider.NewMarketDepth += new MarketDepthEventHandler(ProviderManager.DS3tXKrAL8);
-        marketDataProvider.NewFundamental += new FundamentalEventHandler(ProviderManager.eSctT3jM8B);
-        marketDataProvider.NewCorporateAction += new CorporateActionEventHandler(ProviderManager.Ev1tGOgRhf);
-        marketDataProvider.MarketDataRequestReject += new MarketDataRequestRejectEventHandler(ProviderManager.A9ptr7PlS6);
-      }
-      IExecutionProvider executionProvider = provider as IExecutionProvider;
-      if (executionProvider != null)
-      {
-        executionProvider.ExecutionReport += new ExecutionReportEventHandler(ProviderManager.w6qtfBxe26);
-        executionProvider.OrderCancelReject += new OrderCancelRejectEventHandler(ProviderManager.SLKt3RqewM);
-      }
-      ProviderManager.LoadProviderProperties(provider);
-    }
+			ProviderManager.errors = new ProviderErrorCollection();
+		}
 
-    
-    public static void Disconnect()
-    {
-      foreach (IProvider provider in ProviderManager.rVCt6TF5nk)
-        provider.Disconnect();
-    }
+		public static void Add(IProvider provider)
+		{
+//			if (Framework.Installation.Edition == Edition.Research)
+//			{
+//				switch (provider.Id)
+//				{
+//					case (byte) 1:
+//					case (byte) 2:
+//					case (byte) 17:
+//					case (byte) 19:
+//					case (byte) 25:
+//						break;
+//					case (byte) 18:
+//						return;
+//					default:
+//						return;
+//				}
+//			}
+			ProviderManager.providers.AddProvider(provider);
+			if (provider is IExecutionProvider)
+				ProviderManager.executionProviders.AddProvider(provider);
+			if (provider is IMarketDataProvider)
+				ProviderManager.marketDataProviders.AddProvider(provider);
+			if (provider is IInstrumentProvider)
+				ProviderManager.instrumentProviders.AddProvider(provider);
+			if (provider is IHistoricalDataProvider)
+				ProviderManager.historicalDataProviders.AddProvider(provider);
+			provider.Connected += new EventHandler(ProviderManager.EmitConnected);
+			provider.Disconnected += new EventHandler(ProviderManager.EmitDisconnected);
+			provider.StatusChanged += new EventHandler(ProviderManager.EmitStatusChanged);
+			provider.Error += new ProviderErrorEventHandler(ProviderManager.OnProviderError);
+			ProviderManager.EmitAdded(provider);
+			IMarketDataProvider marketDataProvider = provider as IMarketDataProvider;
+			if (marketDataProvider != null)
+			{
+				marketDataProvider.NewQuote += new QuoteEventHandler(ProviderManager.EmitNewQuote);
+				marketDataProvider.NewTrade += new TradeEventHandler(ProviderManager.EmitNewTrade);
+				marketDataProvider.NewBar += new BarEventHandler(ProviderManager.EmitNewBar);
+				marketDataProvider.NewBarOpen += new BarEventHandler(ProviderManager.EmitNewBarOpen);
+				marketDataProvider.NewBarSlice += new BarSliceEventHandler(ProviderManager.EmitNewBarSlice);
+				marketDataProvider.NewMarketDepth += new MarketDepthEventHandler(ProviderManager.EmitNewMarketDepth);
+				marketDataProvider.NewFundamental += new FundamentalEventHandler(ProviderManager.EmitNewFundamental);
+				marketDataProvider.NewCorporateAction += new CorporateActionEventHandler(ProviderManager.EmitNewCorporateAction);
+				marketDataProvider.MarketDataRequestReject += new MarketDataRequestRejectEventHandler(ProviderManager.EmitMarketDataRequestReject);
+			}
+			IExecutionProvider executionProvider = provider as IExecutionProvider;
+			if (executionProvider != null)
+			{
+				executionProvider.ExecutionReport += new ExecutionReportEventHandler(ProviderManager.EmitExecutionReport);
+				executionProvider.OrderCancelReject += new OrderCancelRejectEventHandler(ProviderManager.EmitOrderCancelReject);
+			}
+			ProviderManager.LoadProviderProperties(provider);
+		}
 
-    
-    public static void Shutdown()
-    {
-      foreach (IProvider provider in ProviderManager.rVCt6TF5nk)
-        provider.Shutdown();
-    }
+		public static void Disconnect()
+		{
+			foreach (IProvider provider in ProviderManager.providers)
+				provider.Disconnect();
+		}
 
-    
-    public static void WaitConnected(IProvider provider, int timeout)
-    {
-      long ticks = DateTime.Now.Ticks;
-      while (!provider.IsConnected)
-      {
-        Thread.Sleep(1);
-        if (TimeSpan.FromTicks(DateTime.Now.Ticks - ticks).TotalMilliseconds >= (double) timeout)
-          break;
-      }
-    }
+		public static void Shutdown()
+		{
+			foreach (IProvider provider in ProviderManager.providers)
+				provider.Shutdown();
+		}
 
-    
-    public static void SaveProviderProperties()
-    {
+		public static void WaitConnected(IProvider provider, int timeout)
+		{
+			long ticks = DateTime.Now.Ticks;
+			while (!provider.IsConnected)
+			{
+				Thread.Sleep(1);
+				if (TimeSpan.FromTicks(DateTime.Now.Ticks - ticks).TotalMilliseconds >= timeout)
+					break;
+			}
+		}
+
+		public static void SaveProviderProperties()
+		{
 //      CUsHnTDPJW7M4WgDtf cusHnTdpjW7M4WgDtf = new CUsHnTDPJW7M4WgDtf();
 //      foreach (IProvider provider in ProviderManager.rVCt6TF5nk)
 //      {
@@ -293,14 +273,13 @@ namespace FreeQuant.Providers
 //        }
 //      }
 //      cusHnTdpjW7M4WgDtf.Save(Framework.Installation.IniDir.FullName + GojrKtfk5NMi1fou68.a17L2Y7Wnd(614));
-    }
+		}
 
-    
-    public static void LoadProviderProperties(IProvider provider)
-    {
-//      FileInfo fileInfo = new FileInfo(Framework.Installation.IniDir.FullName + GojrKtfk5NMi1fou68.a17L2Y7Wnd(666));
-//      if (!fileInfo.Exists)
-//        return;
+		public static void LoadProviderProperties(IProvider provider)
+		{
+			FileInfo fileInfo = new FileInfo(Framework.Installation.IniDir.FullName + "");
+      if (!fileInfo.Exists)
+        return;
 //      CUsHnTDPJW7M4WgDtf cusHnTdpjW7M4WgDtf = new CUsHnTDPJW7M4WgDtf();
 //      cusHnTdpjW7M4WgDtf.Load(fileInfo.FullName);
 //      foreach (t7qr3PW9BqfEC7uE03 t7qr3Pw9BqfEc7uE03 in cusHnTdpjW7M4WgDtf.fmKgml3fJH())
@@ -352,287 +331,348 @@ namespace FreeQuant.Providers
 //          break;
 //        }
 //      }
-    }
+		}
 
-    
-    private static void BKTt94mLeK([In] IProvider obj0)
-    {
-//      if (ProviderManager.XhMtIJlEEx == null)
-//        return;
-//      ProviderManager.XhMtIJlEEx(new ProviderEventArgs(obj0));
-    }
+		private static void EmitAdded(IProvider provider)
+		{
+      if (ProviderManager.Added != null)
+      	ProviderManager.Added(new ProviderEventArgs(provider));
+		}
 
-    
-    private static void HZ5tYOBVvY([In] object obj0, [In] EventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.QXQtxyUxBN == null)
-//          return;
-//        ProviderManager.QXQtxyUxBN(new ProviderEventArgs(obj0 as IProvider));
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitConnected(object sender, EventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.Connected != null)
+					ProviderManager.Connected(new ProviderEventArgs(sender as IProvider));
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void gaItsrWC8h([In] object obj0, [In] EventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.RmUtEXhlly == null)
-//          return;
-//        ProviderManager.RmUtEXhlly(new ProviderEventArgs(obj0 as IProvider));
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitDisconnected(object sender, EventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.Disconnected != null)
+					ProviderManager.Disconnected(new ProviderEventArgs(sender as IProvider));
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void IGntb6qhyP([In] object obj0, [In] EventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.pH0tHXFheO == null)
-//          return;
-//        ProviderManager.pH0tHXFheO(new ProviderEventArgs(obj0 as IProvider));
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitStatusChanged(object sender, EventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.StatusChanged != null)
+					ProviderManager.StatusChanged(new ProviderEventArgs(sender as IProvider));
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void lT2tdDDwWW([In] ProviderErrorEventArgs obj0)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-        if (Trace.IsLevelEnabled(TraceLevel.Error))
-          Trace.WriteLine(obj0.ToString() + Environment.NewLine);
-				ProviderManager.errors.Add(obj0.Error);
-//        if (ProviderManager.RYJtAso3kD == null)
-//          return;
-//        ProviderManager.RYJtAso3kD(obj0);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void OnProviderError(ProviderErrorEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (Trace.IsLevelEnabled(TraceLevel.Error))
+					Trace.WriteLine(e.ToString() + Environment.NewLine);
+				ProviderManager.errors.Add(e.Error);
+	        if (ProviderManager.Error != null)
+	       	 ProviderManager.Error(e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void A9ptr7PlS6([In] object obj0, [In] MarketDataRequestRejectEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.wWktaqhsHZ == null)
-//          return;
-//        ProviderManager.wWktaqhsHZ(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitMarketDataRequestReject(object sender, MarketDataRequestRejectEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.MarketDataRequestReject == null)
+          return;
+				ProviderManager.MarketDataRequestReject(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void vxOtKbcx3K([In] object obj0, [In] BarEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.CPqtUx1Rin == null)
-//          return;
-//        ProviderManager.CPqtUx1Rin(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewBar(object sender, BarEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+        if (ProviderManager.NewBar != null)
+					ProviderManager.NewBar(sender, e); 
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void x7ptud5DXG([In] object obj0, [In] BarEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.OKTtkXx2kt == null)
-//          return;
-//        ProviderManager.OKTtkXx2kt(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewBarOpen(object sender, BarEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.NewBarOpen != null)
+					ProviderManager.NewBarOpen(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void rcRtiseEP5([In] object obj0, [In] BarSliceEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.vcut0PDfWK == null)
-//          return;
-//        ProviderManager.vcut0PDfWK(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewBarSlice(object sender, BarSliceEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+        if (ProviderManager.NewBarSlice != null)
+					ProviderManager.NewBarSlice(sender, e); 
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void Xayt8ev6DF([In] object obj0, [In] TradeEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.iDpt4vrp08 == null)
-//          return;
-//        ProviderManager.iDpt4vrp08(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewTrade(object sender, TradeEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.NewTrade != null)
+					ProviderManager.NewTrade(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void sNEtZMdMtX([In] object obj0, [In] QuoteEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.xPktFOhWM3 == null)
-//          return;
-//        ProviderManager.xPktFOhWM3(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewQuote(object sender, QuoteEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.NewQuote != null)
+					ProviderManager.NewQuote(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void DS3tXKrAL8([In] object obj0, [In] MarketDepthEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.kPtthrnQkI == null)
-//          return;
-//        ProviderManager.kPtthrnQkI(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewMarketDepth(object sender, MarketDepthEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+        if (ProviderManager.NewMarketDepth != null)
+					ProviderManager.NewMarketDepth(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void eSctT3jM8B([In] object obj0, [In] FundamentalEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.JKltVo0glF == null)
-//          return;
-//        ProviderManager.JKltVo0glF(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewFundamental(object sender, FundamentalEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.NewFundamental != null)
+					ProviderManager.NewFundamental(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void Ev1tGOgRhf([In] object obj0, [In] CorporateActionEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.v2ntQp7o2t == null)
-//          return;
-//        ProviderManager.v2ntQp7o2t(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitNewCorporateAction(object sender, CorporateActionEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.NewCorporateAction != null)
+					ProviderManager.NewCorporateAction(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void w6qtfBxe26([In] object obj0, [In] ExecutionReportEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.ziitJV2bE4 == null)
-//          return;
-//        ProviderManager.ziitJV2bE4(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
+		private static void EmitExecutionReport(object sender, ExecutionReportEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.ExecutionReport != null)
+					ProviderManager.ExecutionReport(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
 
-    
-    private static void SLKt3RqewM([In] object obj0, [In] OrderCancelRejectEventArgs obj1)
-    {
-      if (ProviderManager.XwWte6RY39)
-        Monitor.Enter(ProviderManager.Qcht7lAgti);
-      try
-      {
-//        if (ProviderManager.yXltqUFnJY == null)
-//          return;
-//        ProviderManager.yXltqUFnJY(obj0, obj1);
-      }
-      finally
-      {
-        if (ProviderManager.XwWte6RY39)
-          Monitor.Exit(ProviderManager.Qcht7lAgti);
-      }
-    }
-  }
+		private static void EmitOrderCancelReject(object sender, OrderCancelRejectEventArgs e)
+		{
+			if (ProviderManager.threadSafe)
+				Monitor.Enter(ProviderManager.dataLock);
+			try
+			{
+				if (ProviderManager.OrderCancelReject != null)
+					ProviderManager.OrderCancelReject(sender, e);
+			}
+			finally
+			{
+				if (ProviderManager.threadSafe)
+					Monitor.Exit(ProviderManager.dataLock);
+			}
+		}
+
+		class t7qr3PW9BqfEC7uE03
+		{
+			internal const string Lb6RIhG2q = "provider";
+			private const string PmE96ALG9 = "name";
+			private XmlNode vi7YvTQmW;
+
+			internal t7qr3PW9BqfEC7uE03(XmlNode obj0)
+			{
+				this.vi7YvTQmW = obj0;
+			}
+
+			
+			public static implicit operator XmlNode(t7qr3PW9BqfEC7uE03 obj0)
+			{
+				return obj0.vi7YvTQmW;
+			}
+
+			
+			public static explicit operator t7qr3PW9BqfEC7uE03(XmlNode obj0)
+			{
+				return new t7qr3PW9BqfEC7uE03(obj0);
+			}
+
+			internal string wyivi7qr3()
+			{
+				return this.vi7YvTQmW.Attributes["dsdfs"].Value;
+			}
+
+			internal void X9BcqfEC7(string obj0)
+			{
+				this.vi7YvTQmW.Attributes.Append(this.vi7YvTQmW.OwnerDocument.CreateAttribute("fsf")).Value = obj0;
+			}
+
+//			internal yFGL6nd23hYLVBDrwG mTsjrEw5W()
+//			{
+//				foreach (XmlNode xmlNode in this.vi7YvTQmW)
+//				{
+//					if (xmlNode.Name == GojrKtfk5NMi1fou68.a17L2Y7Wnd(304))
+//						return xmlNode;
+//				}
+//				yFGL6nd23hYLVBDrwG fgL6nd23hYlvbDrwG = (yFGL6nd23hYLVBDrwG) ((XmlNode) this.vi7YvTQmW.OwnerDocument.CreateElement(GojrKtfk5NMi1fou68.a17L2Y7Wnd(328)));
+//				this.vi7YvTQmW.AppendChild((XmlNode) fgL6nd23hYlvbDrwG);
+//				return fgL6nd23hYlvbDrwG;
+//			}
+//
+//			internal r0Hb6IvhG2qUmE6ALG guM56TQoR()
+//			{
+//				foreach (XmlNode xmlNode in this.vi7YvTQmW)
+//				{
+//					if (xmlNode.Name == GojrKtfk5NMi1fou68.a17L2Y7Wnd(352))
+//						return (r0Hb6IvhG2qUmE6ALG) xmlNode;
+//				}
+//				return null;
+//			}
+//
+//			
+//			internal r0Hb6IvhG2qUmE6ALG oFCn3DIZM()
+//			{
+//				r0Hb6IvhG2qUmE6ALG hb6IvhG2qUmE6Alg = (r0Hb6IvhG2qUmE6ALG) ((XmlNode) this.vi7YvTQmW.OwnerDocument.CreateElement(GojrKtfk5NMi1fou68.a17L2Y7Wnd(376)));
+//				this.vi7YvTQmW.AppendChild((XmlNode) hb6IvhG2qUmE6Alg);
+//				return hb6IvhG2qUmE6Alg;
+//			}
+		}
+//
+//		class CUsHnTDPJW7M4WgDtf : XmlDocument
+//		{
+//			private const string EA1gosSErp = "providers";
+//
+//			
+//			internal CUsHnTDPJW7M4WgDtf() : base()
+//			{
+//				this.LoadXml("xml.name");
+//				this.InsertBefore(this.CreateXmlDeclaration("de", Encoding.Unicode.HeaderName, null), this.DocumentElement);
+//				this.InsertBefore(this.CreateComment("ddfdf"), this.DocumentElement);
+//			}
+//
+//			internal t7qr3PW9BqfEC7uE03 UyAg6fUFwm()
+//			{
+//				t7qr3PW9BqfEC7uE03 t7qr3Pw9BqfEc7uE03 = (t7qr3PW9BqfEC7uE03) ((XmlNode) this.CreateElement(GojrKtfk5NMi1fou68.a17L2Y7Wnd(916)));
+//				this.DocumentElement.AppendChild((XmlNode) t7qr3Pw9BqfEc7uE03);
+//				return t7qr3Pw9BqfEc7uE03;
+//			}
+//
+//			internal t7qr3PW9BqfEC7uE03[] fmKgml3fJH()
+//			{
+//				ArrayList arrayList = new ArrayList();
+//				foreach (XmlNode xmlNode in (XmlNode) this.DocumentElement)
+//					arrayList.Add((object) (t7qr3PW9BqfEC7uE03) xmlNode);
+//				return arrayList.ToArray(typeof (t7qr3PW9BqfEC7uE03)) as t7qr3PW9BqfEC7uE03[];
+//			}
+//		}
+	}
 }

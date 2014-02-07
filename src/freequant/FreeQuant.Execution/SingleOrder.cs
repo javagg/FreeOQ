@@ -4,54 +4,26 @@ using FreeQuant.Instruments;
 using FreeQuant.Providers;
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Execution
 {
 	public class SingleOrder : NewOrderSingle, IOrder
 	{
-		private const string sxcKgOuC2 = "Strategy";
-		private const string QMYYWI0RX = "Simulation";
-		private IExecutionProvider nFKVI6u5c;
-		private Portfolio S0WvHnyPg;
-		private Instrument C9gt8Rtlw;
-		private ExecutionReportList zOvnD0v17;
-		private OrderCancelRejectList mPrWSRdPO;
-		private bool FsOs8elgL;
-		private bool LW91eligg;
-		private NewOrderSingle WNHbo8cie;
+		private Instrument instrument;
+		private ExecutionReportList reports;
+		private OrderCancelRejectList rejects;
+		private NewOrderSingle replaceOrder;
 
 		[Category("Attributes")]
 //    [TypeConverter(typeof (YnBX8yTrxmEviTy8uc))]
 		[Description("Execution provider")]
 		[ReadOnly(true)]
-		public IExecutionProvider Provider
-		{
-			get
-			{
-				return this.nFKVI6u5c;
-			}
-			set
-			{
-				this.nFKVI6u5c = value;
-			}
-		}
+		public IExecutionProvider Provider { get; set; }
 
 		[Description("Portfolio")]
 		[ReadOnly(true)]
 		[Category("Attributes")]
-		public Portfolio Portfolio
-		{
-			get
-			{
-				return this.S0WvHnyPg;
-			}
-			set
-			{
-				this.S0WvHnyPg = value;
-			}
-		}
+		public Portfolio Portfolio { get; set; }
 
 		[ReadOnly(true)]
 		[Category("Attributes")]
@@ -60,65 +32,49 @@ namespace FreeQuant.Execution
 		{
 			get
 			{
-				if (this.C9gt8Rtlw == null)
-					this.C9gt8Rtlw = InstrumentManager.Instruments[this.Symbol];
-				return this.C9gt8Rtlw;
+				if (this.instrument == null)
+					this.instrument = InstrumentManager.Instruments[this.Symbol];
+				return this.instrument;
 			}
 			set
 			{
-				this.C9gt8Rtlw = value;
-				if (this.C9gt8Rtlw == null)
-					return;
-				this.Symbol = this.C9gt8Rtlw.Symbol;
-				this.SecurityType = this.C9gt8Rtlw.SecurityType;
-				this.SecurityExchange = this.C9gt8Rtlw.SecurityExchange;
-				this.SecurityID = this.C9gt8Rtlw.SecurityID;
-				this.SecurityIDSource = this.C9gt8Rtlw.SecurityIDSource;
-				this.Currency = this.C9gt8Rtlw.Currency;
-				this.MaturityDate = this.C9gt8Rtlw.MaturityDate;
-				this.MaturityMonthYear = this.C9gt8Rtlw.MaturityMonthYear;
-				this.StrikePrice = this.C9gt8Rtlw.StrikePrice;
-				this.PutOrCall = ((FIXInstrument)this.C9gt8Rtlw).PutOrCall;
-				if (!this.C9gt8Rtlw.ContainsField(15))
-					this.Currency = Framework.Configuration.DefaultCurrency;
-				if (this.C9gt8Rtlw.ContainsField(207))
-					return;
-				this.SecurityExchange = Framework.Configuration.DefaultExchange;
+				this.instrument = value;
+				if (this.instrument != null)
+				{
+					this.Symbol = this.instrument.Symbol;
+					this.SecurityType = this.instrument.SecurityType;
+					this.SecurityExchange = this.instrument.SecurityExchange;
+					this.SecurityID = this.instrument.SecurityID;
+					this.SecurityIDSource = this.instrument.SecurityIDSource;
+					this.Currency = this.instrument.Currency;
+					this.MaturityDate = this.instrument.MaturityDate;
+					this.MaturityMonthYear = this.instrument.MaturityMonthYear;
+					this.StrikePrice = this.instrument.StrikePrice;
+					this.PutOrCall = ((FIXInstrument)this.instrument).PutOrCall;
+					if (!this.instrument.ContainsField(15))
+					{
+						this.Currency = Framework.Configuration.DefaultCurrency;
+					}
+					if (!this.instrument.ContainsField(207))
+					{
+						this.SecurityExchange = Framework.Configuration.DefaultExchange;
+					}
+				}
 			}
 		}
 
 		[Category("Misc")]
-		public bool Persistent
-		{
-			get
-			{
-				return this.FsOs8elgL;
-			}
-			set
-			{
-				this.FsOs8elgL = value;
-			}
-		}
+		public bool Persistent { get; set; }
 
 		[Browsable(false)]
-		public bool IsStopLimitReady
-		{
-			get
-			{
-				return this.LW91eligg;
-			}
-			set
-			{
-				this.LW91eligg = value;
-			}
-		}
+		public bool IsStopLimitReady { get; set; }
 
 		[Browsable(false)]
 		public NewOrderSingle ReplaceOrder
 		{
 			get
 			{
-				return this.WNHbo8cie;
+				return this.replaceOrder;
 			}
 		}
 
@@ -141,7 +97,7 @@ namespace FreeQuant.Execution
 		{
 			get
 			{
-				return this.zOvnD0v17;
+				return this.reports;
 			}
 		}
 
@@ -150,7 +106,7 @@ namespace FreeQuant.Execution
 		{
 			get
 			{
-				return this.mPrWSRdPO;
+				return this.rejects;
 			}
 		}
 
@@ -294,10 +250,7 @@ namespace FreeQuant.Execution
 		{
 			get
 			{
-				if (!this.IsFilled && !this.IsCancelled && !this.IsRejected)
-					return this.IsExpired;
-				else
-					return true;
+				return this.IsFilled || this.IsCancelled || this.IsRejected || this.IsExpired;
 			}
 		}
 
@@ -517,9 +470,10 @@ namespace FreeQuant.Execution
 
 		public SingleOrder() : base()
 		{
-			this.zOvnD0v17 = new ExecutionReportList();
-			this.mPrWSRdPO = new OrderCancelRejectList();
-			this.WNHbo8cie = new NewOrderSingle();
+			this.reports = new ExecutionReportList();
+			this.rejects = new OrderCancelRejectList();
+			this.replaceOrder = new NewOrderSingle();
+
 			this.ClOrdID = OrderManager.Xgea6ywFN();
 			this.OrdStatus = OrdStatus.PendingNew;
 			this.HandlInst = '1';
@@ -527,54 +481,52 @@ namespace FreeQuant.Execution
 			this.Currency = Framework.Configuration.DefaultCurrency;
 			this.Persistent = false;
 			this.IsSent = false;
-			// ISSUE: reference to a compiler-generated method
-//      this.KbABb8YWe(false);
 		}
 
 		public void Send()
 		{
 			this.IsSent = true;
 			this.TransactTime = Clock.Now;
-			OrderManager.GM96fGxEM(this);
+			OrderManager.SendOrder(this);
 		}
 
 		public void Cancel()
 		{
-			OrderManager.mgxNNoGq5(this);
+			OrderManager.CancelOrder(this);
 		}
 
 		public void Replace()
 		{
-			OrderManager.MlPSr0K75(this);
+			OrderManager.ReplaceOrder(this);
 		}
 
-		internal void mlSRyS5Q1([In] ExecutionReport obj0)
+		internal void EmitExecutionReport(ExecutionReport report)
 		{
-			if ((obj0.OrdStatus == OrdStatus.New || obj0.OrdStatus == OrdStatus.PendingNew) && obj0.ContainsField(37))
-				this.OrderID = obj0.OrderID;
-			if (obj0.Text == "")
-				obj0.Text = this.Text;
-			this.CumQty = obj0.CumQty;
-			this.LeavesQty = obj0.LeavesQty;
-			this.AvgPx = obj0.AvgPx;
-			this.OrdStatus = obj0.OrdStatus;
-			if (obj0.ExecType == ExecType.PartialFill || obj0.ExecType == ExecType.Fill || obj0.ExecType == ExecType.Trade)
+			if ((report.OrdStatus == OrdStatus.New || report.OrdStatus == OrdStatus.PendingNew) && report.ContainsField(37))
+				this.OrderID = report.OrderID;
+			if (report.Text == "")
+				report.Text = this.Text;
+			this.CumQty = report.CumQty;
+			this.LeavesQty = report.LeavesQty;
+			this.AvgPx = report.AvgPx;
+			this.OrdStatus = report.OrdStatus;
+			if (report.ExecType == ExecType.PartialFill || report.ExecType == ExecType.Fill || report.ExecType == ExecType.Trade)
 			{
-				this.LastPx = obj0.LastPx;
-				this.LastQty = obj0.LastQty;
-				if (obj0.ContainsField(13))
+				this.LastPx = report.LastPx;
+				this.LastQty = report.LastQty;
+				if (report.ContainsField(13))
 				{
 					double num1 = 0.0;
-//         switch (obj0.CommType)
+//         switch (report.CommType)
 //          {
 //            case CommType.PerShare:
-//              num1 = obj0.Commission * obj0.LastQty;
+//              num1 = report.Commission * report.LastQty;
 //              break;
 //            case CommType.Percent:
-//              num1 = obj0.Commission * (obj0.LastPx * obj0.LastQty);
+//              num1 = report.Commission * (report.LastPx * report.LastQty);
 //              break;
 //            case CommType.Absolute:
-//              num1 = obj0.Commission;
+//              num1 = report.Commission;
 //              break;
 //          }
 					SingleOrder singleOrder = this;
@@ -582,38 +534,38 @@ namespace FreeQuant.Execution
 					singleOrder.Commission = num2;
 				}
 			}
-			this.zOvnD0v17.Add((FIXGroup)obj0);
-//      if (this.P8yUrxmEv == null)
-//        return;
-//      this.P8yUrxmEv((object) this, new ExecutionReportEventArgs(obj0));
+			this.reports.Add(report);
+			if (this.ExecutionReport != null)
+			{
+				this.ExecutionReport((object)this, new ExecutionReportEventArgs(report));
+			}
 		}
 
-		internal void hHemwyJmI([In] OrderCancelReject obj0)
+		internal void EmitCancelReject(OrderCancelReject reject)
 		{
-			this.OrdStatus = obj0.OrdStatus;
-			this.mPrWSRdPO.Add((FIXGroup)obj0);
-//      if (this.yTy78ucml == null)
-//        return;
-//      this.yTy78ucml((object) this, new OrderCancelRejectEventArgs(obj0));
+			this.OrdStatus = reject.OrdStatus;
+			this.rejects.Add(reject);
+			if (this.CancelReject != null)
+			{
+				this.CancelReject(this, new OrderCancelRejectEventArgs(reject));
+			}
 		}
 
-		internal void aPUkn4BIl()
+		internal void EmitStatusChanged()
 		{
-//      if (this.oBtxVWLnB == null)
-//        return;
-//      this.oBtxVWLnB((object) this, EventArgs.Empty);
+			if (this.StatusChanged != null)
+			{
+      this.StatusChanged(this, EventArgs.Empty);
+			}
 		}
-		//    [SpecialName]
-		//
-		//    string IOrder.ClOrdID()
-		//    {
-		//      return this.ClOrdID;
-		//    }
-		//    [SpecialName]
-		//
-		//    void IOrder.set_ClOrdID([In] string obj0)
-		//    {
-		//      this.ClOrdID = obj0;
-		//    }
+
+//	    string IOrder.ClOrdID()
+//	    {
+//	      return this.ClOrdID;
+//	    }
+//		    void IOrder.set_ClOrdID(string obj0)
+//		    {
+//		      this.ClOrdID = obj0;
+//		    }
 	}
 }

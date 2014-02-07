@@ -21,7 +21,7 @@ namespace FreeQuant.Simulation
 
 		public override string ToString()
 		{
-			return "Interval";
+			return "Interval" + this.Begin + this.End;
 		}
 	}
 }

@@ -5,9 +5,9 @@ namespace FreeQuant.Execution
 {
 	public class OrderList : FIXGroupList
 	{
-		private Hashtable orders; 
+		private Hashtable orders;
 
-		new public IOrder this[int index]
+		public new IOrder this[int index]
 		{
 			get
 			{
@@ -15,7 +15,7 @@ namespace FreeQuant.Execution
 			}
 		}
 
-		public IOrder this [string orderId]
+		public IOrder this[string orderId]
 		{
 			get
 			{
@@ -28,7 +28,7 @@ namespace FreeQuant.Execution
 			this.orders = new Hashtable();
 		}
 
-		new public IOrder GetById(int id)
+		public new IOrder GetById(int id)
 		{
 			return base.GetById(id) as IOrder;
 		}

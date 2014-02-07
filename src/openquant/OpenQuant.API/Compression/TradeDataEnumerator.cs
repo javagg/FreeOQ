@@ -2,26 +2,26 @@
 
 namespace OpenQuant.API.Compression
 {
-  internal class TradeDataEnumerator : DataEntryEnumerator
-  {
-    private TradeSeries series;
+	internal class TradeDataEnumerator : DataEntryEnumerator
+	{
+		private TradeSeries series;
 
-    public override DataEntry Current
-    {
-      get
-      {
-        Trade trade = this.series[this.index];
-        return new DataEntry(trade.DateTime, new PriceSizeItem[1]
-        {
-          new PriceSizeItem(trade.Price, trade.Size)
-        });
-      }
-    }
+		public override DataEntry Current
+		{
+			get
+			{
+				Trade trade = this.series[this.index];
+				return new DataEntry(trade.DateTime, new PriceSizeItem[]
+				{
+					new PriceSizeItem(trade.Price, trade.Size)
+				});
+			}
+		}
 
-    public TradeDataEnumerator(TradeSeries series)
+		public TradeDataEnumerator(TradeSeries series)
       : base(series.Count)
-    {
-      this.series = series;
-    }
-  }
+		{
+			this.series = series;
+		}
+	}
 }

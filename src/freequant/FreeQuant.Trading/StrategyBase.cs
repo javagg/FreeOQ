@@ -15,8 +15,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 
 namespace FreeQuant.Trading
@@ -462,7 +460,7 @@ namespace FreeQuant.Trading
         }
       }
       this.barSliceManager.InstrumentsCount = this.marketManager.Instruments.Count;
-      this.barSliceManager.QGUpQklb9a();
+      this.barSliceManager.Clear();
       this.OnInit();
       this.reportManager.Tester = this.tester;
       if (this.MetaStrategyBase.dBEWaCEkLk)
@@ -515,7 +513,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void BSDIytBhT([In] StopBase obj0)
+    internal void BSDIytBhT(StopBase obj0)
     {
       if (obj0.Status != StopStatus.Active)
         this.activeStops[obj0.Instrument].Remove(obj0);
@@ -532,7 +530,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void YFmhKSovu([In] Trigger obj0)
+    internal void YFmhKSovu(Trigger obj0)
     {
       this.triggers.Add(obj0);
 //      if (this.RjapR37OfO == null)
@@ -541,7 +539,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void l7R1qp1JA([In] Trigger obj0)
+    internal void l7R1qp1JA(Trigger obj0)
     {
 //      if (this.GZ5pihuIx6 == null)
 //        return;
@@ -588,7 +586,7 @@ namespace FreeQuant.Trading
     }
 
     
-		internal void cXaFP441d([In] double obj0, [In] FreeQuant.Instruments.Currency obj1, [In] DateTime obj2, [In] string obj3)
+		internal void cXaFP441d(double obj0, FreeQuant.Instruments.Currency obj1, DateTime obj2, string obj3)
     {
       this.portfolio.Account.Deposit(obj0, obj1, obj2, obj3);
       foreach (Portfolio portfolio in this.portfolios.Values)
@@ -596,7 +594,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void qZcLyn7Uf([In] double obj0, [In] FreeQuant.Instruments.Currency obj1, [In] DateTime obj2, [In] string obj3)
+    internal void qZcLyn7Uf(double obj0, FreeQuant.Instruments.Currency obj1, DateTime obj2, string obj3)
     {
       this.portfolio.Account.Withdraw(obj0, obj1, obj2, obj3);
       foreach (Portfolio portfolio in this.portfolios.Values)
@@ -699,7 +697,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void Jwd3xKdmx([In] IProvider obj0)
+    internal void Jwd3xKdmx(IProvider obj0)
     {
       if (!this.isActive)
         return;
@@ -709,7 +707,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void QNbsERb0O([In] IProvider obj0)
+    internal void QNbsERb0O(IProvider obj0)
     {
       if (!this.isActive)
         return;
@@ -719,7 +717,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void sHL4bMMk2([In] IProvider obj0, [In] int obj1, [In] int obj2, [In] string obj3)
+    internal void sHL4bMMk2(IProvider obj0, int obj1, int obj2, string obj3)
     {
       if (!this.isActive)
         return;
@@ -739,7 +737,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void aEsJWgP7S([In] IService obj0)
+    internal void aEsJWgP7S(IService obj0)
     {
       if (!this.isActive)
         return;
@@ -747,7 +745,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void A3V0urrUY([In] IService obj0, [In] ServiceErrorType obj1, [In] string obj2)
+    internal void A3V0urrUY(IService obj0, ServiceErrorType obj1, string obj2)
     {
       if (!this.isActive)
         return;
@@ -760,7 +758,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void acOvnqFOo([In] SingleOrder obj0)
+    internal void acOvnqFOo(SingleOrder obj0)
     {
       if (!this.isActive)
         return;
@@ -768,7 +766,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void RM9EmoIgF([In] ExecutionReport obj0)
+    internal void RM9EmoIgF(ExecutionReport obj0)
     {
       this.MetaStrategyBase.mhsWZDndbE(this, obj0);
     }
@@ -814,7 +812,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void gSQVAlpOg([In] Instrument obj0, [In] Trade obj1)
+    internal void gSQVAlpOg(Instrument obj0, Trade obj1)
     {
       if (!this.isActive)
         return;
@@ -824,7 +822,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void miSxH6BDd([In] Instrument obj0, [In] Quote obj1)
+    internal void miSxH6BDd(Instrument obj0, Quote obj1)
     {
       if (!this.isActive)
         return;
@@ -834,7 +832,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void NEl89GHdA([In] Instrument obj0, [In] MarketDepth obj1)
+    internal void NEl89GHdA(Instrument obj0, MarketDepth obj1)
     {
       if (!this.isActive)
         return;
@@ -844,7 +842,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void s05cSUaYk([In] Instrument obj0, [In] Fundamental obj1)
+    internal void s05cSUaYk(Instrument obj0, Fundamental obj1)
     {
       if (!this.isActive)
         return;
@@ -854,7 +852,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void a4glMfvIc([In] Instrument obj0, [In] CorporateAction obj1)
+    internal void a4glMfvIc(Instrument obj0, CorporateAction obj1)
     {
       if (!this.isActive)
         return;
@@ -864,7 +862,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void vUSqZnOXC([In] Instrument obj0, [In] Bar obj1)
+    internal void vUSqZnOXC(Instrument obj0, Bar obj1)
     {
       if (!this.isActive)
         return;
@@ -874,32 +872,32 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void JW6Z7vfHf([In] Instrument obj0, [In] Bar obj1)
+    internal void JW6Z7vfHf(Instrument obj0, Bar obj1)
     {
       if (!this.isActive)
         return;
       if (Trace.IsLevelEnabled(TraceLevel.Verbose))
 				Trace.WriteLine(string.Format("afads", (object) this.Name, (object) obj0.Symbol, (object) obj1));
       if (obj1.BarType == BarType.Time)
-        this.barSliceManager.zQGp56LHjL(obj0, obj1);
+        this.barSliceManager.Add(obj0, obj1);
       else
         this.OnNewBar(obj0, obj1);
     }
 
     
-    internal void xuVn4XYwX([In] long obj0)
+    internal void xuVn4XYwX(long obj0)
     {
       if (!this.isActive)
         return;
       if (Trace.IsLevelEnabled(TraceLevel.Verbose))
 				Trace.WriteLine(string.Format("dfdfd", (object) this.Name, (object) obj0));
-      BarSlice barSlice = this.barSliceManager.jPpp2uI7Tx(obj0);
+      BarSlice barSlice = this.barSliceManager.GetBarSlice(obj0);
       if (barSlice == null)
         return;
       foreach (KeyValuePair<Instrument, Bar> keyValuePair in barSlice.Table)
         this.OnNewBar(keyValuePair.Key, keyValuePair.Value);
       this.OnNewBarSlice(obj0);
-      barSlice.kxEiMHhItO();
+      barSlice.Clear();
     }
 
     
@@ -943,7 +941,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void fuDu5XiFd([In] SingleOrder obj0)
+    internal void fuDu5XiFd(SingleOrder obj0)
     {
       Instrument instrument = obj0.Instrument;
       if (obj0.Text != "")
@@ -952,25 +950,25 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void a9XY5Muph([In] SingleOrder obj0, [In] ExecutionReport obj1)
+    internal void a9XY5Muph(SingleOrder obj0, ExecutionReport obj1)
     {
       this.OnExecutionReport(obj0, obj1);
     }
 
     
-    internal void zQxocsRCM([In] SingleOrder obj0)
+    internal void zQxocsRCM(SingleOrder obj0)
     {
       this.OnOrderPartiallyFilled(obj0);
     }
 
     
-    internal void VLka0XAdb([In] SingleOrder obj0)
+    internal void VLka0XAdb(SingleOrder obj0)
     {
       this.OnOrderStatusChanged(obj0);
     }
 
     
-    internal void h8htoZ5ih([In] SingleOrder obj0)
+    internal void h8htoZ5ih(SingleOrder obj0)
     {
       switch (obj0.OrdStatus)
       {
@@ -1013,7 +1011,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void CpbdZ1YMZ([In] Transaction obj0)
+    internal void CpbdZ1YMZ(Transaction obj0)
     {
       if (!this.isActive)
         return;
@@ -1024,31 +1022,31 @@ namespace FreeQuant.Trading
     }
 
     
-    private void wFewIKaO9([In] object obj0, [In] TransactionEventArgs obj1)
+    private void wFewIKaO9(object obj0, TransactionEventArgs obj1)
     {
       this.OnTransactionAdded(obj1.Transaction);
     }
 
     
-    private void tqpmkcdnl([In] object obj0, [In] PositionEventArgs obj1)
+    private void tqpmkcdnl(object obj0, PositionEventArgs obj1)
     {
       this.OnPositionOpened(obj1.Position);
     }
 
     
-    private void qmsfx90ud([In] object obj0, [In] PositionEventArgs obj1)
+    private void qmsfx90ud(object obj0, PositionEventArgs obj1)
     {
       this.OnPositionChanged(obj1.Position);
     }
 
     
-    private void iIIeZBW7d([In] object obj0, [In] PositionEventArgs obj1)
+    private void iIIeZBW7d(object obj0, PositionEventArgs obj1)
     {
       this.OnPositionClosed(obj1.Position);
     }
 
     
-    private void zqRghd2Zu([In] object obj0, [In] PositionEventArgs obj1)
+    private void zqRghd2Zu(object obj0, PositionEventArgs obj1)
     {
       if (!this.isActive)
         return;

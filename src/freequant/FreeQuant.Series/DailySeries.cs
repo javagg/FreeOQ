@@ -6,7 +6,7 @@ namespace FreeQuant.Series
 	[Serializable]
 	public class DailySeries : BarSeries
 	{
-		new public Daily First
+		public new Daily First
 		{
 			get
 			{
@@ -14,7 +14,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public Daily Last
+		public new Daily Last
 		{
 			get
 			{
@@ -22,7 +22,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public Daily this [int index]
+		public new Daily this[int index]
 		{
 			get
 			{
@@ -30,7 +30,7 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public Daily this [DateTime date]
+		public new Daily this[DateTime date]
 		{
 			get
 			{
@@ -38,11 +38,11 @@ namespace FreeQuant.Series
 			}
 		}
 
-		new public Daily this [DateTime date, EIndexOption option]
+		public new Daily this[DateTime date, EIndexOption option]
 		{
 			get
 			{
-				return ((TimeSeries)this)[date, option] as Daily;
+				return base[date, option] as Daily;
 			}
 		}
 
@@ -51,30 +51,30 @@ namespace FreeQuant.Series
 			this.fArray = new MemorySeries<Daily>();
 		}
 
-		public DailySeries(string name) : base(name, String.Empty)
+		public DailySeries(string name) : this(name, string.Empty)
 		{
 		}
 
-		public DailySeries() : base(String.Empty)
+		public DailySeries() : this(string.Empty)
 		{
 		}
 
-		new public DailySeries Clone()
+		public new DailySeries Clone()
 		{
 			return base.Clone() as DailySeries;
 		}
 
-		new public DailySeries Clone(int index1, int index2)
+		public new DailySeries Clone(int index1, int index2)
 		{
 			return base.Clone(index1, index2) as DailySeries;
 		}
 
-		new public DailySeries Clone(DateTime dateTime1, DateTime dateTime2)
+		public new DailySeries Clone(DateTime datetime1, DateTime datetime2)
 		{
-			return base.Clone(dateTime1, dateTime2) as DailySeries;
+			return base.Clone(datetime1, datetime2) as DailySeries;
 		}
 
-		new public DailySeries Shift(int offset)
+		public new DailySeries Shift(int offset)
 		{
 			DailySeries dailySeries = new DailySeries(this.Name, this.Title);
 			int num = 0;
@@ -97,9 +97,11 @@ namespace FreeQuant.Series
 			return dailySeries;
 		}
 
-		new public Daily Ago(int n)
+		public new Daily Ago(int n)
 		{
 			int index = this.Count - 1 - n;
+			if (index < 0)
+				throw new ArgumentException("n out of range");
 			return this[index];
 		}
 	}

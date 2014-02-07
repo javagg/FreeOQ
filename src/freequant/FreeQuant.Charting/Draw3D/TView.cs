@@ -2,8 +2,6 @@ using FreeQuant.Charting;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Charting.Draw3D
 {
@@ -148,16 +146,16 @@ namespace FreeQuant.Charting.Draw3D
 			this.lz = this.E6Oo4awtTa * this.Lz;
 		}
 
-		private static void lF6ovwu8P3([In] Pad obj0)
+		private static void lF6ovwu8P3(Pad pad)
 		{
-			if (obj0.Grid3D)
+			if (pad.Grid3D)
 			{
-				foreach (Axis axis in obj0.Axes3D)
+				foreach (Axis axis in pad.Axes3D)
 					axis.GridEnabled = true;
 			}
 			else
 			{
-				foreach (Axis axis in obj0.Axes3D)
+				foreach (Axis axis in pad.Axes3D)
 					axis.GridEnabled = false;
 			}
 		}

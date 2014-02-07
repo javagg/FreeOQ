@@ -3,36 +3,6 @@ using System.Collections;
 
 namespace FreeQuant.Data
 {
-	public class OrderBookEventArgs : EventArgs
-	{
-		public MDSide Side { get; set; }
-		public MDOperation Operation { get; set; }
-		public int Position { get; set; }
-
-		public OrderBookEventArgs(MDSide size, MDOperation operation, int position)
-		{
-			this.Side = size;
-			this.Operation = operation;
-			this.Position = position;
-		}
-	}
-
-	public delegate void OrderBookEventHandler(object sender, OrderBookEventArgs args);
-
-	public class OrderBookEntry
-	{
-		public DateTime DateTime { get; set; }
-		public double Price { get; set; }
-		public int Size { get; set; }
-
-		public OrderBookEntry(DateTime dateTime, double price, int size)
-		{
-			this.DateTime = dateTime;
-			this.Price = price;
-			this.Size = size;
-		}
-	}
-
 	public class OrderBookEntryList : ICollection
 	{
 		private ArrayList orders;
@@ -69,11 +39,6 @@ namespace FreeQuant.Data
 			}
 		}
 
-		internal OrderBookEntryList()
-		{
-			this.orders = ArrayList.Synchronized(new ArrayList());
-		}
-
 		public void CopyTo(Array array, int index)
 		{
 			this.orders.CopyTo(array, index);
@@ -82,6 +47,11 @@ namespace FreeQuant.Data
 		public IEnumerator GetEnumerator()
 		{
 			return this.orders.GetEnumerator();
+		}
+
+		internal OrderBookEntryList()
+		{
+			this.orders = ArrayList.Synchronized(new ArrayList());
 		}
 
 		internal void Clear()

@@ -17,13 +17,13 @@ namespace OpenQuant.Trading
 {
   public class SolutionRunner : IInstrumentSource
   {
-    private Dictionary<SmartQuant.Instruments.Instrument, List<StrategyRunner>> instrumentTable = new Dictionary<SmartQuant.Instruments.Instrument, List<StrategyRunner>>();
+    private Dictionary<FreeQuant.Instruments.Instrument, List<StrategyRunner>> instrumentTable = new Dictionary<FreeQuant.Instruments.Instrument, List<StrategyRunner>>();
     private Dictionary<string, StrategyRunner> strategies = new Dictionary<string, StrategyRunner>();
-    private IMarketDataProvider marketDataProvider = SmartQuant.Providers.ProviderManager.MarketDataSimulator;
-    private IExecutionProvider executionProvider = SmartQuant.Providers.ProviderManager.ExecutionSimulator;
+    private IMarketDataProvider marketDataProvider = FreeQuant.Providers.ProviderManager.MarketDataSimulator;
+    private IExecutionProvider executionProvider = FreeQuant.Providers.ProviderManager.ExecutionSimulator;
     private List<ATSStop> stops = new List<ATSStop>();
     private List<MarketDataRequest> requests = new List<MarketDataRequest>();
-    private SmartQuant.Instruments.Portfolio portfolio;
+    private FreeQuant.Instruments.Portfolio portfolio;
     private LiveTester tester;
     private bool testerEnabled;
     private TimeIntervalSize testerPeriod;
@@ -31,7 +31,7 @@ namespace OpenQuant.Trading
     private DateTime stopDate;
     private double cash;
     private IStrategyLogManager strategyLogManager;
-    private StopEventHandler StopAdded;
+//    private StopEventHandler StopAdded;
 
     public bool TesterEnabled
     {
@@ -65,7 +65,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public SmartQuant.Instruments.Portfolio Portfolio
+    public FreeQuant.Instruments.Portfolio Portfolio
     {
       get
       {
@@ -115,11 +115,11 @@ namespace OpenQuant.Trading
       }
     }
 
-    public List<SmartQuant.Instruments.Instrument> Instruments
+    public List<FreeQuant.Instruments.Instrument> Instruments
     {
       get
       {
-        return new List<SmartQuant.Instruments.Instrument>((IEnumerable<SmartQuant.Instruments.Instrument>) this.instrumentTable.Keys);
+        return new List<FreeQuant.Instruments.Instrument>((IEnumerable<FreeQuant.Instruments.Instrument>) this.instrumentTable.Keys);
       }
     }
 
@@ -155,31 +155,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public event StopEventHandler StopAdded
-    {
-      add
-      {
-        StopEventHandler stopEventHandler = this.StopAdded;
-        StopEventHandler comparand;
-        do
-        {
-          comparand = stopEventHandler;
-          stopEventHandler = Interlocked.CompareExchange<StopEventHandler>(ref this.StopAdded, (StopEventHandler) Delegate.Combine((Delegate) comparand, (Delegate) value), comparand);
-        }
-        while (stopEventHandler != comparand);
-      }
-      remove
-      {
-        StopEventHandler stopEventHandler = this.StopAdded;
-        StopEventHandler comparand;
-        do
-        {
-          comparand = stopEventHandler;
-          stopEventHandler = Interlocked.CompareExchange<StopEventHandler>(ref this.StopAdded, (StopEventHandler) Delegate.Remove((Delegate) comparand, (Delegate) value), comparand);
-        }
-        while (stopEventHandler != comparand);
-      }
-    }
+		public event StopEventHandler StopAdded;
 
     public void Init(List<MarketDataRequest> requests, List<StrategyRunner> runners, double cash, DateTime startDate, DateTime stopDate)
     {
@@ -195,7 +171,7 @@ namespace OpenQuant.Trading
         this.strategies[strategyRunner.StrategyName] = strategyRunner;
         if (strategyRunner.Enabled)
         {
-          foreach (SmartQuant.Instruments.Instrument key in strategyRunner.Instruments)
+          foreach (FreeQuant.Instruments.Instrument key in strategyRunner.Instruments)
           {
             List<StrategyRunner> list = (List<StrategyRunner>) null;
             if (!this.instrumentTable.TryGetValue(key, out list))
@@ -212,19 +188,19 @@ namespace OpenQuant.Trading
     public void EnableTester()
     {
       this.tester = new LiveTester(this.portfolio);
-      this.tester.set_TimeInterval(this.testerPeriod);
+			this.tester.TimeInterval = this.testerPeriod;
       this.tester.DisableComponents();
       if (!this.testerEnabled)
       {
-        this.tester.set_AllowRoundTrips(false);
+				this.tester.AllowRoundTrips = false;
       }
       else
       {
         this.tester.Disconnect();
         this.tester.Connect();
         this.tester.Reset();
-        this.tester.set_FollowChanges(true);
-        this.tester.set_AllowRoundTrips(true);
+				this.tester.FollowChanges = true;
+				this.tester.AllowRoundTrips = true;
         this.AddTesterComponents();
       }
     }
@@ -242,7 +218,7 @@ namespace OpenQuant.Trading
       if (resetState)
       {
         dataRequests = this.BuildStrategyRequest();
-        Strategy.Global.Clear();
+        OpenQuant.API.Strategy.Global.Clear();
       }
       if (resetState)
         UserCommandManager.Clear();
@@ -325,13 +301,13 @@ namespace OpenQuant.Trading
       UserCommandManager.NewCommand -= new EventHandler<UserCommandEventArgs>(this.UserCommandManager_NewCommand);
       Map.CustomCommandedRaised -= new EventHandler(this.Map_CustomCommandedRaised);
       this.portfolio.Monitored = false;
-      foreach (Stop stop in (IEnumerable) Map.OQ_SQ_Stop.Keys)
+      foreach (Stop stop in (IEnumerable) Map.OQ_FQ_Stop.Keys)
         stop.Disconnect();
     }
 
     private void marketDataProvider_NewTrade(object sender, TradeEventArgs args)
     {
-      SmartQuant.Instruments.Instrument instrument = args.Instrument as SmartQuant.Instruments.Instrument;
+      FreeQuant.Instruments.Instrument instrument = args.Instrument as FreeQuant.Instruments.Instrument;
       List<StrategyRunner> list = (List<StrategyRunner>) null;
       if (!this.instrumentTable.TryGetValue(instrument, out list))
         return;
@@ -344,7 +320,7 @@ namespace OpenQuant.Trading
 
     private void marketDataProvider_NewQuote(object sender, QuoteEventArgs args)
     {
-      SmartQuant.Instruments.Instrument instrument = args.Instrument as SmartQuant.Instruments.Instrument;
+      FreeQuant.Instruments.Instrument instrument = args.Instrument as FreeQuant.Instruments.Instrument;
       List<StrategyRunner> list = (List<StrategyRunner>) null;
       if (!this.instrumentTable.TryGetValue(instrument, out list))
         return;
@@ -357,7 +333,7 @@ namespace OpenQuant.Trading
 
     private void marketDataProvider_NewBarOpen(object sender, BarEventArgs args)
     {
-      SmartQuant.Instruments.Instrument instrument = args.Instrument as SmartQuant.Instruments.Instrument;
+      FreeQuant.Instruments.Instrument instrument = args.Instrument as FreeQuant.Instruments.Instrument;
       List<StrategyRunner> list = (List<StrategyRunner>) null;
       if (!this.instrumentTable.TryGetValue(instrument, out list))
         return;
@@ -370,7 +346,7 @@ namespace OpenQuant.Trading
 
     private void marketDataProvider_NewBar(object sender, BarEventArgs args)
     {
-      SmartQuant.Instruments.Instrument instrument = args.Instrument as SmartQuant.Instruments.Instrument;
+      FreeQuant.Instruments.Instrument instrument = args.Instrument as FreeQuant.Instruments.Instrument;
       List<StrategyRunner> list = (List<StrategyRunner>) null;
       if (!this.instrumentTable.TryGetValue(instrument, out list))
         return;
@@ -392,7 +368,7 @@ namespace OpenQuant.Trading
 
     private void marketDataProvider_NewMarketDepth(object sender, MarketDepthEventArgs args)
     {
-      SmartQuant.Instruments.Instrument instrument = args.Instrument as SmartQuant.Instruments.Instrument;
+      FreeQuant.Instruments.Instrument instrument = args.Instrument as FreeQuant.Instruments.Instrument;
       List<StrategyRunner> list = (List<StrategyRunner>) null;
       if (!this.instrumentTable.TryGetValue(instrument, out list))
         return;
@@ -426,7 +402,7 @@ namespace OpenQuant.Trading
 
     private void OrderManager_ExecutionReport(object sender, ExecutionReportEventArgs args)
     {
-      SmartQuant.FIX.ExecutionReport executionReport = args.ExecutionReport;
+      FreeQuant.FIX.ExecutionReport executionReport = args.ExecutionReport;
       if (executionReport.ExecType == ExecType.PartialFill)
       {
         SingleOrder order = ((InstrumentOrderListTable) OrderManager.get_Orders()).get_All().get_Item(executionReport.ClOrdID) as SingleOrder;
@@ -475,7 +451,7 @@ namespace OpenQuant.Trading
 
     private void Portfolio_TransactionAdded(object sender, TransactionEventArgs args)
     {
-      this.portfolio.Add(args.Transaction.Clone() as SmartQuant.Instruments.Transaction);
+      this.portfolio.Add(args.Transaction.Clone() as FreeQuant.Instruments.Transaction);
     }
 
     private void AddTesterComponents()
@@ -617,17 +593,17 @@ namespace OpenQuant.Trading
       return dataRequests;
     }
 
-    public OpenQuant.API.BarType ConvertBarType(SmartQuant.Data.BarType barType)
+    public OpenQuant.API.BarType ConvertBarType(FreeQuant.Data.BarType barType)
     {
       switch (barType)
       {
-        case SmartQuant.Data.BarType.Time:
+        case FreeQuant.Data.BarType.Time:
           return OpenQuant.API.BarType.Time;
-        case SmartQuant.Data.BarType.Tick:
+        case FreeQuant.Data.BarType.Tick:
           return OpenQuant.API.BarType.Tick;
-        case SmartQuant.Data.BarType.Volume:
+        case FreeQuant.Data.BarType.Volume:
           return OpenQuant.API.BarType.Volume;
-        case SmartQuant.Data.BarType.Range:
+        case FreeQuant.Data.BarType.Range:
           return OpenQuant.API.BarType.Range;
         default:
           throw new NotImplementedException("BarType is not supported : " + (object) barType);
@@ -647,7 +623,7 @@ namespace OpenQuant.Trading
       {
         if (tuple.Item1 == null || !(tuple.Item1 != strategyRunner.StrategyName))
         {
-          foreach (KeyValuePair<SmartQuant.Instruments.Instrument, Strategy> keyValuePair in strategyRunner.Strategies)
+          foreach (KeyValuePair<FreeQuant.Instruments.Instrument, Strategy> keyValuePair in strategyRunner.Strategies)
           {
             if (tuple.Item2 == null || !(tuple.Item2 != keyValuePair.Key.Symbol))
               list.Add(keyValuePair.Value);

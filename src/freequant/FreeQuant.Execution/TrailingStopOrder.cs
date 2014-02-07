@@ -17,11 +17,8 @@ namespace FreeQuant.Execution
 			this.TrailingAmt = delta;
 		}
 
-		public TrailingStopOrder(Instrument instrument, Side side, double qty, double delta) : this(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, delta)
-		{
-		}
-
-		private TrailingStopOrder() : base()
+		public TrailingStopOrder(Instrument instrument, Side side, double qty, double delta) 
+			: this(ProviderManager.DefaultExecutionProvider, PortfolioManager.DefaultPortfolio, instrument, side, qty, delta)
 		{
 		}
 	}

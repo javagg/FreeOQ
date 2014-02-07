@@ -5,7 +5,7 @@ namespace FreeQuant.FIX
 	public class ExecutionReport : FIXExecutionReport
 	{
 		[Category("Attributes")]
-		new public Side Side
+		public new Side Side
 		{
 			get
 			{

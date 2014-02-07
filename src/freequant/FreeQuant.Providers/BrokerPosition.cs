@@ -7,7 +7,7 @@ namespace FreeQuant.Providers
 	public class BrokerPosition
 	{
 		private SortedList<string, string> customFields;
-		public string Symbol  { get; set; }
+		public string Symbol { get; set; }
 		public string SecurityType { get; set; }
 		public string SecurityExchange { get; set; }
 		public string Currency { get; set; }

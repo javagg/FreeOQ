@@ -1,7 +1,5 @@
 using FreeQuant;
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Services
 {
@@ -48,22 +46,17 @@ namespace FreeQuant.Services
 
 		protected void EmitServiceError(string text)
 		{
-			this.EhoB2ppPe(ServiceErrorType.Error, text);
+			this.EmitServiceError(new ServiceError(this, ServiceErrorType.Error, DateTime.Now, text));
 		}
 
 		protected void EmitServiceWarning(string text)
 		{
-			this.EhoB2ppPe(ServiceErrorType.Warning, text);
+			this.EmitServiceError(new ServiceError(this, ServiceErrorType.Warning, DateTime.Now, text));
 		}
 
 		protected void EmitServiceMessage(string text)
 		{
-			this.EhoB2ppPe(ServiceErrorType.Message, text);
-		}
-
-		private void EhoB2ppPe(ServiceErrorType type, string obj1)
-		{
-			this.EmitServiceError(new ServiceError(this, type, DateTime.Now, obj1));
+			this.EmitServiceError(new ServiceError(this, ServiceErrorType.Message, DateTime.Now, text));
 		}
 	}
 }

@@ -1,55 +1,37 @@
 using FreeQuant.Data;
 using FreeQuant.Instruments;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Trading
 {
-  public class BarSlice
-  {
-    private int VaaibGso2d;
-    private Dictionary<Instrument, Bar> n3AiyxmxLq;
+	public class BarSlice
+	{
+		private int instrumentCount;
 
-    public Dictionary<Instrument, Bar> Table
-    {
-       get
-      {
-        return this.n3AiyxmxLq;
-      }
-    }
+		public Dictionary<Instrument, Bar> Table { get; private set; }
 
-    public bool IsComplete
-    {
-       get
-      {
-        return this.n3AiyxmxLq.Count == this.VaaibGso2d;
-      }
-    }
+		public bool IsComplete
+		{
+			get
+			{
+				return this.Table.Count == this.instrumentCount;
+			}
+		}
 
-    
-    internal BarSlice(int instrumentCount)
-    {
-      this.VaaibGso2d = instrumentCount;
-      this.iuWi2Y8Mjy();
-    }
+		internal BarSlice(int instrumentCount)
+		{
+			this.instrumentCount = instrumentCount;
+			this.Table = new Dictionary<Instrument, Bar>();
+		}
 
-    
-    private void iuWi2Y8Mjy()
-    {
-      this.n3AiyxmxLq = new Dictionary<Instrument, Bar>();
-    }
+		internal void Add(Instrument instrument, Bar bar)
+		{
+			this.Table[instrument] = bar;
+		}
 
-    
-    internal void fpEiBqg2vH([In] Instrument obj0, [In] Bar obj1)
-    {
-      this.n3AiyxmxLq[obj0] = obj1;
-    }
-
-    
-    internal void kxEiMHhItO()
-    {
-      this.n3AiyxmxLq.Clear();
-    }
-  }
+		internal void Clear()
+		{
+			this.Table.Clear();
+		}
+	}
 }

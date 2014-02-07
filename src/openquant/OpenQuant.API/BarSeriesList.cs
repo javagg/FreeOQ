@@ -19,7 +19,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return new BarSeries(FreeQuant.Instruments.DataManager.Bars[Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, EnumConverter.Convert(barType), barSize]);
+				return new BarSeries(FreeQuant.Instruments.DataManager.Bars[Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, EnumConverter.Convert(barType), barSize]);
 			}
 		}
 
@@ -30,7 +30,7 @@ namespace OpenQuant.API
 		{
 			get
 			{
-				return new BarSeries(FreeQuant.Instruments.DataManager.Bars[Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument]);
+				return new BarSeries(FreeQuant.Instruments.DataManager.Bars[Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument]);
 			}
 		}
 	}

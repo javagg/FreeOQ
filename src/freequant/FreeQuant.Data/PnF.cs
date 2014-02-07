@@ -266,5 +266,23 @@ namespace FreeQuant.Data
 			}
 			return num;
 		}
+		public override string ToString()
+		{
+			return string.Format("", new object[]
+			{
+				this.beginTime.ToShortDateString() + this.beginTime.ToLongTimeString(),
+				this.endTime.ToShortDateString() + this.endTime.ToLongTimeString(),
+				this.boxSize,
+				this.open,
+				this.high,
+				this.low,
+				this.close,
+				this.volume,
+				this.openInt,
+				this.Kind
+			});
+		}
 	}
+
+
 }

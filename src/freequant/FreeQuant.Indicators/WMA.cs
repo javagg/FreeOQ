@@ -46,7 +46,7 @@ namespace FreeQuant.Indicators
     }
 
     
-		public WMA():base()
+		public WMA() : base()
     {
       this.fLength = 14;
       this.Init();
@@ -101,10 +101,10 @@ namespace FreeQuant.Indicators
       if (this.fInput == null)
         return;
       if (this.fInput is BarSeries)
-				this.name =  this.Length  + (string) (object) this.fOption;
+				this.fName =  this.Length  + (string) (object) this.fOption;
 			if (TimeSeries.fNameOption != ENameOption.Long)
         return;
-			this.name = this.fInput.Name + this.name;
+			this.fName = this.fInput.Name + this.fName;
     }
 
     

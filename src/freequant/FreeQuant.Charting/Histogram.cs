@@ -1,7 +1,5 @@
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using FreeQuant.Quant;
 
 namespace FreeQuant.Charting
@@ -54,7 +52,7 @@ namespace FreeQuant.Charting
 			this.Init(NBins, XMin, XMax);
 		}
 
-		private void Init([In] int obj0, [In] double obj1, [In] double obj2)
+		private void Init(int obj0, double obj1, double obj2)
 		{
 			this.fNBins = obj0;
 			this.fBins = new double[this.fNBins];

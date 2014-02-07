@@ -98,7 +98,7 @@ namespace FreeQuant.Trading
 
 		public void Draw(IDrawable primitive, int padNumber)
 		{
-			this.strategyBase.MetaStrategyBase.zeFW20hc2d(this.instrument, primitive, padNumber);
+			this.strategyBase.MetaStrategyBase.Draw(this.instrument, primitive, padNumber);
 		}
 
 		public void Draw(IDrawable primitive, int padNumber, Color color)

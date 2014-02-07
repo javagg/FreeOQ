@@ -1,8 +1,6 @@
 using FreeQuant.Charting.Draw3D;
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Charting
 {
@@ -166,7 +164,7 @@ namespace FreeQuant.Charting
     }
 
     
-    private void uBuojBImWt([In] int obj0, [In] double obj1, [In] double obj2, [In] int obj3, [In] double obj4, [In] double obj5)
+    private void uBuojBImWt(int obj0, double obj1, double obj2, int obj3, double obj4, double obj5)
     {
       this.fNBinsX = obj0;
       this.fNBinsY = obj3;
@@ -206,19 +204,19 @@ namespace FreeQuant.Charting
     }
 
     
-    private int W5Lo1oxP5B([In] double obj0, [In] double obj1, [In] double obj2)
+    private int W5Lo1oxP5B(double obj0, double obj1, double obj2)
     {
       return (int) (obj2 * (obj0 - obj1) + 1E-09);
     }
 
     
-    private int QfQo9YbNWy([In] double obj0)
+    private int QfQo9YbNWy(double obj0)
     {
       return this.W5Lo1oxP5B(obj0, this.fXMin, this.Kx);
     }
 
     
-    private int RgcoeI8LA0([In] double obj0)
+    private int RgcoeI8LA0(double obj0)
     {
       return this.W5Lo1oxP5B(obj0, this.fYMin, this.Ky);
     }
@@ -625,7 +623,7 @@ namespace FreeQuant.Charting
       }
 
       
-      public virtual void umVNE9P5cO([In] Pad obj0, [In] double[,] obj1, [In] int obj2, [In] int obj3, [In] double obj4, [In] double obj5, [In] double obj6, [In] double obj7, [In] double obj8)
+      public virtual void umVNE9P5cO(Pad obj0, double[,] obj1, int obj2, int obj3, double obj4, double obj5, double obj6, double obj7, double obj8)
       {
         this.pwU3ia0tgu = obj1;
         this.nx = obj2;
@@ -641,7 +639,7 @@ namespace FreeQuant.Charting
       }
 
       
-      public override double f([In] double obj0, [In] double obj1)
+      public override double f(double obj0, double obj1)
       {
         if (obj0 < this.MinX || obj0 >= this.MaxX || (obj1 < this.MinY || obj1 >= this.MaxY))
           return 0.0;
@@ -658,7 +656,7 @@ namespace FreeQuant.Charting
       }
 
       
-      public override double f([In] double obj0, [In] double obj1)
+      public override double f(double obj0, double obj1)
       {
         double num1 = this.YGZ38gIuF2 * (obj0 - this.MinX) - 0.5;
         double num2 = this.drs3Z0OsMo * (obj1 - this.MinY) - 0.5;
@@ -696,13 +694,13 @@ namespace FreeQuant.Charting
       }
 
       
-      public override TColor color0([In] double obj0, [In] double obj1)
+      public override TColor color0(double obj0, double obj1)
       {
         return this.EbV3bis37P[(int) (this.LSr3HnRJss * (this.f(obj0, obj1) - this.jaO3EZAeXk))];
       }
 
       
-      public void uDx3gBDtTM([In] Pad obj0, [In] double[,] obj1, [In] int obj2, [In] int obj3, [In] double obj4, [In] double obj5, [In] double obj6, [In] double obj7, [In] double obj8, [In] double obj9, [In] Color[] obj10)
+      public void uDx3gBDtTM(Pad obj0, double[,] obj1, int obj2, int obj3, double obj4, double obj5, double obj6, double obj7, double obj8, double obj9, Color[] obj10)
       {
         this.umVNE9P5cO(obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj9);
         this.EbV3bis37P = new TColor[obj10.Length];
@@ -717,7 +715,7 @@ namespace FreeQuant.Charting
     {
 
       
-      public override double f([In] double obj0, [In] double obj1)
+      public override double f(double obj0, double obj1)
       {
         double num1 = this.YGZ38gIuF2 * (obj0 - this.MinX) - 0.5;
         double num2 = this.drs3Z0OsMo * (obj1 - this.MinY) - 0.5;

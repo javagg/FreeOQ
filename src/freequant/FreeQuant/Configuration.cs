@@ -94,7 +94,8 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (string)null;
+				return null;
+//				return "NYSE";
 			}
 			set
 			{

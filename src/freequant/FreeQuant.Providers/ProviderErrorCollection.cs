@@ -31,7 +31,7 @@ namespace FreeQuant.Providers
 			}
 		}
 
-		public ProviderError this [int index]
+		public ProviderError this[int index]
 		{
 			get
 			{

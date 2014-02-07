@@ -2,21 +2,13 @@ using FreeQuant.FIX;
 
 namespace FreeQuant.Services
 {
-  public class LogonEventArgs : MarketServiceEventArgs
-  {
-    private FIXLogon logon;
+	public class LogonEventArgs : MarketServiceEventArgs
+	{
+		public FIXLogon Logon { get; private set; }
 
-    public FIXLogon Logon
-    {
-       get
-      {
-				return this.logon; 
-      }
-    }
-    
-		public LogonEventArgs(IMarketService service, FIXLogon logon):base(service)
-    {
-      this.logon = logon;
-    }
-  }
+		public LogonEventArgs(IMarketService service, FIXLogon logon) : base(service)
+		{
+			this.Logon = logon;
+		}
+	}
 }

@@ -1,4 +1,3 @@
-
 using FreeQuant.Data;
 using FreeQuant.Execution;
 using FreeQuant.FIX;
@@ -8,8 +7,6 @@ using FreeQuant.Providers;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Trading
 {
@@ -151,7 +148,7 @@ namespace FreeQuant.Trading
     }
 
    
-    internal SingleOrder PFARUMnUwZ([In] Signal obj0)
+    internal SingleOrder PFARUMnUwZ(Signal obj0)
     {
       bool flag = false;
       if (obj0.Status == SignalStatus.New)

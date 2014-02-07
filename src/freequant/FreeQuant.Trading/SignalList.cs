@@ -1,74 +1,67 @@
-
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.Trading
 {
-  public class SignalList : ICollection, IEnumerable
-  {
-    private ArrayList mOPje6CaVf;
+	public class SignalList : ICollection
+	{
+		private ArrayList signals;
 
-    public bool IsSynchronized
-    {
-       get
-      {
-        return this.mOPje6CaVf.IsSynchronized;
-      }
-    }
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.signals.IsSynchronized;
+			}
+		}
 
-    public int Count
-    {
-       get
-      {
-        return this.mOPje6CaVf.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.signals.Count;
+			}
+		}
 
-    public object SyncRoot
-    {
-       get
-      {
-        return this.mOPje6CaVf.SyncRoot;
-      }
-    }
+		public object SyncRoot
+		{
+			get
+			{
+				return this.signals.SyncRoot;
+			}
+		}
 
-    public Signal this[int index]
-    {
-       get
-      {
-        return this.mOPje6CaVf[index] as Signal;
-      }
-    }
+		public Signal this[int index]
+		{
+			get
+			{
+				return this.signals[index] as Signal;
+			}
+		}
 
-    
-		public SignalList():base()
-    {
-      this.mOPje6CaVf = new ArrayList();
-    }
+		public SignalList() : base()
+		{
+			this.signals = new ArrayList();
+		}
 
-    
-    public void CopyTo(Array array, int index)
-    {
-      this.mOPje6CaVf.CopyTo(array, index);
-    }
+		public void CopyTo(Array array, int index)
+		{
+			this.signals.CopyTo(array, index);
+		}
 
-    
-    public IEnumerator GetEnumerator()
-    {
-      return this.mOPje6CaVf.GetEnumerator();
-    }
+		public IEnumerator GetEnumerator()
+		{
+			return this.signals.GetEnumerator();
+		}
 
-    
-    public void Clear()
-    {
-      this.mOPje6CaVf.Clear();
-    }
+		public void Clear()
+		{
+			this.signals.Clear();
+		}
 
-    
-    public void Add(Signal signal)
-    {
-      this.mOPje6CaVf.Add((object) signal);
-    }
-  }
+		public void Add(Signal signal)
+		{
+			this.signals.Add(signal);
+		}
+	}
 }

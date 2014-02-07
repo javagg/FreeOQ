@@ -47,15 +47,11 @@ namespace FreeQuant.Simulation
 			}
 		}
 
-		public object this [int index]
+		public Interval this[int index]
 		{
 			get
 			{
-				return this.intervals[index];
-			}
-			set
-			{
-				this.intervals[index] = value;
+				return this.intervals[index] as Interval;
 			}
 		}
 
@@ -64,7 +60,7 @@ namespace FreeQuant.Simulation
 			this.intervals = new ArrayList();
 		}
 
-		object IList.this [int index]
+		object IList.this[int index]
 		{
 			get
 			{
@@ -88,12 +84,12 @@ namespace FreeQuant.Simulation
 
 		void IList.Remove(object value)
 		{
-			this.intervals.Remove(value);
+			this.Remove(value as Interval);
 		}
 
 		bool IList.Contains(object value)
 		{
-			return this.intervals.Contains(value);
+			return this.Contains(value as Interval);
 		}
 
 		public void Clear()
@@ -103,12 +99,12 @@ namespace FreeQuant.Simulation
 
 		int IList.IndexOf(object value)
 		{
-			return this.intervals.IndexOf(value);
+			return this.IndexOf(value as Interval);
 		}
 
 		int IList.Add(object value)
 		{
-			return this.intervals.Add(value);
+			return this.Add(value as Interval);
 		}
 
 		public void CopyTo(Array array, int index)

@@ -9,13 +9,13 @@ namespace FreeQuant.Providers
 	//  [Editor(typeof (BarFactoryItemListEditor), typeof (UITypeEditor))]
 	public class BarFactoryItemList : IList
 	{
-		private ArrayList list;
+		private ArrayList items;
 
 		public bool IsReadOnly
 		{
 			get
 			{
-				return this.list.IsReadOnly;
+				return this.items.IsReadOnly;
 			}
 		}
 
@@ -23,7 +23,7 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return this.list.IsFixedSize;
+				return this.items.IsFixedSize;
 			}
 		}
 
@@ -31,7 +31,7 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return this.list.IsSynchronized;
+				return this.items.IsSynchronized;
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return this.list.Count;
+				return this.items.Count;
 			}
 		}
 
@@ -47,7 +47,7 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return this.list.SyncRoot;
+				return this.items.SyncRoot;
 			}
 		}
 
@@ -55,7 +55,7 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return this.list[index] as BarFactoryItem;
+				return this.items[index] as BarFactoryItem;
 			}
 		}
 
@@ -63,47 +63,48 @@ namespace FreeQuant.Providers
 		{
 			get
 			{
-				return this.list[index];
+				return this.items[index];
 			}
 			set 
 			{
-				this.list[index] = value;
+//				this.items[index] = value;
+				throw new NotSupportedException();
 			}
 		}
 
 		public BarFactoryItemList()
 		{
-			this.list = new ArrayList();
+			this.items = new ArrayList();
 		}
 
 		public void RemoveAt(int index)
 		{
-			this.list.RemoveAt(index);
+			this.items.RemoveAt(index);
 		}
 
 		public void Insert(int index, object value)
 		{
-			this.list.Insert(index, value);
+			this.items.Insert(index, value);
 		}
 
 		public void Remove(object value)
 		{
-			this.list.Remove(value);
+			this.items.Remove(value);
 		}
 
 		public bool Contains(object value)
 		{
-			return this.list.Contains(value);
+			return this.items.Contains(value);
 		}
 
 		public void Clear()
 		{
-			this.list.Clear();
+			this.items.Clear();
 		}
 
 		public int IndexOf(object value)
 		{
-			return this.list.IndexOf(value);
+			return this.items.IndexOf(value);
 		}
 
 		int IList.Add(object value)
@@ -113,19 +114,19 @@ namespace FreeQuant.Providers
 
 		public void CopyTo(Array array, int index)
 		{
-			this.list.CopyTo(array, index);
+			this.items.CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.list.GetEnumerator();
+			return this.items.GetEnumerator();
 		}
 
 		public int Add(BarFactoryItem item)
 		{
-			this.list.Add(item);
-			this.list.Sort();
-			return this.list.IndexOf(item);
+			this.items.Add(item);
+			this.items.Sort();
+			return this.items.IndexOf(item);
 		}
 
 		public int Add(BarType barType, long barSize, bool enabled)

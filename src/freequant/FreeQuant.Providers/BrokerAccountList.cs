@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FreeQuant.Providers
 {
-	public class BrokerAccountList : ICollection, IEnumerable
+	public class BrokerAccountList : ICollection
 	{
 		private SortedList<string, BrokerAccount> accountsByName;
 		private List<BrokerAccount> accountsByIndex;

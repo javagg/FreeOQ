@@ -49,7 +49,7 @@ namespace FreeQuant.Indicators
     [Description("")]
     [IndicatorParameter(1)]
     [Category("Parameters")]
-    public double Shift
+		public new double Shift
     {
        get
       {

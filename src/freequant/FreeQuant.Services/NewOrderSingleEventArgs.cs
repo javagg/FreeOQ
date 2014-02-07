@@ -4,19 +4,11 @@ namespace FreeQuant.Services
 {
 	public class NewOrderSingleEventArgs : ExecutionServiceEventArgs
 	{
-		private FIXNewOrderSingle order;
-
-		public FIXNewOrderSingle Order
-		{
-			get
-			{
-				return this.order;
-			}
-		}
+		public FIXNewOrderSingle Order { get; private set; }
 
 		public NewOrderSingleEventArgs(IExecutionService service, FIXNewOrderSingle order) : base(service)
 		{
-			this.order = order;
+			this.Order = order;
 		}
 	}
 }

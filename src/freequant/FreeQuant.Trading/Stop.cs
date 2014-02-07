@@ -3,8 +3,6 @@ using FreeQuant.Data;
 using FreeQuant.Instruments;
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Trading
 {
@@ -45,7 +43,8 @@ namespace FreeQuant.Trading
 
     
     public Stop(StrategyBase strategy, Position position, double level, StopType type, StopMode mode)
-			:base(){
+			:base()
+		{
       this.Udd6EeE9v6 = strategy;
       this.fPosition = position;
       this.fInstrument = position.Instrument;
@@ -185,7 +184,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void xbx6LKbgmx([In] Position obj0)
+    internal void xbx6LKbgmx(Position obj0)
     {
       if (obj0 != this.fPosition)
         return;
@@ -194,7 +193,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void t2b63VoTkG([In] Bar obj0)
+    internal void t2b63VoTkG(Bar obj0)
     {
       if (!this.fTraceOnBar || this.fFilterBarSize >= 0L && (this.fFilterBarSize != obj0.Size || this.fFilterBarType != BarType.Time))
         return;
@@ -235,7 +234,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void M2g6st8BRD([In] Bar obj0)
+    internal void M2g6st8BRD(Bar obj0)
     {
       if (!this.fTraceOnBar || !this.fTraceOnBarOpen || this.fFilterBarSize >= 0L && (this.fFilterBarSize != obj0.Size || this.fFilterBarType != BarType.Time))
         return;
@@ -247,7 +246,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void yu56453Z5Z([In] Trade obj0)
+    internal void yu56453Z5Z(Trade obj0)
     {
       if (!this.fTraceOnTrade)
         return;
@@ -258,7 +257,7 @@ namespace FreeQuant.Trading
     }
 
     
-    internal void ddk6JqyZZD([In] Quote obj0)
+    internal void ddk6JqyZZD(Quote obj0)
     {
       if (!this.fTraceOnQuote)
         return;
@@ -277,7 +276,7 @@ namespace FreeQuant.Trading
     }
 
     
-    private void Lk960PQCI8([In] StopStatus obj0)
+    private void Lk960PQCI8(StopStatus obj0)
     {
       this.fStatus = obj0;
       this.fCompletionTime = Clock.Now;
@@ -285,7 +284,7 @@ namespace FreeQuant.Trading
     }
 
     
-    private void mSa6vRBe3Z([In] ReminderEventArgs obj0)
+    private void mSa6vRBe3Z(ReminderEventArgs obj0)
     {
       this.fStopPrice = this.fInstrument.Price();
       this.Lk960PQCI8(StopStatus.Executed);

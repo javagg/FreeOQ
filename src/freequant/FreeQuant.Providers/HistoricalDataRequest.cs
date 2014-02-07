@@ -23,8 +23,8 @@ namespace FreeQuant.Providers
 
 		public HistoricalDataRequest()
 		{
-			lock(typeof(HistoricalDataRequest)) {
-				this.RequestId = string.Format("", DateTime.Now, HistoricalDataRequest.counter++);
+			lock (typeof(HistoricalDataRequest)) {
+				this.RequestId = string.Format("{0}-{1}", DateTime.Now, HistoricalDataRequest.counter++);
 			}
 		}
 	}

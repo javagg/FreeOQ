@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace FreeQuant.Data
 {
-	public class MemorySeries<TValue> : IDataSeries, IEnumerable
+	public class MemorySeries<TValue> : IDataSeries
 	{
-		private SortedList<DateTime, TValue> list =  new SortedList<DateTime, TValue>(); 
+		private SortedList<DateTime, TValue> list; 
 
 		public string Name { get; private set; }
 		public string Description { get; set; }
@@ -22,7 +22,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return (object)this.list[datetime];
+				return this.list[datetime];
 			}
 			set
 			{
@@ -34,7 +34,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return (object)this.list.Values[index];
+				return this.list.Values[index];
 			}
 		}
 
@@ -50,42 +50,38 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				return this.list.Keys[this.list.Count - 1];
+				return this.list.Keys[this.list.Count-1];
 			}
 		}
 
-		public MemorySeries(string name = null, string description = null)
+		public MemorySeries(string name, string description)
 		{
-			this.Name = name ?? String.Empty;
-			this.Description = description ?? String.Empty;
+			this.Name = name;
+			this.Description = description;
+			this.list = new SortedList<DateTime, TValue>();
 		}
 
-//		public MemorySeries(string name) : this(name, String.Empty)
-//		{
-//		}
-//
-//		public MemorySeries()
-//		{
-//		}
-
-		public void Add(DateTime datetime, TValue value)
+		public MemorySeries(string name) : this(name, string.Empty)
 		{
-			this.list[datetime] = value;
 		}
 
-		public void Add(DateTime datetime, object obj)
+		public MemorySeries() : this("MemorySeries")
 		{
-			this.list[datetime] = (TValue)obj;
 		}
 
-		public void Update(DateTime datetime, object obj)
+		public void Add(DateTime datetime, object value)
 		{
-			this.Add(datetime, obj);
+			this.list[datetime] = (TValue)value;
 		}
 
-		public void Update(int index, object obj)
+		public void Update(DateTime datetime, object value)
 		{
-			this.Update(this.list.Keys[index], obj);
+			this.Add(datetime, value);
+		}
+
+		public void Update(int index, object value)
+		{
+			this.Update(this.list.Keys[index], value);
 		}
 
 		public bool Contains(DateTime datetime)
@@ -98,17 +94,18 @@ namespace FreeQuant.Data
 			return this.list.IndexOfKey(datetime);
 		}
 
+		// TODO: read
 		public int IndexOf(DateTime datetime, SearchOption option)
 		{
 			int index = 0;
-			int num1 = 0;
-			int num2 = this.list.Count - 1;
+			int begini = 0;
+			int endi = this.list.Count - 1;
 			bool flag = true;
 			while (flag)
 			{
-				if (num2 < num1)
+				if (endi < begini)
 					return -1;
-				index = (num1 + num2) / 2;
+				index = (begini + endi) / 2;
 				switch (option)
 				{
 					case SearchOption.Prev:
@@ -119,12 +116,12 @@ namespace FreeQuant.Data
 						}
 						else if (this.list.Keys[index] > datetime)
 						{
-							num2 = index - 1;
+							endi = index - 1;
 							continue;
 						}
 						else
 						{
-							num1 = index + 1;
+							begini = index + 1;
 							continue;
 						}
 					case SearchOption.Exact:
@@ -135,12 +132,12 @@ namespace FreeQuant.Data
 						}
 						else if (this.list.Keys[index] > datetime)
 						{
-							num2 = index - 1;
+							endi = index - 1;
 							continue;
 						}
 						else if (this.list.Keys[index] < datetime)
 						{
-							num1 = index + 1;
+							begini = index + 1;
 							continue;
 						}
 						else
@@ -153,12 +150,12 @@ namespace FreeQuant.Data
 						}
 						else if (this.list.Keys[index] < datetime)
 						{
-							num1 = index + 1;
+							begini = index + 1;
 							continue;
 						}
 						else
 						{
-							num2 = index - 1;
+							endi = index - 1;
 							continue;
 						}
 					default:

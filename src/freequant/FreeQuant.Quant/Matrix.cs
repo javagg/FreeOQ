@@ -57,7 +57,7 @@ namespace FreeQuant.Quant
 			}
 		}
 
-		public double this [int row, int col]
+		public double this[int row, int col]
 		{
 			get
 			{
@@ -96,11 +96,11 @@ namespace FreeQuant.Quant
 			{
 				if (this.n != this.m)
 					return false;
-				for (int index1 = 0; index1 < this.m; ++index1)
+				for (int i = 0; i < this.m; ++i)
 				{
-					for (int index2 = 0; index2 < index1; ++index2)
+					for (int j = 0; j < i; ++j)
 					{
-						if (this.elements[index1, index2] != this.elements[index2, index1])
+						if (this.elements[i, j] != this.elements[j, i])
 							return false;
 					}
 				}
@@ -119,10 +119,10 @@ namespace FreeQuant.Quant
 			this.diagonal = new MatrixDiag(this);
 			this.m = matrix.m;
 			this.n = matrix.n;
-			for (int index1 = 0; index1 < this.M; ++index1)
+			for (int i = 0; i < this.M; ++i)
 			{
-				for (int index2 = 0; index2 < this.N; ++index2)
-					this.elements[index1, index2] = matrix.elements[index1, index2];
+				for (int j = 0; j < this.N; ++j)
+					this.elements[i, j] = matrix.elements[i, j];
 			}
 		}
 
@@ -150,10 +150,10 @@ namespace FreeQuant.Quant
 			this.n = n;
 			this.elements = new double[m, n];
 			this.diagonal = new MatrixDiag(this);
-			for (int index1 = 0; index1 < m; ++index1)
+			for (int i = 0; i < m; ++i)
 			{
-				for (int index2 = 0; index2 < n; ++index2)
-					this.elements[index1, index2] = val;
+				for (int j = 0; j < n; ++j)
+					this.elements[i, j] = val;
 			}
 		}
 
@@ -163,8 +163,8 @@ namespace FreeQuant.Quant
 			this.n = values.Length;
 			this.elements = new double[this.M, this.N];
 			this.diagonal = new MatrixDiag(this);
-			for (int index = 0; index < this.N; ++index)
-				this.elements[0, index] = values[index];
+			for (int i = 0; i < this.N; ++i)
+				this.elements[0, i] = values[i];
 		}
 
 		public Matrix(double[,] values)
@@ -173,77 +173,77 @@ namespace FreeQuant.Quant
 			this.n = values.GetLength(1);
 			this.elements = new double[this.M, this.N];
 			this.diagonal = new MatrixDiag(this);
-			for (int index1 = 0; index1 < this.m; ++index1)
+			for (int i = 0; i < this.m; ++i)
 			{
-				for (int index2 = 0; index2 < this.n; ++index2)
-					this.elements[index1, index2] = values[index1, index2];
+				for (int j = 0; j < this.n; ++j)
+					this.elements[i, j] = values[i, j];
 			}
 		}
 
-		public static Matrix operator +(Matrix Matrix1, Matrix Matrix2)
+		public static Matrix operator +(Matrix m1, Matrix m2)
 		{
-			if (Matrix1.M != Matrix2.M || Matrix1.N != Matrix2.N)
+			if (m1.M != m2.M || m1.N != m2.N)
 				return new Matrix();
-			Matrix matrix = new Matrix(Matrix1.M, Matrix1.N);
-			for (int index1 = 0; index1 < Matrix1.M; ++index1)
+			Matrix m = new Matrix(m1.M, m1.N);
+			for (int i = 0; i < m1.M; ++i)
 			{
-				for (int index2 = 0; index2 < Matrix1.N; ++index2)
-					matrix[index1, index2] = Matrix1[index1, index2] + Matrix2[index1, index2];
+				for (int j = 0; j < m1.N; ++j)
+					m[i, j] = m1[i, j] + m2[i, j];
 			}
-			return matrix;
+			return m;
 		}
 
 		public static Matrix operator -(Matrix Matrix1, Matrix Matrix2)
 		{
 			if (Matrix1.M != Matrix2.M || Matrix1.N != Matrix2.N)
 				return new Matrix();
-			Matrix matrix = new Matrix(Matrix1.M, Matrix1.N);
-			for (int index1 = 0; index1 < Matrix1.M; ++index1)
+			Matrix m = new Matrix(Matrix1.M, Matrix1.N);
+			for (int i = 0; i < Matrix1.M; ++i)
 			{
-				for (int index2 = 0; index2 < Matrix1.N; ++index2)
-					matrix[index1, index2] = Matrix1[index1, index2] - Matrix2[index1, index2];
+				for (int j = 0; j < Matrix1.N; ++j)
+					m[i, j] = Matrix1[i, j] - Matrix2[i, j];
 			}
-			return matrix;
+			return m;
 		}
 
 		public static Matrix operator *(Matrix Matrix1, Matrix Matrix2)
 		{
 			if (Matrix1.N != Matrix2.M)
 				return Matrix1;
-			Matrix matrix = new Matrix(Matrix1.M, Matrix2.N);
-			for (int index1 = 0; index1 < Matrix1.M; ++index1)
+			Matrix m = new Matrix(Matrix1.M, Matrix2.N);
+			for (int i = 0; i < Matrix1.M; ++i)
 			{
-				for (int index2 = 0; index2 < Matrix2.N; ++index2)
+				for (int j = 0; j < Matrix2.N; ++j)
 				{
 					double num = 0.0;
 					for (int index3 = 0; index3 < Matrix1.N; ++index3)
-						num += Matrix1[index1, index3] * Matrix2[index3, index2];
-					matrix[index1, index2] = num;
+						num += Matrix1[i, index3] * Matrix2[index3, j];
+					m[i, j] = num;
 				}
 			}
-			return matrix;
+			return m;
 		}
 
 		public static Matrix operator /(Matrix Matrix1, Matrix Matrix2)
 		{
 			if (Matrix1.M != Matrix2.M || Matrix1.N != Matrix2.N)
 				return Matrix1;
-			Matrix matrix = new Matrix(Matrix1.M, Matrix1.N);
-			for (int index1 = 0; index1 < Matrix1.M; ++index1)
+			Matrix m = new Matrix(Matrix1.M, Matrix1.N);
+			for (int i = 0; i < Matrix1.M; ++i)
 			{
-				for (int index2 = 0; index2 < Matrix1.N; ++index2)
-					matrix[index1, index2] = Matrix1[index1, index2] / Matrix2[index1, index2];
+				for (int j = 0; j < Matrix1.N; ++j)
+					m[i, j] = Matrix1[i, j] / Matrix2[i, j];
 			}
-			return matrix;
+			return m;
 		}
 
 		public static Matrix operator +(Matrix matrix, double Scalar)
 		{
 			Matrix matrix1 = new Matrix(matrix.M, matrix.N);
-			for (int index1 = 0; index1 < matrix.M; ++index1)
+			for (int i = 0; i < matrix.M; ++i)
 			{
-				for (int index2 = 0; index2 < matrix.N; ++index2)
-					matrix1[index1, index2] = matrix[index1, index2] + Scalar;
+				for (int j = 0; j < matrix.N; ++j)
+					matrix1[i, j] = matrix[i, j] + Scalar;
 			}
 			return matrix1;
 		}
@@ -256,10 +256,10 @@ namespace FreeQuant.Quant
 		public static Matrix operator *(Matrix matrix, double Scalar)
 		{
 			Matrix matrix1 = new Matrix(matrix.M, matrix.N);
-			for (int index1 = 0; index1 < matrix.M; ++index1)
+			for (int i = 0; i < matrix.M; ++i)
 			{
-				for (int index2 = 0; index2 < matrix.N; ++index2)
-					matrix1[index1, index2] = matrix[index1, index2] * Scalar;
+				for (int j = 0; j < matrix.N; ++j)
+					matrix1[i, j] = matrix[i, j] * Scalar;
 			}
 			return matrix1;
 		}

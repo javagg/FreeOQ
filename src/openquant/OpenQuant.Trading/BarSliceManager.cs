@@ -27,10 +27,10 @@ namespace OpenQuant.Trading
 
 		internal void AddBar(Instrument instrument, Bar bar)
 		{
-			BarSlice barSlice = (BarSlice)null;
+			BarSlice barSlice = null;
 			if (!this.table.TryGetValue(bar.Size, out barSlice))
 			{
-				barSlice = new BarSlice(this.instrumentsCount);
+				barSlice = new BarSlice(this.InstrumentsCount);
 				this.table.Add(bar.Size, barSlice);
 			}
 			barSlice.AddBar(instrument, bar);

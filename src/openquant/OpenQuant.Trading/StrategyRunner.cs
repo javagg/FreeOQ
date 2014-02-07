@@ -18,17 +18,16 @@ namespace OpenQuant.Trading
 {
   public class StrategyRunner : IInstrumentSource
   {
-    private IMarketDataProvider marketDataProvider = SmartQuant.Providers.ProviderManager.MarketDataSimulator;
-    private IExecutionProvider executionProvider = SmartQuant.Providers.ProviderManager.ExecutionSimulator;
+    private IMarketDataProvider marketDataProvider = FreeQuant.Providers.ProviderManager.MarketDataSimulator;
+    private IExecutionProvider executionProvider = FreeQuant.Providers.ProviderManager.ExecutionSimulator;
     private BarSliceManager barSliceManager = new BarSliceManager();
-    private Dictionary<SmartQuant.Instruments.Instrument, Strategy> strategies = new Dictionary<SmartQuant.Instruments.Instrument, Strategy>();
-    private List<SmartQuant.Instruments.Instrument> instruments = new List<SmartQuant.Instruments.Instrument>();
+    private Dictionary<FreeQuant.Instruments.Instrument, OpenQuant.API.Strategy> strategies = new Dictionary<FreeQuant.Instruments.Instrument, Strategy>();
+    private List<FreeQuant.Instruments.Instrument> instruments = new List<FreeQuant.Instruments.Instrument>();
     private List<ATSStop> stops = new List<ATSStop>();
-    private Dictionary<SmartQuant.Instruments.Instrument, List<ATSStop>> activeStops = new Dictionary<SmartQuant.Instruments.Instrument, List<ATSStop>>();
-    private StopEventHandler StopAdded;
-    private Strategy sampleStrategy;
-    private SmartQuant.Instruments.Portfolio sq_Portfolio;
-    private SmartQuant.Instruments.Portfolio sq_MetaPortfolio;
+    private Dictionary<FreeQuant.Instruments.Instrument, List<ATSStop>> activeStops = new Dictionary<FreeQuant.Instruments.Instrument, List<ATSStop>>();
+    private OpenQuant.API.Strategy sampleStrategy;
+    private FreeQuant.Instruments.Portfolio sq_Portfolio;
+    private FreeQuant.Instruments.Portfolio sq_MetaPortfolio;
     private IObjectConverter objectConverter;
     private DateTime startDate;
     private DateTime stopDate;
@@ -114,7 +113,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public Dictionary<SmartQuant.Instruments.Instrument, Strategy> Strategies
+    public Dictionary<FreeQuant.Instruments.Instrument, OpenQuant.API.Strategy> Strategies
     {
       get
       {
@@ -170,7 +169,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public Strategy Strategy
+    public OpenQuant.API.Strategy Strategy
     {
       get
       {
@@ -207,7 +206,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public SmartQuant.Instruments.Portfolio Portfolio
+    public FreeQuant.Instruments.Portfolio Portfolio
     {
       get
       {
@@ -221,7 +220,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public SmartQuant.Instruments.Portfolio MetaPortfolio
+    public FreeQuant.Instruments.Portfolio MetaPortfolio
     {
       get
       {
@@ -243,7 +242,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public List<SmartQuant.Instruments.Instrument> Instruments
+    public List<FreeQuant.Instruments.Instrument> Instruments
     {
       get
       {
@@ -251,31 +250,8 @@ namespace OpenQuant.Trading
       }
     }
 
-    public event StopEventHandler StopAdded
-    {
-      add
-      {
-        StopEventHandler stopEventHandler = this.StopAdded;
-        StopEventHandler comparand;
-        do
-        {
-          comparand = stopEventHandler;
-          stopEventHandler = Interlocked.CompareExchange<StopEventHandler>(ref this.StopAdded, (StopEventHandler) Delegate.Combine((Delegate) comparand, (Delegate) value), comparand);
-        }
-        while (stopEventHandler != comparand);
-      }
-      remove
-      {
-        StopEventHandler stopEventHandler = this.StopAdded;
-        StopEventHandler comparand;
-        do
-        {
-          comparand = stopEventHandler;
-          stopEventHandler = Interlocked.CompareExchange<StopEventHandler>(ref this.StopAdded, (StopEventHandler) Delegate.Remove((Delegate) comparand, (Delegate) value), comparand);
-        }
-        while (stopEventHandler != comparand);
-      }
-    }
+		public event StopEventHandler StopAdded;
+
 
     public event EventHandler<StrategyErrorEventArgs> Error;
 
@@ -283,7 +259,7 @@ namespace OpenQuant.Trading
     {
       this.objectConverter = Activator.CreateInstance(Type.GetType("OpenQuant.API.ObjectConverter, OpenQuant.API"), true) as IObjectConverter;
       this.strategyName = strategyName;
-      this.Portfolio = PortfolioManager.Portfolios[strategyName] == null ? new SmartQuant.Instruments.Portfolio(strategyName) : PortfolioManager.Portfolios[strategyName];
+      this.Portfolio = PortfolioManager.Portfolios[strategyName] == null ? new FreeQuant.Instruments.Portfolio(strategyName) : PortfolioManager.Portfolios[strategyName];
       this.Portfolio.Clear();
     }
 
@@ -309,7 +285,7 @@ namespace OpenQuant.Trading
         FieldInfo field1 = typeof (Strategy).GetField("startDate", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
         FieldInfo field2 = typeof (Strategy).GetField("stopDate", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
         FieldInfo field3 = typeof (Strategy).GetField("cash", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
-        foreach (SmartQuant.Instruments.Instrument key in this.instruments)
+        foreach (FreeQuant.Instruments.Instrument key in this.instruments)
         {
           Strategy strategy = Activator.CreateInstance(this.sampleStrategy.GetType()) as Strategy;
           this.SetProxyProperties((object) strategy, (object) this.sampleStrategy);
@@ -334,7 +310,7 @@ namespace OpenQuant.Trading
       }
       else
       {
-        OpenQuant.API.Portfolio portfolio = Map.SQ_OQ_Portfolio[(object) this.sq_Portfolio] as OpenQuant.API.Portfolio;
+        OpenQuant.API.Portfolio portfolio = Map.FQ_OQ_Portfolio[(object) this.sq_Portfolio] as OpenQuant.API.Portfolio;
         foreach (object obj in this.strategies.Values)
           typeof (Strategy).GetField("portfolio", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField | BindingFlags.SetField).SetValue(obj, (object) portfolio);
       }
@@ -411,9 +387,9 @@ namespace OpenQuant.Trading
       this.sq_Portfolio.PositionClosed += new PositionEventHandler(this.portfolio_PositionClosed);
       this.sq_Portfolio.PositionOpened += new PositionEventHandler(this.portfolio_PositionOpened);
       this.sq_Portfolio.ValueChanged += new PositionEventHandler(this.portfolio_ValueChanged);
-      SmartQuant.Providers.ProviderManager.Connected += new ProviderEventHandler(this.SQ_ProviderManager_Connected);
-      SmartQuant.Providers.ProviderManager.Disconnected += new ProviderEventHandler(this.SQ_ProviderManager_Disconnected);
-      SmartQuant.Providers.ProviderManager.Error += new ProviderErrorEventHandler(this.SQ_ProviderManager_Error);
+      FreeQuant.Providers.ProviderManager.Connected += new ProviderEventHandler(this.SQ_ProviderManager_Connected);
+      FreeQuant.Providers.ProviderManager.Disconnected += new ProviderEventHandler(this.SQ_ProviderManager_Disconnected);
+      FreeQuant.Providers.ProviderManager.Error += new ProviderErrorEventHandler(this.SQ_ProviderManager_Error);
       this.sq_Portfolio.Monitored = true;
       this.sq_Portfolio.Performance.Enabled = this.PerformanceEnabled;
       this.sq_Portfolio.Performance.CalculateDrawdown = this.CalculateDrawdown;
@@ -429,14 +405,14 @@ namespace OpenQuant.Trading
       this.sq_Portfolio.PositionClosed -= new PositionEventHandler(this.portfolio_PositionClosed);
       this.sq_Portfolio.PositionOpened -= new PositionEventHandler(this.portfolio_PositionOpened);
       this.sq_Portfolio.ValueChanged -= new PositionEventHandler(this.portfolio_ValueChanged);
-      SmartQuant.Providers.ProviderManager.Connected -= new ProviderEventHandler(this.SQ_ProviderManager_Connected);
-      SmartQuant.Providers.ProviderManager.Disconnected -= new ProviderEventHandler(this.SQ_ProviderManager_Disconnected);
-      SmartQuant.Providers.ProviderManager.Error -= new ProviderErrorEventHandler(this.SQ_ProviderManager_Error);
+      FreeQuant.Providers.ProviderManager.Connected -= new ProviderEventHandler(this.SQ_ProviderManager_Connected);
+      FreeQuant.Providers.ProviderManager.Disconnected -= new ProviderEventHandler(this.SQ_ProviderManager_Disconnected);
+      FreeQuant.Providers.ProviderManager.Error -= new ProviderErrorEventHandler(this.SQ_ProviderManager_Error);
       this.tester.Disconnect();
       this.sq_Portfolio.Monitored = false;
     }
 
-    public void SetNewTrade(SmartQuant.Instruments.Instrument instrument, SmartQuant.Data.Trade trade)
+    public void SetNewTrade(FreeQuant.Instruments.Instrument instrument, FreeQuant.Data.Trade trade)
     {
       try
       {
@@ -463,7 +439,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public void SetNewQuote(SmartQuant.Instruments.Instrument instrument, SmartQuant.Data.Quote quote)
+    public void SetNewQuote(FreeQuant.Instruments.Instrument instrument, FreeQuant.Data.Quote quote)
     {
       try
       {
@@ -490,7 +466,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public void SetNewBarOpen(SmartQuant.Instruments.Instrument instrument, SmartQuant.Data.Bar bar)
+    public void SetNewBarOpen(FreeQuant.Instruments.Instrument instrument, FreeQuant.Data.Bar bar)
     {
       try
       {
@@ -517,11 +493,11 @@ namespace OpenQuant.Trading
       }
     }
 
-    public void SetNewBar(SmartQuant.Instruments.Instrument instrument, SmartQuant.Data.Bar bar)
+    public void SetNewBar(FreeQuant.Instruments.Instrument instrument, FreeQuant.Data.Bar bar)
     {
       try
       {
-        if (bar.BarType == SmartQuant.Data.BarType.Time)
+        if (bar.BarType == FreeQuant.Data.BarType.Time)
           this.barSliceManager.AddBar(instrument, bar);
         else
           this.OnNewBar(instrument, bar);
@@ -539,7 +515,7 @@ namespace OpenQuant.Trading
         BarSlice slice = this.barSliceManager.GetSlice(barSize);
         if (slice != null)
         {
-          foreach (KeyValuePair<SmartQuant.Instruments.Instrument, SmartQuant.Data.Bar> keyValuePair in slice.Table)
+          foreach (KeyValuePair<FreeQuant.Instruments.Instrument, FreeQuant.Data.Bar> keyValuePair in slice.Table)
             this.OnNewBar(keyValuePair.Key, keyValuePair.Value);
           slice.Reset();
         }
@@ -552,7 +528,7 @@ namespace OpenQuant.Trading
       }
     }
 
-    public void OnNewBar(SmartQuant.Instruments.Instrument instrument, SmartQuant.Data.Bar bar)
+    public void OnNewBar(FreeQuant.Instruments.Instrument instrument, FreeQuant.Data.Bar bar)
     {
       if (this.stops.Count != 0)
       {
@@ -572,7 +548,7 @@ namespace OpenQuant.Trading
       strategy.OnBar((OpenQuant.API.Bar) this.objectConverter.Convert(bar));
     }
 
-    public void SetNewMarketDepth(SmartQuant.Instruments.Instrument instrument, MarketDepth depth)
+    public void SetNewMarketDepth(FreeQuant.Instruments.Instrument instrument, MarketDepth depth)
     {
       try
       {
@@ -625,7 +601,7 @@ namespace OpenQuant.Trading
     {
       try
       {
-        SmartQuant.Instruments.Instrument instrument = args.Position.Instrument;
+        FreeQuant.Instruments.Instrument instrument = args.Position.Instrument;
         if (this.activeStops.ContainsKey(instrument))
         {
           foreach (ATSStop atsStop in new ArrayList((ICollection) this.activeStops[instrument]))
@@ -667,7 +643,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
           return;
-        strategy.OnNewOrder(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnNewOrder(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -682,7 +658,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
           return;
-        strategy.OnOrderStatusChanged(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnOrderStatusChanged(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -700,19 +676,19 @@ namespace OpenQuant.Trading
         switch (order.get_OrdStatus())
         {
           case OrdStatus.Filled:
-            strategy.OnOrderFilled(Map.SQ_OQ_Order[(object) order] as Order);
+            strategy.OnOrderFilled(Map.FQ_OQ_Order[(object) order] as Order);
             break;
           case OrdStatus.Cancelled:
-            strategy.OnOrderCancelled(Map.SQ_OQ_Order[(object) order] as Order);
+            strategy.OnOrderCancelled(Map.FQ_OQ_Order[(object) order] as Order);
             break;
           case OrdStatus.Rejected:
-            strategy.OnOrderRejected(Map.SQ_OQ_Order[(object) order] as Order);
+            strategy.OnOrderRejected(Map.FQ_OQ_Order[(object) order] as Order);
             break;
           case OrdStatus.Expired:
-            strategy.OnOrderExpired(Map.SQ_OQ_Order[(object) order] as Order);
+            strategy.OnOrderExpired(Map.FQ_OQ_Order[(object) order] as Order);
             break;
         }
-        strategy.OnOrderDone(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnOrderDone(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -727,7 +703,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
           return;
-        strategy.OnOrderPartiallyFilled(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnOrderPartiallyFilled(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -742,7 +718,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
           return;
-        strategy.OnOrderReplaced(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnOrderReplaced(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -757,7 +733,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
           return;
-        strategy.OnOrderReplaceReject(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnOrderReplaceReject(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -772,7 +748,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
           return;
-        strategy.OnOrderCancelReject(Map.SQ_OQ_Order[(object) order] as Order);
+        strategy.OnOrderCancelReject(Map.FQ_OQ_Order[(object) order] as Order);
       }
       catch (Exception ex)
       {
@@ -852,7 +828,7 @@ namespace OpenQuant.Trading
         Strategy strategy = (Strategy) null;
         if (!this.strategies.TryGetValue(((StopBase) atsStop).get_Instrument(), out strategy))
           return;
-        strategy.OnStopExecuted(Map.SQ_OQ_Stop[(object) atsStop] as Stop);
+        strategy.OnStopExecuted(Map.FQ_OQ_Stop[(object) atsStop] as Stop);
       }
       catch (Exception ex)
       {
@@ -862,7 +838,7 @@ namespace OpenQuant.Trading
 
     private void EmitError(Exception exception)
     {
-      StrategyError error = new StrategyError(SmartQuant.Clock.Now, exception);
+      StrategyError error = new StrategyError(FreeQuant.Clock.Now, exception);
       if (this.Error == null)
         return;
       this.Error((object) this, new StrategyErrorEventArgs(error));

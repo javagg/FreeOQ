@@ -4,101 +4,102 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-
 namespace FreeQuant.File
 {
-  public class SeriesCollection : ICollection, IEnumerable
-  {
-		private SortedList fE3x1KvvUM; 
-		private DataFile dataFile; 
+	public class SeriesCollection : ICollection, IEnumerable
+	{
+		private SortedList list;
+		private DataFile dataFile;
 
-    public int Count
-    {
-       get
-      {
-        return this.fE3x1KvvUM.Count;
-      }
-    }
+		public int Count
+		{
+			get
+			{
+				return this.list.Count;
+			}
+		}
 
-    public FileSeries this[string name]
-    {
-       get
-      {
-        return this.fE3x1KvvUM[(object) name] as FileSeries;
-      }
-    }
+		public FileSeries this [string name]
+		{
+			get
+			{
+				return this.list[name] as FileSeries;
+			}
+		}
 
-    public bool IsSynchronized
-    {
-       get
-      {
-        return this.fE3x1KvvUM.IsSynchronized;
-      }
-    }
+		public bool IsSynchronized
+		{
+			get
+			{
+				return this.list.IsSynchronized;
+			}
+		}
 
-    public object SyncRoot
-    {
-      get
-      {
-        return this.fE3x1KvvUM.SyncRoot;
-      }
-    }
+		public object SyncRoot
+		{
+			get
+			{
+				return this.list.SyncRoot;
+			}
+		}
 
-    internal SeriesCollection(DataFile file)
-    {
-      this.dataFile = file;
-      this.fE3x1KvvUM = new SortedList();
-    }
+		internal SeriesCollection(DataFile file)
+		{
+			this.dataFile = file;
+			this.list = new SortedList();
+		}
 
-    public bool Contains(string name)
-    {
-      return this.fE3x1KvvUM.ContainsKey((object) name);
-    }
+		public bool Contains(string name)
+		{
+			return this.list.ContainsKey((object)name);
+		}
 
-    public void Remove(string name)
-    {
-      FileSeries fileSeries = this[name];
-      this.fE3x1KvvUM.Remove((object) fileSeries.Name);
-//      this.dataFile.kBox0k2EsS().KgSKBZK4t(fileSeries);
-    }
+		public void Remove(string name)
+		{
+			FileSeries fileSeries = this[name];
+			this.list.Remove(fileSeries.Name);
+//			this.dataFile.kBox0k2EsS().Remove(fileSeries);
+		}
 
-    public FileSeries Add(string name)
-    {
-//      FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), name, "", this.dataFile.DefaultZipLevel, this.dataFile.DefaultBlockSize, this.dataFile.DefaultIndexer);
-//      this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
-//      this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
-//      return fileSeries;
-			return null;
-		   }
+		public FileSeries Add(string name)
+		{
+//			FileSeries fs = new FileSeries(this.dataFile.kBox0k2EsS(), name, "", this.dataFile.DefaultZipLevel, this.dataFile.DefaultBlockSize, this.dataFile.DefaultIndexer);
+			FileSeries fs = new FileSeries(name, "", this.dataFile.DefaultZipLevel, this.dataFile.DefaultBlockSize, this.dataFile.DefaultIndexer);
 
-    public void Rename(string oldName, string newName)
-    {
-      FileSeries fileSeries = this[oldName];
-//      if (fileSeries == null)
-//        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2392) + oldName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2418));
-//      if (this.Contains(newName))
-//        throw new ArgumentException(BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2444) + newName + BlZFvv9ctV0OZ2ZfIx.tWWdYtgAt1(2470));
-//      fileSeries.TaaFdlDDd(newName);
-//      this.fE3x1KvvUM.Remove((object) oldName);
-//      this.fE3x1KvvUM.Add((object) newName, (object) fileSeries);
-//      this.dataFile.kBox0k2EsS().VmKuLwiT3(fileSeries);
-    }
+			this.list.Add(fs.Name, fs);
+//			this.dataFile.kBox0k2EsS().Add(fs);
+			return fs;
+		}
 
-//    internal FileSeries zL2xM8qdRl([In] string obj0, [In] string obj1, [In] int obj2, [In] int obj3, [In] Indexer obj4)
-//    {
-//////      FileSeries fileSeries = new FileSeries(this.dataFile.kBox0k2EsS(), obj0, obj1, obj2, obj3, obj4);
-////      this.fE3x1KvvUM.Add((object) fileSeries.Name, (object) fileSeries);
-////      return fileSeries;
-//    }
+		public void Rename(string oldName, string newName)
+		{
+			FileSeries fs = this[oldName];
+			if (fs == null)
+				throw new ArgumentException("" + oldName);
+			if (this.Contains(newName))
+				throw new ArgumentException("" + newName);
+			fs.TaaFdlDDd(newName);
+			this.list.Remove(oldName);
+			this.list.Add(newName, fs);
+//			this.dataFile.kBox0k2EsS().VmKuLwiT3(fs);
+		}
 
-    public void CopyTo(Array array, int index)
-    {
-      this.fE3x1KvvUM.Values.CopyTo(array, index);
-    }
+		internal FileSeries zL2xM8qdRl(string obj0, string obj1, int obj2, int obj3, Indexer obj4)
+		{
+//			FileSeries fs = new FileSeries(this.dataFile.kBox0k2EsS(), obj0, obj1, obj2, obj3, obj4);
+			FileSeries fs = new FileSeries(obj0, obj1, obj2, obj3, obj4);
+			this.list.Add(fs.Name, fs);
+			return fs;
+		}
 
-    public IEnumerator GetEnumerator()
-    {
-      return this.fE3x1KvvUM.Values.GetEnumerator();
-    }
-  }
+		public void CopyTo(Array array, int index)
+		{
+			this.list.Values.CopyTo(array, index);
+		}
+
+		public IEnumerator GetEnumerator()
+		{
+			return this.list.Values.GetEnumerator();
+		}
+	}
 }

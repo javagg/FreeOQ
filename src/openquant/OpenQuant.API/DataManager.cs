@@ -12,7 +12,7 @@ namespace OpenQuant.API
 	{
 		public static BarSeries GetHistoricalBars(Instrument instrument, DateTime begin, DateTime end, BarType barType, long barSize)
 		{
-			FreeQuant.Instruments.Instrument instrument1 = Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument;
+			FreeQuant.Instruments.Instrument instrument1 = Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument;
 			if (barSize == 86400)
 				return new BarSeries((FreeQuant.Series.BarSeries)FreeQuant.Instruments.DataManager.GetDailySeries(instrument1, begin, end));
 			else
@@ -31,7 +31,7 @@ namespace OpenQuant.API
 
 		public static BarSeries GetHistoricalBars(Instrument instrument, DateTime begin, DateTime end)
 		{
-			return new BarSeries(FreeQuant.Instruments.DataManager.GetBarSeries(Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, begin, end));
+			return new BarSeries(FreeQuant.Instruments.DataManager.GetBarSeries(Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, begin, end));
 		}
 
 		public static BarSeries GetHistoricalBars(string provider, Instrument instrument, DateTime begin, DateTime end, int size)
@@ -70,12 +70,12 @@ namespace OpenQuant.API
 
 		public static QuoteSeries GetHistoricalQuotes(Instrument instrument, DateTime begin, DateTime end)
 		{
-			return new QuoteSeries(FreeQuant.Instruments.DataManager.GetQuoteArray(Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, begin, end));
+			return new QuoteSeries(FreeQuant.Instruments.DataManager.GetQuoteArray(Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, begin, end));
 		}
 
 		public static TradeSeries GetHistoricalTrades(Instrument instrument, DateTime begin, DateTime end)
 		{
-			return new TradeSeries(FreeQuant.Instruments.DataManager.GetTradeArray(Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, begin, end));
+			return new TradeSeries(FreeQuant.Instruments.DataManager.GetTradeArray(Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, begin, end));
 		}
 
 		private static bool SeriesNameToBarTypeSize(string name, out BarType barType, out long barSize)
@@ -110,7 +110,7 @@ namespace OpenQuant.API
 
 		public static void Add(Instrument instrument, Bar bar)
 		{
-			FreeQuant.Instruments.Instrument instrument1 = Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument;
+			FreeQuant.Instruments.Instrument instrument1 = Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument;
 			if (bar.bar.BarType == FreeQuant.Data.BarType.Time && bar.bar.Size == 86400L)
 			{
 				Daily daily = new Daily(bar.bar.DateTime, bar.bar.Open, bar.bar.High, bar.bar.Low, bar.bar.Close, bar.bar.Volume, bar.bar.OpenInt);
@@ -127,7 +127,7 @@ namespace OpenQuant.API
 
 		public static void Add(Instrument instrument, Trade trade)
 		{
-			FreeQuant.Instruments.DataManager.Add(Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, trade.trade);
+			FreeQuant.Instruments.DataManager.Add(Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, trade.trade);
 		}
 
 		public static void Add(Instrument instrument, DateTime datetime, double price, int size)
@@ -137,7 +137,7 @@ namespace OpenQuant.API
 
 		public static void Add(Instrument instrument, Quote quote)
 		{
-			FreeQuant.Instruments.DataManager.Add(Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, quote.quote);
+			FreeQuant.Instruments.DataManager.Add(Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, quote.quote);
 		}
 
 		public static void Add(Instrument instrument, DateTime datetime, double bid, int bidsize, double ask, int asksize)
@@ -147,7 +147,7 @@ namespace OpenQuant.API
 
 		public static void Add(Instrument instrument, OrderBookUpdate update)
 		{
-			FreeQuant.Instruments.DataManager.Add(Map.OQ_SQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, update.marketDepth);
+			FreeQuant.Instruments.DataManager.Add(Map.OQ_FQ_Instrument[(object)instrument] as FreeQuant.Instruments.Instrument, update.marketDepth);
 		}
 
 		public static void Add(Instrument instrument, DateTime datetime, BidAsk side, OrderBookAction action, int position, double price, int size)
