@@ -4,7 +4,7 @@
 // Assembly location: C:\Program Files\SmartQuant Ltd\OpenQuant\Framework\bin\SmartQuant.Shared.dll
 
 using AMiPSuhk8DSY5eSibKw;
-using SmartQuant;
+using FreeQuant;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Configuration
+namespace FreeQuant.Shared.Configuration
 {
   public class GacBrowserForm : Form
   {

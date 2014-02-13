@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -110,9 +110,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="PadProperyForm.resx" />
-    <None Include="Chart.resx" />
-    <None Include="Canvas.resx" />
+    <None Include="PadProperyForm.resx">
+      <DependentUpon>PadProperyForm.cs</DependentUpon>
+    </None>
+    <None Include="Chart.resx">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </None>
+    <None Include="Canvas.resx">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Draw3D\" />

@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.QuantRouterLib
 {
@@ -26,17 +25,16 @@ namespace FreeQuant.QuantRouterLib
     {
       ConnectionAcceptorState state = this.State;
       this.State = newState;
-      if (state == newState || this.UPlPFm0Ko == null)
+      if (state == newState || this.StateChanged == null)
         return;
-      this.UPlPFm0Ko((object) this, EventArgs.Empty);
+      this.StateChanged(this, EventArgs.Empty);
     }
 
 
     protected void OnConnectionAccepted(IConnection connection)
     {
-      if (this.rqTTQg3nv == null)
-        return;
-      this.rqTTQg3nv((object) this, new ConnectionEventArgs(connection));
+      if (this.ConnectionAccepted != null)
+	      this.ConnectionAccepted(this, new ConnectionEventArgs(connection));
     }
   }
 }

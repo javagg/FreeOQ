@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,13 +41,13 @@
     <Compile Include="StringValueXmlNode.cs" />
     <Compile Include="PropertyXmlNode.cs" />
     <Compile Include="PropertyListXmlNode.cs" />
-    <Compile Include="ListXmlNode`1.cs" />
+    <Compile Include="ListXmlNode.cs" />
     <Compile Include="Int64ValueXmlNode.cs" />
     <Compile Include="Int32ValueXmlNode.cs" />
     <Compile Include="Int16ValueXmlNode.cs" />
     <Compile Include="GuidValueXmlNode.cs" />
     <Compile Include="FloatValueXmlNode.cs" />
-    <Compile Include="EnumValueXmlNode`1.cs" />
+    <Compile Include="EnumValueXmlNode.cs" />
     <Compile Include="DoubleValueXmlNode.cs" />
     <Compile Include="DecimalValueXmlNode.cs" />
     <Compile Include="DateTimeValueXmlNode.cs" />

@@ -8,7 +8,7 @@ using SmartQuant;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
-namespace SmartQuant.Shared.Configuration
+namespace FreeQuant.Shared.Configuration
 {
   public class PluginViewItem : ListViewItem
   {

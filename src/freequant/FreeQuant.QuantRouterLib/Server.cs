@@ -1,53 +1,47 @@
 using System;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.QuantRouterLib
 {
-  public class Server
-  {
-    private IConnectionAcceptor acceptor;
+	public class Server
+	{
+		private IConnectionAcceptor acceptor;
 
-    public ConnectionAcceptorState AcceptorState
-    {
-       get
-      {
-        return this.acceptor.State;
-      }
-    }
+		public ConnectionAcceptorState AcceptorState
+		{
+			get
+			{
+				return this.acceptor.State;
+			}
+		}
 
-    public event EventHandler AcceptorStateChanged;
-
-    public event EventHandler<ConnectionEventArgs> ConnectionAccepted;
+		public event EventHandler AcceptorStateChanged;
+		public event EventHandler<ConnectionEventArgs> ConnectionAccepted;
 
 		public Server(IConnectionAcceptor acceptor)
-    {
+		{
 			this.acceptor = acceptor; 
-      acceptor.StateChanged += new EventHandler(this.vPChQclbed);
-      acceptor.ConnectionAccepted += new EventHandler<ConnectionEventArgs>(this.eakhiQJEUE);
-    }
+			acceptor.StateChanged += (sender, e) =>
+			{
+				if (this.AcceptorStateChanged != null)
+					this.AcceptorStateChanged(this, EventArgs.Empty);
+			};
 
-    public void Start(string connectionString)
-    {
-      this.acceptor.Start(connectionString);
-    }
+			acceptor.ConnectionAccepted += (sender, e) =>
+			{
+				if (this.ConnectionAccepted != null)
+					this.ConnectionAccepted(this, e);
+			};
 
-    public void Stop()
-    {
-      this.acceptor.Stop();
-    }
+		}
 
-    private void vPChQclbed([In] object obj0, [In] EventArgs obj1)
-    {
-      if (this.sTPhXSa4kI == null)
-        return;
-      this.sTPhXSa4kI((object) this, EventArgs.Empty);
-    }
+		public void Start(string connectionString)
+		{
+			this.acceptor.Start(connectionString);
+		}
 
-    private void eakhiQJEUE([In] object obj0, [In] ConnectionEventArgs obj1)
-    {
-      if (this.LonhJIL5Gh == null)
-        return;
-      this.LonhJIL5Gh((object) this, obj1);
-    }
-  }
+		public void Stop()
+		{
+			this.acceptor.Stop();
+		}
+	}
 }

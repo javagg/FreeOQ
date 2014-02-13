@@ -1,8 +1,7 @@
 using FreeQuant.QuantRouterLib.Data;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+
 
 namespace FreeQuant.QuantRouterLib.Messages
 {
@@ -30,7 +29,7 @@ namespace FreeQuant.QuantRouterLib.Messages
         this.H4vuEjxO1C(writer, brokerAccount);
     }
 
-    private void H4vuEjxO1C([In] BinaryWriter obj0, [In] BrokerAccount obj1)
+    private void H4vuEjxO1C( BinaryWriter obj0,  BrokerAccount obj1)
     {
       obj0.Write(obj1.Name);
       obj0.Write(obj1.BuyingPower);
@@ -52,7 +51,7 @@ namespace FreeQuant.QuantRouterLib.Messages
       }
     }
 
-    private void oR3uofPPWO([In] BinaryWriter obj0, [In] BrokerPosition obj1)
+    private void oR3uofPPWO( BinaryWriter obj0,  BrokerPosition obj1)
     {
       obj0.Write(obj1.Currency);
       obj0.Write(obj1.LongQty);
@@ -73,7 +72,7 @@ namespace FreeQuant.QuantRouterLib.Messages
       }
     }
 
-    private void RoYu8jI0tu([In] BinaryWriter obj0, [In] BrokerOrder obj1)
+    private void RoYu8jI0tu( BinaryWriter obj0,  BrokerOrder obj1)
     {
       obj0.Write(obj1.Currency);
       obj0.Write(obj1.OrderID);
@@ -103,7 +102,7 @@ namespace FreeQuant.QuantRouterLib.Messages
         this.Data.Accounts.Add(this.cKpu5qjmIn(reader));
     }
 
-    private BrokerAccount cKpu5qjmIn([In] BinaryReader obj0)
+    private BrokerAccount cKpu5qjmIn( BinaryReader obj0)
     {
       string name1 = obj0.ReadString();
       double num1 = obj0.ReadDouble();
@@ -126,7 +125,7 @@ namespace FreeQuant.QuantRouterLib.Messages
       return brokerAccount;
     }
 
-    private BrokerPosition lrvuzgJsBI([In] BinaryReader obj0)
+    private BrokerPosition lrvuzgJsBI( BinaryReader obj0)
     {
       BrokerPosition brokerPosition = new BrokerPosition();
       brokerPosition.Currency = obj0.ReadString();
@@ -149,7 +148,7 @@ namespace FreeQuant.QuantRouterLib.Messages
       return brokerPosition;
     }
 
-    private BrokerOrder vHxhvWlydv([In] BinaryReader obj0)
+    private BrokerOrder vHxhvWlydv( BinaryReader obj0)
     {
       BrokerOrder brokerOrder = new BrokerOrder();
       brokerOrder.Currency = obj0.ReadString();

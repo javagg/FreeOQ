@@ -2,61 +2,59 @@ using FreeQuant.QuantRouterLib;
 using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.QuantRouterLib.Tcp
 {
-  public class TcpConnectionAcceptor : ConnectionAcceptor
-  {
-    public const int DEFAULT_PORT = 8883;
-    private TcpListener CqSpavGFs;
+	public class TcpConnectionAcceptor : ConnectionAcceptor
+	{
+		public const int DEFAULT_PORT = 8883;
+		private TcpListener listener;
 
-    public override void Start(string connectionString)
-    {
-      int port;
-      if (!new ConnectionStringParser(connectionString).TryGetValue(Jqmkr5Pw3rRZ2LrRQr.KP3MGNG1bS(66), out port))
-        port = 8883;
-      this.CqSpavGFs = new TcpListener(IPAddress.Any, port);
-      try
-      {
-        this.SetState(ConnectionAcceptorState.Starting);
-        this.CqSpavGFs.Start();
-        this.KauryJhJr();
-        this.SetState(ConnectionAcceptorState.Started);
-      }
-      catch (Exception ex)
-      {
-        this.CqSpavGFs = (TcpListener) null;
-        this.SetState(ConnectionAcceptorState.Stopped);
-        throw ex;
-      }
-    }
+		public override void Start(string connectionString)
+		{
+			int port;
+			if (!new ConnectionStringParser(connectionString).TryGetValue("port", out port))
+				port = DEFAULT_PORT;
+			this.listener = new TcpListener(IPAddress.Any, port);
+			try
+			{
+				this.SetState(ConnectionAcceptorState.Starting);
+				this.listener.Start();
+				this.KauryJhJr();
+				this.SetState(ConnectionAcceptorState.Started);
+			}
+			catch (Exception ex)
+			{
+				this.listener = null;
+				this.SetState(ConnectionAcceptorState.Stopped);
+				throw ex;
+			}
+		}
 
-    public override void Stop()
-    {
-      this.CqSpavGFs.Stop();
-    }
+		public override void Stop()
+		{
+			this.listener.Stop();
+		}
 
-    private void KauryJhJr()
-    {
-      this.CqSpavGFs.BeginAcceptTcpClient(new AsyncCallback(this.c2Q2JKuqw), (object) this.CqSpavGFs);
-    }
+		private void KauryJhJr()
+		{
+			this.listener.BeginAcceptTcpClient(new AsyncCallback(this.c2Q2JKuqw), this.listener);
+		}
 
-    private void c2Q2JKuqw([In] IAsyncResult obj0)
-    {
-      TcpListener tcpListener = (TcpListener) obj0.AsyncState;
-      try
-      {
-        TcpClient tcpClient = tcpListener.EndAcceptTcpClient(obj0);
-        TcpConnection tcpConnection = new TcpConnection();
-        tcpConnection.AOfaXfDTg(tcpClient);
-        this.OnConnectionAccepted((IConnection) tcpConnection);
-        this.KauryJhJr();
-      }
-      catch (Exception ex)
-      {
-      }
-    }
-  }
+		private void c2Q2JKuqw(IAsyncResult result)
+		{
+			TcpListener tcpListener = (TcpListener)result.AsyncState;
+			try
+			{
+				TcpClient tcpClient = tcpListener.EndAcceptTcpClient(result);
+				TcpConnection tcpConnection = new TcpConnection();
+				tcpConnection.AOfaXfDTg(tcpClient);
+				this.OnConnectionAccepted(tcpConnection);
+				this.KauryJhJr();
+			}
+			catch
+			{
+			}
+		}
+	}
 }

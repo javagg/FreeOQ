@@ -1388,7 +1388,7 @@ namespace FreeQuant.Testing
 			this.Udfyv7dk1s(obj0, obj1);
 		}
 
-		private void GvwyC63XLV([object sender, EventArgs e)
+		private void GvwyC63XLV(object sender, EventArgs e)
 		{
 			this.lRqy00gKm6(sender, e);
 		}

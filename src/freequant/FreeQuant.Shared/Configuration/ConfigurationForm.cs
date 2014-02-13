@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using zOf5tchxCBEIPRknFZK;
 
-namespace SmartQuant.Shared.Configuration
+namespace FreeQuant.Shared.Configuration
 {
   public class ConfigurationForm : Form
   {
