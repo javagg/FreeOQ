@@ -1,6 +1,6 @@
 using OpenQuant.Shared;
 using OpenQuant.Shared.Indicators;
-using OpenQuant.Shared.Properties;
+//using OpenQuant.Shared.Properties;
 using FreeQuant.FinChart;
 using FreeQuant.Indicators;
 using FreeQuant.Series;

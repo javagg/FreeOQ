@@ -33,7 +33,7 @@ namespace OpenQuant.Shared
 					case OpenQuant.API.InstrumentType.Commodity:
 						return "CMDTY";
 					default:
-						throw new ArgumentException(string.Format("Unknown InstrumentType - {0}", (object)value));
+						throw new ArgumentException(string.Format("Unknown InstrumentType - {0}", value));
 				}
 			}
 

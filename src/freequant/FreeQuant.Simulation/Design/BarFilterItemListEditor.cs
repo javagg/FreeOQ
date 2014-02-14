@@ -1,41 +1,36 @@
 using FreeQuant.Simulation;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.ComponentModel.Design;
 
 namespace FreeQuant.Simulation.Design
 {
-  public class BarFilterItemListEditor : CollectionEditor
-  {
-    private CollectionEditor.CollectionForm tmvwQYAsq;
+	public class BarFilterItemListEditor : CollectionEditor
+	{
+		private CollectionEditor.CollectionForm form;
 
-    public static event EventHandler ListChanged;
+		public static event EventHandler ListChanged;
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public BarFilterItemListEditor()
-    {
-      eekpcgzPjZLOyP2Ysv.eyppkuTzDkifX();
-      // ISSUE: explicit constructor call
-      base.\u002Ector(typeof (List<BarFilterItem>));
-    }
+		
+		public BarFilterItemListEditor() :  base(typeof(List<BarFilterItem>))
+		{
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    protected override CollectionEditor.CollectionForm CreateCollectionForm()
-    {
-      this.tmvwQYAsq = base.CreateCollectionForm();
-      this.tmvwQYAsq.FormClosed += new FormClosedEventHandler(this.UWtSfYmpY);
-      return this.tmvwQYAsq;
-    }
+		
+		protected override CollectionEditor.CollectionForm CreateCollectionForm()
+		{
+			this.form = base.CreateCollectionForm();
+			this.form.FormClosed += new FormClosedEventHandler(this.UWtSfYmpY);
+			return this.form;
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    private void UWtSfYmpY([In] object obj0, [In] FormClosedEventArgs obj1)
-    {
-      if (this.tmvwQYAsq.DialogResult != DialogResult.OK || BarFilterItemListEditor.ODbclBde0 == null)
-        return;
-      BarFilterItemListEditor.ODbclBde0((object) this, EventArgs.Empty);
-    }
-  }
+		
+		private void UWtSfYmpY(object sender, FormClosedEventArgs e)
+		{
+			if (this.form.DialogResult != DialogResult.OK || BarFilterItemListEditor.ListChanged == null)
+				return;
+			BarFilterItemListEditor.ListChanged(this, EventArgs.Empty);
+		}
+	}
 }

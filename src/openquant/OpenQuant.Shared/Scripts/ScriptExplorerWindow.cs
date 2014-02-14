@@ -4,6 +4,7 @@ using OpenQuant.Shared.Editor;
 using OpenQuant.Shared.Options;
 using OpenQuant.Shared.Properties;
 using OpenQuant.Shared.ToolWindows;
+//using FreeQuant.Docking.WinForms;
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -8,7 +8,7 @@ namespace OpenQuant.Shared.Updates
 		{
 			get
 			{
-				return (ReleaseListXmlNode)this.GetChildNode<ReleaseListXmlNode>();
+				return this.GetChildNode<ReleaseListXmlNode>();
 			}
 		}
 

@@ -11,11 +11,12 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using FreeQuant.Docking.WinForms;
 using TD.SandDock;
 
 namespace OpenQuant.Shared.TradingTools
 {
-  internal class OrderBookWindow : FreeQuant.Docking.WinForms.DockControl, ITimerItem
+  class OrderBookWindow : FreeQuant.Docking.WinForms.DockControl, ITimerItem
   {
     private IContainer components;
     private DataGridView dgvBook;

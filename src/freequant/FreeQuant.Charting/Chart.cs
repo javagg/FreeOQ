@@ -811,9 +811,8 @@ namespace FreeQuant.Charting
 			if (this.fPadSplit)
 			{
 				this.fPadSplit = false;
-//        if (this.JxOC7adEtl == null)
-//          return;
-//        this.JxOC7adEtl((object) this, EventArgs.Empty);
+				if (this.PadSplitMouseUp != null)
+					this.PadSplitMouseUp(this, EventArgs.Empty);
 			}
 			else
 			{

@@ -1,61 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{F190688D-00D5-4BBD-BE0E-212A9B129D4D}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{746915D5-7763-4304-9D4C-29469CABD2E8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>OpenQuant.Shared</RootNamespace>
     <AssemblyName>OpenQuant.Shared</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <DebugSymbols>True</DebugSymbols>
-    <DebugType>Full</DebugType>
-    <Optimize>False</Optimize>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <DebugSymbols>False</DebugSymbols>
-    <DebugType>None</DebugType>
-    <Optimize>True</Optimize>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="QWhale.Common">
+      <HintPath>..\..\..\libs\QWhale.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="QWhale.Editor">
+      <HintPath>..\..\..\libs\QWhale.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="QWhale.Syntax">
+      <HintPath>..\..\..\libs\QWhale.Syntax.dll</HintPath>
+    </Reference>
+    <Reference Include="QWhale.Syntax.Parsers">
+      <HintPath>..\..\..\libs\QWhale.Syntax.Parsers.dll</HintPath>
+    </Reference>
     <Reference Include="SandDock">
       <HintPath>..\..\..\libs\SandDock.dll</HintPath>
     </Reference>
+    <Reference Include="SharpZipLib">
+      <HintPath>..\..\..\libs\SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutForm.cs" />
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="APITypeConverter.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AboutForm.Designer.cs" />
     <Compile Include="Charting\AddIndicatorForm.cs" />
     <Compile Include="Charting\AddIndicatorForm.Designer.cs">
       <DependentUpon>AddIndicatorForm.cs</DependentUpon>
@@ -284,9 +289,7 @@
     <Compile Include="Data\Management\TradeEditor.cs" />
     <Compile Include="Data\Management\TradeViewer.cs" />
     <Compile Include="DemoDialog.cs" />
-    <Compile Include="DemoDialog.Designer.cs">
-      <DependentUpon>DemoDialog.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DemoDialog.Designer.cs" />
     <Compile Include="Diagnostics\CounterData.cs" />
     <Compile Include="Diagnostics\EventCounter.cs" />
     <Compile Include="Diagnostics\EventCounterViewRow.cs" />
@@ -405,6 +408,8 @@
     <Compile Include="Plugins\PluginXmlNode.cs" />
     <Compile Include="PriceFormatHelper.cs" />
     <Compile Include="ProductInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="APITypeConverter.cs" />
     <Compile Include="Properties\Resources.cs" />
     <Compile Include="Providers\ProviderErrorDetailsForm.cs" />
     <Compile Include="Providers\ProviderErrorListWindow.cs" />
@@ -514,10 +519,71 @@
     <Compile Include="Updates\UpdateManager.cs" />
     <Compile Include="Updates\UriEventArgs.cs" />
   </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Charting\FreeQuant.Charting.csproj">
+      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
+      <Name>FreeQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Data\FreeQuant.Data.csproj">
+      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
+      <Name>FreeQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Docking.Winforms\FreeQuant.Docking.Winforms.csproj">
+      <Project>{9D6468C0-A5EF-46FB-8C54-0D9020691A93}</Project>
+      <Name>FreeQuant.Docking.Winforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Execution\FreeQuant.Execution.csproj">
+      <Project>{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}</Project>
+      <Name>FreeQuant.Execution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.FinChart\FreeQuant.FinChart.csproj">
+      <Project>{DF620AB6-4B8F-49EF-927B-D758E70B8952}</Project>
+      <Name>FreeQuant.FinChart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.FIX\FreeQuant.FIX.csproj">
+      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
+      <Name>FreeQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Indicators\FreeQuant.Indicators.csproj">
+      <Project>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</Project>
+      <Name>FreeQuant.Indicators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
+      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
+      <Name>FreeQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.NxCoreLib\FreeQuant.NxCoreLib.csproj">
+      <Project>{72723DAD-BD0F-4CC3-88F4-027EC7DEC341}</Project>
+      <Name>FreeQuant.NxCoreLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Providers\FreeQuant.Providers.csproj">
+      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
+      <Name>FreeQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Series\FreeQuant.Series.csproj">
+      <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
+      <Name>FreeQuant.Series</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Simulation\FreeQuant.Simulation.csproj">
+      <Project>{B59E197F-3529-4D45-BA90-2A7AE0962B5B}</Project>
+      <Name>FreeQuant.Simulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant.Xml\FreeQuant.Xml.csproj">
+      <Project>{7225682B-5328-446F-8798-4E76B843D87E}</Project>
+      <Name>FreeQuant.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\freequant\FreeQuant\FreeQuant.csproj">
+      <Project>{8088EAB3-8D1A-431B-AB6C-456ED9B9A9D0}</Project>
+      <Name>FreeQuant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenQuant.API\OpenQuant.API.csproj">
+      <Project>{40E0C499-01D7-4D12-97C6-EBA1F605F756}</Project>
+      <Name>OpenQuant.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutForm.resx" />
     <EmbeddedResource Include="Charting\AddIndicatorForm.resx">
       <DependentUpon>AddIndicatorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -570,9 +636,7 @@
     <EmbeddedResource Include="Data\Management\NewBarSeriesForm.resx" />
     <EmbeddedResource Include="Data\Management\QuoteEditor.resx" />
     <EmbeddedResource Include="Data\Management\TradeEditor.resx" />
-    <EmbeddedResource Include="DemoDialog.resx">
-      <DependentUpon>DemoDialog.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="DemoDialog.resx" />
     <EmbeddedResource Include="Diagnostics\EventMonitorWindow.resx" />
     <EmbeddedResource Include="Diagnostics\PerformanceMonitorWindow.resx" />
     <EmbeddedResource Include="Editor\EditorWindow.resx" />
@@ -603,9 +667,7 @@
     <EmbeddedResource Include="Scripts\RenameFileSystemEntryForm.resx" />
     <EmbeddedResource Include="Scripts\ScriptEditorWindow.resx" />
     <EmbeddedResource Include="Scripts\ScriptExplorerWindow.resx" />
-    <EmbeddedResource Include="SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx" />
     <EmbeddedResource Include="ToolWindows\ErrorListWindow.resx" />
     <EmbeddedResource Include="ToolWindows\OutputWindow.resx" />
     <EmbeddedResource Include="ToolWindows\PropertiesWindow.resx" />
@@ -616,67 +678,32 @@
     <EmbeddedResource Include="Updates\ReleaseNotesControl.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Data\Export\" />
-    <Folder Include="Data\Import\" />
+    <Folder Include="Charting" />
+    <Folder Include="Compiler" />
+    <Folder Include="Data" />
+    <Folder Include="Data\Bars" />
+    <Folder Include="Data\Export" />
+    <Folder Include="Data\Export\CSV" />
+    <Folder Include="Data\Import" />
+    <Folder Include="Data\Import\CSV" />
+    <Folder Include="Data\Import\Historical" />
+    <Folder Include="Data\Import\Instruments" />
+    <Folder Include="Data\Import\NxCore" />
+    <Folder Include="Data\Import\Realtime" />
+    <Folder Include="Data\Import\TAQ" />
+    <Folder Include="Data\Management" />
+    <Folder Include="Diagnostics" />
+    <Folder Include="Editor" />
+    <Folder Include="Indicators" />
+    <Folder Include="Instruments" />
+    <Folder Include="Logs" />
+    <Folder Include="Options" />
+    <Folder Include="Plugins" />
+    <Folder Include="Providers" />
+    <Folder Include="QuantTrader" />
+    <Folder Include="Scripts" />
+    <Folder Include="ToolWindows" />
+    <Folder Include="TradingTools" />
+    <Folder Include="Updates" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Business\FreeQuant.Business.csproj">
-      <Project>{B20CD445-C1EF-4393-9CF7-F8A6F8B90B91}</Project>
-      <Name>FreeQuant.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Charting\FreeQuant.Charting.csproj">
-      <Project>{D71862B4-8E16-4C62-9926-9AA7425BE972}</Project>
-      <Name>FreeQuant.Charting</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Data\FreeQuant.Data.csproj">
-      <Project>{ADBC5DAD-5E84-4B45-BF7D-418391260276}</Project>
-      <Name>FreeQuant.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.ExcelLib\FreeQuant.ExcelLib.csproj">
-      <Project>{794DB14F-DB45-4EFC-8E44-09BABF80A06C}</Project>
-      <Name>FreeQuant.ExcelLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Execution\FreeQuant.Execution.csproj">
-      <Project>{5612B6E7-B464-42B6-A1A5-3A3E1C84D142}</Project>
-      <Name>FreeQuant.Execution</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.FinChart\FreeQuant.FinChart.csproj">
-      <Project>{DF620AB6-4B8F-49EF-927B-D758E70B8952}</Project>
-      <Name>FreeQuant.FinChart</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.FIX\FreeQuant.FIX.csproj">
-      <Project>{B0CC6138-44F7-4092-9A0A-D3E550107644}</Project>
-      <Name>FreeQuant.FIX</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Indicators\FreeQuant.Indicators.csproj">
-      <Project>{18BD2047-FDE1-457F-A614-E6B5DFE0AB45}</Project>
-      <Name>FreeQuant.Indicators</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Instruments\FreeQuant.Instruments.csproj">
-      <Project>{2768F1D0-79E8-4E6D-AB34-19F598176D98}</Project>
-      <Name>FreeQuant.Instruments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.NxCoreLib\FreeQuant.NxCoreLib.csproj">
-      <Project>{B7FA590B-13FB-4403-A405-4BA64D45029C}</Project>
-      <Name>FreeQuant.NxCoreLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Providers\FreeQuant.Providers.csproj">
-      <Project>{B01B5155-C05D-49EF-82DC-FC01CE1F49E3}</Project>
-      <Name>FreeQuant.Providers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.QuantBaseLib\FreeQuant.QuantBaseLib.csproj">
-      <Project>{7ADA576D-852C-410D-B1B0-7FAD9D9B7B54}</Project>
-      <Name>FreeQuant.QuantBaseLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Series\FreeQuant.Series.csproj">
-      <Project>{01766337-46DD-4449-BED0-3B07C37519ED}</Project>
-      <Name>FreeQuant.Series</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\freequant\FreeQuant.Xml\FreeQuant.Xml.csproj">
-      <Project>{7225682B-5328-446F-8798-4E76B843D87E}</Project>
-      <Name>FreeQuant.Xml</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

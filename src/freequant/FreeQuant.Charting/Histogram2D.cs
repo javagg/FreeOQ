@@ -33,8 +33,6 @@ namespace FreeQuant.Charting
     public ESmoothing Smoothing;
     [NonSerialized]
 		private Brush[] brushes; 
-    private bool toolTipEnabled;
-    private string toolTipFormat;
     public bool Multicolor3D;
 
     public EChartLook Look

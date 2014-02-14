@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace FreeQuant.Charting
@@ -12,7 +11,7 @@ namespace FreeQuant.Charting
 	{
 		private HelpProvider helpProvider;
 		private Chart chart;
-		private Container container;
+		private IContainer container;
 
 		public Pad Pad
 		{
@@ -323,6 +322,7 @@ namespace FreeQuant.Charting
 
 		private void InitializeComponent()
 		{
+			this.container = new Container();
 			this.helpProvider = new HelpProvider();
 			this.chart = new Chart();
 			this.SuspendLayout();

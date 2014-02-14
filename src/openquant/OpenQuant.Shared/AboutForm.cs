@@ -91,12 +91,12 @@ namespace OpenQuant.Shared
 			this.InitializeComponent();
 			this.Text = string.Format("About {0}", (object)Global.Setup.Product.Name);
 			this.lblProductName.Text = Global.Setup.Product.Name;
-			this.lblVersion.Text = string.Format("Version {0} {1}", (object)Global.Setup.Product.Version.ToString(3), (object)Global.Setup.Product.Platform);
+			this.lblVersion.Text = string.Format("Version {0} {1}", (object)Global.Setup.Product.Version.ToString(3), Global.Setup.Product.Platform);
 			this.lblCopyright.Text = Global.Setup.Product.Copyright;
 			this.tbxDescription.Text = this.AssemblyDescription;
 			LicenseInfo license = Framework.Installation.GetLicense();
 			if (license.Licensed != null)
-				this.tbxDescription.Text = string.Format("Licensed to:{0}  {1}{0}  {2}{0}{0}Comment:{0}  {3}", (object)Environment.NewLine, (object)(((SortedList<string, string>)license.KeyValueList).ContainsKey("User") ? ((SortedList<string, string>)license.KeyValueList)["User"] : string.Empty), (object)(((SortedList<string, string>)license.KeyValueList).ContainsKey("Company") ? ((SortedList<string, string>)license.KeyValueList)["Company"] : string.Empty), (object)(((SortedList<string, string>)license.KeyValueList).ContainsKey("Comment") ? ((SortedList<string, string>)license.KeyValueList)["Comment"] : string.Empty));
+				this.tbxDescription.Text = string.Format("Licensed to:{0}  {1}{0}  {2}{0}{0}Comment:{0}  {3}", Environment.NewLine, (object)(((SortedList<string, string>)license.KeyValueList).ContainsKey("User") ? ((SortedList<string, string>)license.KeyValueList)["User"] : string.Empty), (object)(((SortedList<string, string>)license.KeyValueList).ContainsKey("Company") ? ((SortedList<string, string>)license.KeyValueList)["Company"] : string.Empty), (object)(((SortedList<string, string>)license.KeyValueList).ContainsKey("Comment") ? ((SortedList<string, string>)license.KeyValueList)["Comment"] : string.Empty));
 			else
 				this.tbxDescription.Text = "Unlicensed copy.";
 			try

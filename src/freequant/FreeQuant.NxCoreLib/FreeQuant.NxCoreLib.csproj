@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B7FA590B-13FB-4403-A405-4BA64D45029C}</ProjectGuid>
+    <ProjectGuid>{72723DAD-BD0F-4CC3-88F4-027EC7DEC341}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>FreeQuant.NxCoreLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>

@@ -2434,7 +2434,7 @@ namespace FreeQuant.Charting
 			{
 				this.fGraphics.DrawLine(Pen, this.ClientX(X), (int)Y, this.ClientX(X), (int)Y + Length);
 			}
-			catch (Exception ex)
+			catch
 			{
 			}
 		}
@@ -2445,7 +2445,7 @@ namespace FreeQuant.Charting
 			{
 				this.fGraphics.DrawLine(Pen, (int)X, this.ClientY(Y), (int)X + Length, this.ClientY(Y));
 			}
-			catch (Exception ex)
+			catch
 			{
 			}
 		}

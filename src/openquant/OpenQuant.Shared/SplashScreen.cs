@@ -1,4 +1,4 @@
-﻿using OpenQuant.Shared.Properties;
+﻿//using OpenQuant.Shared.Properties;
 using FreeQuant;
 using System;
 using System.Collections;

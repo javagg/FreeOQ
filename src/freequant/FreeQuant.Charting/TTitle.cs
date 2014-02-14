@@ -10,7 +10,6 @@ namespace FreeQuant.Charting
 	{
 		private Pad pad;
 		private ArrayList items;
-		private int y;
 
 		public ArrayList Items
 		{

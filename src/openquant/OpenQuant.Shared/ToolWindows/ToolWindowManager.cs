@@ -1,4 +1,4 @@
-﻿//using OpenQuant.API;
+﻿using OpenQuant.API;
 using OpenQuant.Shared;
 using OpenQuant.Shared.Compiler;
 using FreeQuant.Docking.WinForms;
@@ -8,6 +8,10 @@ using FreeQuant.Providers.Design;
 using FreeQuant.Simulation.Design;
 using System;
 using TD.SandDock;
+
+using ProviderManager = FreeQuant.Providers.ProviderManager;
+using Instrument = FreeQuant.Instruments.Instrument;
+using InstrumentManager = FreeQuant.Instruments.InstrumentManager;
 
 namespace OpenQuant.Shared.ToolWindows
 {

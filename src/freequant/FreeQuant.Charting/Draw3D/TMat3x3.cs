@@ -149,9 +149,19 @@ namespace FreeQuant.Charting.Draw3D
 			this.data[2, 2] = i;
 		}
 
+		public override bool Equals(object obj)
+		{
+			TMat3x3 that = (TMat3x3)obj;
+			return that.xx == this.xx && that.xy == this.xy && that.xz == this.xz && that.yx == this.yx && that.yy == this.yy && that.yz == this.xz && that.zx == this.zx && that.zy == this.zy && that.zz == this.xz;
+		}
+		public override int GetHashCode()
+		{
+			return this.xx.GetHashCode() ^ this.xy.GetHashCode() ^ this.xz.GetHashCode() ^ this.yx.GetHashCode() ^ this.yy.GetHashCode() ^ this.yz.GetHashCode() ^ this.zx.GetHashCode() ^ this.zy.GetHashCode() ^ this.zz.GetHashCode();
+		}
+
 		public static bool operator ==(TMat3x3 b, TMat3x3 a)
 		{
-			return b.xx == a.xx && b.xy == a.xy && b.xz == a.xz && b.yx == a.yx && b.yy == a.yy && b.yz == a.xz && b.zx == a.zx && b.zy == a.zy && b.zz == a.xz;
+			return a.Equals(b);
 		}
 
 		public static bool operator !=(TMat3x3 b, TMat3x3 a)

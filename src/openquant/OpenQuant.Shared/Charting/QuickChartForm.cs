@@ -1,7 +1,7 @@
 ﻿using OpenQuant.Shared;
 using OpenQuant.Shared.Data;
 using OpenQuant.Shared.Instruments;
-using OpenQuant.Shared.Properties;
+//using OpenQuant.Shared.Properties;
 using OpenQuant.Shared.ToolWindows;
 using FreeQuant.Data;
 using FreeQuant.FinChart;

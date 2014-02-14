@@ -1,7 +1,7 @@
-﻿using OpenQuant.Shared;
-using System.IO;
+﻿using System.IO;
 using System.Xml;
 using TD.SandDock.Rendering;
+using System.Windows.Forms;
 
 namespace OpenQuant.Shared.Options
 {

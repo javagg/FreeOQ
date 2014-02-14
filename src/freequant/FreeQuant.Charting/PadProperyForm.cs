@@ -12,13 +12,13 @@ namespace FreeQuant.Charting
     private object KtO3rBrbaI;
     private Pad evD3c4dHMV;
 		private PropertyGrid propertyGrid; 
-    private Container ahN3WtCyLA;
+    private IContainer container;
 
     
     public PadProperyForm(object Object, Pad Pad):base()
     {
 
-      this.nev3U8bfUe();
+      this.InitializeComponent();
       this.KtO3rBrbaI = Object;
       this.evD3c4dHMV = Pad;
 			this.Text = Object.GetType().Name + "Pad";
@@ -28,15 +28,16 @@ namespace FreeQuant.Charting
     
     protected override void Dispose(bool disposing)
     {
-      if (disposing && this.ahN3WtCyLA != null)
-        this.ahN3WtCyLA.Dispose();
+      if (disposing && this.container != null)
+        this.container.Dispose();
       base.Dispose(disposing);
     }
 
     
-    private void nev3U8bfUe()
+    private void InitializeComponent()
     {
-      ResourceManager resourceManager = new ResourceManager(typeof (PadProperyForm));
+    	this.container = new Container();
+    	ResourceManager resourceManager = new ResourceManager(typeof (PadProperyForm));
       this.propertyGrid = new PropertyGrid();
       this.SuspendLayout();
       this.propertyGrid.CommandsVisibleIfAvailable = true;

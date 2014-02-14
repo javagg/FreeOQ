@@ -1,7 +1,7 @@
 ﻿using OpenQuant.Shared;
 using OpenQuant.Shared.Data;
 using OpenQuant.Shared.Instruments;
-using OpenQuant.Shared.Properties;
+//using OpenQuant.Shared.Properties;
 using OpenQuant.Shared.ToolWindows;
 using FreeQuant.Data;
 using FreeQuant.FinChart;
@@ -16,7 +16,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-//using TD.SandDock;
+using TD.SandDock;
 
 namespace OpenQuant.Shared.Charting
 {
@@ -96,7 +96,7 @@ namespace OpenQuant.Shared.Charting
       this.Name = "QuickChartForm";
       this.PersistState = false;
       this.Size = new Size(576, 338);
-      this.TabImage = (Image) Resources.chart;
+    //  this.TabImage = (Image) Resources.chart;
       this.ResumeLayout(false);
     }
   }
