@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
 
+using Strategy = OpenQuant.API.Strategy;
+
 namespace OpenQuant.Trading
 {
   public class StrategyRunner : IInstrumentSource
@@ -77,7 +79,7 @@ namespace OpenQuant.Trading
         FieldInfo field = typeof (Strategy).GetField("active", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.GetField | BindingFlags.SetField);
         foreach (Strategy strategy in this.Strategies.Values)
         {
-          field.SetValue((object) strategy, (object) (bool) (this.active ? 1 : 0));
+          field.SetValue(strategy, this.active);
           strategy.OnActiveChanged();
         }
       }
@@ -322,19 +324,19 @@ namespace OpenQuant.Trading
       bool flag = (bool) this.sampleStrategy.GetType().GetField("ReportEnabled", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField | BindingFlags.SetField).GetValue((object) this.sampleStrategy);
       TimeIntervalSize timeIntervalSize = (TimeIntervalSize) this.sampleStrategy.GetType().GetField("TestingPeriod", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField | BindingFlags.SetField).GetValue((object) this.sampleStrategy);
       this.tester = new LiveTester(this.sq_Portfolio);
-      this.tester.set_TimeInterval(timeIntervalSize);
+            this.tester.TimeInterval = timeIntervalSize;
       this.tester.DisableComponents();
       if (!flag)
       {
-        this.tester.set_AllowRoundTrips(false);
+                this.tester.AllowRoundTrips = false;
       }
       else
       {
         this.tester.Disconnect();
         this.tester.Connect();
         this.tester.Reset();
-        this.tester.set_FollowChanges(true);
-        this.tester.set_AllowRoundTrips(true);
+                this.tester.FollowChanges = true;
+                this.tester.AllowRoundTrips = true;
         this.AddTesterComponents();
       }
     }
@@ -423,7 +425,7 @@ namespace OpenQuant.Trading
           {
             foreach (ATSStop atsStop in new ArrayList((ICollection) list))
             {
-              if (atsStop.get_Connected())
+              if (atsStop.Connected)
                 atsStop.OnNewTrade(trade);
             }
           }
@@ -450,7 +452,7 @@ namespace OpenQuant.Trading
           {
             foreach (ATSStop atsStop in new ArrayList((ICollection) list))
             {
-              if (atsStop.get_Connected())
+              if (atsStop.Connected)
                 atsStop.OnNewQuote(quote);
             }
           }
@@ -477,7 +479,7 @@ namespace OpenQuant.Trading
           {
             foreach (ATSStop atsStop in new ArrayList((ICollection) list))
             {
-              if (atsStop.get_Connected())
+              if (atsStop.Connected)
                 atsStop.OnNewBarOpen(bar);
             }
           }
@@ -537,7 +539,7 @@ namespace OpenQuant.Trading
         {
           foreach (ATSStop atsStop in new ArrayList((ICollection) list))
           {
-            if (atsStop.get_Connected())
+            if (atsStop.Connected)
               atsStop.OnNewBar(bar);
           }
         }
@@ -606,7 +608,7 @@ namespace OpenQuant.Trading
         {
           foreach (ATSStop atsStop in new ArrayList((ICollection) this.activeStops[instrument]))
           {
-            if (((StopBase) atsStop).get_Type() == 2 && ((StopBase) atsStop).get_Status() == null || atsStop.get_Connected())
+                        if (((StopBase) atsStop).Type == FreeQuant.Trading.StopType.Time && ((StopBase) atsStop).Status == null || atsStop.Connected)
               atsStop.OnPositionClosed(args.Position);
           }
         }
@@ -641,7 +643,7 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
         strategy.OnNewOrder(Map.FQ_OQ_Order[(object) order] as Order);
       }
@@ -656,7 +658,7 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
         strategy.OnOrderStatusChanged(Map.FQ_OQ_Order[(object) order] as Order);
       }
@@ -671,9 +673,9 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
-        switch (order.get_OrdStatus())
+        switch (order.OrdStatus)
         {
           case OrdStatus.Filled:
             strategy.OnOrderFilled(Map.FQ_OQ_Order[(object) order] as Order);
@@ -701,7 +703,7 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
         strategy.OnOrderPartiallyFilled(Map.FQ_OQ_Order[(object) order] as Order);
       }
@@ -716,7 +718,7 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
         strategy.OnOrderReplaced(Map.FQ_OQ_Order[(object) order] as Order);
       }
@@ -731,7 +733,7 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
         strategy.OnOrderReplaceReject(Map.FQ_OQ_Order[(object) order] as Order);
       }
@@ -746,7 +748,7 @@ namespace OpenQuant.Trading
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(order.get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(order.Instrument, out strategy))
           return;
         strategy.OnOrderCancelReject(Map.FQ_OQ_Order[(object) order] as Order);
       }
@@ -799,14 +801,14 @@ namespace OpenQuant.Trading
     {
       this.stops.Add(stop);
       List<ATSStop> list = (List<ATSStop>) null;
-      if (!this.activeStops.TryGetValue(((StopBase) stop).get_Instrument(), out list))
+      if (!this.activeStops.TryGetValue(((StopBase) stop).Instrument, out list))
       {
         list = new List<ATSStop>();
-        this.activeStops[((StopBase) stop).get_Instrument()] = list;
+        this.activeStops[((StopBase) stop).Instrument] = list;
       }
       list.Add(stop);
       // ISSUE: method pointer
-      stop.add_StatusChanged(new StopEventHandler((object) this, __methodptr(stop_StatusChanged)));
+            stop.StatusChanged += new StopEventHandler(this.stop_StatusChanged);
       if (this.StopAdded == null)
         return;
       this.StopAdded.Invoke(new StopEventArgs((IStop) stop));
@@ -814,21 +816,21 @@ namespace OpenQuant.Trading
 
     private void stop_StatusChanged(StopEventArgs args)
     {
-      ATSStop atsStop = args.get_Stop() as ATSStop;
-      if (((StopBase) atsStop).get_Status() != null)
+      ATSStop atsStop = args.Stop as ATSStop;
+      if (((StopBase) atsStop).Status != null)
       {
-        this.activeStops[((StopBase) atsStop).get_Instrument()].Remove(atsStop);
+        this.activeStops[((StopBase) atsStop).Instrument].Remove(atsStop);
         // ISSUE: method pointer
-        atsStop.remove_StatusChanged(new StopEventHandler((object) this, __methodptr(stop_StatusChanged)));
+                atsStop.StatusChanged -= new StopEventHandler(this.stop_StatusChanged);
       }
-      if (((StopBase) atsStop).get_Status() != 1)
+            if (((StopBase) atsStop).Status != FreeQuant.Trading.StopStatus.Executed)
         return;
       try
       {
         Strategy strategy = (Strategy) null;
-        if (!this.strategies.TryGetValue(((StopBase) atsStop).get_Instrument(), out strategy))
+        if (!this.strategies.TryGetValue(((StopBase) atsStop).Instrument, out strategy))
           return;
-        strategy.OnStopExecuted(Map.FQ_OQ_Stop[(object) atsStop] as Stop);
+        strategy.OnStopExecuted(Map.FQ_OQ_Stop[(object) atsStop] as OpenQuant.API.Stop);
       }
       catch (Exception ex)
       {
@@ -838,7 +840,7 @@ namespace OpenQuant.Trading
 
     private void EmitError(Exception exception)
     {
-      StrategyError error = new StrategyError(FreeQuant.Clock.Now, exception);
+            StrategyError error = new StrategyError(DateTime.Now, exception);
       if (this.Error == null)
         return;
       this.Error((object) this, new StrategyErrorEventArgs(error));

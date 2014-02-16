@@ -34,7 +34,6 @@ namespace OpenQuant.Shared
 			get
 			{
 				return new DirectoryInfo(Path.Combine(this.Base.FullName, "Setup", "Documents"));
-//					string.Format("{0}\\Setup\\Documents", this.Base.FullName));
 			}
 		}
 	}

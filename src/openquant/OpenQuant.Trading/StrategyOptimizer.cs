@@ -58,12 +58,12 @@ namespace OpenQuant.Trading
 				if (this.optimizerType == value)
 					return;
 				this.optimizerType = value;
-				switch (this.optimizerType - 3)
+				switch (this.optimizerType)
 				{
-					case 0:
+                    case EOptimizerType.SimulatedAnnealing:
 						this.optimizer = (Optimizer)new SimulatedAnnealing((IOptimizable)this);
 						break;
-					case 1:
+                    case EOptimizerType.BruteForce:
 						this.optimizer = (Optimizer)new BruteForce((IOptimizable)this);
 						break;
 					default:
@@ -124,10 +124,10 @@ namespace OpenQuant.Trading
 					this.parameters[strategyRunner.StrategyName] = dictionary;
 					foreach (FieldInfo fieldInfo in strategy.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
 					{
-						object[] customAttributes = fieldInfo.GetCustomAttributes(typeof(OptimizationParameterAttribute), false);
+                        object[] customAttributes = fieldInfo.GetCustomAttributes(typeof(OpenQuant.API.OptimizationParameterAttribute), false);
 						if (customAttributes.Length > 0)
 						{
-							OptimizationParameterAttribute parameterAttribute = customAttributes[0] as OptimizationParameterAttribute;
+                            OpenQuant.API.OptimizationParameterAttribute parameterAttribute = customAttributes[0] as OpenQuant.API.OptimizationParameterAttribute;
 							if (!(fieldInfo.FieldType != typeof(int)) || !(fieldInfo.FieldType != typeof(float)) || (!(fieldInfo.FieldType != typeof(double)) || !(fieldInfo.FieldType != typeof(Decimal))))
 							{
 								EParamType type = (EParamType)0;

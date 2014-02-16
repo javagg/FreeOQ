@@ -11,7 +11,7 @@ using OpenQuant.Shared.ToolWindows;
 
 namespace OpenQuant.Shared
 {
-	class Global
+    public class Global
 	{
 		private static Dictionary<string, object> objects = new Dictionary<string, object>();
 

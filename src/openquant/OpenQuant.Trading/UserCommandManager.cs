@@ -21,18 +21,16 @@ namespace OpenQuant.Trading
 		internal static void Clear()
 		{
 			UserCommandManager.commands.Clear();
-			if (UserCommandManager.Cleared == null)
-				return;
-			UserCommandManager.Cleared((object)typeof(UserCommandManager), EventArgs.Empty);
+            if (UserCommandManager.Cleared != null)
+    			UserCommandManager.Cleared(typeof(UserCommandManager), EventArgs.Empty);
 		}
 
 		public static void Send(string strategy, string text)
 		{
-			UserCommand command = new UserCommand(strategy, new OpenQuant.API.UserCommand(FreeQuant.Clock.Now, text));
+            UserCommand command = new UserCommand(strategy, new OpenQuant.API.UserCommand(DateTime.Now, text));
 			UserCommandManager.commands.Add(command);
-			if (UserCommandManager.NewCommand == null)
-				return;
-			UserCommandManager.NewCommand(typeof(UserCommandManager), new UserCommandEventArgs(command));
+            if (UserCommandManager.NewCommand != null)
+    			UserCommandManager.NewCommand(typeof(UserCommandManager), new UserCommandEventArgs(command));
 		}
 	}
 }

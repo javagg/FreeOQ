@@ -19,7 +19,7 @@ namespace FreeQuant.File
 			}
 		}
 
-		public FileSeries this [string name]
+		public FileSeries this[string name]
 		{
 			get
 			{

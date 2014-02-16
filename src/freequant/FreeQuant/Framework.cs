@@ -62,33 +62,33 @@ namespace FreeQuant
 			Framework.isAlreadyRunning = !Framework.mutex.WaitOne(0);
 			if (Framework.isAlreadyRunning)
 				return;
-			switch (Framework.Installation.Edition)
-			{
-				case Edition.OpenSource:
-				case Edition.Demo:
-					if (!Framework.Installation.tnABvXFOOP() && !Framework.Installation.c7kBpxixDa())
-						break;
-					if (Trace.IsLevelEnabled(TraceLevel.Info))
-						Trace.WriteLine("TraceLevel.Info");
-					if (Environment.UserInteractive)
-					{
-						int num1 = (int)MessageBox.Show(string.Format("{0}", Framework.Installation.MainProduct), "dfs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					}
-					Environment.Exit(-1);
-					break;
-				case Edition.Research:
-				case Edition.Professional:
-					if (Framework.Installation.i94BcvgC0K())
-						break;
-					if (Trace.IsLevelEnabled(TraceLevel.Info))
-						Trace.WriteLine("TraceLevel.Info");
-					if (Environment.UserInteractive)
-					{
-						int num2 = (int)MessageBox.Show("ddf", "fddd", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					}
-					Environment.Exit(-1);
-					break;
-			}
+//			switch (Framework.Installation.Edition)
+//			{
+//				case Edition.OpenSource:
+//				case Edition.Demo:
+//					if (!Framework.Installation.tnABvXFOOP() && !Framework.Installation.c7kBpxixDa())
+//						break;
+//					if (Trace.IsLevelEnabled(TraceLevel.Info))
+//						Trace.WriteLine("TraceLevel.Info");
+//					if (Environment.UserInteractive)
+//					{
+//						int num1 = (int)MessageBox.Show(string.Format("{0}", Framework.Installation.MainProduct), "dfs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+//					}
+//					Environment.Exit(-1);
+//					break;
+//				case Edition.Research:
+//				case Edition.Professional:
+//					if (Framework.Installation.i94BcvgC0K())
+//						break;
+//					if (Trace.IsLevelEnabled(TraceLevel.Info))
+//						Trace.WriteLine("TraceLevel.Info");
+//					if (Environment.UserInteractive)
+//					{
+//						MessageBox.Show("ddf", "fddd", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+//					}
+//					Environment.Exit(-1);
+//					break;
+//			}
 		}
 
 		private Framework()

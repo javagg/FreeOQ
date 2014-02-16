@@ -19,12 +19,8 @@ using TD.SandDock;
 
 namespace OpenQuant.Shared.Editor
 {
-	public class EditorWindow : FreeQuant.Docking.WinForms.DockControl, ITimerItem, IPropertyEditable
+    public partial class EditorWindow : FreeQuant.Docking.WinForms.DockControl, ITimerItem, IPropertyEditable
 	{
-		private IContainer components;
-		private CsParser csParser;
-		private VbParser vbParser;
-		protected SyntaxEdit textEditor;
 		private FileInfo file;
 		private bool isChanged;
 
@@ -135,50 +131,6 @@ namespace OpenQuant.Shared.Editor
 		{
 			this.InitializeComponent();
 			this.isChanged = false;
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && this.components != null)
-				this.components.Dispose();
-			base.Dispose(disposing);
-		}
-
-		private void InitializeComponent()
-		{
-			this.components = (IContainer)new Container();
-			ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(EditorWindow));
-			this.textEditor = new SyntaxEdit(this.components);
-			this.csParser = new CsParser();
-			this.vbParser = new VbParser();
-			this.SuspendLayout();
-			this.textEditor.BackColor = SystemColors.Window;
-			this.textEditor.Braces.BracesOptions = BracesOptions.Highlight | BracesOptions.HighlightBounds | BracesOptions.TempHighlight;
-			this.textEditor.Cursor = Cursors.IBeam;
-			this.textEditor.Dock = DockStyle.Fill;
-			this.textEditor.Font = new Font("Courier New", 10f);
-			this.textEditor.Gutter.LineNumbersForeColor = SystemColors.ControlText;
-			this.textEditor.Location = new Point(0, 0);
-			this.textEditor.Name = "textEditor";
-			this.textEditor.Outlining.AllowOutlining = true;
-			this.textEditor.Size = new Size(554, 356);
-			this.textEditor.TabIndex = 0;
-			this.textEditor.Text = "";
-			this.csParser.DefaultState = 0;
-			this.csParser.Options = SyntaxOptions.Outline | SyntaxOptions.SmartIndent | SyntaxOptions.CodeCompletion | SyntaxOptions.SyntaxErrors;
-			this.csParser.XmlScheme = componentResourceManager.GetString("csParser.XmlScheme");
-			this.vbParser.DefaultState = 0;
-			this.vbParser.Options = SyntaxOptions.Outline | SyntaxOptions.SmartIndent | SyntaxOptions.CodeCompletion | SyntaxOptions.SyntaxErrors;
-			this.vbParser.XmlScheme = componentResourceManager.GetString("vbParser.XmlScheme");
-			this.AutoScaleDimensions = new SizeF(6f, 13f);
-			this.AutoScaleMode = AutoScaleMode.Font;
-			this.Controls.Add((Control)this.textEditor);
-			this.DefaultDockLocation = ContainerDockLocation.Center;
-			this.Name = "EditorDocument";
-			this.PersistState = false;
-			this.Size = new Size(554, 356);
-			this.Text = "EditorDocument";
-			this.ResumeLayout(false);
 		}
 
 		protected override void OnInit()
@@ -423,7 +375,7 @@ namespace OpenQuant.Shared.Editor
 			this.UpdateTitle();
 			if (this.FileChanged == null)
 				return;
-			this.FileChanged((object)this, EventArgs.Empty);
+			this.FileChanged(this, EventArgs.Empty);
 		}
 
 		public void OnElapsed()

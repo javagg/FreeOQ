@@ -54,13 +54,13 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutForm.cs" />
-    <Compile Include="AboutForm.Designer.cs" />
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Charting\AddIndicatorForm.cs" />
     <Compile Include="Charting\AddIndicatorForm.Designer.cs">
       <DependentUpon>AddIndicatorForm.cs</DependentUpon>
@@ -96,14 +96,20 @@
     <Compile Include="Charting\IndicatorTemplateListXmlNode.cs" />
     <Compile Include="Charting\IndicatorTemplateXmlNode.cs" />
     <Compile Include="Charting\NewChartColorTemplateDialog.cs" />
-    <Compile Include="Charting\NewChartColorTemplateDialog.Designer.cs" />
+    <Compile Include="Charting\NewChartColorTemplateDialog.Designer.cs">
+      <DependentUpon>NewChartColorTemplateDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Charting\PadTemplate.cs" />
     <Compile Include="Charting\PadTemplateListXmlNode.cs" />
     <Compile Include="Charting\PadTemplateXmlNode.cs" />
     <Compile Include="Charting\QuickChartForm.cs" />
-    <Compile Include="Charting\QuickChartForm.Designer.cs" />
+    <Compile Include="Charting\QuickChartForm.Designer.cs">
+      <DependentUpon>QuickChartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Charting\SaveTemplateDialog.cs" />
-    <Compile Include="Charting\SaveTemplateDialog.Designer.cs" />
+    <Compile Include="Charting\SaveTemplateDialog.Designer.cs">
+      <DependentUpon>SaveTemplateDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Charting\SeriesItem.cs" />
     <Compile Include="Charting\SettingListXmlNode.cs" />
     <Compile Include="Charting\SettingXmlNode.cs" />
@@ -289,7 +295,9 @@
     <Compile Include="Data\Management\TradeEditor.cs" />
     <Compile Include="Data\Management\TradeViewer.cs" />
     <Compile Include="DemoDialog.cs" />
-    <Compile Include="DemoDialog.Designer.cs" />
+    <Compile Include="DemoDialog.Designer.cs">
+      <DependentUpon>DemoDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Diagnostics\CounterData.cs" />
     <Compile Include="Diagnostics\EventCounter.cs" />
     <Compile Include="Diagnostics\EventCounterViewRow.cs" />
@@ -482,7 +490,9 @@
     <Compile Include="SetupFolders.cs" />
     <Compile Include="SetupInfo.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="SplashScreen.Designer.cs" />
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="TimerManager.cs" />
     <Compile Include="ToolWindows\ErrorListWindow.cs" />
     <Compile Include="ToolWindows\ErrorViewItem.cs" />
@@ -518,6 +528,9 @@
     <Compile Include="Updates\ReleaseXmlNode.cs" />
     <Compile Include="Updates\UpdateManager.cs" />
     <Compile Include="Updates\UriEventArgs.cs" />
+    <Compile Include="Editor\EditorWindow.Designer.cs">
+      <DependentUpon>EditorWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -583,7 +596,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AboutForm.resx" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Charting\AddIndicatorForm.resx">
       <DependentUpon>AddIndicatorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -596,9 +611,15 @@
     <EmbeddedResource Include="Charting\ChartToolStrip.resx">
       <DependentUpon>ChartToolStrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Charting\NewChartColorTemplateDialog.resx" />
-    <EmbeddedResource Include="Charting\QuickChartForm.resx" />
-    <EmbeddedResource Include="Charting\SaveTemplateDialog.resx" />
+    <EmbeddedResource Include="Charting\NewChartColorTemplateDialog.resx">
+      <DependentUpon>NewChartColorTemplateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charting\QuickChartForm.resx">
+      <DependentUpon>QuickChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charting\SaveTemplateDialog.resx">
+      <DependentUpon>SaveTemplateDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Data\Bars\CompressBarsForm.resx" />
     <EmbeddedResource Include="Data\Bars\CompressorForm.resx" />
     <EmbeddedResource Include="Data\Export\CSV\DataSeriesExportForm.resx" />
@@ -636,21 +657,51 @@
     <EmbeddedResource Include="Data\Management\NewBarSeriesForm.resx" />
     <EmbeddedResource Include="Data\Management\QuoteEditor.resx" />
     <EmbeddedResource Include="Data\Management\TradeEditor.resx" />
-    <EmbeddedResource Include="DemoDialog.resx" />
-    <EmbeddedResource Include="Diagnostics\EventMonitorWindow.resx" />
-    <EmbeddedResource Include="Diagnostics\PerformanceMonitorWindow.resx" />
-    <EmbeddedResource Include="Editor\EditorWindow.resx" />
-    <EmbeddedResource Include="Instruments\InstrumentListWindow.resx" />
-    <EmbeddedResource Include="Instruments\InstrumentSelectorDialog.resx" />
-    <EmbeddedResource Include="Instruments\InstrumentSelectorPanel.resx" />
-    <EmbeddedResource Include="Instruments\NewInstrumentForm.resx" />
-    <EmbeddedResource Include="Logs\StrategyMonitorControl.resx" />
-    <EmbeddedResource Include="Logs\StrategyMonitorWindow.resx" />
-    <EmbeddedResource Include="Logs\TabNameForm.resx" />
-    <EmbeddedResource Include="Options\BrowseGACForm.resx" />
-    <EmbeddedResource Include="Options\BuildOptionsPanel.resx" />
-    <EmbeddedResource Include="Options\ConfigurationOptionsPanel.resx" />
-    <EmbeddedResource Include="Options\EditorOptionsPanel.resx" />
+    <EmbeddedResource Include="DemoDialog.resx">
+      <DependentUpon>DemoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnostics\EventMonitorWindow.resx">
+      <DependentUpon>EventMonitorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnostics\PerformanceMonitorWindow.resx">
+      <DependentUpon>PerformanceMonitorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\EditorWindow.resx">
+      <DependentUpon>EditorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instruments\InstrumentListWindow.resx">
+      <DependentUpon>InstrumentListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instruments\InstrumentSelectorDialog.resx">
+      <DependentUpon>InstrumentSelectorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instruments\InstrumentSelectorPanel.resx">
+      <DependentUpon>InstrumentSelectorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instruments\NewInstrumentForm.resx">
+      <DependentUpon>NewInstrumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\StrategyMonitorControl.resx">
+      <DependentUpon>StrategyMonitorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\StrategyMonitorWindow.resx">
+      <DependentUpon>StrategyMonitorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\TabNameForm.resx">
+      <DependentUpon>TabNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\BrowseGACForm.resx">
+      <DependentUpon>BrowseGACForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\BuildOptionsPanel.resx">
+      <DependentUpon>BuildOptionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ConfigurationOptionsPanel.resx">
+      <DependentUpon>ConfigurationOptionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\EditorOptionsPanel.resx">
+      <DependentUpon>EditorOptionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\LayoutOptionsPanel.resx" />
     <EmbeddedResource Include="Options\MemoryManagementPanel.resx" />
     <EmbeddedResource Include="Options\OptionsForm.resx" />
@@ -658,52 +709,60 @@
     <EmbeddedResource Include="Options\ProvidersOptionsPanel.resx" />
     <EmbeddedResource Include="Options\ScriptsOptionsPanel.resx" />
     <EmbeddedResource Include="Properties\Resources.resx" />
-    <EmbeddedResource Include="Providers\ProviderErrorDetailsForm.resx" />
-    <EmbeddedResource Include="Providers\ProviderErrorListWindow.resx" />
-    <EmbeddedResource Include="Providers\ProviderHelperForm.resx" />
-    <EmbeddedResource Include="Providers\ProviderListWindow.resx" />
-    <EmbeddedResource Include="Scripts\NewDirectoryDialog.resx" />
-    <EmbeddedResource Include="Scripts\NewScriptDialog.resx" />
-    <EmbeddedResource Include="Scripts\RenameFileSystemEntryForm.resx" />
-    <EmbeddedResource Include="Scripts\ScriptEditorWindow.resx" />
-    <EmbeddedResource Include="Scripts\ScriptExplorerWindow.resx" />
-    <EmbeddedResource Include="SplashScreen.resx" />
-    <EmbeddedResource Include="ToolWindows\ErrorListWindow.resx" />
-    <EmbeddedResource Include="ToolWindows\OutputWindow.resx" />
-    <EmbeddedResource Include="ToolWindows\PropertiesWindow.resx" />
-    <EmbeddedResource Include="TradingTools\OrderBookWindow.resx" />
-    <EmbeddedResource Include="TradingTools\OrderMiniBlotterForm.resx" />
-    <EmbeddedResource Include="TradingTools\QuoteMonitorWindow.resx" />
+    <EmbeddedResource Include="Providers\ProviderErrorDetailsForm.resx">
+      <DependentUpon>ProviderErrorDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Providers\ProviderErrorListWindow.resx">
+      <DependentUpon>ProviderErrorListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Providers\ProviderHelperForm.resx">
+      <DependentUpon>ProviderHelperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Providers\ProviderListWindow.resx">
+      <DependentUpon>ProviderListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\NewDirectoryDialog.resx">
+      <DependentUpon>NewDirectoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\NewScriptDialog.resx">
+      <DependentUpon>NewScriptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\RenameFileSystemEntryForm.resx">
+      <DependentUpon>RenameFileSystemEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\ScriptEditorWindow.resx">
+      <DependentUpon>ScriptEditorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\ScriptExplorerWindow.resx">
+      <DependentUpon>ScriptExplorerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\ErrorListWindow.resx">
+      <DependentUpon>ErrorListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\OutputWindow.resx">
+      <DependentUpon>OutputWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\PropertiesWindow.resx">
+      <DependentUpon>PropertiesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradingTools\OrderBookWindow.resx">
+      <DependentUpon>OrderBookWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradingTools\OrderMiniBlotterForm.resx">
+      <DependentUpon>OrderMiniBlotterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradingTools\QuoteMonitorWindow.resx">
+      <DependentUpon>QuoteMonitorWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Updates\CheckForUpdatesForm.resx" />
     <EmbeddedResource Include="Updates\ReleaseNotesControl.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Charting" />
-    <Folder Include="Compiler" />
-    <Folder Include="Data" />
-    <Folder Include="Data\Bars" />
-    <Folder Include="Data\Export" />
-    <Folder Include="Data\Export\CSV" />
-    <Folder Include="Data\Import" />
-    <Folder Include="Data\Import\CSV" />
-    <Folder Include="Data\Import\Historical" />
-    <Folder Include="Data\Import\Instruments" />
-    <Folder Include="Data\Import\NxCore" />
-    <Folder Include="Data\Import\Realtime" />
-    <Folder Include="Data\Import\TAQ" />
-    <Folder Include="Data\Management" />
-    <Folder Include="Diagnostics" />
-    <Folder Include="Editor" />
-    <Folder Include="Indicators" />
-    <Folder Include="Instruments" />
-    <Folder Include="Logs" />
-    <Folder Include="Options" />
-    <Folder Include="Plugins" />
-    <Folder Include="Providers" />
-    <Folder Include="QuantTrader" />
-    <Folder Include="Scripts" />
-    <Folder Include="ToolWindows" />
-    <Folder Include="TradingTools" />
-    <Folder Include="Updates" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Export\" />
+    <Folder Include="Data\Import\" />
   </ItemGroup>
 </Project>

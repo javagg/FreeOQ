@@ -28,7 +28,7 @@ namespace FreeQuant.File
 		private int defaultZipLevel;
 		private string description;
 		private Indexer defaultIndexer;
-		private string schemaFile;
+        private string schemaFile;
 //		private XKnrYnX3iyxP4mxHdY cZGdvu7wXe;
 //		private EQJFquhB2QLQLSaG0F UQAdA9yU8P;
 //		private FRJ1FMOwU8CAwJuZZf TGQdFvfQ8H;
