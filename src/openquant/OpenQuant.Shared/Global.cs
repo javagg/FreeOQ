@@ -95,7 +95,7 @@ namespace OpenQuant.Shared
 			}
 			set
 			{
-				Global.SetObject((object)value);
+				Global.SetObject(value);
 			}
 		}
 
@@ -131,12 +131,8 @@ namespace OpenQuant.Shared
 			}
 			set
 			{
-				Global.SetObject("chart_manager", (object)value);
+				Global.SetObject("chart_manager", value);
 			}
-		}
-
-		static Global()
-		{
 		}
 
 		public Global()
@@ -151,7 +147,7 @@ namespace OpenQuant.Shared
 
 		protected static void SetObject(object obj)
 		{
-			Global.SetObject(obj.GetType().FullName, obj);
+            Global.SetObject(obj.GetType().FullName, obj);
 		}
 
 		protected static T GetObject<T>(string key) where T : class
@@ -159,10 +155,7 @@ namespace OpenQuant.Shared
 			object obj;
 			if (!Global.objects.TryGetValue(key, out obj))
 				return default(T);
-			if (obj is T)
-				return (T)obj;
-			else
-				return default(T);
+            return obj is T ? (T)obj : default(T);
 		}
 
 		protected static T GetObject<T>() where T : class

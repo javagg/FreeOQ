@@ -239,36 +239,37 @@ namespace FreeQuant.Data
 
 		public double GetPrice(BarPrice option)
 		{
-			double num = 0.0;
-			switch (option)
+            double result = 0.0; 
+            switch (option) 
 			{
 				case BarPrice.High:
-					num = this.High;
+					result = this.High;
 					break;
 				case BarPrice.Low:
-					num = this.Low;
+					result = this.Low;
 					break;
 				case BarPrice.Open:
-					num = this.Open;
+					result = this.Open;
 					break;
 				case BarPrice.Close:
-					num = this.Close;
+					result = this.Close;
 					break;
 				case BarPrice.Median:
-					num = this.Median;
+					result = this.Median;
 					break;
 				case BarPrice.Typical:
-					num = this.Typical;
+					result = this.Typical;
 					break;
 				case BarPrice.Weighted:
-					num = this.Weighted;
+					result = this.Weighted;
 					break;
 			}
-			return num;
+			return result;
 		}
+
 		public override string ToString()
 		{
-			return string.Format("", new object[]
+            return string.Format("BeginTime: {0}\nEndTime: {1}\nBoxSize: {2}\nOpen: {3}\n and so on", new object[]
 			{
 				this.beginTime.ToShortDateString() + this.beginTime.ToLongTimeString(),
 				this.endTime.ToShortDateString() + this.endTime.ToLongTimeString(),

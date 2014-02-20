@@ -112,9 +112,9 @@ namespace FreeQuant.Instruments
 				this.positions.Add(position);
 			}
 			this.transactions.Add(transaction);
-			this.ciP6G6y5gB(transaction);
+			this.EmitTransactionAdded(transaction);
 			position.Value += transaction.Value;
-			this.tom6YJohef();
+			this.EmitAccountChanged();
 		}
 
 		public void Add(Transaction transaction)
@@ -222,18 +222,16 @@ namespace FreeQuant.Instruments
 			this.Withdraw(val, this.Currency, dateTime, text);
 		}
 
-		private void tom6YJohef()
+		private void EmitAccountChanged()
 		{
-//			if (this.V6R6Npn0Yb == null)
-//				return;
-//			this.V6R6Npn0Yb((object)this, EventArgs.Empty);
+            if (this.AccountChanged != null)
+                this.AccountChanged(this, EventArgs.Empty);
 		}
 
-		private void ciP6G6y5gB([In] AccountTransaction obj0)
+        private void EmitTransactionAdded(AccountTransaction transaction)
 		{
-//			if (this.R7Y6OfFd9f == null)
-//				return;
-//			this.R7Y6OfFd9f((object)this, new AccountTransactionEventArgs(obj0));
+            if (this.TransactionAdded != null)
+                this.TransactionAdded(this, new AccountTransactionEventArgs(transaction));
 		}
 	}
 }

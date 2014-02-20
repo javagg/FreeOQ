@@ -1,8 +1,8 @@
 using FreeQuant;
 using FreeQuant.FIX;
 using System;
+using System.IO;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
 {
@@ -12,39 +12,39 @@ namespace FreeQuant.Instruments
 
 		public static InstrumentList Instruments { get; private set; }
 		public static IInstrumentServer Server { get; set; }
-		public static event InstrumentEventHandler InstrumentAdded;
+		
+        public static event InstrumentEventHandler InstrumentAdded;
 		public static event InstrumentEventHandler InstrumentRemoved;
 
 		static InstrumentManager()
 		{
 			InstrumentManager.Server = new InstrumentDbServer();
-			InstrumentManager.Instruments = new InstrumentList();
-			InstrumentManager.instrumentLists = new Hashtable();
-			Type connectionType = null;
+            Type connectionType = null;
 			string connectionString = String.Empty;
 			switch (Framework.Storage.ServerType)
 			{
-				case DbServerType.MS_ACCESS:
-					connectionType = Type.GetType("rr");
-					connectionString = string.Format("", Framework.Installation.DataDir.FullName);
-					break;
-				case DbServerType.SQL_SERVER_COMPACT_EDITION_35:
-					connectionType = Type.GetType("typename");
-					connectionString = string.Format("", Framework.Installation.DataDir.FullName);
-					break;
-				case DbServerType.MYSQL:
-					connectionType = Type.GetType("typename");
-					connectionString = string.Format("", Framework.Installation.DataDir.FullName);
-					break;
-				case DbServerType.PGSQL:
-					connectionType = Type.GetType("typename");
-					connectionString = string.Format("", Framework.Installation.DataDir.FullName);
-					break;
+                case DbServerType.MYSQL:
+                    connectionType = Type.GetType("MySqlConnection");
+                    connectionString = string.Format("Server={0};Database={1};Uid={2};Pwd={3}", "localhost", "freequant", "freequant", "freequant");
+                    break;
+                case DbServerType.SQLITE:
+                    connectionType = Type.GetType("SQLiteConnection");
+                    connectionString = string.Format("Data Source={0};Pooling=true;FailIfMissing=false;", Path.Combine(Framework.Installation.DataDir.FullName, "freequant.db"));
+                    break;
+                default:
+                    throw new NotSupportedException("This db is not support yet.");
 			}
+
+            InstrumentManager.Server = null;
+            InstrumentManager.Server = new InstrumentFileServer();
 			InstrumentManager.Server.Open(connectionType, connectionString);
-			InstrumentManager.Instruments.Clear();
-			foreach (Instrument instrument in InstrumentManager.Server.Load())
-				InstrumentManager.Instruments.Add(instrument);
+            InstrumentManager.Instruments = InstrumentManager.Server.Load();
+//            foreach (Instrument instrument in InstrumentManager.Server.Load())
+//            {
+//                InstrumentManager.Instruments.Add(instrument);
+//            }
+
+            InstrumentManager.instrumentLists = new Hashtable();
 		}
 
 		public static void Init()
@@ -85,7 +85,7 @@ namespace FreeQuant.Instruments
 			return InstrumentManager.instrumentLists[name] as InstrumentList;
 		}
 
-		internal static void Add([In] Instrument instrument)
+		internal static void Add(Instrument instrument)
 		{
 			InstrumentManager.Instruments.Add(instrument);
 			if (InstrumentManager.InstrumentAdded == null)
@@ -93,7 +93,7 @@ namespace FreeQuant.Instruments
 			InstrumentManager.InstrumentAdded(new InstrumentEventArgs(instrument));
 		}
 
-		internal static void Save([In] Instrument obj0)
+		internal static void Save(Instrument obj0)
 		{
 			InstrumentManager.Server.Save(obj0);
 			if (InstrumentManager.Instruments.Contains(obj0.Id))

@@ -1,11 +1,12 @@
-﻿using OpenQuant.Shared.Properties;
+﻿using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using OpenQuant.Shared.Properties;
+
 
 namespace OpenQuant.Shared.Data.Import.CSV
 {
-  internal class CustomFormatHelpDialog : Form
+  class CustomFormatHelpDialog : Form
   {
     private IContainer components;
     private Panel panel1;
@@ -27,7 +28,8 @@ namespace OpenQuant.Shared.Data.Import.CSV
 
     private void InitializeComponent()
     {
-      this.panel1 = new Panel();
+            this.components = new System.ComponentModel.Container();
+            this.panel1 = new Panel();
       this.btnClose = new Button();
       this.browser = new WebBrowser();
       this.panel1.SuspendLayout();

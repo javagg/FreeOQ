@@ -2,185 +2,184 @@ using FreeQuant.Data;
 using FreeQuant.Series;
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
 {
-  public class BarSeriesList : ICollection
-  {
-    private Hashtable a0SWypH8TX;
-    private Hashtable ET8WqOYmDx;
-    private BarType o4gWf6UiaB;
-    private long MrWWpP4XKI;
-    private bool MSDWvxa7A1;
-
-    public bool IsSynchronized
+    public class BarSeriesList : ICollection
     {
-        get
-      {
-        return this.a0SWypH8TX.IsSynchronized;
-      }
-    }
+        private const long DEFAULT_BARISZE = 86400;
+        private const BarType DEFAULT_BARTYPE = BarType.Time;
+        private Hashtable list;
+        private Hashtable listByIntrument;
+        private BarType barType;
+        private long barSize;
+        private bool MSDWvxa7A1;
 
-    public int Count
-    {
-        get
-      {
-        return this.a0SWypH8TX.Count;
-      }
-    }
-
-    public object SyncRoot
-    {
-       get
-      {
-        return this.a0SWypH8TX.SyncRoot;
-      }
-    }
-
-    public BarSeries this[Instrument instrument, BarType barType, long barSize]
-    {
-       get
-      {
-        if (this.MSDWvxa7A1)
+        public bool IsSynchronized
         {
-          Hashtable hashtable = this.JqsWcXm11r(instrument, barType);
-          BarSeries barSeries = hashtable[(object) barSize] as BarSeries;
-          if (barSeries == null)
-          {
-						barSeries = new BarSeries(string.Format("ddd", instrument.Symbol, barType, barSize));
-            hashtable.Add((object) barSize, (object) barSeries);
-//            if (this.ojGWVrrEwl != null)
-//              this.ojGWVrrEwl((object) this, new BarSeriesEventArgs(barSeries, instrument));
-          }
-          return barSeries;
+            get
+            {
+                return this.list.IsSynchronized;
+            }
         }
-        else
+
+        public int Count
         {
-          this.o4gWf6UiaB = barType;
-          this.MrWWpP4XKI = barSize;
-          Hashtable hashtable = new Hashtable((IDictionary) this.ET8WqOYmDx);
-          foreach (DictionaryEntry dictionaryEntry in this.ET8WqOYmDx)
-          {
-            Instrument instrument1 = dictionaryEntry.Key as Instrument;
-            BarSeries barSeries = dictionaryEntry.Value as BarSeries;
-						barSeries.Name = string.Format("{0}", (object) instrument1.Symbol, (object) barType, (object) barSize);
-            this.JqsWcXm11r(instrument1, barType).Add((object) barSize, (object) barSeries);
-          }
-          this.ET8WqOYmDx.Clear();
-          this.MSDWvxa7A1 = true;
-          BarSeries barSeries1 = this[instrument, barType, barSize];
-          foreach (DictionaryEntry dictionaryEntry in hashtable)
-          {
-//            if (this.BiWWFq4eYA != null)
-//              this.BiWWFq4eYA((object) this, new BarSeriesEventArgs(dictionaryEntry.Value as BarSeries, dictionaryEntry.Key as Instrument));
-          }
-          return barSeries1;
+            get
+            {
+                return this.list.Count;
+            }
         }
-      }
-    }
 
-    public BarSeries this[Instrument instrument]
-    {
-       get
-      {
-        if (this.MSDWvxa7A1)
-          return this[instrument, this.o4gWf6UiaB, this.MrWWpP4XKI];
-        BarSeries barSeries = this.ET8WqOYmDx[(object) instrument] as BarSeries;
-        if (barSeries == null)
+        public object SyncRoot
         {
-          barSeries = new BarSeries(instrument.Symbol);
-          this.ET8WqOYmDx.Add((object) instrument, (object) barSeries);
-//          if (this.ojGWVrrEwl != null)
-//            this.ojGWVrrEwl((object) this, new BarSeriesEventArgs(barSeries, instrument));
+            get
+            {
+                return this.list.SyncRoot;
+            }
         }
-        return barSeries;
-      }
-    }
 
-    public event BarSeriesEventHandler BarSeriesAdded;
-
-    public event BarSeriesEventHandler BarSeriesRenamed;
-
-    
-    internal BarSeriesList()
-    {
-      this.a0SWypH8TX = new Hashtable();
-      this.ET8WqOYmDx = new Hashtable();
-      this.o4gWf6UiaB = BarType.Time;
-      this.MrWWpP4XKI = 86400L;
-      this.MSDWvxa7A1 = false;
-    }
-
-    
-    public void CopyTo(Array array, int index)
-    {
-      this.a0SWypH8TX.CopyTo(array, index);
-    }
-
-    
-    public IEnumerator GetEnumerator()
-    {
-      Hashtable hashtable = new Hashtable();
-      foreach (DictionaryEntry dictionaryEntry1 in this.a0SWypH8TX)
-      {
-        Instrument instrument = dictionaryEntry1.Key as Instrument;
-        ArrayList arrayList = hashtable[(object) instrument] as ArrayList;
-        if (arrayList == null)
+        public BarSeries this [Instrument instrument, BarType barType, long barSize]
         {
-          arrayList = new ArrayList();
-          hashtable.Add((object) instrument, (object) arrayList);
+            get
+            {
+                if (this.MSDWvxa7A1)
+                {
+                    Hashtable hashtable = this.JqsWcXm11r(instrument, barType);
+                    BarSeries barSeries = hashtable[barSize] as BarSeries;
+                    if (barSeries == null)
+                    {
+                        barSeries = new BarSeries(string.Format("{0}-{1}-{2}", instrument.Symbol, barType, barSize));
+                        hashtable.Add(barSize, barSeries);
+                        if (this.BarSeriesAdded != null)
+                            this.BarSeriesAdded(this, new BarSeriesEventArgs(barSeries, instrument));
+                    }
+                    return barSeries;
+                }
+                else
+                {
+                    this.barType = barType;
+                    this.barSize = barSize;
+                    Hashtable hashtable = new Hashtable(this.listByIntrument);
+                    foreach (DictionaryEntry entry in this.listByIntrument)
+                    {
+                        Instrument instrument1 = entry.Key as Instrument;
+                        BarSeries barSeries = entry.Value as BarSeries;
+                        barSeries.Name = string.Format("{0}", instrument1.Symbol, barType, barSize);
+                        this.JqsWcXm11r(instrument1, barType).Add(barSize, barSeries);
+                    }
+                    this.listByIntrument.Clear();
+                    this.MSDWvxa7A1 = true;
+                    BarSeries barSeries1 = this[instrument, barType, barSize];
+                    foreach (DictionaryEntry dictionaryEntry in hashtable)
+                    {
+                        if (this.BarSeriesRenamed != null)
+                            this.BarSeriesRenamed(this, new BarSeriesEventArgs(dictionaryEntry.Value as BarSeries, dictionaryEntry.Key as Instrument));
+                    }
+                    return barSeries1;
+                }
+            }
         }
-        foreach (DictionaryEntry dictionaryEntry2 in (IEnumerable) dictionaryEntry1.Value)
+
+        public BarSeries this [Instrument instrument]
         {
-          foreach (DictionaryEntry dictionaryEntry3 in (IEnumerable) dictionaryEntry2.Value)
-            arrayList.Add(dictionaryEntry3.Value);
+            get
+            {
+                if (this.MSDWvxa7A1)
+                {
+                    return this[instrument, this.barType, this.barSize];
+                }
+
+                BarSeries barSeries = this.listByIntrument[instrument] as BarSeries;
+                if (barSeries == null)
+                {
+                    barSeries = new BarSeries(instrument.Symbol);
+                    this.listByIntrument.Add(instrument, barSeries);
+                    if (this.BarSeriesAdded != null)
+                    {
+                        this.BarSeriesAdded(this, new BarSeriesEventArgs(barSeries, instrument));
+                    }
+                }
+                return barSeries;
+            }
         }
-      }
-      foreach (DictionaryEntry dictionaryEntry in this.ET8WqOYmDx)
-      {
-        Instrument instrument = dictionaryEntry.Key as Instrument;
-        ArrayList arrayList = hashtable[(object) instrument] as ArrayList;
-        if (arrayList == null)
+
+        public event BarSeriesEventHandler BarSeriesAdded;
+        public event BarSeriesEventHandler BarSeriesRenamed;
+
+        internal BarSeriesList()
         {
-          arrayList = new ArrayList();
-          hashtable.Add((object) instrument, (object) arrayList);
+            this.list = new Hashtable();
+            this.listByIntrument = new Hashtable();
+            this.barType = DEFAULT_BARTYPE;
+            this.barSize = DEFAULT_BARISZE;
+            this.MSDWvxa7A1 = false;
         }
-        arrayList.Add(dictionaryEntry.Value);
-      }
-      return (IEnumerator) hashtable.GetEnumerator();
-    }
 
-    
-    internal void oohW0girCj()
-    {
-      this.a0SWypH8TX.Clear();
-      this.ET8WqOYmDx.Clear();
-      this.MSDWvxa7A1 = false;
-    }
+        public void CopyTo(Array array, int index)
+        {
+            this.list.CopyTo(array, index);
+        }
 
-    
-    internal void J4qWHe7JIm([In] Instrument obj0, [In] Bar obj1)
-    {
-      this[obj0, obj1.BarType, obj1.Size].Add(obj1);
-    }
+        public IEnumerator GetEnumerator()
+        {
+            Hashtable hashtable = new Hashtable();
+            foreach (DictionaryEntry dictionaryEntry1 in this.list)
+            {
+                Instrument instrument = dictionaryEntry1.Key as Instrument;
+                ArrayList arrayList = hashtable[instrument] as ArrayList;
+                if (arrayList == null)
+                {
+                    arrayList = new ArrayList();
+                    hashtable.Add(instrument, arrayList);
+                }
+                foreach (DictionaryEntry dictionaryEntry2 in (IEnumerable)dictionaryEntry1.Value)
+                {
+                    foreach (DictionaryEntry dictionaryEntry3 in (IEnumerable)dictionaryEntry2.Value)
+                        arrayList.Add(dictionaryEntry3.Value);
+                }
+            }
+            foreach (DictionaryEntry dictionaryEntry in this.listByIntrument)
+            {
+                Instrument instrument = dictionaryEntry.Key as Instrument;
+                ArrayList arrayList = hashtable[instrument] as ArrayList;
+                if (arrayList == null)
+                {
+                    arrayList = new ArrayList();
+                    hashtable.Add(instrument, arrayList);
+                }
+                arrayList.Add(dictionaryEntry.Value);
+            }
+            return hashtable.GetEnumerator();
+        }
 
-    
-    private Hashtable JqsWcXm11r([In] Instrument obj0, [In] BarType obj1)
-    {
-      Hashtable hashtable1 = this.a0SWypH8TX[(object) obj0] as Hashtable;
-      if (hashtable1 == null)
-      {
-        hashtable1 = new Hashtable();
-        this.a0SWypH8TX.Add((object) obj0, (object) hashtable1);
-      }
-      Hashtable hashtable2 = hashtable1[(object) obj1] as Hashtable;
-      if (hashtable2 == null)
-      {
-        hashtable2 = new Hashtable();
-        hashtable1.Add((object) obj1, (object) hashtable2);
-      }
-      return hashtable2;
+        internal void Clear()
+        {
+            this.list.Clear();
+            this.listByIntrument.Clear();
+            this.MSDWvxa7A1 = false;
+        }
+
+        internal void Add(Instrument instrument, Bar bar)
+        {
+            this[instrument, bar.BarType, bar.Size].Add(bar);
+        }
+
+        private Hashtable JqsWcXm11r(Instrument instrument, BarType barType)
+        {
+            Hashtable hashtable1 = this.list[instrument] as Hashtable;
+            if (hashtable1 == null)
+            {
+                hashtable1 = new Hashtable();
+                this.list.Add(instrument, hashtable1);
+            }
+            Hashtable hashtable2 = hashtable1[barType] as Hashtable;
+            if (hashtable2 == null)
+            {
+                hashtable2 = new Hashtable();
+                hashtable1.Add(barType, hashtable2);
+            }
+            return hashtable2;
+        }
     }
-  }
 }

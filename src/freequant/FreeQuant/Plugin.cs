@@ -2,70 +2,35 @@ using System.ComponentModel;
 
 namespace FreeQuant
 {
-  public class Plugin
-  {
-    private string lSom68Rw9l;
-    private string qJhmtyP70D;
-    private bool QjVmRjpffM;
-    private bool YDCmNuySEs;
-    private Configuration dTQmHFl3sV;
-    private bool VeamxmTmMA;
-
-    public string AssemblyName
+    public class Plugin
     {
-       get
-      {
-        return (string) null;
-      }
-    }
+        public string AssemblyName { get; private set; }
+        public string TypeName { get; private set; }
+        public bool Enabled { get; set; }
+        public bool X64Supported { get; private set; }
+        public bool Loaded
+        { 
+            get
+            {
+                return true;
+            }
+        }
 
-    public string TypeName
-    {
-       get
-      {
-        return (string) null;
-      }
-    }
+        public Plugin(string assemblyName, string typeName, bool enabled, bool x64Supported)
+        {
+            this.AssemblyName = assemblyName;
+            this.TypeName = typeName;
+            this.Enabled = enabled;
+            this.X64Supported = x64Supported;
+        }
 
-    public bool Enabled
-    {
-        get
-      {
-        return true;
-      }
-        set
-      {
-      }
+//        internal object e6CmMXeUG5()
+//        {
+//            return (object)null;
+//        }
+//
+//        internal void ixymUtLVYL(Configuration value)
+//        {
+//        }
     }
-
-    public bool X64Supported
-    {
-       get
-      {
-        return true;
-      }
-    }
-
-    public bool Loaded
-    {
-       get
-      {
-        return true;
-      }
-    }
-
-
-    public Plugin(string assemblyName, string typeName, bool enabled, bool x64Supported)
-    {
-    }
-
-    internal object e6CmMXeUG5()
-    {
-      return (object) null;
-    }
-
-    internal void ixymUtLVYL(Configuration value)
-    {
-    }
-  }
 }

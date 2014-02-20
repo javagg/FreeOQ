@@ -8,14 +8,14 @@ namespace FreeQuant.Docking.WinForms
 	public class DockManager : SandDockManager
 	{
 		private DockControlWorkingSet controls;
-		private Dictionary<System.Type, DockControlSettings> settingsTable;
+		private Dictionary<Type, DockControlSettings> settingsTable;
 
 		public DockManager(Control dockSystemContainer, Form ownerForm)
 		{
 			this.DockSystemContainer = dockSystemContainer;
 			this.OwnerForm = ownerForm;
 			this.controls = new DockControlWorkingSet();
-			this.settingsTable = new Dictionary<System.Type, DockControlSettings>();
+			this.settingsTable = new Dictionary<Type, DockControlSettings>();
 		}
 
 		public new DockControl[] GetDockControls()
@@ -24,12 +24,12 @@ namespace FreeQuant.Docking.WinForms
 			foreach (TD.SandDock.DockControl dockControl in base.GetDockControls())
 			{
 				if (dockControl is DockControl)
-					list.Add((DockControl)dockControl);
+                    list.Add((DockControl)dockControl);
 			}
 			return list.ToArray();
 		}
 
-		public DockControl Open(System.Type type, object key, bool focus)
+		public DockControl Open(Type type, object key, bool focus)
 		{
 			DockControl control;
 			if (this.controls.TryGetControl(type, key, out control))
@@ -77,12 +77,12 @@ namespace FreeQuant.Docking.WinForms
 			return control;
 		}
 
-		public DockControl Open(System.Type type, object key)
+		public DockControl Open(Type type, object key)
 		{
 			return this.Open(type, key, true);
 		}
 
-		public DockControl Open(System.Type type)
+		public DockControl Open(Type type)
 		{
 			return this.Open(type, (object)null);
 		}
@@ -141,11 +141,11 @@ namespace FreeQuant.Docking.WinForms
 
 		public void SetLayout(LayoutInfo layout)
 		{
-			Dictionary<Guid, System.Type> types = new Dictionary<Guid, System.Type>();
+			Dictionary<Guid, Type> types = new Dictionary<Guid, Type>();
 			foreach (LayoutLink layoutLink in layout.Links)
 			{
-				System.Type type = System.Type.GetType(layoutLink.TypeName, false);
-				if (type != (System.Type)null)
+				Type type = Type.GetType(layoutLink.TypeName, false);
+				if (type != null)
 				{
 					this.Open(type);
 					types.Add(layoutLink.Guid, type);
@@ -153,7 +153,7 @@ namespace FreeQuant.Docking.WinForms
 			}
 			ResolveDockControlEventHandler controlEventHandler = (ResolveDockControlEventHandler)((sender, e) =>
 			{
-				System.Type local_0;
+				Type local_0;
 				DockControl local_1;
 				if (!types.TryGetValue(e.Guid, out local_0) || !this.controls.TryGetControl(local_0, null, out local_1))
 					return;
@@ -174,7 +174,7 @@ namespace FreeQuant.Docking.WinForms
 		{
 			SettingsInfo settingsInfo = new SettingsInfo();
 			List<SettingsGroup> list1 = new List<SettingsGroup>();
-			foreach (KeyValuePair<System.Type, DockControlSettings> keyValuePair1 in this.settingsTable)
+			foreach (KeyValuePair<Type, DockControlSettings> keyValuePair1 in this.settingsTable)
 			{
 				SettingsGroup settingsGroup = new SettingsGroup();
 				settingsGroup.TypeName = string.Format("{0}, {1}", keyValuePair1.Key.FullName, keyValuePair1.Key.Assembly.GetName().Name);
@@ -193,8 +193,8 @@ namespace FreeQuant.Docking.WinForms
 			this.settingsTable.Clear();
 			foreach (SettingsGroup settingsGroup in settings.Groups)
 			{
-				System.Type type = System.Type.GetType(settingsGroup.TypeName, false);
-				if (type != (System.Type)null)
+				Type type = Type.GetType(settingsGroup.TypeName, false);
+				if (type != null)
 				{
 					DockControlSettings dockControlSettings = new DockControlSettings();
 					this.settingsTable.Add(type, dockControlSettings);

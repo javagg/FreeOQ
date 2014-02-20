@@ -107,6 +107,15 @@
     <Compile Include="Draw3D\TSurface.cs" />
     <Compile Include="Draw3D\TVec3.cs" />
     <Compile Include="Draw3D\TView.cs" />
+    <Compile Include="Canvas.Designer.cs">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart.Designer.cs">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadProperyForm.Designer.cs">
+      <DependentUpon>PadProperyForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

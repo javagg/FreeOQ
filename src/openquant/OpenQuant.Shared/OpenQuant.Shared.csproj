@@ -48,7 +48,7 @@
       <HintPath>..\..\..\libs\SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -57,19 +57,27 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs" />
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Charting\AddIndicatorForm.cs" />
+    <Compile Include="Charting\AddIndicatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Charting\AddIndicatorForm.Designer.cs">
       <DependentUpon>AddIndicatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Charting\Chart.cs" />
+    <Compile Include="Charting\Chart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Charting\Chart.Designer.cs">
       <DependentUpon>Chart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Charting\ChartColorManagerForm.cs" />
+    <Compile Include="Charting\ChartColorManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Charting\ChartColorManagerForm.Designer.cs">
       <DependentUpon>ChartColorManagerForm.cs</DependentUpon>
     </Compile>
@@ -84,29 +92,39 @@
     <Compile Include="Charting\ChartTemplateList.cs" />
     <Compile Include="Charting\ChartTemplateXmlDocument.cs" />
     <Compile Include="Charting\ChartTimeFrame.cs" />
-    <Compile Include="Charting\ChartToolStrip.cs" />
+    <Compile Include="Charting\ChartToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Charting\ChartToolStrip.Designer.cs">
       <DependentUpon>ChartToolStrip.cs</DependentUpon>
     </Compile>
     <Compile Include="Charting\ColorComparer.cs" />
-    <Compile Include="Charting\ColorEditor.cs" />
+    <Compile Include="Charting\ColorEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Charting\IChartControl.cs" />
     <Compile Include="Charting\IndicatorEventHandler.cs" />
     <Compile Include="Charting\IndicatorTemplateItem.cs" />
     <Compile Include="Charting\IndicatorTemplateListXmlNode.cs" />
     <Compile Include="Charting\IndicatorTemplateXmlNode.cs" />
-    <Compile Include="Charting\NewChartColorTemplateDialog.cs" />
+    <Compile Include="Charting\NewChartColorTemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Charting\NewChartColorTemplateDialog.Designer.cs">
       <DependentUpon>NewChartColorTemplateDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Charting\PadTemplate.cs" />
     <Compile Include="Charting\PadTemplateListXmlNode.cs" />
     <Compile Include="Charting\PadTemplateXmlNode.cs" />
-    <Compile Include="Charting\QuickChartForm.cs" />
+    <Compile Include="Charting\QuickChartForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Charting\QuickChartForm.Designer.cs">
       <DependentUpon>QuickChartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Charting\SaveTemplateDialog.cs" />
+    <Compile Include="Charting\SaveTemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Charting\SaveTemplateDialog.Designer.cs">
       <DependentUpon>SaveTemplateDialog.cs</DependentUpon>
     </Compile>
@@ -134,10 +152,14 @@
     <Compile Include="Data\Bars\BarDataSource.cs" />
     <Compile Include="Data\Bars\BarDataSourceComparer.cs" />
     <Compile Include="Data\Bars\BarTypeSize.cs" />
-    <Compile Include="Data\Bars\CompressBarsForm.cs" />
+    <Compile Include="Data\Bars\CompressBarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Bars\CompressedBarEventArgs.cs" />
     <Compile Include="Data\Bars\CompressorDataItem.cs" />
-    <Compile Include="Data\Bars\CompressorForm.cs" />
+    <Compile Include="Data\Bars\CompressorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Bars\CompressorTask.cs" />
     <Compile Include="Data\Bars\CompressorTaskItem.cs" />
     <Compile Include="Data\Bars\CompressorTaskResult.cs" />
@@ -157,7 +179,9 @@
     <Compile Include="Data\Export\CSV\BarExporter.cs" />
     <Compile Include="Data\Export\CSV\DailyExporter.cs" />
     <Compile Include="Data\Export\CSV\DataExporter.cs" />
-    <Compile Include="Data\Export\CSV\DataSeriesExportForm.cs" />
+    <Compile Include="Data\Export\CSV\DataSeriesExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Export\CSV\ExportSettings.cs" />
     <Compile Include="Data\Export\CSV\ExportTask.cs" />
     <Compile Include="Data\Export\CSV\ExportTaskState.cs" />
@@ -168,16 +192,24 @@
     <Compile Include="Data\Import\CSV\BarEngine.cs" />
     <Compile Include="Data\Import\CSV\Column.cs" />
     <Compile Include="Data\Import\CSV\ColumnCollection.cs" />
-    <Compile Include="Data\Import\CSV\ColumnContextMenuStrip.cs" />
+    <Compile Include="Data\Import\CSV\ColumnContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\ColumnListXmlNode.cs" />
-    <Compile Include="Data\Import\CSV\ColumnMenuItem.cs" />
+    <Compile Include="Data\Import\CSV\ColumnMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\ColumnType.cs" />
     <Compile Include="Data\Import\CSV\ColumnXmlNode.cs" />
     <Compile Include="Data\Import\CSV\CSVOptions.cs" />
     <Compile Include="Data\Import\CSV\CSVXmlNode.cs" />
     <Compile Include="Data\Import\CSV\CultureInfoItem.cs" />
-    <Compile Include="Data\Import\CSV\CustomFormatDialog.cs" />
-    <Compile Include="Data\Import\CSV\CustomFormatHelpDialog.cs" />
+    <Compile Include="Data\Import\CSV\CustomFormatDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Import\CSV\CustomFormatHelpDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\DataOptions.cs" />
     <Compile Include="Data\Import\CSV\DataTypeItem.cs" />
     <Compile Include="Data\Import\CSV\DataXmlNode.cs" />
@@ -186,20 +218,30 @@
     <Compile Include="Data\Import\CSV\DateXmlNode.cs" />
     <Compile Include="Data\Import\CSV\Engine.cs" />
     <Compile Include="Data\Import\CSV\EngineState.cs" />
-    <Compile Include="Data\Import\CSV\ErrorDialog.cs" />
+    <Compile Include="Data\Import\CSV\ErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\ErrorEventArgs.cs" />
     <Compile Include="Data\Import\CSV\FileEventArgs.cs" />
-    <Compile Include="Data\Import\CSV\FilePage.cs" />
+    <Compile Include="Data\Import\CSV\FilePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\FileStatus.cs" />
     <Compile Include="Data\Import\CSV\FileViewItem.cs" />
-    <Compile Include="Data\Import\CSV\ImportPage.cs" />
+    <Compile Include="Data\Import\CSV\ImportPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\ImportSettings.cs" />
-    <Compile Include="Data\Import\CSV\ImportWizardForm.cs" />
+    <Compile Include="Data\Import\CSV\ImportWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\OtherOptions.cs" />
     <Compile Include="Data\Import\CSV\OtherXmlNode.cs" />
     <Compile Include="Data\Import\CSV\ProgressEventArgs.cs" />
     <Compile Include="Data\Import\CSV\QuoteEngine.cs" />
-    <Compile Include="Data\Import\CSV\SaveTemplateDialog.cs" />
+    <Compile Include="Data\Import\CSV\SaveTemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\Separator.cs" />
     <Compile Include="Data\Import\CSV\SeparatorItem.cs" />
     <Compile Include="Data\Import\CSV\SymbolOption.cs" />
@@ -207,40 +249,66 @@
     <Compile Include="Data\Import\CSV\SymbolXmlNode.cs" />
     <Compile Include="Data\Import\CSV\Template.cs" />
     <Compile Include="Data\Import\CSV\TemplateCollection.cs" />
-    <Compile Include="Data\Import\CSV\TemplateErrorForm.cs" />
+    <Compile Include="Data\Import\CSV\TemplateErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\TemplateListXmlNode.cs" />
-    <Compile Include="Data\Import\CSV\TemplatePage.cs" />
+    <Compile Include="Data\Import\CSV\TemplatePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Import\CSV\TemplateXmlDocument.cs" />
     <Compile Include="Data\Import\CSV\TemplateXmlNode.cs" />
     <Compile Include="Data\Import\CSV\TradeEngine.cs" />
-    <Compile Include="Data\Import\CSV\WizardPage.cs" />
+    <Compile Include="Data\Import\CSV\WizardPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Import\Historical\BarSizeItem.cs" />
-    <Compile Include="Data\Import\Historical\DownloadForm.cs" />
+    <Compile Include="Data\Import\Historical\DownloadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\Historical\DownloadItemStatus.cs" />
     <Compile Include="Data\Import\Historical\DownloadViewItem.cs" />
     <Compile Include="Data\Import\Historical\HistoricalDataRequestDictionary.cs" />
     <Compile Include="Data\Import\Instruments\FIXFieldPropertyDescriptor.cs" />
-    <Compile Include="Data\Import\Instruments\InstrumentDetailsForm.cs" />
-    <Compile Include="Data\Import\Instruments\InstrumentImportForm.cs" />
-    <Compile Include="Data\Import\Instruments\ProcessImportForm.cs" />
-    <Compile Include="Data\Import\Instruments\ProcessRequestForm.cs" />
+    <Compile Include="Data\Import\Instruments\InstrumentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Import\Instruments\InstrumentImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Import\Instruments\ProcessImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Import\Instruments\ProcessRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\Instruments\SecurityDefinitionComparer.cs" />
     <Compile Include="Data\Import\Instruments\SecurityDefinitionHelper.cs" />
     <Compile Include="Data\Import\Instruments\SecurityDefinitionTypeDescriptor.cs" />
     <Compile Include="Data\Import\Instruments\SecurityDefinitionViewItem.cs" />
     <Compile Include="Data\Import\NxCore\AdvancedImportSettings.cs" />
-    <Compile Include="Data\Import\NxCore\AdvancedImportSettingsForm.cs" />
+    <Compile Include="Data\Import\NxCore\AdvancedImportSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\NxCore\AsyncDataWriter.cs" />
     <Compile Include="Data\Import\NxCore\DataWriter.cs" />
-    <Compile Include="Data\Import\NxCore\ImportForm.cs" />
+    <Compile Include="Data\Import\NxCore\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\NxCore\ImportSettings.cs" />
-    <Compile Include="Data\Import\NxCore\ImportSettingsForm.cs" />
+    <Compile Include="Data\Import\NxCore\ImportSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\NxCore\ImportWizard.cs" />
     <Compile Include="Data\Import\NxCore\SyncDataWriter.cs" />
     <Compile Include="Data\Import\NxCore\TaskInfo.cs" />
     <Compile Include="Data\Import\NxCore\TaskInfoViewItem.cs" />
-    <Compile Include="Data\Import\Realtime\CheckboxToolStripItem.cs" />
-    <Compile Include="Data\Import\Realtime\DataCaptureWindow.cs" />
+    <Compile Include="Data\Import\Realtime\CheckboxToolStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\Import\Realtime\DataCaptureWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Data\Import\Realtime\InstrumentRow.cs" />
     <Compile Include="Data\Import\TAQ\DataFormatVersion.cs" />
     <Compile Include="Data\Import\TAQ\ImportEngine.cs" />
@@ -254,24 +322,46 @@
     <Compile Include="Data\Import\TAQ\QuoteDataRecord2.cs" />
     <Compile Include="Data\Import\TAQ\QuoteIndexRecord.cs" />
     <Compile Include="Data\Import\TAQ\SymbolOption.cs" />
-    <Compile Include="Data\Import\TAQ\TAQImportForm.cs" />
+    <Compile Include="Data\Import\TAQ\TAQImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Import\TAQ\TradeDataRecord.cs" />
     <Compile Include="Data\Import\TAQ\TradeDataRecord2.cs" />
     <Compile Include="Data\Import\TAQ\TradeIndexRecord.cs" />
-    <Compile Include="Data\Management\BarChartPanel.cs" />
+    <Compile Include="Data\Management\BarChartPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Management\BarDataTypeItem.cs" />
-    <Compile Include="Data\Management\BarEditor.cs" />
-    <Compile Include="Data\Management\BarSeriesMenuItem.cs" />
+    <Compile Include="Data\Management\BarEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Management\BarSeriesMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Data\Management\BarViewer.cs" />
-    <Compile Include="Data\Management\ChartPanel.cs" />
-    <Compile Include="Data\Management\CustomBarSeriesMenuItem.cs" />
-    <Compile Include="Data\Management\DailyEditor.cs" />
+    <Compile Include="Data\Management\ChartPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data\Management\CustomBarSeriesMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\Management\DailyEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Management\DailyViewer.cs" />
-    <Compile Include="Data\Management\DataManagerWindow.cs" />
-    <Compile Include="Data\Management\DataObjectEditor.cs" />
+    <Compile Include="Data\Management\DataManagerWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\Management\DataObjectEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Management\DataObjectViewer.cs" />
-    <Compile Include="Data\Management\DataSeriesCalendarForm.cs" />
-    <Compile Include="Data\Management\DataSeriesViewer.cs" />
+    <Compile Include="Data\Management\DataSeriesCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Management\DataSeriesViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Management\DataSeriesViewItem.cs" />
     <Compile Include="Data\Management\DataSeriesViewItemComparer.cs" />
     <Compile Include="Data\Management\DataTypeItem.cs" />
@@ -280,35 +370,59 @@
     <Compile Include="Data\Management\DateNode.cs" />
     <Compile Include="Data\Management\DateNodeComparer.cs" />
     <Compile Include="Data\Management\DayNode.cs" />
-    <Compile Include="Data\Management\DeleteRangeForm.cs" />
-    <Compile Include="Data\Management\GotoForm.cs" />
+    <Compile Include="Data\Management\DeleteRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Management\GotoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Management\InstrumentDataSeries.cs" />
     <Compile Include="Data\Management\InstrumentDataSeriesViewItem.cs" />
-    <Compile Include="Data\Management\InstrumentDataWindow.cs" />
-    <Compile Include="Data\Management\IntradayChartPanel.cs" />
+    <Compile Include="Data\Management\InstrumentDataWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\Management\IntradayChartPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Management\MarketDepthViewer.cs" />
-    <Compile Include="Data\Management\NewBarSeriesForm.cs" />
-    <Compile Include="Data\Management\QuoteChartPanel.cs" />
-    <Compile Include="Data\Management\QuoteEditor.cs" />
+    <Compile Include="Data\Management\NewBarSeriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Management\QuoteChartPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data\Management\QuoteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Management\QuoteViewer.cs" />
-    <Compile Include="Data\Management\TradeChartPanel.cs" />
-    <Compile Include="Data\Management\TradeEditor.cs" />
+    <Compile Include="Data\Management\TradeChartPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data\Management\TradeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\Management\TradeViewer.cs" />
-    <Compile Include="DemoDialog.cs" />
+    <Compile Include="DemoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DemoDialog.Designer.cs">
       <DependentUpon>DemoDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Diagnostics\CounterData.cs" />
     <Compile Include="Diagnostics\EventCounter.cs" />
     <Compile Include="Diagnostics\EventCounterViewRow.cs" />
-    <Compile Include="Diagnostics\EventMonitorWindow.cs" />
+    <Compile Include="Diagnostics\EventMonitorWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Diagnostics\InstrumentCounter.cs" />
     <Compile Include="Diagnostics\InstrumentCounterViewRow.cs" />
     <Compile Include="Diagnostics\MonitorIntervalItem.cs" />
     <Compile Include="Diagnostics\PerformanceCounter.cs" />
     <Compile Include="Diagnostics\PerformanceCounterItem.cs" />
     <Compile Include="Diagnostics\PerformanceCounterViewItem.cs" />
-    <Compile Include="Diagnostics\PerformanceMonitorWindow.cs" />
+    <Compile Include="Diagnostics\PerformanceMonitorWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Diagnostics\ProviderCounter.cs" />
     <Compile Include="Diagnostics\ProviderCounterViewRow.cs" />
     <Compile Include="Diagnostics\TotalCounter.cs" />
@@ -318,7 +432,9 @@
     <Compile Include="Editor\EditorActionProxy.cs" />
     <Compile Include="Editor\EditorKey.cs" />
     <Compile Include="Editor\EditorManager.cs" />
-    <Compile Include="Editor\EditorWindow.cs" />
+    <Compile Include="Editor\EditorWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EventQueue.cs" />
     <Compile Include="FormStateInfo.cs" />
     <Compile Include="Global.cs" />
@@ -337,14 +453,24 @@
     <Compile Include="Instruments\InstrumentEntry.cs" />
     <Compile Include="Instruments\InstrumentListNodeSorter.cs" />
     <Compile Include="Instruments\InstrumentListSource.cs" />
-    <Compile Include="Instruments\InstrumentListToolStrip.cs" />
-    <Compile Include="Instruments\InstrumentListWindow.cs" />
+    <Compile Include="Instruments\InstrumentListToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Instruments\InstrumentListWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Instruments\InstrumentNode.cs" />
-    <Compile Include="Instruments\InstrumentSelectorDialog.cs" />
-    <Compile Include="Instruments\InstrumentSelectorPanel.cs" />
+    <Compile Include="Instruments\InstrumentSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instruments\InstrumentSelectorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Instruments\InstrumentTypeGroupNode.cs" />
     <Compile Include="Instruments\MaturityGroupNode.cs" />
-    <Compile Include="Instruments\NewInstrumentForm.cs" />
+    <Compile Include="Instruments\NewInstrumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ITimerItem.cs" />
     <Compile Include="Logs\ColumnItem.cs" />
     <Compile Include="Logs\ColumnLayoutInfo.cs" />
@@ -360,52 +486,78 @@
     <Compile Include="Logs\StrategyLogItemEventArgs.cs" />
     <Compile Include="Logs\StrategyLogList.cs" />
     <Compile Include="Logs\StrategyLogManager.cs" />
-    <Compile Include="Logs\StrategyMonitorControl.cs" />
-    <Compile Include="Logs\StrategyMonitorWindow.cs" />
+    <Compile Include="Logs\StrategyMonitorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Logs\StrategyMonitorWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Logs\TabLayoutInfo.cs" />
-    <Compile Include="Logs\TabNameForm.cs" />
+    <Compile Include="Logs\TabNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Options\AppOptions.cs" />
     <Compile Include="Options\AssemblyNameViewItem.cs" />
     <Compile Include="Options\AssemblyNameViewItemSorter.cs" />
     <Compile Include="Options\AutoSaveXmlNode.cs" />
-    <Compile Include="Options\BrowseGACForm.cs" />
+    <Compile Include="Options\BrowseGACForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Options\BuildOptions.cs" />
-    <Compile Include="Options\BuildOptionsPanel.cs" />
+    <Compile Include="Options\BuildOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\BuildReferenceListXmlNode.cs" />
     <Compile Include="Options\BuildReferenceViewItem.cs" />
     <Compile Include="Options\BuildReferenceXmlNode.cs" />
     <Compile Include="Options\BuildXmlDocument.cs" />
     <Compile Include="Options\ConfigurationOptions.cs" />
-    <Compile Include="Options\ConfigurationOptionsPanel.cs" />
+    <Compile Include="Options\ConfigurationOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\EditorOptions.cs" />
-    <Compile Include="Options\EditorOptionsPanel.cs" />
+    <Compile Include="Options\EditorOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\EditorSettingsXmlNode.cs" />
     <Compile Include="Options\EditorXmlDocument.cs" />
     <Compile Include="Options\GeneralOptionsNode.cs" />
     <Compile Include="Options\IntegralCloseXmlNode.cs" />
     <Compile Include="Options\LayoutColorSchemeXmlNode.cs" />
     <Compile Include="Options\LayoutOptions.cs" />
-    <Compile Include="Options\LayoutOptionsPanel.cs" />
+    <Compile Include="Options\LayoutOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\LayoutRenderer.cs" />
     <Compile Include="Options\LayoutRendererXmlNode.cs" />
     <Compile Include="Options\LayoutXmlDocument.cs" />
     <Compile Include="Options\MemoryManagementOptions.cs" />
-    <Compile Include="Options\MemoryManagementPanel.cs" />
+    <Compile Include="Options\MemoryManagementPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\MemoryManagementXmlDocument.cs" />
     <Compile Include="Options\MemoryManagementXmlNode.cs" />
     <Compile Include="Options\OptionsBase.cs" />
-    <Compile Include="Options\OptionsForm.cs" />
+    <Compile Include="Options\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Options\OptionsNode.cs" />
     <Compile Include="Options\OptionsNodeAttribute.cs" />
-    <Compile Include="Options\OptionsPanel.cs" />
+    <Compile Include="Options\OptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\PluginOQViewItem.cs" />
     <Compile Include="Options\PluginSQViewItem.cs" />
     <Compile Include="Options\ProvidersOptions.cs" />
-    <Compile Include="Options\ProvidersOptionsPanel.cs" />
+    <Compile Include="Options\ProvidersOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\ProvidersSettingsXmlNode.cs" />
     <Compile Include="Options\ProvidersXmlDocument.cs" />
     <Compile Include="Options\ScriptsOptions.cs" />
-    <Compile Include="Options\ScriptsOptionsPanel.cs" />
+    <Compile Include="Options\ScriptsOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Options\ScriptsXmlData.cs" />
     <Compile Include="Plugins\PluginInfo.cs" />
     <Compile Include="Plugins\PluginInfoList.cs" />
@@ -418,13 +570,25 @@
     <Compile Include="ProductInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="APITypeConverter.cs" />
-    <Compile Include="Properties\Resources.cs" />
-    <Compile Include="Providers\ProviderErrorDetailsForm.cs" />
-    <Compile Include="Providers\ProviderErrorListWindow.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\ProviderErrorDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Providers\ProviderErrorListWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Providers\ProviderErrorViewItem.cs" />
     <Compile Include="Providers\ProviderHelper.cs" />
-    <Compile Include="Providers\ProviderHelperForm.cs" />
-    <Compile Include="Providers\ProviderListWindow.cs" />
+    <Compile Include="Providers\ProviderHelperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Providers\ProviderListWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Providers\ProviderNode.cs" />
     <Compile Include="Providers\ProviderTypeNode.cs" />
     <Compile Include="QuantTrader\AssemblyFile.cs" />
@@ -463,14 +627,24 @@
     <Compile Include="Scripts\CodeLangItem.cs" />
     <Compile Include="Scripts\ConfigXmlDocument.cs" />
     <Compile Include="Scripts\FileSystemEntryNode.cs" />
-    <Compile Include="Scripts\NewDirectoryDialog.cs" />
-    <Compile Include="Scripts\NewScriptDialog.cs" />
+    <Compile Include="Scripts\NewDirectoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\NewScriptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Scripts\PathXmlNode.cs" />
-    <Compile Include="Scripts\RenameFileSystemEntryForm.cs" />
+    <Compile Include="Scripts\RenameFileSystemEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Scripts\ScriptDirectoryNode.cs" />
     <Compile Include="Scripts\ScriptEditorKey.cs" />
-    <Compile Include="Scripts\ScriptEditorWindow.cs" />
-    <Compile Include="Scripts\ScriptExplorerWindow.cs" />
+    <Compile Include="Scripts\ScriptEditorWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Scripts\ScriptExplorerWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Scripts\ScriptFileNode.cs" />
     <Compile Include="Scripts\ScriptKey.cs" />
     <Compile Include="Scripts\ScriptManager.cs" />
@@ -489,17 +663,25 @@
     <Compile Include="Scripts\StartupScriptXmlNode.cs" />
     <Compile Include="SetupFolders.cs" />
     <Compile Include="SetupInfo.cs" />
-    <Compile Include="SplashScreen.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="TimerManager.cs" />
-    <Compile Include="ToolWindows\ErrorListWindow.cs" />
+    <Compile Include="ToolWindows\ErrorListWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ToolWindows\ErrorViewItem.cs" />
     <Compile Include="ToolWindows\IPropertyEditable.cs" />
-    <Compile Include="ToolWindows\OutputWindow.cs" />
+    <Compile Include="ToolWindows\OutputWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ToolWindows\OutputWriter.cs" />
-    <Compile Include="ToolWindows\PropertiesWindow.cs" />
+    <Compile Include="ToolWindows\PropertiesWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ToolWindows\PropertyObjectEventArgs.cs" />
     <Compile Include="ToolWindows\ToolWindowManager.cs" />
     <Compile Include="TradingTools\BarSizeInfo.cs" />
@@ -510,12 +692,20 @@
     <Compile Include="TradingTools\MarketDataUpdateItem.cs" />
     <Compile Include="TradingTools\MarketDataViewRow.cs" />
     <Compile Include="TradingTools\OrderBookRowData.cs" />
-    <Compile Include="TradingTools\OrderBookWindow.cs" />
-    <Compile Include="TradingTools\OrderMiniBlotterForm.cs" />
-    <Compile Include="TradingTools\QuoteMonitorWindow.cs" />
+    <Compile Include="TradingTools\OrderBookWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TradingTools\OrderMiniBlotterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradingTools\QuoteMonitorWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TradingTools\QuoteViewRow.cs" />
     <Compile Include="TradingTools\RouteItem.cs" />
-    <Compile Include="Updates\CheckForUpdatesForm.cs" />
+    <Compile Include="Updates\CheckForUpdatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Updates\CheckForUpdatesForm.Designer.cs" />
     <Compile Include="Updates\DataXmlDocument.cs" />
     <Compile Include="Updates\NoteInfo.cs" />
@@ -523,13 +713,30 @@
     <Compile Include="Updates\NoteXmlNode.cs" />
     <Compile Include="Updates\ReleaseInfo.cs" />
     <Compile Include="Updates\ReleaseListXmlNode.cs" />
-    <Compile Include="Updates\ReleaseNotesControl.cs" />
+    <Compile Include="Updates\ReleaseNotesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Updates\ReleaseNotesControl.Designer.cs" />
     <Compile Include="Updates\ReleaseXmlNode.cs" />
     <Compile Include="Updates\UpdateManager.cs" />
     <Compile Include="Updates\UriEventArgs.cs" />
     <Compile Include="Editor\EditorWindow.Designer.cs">
       <DependentUpon>EditorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instruments\InstrumentListWindow.Designer.cs">
+      <DependentUpon>InstrumentListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\ProviderListWindow.Designer.cs">
+      <DependentUpon>ProviderListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\ErrorListWindow.Designer.cs">
+      <DependentUpon>ErrorListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\ScriptEditorWindow.Designer.cs">
+      <DependentUpon>ScriptEditorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\ScriptExplorerWindow.Designer.cs">
+      <DependentUpon>ScriptExplorerWindow.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -705,10 +912,12 @@
     <EmbeddedResource Include="Options\LayoutOptionsPanel.resx" />
     <EmbeddedResource Include="Options\MemoryManagementPanel.resx" />
     <EmbeddedResource Include="Options\OptionsForm.resx" />
-    <EmbeddedResource Include="Options\OptionsPanel.resx" />
     <EmbeddedResource Include="Options\ProvidersOptionsPanel.resx" />
     <EmbeddedResource Include="Options\ScriptsOptionsPanel.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Providers\ProviderErrorDetailsForm.resx">
       <DependentUpon>ProviderErrorDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -761,8 +970,6 @@
     <EmbeddedResource Include="Updates\ReleaseNotesControl.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Data\Export\" />
-    <Folder Include="Data\Import\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

@@ -38,8 +38,8 @@ namespace FreeQuant.Instruments
 
 		public void Add(Currency currency)
 		{
-//			if (this.currencies.Contains(currency.Code))
-//				throw new ApplicationException("" + currency.Code);
+			if (this.currencies.Contains(currency.Code))
+                throw new ApplicationException("Already Added. {0}" + currency.Code);
 			this.currencies.Add(currency.Code, currency);
 		}
 

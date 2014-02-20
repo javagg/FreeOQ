@@ -39,7 +39,8 @@ namespace OpenQuant.API.Design
 
     private void InitializeComponent()
     {
-      this.cbxAltSources = new ComboBox();
+            this.components = new Container();
+            this.cbxAltSources = new ComboBox();
       this.btnCancel = new Button();
       this.btnOK = new Button();
       this.SuspendLayout();

@@ -105,6 +105,10 @@
     <Compile Include="TransactionList.cs" />
     <Compile Include="Underlying.cs" />
     <Compile Include="UnderlyingList.cs" />
+    <Compile Include="RequestItem.cs" />
+    <Compile Include="HistoricalDataGetter.cs" />
+    <Compile Include="InstrumentFileServer.cs" />
+    <Compile Include="PortfolioFileServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreeQuant.Series\FreeQuant.Series.csproj">

@@ -29,13 +29,13 @@ namespace OpenQuant.Shared.Options
 			switch (this.Renderer)
 			{
 				case LayoutRenderer.VisualStudio2002:
-					Global.DockManager.Renderer = (RendererBase)new EverettRenderer();
+					Global.DockManager.Renderer = new EverettRenderer();
 					break;
 				case LayoutRenderer.VisualStudio2005:
-					Global.DockManager.Renderer = (RendererBase)new WhidbeyRenderer();
+					Global.DockManager.Renderer = new WhidbeyRenderer();
 					break;
 				case LayoutRenderer.Office2003:
-					Global.DockManager.Renderer = (RendererBase)new Office2003Renderer();
+					Global.DockManager.Renderer = new Office2003Renderer();
 					break;
 			}
 			if (Global.DockManager.Renderer is ThemeAwareRendererBase)
@@ -53,11 +53,11 @@ namespace OpenQuant.Shared.Options
 		{
 			if (this.configFile.Exists)
 			{
-				LayoutXmlDocument layoutXmlDocument = new LayoutXmlDocument();
-				((XmlDocument)layoutXmlDocument).Load(this.configFile.FullName);
-				this.Renderer = layoutXmlDocument.Renderer.Value;
-				this.ColorScheme = layoutXmlDocument.ColorScheme.Value;
-				this.IntegralClose = layoutXmlDocument.IntegralClose.Value;
+                LayoutXmlDocument doc = new LayoutXmlDocument(); 
+				doc.Load(this.configFile.FullName);
+				this.Renderer = doc.Renderer.Value;
+				this.ColorScheme = doc.ColorScheme.Value;
+				this.IntegralClose = doc.IntegralClose.Value;
 			}
 			else
 			{
@@ -69,7 +69,7 @@ namespace OpenQuant.Shared.Options
 
 		protected override void OnSave()
 		{
-			((XmlDocument)new LayoutXmlDocument()
+			(new LayoutXmlDocument()
 			{
 				Renderer =
 				{

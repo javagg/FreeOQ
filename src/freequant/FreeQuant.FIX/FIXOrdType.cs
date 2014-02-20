@@ -35,7 +35,7 @@ namespace FreeQuant.FIX
 		{
 		}
 
-		public static char Value(string Name)
+        public new static char Value(string Name)
 		{
 			if (Name == "Market")
 				return '1';

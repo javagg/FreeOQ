@@ -474,7 +474,7 @@ namespace FreeQuant.Execution
 			this.rejects = new OrderCancelRejectList();
 			this.replaceOrder = new NewOrderSingle();
 
-			this.ClOrdID = OrderManager.Xgea6ywFN();
+			this.ClOrdID = OrderManager.GetOrdId();
 			this.OrdStatus = OrdStatus.PendingNew;
 			this.HandlInst = '1';
 			this.TimeInForce = TimeInForce.Day;

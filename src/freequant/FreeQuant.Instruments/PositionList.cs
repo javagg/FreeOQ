@@ -46,8 +46,8 @@ namespace FreeQuant.Instruments
 
 		public void Add(Position position)
 		{
-//			if (this.positions.Contains(position.Name))
-//				throw new ApplicationException("fsfs" + position.Name);
+			if (this.positions.Contains(position.Name))
+                throw new ApplicationException("Already Added. {0}" + position.Name);
 			this.positions.Add(position.Name, position);
 		}
 

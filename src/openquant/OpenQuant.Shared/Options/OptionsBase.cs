@@ -73,10 +73,7 @@ namespace OpenQuant.Shared.Options
 		private OptionsNodeAttribute GetAttribute()
 		{
 			object[] customAttributes = this.GetType().GetCustomAttributes(typeof(OptionsNodeAttribute), true);
-			if (customAttributes.Length != 1)
-				return (OptionsNodeAttribute)null;
-			else
-				return (OptionsNodeAttribute)customAttributes[0];
+            return customAttributes.Length == 1 ? (OptionsNodeAttribute)customAttributes[0] : null;
 		}
 	}
 }

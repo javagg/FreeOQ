@@ -9,7 +9,7 @@ namespace OpenQuant.Shared
 		{
 			get
 			{
-				return new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(new char[] { Path.DirectorySeparatorChar }));
+                return Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(new char[] { Path.DirectorySeparatorChar }));
 			}
 		}
 
@@ -17,7 +17,7 @@ namespace OpenQuant.Shared
 		{
 			get
 			{
-				return new DirectoryInfo(Path.Combine(this.Base.FullName, "Help"));
+                return Directory.CreateDirectory(Path.Combine(this.Base.FullName, "Help"));
 			}
 		}
 
@@ -25,7 +25,7 @@ namespace OpenQuant.Shared
 		{
 			get
 			{
-				return new DirectoryInfo(Path.Combine(this.Base.FullName, "Setup", "AppData"));
+                return Directory.CreateDirectory(Path.Combine(this.Base.FullName, "Setup", "AppData"));
 			}
 		}
 
@@ -33,7 +33,7 @@ namespace OpenQuant.Shared
 		{
 			get
 			{
-				return new DirectoryInfo(Path.Combine(this.Base.FullName, "Setup", "Documents"));
+                return Directory.CreateDirectory(Path.Combine(this.Base.FullName, "Setup", "Documents"));
 			}
 		}
 	}

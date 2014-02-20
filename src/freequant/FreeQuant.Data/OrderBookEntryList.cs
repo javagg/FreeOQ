@@ -3,70 +3,70 @@ using System.Collections;
 
 namespace FreeQuant.Data
 {
-	public class OrderBookEntryList : ICollection
-	{
-		private ArrayList orders;
+    public class OrderBookEntryList : ICollection
+    {
+        private ArrayList entries;
 
-		public bool IsSynchronized
-		{
-			get
-			{
-				return this.orders.IsSynchronized;
-			}
-		}
+        public bool IsSynchronized
+        {
+            get
+            {
+                return this.entries.IsSynchronized;
+            }
+        }
 
-		public int Count
-		{
-			get
-			{
-				return this.orders.Count;
-			}
-		}
+        public int Count
+        {
+            get
+            {
+                return this.entries.Count;
+            }
+        }
 
-		public object SyncRoot
-		{
-			get
-			{
-				return this.orders.SyncRoot;
-			}
-		}
+        public object SyncRoot
+        {
+            get
+            {
+                return this.entries.SyncRoot;
+            }
+        }
 
-		public OrderBookEntry this[int index]
-		{
-			get
-			{
-				return this.orders[index] as OrderBookEntry;
-			}
-		}
+        public OrderBookEntry this[int index]
+        {
+            get
+            {
+                return this.entries[index] as OrderBookEntry;
+            }
+        }
 
-		public void CopyTo(Array array, int index)
-		{
-			this.orders.CopyTo(array, index);
-		}
+        public void CopyTo(Array array, int index)
+        {
+            this.entries.CopyTo(array, index);
+        }
 
-		public IEnumerator GetEnumerator()
-		{
-			return this.orders.GetEnumerator();
-		}
+        public IEnumerator GetEnumerator()
+        {
+            return this.entries.GetEnumerator();
+        }
 
-		internal OrderBookEntryList()
-		{
-			this.orders = ArrayList.Synchronized(new ArrayList());
-		}
+        internal OrderBookEntryList()
+        {
+            this.entries = ArrayList.Synchronized(new ArrayList());
+        }
 
-		internal void Clear()
-		{
-			this.orders.Clear();
-		}
+        internal void Clear()
+        {
+            this.entries.Clear();
+        }
 
-		internal void Insert(int index, OrderBookEntry entry)
-		{
-			this.orders.Insert(index, entry);
-		}
+        internal void Insert(int index, OrderBookEntry entry)
+        {
+            this.entries.Insert(index, entry);
+        }
 
-		internal void RemoveAt(int index)
-		{
-			this.orders.RemoveAt(index);
-		}
-	}
+        internal void RemoveAt(int index)
+        {
+            this.entries.RemoveAt(index);
+        }
+    }
 }

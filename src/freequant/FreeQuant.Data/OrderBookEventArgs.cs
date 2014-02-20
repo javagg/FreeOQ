@@ -8,7 +8,7 @@ namespace FreeQuant.Data
 		public MDOperation Operation { get; private set; }
 		public int Position { get; private set; }
 
-		public OrderBookEventArgs(MDSide size, MDOperation operation, int position)
+        public OrderBookEventArgs(MDSide size, MDOperation operation, int position) : base()
 		{
 			this.Side = size;
 			this.Operation = operation;

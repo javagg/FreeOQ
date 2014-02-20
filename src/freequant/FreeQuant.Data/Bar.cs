@@ -7,7 +7,8 @@ namespace FreeQuant.Data
 	[Serializable]
 	public class Bar : IDataObject, ISeriesObject
 	{
-		protected byte providerId;
+        private const byte VERSION = 2;
+        protected byte providerId;
 		protected BarType barType;
 		protected Color color;
 		protected bool isComplete;
@@ -105,7 +106,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				if (!(this.endTime == DateTime.MinValue))
+                if (this.endTime != DateTime.MinValue)
 				{
 					return this.endTime;
 				}
@@ -113,7 +114,7 @@ namespace FreeQuant.Data
 				{
 					return this.beginTime.AddSeconds(this.size);
 				}
-				throw new InvalidOperationException("");
+				throw new InvalidOperationException();
 			}
 			
 			set
@@ -369,8 +370,8 @@ namespace FreeQuant.Data
 
 		public virtual void ReadFrom(BinaryReader reader)
 		{
-			byte b = reader.ReadByte();
-			switch (b)
+            byte version = reader.ReadByte(); 
+			switch (version)
 			{
 				case 1:
 					this.beginTime = new DateTime(reader.ReadInt64());
@@ -399,13 +400,13 @@ namespace FreeQuant.Data
 					this.providerId = reader.ReadByte();
 					return;
 				default:
-					throw new Exception("version" + b);
+                    throw new Exception("Version unknown" + version);
 			}
 		}
 
 		public override string ToString()
 		{
-			return string.Format("", new object[]
+            return string.Format("BeginTime:{0}\nEndTime:{1}\nBarType:{2}\n...", new object[]
 			{
 				this.beginTime,
 				this.endTime,
@@ -422,7 +423,7 @@ namespace FreeQuant.Data
 
 		public virtual void WriteTo(BinaryWriter writer)
 		{
-			writer.Write(2);
+            writer.Write(VERSION);
 			writer.Write(this.beginTime.Ticks);
 			writer.Write(this.endTime.Ticks);
 			writer.Write((byte)this.barType);

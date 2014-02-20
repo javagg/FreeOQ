@@ -6,7 +6,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return DbServerType.MYSQL;
+                return DbServerType.SQLITE;
 			}
 		}
 	}

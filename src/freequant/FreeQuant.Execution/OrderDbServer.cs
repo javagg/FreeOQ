@@ -1,9 +1,9 @@
-using FreeQuant.FIX;
-using FreeQuant.Instruments;
-using FreeQuant.Providers;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using FreeQuant.FIX;
+using FreeQuant.Instruments;
+using FreeQuant.Providers;
 
 namespace FreeQuant.Execution
 {

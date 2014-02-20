@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace OpenQuant.Shared.Charting
 {
-  internal class ChartTemplate
+  class ChartTemplate
   {
     private Dictionary<int, PadTemplate> padTemplates = new Dictionary<int, PadTemplate>();
 

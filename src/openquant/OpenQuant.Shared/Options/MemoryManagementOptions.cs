@@ -40,14 +40,14 @@ namespace OpenQuant.Shared.Options
 		{
 			if (this.configFile.Exists)
 			{
-				MemoryManagementXmlDocument managementXmlDocument = new MemoryManagementXmlDocument();
-				((XmlDocument)managementXmlDocument).Load(this.configFile.FullName);
-				this.PortfolioPerformanceEnabled = managementXmlDocument.Settings.PortfolioPerformanceEnabled.Value;
-				this.PortfolioPerformancePnLCalculationEnabled = managementXmlDocument.Settings.PortfolioPerformancePnLCalculationEnabled.Value;
-				this.PortfolioPerformanceDrawdownCalculationEnabled = managementXmlDocument.Settings.PortfolioPerformanceDrawdownCalculationEnabled.Value;
-				this.RemoveOrders = managementXmlDocument.Settings.RemoveOrders.Value;
-				this.PortfolioPerformanceUpdateOnIntervalEnabled = managementXmlDocument.Settings.PortfolioPerformanceUpdateOnIntervalEnabled.Value;
-				this.PortfolioPerformanceUpdateInterval = managementXmlDocument.Settings.PortfolioPerformanceUpdateInterval.Value;
+                MemoryManagementXmlDocument doc = new MemoryManagementXmlDocument();
+				doc.Load(this.configFile.FullName);
+				this.PortfolioPerformanceEnabled = doc.Settings.PortfolioPerformanceEnabled.Value;
+				this.PortfolioPerformancePnLCalculationEnabled = doc.Settings.PortfolioPerformancePnLCalculationEnabled.Value;
+				this.PortfolioPerformanceDrawdownCalculationEnabled = doc.Settings.PortfolioPerformanceDrawdownCalculationEnabled.Value;
+				this.RemoveOrders = doc.Settings.RemoveOrders.Value;
+				this.PortfolioPerformanceUpdateOnIntervalEnabled = doc.Settings.PortfolioPerformanceUpdateOnIntervalEnabled.Value;
+				this.PortfolioPerformanceUpdateInterval = doc.Settings.PortfolioPerformanceUpdateInterval.Value;
 			}
 			else
 			{
@@ -62,14 +62,14 @@ namespace OpenQuant.Shared.Options
 
 		protected override void OnSave()
 		{
-			MemoryManagementXmlDocument managementXmlDocument = new MemoryManagementXmlDocument();
-			managementXmlDocument.Settings.PortfolioPerformanceEnabled.Value = this.PortfolioPerformanceEnabled;
-			managementXmlDocument.Settings.PortfolioPerformancePnLCalculationEnabled.Value = this.PortfolioPerformancePnLCalculationEnabled;
-			managementXmlDocument.Settings.PortfolioPerformanceDrawdownCalculationEnabled.Value = this.PortfolioPerformanceDrawdownCalculationEnabled;
-			managementXmlDocument.Settings.RemoveOrders.Value = this.RemoveOrders;
-			managementXmlDocument.Settings.PortfolioPerformanceUpdateOnIntervalEnabled.Value = this.PortfolioPerformanceUpdateOnIntervalEnabled;
-			managementXmlDocument.Settings.PortfolioPerformanceUpdateInterval.Value = this.PortfolioPerformanceUpdateInterval;
-			((XmlDocument)managementXmlDocument).Save(this.configFile.FullName);
+            MemoryManagementXmlDocument doc = new MemoryManagementXmlDocument();
+			doc.Settings.PortfolioPerformanceEnabled.Value = this.PortfolioPerformanceEnabled;
+			doc.Settings.PortfolioPerformancePnLCalculationEnabled.Value = this.PortfolioPerformancePnLCalculationEnabled;
+			doc.Settings.PortfolioPerformanceDrawdownCalculationEnabled.Value = this.PortfolioPerformanceDrawdownCalculationEnabled;
+			doc.Settings.RemoveOrders.Value = this.RemoveOrders;
+			doc.Settings.PortfolioPerformanceUpdateOnIntervalEnabled.Value = this.PortfolioPerformanceUpdateOnIntervalEnabled;
+			doc.Settings.PortfolioPerformanceUpdateInterval.Value = this.PortfolioPerformanceUpdateInterval;
+			doc.Save(this.configFile.FullName);
 		}
 	}
 }

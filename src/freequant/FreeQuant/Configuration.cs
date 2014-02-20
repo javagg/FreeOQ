@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel;
-//using System.Diagnostics;
 
 namespace FreeQuant
 {
@@ -10,14 +9,13 @@ namespace FreeQuant
         private const string Defaults = "Defaults";
         private const string qSTmIZYQno = "Error Management";
         private const string TvkmlyTube = "framework.xml";
-//        private const TraceLevel defaultTraceLevel = FreeQuant.TraceLevel.Info;
         private const string Currency = "Currency";
         private const string Portfolio = "Portfolio";
         private const string Exchange = "Exchange";
         private const string ExecutionProvider = "ExecutionProvider";
         private const string MarketDataProvider = "MarketDataProvider";
         private ReferenceList DQjmfsNtrs;
-        private PluginList plugins;
+        private PluginList plugins = new PluginList();
         private System.Diagnostics.TraceLevel traceLevel = TraceLevel.Info;
         private string ytrmcAy4ir;
         private string eVlmZNmmA4;
@@ -231,10 +229,12 @@ namespace FreeQuant
 
         public void AddPlugin(Plugin plugin)
         {
+            this.plugins.Add(plugin);
         }
 
         public void RemovePlugin(Plugin plugin)
         {
+            this.plugins.Remove(plugin);
         }
 
         private void r4omhfJxrr(Reference obj0)

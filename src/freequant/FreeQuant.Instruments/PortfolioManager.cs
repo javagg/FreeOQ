@@ -1,6 +1,6 @@
 using FreeQuant;
 using System;
-using System.Runtime.InteropServices;
+using System.IO;
 
 namespace FreeQuant.Instruments
 {
@@ -59,22 +59,22 @@ namespace FreeQuant.Instruments
 
 		static PortfolioManager()
 		{
-  
-			PortfolioManager.pricer = (IPortfolioPricer)new PortfolioPricer();
-			PortfolioManager.server = (IPortfolioServer)new PortfolioDbServer();
-			Type connectionType = (Type)null;
+			PortfolioManager.pricer = new PortfolioPricer();
+
+			Type connectionType = null;
 			string connectionString = string.Empty;
 			switch (Framework.Storage.ServerType)
 			{
-				case DbServerType.MS_ACCESS:
-					connectionType = Type.GetType("");
-					connectionString = string.Format("dfs", (object)Framework.Installation.DataDir.FullName);
-					break;
-				case DbServerType.SQL_SERVER_COMPACT_EDITION_35:
-					connectionType = Type.GetType("");
-					connectionString = string.Format("fsfs", Framework.Installation.DataDir.FullName);
-					break;
-			}
+                case DbServerType.SQLITE:
+                    connectionType = Type.GetType("SQLiteConnection");
+                    connectionString = string.Format("Data Source={0};Pooling=true;FailIfMissing=false;", Path.Combine(Framework.Installation.DataDir.FullName, "freequant.db"));
+                    break;
+                default:
+                    throw new NotSupportedException("This db is not support yet.");
+            }
+
+//            PortfolioManager.server = new PortfolioDbServer();
+            PortfolioManager.server = new PortfolioFileServer();
 			PortfolioManager.server.Open(connectionType, connectionString);
 			PortfolioManager.portfolios = PortfolioManager.server.Load();
 		}
@@ -110,14 +110,14 @@ namespace FreeQuant.Instruments
 			PortfolioManager.server.Update(portfolio);
 		}
 
-		internal static void LfnseafCc7(Portfolio portfolio, Transaction transaction)
+		internal static void Add(Portfolio portfolio, Transaction transaction)
 		{
 			PortfolioManager.server.Add(portfolio, transaction);
 		}
 
-		internal static void vwIs2WhnRQ([In] Portfolio obj0, [In] AccountTransaction obj1)
+		internal static void vwIs2WhnRQ(Portfolio position, AccountTransaction transaction)
 		{
-			PortfolioManager.server.Add(obj0, obj1);
+			PortfolioManager.server.Add(position, transaction);
 		}
 
 		internal static void Clear(Portfolio portfolio)

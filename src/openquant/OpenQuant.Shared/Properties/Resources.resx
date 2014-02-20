@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -159,7 +159,7 @@
   <data name="provider_connected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBTYSAyMCBEZXogMjAwMyAwMDo0Mzo1NiArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBTYSAyMCBEZXogMjAwMyAwMDo0Mzo1NiArMDEw
         MDgHRiwAAAAHdElNRQfTCgYUDAMZNpZGAAACTklEQVQ4T4WTz2vTYBjHm7arjdm6VteZtGub1taS2tV2
         66xsY+tisT+Ssiq2bvYk6lakeCndRGV4CZ4GKjrFizuIXgRRETz6Bwgi4sWDRxEPggjDy/r1SU4iKX7h
         c8rn/fK+z0Msf6fVat3qdrtf2u32zsWVlZ3l5eXvarX6Xpblx4lE4hgpLMEYslmo4Jemaeisre2qjaXe
@@ -211,7 +211,7 @@
   <data name="provider_disconnected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBTYSAyMCBEZXogMjAwMyAwMDo0Mzo1NiArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBTYSAyMCBEZXogMjAwMyAwMDo0Mzo1NiArMDEw
         MDgHRiwAAAAHdElNRQfTCgYUDAMZNpZGAAACS0lEQVQ4T4WSSWgTYRiGM2YxzTZJJpnRtHVi0iaaVpqY
         QBetmLa0ZJnMxEpsM7biFiNIqkZEUVDEBi/1IlYpUhRREMHl4LEH8ebFi4gHr97Ei4q3vH4zJ5EJPvBc
         Zh6+n38x/U2tVrvdbDa/NJaWfp04eep3pap+k5Typ4mpqdfpdHqeEhe5SY+NqNfrP24uL+P8xcvto/OV
@@ -258,7 +258,7 @@
   <data name="providers" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBGciAxOSBEZXogMjAwMyAwMTo0Mzo0OSArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBGciAxOSBEZXogMjAwMyAwMTo0Mzo0OSArMDEw
         MA+E4ZgAAAAHdElNRQfTCgYUCit62Zk6AAACIElEQVQ4T43TX0hTYRgG8CPJCrooJIy8KCrUu/Imkw1W
         N9VFEBUEWRbRaEiN2lm2P8yVnaITk642ushVNGwU7oR1HKGicvTMOln+GQhzd06XZCAaDQyht+dbo6x2
         WA/8+Bjvx3fOefjGvXsTn+zq7v3W29OdfR2Lfe2S5cXOTmne63F7OY4rg1LQz5imLl3ty9LDKaJQkqhZ
@@ -292,7 +292,7 @@
   <data name="provider_errors" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBNbyAxNSBBdWcgMjAwNSAxMTozMToxNCArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBNbyAxNSBBdWcgMjAwNSAxMTozMToxNCArMDEw
         MNn+GXoAAAAHdElNRQfTCgYUCw9fwUyqAAACbklEQVQ4T42SXUhTYRjHzxLUy/Km7KYRQV0kdBd0Y4SF
         kH3ddRElVrtRaeCFJeqWRirEsrrI0rpIKsRqDmaakR9zWzN1fsu2s83TkNwgh+W0fZ3z73lfTV2B9Icf
         44z3/zvP824CS31TNxi1j8ycKkMHp7z+DUdb8xoXNbUaOrqLSOOlrWHl7cIE1QYTThQU3aLj2USq5G+B
@@ -375,7 +375,7 @@
   <data name="clear" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBEbyAyNyBGZWIgMjAwMyAxMTowNjowMSArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBEbyAyNyBGZWIgMjAwMyAxMTowNjowMSArMDEw
         MJJEoDYAAAAHdElNRQfTCgYUCidzb9URAAACsklEQVQ4T43TfSzVYRQH8O9NdK9FovKPatEW1dbGxipv
         oc2UTWitlIZs/cGsrVoLGb14WS/E2mRecrV7Q8qtUddVl+tSK5JNNX9gRKn1Zglxf6fz3EnMHzrbZ3e/
         5znn+Z3f3Xnwf0EyRKryEW34hjBNN5wOevKiNZOZtxeNEM0BxLcR/FWExC6CY3Amr25mVub9RSO4vsIi
@@ -394,7 +394,7 @@
   <data name="chart" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBEbyAxOCBBdWcgMjAwNSAyMjozNDowNiArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBEbyAxOCBBdWcgMjAwNSAyMjozNDowNiArMDEw
         MBqv31gAAAAHdElNRQfTCgYUCyIaHhDfAAADO0lEQVQ4T02S60tTcRjHD0EXDHoRRBB0wcyI3hRFf0Av
         CiKqFwUVFGWvisgKipJCu6iZy/t1V+2i03TmitLu6ryuXjht7ubOztrO5uacc5czt9i355hlBz5wDj++
         n+c5z/Njquqa/apn2oS8oVOQKjXRWnl7uEbWPltV3xYor27xl9e0eksq1byk7IVLUtbMSUrV7MPCRj3D
@@ -415,7 +415,7 @@
   <data name="csv" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBNbyAxNSBBdWcgMjAwNSAxMTozMToxNCArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBNbyAxNSBBdWcgMjAwNSAxMTozMToxNCArMDEw
         MNn+GXoAAAAHdElNRQfTCgYUCw4oxnw8AAACaklEQVQ4T42STU8TURSG27hx69KViRv/hnGr7l0aF0iA
         RowaaKVAYAFuEHUBCrpQE+JHBNQoEWprGyoU+mlL28FpaYdpp1A7tcNAK7Sv516ItoEY3+RJmpnzPnPm
         Tg0sg6MzYPQ/eM+xDk1xOgZfc9r7JnCpqb+JRk8Qx3ipPqzMk44Dvi/7v+vCBN1D0zh34YqZxk8SjRIm
@@ -433,7 +433,7 @@
   <data name="taq" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAACt0RVh0Q3JlYXRpb24gVGltZQBGciAxNSBOb3YgMjAwMiAxMjoxODoxOCArMDEw
+        DAAACwwBP0AiyAAAACt0RVh0Q3JlYXRpb24gVGltZQBGciAxNSBOb3YgMjAwMiAxMjoxODoxOCArMDEw
         MHyIBBoAAAAHdElNRQfTCgYUCijj0MiAAAAC0ElEQVQ4T2WT70uTURTHHwm1t5UQY8uI8F1Shn9CvSh8
         EVSaWBRmBSX9IIuGaZFM2ZSi0uWYgdusZSqhM1QcbTRNnVrqLHUzTKdb/phtOcP5bM/pe/c4Ejvw4bns
         nO/3nnvPHbc5Otq9ksaG0RJTy9igxeLyd3R+9RsM1n5VmV5x6mRuCkoSQVy0eGsM2NdybH3zAU8wRLFg
@@ -452,7 +452,7 @@
   <data name="quote_monitor" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAACt0RVh0Q3JlYXRpb24gVGltZQBEaSAyNiBBdWcgMjAwMyAxOTo1Mjo0NCArMDEw
+        DAAACwwBP0AiyAAAACt0RVh0Q3JlYXRpb24gVGltZQBEaSAyNiBBdWcgMjAwMyAxOTo1Mjo0NCArMDEw
         MJTTlbQAAAAHdElNRQfTCgYUCzIHqQC7AAAC9UlEQVQ4T33Ta0hTYRwGcNddIsKoRLussrKIyg9lYB+6
         UNCwwKARGGnTFbVy02w0dY4yax8kUDGT0jRqzsvMa+ZQ15RcRUQrMWsuFGcR2rx0maI75+n/nqSsqAd+
         g533ff7ntvlMiYjR66/MuXu3OKGlpcVtMplcKSmXsw8dOnEkMlIll0rjz4SHy/fQPl8yjZWEFBUZ7peW
@@ -634,7 +634,7 @@
   <data name="instrument" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBTbyAyOCBEZXogMjAwMyAyMjo1NjoyNyArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBTbyAyOCBEZXogMjAwMyAyMjo1NjoyNyArMDEw
         MBY4VPIAAAAHdElNRQfTCgYUCxdMrdT8AAACn0lEQVQ4T42TzU8TQRjGy83/wMSDHr2YeCImnjAeCIl4
         BEPCwdTyUQOlCNvdkqrx4GcJIGAsbUqV0lQxBCIhUYyxDWJtKU3Lsmy3H7tboUUqVhMvGiePs4UDDT34
         JE/eyc6+v3nnnRmdJtPbpt99i9cIs2igbitHbrGTsHNGYpk1kv6XneTGdAcxP2sjA94OQlNOUR8rJ2sa
@@ -670,7 +670,7 @@
   <data name="error_list" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBNbyAxNSBBdWcgMjAwNSAxMTozMToxNCArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBNbyAxNSBBdWcgMjAwNSAxMTozMToxNCArMDEw
         MNn+GXoAAAAHdElNRQfTCgYUCw2xzy2GAAACa0lEQVQ4T42TX0jTURiGjwX9RpRhF5HBGEQlRRdFF5FB
         ygJLlg4KMiqkSYxSImOQaTmtXbi6mGYXFVaDvLDIqEVlEUXNoi4iAncTmmMrl3Njc//c3H7b23fOlrpd
         VC88uznf++ycb4zxmG+8AMd07amg3fJY0GIeFDRfGsAhvUlPoyXEYlFaGF7+W7jAaLFBva+hlcZLiXxJ
@@ -766,7 +766,7 @@
   <data name="output" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAACt0RVh0Q3JlYXRpb24gVGltZQBGciAyMSBGZWIgMjAwMyAxMToxNzozMiArMDEw
+        6wAACusBgosNWgAAACt0RVh0Q3JlYXRpb24gVGltZQBGciAyMSBGZWIgMjAwMyAxMToxNzozMiArMDEw
         ML8p5wkAAAAHdElNRQfTCgYUDAH3OPdqAAAB4klEQVQ4T41T70tTYRi93/of9LPuk/+QXwQ/SsWYZjnX
         kDGd07nN21i9n4IyQUEhRctBpqIOwUQUlfwBCUYbOlmlyebc8Tn3XdxxmdaBA5f3vs85z6/XIGKp3Hpy
         tYDE0iXM+Z+Ip3KIzmYRmfqOgclj9I8foW/0K4JvdtDmebshIfXCB1aw+fnX+k7mBv+Ljf1ztLa92pTQ
@@ -776,370 +776,6 @@
         bYHQmMxPwMZVu98Hd/ekLRAc2bMOKcCu31V7NR53jtkCgddb1qEzg7vqJx563lFAj9GXTH/henJBSM6Z
         o2K3a2E5fYDmlvC2BOtFEtR5+mc3uZ4+cwXe6CKeDXxCZ98cOgIz8Pjfw+2dsNKmcyV4VKhXWcBXxYfB
         A6oyNdZXi/zHO7yrH1MF/OATbRS6/kHeqTxnw7gF2F2tkR9dblsAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="formats" xml:space="preserve">
-    <value>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
-&lt;HTML&gt;
-&lt;HEAD&gt;
-&lt;style&gt;
-body
-{
-	width: 100%;
-	margin: 0px 0px 0px 0px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 70%;
-}
-a:link
-{
-	color: #0000ff;
-}
-a:visited
-{
-	color: #0000ff;
-}
-a:hover
-{
-	color: #3366ff;
-}
-
-h1, h3, h4
-{
-	margin-bottom: .4em;
-	margin-top: 1em;
-}
-
-h1
-{
-	font-size: 120%;
-	margin-top: 0em;
-}
-
-h3
-{
-	font-size: 115%;
-}
-
-h4
-{
-	font-size: 100%;
-}
-
-div.table
-{
-	text-align: center;
-}
-
-table
-{
-	font-size: 100%;
-	border-collapse: collapse;
-	width: 93%;
-}
-
-th
-{
-	background-color: #cccccc;
-	color: #000000;
-	font-weight: bolder;
-	padding: 5px;
-	border: 1px solid #999999;
-}
-
-tr
-{
-	background-color: #ffffff;
-	padding: 5px;
-	text-align: left;
-	border: 1px solid #999999;
-}
-
-td
-{
-	border: 1px solid #999999;
-	padding: 5px;
-}
-
-p
-{
-	margin: .5em 0em .5em 0em;
-}
-
-pre
-{
-	margin-top: .5em;
-	margin-bottom: .5em;
-}
-
-pre.code
-{
-    font: Monospace, Courier New, Courier;
-    color: #000066;
-    font-size: 100%;
-	margin-left: 20px;
-}
-
-.syntax
-{
-	font: Monospace, Courier New, Courier;
-	letter-spacing: .1em;
-	background-color: #cccccc;
-	color: #000000;
-	font-size: 100%;
-	font-weight: bolder;
-	padding: 5px;
-	border: 1px solid #999999;
-	margin-left: 20px;
-	padding: 4px 8px;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	width: 96%;
-}
-
-.i1
-{
-	margin-left: 20px;
-}
-
-.i2
-{
-	margin-left: 40px;
-}
-
-.i3
-{
-	margin-left: 60px;
-}
-
-.missing
-{
-	color: Red;
-}
-
-div#banner
-{
-	width: 100%;
-	margin: 0px 0px 0px 0px;
-	border-width: 0px;
-	border-bottom: 1px solid #999999;
-	padding: 0px 0px 0px 0px;
-	background-color: #99ccff;
-}
-
-div#header
-{
-	margin: 0px 0px 0px 0px;
-	border-width: 0px;
-	padding: .4em .4em 0 .4em;
-	background-color: #99ccff;
-	font-style: italic;
-}
-
-div#footer
-{
-	font-size: 100%;
-	font-style:italic;
-	border-top: 1px solid #999999;
-	margin-left: 20px;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	width: 96%;
-}
-
-div#banner h1
-{
-	margin: 0px 0px 0px 0px;
-	border-width: 0px;
-	padding: 0 .4em .3em .4em;
-	background-color: #99ccff;
-}
-
-div#content
-{
-	margin: 0px 0px 0px 0px;
-	padding: 4px 4px 4px 4px;
-}
-
-code.ce
-{
-	font-style: italic;
-}
-
-pre.syntax span.lang
-{
-	margin: 0;
-	font-weight: normal;
-}
-
-pre.syntax span.meta
-{
-	margin: 0;
-	font-weight: normal;
-	font-style: italic;
-}
-
-.permissions
-{
-	margin-top: 6px;
-}
-&lt;/style&gt;
-&lt;/HEAD&gt;
-&lt;TITLE&gt;DateTime Format Help&lt;/TITLE&gt;
-&lt;body&gt;
-&lt;table width=100% align="center" border=1&gt;
-&lt;TR VALIGN="top"&gt;
-&lt;TH width=30%&gt;Format Pattern&lt;/TH&gt;
-&lt;TH width=30%&gt;Description&lt;/TH&gt;
-&lt;TH width=30%&gt;Example&lt;/TH&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;d&lt;/TD&gt;
-&lt;TD width=30%&gt;The day of the month. Single-digit days will not have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;2&lt;br&gt;25&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;dd&lt;/TD&gt;
-&lt;TD width=30%&gt;The day of the month. Single-digit days will have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;02&lt;br&gt;25&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;ddd&lt;/TD&gt;
-&lt;TD width=30%&gt;The abbreviated name of the day of the week.&lt;/TD&gt;
-&lt;TD width=30%&gt;Sun&lt;br&gt;Fri&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;dddd&lt;/TD&gt;
-&lt;TD width=30%&gt;The full name of the day of the week.&lt;/TD&gt;
-&lt;TD width=30%&gt;Sunday&lt;br&gt;Friday&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;M&lt;/TD&gt;
-&lt;TD width=30%&gt;The numeric month. Single-digit months will not have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;3&lt;br&gt;11&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;MM&lt;/TD&gt;
-&lt;TD width=30%&gt;The numeric month. Single-digit months will have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;03&lt;br&gt;11&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;MMM&lt;/TD&gt;
-&lt;TD width=30%&gt;The abbreviated name of the month.&lt;/TD&gt;
-&lt;TD width=30%&gt;Mar&lt;br&gt;Nov&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;MMMM&lt;/TD&gt;
-&lt;TD width=30%&gt;The full name of the month.&lt;/TD&gt;
-&lt;TD width=30%&gt;March&lt;br&gt;November&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;y&lt;/TD&gt;
-&lt;TD width=30%&gt;The year without the century. If the year without the century is less than 10, the year is displayed with no leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;5&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;yy&lt;/TD&gt;
-&lt;TD width=30%&gt;The year without the century. If the year without the century is less than 10, the year is displayed with a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;05&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;yyyy&lt;/TD&gt;
-&lt;TD width=30%&gt;The year in four digits, including the century.&lt;/TD&gt;
-&lt;TD width=30%&gt;2005&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;h&lt;/TD&gt;
-&lt;TD width=30%&gt;The hour in a 12-hour clock. Single-digit hours will not have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;8&lt;br&gt;11&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;hh&lt;/TD&gt;
-&lt;TD width=30%&gt;The hour in a 12-hour clock. Single-digit hours will have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;08&lt;br&gt;11&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;H&lt;/TD&gt;
-&lt;TD width=30%&gt;The hour in a 24-hour clock. Single-digit hours will not have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;8&lt;br&gt;23&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;HH&lt;/TD&gt;
-&lt;TD width=30%&gt;The hour in a 24-hour clock. Single-digit hours will have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;08&lt;br&gt;23&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;m&lt;/TD&gt;
-&lt;TD width=30%&gt;The minute. Single-digit minutes will not have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;3&lt;br&gt;37&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;mm&lt;/TD&gt;
-&lt;TD width=30%&gt;The minute. Single-digit minutes will have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;03&lt;br&gt;37&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;s&lt;/TD&gt;
-&lt;TD width=30%&gt;The second. Single-digit seconds will not have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;9&lt;br&gt;43&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;ss&lt;/TD&gt;
-&lt;TD width=30%&gt;The second. Single-digit seconds will have a leading zero.&lt;/TD&gt;
-&lt;TD width=30%&gt;09&lt;br&gt;43&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;f&lt;/TD&gt;
-&lt;TD width=30%&gt;The fraction of a second in single-digit precision. The remaining digits are truncated.&lt;/TD&gt;
-&lt;TD width=30%&gt;4&lt;br&gt;76&lt;br&gt;433&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;ff&lt;/TD&gt;
-&lt;TD width=30%&gt;The fraction of a second in double-digit precision. The remaining digits are truncated.&lt;/TD&gt;
-&lt;TD width=30%&gt;04&lt;br&gt;76&lt;br&gt;433&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;fff&lt;/TD&gt;
-&lt;TD width=30%&gt;The fraction of a second in three-digit precision. The remaining digits are truncated.&lt;/TD&gt;
-&lt;TD width=30%&gt;004&lt;br&gt;076&lt;br&gt;433&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;t&lt;/TD&gt;
-&lt;TD width=30%&gt;The first character in the AM/PM designator.&lt;/TD&gt;
-&lt;TD width=30%&gt;A&lt;br&gt;P&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;TR VALIGN="top"&gt;
-&lt;TD width=30%&gt;tt&lt;/TD&gt;
-&lt;TD width=30%&gt;The AM/PM designator.&lt;/TD&gt;
-&lt;TD width=30%&gt;AM&lt;br&gt;PM&lt;/TD&gt;
-&lt;/TR&gt;
-
-&lt;/table&gt;
-&lt;/BODY&gt;
-&lt;/HTML&gt;
 </value>
   </data>
   <data name="warning" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1540,5 +1176,368 @@ pre.syntax span.meta
         pmlCURQh4PrANE2xrivmeQb52A0yGYbBTJ7nwbIsyLIsBBD0ZvpgKhp4ygfLsmCaJlE8eKd9DJmvus1t
         Mz/5z1v8gCQ9AK6vtUjlB/YsAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="formats" xml:space="preserve">
+    <value>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;style&gt;
+body
+{
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+}
+a:link
+{
+	color: #0000ff;
+}
+a:visited
+{
+	color: #0000ff;
+}
+a:hover
+{
+	color: #3366ff;
+}
+
+h1, h3, h4
+{
+	margin-bottom: .4em;
+	margin-top: 1em;
+}
+
+h1
+{
+	font-size: 120%;
+	margin-top: 0em;
+}
+
+h3
+{
+	font-size: 115%;
+}
+
+h4
+{
+	font-size: 100%;
+}
+
+div.table
+{
+	text-align: center;
+}
+
+table
+{
+	font-size: 100%;
+	border-collapse: collapse;
+	width: 93%;
+}
+
+th
+{
+	background-color: #cccccc;
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border: 1px solid #999999;
+}
+
+tr
+{
+	background-color: #ffffff;
+	padding: 5px;
+	text-align: left;
+	border: 1px solid #999999;
+}
+
+td
+{
+	border: 1px solid #999999;
+	padding: 5px;
+}
+
+p
+{
+	margin: .5em 0em .5em 0em;
+}
+
+pre
+{
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+pre.code
+{
+    font: Monospace, Courier New, Courier;
+    color: #000066;
+    font-size: 100%;
+	margin-left: 20px;
+}
+
+.syntax
+{
+	font: Monospace, Courier New, Courier;
+	letter-spacing: .1em;
+	background-color: #cccccc;
+	color: #000000;
+	font-size: 100%;
+	font-weight: bolder;
+	padding: 5px;
+	border: 1px solid #999999;
+	margin-left: 20px;
+	padding: 4px 8px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 96%;
+}
+
+.i1
+{
+	margin-left: 20px;
+}
+
+.i2
+{
+	margin-left: 40px;
+}
+
+.i3
+{
+	margin-left: 60px;
+}
+
+.missing
+{
+	color: Red;
+}
+
+div#banner
+{
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	border-width: 0px;
+	border-bottom: 1px solid #999999;
+	padding: 0px 0px 0px 0px;
+	background-color: #99ccff;
+}
+
+div#header
+{
+	margin: 0px 0px 0px 0px;
+	border-width: 0px;
+	padding: .4em .4em 0 .4em;
+	background-color: #99ccff;
+	font-style: italic;
+}
+
+div#footer
+{
+	font-size: 100%;
+	font-style:italic;
+	border-top: 1px solid #999999;
+	margin-left: 20px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 96%;
+}
+
+div#banner h1
+{
+	margin: 0px 0px 0px 0px;
+	border-width: 0px;
+	padding: 0 .4em .3em .4em;
+	background-color: #99ccff;
+}
+
+div#content
+{
+	margin: 0px 0px 0px 0px;
+	padding: 4px 4px 4px 4px;
+}
+
+code.ce
+{
+	font-style: italic;
+}
+
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+}
+
+pre.syntax span.meta
+{
+	margin: 0;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.permissions
+{
+	margin-top: 6px;
+}
+&lt;/style&gt;
+&lt;/HEAD&gt;
+&lt;TITLE&gt;DateTime Format Help&lt;/TITLE&gt;
+&lt;body&gt;
+&lt;table width=100% align="center" border=1&gt;
+&lt;TR VALIGN="top"&gt;
+&lt;TH width=30%&gt;Format Pattern&lt;/TH&gt;
+&lt;TH width=30%&gt;Description&lt;/TH&gt;
+&lt;TH width=30%&gt;Example&lt;/TH&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;d&lt;/TD&gt;
+&lt;TD width=30%&gt;The day of the month. Single-digit days will not have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;2&lt;br&gt;25&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;dd&lt;/TD&gt;
+&lt;TD width=30%&gt;The day of the month. Single-digit days will have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;02&lt;br&gt;25&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;ddd&lt;/TD&gt;
+&lt;TD width=30%&gt;The abbreviated name of the day of the week.&lt;/TD&gt;
+&lt;TD width=30%&gt;Sun&lt;br&gt;Fri&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;dddd&lt;/TD&gt;
+&lt;TD width=30%&gt;The full name of the day of the week.&lt;/TD&gt;
+&lt;TD width=30%&gt;Sunday&lt;br&gt;Friday&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;M&lt;/TD&gt;
+&lt;TD width=30%&gt;The numeric month. Single-digit months will not have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;3&lt;br&gt;11&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;MM&lt;/TD&gt;
+&lt;TD width=30%&gt;The numeric month. Single-digit months will have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;03&lt;br&gt;11&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;MMM&lt;/TD&gt;
+&lt;TD width=30%&gt;The abbreviated name of the month.&lt;/TD&gt;
+&lt;TD width=30%&gt;Mar&lt;br&gt;Nov&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;MMMM&lt;/TD&gt;
+&lt;TD width=30%&gt;The full name of the month.&lt;/TD&gt;
+&lt;TD width=30%&gt;March&lt;br&gt;November&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;y&lt;/TD&gt;
+&lt;TD width=30%&gt;The year without the century. If the year without the century is less than 10, the year is displayed with no leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;5&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;yy&lt;/TD&gt;
+&lt;TD width=30%&gt;The year without the century. If the year without the century is less than 10, the year is displayed with a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;05&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;yyyy&lt;/TD&gt;
+&lt;TD width=30%&gt;The year in four digits, including the century.&lt;/TD&gt;
+&lt;TD width=30%&gt;2005&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;h&lt;/TD&gt;
+&lt;TD width=30%&gt;The hour in a 12-hour clock. Single-digit hours will not have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;8&lt;br&gt;11&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;hh&lt;/TD&gt;
+&lt;TD width=30%&gt;The hour in a 12-hour clock. Single-digit hours will have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;08&lt;br&gt;11&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;H&lt;/TD&gt;
+&lt;TD width=30%&gt;The hour in a 24-hour clock. Single-digit hours will not have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;8&lt;br&gt;23&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;HH&lt;/TD&gt;
+&lt;TD width=30%&gt;The hour in a 24-hour clock. Single-digit hours will have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;08&lt;br&gt;23&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;m&lt;/TD&gt;
+&lt;TD width=30%&gt;The minute. Single-digit minutes will not have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;3&lt;br&gt;37&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;mm&lt;/TD&gt;
+&lt;TD width=30%&gt;The minute. Single-digit minutes will have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;03&lt;br&gt;37&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;s&lt;/TD&gt;
+&lt;TD width=30%&gt;The second. Single-digit seconds will not have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;9&lt;br&gt;43&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;ss&lt;/TD&gt;
+&lt;TD width=30%&gt;The second. Single-digit seconds will have a leading zero.&lt;/TD&gt;
+&lt;TD width=30%&gt;09&lt;br&gt;43&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;f&lt;/TD&gt;
+&lt;TD width=30%&gt;The fraction of a second in single-digit precision. The remaining digits are truncated.&lt;/TD&gt;
+&lt;TD width=30%&gt;4&lt;br&gt;76&lt;br&gt;433&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;ff&lt;/TD&gt;
+&lt;TD width=30%&gt;The fraction of a second in double-digit precision. The remaining digits are truncated.&lt;/TD&gt;
+&lt;TD width=30%&gt;04&lt;br&gt;76&lt;br&gt;433&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;fff&lt;/TD&gt;
+&lt;TD width=30%&gt;The fraction of a second in three-digit precision. The remaining digits are truncated.&lt;/TD&gt;
+&lt;TD width=30%&gt;004&lt;br&gt;076&lt;br&gt;433&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;t&lt;/TD&gt;
+&lt;TD width=30%&gt;The first character in the AM/PM designator.&lt;/TD&gt;
+&lt;TD width=30%&gt;A&lt;br&gt;P&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;TR VALIGN="top"&gt;
+&lt;TD width=30%&gt;tt&lt;/TD&gt;
+&lt;TD width=30%&gt;The AM/PM designator.&lt;/TD&gt;
+&lt;TD width=30%&gt;AM&lt;br&gt;PM&lt;/TD&gt;
+&lt;/TR&gt;
+
+&lt;/table&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</value>
   </data>
 </root>

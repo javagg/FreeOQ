@@ -1,44 +1,41 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.FIX
 {
-  public class OrderCancelReject : FIXOrderCancelReject
-  {
-    public OrdStatus OrdStatus
+    public class OrderCancelReject : FIXOrderCancelReject
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXOrdStatus.FromFIX(base.OrdStatus);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.OrdStatus = FIXOrdStatus.ToFIX(value);
-      }
-    }
+        public new OrdStatus OrdStatus
+        {
+            get
+            {
+                return FIXOrdStatus.FromFIX(base.OrdStatus);
+            }
+            set
+            {
+                base.OrdStatus = FIXOrdStatus.ToFIX(value);
+            }
+        }
 
-    public CxlRejResponseTo CxlRejResponseTo
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXCxlRejResponseTo.FromFIX(base.CxlRejResponseTo);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.CxlRejResponseTo = FIXCxlRejResponseTo.ToFIX(value);
-      }
-    }
+        public new CxlRejResponseTo CxlRejResponseTo
+        {
+            get
+            {
+                return FIXCxlRejResponseTo.FromFIX(base.CxlRejResponseTo);
+            }
+            set
+            {
+                base.CxlRejResponseTo = FIXCxlRejResponseTo.ToFIX(value);
+            }
+        }
 
-    public CxlRejReason CxlRejReason
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXCxlRejReason.FromFIX(base.CxlRejReason);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.CxlRejReason = FIXCxlRejReason.ToFIX(value);
-      }
+        public new CxlRejReason CxlRejReason
+        {
+            get
+            {
+                return FIXCxlRejReason.FromFIX(base.CxlRejReason);
+            }
+            set
+            {
+                base.CxlRejReason = FIXCxlRejReason.ToFIX(value);
+            }
+        }
     }
-
-  }
 }

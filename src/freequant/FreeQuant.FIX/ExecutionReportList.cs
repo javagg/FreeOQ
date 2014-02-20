@@ -2,7 +2,7 @@ namespace FreeQuant.FIX
 {
 	public class ExecutionReportList : FIXGroupList
 	{
-		public ExecutionReport this[int index]
+        public new ExecutionReport this[int index]
 		{
 			get
 			{
@@ -18,7 +18,7 @@ namespace FreeQuant.FIX
 			return array;
 		}
 
-		public ExecutionReport GetById(int id)
+        public new ExecutionReport GetById(int id)
 		{
 			return base.GetById(id) as ExecutionReport;
 		}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace OpenQuant.Shared.Plugins
 {
-	public class PluginInfoList : ICollection, IEnumerable
+	public class PluginInfoList : ICollection
 	{
 		private SortedList<string, PluginInfo> plugins;
 
@@ -28,7 +28,7 @@ namespace OpenQuant.Shared.Plugins
 		{
 			get
 			{
-				return (object)null;
+				return null;
 			}
 		}
 

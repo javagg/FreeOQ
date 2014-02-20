@@ -3,7 +3,7 @@ using System;
 
 namespace OpenQuant.API
 {
-	internal class DefaultCurrencyConverter : CurrencyConverter
+	class DefaultCurrencyConverter : CurrencyConverter
 	{
 		public override double Convert(double amount, FreeQuant.Instruments.Currency fromCurrency, FreeQuant.Instruments.Currency toCurrency)
 		{

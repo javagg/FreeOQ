@@ -18,7 +18,7 @@ namespace FreeQuant.Data
 		// TODO:
 		public override string ToString()
 		{
-			return string.Format("", this.DateTime, this.Price, this.Size);
+            return string.Format("DateTime:{0} Price:{1} Size:{2}", this.DateTime, this.Price, this.Size);
 		}
 	}
 }

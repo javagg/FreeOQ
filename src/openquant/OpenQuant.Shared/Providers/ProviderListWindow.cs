@@ -11,18 +11,11 @@ using TD.SandDock;
 
 namespace OpenQuant.Shared.Providers
 {
-	public class ProviderListWindow : FreeQuant.Docking.WinForms.DockControl, IPropertyEditable
+    public partial class ProviderListWindow : FreeQuant.Docking.WinForms.DockControl, IPropertyEditable
   {
     protected const string CATEGORY_GROUPS = "Groups";
     protected const bool DEFAULT_SHOW_GROUP = true;
-    private IContainer components;
-    private TreeView trvProviders;
-    private ImageList images;
-    private ContextMenuStrip ctxProviders;
-    private ToolStripMenuItem ctxProviders_Connect;
-    private ToolStripMenuItem ctxProviders_Disconnect;
-    private ToolStripSeparator toolStripSeparator1;
-    private ToolStripMenuItem ctxProviders_Properties;
+  
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     [Category("Groups")]
@@ -65,84 +58,6 @@ namespace OpenQuant.Shared.Providers
       this.ShowHistoricalDataGroup = true;
     }
 
-    protected override void Dispose(bool disposing)
-    {
-      if (disposing && this.components != null)
-        this.components.Dispose();
-      base.Dispose(disposing);
-    }
-
-    private void InitializeComponent()
-    {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (ProviderListWindow));
-      this.trvProviders = new TreeView();
-      this.ctxProviders = new ContextMenuStrip(this.components);
-      this.ctxProviders_Connect = new ToolStripMenuItem();
-      this.ctxProviders_Disconnect = new ToolStripMenuItem();
-      this.toolStripSeparator1 = new ToolStripSeparator();
-      this.ctxProviders_Properties = new ToolStripMenuItem();
-      this.images = new ImageList(this.components);
-      this.ctxProviders.SuspendLayout();
-      this.SuspendLayout();
-      this.trvProviders.ContextMenuStrip = this.ctxProviders;
-      this.trvProviders.Dock = DockStyle.Fill;
-      this.trvProviders.HideSelection = false;
-      this.trvProviders.ImageIndex = 0;
-      this.trvProviders.ImageList = this.images;
-      this.trvProviders.Location = new Point(0, 0);
-      this.trvProviders.Name = "trvProviders";
-      this.trvProviders.SelectedImageIndex = 0;
-      this.trvProviders.ShowNodeToolTips = true;
-      this.trvProviders.Size = new Size(250, 400);
-      this.trvProviders.TabIndex = 0;
-      this.trvProviders.AfterCollapse += new TreeViewEventHandler(this.trvProviders_AfterCollapse);
-      this.trvProviders.AfterSelect += new TreeViewEventHandler(this.trvProviders_AfterSelect);
-      this.trvProviders.AfterExpand += new TreeViewEventHandler(this.trvProviders_AfterExpand);
-      this.trvProviders.MouseDown += new MouseEventHandler(this.trvProviders_MouseDown);
-      this.ctxProviders.Items.AddRange(new ToolStripItem[4]
-      {
-        (ToolStripItem) this.ctxProviders_Connect,
-        (ToolStripItem) this.ctxProviders_Disconnect,
-        (ToolStripItem) this.toolStripSeparator1,
-        (ToolStripItem) this.ctxProviders_Properties
-      });
-      this.ctxProviders.Name = "ctxProviders";
-      this.ctxProviders.Size = new Size(138, 76);
-      this.ctxProviders.Opening += new CancelEventHandler(this.ctxProviders_Opening);
-      this.ctxProviders_Connect.Image = (Image) Resources.provider_connected;
-      this.ctxProviders_Connect.Name = "ctxProviders_Connect";
-      this.ctxProviders_Connect.Size = new Size(137, 22);
-      this.ctxProviders_Connect.Text = "Connect";
-      this.ctxProviders_Connect.Click += new EventHandler(this.ctxProviders_Connect_Click);
-      this.ctxProviders_Disconnect.Image = (Image) Resources.provider_disconnected;
-      this.ctxProviders_Disconnect.Name = "ctxProviders_Disconnect";
-      this.ctxProviders_Disconnect.Size = new Size(137, 22);
-      this.ctxProviders_Disconnect.Text = "Disconnect";
-      this.ctxProviders_Disconnect.Click += new EventHandler(this.ctxProviders_Disconnect_Click);
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new Size(134, 6);
-      this.ctxProviders_Properties.Image = (Image) Resources.properties;
-      this.ctxProviders_Properties.Name = "ctxProviders_Properties";
-      this.ctxProviders_Properties.Size = new Size(137, 22);
-      this.ctxProviders_Properties.Text = "Properties";
-      this.ctxProviders_Properties.Click += new EventHandler(this.ctxProviders_Properties_Click);
-      this.images.ImageStream = (ImageListStreamer) componentResourceManager.GetObject("images.ImageStream");
-      this.images.TransparentColor = Color.Transparent;
-      this.images.Images.SetKeyName(0, "client_network.png");
-      this.images.Images.SetKeyName(1, "client_network.png");
-      this.images.Images.SetKeyName(2, "trafficlight_red.png");
-      this.images.Images.SetKeyName(3, "trafficlight_green.png");
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.Controls.Add((Control) this.trvProviders);
-      this.DefaultDockLocation = ContainerDockLocation.Left;
-      this.Name = "ProviderListWindow";
-      this.TabImage = (Image) Resources.providers;
-      this.Text = "Providers";
-      this.ctxProviders.ResumeLayout(false);
-      this.ResumeLayout(false);
-    }
 
     protected override void OnInit()
     {

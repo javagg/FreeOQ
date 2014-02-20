@@ -3,44 +3,44 @@ using System.Collections.Generic;
 
 namespace OpenQuant.API
 {
-  public class OrderList : IEnumerable
-  {
-    private List<Order> list = new List<Order>();
-
-    public int Count
+    public class OrderList : IEnumerable
     {
-      get
-      {
-        return this.list.Count;
-      }
-    }
+        private List<Order> list = new List<Order>();
 
-    public Order this[int index]
-    {
-      get
-      {
-        return this.list[index];
-      }
-    }
+        public int Count
+        {
+            get
+            {
+                return this.list.Count;
+            }
+        }
 
-    internal void Add(Order order)
-    {
-      this.list.Add(order);
-    }
+        public Order this[int index]
+        {
+            get
+            {
+                return this.list[index];
+            }
+        }
 
-    internal void Remove(Order order)
-    {
-      this.list.Remove(order);
-    }
+        internal void Add(Order order)
+        {
+            this.list.Add(order);
+        }
 
-    internal void Clear()
-    {
-      this.list.Clear();
-    }
+        internal void Remove(Order order)
+        {
+            this.list.Remove(order);
+        }
 
-    public IEnumerator GetEnumerator()
-    {
-      return (IEnumerator) this.list.GetEnumerator();
+        internal void Clear()
+        {
+            this.list.Clear();
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return this.list.GetEnumerator();
+        }
     }
-  }
 }

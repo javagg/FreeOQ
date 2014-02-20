@@ -144,14 +144,14 @@ namespace FreeQuant.Data
 					barSeries.Flush();
 					break;
 				default:
-					throw new NotImplementedException("" + barType);
+                    throw new NotImplementedException("BarType Invalid: " + barType);
 			}
 		}
 
-		private static DateTime qtghhEheM(DateTime obj0, long obj1)
+        private static DateTime qtghhEheM(DateTime dt , long obj1)
 		{
-			long num = (long)obj0.TimeOfDay.TotalSeconds / obj1 * obj1;
-			return obj0.Date.AddSeconds((double)num);
+			long num = (long)dt.TimeOfDay.TotalSeconds / obj1 * obj1;
+			return dt.Date.AddSeconds(num);
 		}
 	}
 }

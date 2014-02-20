@@ -1,5 +1,4 @@
-﻿//using OpenQuant.Shared.Properties;
-using FreeQuant;
+﻿using FreeQuant;
 using System;
 using System.ComponentModel;
 using System.Drawing;

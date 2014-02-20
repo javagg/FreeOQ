@@ -191,11 +191,8 @@ namespace FreeQuant.FIXApplication
     public string OrderFileStorePath {  get;  set; }
 
     
-    protected QuickFIX43CommonProvider()
+        protected QuickFIX43CommonProvider() : base()
     {
-      Ni0n2nNTxpPQwXYoJS.cvl3IaMzFxY5E();
-      // ISSUE: explicit constructor call
-      base.\u002Ector();
       this.HeartBtInt = 20;
       this.StartTime = TimeSpan.Parse(BeAEwTZGlZaeOmY5cm.J00weU3cM6(4586));
       this.EndTime = TimeSpan.Parse(BeAEwTZGlZaeOmY5cm.J00weU3cM6(4592));

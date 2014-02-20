@@ -1,17 +1,18 @@
 using System;
+using System.Diagnostics;
 
 namespace FreeQuant.Data
 {
 	public class OrderBook
 	{
-		private OrderBookEntryList bid;
-		private OrderBookEntryList ask;
+        private OrderBookEntryList bidList; 
+        private OrderBookEntryList askList; 
 
 		public OrderBookEntryList Bid
 		{
 			 get
 			{
-				return this.bid; 
+				return this.bidList; 
 			}
 		}
 
@@ -19,7 +20,7 @@ namespace FreeQuant.Data
 		{
 			  get
 			{
-				return this.ask; 
+				return this.askList; 
 			}
 		}
 
@@ -27,14 +28,14 @@ namespace FreeQuant.Data
 
 		public OrderBook()
 		{
-			this.bid = new OrderBookEntryList();
-			this.ask = new OrderBookEntryList();
+			this.bidList = new OrderBookEntryList();
+			this.askList = new OrderBookEntryList();
 		}
 
 		public void Clear()
 		{
-			this.bid.Clear();
-			this.ask.Clear();
+			this.bidList.Clear();
+			this.askList.Clear();
 		}
 
 		public void Add(MarketDepth marketDepth)
@@ -45,10 +46,10 @@ namespace FreeQuant.Data
 				switch (marketDepth.Side)
 				{
 					case MDSide.Bid:
-						orderBookEntryList = this.bid;
+						orderBookEntryList = this.bidList;
 						break;
 					case MDSide.Ask:
-						orderBookEntryList = this.ask;
+						orderBookEntryList = this.askList;
 						break;
 					default:
 						throw new ArgumentException("Invalid Side" + marketDepth.Side);
@@ -106,12 +107,12 @@ namespace FreeQuant.Data
 					case MDOperation.Undefined:
 						break;
 					default:
-						throw new ArgumentException("" + ((object)marketDepth.Operation).ToString());
+                        throw new ArgumentException("MDOperation is unknown: " + marketDepth.Operation.ToString());
 				}
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex);
+                Trace.WriteLine(ex.ToString());
 			}
 		}
 
@@ -122,17 +123,17 @@ namespace FreeQuant.Data
 			double ask = 0.0;
 			int bidSize = 0;
 			int askSize = 0;
-			if (level < this.bid.Count)
+			if (level < this.bidList.Count)
 			{
-				OrderBookEntry orderBookEntry = this.bid[level];
+				OrderBookEntry orderBookEntry = this.bidList[level];
 				bid = orderBookEntry.Price;
 				bidSize = orderBookEntry.Size;
 				if (orderBookEntry.DateTime > datetime)
 					datetime = orderBookEntry.DateTime;
 			}
-			if (level < this.ask.Count)
+			if (level < this.askList.Count)
 			{
-				OrderBookEntry orderBookEntry = this.ask[level];
+				OrderBookEntry orderBookEntry = this.askList[level];
 				ask = orderBookEntry.Price;
 				askSize = orderBookEntry.Size;
 				if (orderBookEntry.DateTime > datetime)
@@ -144,7 +145,7 @@ namespace FreeQuant.Data
 		public int GetBidVolume()
 		{
 			int num = 0;
-			foreach (OrderBookEntry orderBookEntry in this.bid)
+			foreach (OrderBookEntry orderBookEntry in this.bidList)
 				num += orderBookEntry.Size;
 			return num;
 		}
@@ -152,7 +153,7 @@ namespace FreeQuant.Data
 		public int GetAskVolume()
 		{
 			int num = 0;
-			foreach (OrderBookEntry orderBookEntry in this.ask)
+			foreach (OrderBookEntry orderBookEntry in this.askList)
 				num += orderBookEntry.Size;
 			return num;
 		}
@@ -161,7 +162,7 @@ namespace FreeQuant.Data
 		{
 			double num1 = 0.0;
 			double num2 = 0.0;
-			foreach (OrderBookEntry orderBookEntry in this.bid)
+			foreach (OrderBookEntry orderBookEntry in this.bidList)
 			{
 				num1 += orderBookEntry.Price * (double)orderBookEntry.Size;
 				num2 += (double)orderBookEntry.Size;
@@ -173,7 +174,7 @@ namespace FreeQuant.Data
 		{
 			double num1 = 0.0;
 			double num2 = 0.0;
-			foreach (OrderBookEntry orderBookEntry in this.ask)
+			foreach (OrderBookEntry orderBookEntry in this.askList)
 			{
 				num1 += orderBookEntry.Price * (double)orderBookEntry.Size;
 				num2 += (double)orderBookEntry.Size;
@@ -183,13 +184,13 @@ namespace FreeQuant.Data
 
 		public double GetAvgBidPrice(double qty)
 		{
-			lock (this.bid.SyncRoot)
+			lock (this.bidList.SyncRoot)
 			{
-				if (this.bid.Count == 0)
+				if (this.bidList.Count == 0)
 					return 0.0;
 				double local_0 = 0.0;
 				double local_1 = qty;
-				foreach (OrderBookEntry item_0 in this.bid)
+				foreach (OrderBookEntry item_0 in this.bidList)
 				{
 					if (local_1 >= (double)item_0.Size)
 					{
@@ -205,20 +206,20 @@ namespace FreeQuant.Data
 						break;
 				}
 				if (local_1 > 0.0)
-					local_0 += this.bid[this.bid.Count - 1].Price * local_1;
+					local_0 += this.bidList[this.bidList.Count - 1].Price * local_1;
 				return local_0 / qty;
 			}
 		}
 
 		public double GetAvgAskPrice(double qty)
 		{
-			lock (this.ask.SyncRoot)
+			lock (this.askList.SyncRoot)
 			{
-				if (this.ask.Count == 0)
+				if (this.askList.Count == 0)
 					return 0.0;
 				double local_0 = 0.0;
 				double local_1 = qty;
-				foreach (OrderBookEntry item_0 in this.ask)
+				foreach (OrderBookEntry item_0 in this.askList)
 				{
 					if (local_1 >= (double)item_0.Size)
 					{
@@ -234,7 +235,7 @@ namespace FreeQuant.Data
 						break;
 				}
 				if (local_1 > 0.0)
-					local_0 += this.ask[this.ask.Count - 1].Price * local_1;
+					local_0 += this.askList[this.askList.Count - 1].Price * local_1;
 				return local_0 / qty;
 			}
 		}

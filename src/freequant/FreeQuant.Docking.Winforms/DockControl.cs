@@ -1,15 +1,16 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using TD.SandDock;
+﻿//using System;
+//using System.ComponentModel;
+//using System.ComponentModel.Design;
+//using TD.SandDock;
 
+using System.ComponentModel;
 namespace FreeQuant.Docking.WinForms
 {
-  [Designer("TD.SandDock.Design.UserDockControlDesigner, SandDock.Design, Version=1.0.0.1, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3", typeof (IDesigner))]
-  [Designer("TD.SandDock.Design.UserDockControlDocumentDesigner, SandDock.Design, Version=1.0.0.1, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3", typeof (IRootDesigner))]
+  [Designer("TD.SandDock.Design.UserDockControlDesigner, SandDock.Design, Version=1.0.0.1, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3", typeof (System.ComponentModel.Design.IDesigner))]
+  [Designer("TD.SandDock.Design.UserDockControlDocumentDesigner, SandDock.Design, Version=1.0.0.1, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3", typeof (System.ComponentModel.Design.IRootDesigner))]
   public class DockControl : TD.SandDock.DockControl
   {
-    private const ContainerDockLocation DEFAULT_DOCK_LOCATION = ContainerDockLocation.Left;
+    private const TD.SandDock.ContainerDockLocation DEFAULT_DOCK_LOCATION = TD.SandDock.ContainerDockLocation.Left;
     private const bool DEFAULT_SHOW_FLOATING = false;
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -20,8 +21,8 @@ namespace FreeQuant.Docking.WinForms
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public DockControlSettings Settings { get; private set; }
 
-    [DefaultValue(DockControlCloseAction.Dispose)]
-    public override DockControlCloseAction CloseAction
+    [DefaultValue(TD.SandDock.DockControlCloseAction.Dispose)]
+    public override TD.SandDock.DockControlCloseAction CloseAction
     {
       get
       {
@@ -34,8 +35,8 @@ namespace FreeQuant.Docking.WinForms
     }
 
     [Category("Docking")]
-    [DefaultValue(ContainerDockLocation.Left)]
-    public ContainerDockLocation DefaultDockLocation { get; set; }
+    [DefaultValue(TD.SandDock.ContainerDockLocation.Left)]
+    public TD.SandDock.ContainerDockLocation DefaultDockLocation { get; set; }
 
     [DefaultValue(false)]
     [Category("Docking")]
@@ -43,8 +44,8 @@ namespace FreeQuant.Docking.WinForms
 
     protected DockControl()
     {
-      this.CloseAction = DockControlCloseAction.Dispose;
-      this.DefaultDockLocation = ContainerDockLocation.Left;
+      this.CloseAction = TD.SandDock.DockControlCloseAction.Dispose;
+      this.DefaultDockLocation = TD.SandDock.ContainerDockLocation.Left;
       this.ShowFloating = false;
     }
 
@@ -61,10 +62,10 @@ namespace FreeQuant.Docking.WinForms
 
     public override void Open()
     {
-      base.Open(WindowOpenMethod.OnScreenActivate);
+      base.Open(TD.SandDock.WindowOpenMethod.OnScreenActivate);
     }
 
-    protected void InvokeAction(Action action)
+    protected void InvokeAction(System.Action action)
     {
       if (this.InvokeRequired)
         this.Invoke(action);

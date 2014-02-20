@@ -1,45 +1,41 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.FIX
 {
-  public class OrderCancelReplaceRequest : FIXOrderCancelReplaceRequest
-  {
-    public Side Side
+    public class OrderCancelReplaceRequest : FIXOrderCancelReplaceRequest
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXSide.FromFIX(base.Side);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.Side = FIXSide.ToFIX(value);
-      }
-    }
+        public new Side Side
+        {
+            get
+            {
+                return FIXSide.FromFIX(base.Side);
+            }
+            set
+            {
+                base.Side = FIXSide.ToFIX(value);
+            }
+        }
 
-    public OrdType OrdType
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXOrdType.FromFIX(base.OrdType);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.OrdType = FIXOrdType.ToFIX(value);
-      }
-    }
+        public new OrdType OrdType
+        {
+            get
+            {
+                return FIXOrdType.FromFIX(base.OrdType);
+            }
+            set
+            {
+                base.OrdType = FIXOrdType.ToFIX(value);
+            }
+        }
 
-    public TimeInForce TimeInForce
-    {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXTimeInForce.FromFIX(base.TimeInForce);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.TimeInForce = FIXTimeInForce.ToFIX(value);
-      }
+        public new TimeInForce TimeInForce
+        {
+            get
+            {
+                return FIXTimeInForce.FromFIX(base.TimeInForce);
+            }
+            set
+            {
+                base.TimeInForce = FIXTimeInForce.ToFIX(value);
+            }
+        }
     }
-
- 
-  }
 }

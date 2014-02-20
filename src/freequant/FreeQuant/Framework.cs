@@ -28,7 +28,11 @@ namespace FreeQuant
 		{
 			get
 			{
-				return configuration;
+                if (configuration == null)
+                {
+                    configuration = new Configuration();
+                }
+                return configuration;
 			}
 		}
 
@@ -36,7 +40,11 @@ namespace FreeQuant
 		{
 			get
 			{
-				return installation;
+                if (installation == null)
+                {
+                    installation = new Installation();
+                }
+                return installation;
 			}
 		}
 
@@ -44,7 +52,11 @@ namespace FreeQuant
 		{
 			get
 			{
-				return storage;
+                if (storage == null)
+                {
+                    storage = new Storage();
+                }
+                return storage;
 			}
 		}
 
@@ -58,10 +70,11 @@ namespace FreeQuant
 
 		static Framework()
 		{
-			Framework.mutex = new Mutex(false, Framework.Installation.QUANTAPP.FullName.Replace('\\', ':').Replace('/', ':'));
-			Framework.isAlreadyRunning = !Framework.mutex.WaitOne(0);
-			if (Framework.isAlreadyRunning)
-				return;
+//			Framework.mutex = new Mutex(false, Framework.Installation.QUANTAPP.FullName.Replace('\\', ':').Replace('/', ':'));
+            Framework.mutex = new Mutex(false, "CleverQuant");
+            Framework.isAlreadyRunning = !Framework.mutex.WaitOne(0);
+//			if (Framework.isAlreadyRunning)
+//				return;
 //			switch (Framework.Installation.Edition)
 //			{
 //				case Edition.OpenSource:

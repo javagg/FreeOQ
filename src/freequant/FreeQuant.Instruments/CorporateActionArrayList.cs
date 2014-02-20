@@ -7,13 +7,13 @@ namespace FreeQuant.Instruments
 {
 	public class CorporateActionArrayList : ICollection, IEnumerable
 	{
-		private Hashtable corporateActions;
+        private Hashtable arrayList; 
 
 		public bool IsSynchronized
 		{
 			get
 			{
-				return this.corporateActions.IsSynchronized;
+				return this.arrayList.IsSynchronized;
 			}
 		}
 
@@ -21,7 +21,7 @@ namespace FreeQuant.Instruments
 		{
 			get
 			{
-				return this.corporateActions.Count;
+				return this.arrayList.Count;
 			}
 		}
 
@@ -29,7 +29,7 @@ namespace FreeQuant.Instruments
 		{
 			get
 			{
-				return this.corporateActions.SyncRoot;
+				return this.arrayList.SyncRoot;
 			}
 		}
 
@@ -37,11 +37,11 @@ namespace FreeQuant.Instruments
 		{
 			get
 			{
-				CorporateActionArray corporateActionArray = this.corporateActions[instrument] as CorporateActionArray;
+				CorporateActionArray corporateActionArray = this.arrayList[instrument] as CorporateActionArray;
 				if (corporateActionArray == null)
 				{
 					corporateActionArray = new CorporateActionArray();
-					this.corporateActions.Add(instrument, corporateActionArray);
+					this.arrayList.Add(instrument, corporateActionArray);
 				}
 				return corporateActionArray;
 			}
@@ -49,28 +49,28 @@ namespace FreeQuant.Instruments
 
 		public CorporateActionArrayList()
 		{
-			this.corporateActions = new Hashtable();
+			this.arrayList = new Hashtable();
 		}
 
 		public void CopyTo(Array array, int index)
 		{
-			this.corporateActions.CopyTo(array, index);
+			this.arrayList.CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.corporateActions.GetEnumerator();
+			return this.arrayList.GetEnumerator();
 		}
 
 		public void Clear(bool dataOnly)
 		{
 			if (dataOnly)
 			{
-				foreach (DataArray dataArray in this.corporateActions.Values)
+				foreach (DataArray dataArray in this.arrayList.Values)
 					dataArray.Clear();
 			}
 			else
-				this.corporateActions.Clear();
+				this.arrayList.Clear();
 		}
 	}
 }

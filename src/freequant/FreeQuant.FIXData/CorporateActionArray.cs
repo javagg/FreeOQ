@@ -4,7 +4,7 @@ namespace FreeQuant.FIXData
 {
 	public class CorporateActionArray : DataArray
 	{
-		public CorporateAction this[int index]
+        public new CorporateAction this[int index]
 		{
 			get
 			{

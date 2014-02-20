@@ -1,9 +1,13 @@
-using Microsoft.Win32;
-using System;
-using System.ComponentModel;
+//using Microsoft.Win32;
+//using System;
+//using System.ComponentModel;
+//using System.IO;
+//using System.Runtime.CompilerServices;
+//using System.Runtime.InteropServices;
+using System.Reflection;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System;
 
 namespace FreeQuant
 {
@@ -71,7 +75,10 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().FullName), ".."));
+//                return Path.GetDirectoryName(Assembly.GetExecutingAssembly().FullName);
+
+//                return (DirectoryInfo)null;
 			}
 		}
 
@@ -102,7 +109,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "data"));
 			}
 		}
 
@@ -112,11 +119,11 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "bin"));
 			}
-			set
-			{
-			}
+//			set
+//			{
+//			}
 		}
 
 		[Category("Other")]
@@ -124,7 +131,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "ini"));
 			}
 		}
 
@@ -133,7 +140,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "solutions"));
 			}
 		}
 
@@ -142,7 +149,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "components"));
 			}
 		}
 
@@ -151,7 +158,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "templates"));
 			}
 		}
 
@@ -160,7 +167,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "help"));
 			}
 		}
 
@@ -169,7 +176,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "logs"));
 			}
 		}
 
@@ -178,7 +185,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "fix"));
 			}
 		}
 
@@ -187,7 +194,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (DirectoryInfo)null;
+                return new DirectoryInfo(Path.Combine(this.QUANTSYS.FullName, "temp"));
 			}
 		}
 
@@ -201,8 +208,7 @@ namespace FreeQuant
 
 		public LicenseInfo GetLicense()
 		{
-			// ISSUE: reference to a compiler-generated field
-			return new LicenseInfo();
+            return new LicenseInfo() { Licensed = true };
 		}
 
 		internal bool tnABvXFOOP()
@@ -220,18 +226,18 @@ namespace FreeQuant
 			return true;
 		}
 
-		private string MR4BVNrLnA([In] RegistryKey obj0, [In] string obj1)
-		{
-			return null;
-		}
-
-		private bool H3jBgrTW1C([In] RegistryKey obj0, [In] string obj1)
-		{
-			return true;
-		}
-
-		private void XoMBb3l1md([In] RegistryKey obj0, [In] string obj1, [In] string obj2)
-		{
-		}
+//		private string MR4BVNrLnA(RegistryKey obj0, string obj1)
+//		{
+//			return null;
+//		}
+//
+//		private bool H3jBgrTW1C(RegistryKey obj0, string obj1)
+//		{
+//			return true;
+//		}
+//
+//		private void XoMBb3l1md(RegistryKey obj0, string obj1, string obj2)
+//		{
+//		}
 	}
 }

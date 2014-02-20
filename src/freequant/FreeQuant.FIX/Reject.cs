@@ -1,19 +1,17 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.FIX
 {
-  public class Reject : FIXReject
-  {
-    public SessionRejectReason SessionRejectReason
+    public class Reject : FIXReject
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXSessionRejectReason.FromFIX(base.SessionRejectReason);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.SessionRejectReason = FIXSessionRejectReason.ToFIX(value);
-      }
+        public new SessionRejectReason SessionRejectReason
+        {
+            get
+            {
+                return FIXSessionRejectReason.FromFIX(base.SessionRejectReason);
+            }
+            set
+            {
+                base.SessionRejectReason = FIXSessionRejectReason.ToFIX(value);
+            }
+        }
     }
-  }
 }

@@ -6,7 +6,8 @@ namespace FreeQuant.Data
 	[Serializable]
 	public class Trade : IDataObject, ISeriesObject
 	{
-		protected DateTime datetime;
+        private const byte VERSION = 2;
+        protected DateTime datetime;
 		protected byte providerId;
 		protected double price;
 		protected int size;
@@ -78,10 +79,9 @@ namespace FreeQuant.Data
 			this.providerId = trade.providerId;
 		}
 
-		// TODO:
 		public override string ToString()
 		{
-			return string.Format("", this.datetime, this.price, this.size);
+            return string.Format("Datetime: {0} Price: {1} Size: {2}", this.datetime, this.price, this.size);
 		}
 
 		public virtual ISeriesObject NewInstance()
@@ -96,18 +96,33 @@ namespace FreeQuant.Data
 
 		public virtual void WriteTo(BinaryWriter writer)
 		{
-			writer.Write(this.datetime.Ticks);
+            writer.Write(VERSION);
+            writer.Write(this.datetime.Ticks);
 			writer.Write(this.price);
 			writer.Write(this.size);
 			writer.Write(this.providerId);
 		}
-		// TODO:
+
 		public virtual void ReadFrom(BinaryReader reader)
 		{
-			this.datetime = new DateTime(reader.ReadInt64());
-			this.price = reader.ReadDouble();
-			this.size = reader.ReadInt32();
-			this.providerId = reader.ReadByte();
+            byte version = reader.ReadByte();
+            switch (version)
+            {
+                case 1:
+                    this.datetime = new DateTime(reader.ReadInt64());
+                    this.price = Math.Round((double)reader.ReadSingle(), 4);
+                    this.size = reader.ReadInt32();
+                    this.providerId = reader.ReadByte();
+                    break;
+                case 2:
+                    this.datetime = new DateTime(reader.ReadInt64());
+                    this.price = reader.ReadDouble();
+                    this.size = reader.ReadInt32();
+                    this.providerId = reader.ReadByte();
+                    break;
+                default:
+                    throw new Exception("Invalid version: {0}" + version);
+            }
 		}
 	}
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace FreeQuant.Charting
 {
 	[Serializable]
-	public class Chart : UserControl
+    public partial class Chart : UserControl
 	{
 		protected static Pad fPad;
 		protected PadList fPads;
@@ -728,11 +728,6 @@ namespace FreeQuant.Charting
 			this.UpdatePads(e.Graphics, X, Y, this.fPrintWidth, this.fPrintHeight);
 		}
 
-		protected void InitializeComponent()
-		{
-			this.Size = new Size(272, 168);
-		}
-
 		protected override void OnPaint(PaintEventArgs pe)
 		{
 			this.UpdatePads(pe.Graphics);
@@ -831,13 +826,6 @@ namespace FreeQuant.Charting
 					pad.DoubleClick(point.X, point.Y);
 			}
 			base.OnDoubleClick(e);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			foreach (Pad pad in this.fPads)
-				pad.Monitored = false;
-			base.Dispose(disposing);
 		}
 	}
 }

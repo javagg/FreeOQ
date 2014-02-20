@@ -9,7 +9,7 @@ namespace OpenQuant.API
 	/// </summary>
 	public abstract class Script
 	{
-		private Form mainForm;
+        private Form mainForm = null;
 
 		public abstract void Run();
 

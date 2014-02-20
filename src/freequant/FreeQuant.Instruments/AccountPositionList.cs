@@ -38,14 +38,14 @@ namespace FreeQuant.Instruments
 
 		public void Add(AccountPosition position)
 		{
-//			if (this.Positions.Contains(position.Currency.Code))
-//				throw new ApplicationException("nooo" + position.Currency);
+            if (this.positions.Contains(position.Currency.Code))
+                throw new ApplicationException("Already Added {0}" + position.Currency);
 			this.positions.Add(position.Currency.Code, position);
 		}
 
 		public void Remove(AccountPosition position)
 		{
-			this.positions.Remove((object)position.Currency.Code);
+			this.positions.Remove(position.Currency.Code);
 		}
 
 		public void RemoveAt(int index)

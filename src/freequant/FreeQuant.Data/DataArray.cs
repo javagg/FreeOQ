@@ -29,10 +29,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				if (this.Count != 0)
-					return this[0].DateTime;
-				else
-					return new DateTime(0);
+                return this.Count != 0 ? this[0].DateTime : new DateTime(0);
 			}
 		}
 
@@ -40,10 +37,7 @@ namespace FreeQuant.Data
 		{
 			get
 			{
-				if (this.Count != 0)
-					return this[this.Count-1].DateTime;
-				else
-					return new DateTime(0);
+                return this.Count != 0 ? this[this.Count - 1].DateTime : new DateTime(0);
 			}
 		}
 
@@ -79,10 +73,7 @@ namespace FreeQuant.Data
 		public void Clear()
 		{
 			this.fList.Clear();
-			if (Cleared != null)
-			{
-				Cleared(this, EventArgs.Empty);
-			}
+            this.EmitCleared();
 		}
 
 		public bool Contains(IDataObject obj)
@@ -97,11 +88,13 @@ namespace FreeQuant.Data
 
 		public int GetIndex(DateTime datetime)
 		{
-			if (this.Count == 0) return -1;
+			if (this.Count == 0)
+                return -1;
 
 			DateTime dt1 = this[0].DateTime;
 			DateTime dt2 = this[this.Count-1].DateTime;
-			if (datetime < dt1 || dt2 < datetime) return -1;
+			if (datetime < dt1 || dt2 < datetime)
+                return -1;
 
 			return this.GetIndex(datetime, 0, this.Count - 1);
 		}
@@ -136,5 +129,11 @@ namespace FreeQuant.Data
 					return this.GetIndex(datetime, index4, index5);
 			}
 		}
+
+        private void EmitCleared()
+        {
+            if (this.Cleared != null)
+                this.Cleared( this, EventArgs.Empty);
+        }
 	}
 }

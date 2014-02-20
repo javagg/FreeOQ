@@ -7,7 +7,7 @@ namespace FreeQuant.FIXData
 {
 	public class News : FIXNews, IDataObject, ISeriesObject
 	{
-		private const byte PGEwNxMr8 = (byte)1;
+		private const byte PGEwNxMr8 = 1;
 
 		public byte ProviderId { get; set; }
 

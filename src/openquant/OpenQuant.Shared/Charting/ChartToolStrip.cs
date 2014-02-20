@@ -12,8 +12,12 @@ namespace OpenQuant.Shared.Charting
 	public partial class ChartToolStrip : ToolStrip
 	{
 		private bool additionalButtonsEnabled = true;
-
-
+        private OpenQuant.Shared.Charting.Chart chart;
+		private FreeQuant.FinChart.ChartUpdateStyle chartUpdateStyle;
+		private bool barStyleButtonsEnabled;
+		
+				private System.Windows.Forms.ToolStripMenuItem selectedItem;
+				
 		private bool BarStyleButtonsEnabled
 		{
 			get

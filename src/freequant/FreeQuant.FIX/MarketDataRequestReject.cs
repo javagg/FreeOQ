@@ -1,20 +1,17 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.FIX
 {
-  public class MarketDataRequestReject : FIXMarketDataRequestReject
-  {
-    public MDReqRejReason MDReqRejReason
+    public class MarketDataRequestReject : FIXMarketDataRequestReject
     {
-      [MethodImpl(MethodImplOptions.NoInlining)] get
-      {
-        return FIXMDReqRejReason.FromFIX(base.MDReqRejReason);
-      }
-      [MethodImpl(MethodImplOptions.NoInlining)] set
-      {
-        base.MDReqRejReason = FIXMDReqRejReason.ToFIX(value);
-      }
+        public new MDReqRejReason MDReqRejReason
+        {
+            get
+            {
+                return FIXMDReqRejReason.FromFIX(base.MDReqRejReason);
+            }
+            set
+            {
+                base.MDReqRejReason = FIXMDReqRejReason.ToFIX(value);
+            }
+        }
     }
-
-  }
 }

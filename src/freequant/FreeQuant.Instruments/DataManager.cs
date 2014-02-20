@@ -12,1018 +12,958 @@ using System.Runtime.InteropServices;
 
 namespace FreeQuant.Instruments
 {
-  public class DataManager
-  {
-    public const string SUFFIX_TRADE = "Trade";
-    public const string SUFFIX_QUOTE = "Quote";
-    public const string SUFFIX_BAR = "Bar";
-    public const string SUFFIX_DAILY = "Daily";
-    public const string SUFFIX_MARKET_DEPTH = "Depth";
-    public const string SUFFIX_FUNDAMENTAL = "Fund";
-    public const string SUFFIX_CORPORATE_ACTION = "Corp";
-    private const BarType uOyWWQRXV3 = BarType.Time;
-    private const long eINWBm8VlL = 60L;
-    private const int ORWW6WXlu1 = -1;
-    private const int lUUWEJvSqM = -1;
-    private const int YPJWs3OegF = -1;
-    private const int gfqWdRTr4c = -1;
-    private const int QO0WPjKdKF = -1;
-    public const char MARKET_DATA_SUBSCRIBE = '1';
-    public const char MARKET_DATA_UNSUBSCRIBE = '2';
-    public const char SERIES_SEPARATOR = '.';
-    private const string Kn4WeKObZc = "DataManager.config.xml";
-    private static bool hpDW23fP88;
-    private static IDataServer BWRW8rkUGO;
-    private static BarType TrxWldYDwK;
-    private static long AK2WYmbanY;
-    private static BarSeriesList hrOWG3cp4W;
-    private static QuoteArrayList LEcWXtrN5d;
-    private static TradeArrayList Pq8W4hxx7g;
-    private static FundamentalArrayList w09WJiICvf;
-    private static CorporateActionArrayList A9YWr91Jlm;
-    private static int QboW3t3R6j;
-    private static int UhSWNDBsKq;
-    private static int du8WObUg6P;
-    private static int pMXWKXcgvW;
-    private static int V9WW9pFkc0;
-    private static Hashtable XySWClVlg5;
-    private static int mdJWM0c8IB;
-
-    public static int BarArrayLength
+    public class DataManager
     {
-       get
-      {
-        return DataManager.QboW3t3R6j;
-      }
-       set
-      {
-        if (value < -1)
-					throw new ArgumentOutOfRangeException("");
-        DataManager.QboW3t3R6j = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
+        public const string SUFFIX_TRADE = "Trade";
+        public const string SUFFIX_QUOTE = "Quote";
+        public const string SUFFIX_BAR = "Bar";
+        public const string SUFFIX_DAILY = "Daily";
+        public const string SUFFIX_MARKET_DEPTH = "Depth";
+        public const string SUFFIX_FUNDAMENTAL = "Fund";
+        public const string SUFFIX_CORPORATE_ACTION = "Corp";
+        public const char MARKET_DATA_SUBSCRIBE = '1';
+        public const char MARKET_DATA_UNSUBSCRIBE = '2';
+        public const char SERIES_SEPARATOR = '.';
+        //        private const int ORWW6WXlu1 = -1;
+        //        private const int lUUWEJvSqM = -1;
+        //        private const int YPJWs3OegF = -1;
+        //        private const int gfqWdRTr4c = -1;
+        //        private const int QO0WPjKdKF = -1;
+        private const string CONFIG_FILE = "DataManager.config.xml";
+        private static bool initialized;
+        private static IDataServer server;
+        private static BarType defaultBarType;
+        private static long defaultBarSize;
+        private static BarSeriesList barSeriesList;
+        private static QuoteArrayList quoteArrayList;
+        private static TradeArrayList tradeArrayList;
+        private static FundamentalArrayList fundamentalArrayList;
+        private static CorporateActionArrayList corporateActionArrayList;
+        private static int barArrayLength;
+        // QboW3t3R6j
+        private static int quoteArrayLength;
+        // UhSWNDBsKq
+        private static int tradeArrayLength;
+        // du8WObUg6P
+        private static int fundamentalArrayLength;
+        // pMXWKXcgvW
+        private static int corporateActionArrayLength;
+        // V9WW9pFkc0
+        private static Hashtable providers;
+        private static int reqId;
 
-    public static int QuoteArrayLength
-    {
-       get
-      {
-        return DataManager.UhSWNDBsKq;
-      }
-       set
-      {
-//        if (value < -1)
-//					throw new ArgumentOutOfRangeException("{0}", value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(118));
-        DataManager.UhSWNDBsKq = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
+        private const char MDENTRY_TYPE_BID = '0';
+        private const char MDENTRY_TYPE_ASK = '1';
+        private const char MDENTRY_TYPE_TRADE = '2';
 
-    public static int TradeArrayLength
-    {
-       get
-      {
-        return DataManager.du8WObUg6P;
-      }
-       set
-      {
-//        if (value < -1)
-//          throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(208), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(222));
-        DataManager.du8WObUg6P = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
 
-    public static int FundamentalArrayLength
-    {
-       get
-      {
-        return DataManager.pMXWKXcgvW;
-      }
-       set
-      {
-//        if (value < -1)
-//          throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(312), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(326));
-        DataManager.pMXWKXcgvW = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
-
-    public static int CorporateActionArrayLength
-    {
-       get
-      {
-        return DataManager.V9WW9pFkc0;
-      }
-       set
-      {
-//        if (value < -1)
-//          throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(416), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(430));
-        DataManager.V9WW9pFkc0 = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
-
-    public static BarType DefaultBarType
-    {
-       get
-      {
-        return DataManager.TrxWldYDwK;
-      }
-       set
-      {
-        DataManager.TrxWldYDwK = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
-
-    public static long DefaultBarSize
-    {
-       get
-      {
-        return DataManager.AK2WYmbanY;
-      }
-       set
-      {
-//        if (value <= 0L)
-//          throw new ArgumentOutOfRangeException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(520), (object) value, gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(534));
-        DataManager.AK2WYmbanY = value;
-//        DataManager.QalWQDolkg();
-      }
-    }
-
-    public static BarSeriesList Bars
-    {
-       get
-      {
-        return DataManager.hrOWG3cp4W;
-      }
-    }
-
-    public static TradeArrayList Trades
-    {
-       get
-      {
-        return DataManager.Pq8W4hxx7g;
-      }
-    }
-
-    public static QuoteArrayList Quotes
-    {
-       get
-      {
-        return DataManager.LEcWXtrN5d;
-      }
-    }
-
-    public static FundamentalArrayList Fundamentals
-    {
-       get
-      {
-        return DataManager.w09WJiICvf;
-      }
-    }
-
-    public static CorporateActionArrayList CorporateActions
-    {
-       get
-      {
-        return DataManager.A9YWr91Jlm;
-      }
-    }
-
-    public static IDataServer Server
-    {
-       get
-      {
-        return DataManager.BWRW8rkUGO;
-      }
-       set
-      {
-        DataManager.BWRW8rkUGO = value;
-      }
-    }
-
-    
-    static DataManager()
-    {
-      DataManager.hpDW23fP88 = false;
-      DataManager.BWRW8rkUGO = (IDataServer) new FileDataServer();
-      DataManager.hrOWG3cp4W = new BarSeriesList();
-      DataManager.LEcWXtrN5d = new QuoteArrayList();
-      DataManager.Pq8W4hxx7g = new TradeArrayList();
-      DataManager.w09WJiICvf = new FundamentalArrayList();
-      DataManager.A9YWr91Jlm = new CorporateActionArrayList();
-      DataManager.XySWClVlg5 = new Hashtable();
-      DataManager.mdJWM0c8IB = 0;
-      DataManager.Init();
-    }
-
-    
-    public static void ClearDataArrays()
-    {
-      DataManager.hrOWG3cp4W.oohW0girCj();
-      DataManager.Pq8W4hxx7g.Clear(true);
-      DataManager.LEcWXtrN5d.Clear(true);
-      DataManager.w09WJiICvf.Clear(true);
-      DataManager.A9YWr91Jlm.Clear(true);
-    }
-
-    
-    public static void Init()
-    {
-      if (DataManager.hpDW23fP88)
-        return;
-//      if (Trace.IsLevelEnabled(TraceLevel.Info))
-//        Trace.WriteLine(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(604));
-//      ProviderManager.NewQuote += new QuoteEventHandler(DataManager.LVdLQ0af5);
-//      ProviderManager.NewTrade += new TradeEventHandler(DataManager.K9mbHqGRl);
-//      ProviderManager.NewBar += new BarEventHandler(DataManager.giTRWZgUN);
-//      ProviderManager.NewBarOpen += new BarEventHandler(DataManager.QcGaW9SYm);
-//      ProviderManager.NewMarketDepth += new MarketDepthEventHandler(DataManager.EhnnldeA1);
-//      ProviderManager.NewFundamental += new FundamentalEventHandler(DataManager.V84iPq8QC);
-//      ProviderManager.NewCorporateAction += new CorporateActionEventHandler(DataManager.GGJh4dIeb);
-//      ProviderManager.MarketDataRequestReject += new MarketDataRequestRejectEventHandler(DataManager.NxfteUqQb);
-//      ProviderManager.Connected += new ProviderEventHandler(DataManager.a9pwYGI8t);
-      DataManager.QboW3t3R6j = -1;
-      DataManager.du8WObUg6P = -1;
-      DataManager.UhSWNDBsKq = -1;
-      DataManager.pMXWKXcgvW = -1;
-      DataManager.V9WW9pFkc0 = -1;
-      DataManager.TrxWldYDwK = BarType.Time;
-      DataManager.AK2WYmbanY = 60L;
-//      DataManager.k5nzK01pU();
-      DataManager.hpDW23fP88 = true;
-    }
-
-    
-    public static void Add(string series, Trade trade)
-    {
-      DataManager.BWRW8rkUGO.Add(series, (IDataObject) trade);
-    }
-
-    
-    public static void Add(string series, Quote quote)
-    {
-      DataManager.BWRW8rkUGO.Add(series, (IDataObject) quote);
-    }
-
-    
-    public static void Add(string series, Bar bar)
-    {
-      DataManager.BWRW8rkUGO.Update(series, (IDataObject) bar);
-    }
-
-    
-    public static void Add(string series, MarketDepth marketDepth)
-    {
-      DataManager.BWRW8rkUGO.Add(series, (IDataObject) marketDepth);
-    }
-
-    
-    public static void Add(string series, Fundamental fundamental)
-    {
-      DataManager.BWRW8rkUGO.Add(series, (IDataObject) fundamental);
-    }
-
-    
-    public static void Add(string series, CorporateAction corporateAction)
-    {
-      DataManager.BWRW8rkUGO.Add(series, (IDataObject) corporateAction);
-    }
-
-    
-    public static void Add(Instrument instrument, string suffix, Trade trade)
-    {
-      DataManager.Add(instrument.Symbol + (object) '.' + suffix, trade);
-    }
-
-    
-    public static void Add(Instrument instrument, string suffix, Quote quote)
-    {
-      DataManager.Add(instrument.Symbol + (object) '.' + suffix, quote);
-    }
-
-    
-    public static void Add(Instrument instrument, string suffix, Bar bar)
-    {
-      DataManager.Add(instrument.Symbol + (object) '.' + suffix, bar);
-    }
-
-    
-    public static void Add(Instrument instrument, string suffix, MarketDepth marketDepth)
-    {
-      DataManager.Add(instrument.Symbol + (object) '.' + suffix, marketDepth);
-    }
-
-    
-    public static void Add(Instrument instrument, string suffix, Fundamental fundamental)
-    {
-      DataManager.Add(instrument.Symbol + (object) '.' + suffix, fundamental);
-    }
-
-    
-    public static void Add(Instrument instrument, string suffix, CorporateAction corporateAction)
-    {
-      DataManager.Add(instrument.Symbol + (object) '.' + suffix, corporateAction);
-    }
-
-    
-    public static void Add(Instrument instrument, Trade trade)
-    {
-			DataManager.Add(instrument, "", trade);
-    }
-
-    
-    public static void Add(Instrument instrument, Quote quote)
-    {
-			DataManager.Add(instrument, "", quote);
-    }
-
-    
-    public static void Add(Instrument instrument, Bar bar)
-    {
-			string suffix = "" + (object) '.' + ((object) bar.BarType).ToString() + (string) (object) '.' + bar.Size.ToString();
-      DataManager.Add(instrument, suffix, bar);
-    }
-
-    
-    public static void Add(Instrument instrument, Daily daily)
-    {
-			DataManager.Add(instrument, "", (Bar) daily);
-    }
-
-    
-    public static void Add(Instrument instrument, MarketDepth marketDepth)
-    {
-			DataManager.Add(instrument, "", marketDepth);
-    }
-
-    
-    public static void Add(Instrument instrument, Fundamental fundamental)
-    {
-			DataManager.Add(instrument, "", fundamental);
-    }
-
-    
-    public static void Add(Instrument instrument, CorporateAction corporateAction)
-    {
-			DataManager.Add(instrument, "", corporateAction);
-    }
-
-    
-    public static TradeArray GetTradeArray(string series, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.BWRW8rkUGO.GetTradeArray(series, datetime1, datetime2);
-    }
-
-    
-    public static TradeArray GetTradeArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetTradeArray(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
-    }
-
-    
-    public static TradeArray GetTradeArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-			return DataManager.GetTradeArray(instrument, "", datetime1, datetime2);
-    }
-
-    
-    public static QuoteArray GetQuoteArray(string series, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.BWRW8rkUGO.GetQuoteArray(series, datetime1, datetime2);
-    }
-
-    
-    public static QuoteArray GetQuoteArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetQuoteArray(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
-    }
-
-    
-    public static QuoteArray GetQuoteArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-			return DataManager.GetQuoteArray(instrument, "", datetime1, datetime2);
-    }
-
-    
-    public static MarketDepthArray GetMarketDepthArray(string series, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.BWRW8rkUGO.GetMarketDepthArray(series, datetime1, datetime2);
-    }
-
-    
-    public static MarketDepthArray GetMarketDepthArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetMarketDepthArray(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
-    }
-
-    
-    public static MarketDepthArray GetMarketDepthArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-			return DataManager.GetMarketDepthArray(instrument, "", datetime1, datetime2);
-    }
-
-    
-    public static BarSeries GetBarSeries(string series, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.BWRW8rkUGO.GetBarSeries(series, datetime1, datetime2);
-    }
-
-    
-    public static BarSeries GetBarSeries(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetBarSeries(instrument.Symbol + (object) '.' + suffix, datetime1, datetime2);
-    }
-
-    
-    public static BarSeries GetBarSeries(Instrument instrument, DateTime datetime1, DateTime datetime2, BarType barType, long barSize)
-    {
-			string suffix = string.Format("", "fdfs", '.', barType, '.',  barSize);
-      return DataManager.GetBarSeries(instrument, suffix, datetime1, datetime2);
-    }
-
-    
-    public static BarSeries GetBarSeries(Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetBarSeries(instrument, datetime1, datetime2, DataManager.TrxWldYDwK, DataManager.AK2WYmbanY);
-    }
-
-    
-    public static DailySeries GetDailySeries(Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-			string series = instrument.Symbol + (object) '.' + "";
-      DailySeries dailySeries = DataManager.BWRW8rkUGO.GetDailySeries(series, datetime1, datetime2);
-      dailySeries.Name = instrument.Symbol;
-      return dailySeries;
-    }
-
-    
-    public static DailySeries GetDailySeries(Instrument instrument)
-    {
-      return DataManager.GetDailySeries(instrument, DateTime.MinValue, DateTime.MaxValue);
-    }
-
-    
-    public static IDataSeries GetDataSeries(Instrument instrument, string suffix)
-    {
-      return DataManager.BWRW8rkUGO.GetDataSeries(instrument.Symbol + (object) '.' + suffix);
-    }
-
-    
-    public static IDataSeries AddDataSeries(Instrument instrument, string suffix)
-    {
-      return DataManager.BWRW8rkUGO.AddDataSeries(instrument.Symbol + (object) '.' + suffix);
-    }
-
-    
-    public static void DeleteDataSeries(string series)
-    {
-      DataManager.BWRW8rkUGO.Delete(series);
-    }
-
-    
-    public static void ClearDataSeries(string series)
-    {
-      DataManager.BWRW8rkUGO.Clear(series);
-    }
-
-    
-    public static IDataSeries GetDataSeries(Instrument instrument, DataManager.EDataSeries series)
-    {
-      string str;
-      switch (series)
-      {
-        case DataManager.EDataSeries.Daily:
-					str = "Daily";
-          break;
-        case DataManager.EDataSeries.Trade:
-					str = "Trade";
-          break;
-        case DataManager.EDataSeries.Quote:
-					str = "Quote";
-          break;
-        case DataManager.EDataSeries.Bar:
-					str = "Bar";
-          break;
-        case DataManager.EDataSeries.MarketDepth:
-					str = "MarketDepth";
-          break;
-        case DataManager.EDataSeries.Fundamental:
-					str = "Fundamental";
-          break;
-        case DataManager.EDataSeries.CorporateAction:
-					str = "CorporateAction";
-          break;
-        default:
-					throw new ArgumentException("erro" + ((object) series).ToString());
-      }
-      return DataManager.BWRW8rkUGO.GetDataSeries(instrument.Symbol + (object) '.' + str);
-    }
-
-    
-    public static DataSeriesList GetDataSeries(Instrument instrument)
-    {
-      DataSeriesList dataSeriesList = new DataSeriesList();
-      foreach (IDataSeries series in DataManager.BWRW8rkUGO.GetDataSeries())
-      {
-        if (series.Name.StartsWith(instrument.Symbol + (object) '.'))
-          dataSeriesList.Add(series);
-      }
-      return dataSeriesList;
-    }
-
-    
-    public static void Close()
-    {
-      DataManager.BWRW8rkUGO.Close();
-    }
-
-    
-    public static void RequestMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string suffix)
-    {
-//      DataManager.HpD15hKZM(provider, instrument, mdType, '1', suffix);
-    }
-
-    
-    public static void RequestMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
-    {
-			DataManager.RequestMarketData(provider, instrument, mdType, '.' + "");
-    }
-
-    
-    public static void CancelMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string suffix)
-    {
-//      DataManager.HpD15hKZM(provider, instrument, mdType, '2', suffix);
-    }
-
-    
-    public static void CancelMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
-    {
-			DataManager.CancelMarketData(provider, instrument, mdType, '.' + "ddd");
-    }
-
-    
-    public static bool IsSubscribed(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
-    {
-      lock (DataManager.XySWClVlg5)
-      {
-        Hashtable local_0 = DataManager.XySWClVlg5[(object) provider] as Hashtable;
-        if (local_0 == null)
-          return false;
-        Hashtable local_1 = local_0[(object) instrument] as Hashtable;
-        if (local_1 == null)
-          return false;
-        else
-          return local_1.ContainsKey((object) mdType);
-      }
-    }
-
-    
-    public static MarketDataSubscription[] GetSubscriptions()
-    {
-      List<MarketDataSubscription> list = new List<MarketDataSubscription>();
-      lock (DataManager.XySWClVlg5)
-      {
-        foreach (DictionaryEntry item_2 in DataManager.XySWClVlg5)
+        public static int BarArrayLength
         {
-          foreach (DictionaryEntry item_1 in (IDictionary) item_2.Value)
-          {
-            foreach (DictionaryEntry item_0 in (IDictionary) item_1.Value)
+            get
             {
-							MarketDataSubscription local_4 = new MarketDataSubscription((IMarketDataProvider) item_2.Key, (Instrument) item_1.Key, (MarketDataType) item_0.Key, (int)item_0.Value);
-              list.Add(local_4);
+                return DataManager.barArrayLength;
             }
-          }
+            set
+            {
+                if (value < -1)
+                    throw new ArgumentOutOfRangeException("Length Not Valid: {0}", value.ToString());
+                DataManager.barArrayLength = value;
+                DataManager.Save();
+            }
         }
-      }
-      return list.ToArray();
-    }
 
-    
-//    private static void HpD15hKZM([In] IMarketDataProvider obj0, [In] Instrument obj1, [In] MarketDataType obj2, [In] char obj3, [In] string obj4)
-//    {
-//      if ((obj2 & MarketDataType.Trade) == MarketDataType.Trade)
-//        DataManager.C0ToJgPp5(obj0, obj1, MarketDataType.Trade, obj3, obj4);
-//      if ((obj2 & MarketDataType.Quote) == MarketDataType.Quote)
-//        DataManager.C0ToJgPp5(obj0, obj1, MarketDataType.Quote, obj3, obj4);
-//      if ((obj2 & MarketDataType.MarketDepth) != MarketDataType.MarketDepth)
-//        return;
-//      DataManager.C0ToJgPp5(obj0, obj1, MarketDataType.MarketDepth, obj3, obj4);
-//    }
-//
-//    
-//    private static void C0ToJgPp5([In] IMarketDataProvider obj0, [In] Instrument obj1, [In] MarketDataType obj2, [In] char obj3, [In] string obj4)
-//    {
-//      FIXMarketDataRequest request = new FIXMarketDataRequest();
-//      request.MDReqID = DataManager.PcrIhiIAi();
-//      request.SubscriptionRequestType = obj3;
-//      switch (obj2)
-//      {
-//        case MarketDataType.Trade:
-//          request.AddGroup(new FIXMDEntryTypesGroup('2'));
-//          break;
-//        case MarketDataType.Quote:
-//          request.AddGroup(new FIXMDEntryTypesGroup('0'));
-//          request.AddGroup(new FIXMDEntryTypesGroup('1'));
-//          request.MarketDepth = 1;
-//          break;
-//        case MarketDataType.MarketDepth:
-//          request.AddGroup(new FIXMDEntryTypesGroup('0'));
-//          request.AddGroup(new FIXMDEntryTypesGroup('1'));
-//          request.MarketDepth = 0;
-//          break;
-//      }
-//      if (!obj1.ContainsField(15))
-//        obj1.Currency = Framework.Configuration.DefaultCurrency;
-//      FIXRelatedSymGroup group1 = new FIXRelatedSymGroup();
-//      request.AddGroup(group1);
-//      group1.Symbol = obj1.Symbol;
-//      group1.SecurityType = obj1.SecurityType;
-//      group1.SecurityExchange = obj1.SecurityExchange;
-//      group1.Currency = obj1.Currency;
-//      group1.SecurityID = obj1.SecurityID;
-//      group1.SecurityIDSource = obj1.SecurityIDSource;
-//      group1.MaturityDate = obj1.MaturityDate;
-//      group1.MaturityMonthYear = obj1.MaturityMonthYear;
-//      group1.StrikePrice = obj1.StrikePrice;
-//      group1.PutOrCall = ((FIXInstrument) obj1).PutOrCall;
-//      foreach (FIXSecurityAltIDGroup group2 in (FIXGroupList) obj1.SecurityAltIDGroup)
-//        group1.AddGroup(group2);
-//      group1.SetStringValue(10001, obj4);
-//      if (obj0 == ProviderManager.MarketDataSimulator)
-//      {
-//        obj0.SendMarketDataRequest(request);
-//      }
-//      else
-//      {
-//        switch (obj3)
-//        {
-//          case '1':
-//            bool flag1 = false;
-//            lock (DataManager.XySWClVlg5)
-//            {
-//              Hashtable local_4 = DataManager.XySWClVlg5[(object) obj0] as Hashtable;
-//              if (local_4 == null)
-//              {
-//                local_4 = new Hashtable();
-//                DataManager.XySWClVlg5.Add((object) obj0, (object) local_4);
-//              }
-//              Hashtable local_5 = local_4[(object) obj1] as Hashtable;
-//              if (local_5 == null)
-//              {
-//                local_5 = new Hashtable();
-//                local_4.Add((object) obj1, (object) local_5);
-//              }
-//              OIcrhiMIAiAVdQ0af5 local_6 = local_5[(object) obj2] as OIcrhiMIAiAVdQ0af5;
-//              if (local_6 == null)
-//              {
-//                local_6 = new OIcrhiMIAiAVdQ0af5(request);
-//                local_5.Add((object) obj2, (object) local_6);
-//                flag1 = true;
-//              }
-//              OIcrhiMIAiAVdQ0af5 temp_91 = local_6;
-//              int temp_94 = temp_91.QUGsV9IIAD() + 1;
-//              temp_91.qyosFFV7JU(temp_94);
-//            }
-//            if (!flag1)
-//              break;
-//            obj0.SendMarketDataRequest(request);
-//            break;
-//          case '2':
-//            bool flag2 = false;
-//            string str = (string) null;
-//            lock (DataManager.XySWClVlg5)
-//            {
-//              Hashtable local_10 = DataManager.XySWClVlg5[(object) obj0] as Hashtable;
-//              if (local_10 != null)
-//              {
-//                Hashtable local_11 = local_10[(object) obj1] as Hashtable;
-//                if (local_11 != null)
-//                {
-//                  OIcrhiMIAiAVdQ0af5 local_12 = local_11[(object) obj2] as OIcrhiMIAiAVdQ0af5;
-//                  if (local_12 != null)
-//                  {
-//                    OIcrhiMIAiAVdQ0af5 temp_152 = local_12;
-//                    int temp_155 = temp_152.QUGsV9IIAD() - 1;
-//                    temp_152.qyosFFV7JU(temp_155);
-//                    if (local_12.QUGsV9IIAD() == 0)
-//                    {
-//                      local_11.Remove((object) obj2);
-//                      if (local_11.Count == 0)
-//                      {
-//                        local_10.Remove((object) obj1);
-//                        if (local_10.Count == 0)
-//                          DataManager.XySWClVlg5.Remove((object) obj0);
-//                      }
-//                      flag2 = true;
-//                    }
-//                  }
-//                  else
-//                    str = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1012);
-//                }
-//                else
-//                  str = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1062);
-//              }
-//              else
-//                str = gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1148);
-//            }
-//            if (str != null)
-//              DataManager.vp2xg93Co(obj0, obj1, obj2, str);
-//            if (!flag2)
-//              break;
-//            obj0.SendMarketDataRequest(request);
-//            break;
-//        }
-//      }
-//    }
-//
-//    
-//    private static void vp2xg93Co([In] IMarketDataProvider obj0, [In] Instrument obj1, [In] MarketDataType obj2, [In] string obj3)
-//    {
-//      if (!Trace.IsLevelEnabled(TraceLevel.Warning))
-//        return;
-//      Trace.WriteLine(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1230) + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1310) + obj0.Name + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1334) + obj1.Symbol + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1362) + ((object) obj2).ToString() + Environment.NewLine + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1398) + obj3);
-//    }
-//
-//    
-//    private static string PcrIhiIAi()
-//    {
-//      return string.Format(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1420), (object) Clock.Now, (object) DataManager.mdJWM0c8IB++);
-//    }
-//
-//    
-//    private static void LVdLQ0af5([In] object obj0, [In] QuoteEventArgs obj1)
-//    {
-//      Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      Quote quote = obj1.Quote;
-//      if (index == null)
-//        return;
-//      if (DataManager.UhSWNDBsKq != 0)
-//      {
-//        QuoteArray quoteArray = DataManager.LEcWXtrN5d[index];
-//        quoteArray.Add((IDataObject) quote);
-//        if (DataManager.UhSWNDBsKq != -1 && quoteArray.Count > DataManager.UhSWNDBsKq)
-//          quoteArray.RemoveAt(0);
-//      }
-//      index.JLw6D59Mxc(new QuoteEventArgs(quote, (IFIXInstrument) index, obj1.Provider));
-//    }
-//
-//    
-//    private static void K9mbHqGRl([In] object obj0, [In] TradeEventArgs obj1)
-//    {
-//      Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      Trade trade = obj1.Trade;
-//      if (index == null)
-//        return;
-//      if (DataManager.du8WObUg6P != 0)
-//      {
-//        TradeArray tradeArray = DataManager.Pq8W4hxx7g[index];
-//        tradeArray.Add((IDataObject) trade);
-//        if (DataManager.du8WObUg6P != -1 && tradeArray.Count > DataManager.du8WObUg6P)
-//          tradeArray.RemoveAt(0);
-//      }
-//      index.akq60u3HYf(new TradeEventArgs(trade, (IFIXInstrument) index, obj1.Provider));
-//    }
-//
-//    
-//    private static void giTRWZgUN([In] object obj0, [In] BarEventArgs obj1)
-//    {
-//      if (Trace.IsLevelEnabled(TraceLevel.Verbose))
-//        Trace.WriteLine(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1464) + (object) obj1);
-//      Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      if (index == null)
-//        return;
-//      DataManager.hrOWG3cp4W.J4qWHe7JIm(index, obj1.Bar);
-//      BarSeries barSeries = DataManager.hrOWG3cp4W[index, obj1.Bar.BarType, obj1.Bar.Size];
-//      if (DataManager.QboW3t3R6j != -1 && barSeries.Count > DataManager.QboW3t3R6j)
-//        ((TimeSeries) barSeries).Remove(0);
-//      index.trS6Hr1Wkt(obj1);
-//    }
-//
-//    
-//    private static void QcGaW9SYm([In] object obj0, [In] BarEventArgs obj1)
-//    {
-//      if (Trace.IsLevelEnabled(TraceLevel.Verbose))
-//        Trace.WriteLine(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1514) + (object) obj1);
-//      Instrument instrument = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      if (instrument == null)
-//        return;
-//      instrument.ami6cstOZQ(obj1);
-//    }
-//
-//    
-//    private static void EhnnldeA1([In] object obj0, [In] MarketDepthEventArgs obj1)
-//    {
-//      Instrument instrument = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      if (instrument == null)
-//        return;
-//      instrument.aSE6VetHfX(obj1);
-//    }
-//
-//    
-//    private static void V84iPq8QC([In] object obj0, [In] FundamentalEventArgs obj1)
-//    {
-//      Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      if (index == null)
-//        return;
-//      FundamentalArray fundamentalArray = DataManager.w09WJiICvf[index];
-//      fundamentalArray.Add((IDataObject) obj1.Fundamental);
-//      if (DataManager.pMXWKXcgvW != -1 && fundamentalArray.Count > DataManager.pMXWKXcgvW)
-//        fundamentalArray.RemoveAt(0);
-//      index.a1w6FaBIwx(obj1);
-//    }
-//
-//    
-//    private static void GGJh4dIeb([In] object obj0, [In] CorporateActionEventArgs obj1)
-//    {
-//      Instrument index = obj1.Instrument as Instrument ?? InstrumentManager.Instruments[obj1.Instrument.Symbol, obj1.Provider.Name];
-//      if (index == null)
-//        return;
-//      CorporateActionArray corporateActionArray = DataManager.A9YWr91Jlm[index];
-//      corporateActionArray.Add((IDataObject) obj1.CorporateAction);
-//      if (DataManager.V9WW9pFkc0 != -1 && corporateActionArray.Count > DataManager.V9WW9pFkc0)
-//        corporateActionArray.RemoveAt(0);
-//      index.KPy6yCSTBZ(obj1);
-//    }
-//
-//    
-//    private static void NxfteUqQb([In] object obj0, [In] MarketDataRequestRejectEventArgs obj1)
-//    {
-//    }
-//
-//    
-//    private static void a9pwYGI8t([In] ProviderEventArgs obj0)
-//    {
-//      IMarketDataProvider marketDataProvider = obj0.Provider as IMarketDataProvider;
-//      if (marketDataProvider == null || marketDataProvider == ProviderManager.MarketDataSimulator)
-//        return;
-//      Hashtable hashtable1 = DataManager.XySWClVlg5[(object) marketDataProvider] as Hashtable;
-//      if (hashtable1 == null)
-//        return;
-//      foreach (Hashtable hashtable2 in (IEnumerable) hashtable1.Values)
-//      {
-//        foreach (OIcrhiMIAiAVdQ0af5 oicrhiMiAiAvdQ0af5 in (IEnumerable) hashtable2.Values)
-//          marketDataProvider.SendMarketDataRequest(oicrhiMiAiAvdQ0af5.CE8sHyu0xW());
-//      }
-//    }
-//
-//    
-    public static BarSeries GetHistoricalBars(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2, long barSize)
-    {
-      ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Bar, datetime1, datetime2, barSize);
-      BarSeries barSeries = new BarSeries();
-      foreach (Bar bar in arrayList)
-        barSeries.Add(bar);
-      return barSeries;
-    }
+        public static int QuoteArrayLength
+        {
+            get
+            {
+                return DataManager.quoteArrayLength;
+            }
+            set
+            {
+                if (value < -1)
+                    throw new ArgumentOutOfRangeException("Length Not Valid: {0}", value.ToString());
+                DataManager.quoteArrayLength = value;
+                DataManager.Save();
+            }
+        }
 
-    
-    public static BarSeries GetHistoricalBars(string providerName, string symbol, DateTime datetime1, DateTime datetime2, long barSize)
-    {
-      return DataManager.GetHistoricalBars(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2, barSize);
-    }
+        public static int TradeArrayLength
+        {
+            get
+            {
+                return DataManager.tradeArrayLength;
+            }
+            set
+            {
+                if (value < -1)
+                    throw new ArgumentOutOfRangeException("Length Not Valid: {0}", value.ToString());
+                DataManager.tradeArrayLength = value;
+                DataManager.Save();
+            }
+        }
 
-    
-    public static DailySeries GetHistoricalDailies(IHistoricalDataProvider provider, Instrument instrument, DateTime date1, DateTime date2)
-    {
-      ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Daily, date1, date2, -1L);
-      DailySeries dailySeries = new DailySeries();
-      foreach (Daily daily in arrayList)
-        dailySeries.Add((Bar) daily);
-      return dailySeries;
-    }
+        public static int FundamentalArrayLength
+        {
+            get
+            {
+                return DataManager.fundamentalArrayLength;
+            }
+            set
+            {
+                if (value < -1)
+                    throw new ArgumentOutOfRangeException("Length Not Valid: {0}", value.ToString());
+                DataManager.fundamentalArrayLength = value;
+                DataManager.Save();
+            }
+        }
 
-    
-    public static DailySeries GetHistoricalDailies(string providerName, string symbol, DateTime date1, DateTime date2)
-    {
-      return DataManager.GetHistoricalDailies(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], date1, date2);
-    }
+        public static int CorporateActionArrayLength
+        {
+            get
+            {
+                return DataManager.corporateActionArrayLength;  
+            }
+            set
+            {
+                if (value < -1)
+                    throw new ArgumentOutOfRangeException("Length Not Valid: {0}", value.ToString());
+                DataManager.corporateActionArrayLength = value;
+                DataManager.Save();
+            }
+        }
 
-    
-    public static TradeArray GetHistoricalTrades(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-      ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Trade, datetime1, datetime2, -1L);
-      TradeArray tradeArray = new TradeArray();
-      foreach (Trade trade in arrayList)
-        tradeArray.Add((IDataObject) trade);
-      return tradeArray;
-    }
+        public static BarType DefaultBarType
+        {
+            get
+            {
+                return DataManager.defaultBarType;
+            }
+            set
+            {
+                DataManager.defaultBarType = value;
+                DataManager.Save();
+            }
+        }
 
-    
-    public static TradeArray GetHistoricalTrades(string providerName, string symbol, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetHistoricalTrades(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2);
-    }
+        public static long DefaultBarSize
+        {
+            get
+            {
+                return DataManager.defaultBarSize;
+            }
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentOutOfRangeException("BarSize {0} Not Valid", value.ToString());
+                DataManager.defaultBarSize = value;
+                DataManager.Save();
+            }
+        }
 
-    
-    public static QuoteArray GetHistoricalQuotes(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2)
-    {
-      ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Quote, datetime1, datetime2, -1L);
-      QuoteArray quoteArray = new QuoteArray();
-      foreach (Quote quote in arrayList)
-        quoteArray.Add((IDataObject) quote);
-      return quoteArray;
-    }
+        public static BarSeriesList Bars
+        {
+            get
+            {
+                return DataManager.barSeriesList;
+            }
+        }
 
-    
-    public static QuoteArray GetHistoricalQuotes(string providerName, string symbol, DateTime datetime1, DateTime datetime2)
-    {
-      return DataManager.GetHistoricalQuotes(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2);
-    }
+        public static TradeArrayList Trades
+        {
+            get
+            {
+                return DataManager.tradeArrayList;
+            }
+        }
 
-    
-    private static ArrayList r6ZT8iFUv([In] IHistoricalDataProvider obj0, [In] Instrument obj1, [In] DataManager.EDataSeries obj2, [In] DateTime obj3, [In] DateTime obj4, [In] long obj5)
-     {
-////      if (obj0 == null)
-////        throw new ArgumentNullException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1572));
-////      if (obj1 == null)
-////        throw new ArgumentNullException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1592));
-//      if (!obj0.IsConnected)
-//      {
-//        obj0.Connect(10000);
-////        if (!obj0.IsConnected)
-////          throw new InvalidOperationException(gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1616));
-//      }
-//      HistoricalDataRequest historicalDataRequest = new HistoricalDataRequest();
-//      historicalDataRequest.Instrument = (IFIXInstrument) obj1;
-//      switch (obj2)
-//      {
-//        case DataManager.EDataSeries.Daily:
-//          historicalDataRequest.DataType = HistoricalDataType.Daily;
-//          break;
-//        case DataManager.EDataSeries.Trade:
-//          historicalDataRequest.DataType = HistoricalDataType.Trade;
-//          break;
-//        case DataManager.EDataSeries.Quote:
-//          historicalDataRequest.DataType = HistoricalDataType.Quote;
-//          break;
-//        case DataManager.EDataSeries.Bar:
-//          historicalDataRequest.DataType = HistoricalDataType.Bar;
-//          historicalDataRequest.BarSize = obj5;
-//          break;
-//      }
-//      historicalDataRequest.BeginDate = obj3;
-//      historicalDataRequest.EndDate = obj4;
-//      return new GO3uho8c9KuFsJTfrm(obj0, historicalDataRequest).Jnd6t3ebcp();
-		return new ArrayList();
-}
-//
-//    
-//    private static void k5nzK01pU()
-//    {
-//      FileInfo fileInfo = new FileInfo(Framework.Installation.IniDir.FullName + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1674));
-//      if (fileInfo.Exists)
-//      {
-//        try
-//        {
-//          puiniRe7DJLOfflhEJ puiniRe7DjlOfflhEj = new puiniRe7DJLOfflhEJ();
-//          puiniRe7DjlOfflhEj.Load(fileInfo.FullName);
-//          DataManager.TrxWldYDwK = puiniRe7DjlOfflhEj.CHCBRumpAl().WdlEXZ7oTe();
-//          DataManager.AK2WYmbanY = puiniRe7DjlOfflhEj.CHCBRumpAl().XaSErhLB01();
-//          SesaxMXvEcbARH2A9H sesaxMxvEcbArH2A9H = puiniRe7DjlOfflhEj.KtOBnsCKBh();
-//          DataManager.QboW3t3R6j = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (BarArray)).l9DETTpFOp();
-//          DataManager.du8WObUg6P = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (TradeArray)).l9DETTpFOp();
-//          DataManager.UhSWNDBsKq = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (QuoteArray)).l9DETTpFOp();
-//          DataManager.pMXWKXcgvW = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (FundamentalArray)).l9DETTpFOp();
-//          DataManager.V9WW9pFkc0 = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (CorporateActionArray)).l9DETTpFOp();
-//        }
-//        catch (Exception ex)
-//        {
-//          if (!Trace.IsLevelEnabled(TraceLevel.Error))
-//            return;
-//          Trace.WriteLine(((object) ex).ToString());
-//        }
-//      }
-//      else
-//        DataManager.QalWQDolkg();
-//    }
-//
-//    
-//    private static void QalWQDolkg()
-//    {
-//      puiniRe7DJLOfflhEJ puiniRe7DjlOfflhEj = new puiniRe7DJLOfflhEJ();
-//      puiniRe7DjlOfflhEj.CHCBRumpAl().kjcE4tAU2C(DataManager.TrxWldYDwK);
-//      puiniRe7DjlOfflhEj.CHCBRumpAl().hcVE3AoTff(DataManager.AK2WYmbanY);
-//      SesaxMXvEcbARH2A9H sesaxMxvEcbArH2A9H = puiniRe7DjlOfflhEj.KtOBnsCKBh();
-//      sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (BarArray)).rTfEzlwNY7(DataManager.QboW3t3R6j);
-//      sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (TradeArray)).rTfEzlwNY7(DataManager.du8WObUg6P);
-//      sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (QuoteArray)).rTfEzlwNY7(DataManager.UhSWNDBsKq);
-//      sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (FundamentalArray)).rTfEzlwNY7(DataManager.pMXWKXcgvW);
-//      sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof (CorporateActionArray)).rTfEzlwNY7(DataManager.V9WW9pFkc0);
-//      puiniRe7DjlOfflhEj.Save(Framework.Installation.IniDir.FullName + gUqQbWj9pYGI8tO6Z8.iW3dklQ6Dr(1724));
-//    }
+        public static QuoteArrayList Quotes
+        {
+            get
+            {
+                return DataManager.quoteArrayList;
+            }
+        }
 
-    public enum EDataSeries
-    {
-      Daily,
-      Trade,
-      Quote,
-      Bar,
-      MarketDepth,
-      Fundamental,
-      CorporateAction
+        public static FundamentalArrayList Fundamentals
+        {
+            get
+            {
+                return DataManager.fundamentalArrayList;
+            }
+        }
+
+        public static CorporateActionArrayList CorporateActions
+        {
+            get
+            {
+                return DataManager.corporateActionArrayList;
+            }
+        }
+
+        public static IDataServer Server
+        {
+            get
+            {
+                return DataManager.server;
+            }
+            set
+            {
+                DataManager.server = value;
+            }
+        }
+
+        static DataManager()
+        {
+            DataManager.initialized = false;
+            DataManager.server = new FileDataServer();
+            DataManager.barSeriesList = new BarSeriesList();
+            DataManager.quoteArrayList = new QuoteArrayList();
+            DataManager.tradeArrayList = new TradeArrayList();
+            DataManager.fundamentalArrayList = new FundamentalArrayList();
+            DataManager.corporateActionArrayList = new CorporateActionArrayList();
+            DataManager.providers = new Hashtable();
+            DataManager.reqId = 0;
+            DataManager.Init();
+        }
+
+        public static void ClearDataArrays()
+        {
+            DataManager.barSeriesList.Clear();
+            DataManager.tradeArrayList.Clear(true);
+            DataManager.quoteArrayList.Clear(true);
+            DataManager.fundamentalArrayList.Clear(true);
+            DataManager.corporateActionArrayList.Clear(true);
+        }
+
+        public static void Init()
+        {
+            if (DataManager.initialized)
+                return;
+
+            ProviderManager.NewQuote += new QuoteEventHandler(DataManager.OnNewQuote);
+            ProviderManager.NewTrade += new TradeEventHandler(DataManager.OnNewTrade);
+            ProviderManager.NewBar += new BarEventHandler(DataManager.OnNewBar);
+            ProviderManager.NewBarOpen += new BarEventHandler(DataManager.OnNewBarOpen);
+            ProviderManager.NewMarketDepth += new MarketDepthEventHandler(DataManager.OnNewMarketDepth);
+            ProviderManager.NewFundamental += new FundamentalEventHandler(DataManager.OnNewFundamental);
+            ProviderManager.NewCorporateAction += new CorporateActionEventHandler(DataManager.OnNewCorporateAction);
+            ProviderManager.MarketDataRequestReject += new MarketDataRequestRejectEventHandler(DataManager.OnMarketDataRequestReject);
+            ProviderManager.Connected += new ProviderEventHandler(DataManager.a9pwYGI8t);
+            DataManager.barArrayLength = -1;
+            DataManager.tradeArrayLength = -1;
+            DataManager.quoteArrayLength = -1;
+            DataManager.fundamentalArrayLength = -1;
+            DataManager.corporateActionArrayLength = -1;
+            DataManager.defaultBarType = BarType.Time;   // DataManager.TrxWldYDwK = BarType.Time;
+            DataManager.defaultBarSize = 60;            // DataManager.AK2WYmbanY
+            DataManager.Load();
+            DataManager.initialized = true;
+        }
+
+        public static void Add(string series, Trade trade)
+        {
+            DataManager.server.Add(series, trade);
+        }
+
+        public static void Add(string series, Quote quote)
+        {
+            DataManager.server.Add(series, quote);
+        }
+
+        public static void Add(string series, Bar bar)
+        {
+            DataManager.server.Update(series, bar);
+        }
+
+        public static void Add(string series, MarketDepth marketDepth)
+        {
+            DataManager.server.Add(series, marketDepth);
+        }
+
+        public static void Add(string series, Fundamental fundamental)
+        {
+            DataManager.server.Add(series, fundamental);
+        }
+
+        public static void Add(string series, CorporateAction corporateAction)
+        {
+            DataManager.server.Add(series, corporateAction);
+        }
+
+        public static void Add(Instrument instrument, string suffix, Trade trade)
+        {
+            DataManager.Add(instrument.Symbol + SERIES_SEPARATOR + suffix, trade);
+        }
+
+        public static void Add(Instrument instrument, string suffix, Quote quote)
+        {
+            DataManager.Add(instrument.Symbol + SERIES_SEPARATOR + suffix, quote);
+        }
+
+        public static void Add(Instrument instrument, string suffix, Bar bar)
+        {
+            DataManager.Add(instrument.Symbol + SERIES_SEPARATOR + suffix, bar);
+        }
+
+        public static void Add(Instrument instrument, string suffix, MarketDepth marketDepth)
+        {
+            DataManager.Add(instrument.Symbol + SERIES_SEPARATOR + suffix, marketDepth);
+        }
+
+        public static void Add(Instrument instrument, string suffix, Fundamental fundamental)
+        {
+            DataManager.Add(instrument.Symbol + SERIES_SEPARATOR + suffix, fundamental);
+        }
+
+        public static void Add(Instrument instrument, string suffix, CorporateAction corporateAction)
+        {
+            DataManager.Add(instrument.Symbol + SERIES_SEPARATOR + suffix, corporateAction);
+        }
+
+        public static void Add(Instrument instrument, Trade trade)
+        {
+            DataManager.Add(instrument, SUFFIX_TRADE, trade);
+        }
+
+        public static void Add(Instrument instrument, Quote quote)
+        {
+            DataManager.Add(instrument, SUFFIX_QUOTE, quote);
+        }
+
+        public static void Add(Instrument instrument, Bar bar)
+        {
+            string suffix = SUFFIX_BAR + SERIES_SEPARATOR + bar.BarType.ToString() + SERIES_SEPARATOR + bar.Size.ToString();
+            DataManager.Add(instrument, suffix, bar);
+        }
+
+        public static void Add(Instrument instrument, Daily daily)
+        {
+            DataManager.Add(instrument, SUFFIX_DAILY, daily);
+        }
+
+        public static void Add(Instrument instrument, MarketDepth marketDepth)
+        {
+            DataManager.Add(instrument, SUFFIX_MARKET_DEPTH, marketDepth);
+        }
+
+        public static void Add(Instrument instrument, Fundamental fundamental)
+        {
+            DataManager.Add(instrument, SUFFIX_FUNDAMENTAL, fundamental);
+        }
+
+        public static void Add(Instrument instrument, CorporateAction corporateAction)
+        {
+            DataManager.Add(instrument, SUFFIX_CORPORATE_ACTION, corporateAction);
+        }
+
+        public static TradeArray GetTradeArray(string series, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.server.GetTradeArray(series, datetime1, datetime2);
+        }
+
+        public static TradeArray GetTradeArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetTradeArray(instrument.Symbol + '.' + suffix, datetime1, datetime2);
+        }
+
+        public static TradeArray GetTradeArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetTradeArray(instrument, SUFFIX_TRADE, datetime1, datetime2);
+        }
+
+        public static QuoteArray GetQuoteArray(string series, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.server.GetQuoteArray(series, datetime1, datetime2);
+        }
+
+        public static QuoteArray GetQuoteArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetQuoteArray(instrument.Symbol + '.' + suffix, datetime1, datetime2);
+        }
+
+        public static QuoteArray GetQuoteArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetQuoteArray(instrument, SUFFIX_QUOTE, datetime1, datetime2);
+        }
+
+        public static MarketDepthArray GetMarketDepthArray(string series, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.server.GetMarketDepthArray(series, datetime1, datetime2);
+        }
+
+        public static MarketDepthArray GetMarketDepthArray(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetMarketDepthArray(instrument.Symbol + '.' + suffix, datetime1, datetime2);
+        }
+
+        public static MarketDepthArray GetMarketDepthArray(Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetMarketDepthArray(instrument, SUFFIX_MARKET_DEPTH, datetime1, datetime2);
+        }
+
+        public static BarSeries GetBarSeries(string series, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.server.GetBarSeries(series, datetime1, datetime2);
+        }
+
+        public static BarSeries GetBarSeries(Instrument instrument, string suffix, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetBarSeries(instrument.Symbol + SERIES_SEPARATOR + suffix, datetime1, datetime2);
+        }
+
+        public static BarSeries GetBarSeries(Instrument instrument, DateTime datetime1, DateTime datetime2, BarType barType, long barSize)
+        {
+            string suffix = string.Format("{0}{1}{2}{3}{4}", SUFFIX_BAR, SERIES_SEPARATOR, barType, SERIES_SEPARATOR, barSize);
+            return DataManager.GetBarSeries(instrument, suffix, datetime1, datetime2);
+        }
+
+        public static BarSeries GetBarSeries(Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetBarSeries(instrument, datetime1, datetime2, DataManager.defaultBarType, DataManager.defaultBarSize);
+        }
+
+        public static DailySeries GetDailySeries(Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            string series = instrument.Symbol + SERIES_SEPARATOR + SUFFIX_DAILY;
+            DailySeries dailySeries = DataManager.server.GetDailySeries(series, datetime1, datetime2);
+            dailySeries.Name = instrument.Symbol;
+            return dailySeries;
+        }
+
+        public static DailySeries GetDailySeries(Instrument instrument)
+        {
+            return DataManager.GetDailySeries(instrument, DateTime.MinValue, DateTime.MaxValue);
+        }
+
+        public static IDataSeries GetDataSeries(Instrument instrument, string suffix)
+        {
+            return DataManager.server.GetDataSeries(instrument.Symbol + SERIES_SEPARATOR + suffix);
+        }
+
+        public static IDataSeries AddDataSeries(Instrument instrument, string suffix)
+        {
+            return DataManager.server.AddDataSeries(instrument.Symbol + SERIES_SEPARATOR + suffix);
+        }
+
+        public static void DeleteDataSeries(string series)
+        {
+            DataManager.server.Delete(series);
+        }
+
+        public static void ClearDataSeries(string series)
+        {
+            DataManager.server.Clear(series);
+        }
+
+        public static IDataSeries GetDataSeries(Instrument instrument, DataManager.EDataSeries series)
+        {
+            string suffix;
+            switch (series)
+            {
+                case DataManager.EDataSeries.Daily:
+                    suffix = SUFFIX_DAILY;
+                    break;
+                case DataManager.EDataSeries.Trade:
+                    suffix = SUFFIX_TRADE;
+                    break;
+                case DataManager.EDataSeries.Quote:
+                    suffix = SUFFIX_QUOTE;
+                    break;
+                case DataManager.EDataSeries.Bar:
+                    suffix = SUFFIX_BAR;
+                    break;
+                case DataManager.EDataSeries.MarketDepth:
+                    suffix = SUFFIX_MARKET_DEPTH;
+                    break;
+                case DataManager.EDataSeries.Fundamental:
+                    suffix = SUFFIX_FUNDAMENTAL;
+                    break;
+                case DataManager.EDataSeries.CorporateAction:
+                    suffix = SUFFIX_CORPORATE_ACTION;
+                    break;
+                default:
+                    throw new ArgumentException("Eerro: {0}" + series.ToString());
+            }
+            return DataManager.server.GetDataSeries(instrument.Symbol + SERIES_SEPARATOR + suffix);
+        }
+
+        public static DataSeriesList GetDataSeries(Instrument instrument)
+        {
+            DataSeriesList dsList = new DataSeriesList();
+            foreach (IDataSeries series in DataManager.server.GetDataSeries())
+            {
+                if (series.Name.StartsWith(instrument.Symbol + SERIES_SEPARATOR))
+                    dsList.Add(series);
+            }
+            return dsList;
+        }
+
+        public static void Close()
+        {
+            DataManager.server.Close();
+        }
+
+        public static void RequestMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string suffix)
+        {
+            DataManager.DoRequest(provider, instrument, mdType, MARKET_DATA_SUBSCRIBE, suffix);
+        }
+
+        public static void RequestMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
+        {
+            DataManager.RequestMarketData(provider, instrument, mdType, SERIES_SEPARATOR + "SUBSCRIBE");
+        }
+
+        public static void CancelMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string suffix)
+        {
+            DataManager.DoRequest(provider, instrument, mdType, MARKET_DATA_UNSUBSCRIBE, suffix);
+        }
+
+        public static void CancelMarketData(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
+        {
+            DataManager.CancelMarketData(provider, instrument, mdType, SERIES_SEPARATOR + "UNSUBSCRIBE");
+        }
+
+        public static bool IsSubscribed(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType)
+        {
+            lock (DataManager.providers)
+            {
+                Hashtable local_0 = DataManager.providers[provider] as Hashtable;
+                if (local_0 == null)
+                    return false;
+                Hashtable local_1 = local_0[instrument] as Hashtable;
+                if (local_1 == null)
+                    return false;
+                else
+                    return local_1.ContainsKey(mdType);
+            }
+        }
+
+        public static MarketDataSubscription[] GetSubscriptions()
+        {
+            List<MarketDataSubscription> subscriptions = new List<MarketDataSubscription>();
+            lock (DataManager.providers)
+            {
+                foreach (DictionaryEntry entry in DataManager.providers)
+                {
+                    foreach (DictionaryEntry item_1 in (IDictionary)entry.Value)
+                    {
+                        foreach (DictionaryEntry item_0 in (IDictionary) item_1.Value)
+                        {
+                            MarketDataSubscription local_4 = new MarketDataSubscription((IMarketDataProvider)entry.Key, (Instrument)item_1.Key, (MarketDataType)item_0.Key, (int)item_0.Value);
+                            subscriptions.Add(local_4);
+                        }
+                    }
+                }
+            }
+            return subscriptions.ToArray();
+        }
+
+        private static void DoRequest(IMarketDataProvider provider, Instrument instrument, MarketDataType type, char subCh, string suffix)
+        {
+            if ((type & MarketDataType.Trade) == MarketDataType.Trade)
+                DataManager.DoFixRequest(provider, instrument, MarketDataType.Trade, subCh, suffix);
+            if ((type & MarketDataType.Quote) == MarketDataType.Quote)
+                DataManager.DoFixRequest(provider, instrument, MarketDataType.Quote, subCh, suffix);
+            if ((type & MarketDataType.MarketDepth) != MarketDataType.MarketDepth)
+                return;
+            DataManager.DoFixRequest(provider, instrument, MarketDataType.MarketDepth, subCh, suffix);
+        }
+
+        private static void DoFixRequest(IMarketDataProvider provider, Instrument instrument, MarketDataType type, char subCh, string suffix)
+        {
+            FIXMarketDataRequest request = new FIXMarketDataRequest();
+            request.MDReqID = DataManager.GetRequestId();
+            request.SubscriptionRequestType = subCh;
+            switch (type)
+            {
+                case MarketDataType.Trade:
+                    request.AddGroup(new FIXMDEntryTypesGroup('2'));
+                    break;
+                case MarketDataType.Quote:
+                    request.AddGroup(new FIXMDEntryTypesGroup('0'));
+                    request.AddGroup(new FIXMDEntryTypesGroup('1'));
+                    request.MarketDepth = 1;  // Top of Book
+                    break;
+                case MarketDataType.MarketDepth:
+                    request.AddGroup(new FIXMDEntryTypesGroup('0'));
+                    request.AddGroup(new FIXMDEntryTypesGroup('1'));
+                    request.MarketDepth = 0;  // Full Book
+                    break;
+            }
+            if (!instrument.ContainsField(15))
+                instrument.Currency = Framework.Configuration.DefaultCurrency;
+            FIXRelatedSymGroup symGrp = new FIXRelatedSymGroup();
+            request.AddGroup(symGrp);
+            symGrp.Symbol = instrument.Symbol;
+            symGrp.SecurityType = instrument.SecurityType;
+            symGrp.SecurityExchange = instrument.SecurityExchange;
+            symGrp.Currency = instrument.Currency;
+            symGrp.SecurityID = instrument.SecurityID;
+            symGrp.SecurityIDSource = instrument.SecurityIDSource;
+            symGrp.MaturityDate = instrument.MaturityDate;
+            symGrp.MaturityMonthYear = instrument.MaturityMonthYear;
+            symGrp.StrikePrice = instrument.StrikePrice;
+            symGrp.PutOrCall = ((FIXInstrument)instrument).PutOrCall;
+            foreach (FIXSecurityAltIDGroup group2 in instrument.SecurityAltIDGroup)
+                symGrp.AddGroup(group2);
+            symGrp.SetStringValue(10001, suffix);
+            if (provider == ProviderManager.MarketDataSimulator)
+            {
+                provider.SendMarketDataRequest(request);
+            }
+            else
+            {
+                switch (subCh)
+                {
+                    case MARKET_DATA_SUBSCRIBE:
+                        bool flag1 = false;
+                        lock (DataManager.providers)
+                        {
+                            Hashtable local_4 = DataManager.providers[provider] as Hashtable;
+                            if (local_4 == null)
+                            {
+                                local_4 = new Hashtable();
+                                DataManager.providers.Add(provider, local_4);
+                            }
+                            Hashtable local_5 = local_4[instrument] as Hashtable;
+                            if (local_5 == null)
+                            {
+                                local_5 = new Hashtable();
+                                local_4.Add(instrument, local_5);
+                            }
+                            RequestItem local_6 = local_5[type] as RequestItem;
+                            if (local_6 == null)
+                            {
+                                local_6 = new RequestItem(request);
+                                local_5.Add(type, local_6);
+                                flag1 = true;
+                            }
+                            RequestItem temp_91 = local_6;
+                            int temp_94 = temp_91.GetRequestId() + 1;
+                            temp_91.SetRequestId(temp_94);
+                        }
+                        if (!flag1)
+                            break;
+                        provider.SendMarketDataRequest(request);
+                        break;
+                    case MARKET_DATA_UNSUBSCRIBE:
+                        bool canSend = false;
+                        string msg = null;
+                        lock (DataManager.providers)
+                        {
+                            Hashtable local_10 = DataManager.providers[provider] as Hashtable;
+                            if (local_10 != null)
+                            {
+                                Hashtable local_11 = local_10[instrument] as Hashtable;
+                                if (local_11 != null)
+                                {
+                                    RequestItem local_12 = local_11[type] as RequestItem;
+                                    if (local_12 != null)
+                                    {
+                                        RequestItem temp_152 = local_12;
+                                        int temp_155 = temp_152.GetRequestId() - 1;
+                                        temp_152.SetRequestId(temp_155);
+                                        if (local_12.GetRequestId() == 0)
+                                        {
+                                            local_11.Remove(type);
+                                            if (local_11.Count == 0)
+                                            {
+                                                local_10.Remove(instrument);
+                                                if (local_10.Count == 0)
+                                                    DataManager.providers.Remove(provider);
+                                            }
+                                            canSend = true;
+                                        }
+                                    }
+                                    else
+                                        msg = "No this RequestItem";
+                                }
+                                else
+                                    msg = "No Request for this instrument";
+                            }
+                            else
+                                msg = "No Request for this provider";
+                        }
+                        if (msg != null)
+                            DataManager.LogRequestMessage(provider, instrument, type, msg);
+                        if (!canSend)
+                            break;
+                        provider.SendMarketDataRequest(request);
+                        break;
+                }
+            }
+        }
+
+        private static void LogRequestMessage(IMarketDataProvider provider, Instrument instrument, MarketDataType mdType, string obj3)
+        {
+            if (Trace.IsLevelEnabled(TraceLevel.Warning))
+            {
+                Trace.WriteLine("" + Environment.NewLine + "" + provider.Name + Environment.NewLine + "Symbol" + instrument.Symbol + Environment.NewLine + "Type:" + mdType.ToString() + Environment.NewLine + "" + obj3);
+            }
+        }
+
+        private static string GetRequestId()
+        {
+            return string.Format("{D}", DateTime.Now, DataManager.reqId++);
+        }
+
+        private static void OnNewQuote(object sender, QuoteEventArgs e)
+        {
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument == null)
+                return;
+
+            Quote quote = e.Quote;
+            if (DataManager.quoteArrayLength != 0)
+            {
+                QuoteArray quoteArray = DataManager.quoteArrayList[instrument];
+                quoteArray.Add(quote);
+                if (DataManager.quoteArrayLength != -1 && quoteArray.Count > DataManager.quoteArrayLength)
+                {
+                    quoteArray.RemoveAt(0);
+                }
+            }
+            instrument.EmitNewQuote(new QuoteEventArgs(quote, instrument, e.Provider));
+        }
+
+        private static void OnNewTrade(object sender, TradeEventArgs e)
+        {
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument == null)
+                return;
+
+            Trade trade = e.Trade;
+            if (DataManager.tradeArrayLength != 0)
+            {
+                TradeArray tradeArray = DataManager.tradeArrayList[instrument];
+                tradeArray.Add(trade);
+                if (DataManager.tradeArrayLength != -1 && tradeArray.Count > DataManager.tradeArrayLength)
+                {
+                    tradeArray.RemoveAt(0);
+                }
+            }
+            instrument.EmitNewTrade(new TradeEventArgs(trade, instrument, e.Provider));
+        }
+
+        private static void OnNewBar(object sender, BarEventArgs e)
+        {
+            if (Trace.IsLevelEnabled(TraceLevel.Verbose))
+                Trace.WriteLine("Bar {0}" + e);
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument == null)
+                return;
+            DataManager.barSeriesList.Add(instrument, e.Bar);
+            BarSeries barSeries = DataManager.barSeriesList[instrument, e.Bar.BarType, e.Bar.Size];
+            // TODO:HEHEHHE
+            if (DataManager.barArrayLength != -1 && barSeries.Count > DataManager.barArrayLength)
+                ((TimeSeries)barSeries).Remove(0);
+            instrument.EmitNewBar(e);
+        }
+
+        private static void OnNewBarOpen(object sender, BarEventArgs e)
+        {
+            if (Trace.IsLevelEnabled(TraceLevel.Verbose))
+                Trace.WriteLine("(Open)Bar {0}" + e);
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument != null)
+                  instrument.EmitNewBarOpen(e);
+        }
+
+        private static void OnNewMarketDepth(object sender, MarketDepthEventArgs e)
+        {
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument != null)
+                instrument.EmitNewMarketDepth(e);
+        }
+
+        private static void OnNewFundamental(object sender, FundamentalEventArgs e)
+        {
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument == null)
+                return;
+            FundamentalArray array = DataManager.fundamentalArrayList[instrument];
+            array.Add(e.Fundamental);
+            if (DataManager.fundamentalArrayLength != -1 && array.Count > DataManager.fundamentalArrayLength)
+                array.RemoveAt(0);
+            instrument.EmitNewFundamental(e);
+        }
+
+        private static void OnNewCorporateAction(object sender, CorporateActionEventArgs e)
+        {
+            Instrument instrument = e.Instrument as Instrument ?? InstrumentManager.Instruments[e.Instrument.Symbol, e.Provider.Name];
+            if (instrument == null)
+                return;
+            CorporateActionArray array = DataManager.corporateActionArrayList[instrument];
+            array.Add(e.CorporateAction);
+            if (DataManager.corporateActionArrayLength != -1 && array.Count > DataManager.corporateActionArrayLength)
+                array.RemoveAt(0);
+            instrument.EmitNewCorporateAction(e);
+        }
+
+        private static void OnMarketDataRequestReject(object obj0, MarketDataRequestRejectEventArgs obj1)
+        {
+        }
+
+        private static void a9pwYGI8t(ProviderEventArgs e)
+        {
+            IMarketDataProvider provider = e.Provider as IMarketDataProvider;
+            if (provider == null || provider == ProviderManager.MarketDataSimulator)
+                return;
+            Hashtable hashtable1 = DataManager.providers[provider] as Hashtable;
+            if (hashtable1 == null)
+                return;
+            foreach (Hashtable hashtable2 in (IEnumerable)hashtable1.Values)
+            {
+                foreach (RequestItem reqItem in (IEnumerable)hashtable2.Values)
+                    provider.SendMarketDataRequest(reqItem.GetFIXMarketDataRequest());
+            }
+        }
+
+        public static BarSeries GetHistoricalBars(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2, long barSize)
+        {
+            ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Bar, datetime1, datetime2, barSize);
+            BarSeries barSeries = new BarSeries();
+            foreach (Bar bar in arrayList)
+                barSeries.Add(bar);
+            return barSeries;
+        }
+
+        public static BarSeries GetHistoricalBars(string providerName, string symbol, DateTime datetime1, DateTime datetime2, long barSize)
+        {
+            return DataManager.GetHistoricalBars(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2, barSize);
+        }
+
+        public static DailySeries GetHistoricalDailies(IHistoricalDataProvider provider, Instrument instrument, DateTime date1, DateTime date2)
+        {
+            ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Daily, date1, date2, -1L);
+            DailySeries dailySeries = new DailySeries();
+            foreach (Daily daily in arrayList)
+                dailySeries.Add(daily);
+            return dailySeries;
+        }
+
+        public static DailySeries GetHistoricalDailies(string providerName, string symbol, DateTime date1, DateTime date2)
+        {
+            return DataManager.GetHistoricalDailies(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], date1, date2);
+        }
+
+        public static TradeArray GetHistoricalTrades(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Trade, datetime1, datetime2, -1L);
+            TradeArray tradeArray = new TradeArray();
+            foreach (Trade trade in arrayList)
+                tradeArray.Add(trade);
+            return tradeArray;
+        }
+
+        public static TradeArray GetHistoricalTrades(string providerName, string symbol, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetHistoricalTrades(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2);
+        }
+
+        public static QuoteArray GetHistoricalQuotes(IHistoricalDataProvider provider, Instrument instrument, DateTime datetime1, DateTime datetime2)
+        {
+            ArrayList arrayList = DataManager.r6ZT8iFUv(provider, instrument, DataManager.EDataSeries.Quote, datetime1, datetime2, -1L);
+            QuoteArray quoteArray = new QuoteArray();
+            foreach (Quote quote in arrayList)
+                quoteArray.Add(quote);
+            return quoteArray;
+        }
+
+        public static QuoteArray GetHistoricalQuotes(string providerName, string symbol, DateTime datetime1, DateTime datetime2)
+        {
+            return DataManager.GetHistoricalQuotes(ProviderManager.HistoricalDataProviders[providerName], InstrumentManager.Instruments[symbol], datetime1, datetime2);
+        }
+
+        private static ArrayList r6ZT8iFUv(IHistoricalDataProvider provider, Instrument instrument, DataManager.EDataSeries dataType, DateTime beginDate, DateTime endDate, long barSize)
+        {
+            if (provider == null)
+                throw new ArgumentNullException("Provider is null");
+            if (instrument == null)
+                throw new ArgumentNullException("Instrument is null");
+
+            if (!provider.IsConnected)
+            {
+                provider.Connect(10000);
+                if (!provider.IsConnected)
+                    throw new InvalidOperationException("Provider cannot make a connection");
+            }
+
+            HistoricalDataRequest request = new HistoricalDataRequest();
+            request.Instrument = instrument;
+            switch (dataType)
+            {
+                case DataManager.EDataSeries.Daily:
+                    request.DataType = HistoricalDataType.Daily;
+                    break;
+                case DataManager.EDataSeries.Trade:
+                    request.DataType = HistoricalDataType.Trade;
+                    break;
+                case DataManager.EDataSeries.Quote:
+                    request.DataType = HistoricalDataType.Quote;
+                    break;
+                case DataManager.EDataSeries.Bar:
+                    request.DataType = HistoricalDataType.Bar;
+                    request.BarSize = barSize; 
+                    break;
+            }
+            request.BeginDate = beginDate;
+            request.EndDate = endDate;
+            return new HistoricalDataGetter(provider, request).GetData();
+        }
+
+        private static void Load()
+        {
+            FileInfo fileInfo = new FileInfo(Framework.Installation.IniDir.FullName + CONFIG_FILE);
+            if (fileInfo.Exists)
+            {
+                try
+                {
+//                    puiniRe7DJLOfflhEJ puiniRe7DjlOfflhEj = new puiniRe7DJLOfflhEJ();
+//                    puiniRe7DjlOfflhEj.Load(fileInfo.FullName);
+//                    DataManager.defaultBarType = puiniRe7DjlOfflhEj.CHCBRumpAl().WdlEXZ7oTe();
+//                    DataManager.defaultBarSize = puiniRe7DjlOfflhEj.CHCBRumpAl().XaSErhLB01();
+//                    SesaxMXvEcbARH2A9H sesaxMxvEcbArH2A9H = puiniRe7DjlOfflhEj.KtOBnsCKBh();
+//                    DataManager.barArrayLength = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(BarArray)).l9DETTpFOp();
+//                    DataManager.tradeArrayLength = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(TradeArray)).l9DETTpFOp();
+//                    DataManager.quoteArrayLength = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(QuoteArray)).l9DETTpFOp();
+//                    DataManager.fundamentalArrayLength = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(FundamentalArray)).l9DETTpFOp();
+//                    DataManager.corporateActionArrayLength = sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(CorporateActionArray)).l9DETTpFOp();
+                }
+                catch (Exception ex)
+                {
+                    if (!Trace.IsLevelEnabled(TraceLevel.Error))
+                        return;
+                    Trace.WriteLine(ex.ToString());
+                }
+            }
+            else
+                DataManager.Save();
+        }
+
+        private static void Save()
+        {
+//            puiniRe7DJLOfflhEJ puiniRe7DjlOfflhEj = new puiniRe7DJLOfflhEJ();
+//            puiniRe7DjlOfflhEj.CHCBRumpAl().kjcE4tAU2C(DataManager.defaultBarType);
+//            puiniRe7DjlOfflhEj.CHCBRumpAl().hcVE3AoTff(DataManager.defaultBarSize);
+//            SesaxMXvEcbARH2A9H sesaxMxvEcbArH2A9H = puiniRe7DjlOfflhEj.KtOBnsCKBh();
+//            sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(BarArray)).rTfEzlwNY7(DataManager.barArrayLength);
+//            sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(TradeArray)).rTfEzlwNY7(DataManager.tradeArrayLength);
+//            sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(QuoteArray)).rTfEzlwNY7(DataManager.quoteArrayLength);
+//            sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(FundamentalArray)).rTfEzlwNY7(DataManager.fundamentalArrayLength);
+//            sesaxMxvEcbArH2A9H.UGnEMfCmWe(typeof(CorporateActionArray)).rTfEzlwNY7(DataManager.corporateActionArrayLength);
+            //            puiniRe7DjlOfflhEj.Save(Framework.Installation.IniDir.FullName + CONFIG_FILE);
+        }
+
+        public enum EDataSeries
+        {
+            Daily,
+            Trade,
+            Quote,
+            Bar,
+            MarketDepth,
+            Fundamental,
+            CorporateAction
+        }
     }
-  }
 }

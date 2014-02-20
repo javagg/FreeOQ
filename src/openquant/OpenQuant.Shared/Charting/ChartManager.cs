@@ -31,7 +31,6 @@ namespace OpenQuant.Shared.Charting
 					lock (ChartManager.charts)
 						ChartManager.charts.Remove(sender as Chart);
 				};
-//					new EventHandler(this.chart_Disposed);
 			}
 		}
 
@@ -39,16 +38,12 @@ namespace OpenQuant.Shared.Charting
 		{
 			lock (ChartManager.charts)
 				ChartManager.charts.ToArray();
-			foreach (Chart chart in ChartManager.charts)
+			
+            foreach (Chart chart in ChartManager.charts)
 			{
 				chart.ApplyDefaultTemplate();
 				chart.Refresh();
 			}
 		}
-		//    private void chart_Disposed(object sender, EventArgs e)
-		//    {
-		//      lock (ChartManager.charts)
-		//        ChartManager.charts.Remove(sender as Chart);
-		//    }
 	}
 }

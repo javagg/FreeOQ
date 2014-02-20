@@ -6,7 +6,8 @@ namespace FreeQuant.Data
 	[Serializable]
 	public class Quote : IDataObject, ISeriesObject
 	{
-		protected DateTime datetime;
+        private const byte VERSION = 2;
+        protected DateTime datetime;
 		protected byte providerId;
 		protected double bid;
 		protected double ask;
@@ -110,7 +111,7 @@ namespace FreeQuant.Data
 
 		public virtual void WriteTo(BinaryWriter writer)
 		{
-			writer.Write(2);
+            writer.Write(VERSION);
 			writer.Write(this.datetime.Ticks);
 			writer.Write(this.bid);
 			writer.Write(this.ask);
@@ -121,8 +122,8 @@ namespace FreeQuant.Data
 
 		public virtual void ReadFrom(BinaryReader reader)
 		{
-			byte num = reader.ReadByte();
-			switch (num)
+            byte version = reader.ReadByte(); 
+			switch (version)
 			{
 				case 1:
 					this.datetime = new DateTime(reader.ReadInt64());
@@ -141,7 +142,7 @@ namespace FreeQuant.Data
 					this.providerId = reader.ReadByte();
 					break;
 				default:
-					throw new Exception("" + (object)num);
+                    throw new Exception("Invalid version: " + version);
 			}
 		}
 

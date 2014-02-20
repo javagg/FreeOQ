@@ -14,7 +14,8 @@ namespace FreeQuant.Instruments
 
 		public virtual double GetInitialMargin(double value, Instrument instrument, Side side, DateTime datetime)
 		{
-			if (!this.Enabled || !(instrument.SecurityType == "FIXTYEEEEE"))
+            // FIXME: SecurityType = ?
+            if (!this.Enabled || !(instrument.SecurityType == "?"))
 				return 0;
 			switch (side)
 			{

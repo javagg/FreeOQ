@@ -146,7 +146,7 @@ namespace OpenQuant.Shared
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
             // 
-            // AboutForm1
+            // AboutForm
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,7 +157,7 @@ namespace OpenQuant.Shared
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutForm1";
+            this.Name = "AboutForm";
             this.Padding = new System.Windows.Forms.Padding(8);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -166,7 +166,6 @@ namespace OpenQuant.Shared
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

@@ -7,12 +7,8 @@ using System.Windows.Forms;
 namespace FreeQuant.Charting
 {
 	[Serializable]
-	public class Canvas : Form
+    public partial class Canvas : Form
 	{
-		private HelpProvider helpProvider;
-		private Chart chart;
-		private IContainer container;
-
 		public Pad Pad
 		{
 			get
@@ -292,14 +288,6 @@ namespace FreeQuant.Charting
 			this.chart.Divide(x, y, widths, heights);
 		}
 
-		protected override void Dispose(bool disposing)
-		{
-			CanvasManager.Remove(this);
-			if (disposing && this.container != null)
-				this.container.Dispose();
-			base.Dispose(disposing);
-		}
-
 		public virtual void Print()
 		{
 			this.chart.Print();
@@ -318,36 +306,6 @@ namespace FreeQuant.Charting
 		public virtual void PrintPageSetup()
 		{
 			this.chart.PrintPageSetup();
-		}
-
-		private void InitializeComponent()
-		{
-			this.container = new Container();
-			this.helpProvider = new HelpProvider();
-			this.chart = new Chart();
-			this.SuspendLayout();
-			this.chart.AntiAliasingEnabled = false;
-			this.chart.Dock = DockStyle.Fill;
-			this.chart.DoubleBufferingEnabled = true;
-			this.chart.FileName = null;
-			this.chart.GroupLeftMarginEnabled = false;
-			this.chart.GroupZoomEnabled = false;
-			this.chart.ImeMode = ImeMode.Off;
-			this.chart.Location = new Point(0, 0);
-			this.chart.Name = "ChartName";
-			this.chart.PrintAlign = EPrintAlign.None;
-			this.chart.PrintHeight = 400;
-			this.chart.PrintLayout = EPrintLayout.Portrait;
-			this.chart.PrintWidth = 600;
-			this.chart.PrintX = 10;
-			this.chart.PrintY = 10;
-			this.chart.Size = new Size(488, 293);
-			this.chart.SmoothingEnabled = false;
-			this.chart.TabIndex = 0;
-			this.AutoScaleBaseSize = new Size(5, 13);
-			this.ClientSize = new Size(488, 293);
-			this.Controls.Add(this.chart);
-			this.ResumeLayout(false);
 		}
 	}
 }

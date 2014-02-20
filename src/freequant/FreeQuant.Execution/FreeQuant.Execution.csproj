@@ -51,6 +51,7 @@
     <Compile Include="IOrderServer.cs" />
     <Compile Include="IOrder.cs" />
     <Compile Include="InstrumentOrderListTable.cs" />
+    <Compile Include="OrderFileServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreeQuant.Instruments\FreeQuant.Instruments.csproj">

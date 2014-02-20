@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace FreeQuant.FinChart
 {
-	public class Chart : UserControl
+    public partial class Chart : UserControl
 	{
-		private IContainer container;
+
 		private int PRRwtLFpd5;
 		private int etYww3BBO8;
 		protected bool sessionGridEnabled;
@@ -35,7 +35,7 @@ namespace FreeQuant.FinChart
 		protected Color canvasColor;
 		protected int firstIndex;
 		protected int lastIndex;
-		private HScrollBar hScrollBar;
+
 		protected Graphics graphics;
 		protected double intervalWidth;
 		protected AxisBottom axisBottom;
@@ -47,7 +47,7 @@ namespace FreeQuant.FinChart
 		protected bool isMouseOverCanvas;
 		protected bool contentUpdated;
 		protected Bitmap bitmap;
-		internal ToolTip toolTip;
+
 		private ChartActionType actionType;
 		protected DateTime leftDateTime;
 		protected DateTime rightDateTime;
@@ -718,36 +718,6 @@ namespace FreeQuant.FinChart
 		public Chart(DoubleSeries mainSeries) : this()
 		{
 			this.SetMainSeries(mainSeries);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && this.container != null)
-				this.container.Dispose();
-			base.Dispose(disposing);
-		}
-
-		private void InitializeComponent()
-		{
-			this.container = new Container();
-			this.hScrollBar = new HScrollBar();
-			this.toolTip = new ToolTip(this.container);
-			this.SuspendLayout();
-			this.hScrollBar.Dock = DockStyle.Bottom;
-			this.hScrollBar.Location = new Point(0, 455);
-			this.hScrollBar.Name = "hscbar name";
-			this.hScrollBar.Size = new Size(512, 17);
-			this.hScrollBar.TabIndex = 0;
-			this.hScrollBar.Scroll += new ScrollEventHandler(this.FSOLY9YLw);
-			this.AutoScroll = true;
-			this.Controls.Add(this.hScrollBar);
-			this.Font = new Font("Arial", 7, FontStyle.Regular, GraphicsUnit.Point, 204);
-			this.Name = "Chart name";
-			this.Size = new Size(512, 472);
-			this.MouseDown += new MouseEventHandler(this.HandleMouseDown);
-			this.MouseLeave += new EventHandler(this.HandleMouseLeave);
-			this.MouseUp += new MouseEventHandler(this.HandleMouseUp);
-			this.ResumeLayout(false);
 		}
 
 		internal TimeSeries GetSeries()

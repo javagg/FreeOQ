@@ -1,5 +1,4 @@
-﻿//using OpenQuant.Shared.Properties;
-using FreeQuant;
+﻿using FreeQuant;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -54,7 +53,7 @@ namespace OpenQuant.Shared
 
 		protected void AddPlugin(string assemblyName, string typeName, bool x64Supported)
 		{
-			foreach (Plugin plugin in (ReadOnlyCollectionBase) Framework.Configuration.Plugins)
+			foreach (Plugin plugin in Framework.Configuration.Plugins)
 			{
 				if (plugin.AssemblyName == assemblyName && plugin.TypeName == typeName)
 					return;
@@ -64,7 +63,7 @@ namespace OpenQuant.Shared
 
 		protected void RemovePlugin(string assemblyName, string typeName)
 		{
-			foreach (Plugin plugin in (ReadOnlyCollectionBase) Framework.Configuration.Plugins)
+			foreach (Plugin plugin in Framework.Configuration.Plugins)
 			{
 				if (plugin.AssemblyName == assemblyName && plugin.TypeName == typeName)
 				{
@@ -76,7 +75,7 @@ namespace OpenQuant.Shared
 
 		protected void EnablePlugin(string assemblyName, string typeName, bool enable)
 		{
-			foreach (Plugin plugin in (ReadOnlyCollectionBase) Framework.Configuration.Plugins)
+			foreach (Plugin plugin in Framework.Configuration.Plugins)
 			{
 				if (plugin.AssemblyName == assemblyName && plugin.TypeName == typeName)
 				{

@@ -2,7 +2,7 @@
 
 namespace OpenQuant.Shared.Charting
 {
-	internal class ChartColorTemplateConfigXmlDocument : XmlDocumentBase
+	class ChartColorTemplateConfigXmlDocument : XmlDocumentBase
 	{
 		private const string ATTR_DEFAULT_TEMPLATE = "default_template";
 
@@ -17,7 +17,6 @@ namespace OpenQuant.Shared.Charting
 
 		public ChartColorTemplateConfigXmlDocument () : base ("chart_color_template_config", "chart color template config file")
 		{
-     
 		}
 	}
 }
