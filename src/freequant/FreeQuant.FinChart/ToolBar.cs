@@ -323,5 +323,10 @@ namespace FreeQuant.FinChart
     {
       this.csRSYcSfK9();
     }
+
+    private void sf4SjX1ToR_Popup(object sender, PopupEventArgs e)
+    {
+
+    }
   }
 }

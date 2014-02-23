@@ -10,7 +10,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
 	{
 		protected ImportSettings settings;
 		protected DirectoryInfo templateDirectory;
-		private Container components;
+        private IContainer components = null;
 
 		public virtual bool CanBack
 		{

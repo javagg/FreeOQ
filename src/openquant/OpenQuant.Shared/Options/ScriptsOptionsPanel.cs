@@ -8,7 +8,7 @@ namespace OpenQuant.Shared.Options
 {
   internal class ScriptsOptionsPanel : OptionsPanel
   {
-    private IContainer components;
+        private IContainer components = null;
     private GroupBox groupBox1;
     private ComboBox cbxApartmentState;
 
@@ -64,7 +64,7 @@ namespace OpenQuant.Shared.Options
       this.cbxApartmentState.TabIndex = 2;
       this.cbxApartmentState.SelectedIndexChanged += new EventHandler(this.cbxApartmentState_SelectedIndexChanged);
       this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add((Control) this.groupBox1);
       this.Name = "ScriptsOptionsPanel";
       this.groupBox1.ResumeLayout(false);

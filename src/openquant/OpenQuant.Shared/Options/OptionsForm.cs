@@ -12,7 +12,7 @@ namespace OpenQuant.Shared.Options
     private Dictionary<System.Type, OptionsPanel> optionsPanels;
     private Dictionary<System.Type, OptionsNode> optionsNodes;
     private System.Type selectedOptionsType;
-    private IContainer components;
+        private IContainer components = null;
     private Panel pnlBottom;
     private TreeView trvOptions;
     private Panel pnlLeft;
@@ -141,79 +141,105 @@ namespace OpenQuant.Shared.Options
 
     private void InitializeComponent()
     {
-      this.pnlBottom = new Panel();
-      this.btnCancel = new Button();
-      this.btnOk = new Button();
-      this.trvOptions = new TreeView();
-      this.pnlLeft = new Panel();
-      this.gbxBottom = new GroupBox();
-      this.pnlOptions = new Panel();
-      this.pnlBottom.SuspendLayout();
-      this.SuspendLayout();
-      this.pnlBottom.Controls.Add((Control) this.btnCancel);
-      this.pnlBottom.Controls.Add((Control) this.btnOk);
-      this.pnlBottom.Dock = DockStyle.Bottom;
-      this.pnlBottom.Location = new Point(8, 372);
-      this.pnlBottom.Name = "pnlBottom";
-      this.pnlBottom.Size = new Size(623, 47);
-      this.pnlBottom.TabIndex = 0;
-      this.btnCancel.DialogResult = DialogResult.Cancel;
-      this.btnCancel.Location = new Point(528, 16);
-      this.btnCancel.Name = "btnCancel";
-      this.btnCancel.Size = new Size(76, 24);
-      this.btnCancel.TabIndex = 1;
-      this.btnCancel.Text = "Cancel";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      this.btnOk.DialogResult = DialogResult.OK;
-      this.btnOk.Location = new Point(440, 16);
-      this.btnOk.Name = "btnOk";
-      this.btnOk.Size = new Size(76, 24);
-      this.btnOk.TabIndex = 0;
-      this.btnOk.Text = "OK";
-      this.btnOk.UseVisualStyleBackColor = true;
-      this.trvOptions.Dock = DockStyle.Left;
-      this.trvOptions.HideSelection = false;
-      this.trvOptions.Location = new Point(8, 8);
-      this.trvOptions.Name = "trvOptions";
-      this.trvOptions.Size = new Size(215, 364);
-      this.trvOptions.TabIndex = 1;
-      this.trvOptions.AfterSelect += new TreeViewEventHandler(this.trvOptions_AfterSelect);
-      this.pnlLeft.Dock = DockStyle.Left;
-      this.pnlLeft.Location = new Point(223, 8);
-      this.pnlLeft.Name = "pnlLeft";
-      this.pnlLeft.Size = new Size(8, 364);
-      this.pnlLeft.TabIndex = 2;
-      this.gbxBottom.Dock = DockStyle.Bottom;
-      this.gbxBottom.Location = new Point(231, 368);
-      this.gbxBottom.Name = "gbxBottom";
-      this.gbxBottom.Size = new Size(400, 4);
-      this.gbxBottom.TabIndex = 3;
-      this.gbxBottom.TabStop = false;
-      this.pnlOptions.Dock = DockStyle.Fill;
-      this.pnlOptions.Location = new Point(231, 8);
-      this.pnlOptions.Name = "pnlOptions";
-      this.pnlOptions.Size = new Size(400, 360);
-      this.pnlOptions.TabIndex = 4;
-      this.AcceptButton = (IButtonControl) this.btnOk;
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.CancelButton = (IButtonControl) this.btnCancel;
-      this.ClientSize = new Size(639, 427);
-      this.Controls.Add((Control) this.pnlOptions);
-      this.Controls.Add((Control) this.gbxBottom);
-      this.Controls.Add((Control) this.pnlLeft);
-      this.Controls.Add((Control) this.trvOptions);
-      this.Controls.Add((Control) this.pnlBottom);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = "OptionsForm";
-      this.Padding = new Padding(8);
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterParent;
-      this.Text = "Options";
-      this.pnlBottom.ResumeLayout(false);
-      this.ResumeLayout(false);
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.trvOptions = new System.Windows.Forms.TreeView();
+            this.pnlLeft = new System.Windows.Forms.Panel();
+            this.gbxBottom = new System.Windows.Forms.GroupBox();
+            this.pnlOptions = new System.Windows.Forms.Panel();
+            this.pnlBottom.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pnlBottom
+            // 
+            this.pnlBottom.Controls.Add(this.btnCancel);
+            this.pnlBottom.Controls.Add(this.btnOk);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(8, 372);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(623, 47);
+            this.pnlBottom.TabIndex = 0;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(528, 16);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(76, 24);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnOk
+            // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOk.Location = new System.Drawing.Point(440, 16);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(76, 24);
+            this.btnOk.TabIndex = 0;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            // 
+            // trvOptions
+            // 
+            this.trvOptions.Dock = System.Windows.Forms.DockStyle.Left;
+            this.trvOptions.HideSelection = false;
+            this.trvOptions.Location = new System.Drawing.Point(8, 8);
+            this.trvOptions.Name = "trvOptions";
+            this.trvOptions.Size = new System.Drawing.Size(215, 364);
+            this.trvOptions.TabIndex = 1;
+            this.trvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvOptions_AfterSelect);
+            // 
+            // pnlLeft
+            // 
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(223, 8);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(8, 364);
+            this.pnlLeft.TabIndex = 2;
+            // 
+            // gbxBottom
+            // 
+            this.gbxBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gbxBottom.Location = new System.Drawing.Point(231, 368);
+            this.gbxBottom.Name = "gbxBottom";
+            this.gbxBottom.Size = new System.Drawing.Size(400, 4);
+            this.gbxBottom.TabIndex = 3;
+            this.gbxBottom.TabStop = false;
+            // 
+            // pnlOptions
+            // 
+            this.pnlOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOptions.Location = new System.Drawing.Point(231, 8);
+            this.pnlOptions.Name = "pnlOptions";
+            this.pnlOptions.Size = new System.Drawing.Size(400, 360);
+            this.pnlOptions.TabIndex = 4;
+            // 
+            // OptionsForm
+            // 
+            this.AcceptButton = this.btnOk;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(639, 427);
+            this.Controls.Add(this.pnlOptions);
+            this.Controls.Add(this.gbxBottom);
+            this.Controls.Add(this.pnlLeft);
+            this.Controls.Add(this.trvOptions);
+            this.Controls.Add(this.pnlBottom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "OptionsForm";
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Options";
+            this.pnlBottom.ResumeLayout(false);
+            this.ResumeLayout(false);
+
     }
+
   }
 }

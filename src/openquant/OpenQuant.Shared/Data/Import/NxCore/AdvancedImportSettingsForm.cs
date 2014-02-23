@@ -13,7 +13,7 @@ namespace OpenQuant.Shared.Data.Import.NxCore
   internal class AdvancedImportSettingsForm : Form
   {
     private AdvancedImportSettings settings;
-    private IContainer components;
+        private IContainer components = null;
     private CheckBox chbAsync;
     private Label label1;
     private NumericUpDown nudMaxBufferSize;

@@ -19,7 +19,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
     private Button btnIgnore;
     private Button btnStop;
     private Button btnSkipFile;
-    private Container components;
+        private IContainer components = null;
 
 		public new ErrorDialog.Result DialogResult
     {

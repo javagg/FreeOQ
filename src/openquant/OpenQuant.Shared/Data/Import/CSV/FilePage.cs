@@ -21,7 +21,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
     private Label label1;
     private ListBox ltbFiles;
     private HelpProvider helpProvider;
-    private IContainer components;
+        private IContainer components = null;
 
     public override bool CanBack
     {

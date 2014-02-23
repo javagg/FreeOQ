@@ -11,7 +11,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class TradeEditor : DataObjectEditor
   {
-    private IContainer components;
+        private IContainer components = null;
     private NumericUpDown nudPrice;
     private Label label3;
     private Label label2;

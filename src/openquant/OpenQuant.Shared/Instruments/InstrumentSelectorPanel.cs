@@ -276,117 +276,161 @@ namespace OpenQuant.Shared.Instruments
 
     private void InitializeComponent()
     {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (InstrumentSelectorPanel));
-      this.toolStrip = new ToolStrip();
-      this.tsbGroup = new ToolStripDropDownButton();
-      this.tsbGroup_None = new ToolStripMenuItem();
-      this.toolStripSeparator1 = new ToolStripSeparator();
-      this.tsbGroup_ByInstrumentType = new ToolStripMenuItem();
-      this.tsbGroup_ByExchange = new ToolStripMenuItem();
-      this.tsbGroup_Alphabetically = new ToolStripMenuItem();
-      this.treeView = new TreeView();
-      this.images = new ImageList(this.components);
-      this.toolStripSeparator2 = new ToolStripSeparator();
-      this.tsbGroup_ByCurrency = new ToolStripMenuItem();
-      this.tsbGroup_ByMaturity = new ToolStripMenuItem();
-      this.tsbGroup_ByGroup = new ToolStripMenuItem();
-      this.tsbGroup_BySector = new ToolStripMenuItem();
-      this.toolStrip.SuspendLayout();
-      this.SuspendLayout();
-      this.toolStrip.Items.AddRange(new ToolStripItem[1]
-      {
-        (ToolStripItem) this.tsbGroup
-      });
-      this.toolStrip.Location = new Point(0, 0);
-      this.toolStrip.Name = "toolStrip";
-      this.toolStrip.Size = new Size(177, 25);
-      this.toolStrip.TabIndex = 0;
-      this.toolStrip.Text = "toolStrip1";
-      this.tsbGroup.DisplayStyle = ToolStripItemDisplayStyle.Image;
-      this.tsbGroup.DropDownItems.AddRange(new ToolStripItem[10]
-      {
-        (ToolStripItem) this.tsbGroup_Alphabetically,
-        (ToolStripItem) this.toolStripSeparator1,
-        (ToolStripItem) this.tsbGroup_ByCurrency,
-        (ToolStripItem) this.tsbGroup_ByExchange,
-        (ToolStripItem) this.tsbGroup_ByInstrumentType,
-        (ToolStripItem) this.tsbGroup_ByMaturity,
-        (ToolStripItem) this.tsbGroup_ByGroup,
-        (ToolStripItem) this.tsbGroup_BySector,
-        (ToolStripItem) this.toolStripSeparator2,
-        (ToolStripItem) this.tsbGroup_None
-      });
-      this.tsbGroup.Image = (Image) Resources.group;
-      this.tsbGroup.ImageTransparentColor = Color.Magenta;
-      this.tsbGroup.Name = "tsbGroup";
-      this.tsbGroup.Size = new Size(29, 22);
-      this.tsbGroup.Text = "toolStripDropDownButton1";
-      this.tsbGroup.ToolTipText = "Group Instruments";
-      this.tsbGroup.DropDownOpening += new EventHandler(this.tsbGroup_DropDownOpening);
-      this.tsbGroup_None.Name = "tsbGroup_None";
-      this.tsbGroup_None.Size = new Size(180, 22);
-      this.tsbGroup_None.Text = "No Group";
-      this.tsbGroup_None.Click += new EventHandler(this.tsbGroup_None_Click);
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new Size(177, 6);
-      this.tsbGroup_ByInstrumentType.Name = "tsbGroup_ByInstrumentType";
-      this.tsbGroup_ByInstrumentType.Size = new Size(180, 22);
-      this.tsbGroup_ByInstrumentType.Text = "By Instrument Type";
-      this.tsbGroup_ByInstrumentType.Click += new EventHandler(this.tsbGroup_ByInstrumentType_Click);
-      this.tsbGroup_ByExchange.Name = "tsbGroup_ByExchange";
-      this.tsbGroup_ByExchange.Size = new Size(180, 22);
-      this.tsbGroup_ByExchange.Text = "By Exchange";
-      this.tsbGroup_ByExchange.Click += new EventHandler(this.tsbGroup_ByExchange_Click);
-      this.tsbGroup_Alphabetically.Name = "tsbGroup_Alphabetically";
-      this.tsbGroup_Alphabetically.Size = new Size(180, 22);
-      this.tsbGroup_Alphabetically.Text = "Alphabetically";
-      this.tsbGroup_Alphabetically.Click += new EventHandler(this.tsbGroup_Alphabetically_Click);
-      this.treeView.CheckBoxes = true;
-      this.treeView.Dock = DockStyle.Fill;
-      this.treeView.ImageIndex = 0;
-      this.treeView.ImageList = this.images;
-      this.treeView.Location = new Point(0, 25);
-      this.treeView.Name = "treeView";
-      this.treeView.SelectedImageIndex = 0;
-      this.treeView.Size = new Size(177, 141);
-      this.treeView.TabIndex = 1;
-      this.treeView.AfterCheck += new TreeViewEventHandler(this.treeView_AfterCheck);
-      this.treeView.AfterCollapse += new TreeViewEventHandler(this.treeView_AfterCollapse);
-      this.treeView.AfterExpand += new TreeViewEventHandler(this.treeView_AfterExpand);
-      this.images.ImageStream = (ImageListStreamer) componentResourceManager.GetObject("images.ImageStream");
-      this.images.TransparentColor = Color.Transparent;
-      this.images.Images.SetKeyName(0, "");
-      this.images.Images.SetKeyName(1, "VSFolder_closed.png");
-      this.images.Images.SetKeyName(2, "VSFolder_open.png");
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      this.toolStripSeparator2.Size = new Size(177, 6);
-      this.tsbGroup_ByCurrency.Name = "tsbGroup_ByCurrency";
-      this.tsbGroup_ByCurrency.Size = new Size(180, 22);
-      this.tsbGroup_ByCurrency.Text = "By Currency";
-      this.tsbGroup_ByCurrency.Click += new EventHandler(this.tsbGroup_ByCurrency_Click);
-      this.tsbGroup_ByMaturity.Name = "tsbGroup_ByMaturity";
-      this.tsbGroup_ByMaturity.Size = new Size(180, 22);
-      this.tsbGroup_ByMaturity.Text = "By Maturity";
-      this.tsbGroup_ByMaturity.Click += new EventHandler(this.tsbGroup_ByMaturity_Click);
-      this.tsbGroup_ByGroup.Name = "tsbGroup_ByGroup";
-      this.tsbGroup_ByGroup.Size = new Size(180, 22);
-      this.tsbGroup_ByGroup.Text = "By Industry Group";
-      this.tsbGroup_ByGroup.Click += new EventHandler(this.tsbGroup_ByGroup_Click);
-      this.tsbGroup_BySector.Name = "tsbGroup_BySector";
-      this.tsbGroup_BySector.Size = new Size(180, 22);
-      this.tsbGroup_BySector.Text = "By Industry Sector";
-      this.tsbGroup_BySector.Click += new EventHandler(this.tsbGroup_BySector_Click);
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.Controls.Add((Control) this.treeView);
-      this.Controls.Add((Control) this.toolStrip);
-      this.Name = "InstrumentSelectorPanel";
-      this.Size = new Size(177, 166);
-      this.toolStrip.ResumeLayout(false);
-      this.toolStrip.PerformLayout();
-      this.ResumeLayout(false);
-      this.PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstrumentSelectorPanel));
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.tsbGroup = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsbGroup_Alphabetically = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbGroup_ByCurrency = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbGroup_ByExchange = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbGroup_ByInstrumentType = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbGroup_ByMaturity = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbGroup_ByGroup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbGroup_BySector = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbGroup_None = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeView = new System.Windows.Forms.TreeView();
+            this.images = new System.Windows.Forms.ImageList(this.components);
+            this.toolStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbGroup});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(177, 25);
+            this.toolStrip.TabIndex = 0;
+            this.toolStrip.Text = "toolStrip1";
+            // 
+            // tsbGroup
+            // 
+            this.tsbGroup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbGroup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbGroup_Alphabetically,
+            this.toolStripSeparator1,
+            this.tsbGroup_ByCurrency,
+            this.tsbGroup_ByExchange,
+            this.tsbGroup_ByInstrumentType,
+            this.tsbGroup_ByMaturity,
+            this.tsbGroup_ByGroup,
+            this.tsbGroup_BySector,
+            this.toolStripSeparator2,
+            this.tsbGroup_None});
+            this.tsbGroup.Image = global::OpenQuant.Shared.Properties.Resources.group;
+            this.tsbGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbGroup.Name = "tsbGroup";
+            this.tsbGroup.Size = new System.Drawing.Size(29, 22);
+            this.tsbGroup.Text = "toolStripDropDownButton1";
+            this.tsbGroup.ToolTipText = "Group Instruments";
+            this.tsbGroup.DropDownOpening += new System.EventHandler(this.tsbGroup_DropDownOpening);
+            // 
+            // tsbGroup_Alphabetically
+            // 
+            this.tsbGroup_Alphabetically.Name = "tsbGroup_Alphabetically";
+            this.tsbGroup_Alphabetically.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_Alphabetically.Text = "Alphabetically";
+            this.tsbGroup_Alphabetically.Click += new System.EventHandler(this.tsbGroup_Alphabetically_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(174, 6);
+            // 
+            // tsbGroup_ByCurrency
+            // 
+            this.tsbGroup_ByCurrency.Name = "tsbGroup_ByCurrency";
+            this.tsbGroup_ByCurrency.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_ByCurrency.Text = "By Currency";
+            this.tsbGroup_ByCurrency.Click += new System.EventHandler(this.tsbGroup_ByCurrency_Click);
+            // 
+            // tsbGroup_ByExchange
+            // 
+            this.tsbGroup_ByExchange.Name = "tsbGroup_ByExchange";
+            this.tsbGroup_ByExchange.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_ByExchange.Text = "By Exchange";
+            this.tsbGroup_ByExchange.Click += new System.EventHandler(this.tsbGroup_ByExchange_Click);
+            // 
+            // tsbGroup_ByInstrumentType
+            // 
+            this.tsbGroup_ByInstrumentType.Name = "tsbGroup_ByInstrumentType";
+            this.tsbGroup_ByInstrumentType.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_ByInstrumentType.Text = "By Instrument Type";
+            this.tsbGroup_ByInstrumentType.Click += new System.EventHandler(this.tsbGroup_ByInstrumentType_Click);
+            // 
+            // tsbGroup_ByMaturity
+            // 
+            this.tsbGroup_ByMaturity.Name = "tsbGroup_ByMaturity";
+            this.tsbGroup_ByMaturity.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_ByMaturity.Text = "By Maturity";
+            this.tsbGroup_ByMaturity.Click += new System.EventHandler(this.tsbGroup_ByMaturity_Click);
+            // 
+            // tsbGroup_ByGroup
+            // 
+            this.tsbGroup_ByGroup.Name = "tsbGroup_ByGroup";
+            this.tsbGroup_ByGroup.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_ByGroup.Text = "By Industry Group";
+            this.tsbGroup_ByGroup.Click += new System.EventHandler(this.tsbGroup_ByGroup_Click);
+            // 
+            // tsbGroup_BySector
+            // 
+            this.tsbGroup_BySector.Name = "tsbGroup_BySector";
+            this.tsbGroup_BySector.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_BySector.Text = "By Industry Sector";
+            this.tsbGroup_BySector.Click += new System.EventHandler(this.tsbGroup_BySector_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
+            // 
+            // tsbGroup_None
+            // 
+            this.tsbGroup_None.Name = "tsbGroup_None";
+            this.tsbGroup_None.Size = new System.Drawing.Size(177, 22);
+            this.tsbGroup_None.Text = "No Group";
+            this.tsbGroup_None.Click += new System.EventHandler(this.tsbGroup_None_Click);
+            // 
+            // treeView
+            // 
+            this.treeView.CheckBoxes = true;
+            this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView.ImageIndex = 0;
+            this.treeView.ImageList = this.images;
+            this.treeView.Location = new System.Drawing.Point(0, 25);
+            this.treeView.Name = "treeView";
+            this.treeView.SelectedImageIndex = 0;
+            this.treeView.Size = new System.Drawing.Size(177, 141);
+            this.treeView.TabIndex = 1;
+            this.treeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterCheck);
+            this.treeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterCollapse);
+            this.treeView.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterExpand);
+            // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "btnAdd.Image.png");
+            // 
+            // InstrumentSelectorPanel
+            // 
+
+            this.images.Images.SetKeyName(0, "");
+            this.images.Images.SetKeyName(1, "VSFolder_closed.png");
+            this.images.Images.SetKeyName(2, "VSFolder_open.png");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.treeView);
+            this.Controls.Add(this.toolStrip);
+            this.Name = "InstrumentSelectorPanel";
+            this.Size = new System.Drawing.Size(177, 166);
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
     }
   }
 }

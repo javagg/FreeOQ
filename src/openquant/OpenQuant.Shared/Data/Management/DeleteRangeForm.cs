@@ -13,7 +13,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class DeleteRangeForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Label label1;
     private DateTimePicker dtpDateTimeFrom;
     private Button btnCancel;

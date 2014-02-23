@@ -11,7 +11,7 @@ namespace OpenQuant.Shared.Scripts
   {
     private DirectoryInfo directory;
     private List<char> invalidChars;
-    private IContainer components;
+        private IContainer components = null;
     private Button btnCancel;
     private Button btnOk;
     private TextBox tbxName;
@@ -74,14 +74,14 @@ namespace OpenQuant.Shared.Scripts
       this.tbxName = new TextBox();
       this.label1 = new Label();
       this.SuspendLayout();
-      this.btnCancel.DialogResult = DialogResult.Cancel;
+      this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.btnCancel.Location = new Point(180, 65);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new Size(69, 22);
       this.btnCancel.TabIndex = 15;
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
-      this.btnOk.DialogResult = DialogResult.OK;
+      this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.btnOk.Location = new Point(105, 65);
       this.btnOk.Name = "btnOk";
       this.btnOk.Size = new Size(69, 22);
@@ -102,14 +102,14 @@ namespace OpenQuant.Shared.Scripts
       this.label1.TextAlign = ContentAlignment.MiddleLeft;
       this.AcceptButton = (IButtonControl) this.btnOk;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = (IButtonControl) this.btnCancel;
       this.ClientSize = new Size(263, 99);
       this.Controls.Add((Control) this.btnCancel);
       this.Controls.Add((Control) this.btnOk);
       this.Controls.Add((Control) this.tbxName);
       this.Controls.Add((Control) this.label1);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "NewDirectoryDialog";

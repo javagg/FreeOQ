@@ -11,7 +11,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class DailyEditor : DataObjectEditor
   {
-    private IContainer components;
+        private IContainer components = null;
     private Label label6;
     private Label label5;
     private Label label4;

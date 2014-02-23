@@ -18,7 +18,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
     private Panel panelButtons;
     private Panel panelPages;
     private Panel panel1;
-    private Container components;
+        private IContainer components = null;
 
     public ImportWizardForm(DirectoryInfo templateDirectory)
     {

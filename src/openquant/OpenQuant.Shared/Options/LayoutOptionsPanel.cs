@@ -8,7 +8,7 @@ namespace OpenQuant.Shared.Options
 {
   public class LayoutOptionsPanel : OptionsPanel
   {
-    private IContainer components;
+        private IContainer components = null;
 
     private GroupBox groupBox1;
     private RadioButton rbnOffice2003;

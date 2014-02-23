@@ -11,7 +11,7 @@ namespace OpenQuant.Shared.Data.Import.Instruments
 {
   internal class ProcessRequestForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Label lblProgress;
     private ProgressBar progressBar;
     private Button btnCancel;

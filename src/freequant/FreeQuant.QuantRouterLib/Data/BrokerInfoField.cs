@@ -1,17 +1,15 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.QuantRouterLib.Data
 {
-  public class BrokerInfoField
-  {
-    public string Name { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
-
-    public string Value { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
-
-    protected BrokerInfoField(string name, string value)
+    public class BrokerInfoField
     {
-      this.Name = name;
-      this.Value = value;
+        public string Name { get; private set; }
+
+        public string Value { get; private set; }
+
+        protected BrokerInfoField(string name, string value)
+        {
+            this.Name = name;
+            this.Value = value;
+        }
     }
-  }
 }

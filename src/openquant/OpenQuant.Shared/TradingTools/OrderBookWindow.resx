@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsbSuspendUpdates.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAGQSURBVDhPxZK9b0FhFMb9G6WDv6IxSCS0A42RpqSLfiSq
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGQSURBVDhPxZK9b0FhFMb9G6WDv6IxSCS0A42RpqSLfiSq
         MXQQofWx6AcDkYhK3JZEB0IEi0SbG1dvERaDxGRsmhiEi8TgqfvG5iO6tL/xzXme85xzXsGfkcvl4PV6
         wTAMFk/bk81mwTObzVCr1WCxWLY3qdfrSKfT6Pf7xKDX6yGTyYCiqPUm7XYbgUAAyWQS5XIZkUgEqVQK
         NE2TBPl8Hmq1erVBp9NBPB4nkSeTCR59PtLZZDLB5XIhFArB4/FAJpOtNggGg0TME6WeMZ1O0Ww24ff7

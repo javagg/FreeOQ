@@ -170,7 +170,7 @@ namespace OpenQuant.Shared.Data.Bars
       this.btnCompress.Text = "Compress";
       this.btnCompress.UseVisualStyleBackColor = true;
       this.btnCompress.Click += new EventHandler(this.btnCompress_Click);
-      this.btnClose.DialogResult = DialogResult.Cancel;
+      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.btnClose.Location = new Point(376, 368);
       this.btnClose.Name = "btnClose";
       this.btnClose.Size = new Size(88, 22);
@@ -178,14 +178,14 @@ namespace OpenQuant.Shared.Data.Bars
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = (IButtonControl) this.btnClose;
       this.ClientSize = new Size(498, 406);
       this.Controls.Add((Control) this.btnClose);
       this.Controls.Add((Control) this.btnCompress);
       this.Controls.Add((Control) this.gbxOutput);
       this.Controls.Add((Control) this.gbxInput);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "CompressBarsForm";

@@ -2,11 +2,11 @@ using System;
 
 namespace FreeQuant.QuantRouterLib.Data
 {
-  [Flags]
-  public enum ProviderErrorType : byte
-  {
-    Error = (byte) 0,
-    Warning = (byte) 1,
-    Information = (byte) 2,
-  }
+    [Flags]
+    public enum ProviderErrorType : byte
+    {
+        Error = 0,
+        Warning = 1,
+        Information = 2,
+    }
 }

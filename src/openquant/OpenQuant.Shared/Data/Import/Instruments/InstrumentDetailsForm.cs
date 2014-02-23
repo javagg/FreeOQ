@@ -8,7 +8,7 @@ namespace OpenQuant.Shared.Data.Import.Instruments
 {
   internal class InstrumentDetailsForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private PropertyGrid propertyGrid;
     private Panel panel1;
     private Button btnClose;

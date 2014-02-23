@@ -53,8 +53,8 @@ namespace FreeQuant.QuantRouterLib.Tcp
 			}
 			finally
 			{
-				this.SlIRVIT0r = (NetworkStream)null;
-				this.RNl3aLUdD = (TcpClient)null;
+                this.SlIRVIT0r =  null;
+                this.RNl3aLUdD =  null;
 			}
 		}
 

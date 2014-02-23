@@ -1,17 +1,15 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.QuantRouterLib.Data
 {
-  public class Logon
-  {
-    public string Username { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public string Password { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public Logon()
+    public class Logon
     {
-      this.Username = string.Empty;
-      this.Password = string.Empty;
+        public string Username { get; set; }
+
+        public string Password { get; set; }
+
+        public Logon()
+        {
+            this.Username = string.Empty;
+            this.Password = string.Empty;
+        }
     }
-  }
 }

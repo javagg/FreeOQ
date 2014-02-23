@@ -2,7 +2,7 @@ namespace OpenQuant.Shared.Charting
 {
 	partial class Chart
 	{
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components = null;
 		
 
 		protected override void Dispose(bool disposing)

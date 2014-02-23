@@ -74,89 +74,115 @@ namespace OpenQuant.Shared.Options
 
     private void InitializeComponent()
     {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (BrowseGACForm));
-      this.panel1 = new Panel();
-      this.btnCancel = new Button();
-      this.btnOk = new Button();
-      this.ltvAssemblies = new ListView();
-      this.columnHeader1 = new ColumnHeader();
-      this.columnHeader2 = new ColumnHeader();
-      this.columnHeader3 = new ColumnHeader();
-      this.imgAssemblies = new ImageList(this.components);
-      this.panel1.SuspendLayout();
-      this.SuspendLayout();
-      this.panel1.Controls.Add((Control) this.btnCancel);
-      this.panel1.Controls.Add((Control) this.btnOk);
-      this.panel1.Dock = DockStyle.Bottom;
-      this.panel1.Location = new Point(0, 329);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new Size(453, 48);
-      this.panel1.TabIndex = 0;
-      this.btnCancel.DialogResult = DialogResult.Cancel;
-      this.btnCancel.Location = new Point(243, 14);
-      this.btnCancel.Name = "btnCancel";
-      this.btnCancel.Size = new Size(60, 23);
-      this.btnCancel.TabIndex = 1;
-      this.btnCancel.Text = "Cancel";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      this.btnOk.DialogResult = DialogResult.OK;
-      this.btnOk.Location = new Point(170, 14);
-      this.btnOk.Name = "btnOk";
-      this.btnOk.Size = new Size(60, 23);
-      this.btnOk.TabIndex = 0;
-      this.btnOk.Text = "OK";
-      this.btnOk.UseVisualStyleBackColor = true;
-      this.ltvAssemblies.Columns.AddRange(new ColumnHeader[3]
-      {
-        this.columnHeader1,
-        this.columnHeader2,
-        this.columnHeader3
-      });
-      this.ltvAssemblies.Dock = DockStyle.Fill;
-      this.ltvAssemblies.FullRowSelect = true;
-      this.ltvAssemblies.GridLines = true;
-      this.ltvAssemblies.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.ltvAssemblies.HideSelection = false;
-      this.ltvAssemblies.Location = new Point(0, 0);
-      this.ltvAssemblies.Name = "ltvAssemblies";
-      this.ltvAssemblies.ShowGroups = false;
-      this.ltvAssemblies.ShowItemToolTips = true;
-      this.ltvAssemblies.Size = new Size(453, 329);
-      this.ltvAssemblies.SmallImageList = this.imgAssemblies;
-      this.ltvAssemblies.TabIndex = 1;
-      this.ltvAssemblies.UseCompatibleStateImageBehavior = false;
-      this.ltvAssemblies.View = View.Details;
-      this.ltvAssemblies.SelectedIndexChanged += new EventHandler(this.ltvAssemblies_SelectedIndexChanged);
-      this.ltvAssemblies.DoubleClick += new EventHandler(this.ltvAssemblies_DoubleClick);
-      this.columnHeader1.Text = "Name";
-      this.columnHeader1.Width = 207;
-      this.columnHeader2.Text = "Version";
-      this.columnHeader2.TextAlign = HorizontalAlignment.Right;
-      this.columnHeader2.Width = 98;
-      this.columnHeader3.Text = "Platform";
-      this.columnHeader3.TextAlign = HorizontalAlignment.Right;
-      this.columnHeader3.Width = 96;
-      this.imgAssemblies.ImageStream = (ImageListStreamer) componentResourceManager.GetObject("imgAssemblies.ImageStream");
-      this.imgAssemblies.TransparentColor = Color.Transparent;
-      this.imgAssemblies.Images.SetKeyName(0, "reference.png");
-      this.AcceptButton = (IButtonControl) this.btnOk;
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.CancelButton = (IButtonControl) this.btnCancel;
-      this.ClientSize = new Size(453, 377);
-      this.Controls.Add((Control) this.ltvAssemblies);
-      this.Controls.Add((Control) this.panel1);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = "BrowseGACForm";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterParent;
-      this.Text = "Global Assembly Cache";
-      this.panel1.ResumeLayout(false);
-      this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseGACForm));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.ltvAssemblies = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imgAssemblies = new System.Windows.Forms.ImageList(this.components);
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnOk);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 329);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(453, 48);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(243, 14);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(60, 23);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnOk
+            // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOk.Location = new System.Drawing.Point(170, 14);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(60, 23);
+            this.btnOk.TabIndex = 0;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            // 
+            // ltvAssemblies
+            // 
+            this.ltvAssemblies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.ltvAssemblies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ltvAssemblies.FullRowSelect = true;
+            this.ltvAssemblies.GridLines = true;
+            this.ltvAssemblies.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ltvAssemblies.HideSelection = false;
+            this.ltvAssemblies.Location = new System.Drawing.Point(0, 0);
+            this.ltvAssemblies.Name = "ltvAssemblies";
+            this.ltvAssemblies.ShowGroups = false;
+            this.ltvAssemblies.ShowItemToolTips = true;
+            this.ltvAssemblies.Size = new System.Drawing.Size(453, 329);
+            this.ltvAssemblies.SmallImageList = this.imgAssemblies;
+            this.ltvAssemblies.TabIndex = 1;
+            this.ltvAssemblies.UseCompatibleStateImageBehavior = false;
+            this.ltvAssemblies.View = System.Windows.Forms.View.Details;
+            this.ltvAssemblies.SelectedIndexChanged += new System.EventHandler(this.ltvAssemblies_SelectedIndexChanged);
+            this.ltvAssemblies.DoubleClick += new System.EventHandler(this.ltvAssemblies_DoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 207;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Version";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader2.Width = 98;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Platform";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader3.Width = 96;
+            // 
+            // imgAssemblies
+            // 
+            this.imgAssemblies.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgAssemblies.ImageStream")));
+            this.imgAssemblies.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgAssemblies.Images.SetKeyName(0, "reference.png");
+            // 
+            // BrowseGACForm
+            // 
+            this.AcceptButton = this.btnOk;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(453, 377);
+            this.Controls.Add(this.ltvAssemblies);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "BrowseGACForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Global Assembly Cache";
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
     }
   }
 }

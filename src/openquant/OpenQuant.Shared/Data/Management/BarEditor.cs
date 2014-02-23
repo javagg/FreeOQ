@@ -14,7 +14,7 @@ namespace OpenQuant.Shared.Data.Management
   {
     private BarType barType;
     private long barSize;
-    private IContainer components;
+        private IContainer components = null;
     private Label label7;
     private Label label6;
     private Label label5;

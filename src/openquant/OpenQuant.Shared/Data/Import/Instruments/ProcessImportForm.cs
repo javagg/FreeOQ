@@ -12,7 +12,7 @@ namespace OpenQuant.Shared.Data.Import.Instruments
 {
   internal class ProcessImportForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Label label1;
     private Label label2;
     private Label label3;

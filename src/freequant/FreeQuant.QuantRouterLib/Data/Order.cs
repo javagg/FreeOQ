@@ -1,35 +1,33 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.QuantRouterLib.Data
 {
-  public class Order
-  {
-    public char OrdType { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public char Side { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public char TimeInForce { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public double Qty { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public double Price { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public double StopPx { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public string Account { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public string ClientId { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public Order()
+    public class Order
     {
-      this.OrdType = char.MinValue;
-      this.Side = char.MinValue;
-      this.TimeInForce = char.MinValue;
-      this.Qty = 0.0;
-      this.Price = 0.0;
-      this.StopPx = 0.0;
-      this.Account = string.Empty;
-      this.ClientId = string.Empty;
+        public char OrdType { get; set; }
+
+        public char Side { get; set; }
+
+        public char TimeInForce { get; set; }
+
+        public double Qty { get; set; }
+
+        public double Price { get; set; }
+
+        public double StopPx { get; set; }
+
+        public string Account { get; set; }
+
+        public string ClientId { get; set; }
+
+        public Order()
+        {
+            this.OrdType = char.MinValue;
+            this.Side = char.MinValue;
+            this.TimeInForce = char.MinValue;
+            this.Qty = 0.0;
+            this.Price = 0.0;
+            this.StopPx = 0.0;
+            this.Account = string.Empty;
+            this.ClientId = string.Empty;
+        }
     }
-  }
 }

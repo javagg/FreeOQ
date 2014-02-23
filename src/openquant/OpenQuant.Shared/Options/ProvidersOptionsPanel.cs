@@ -48,195 +48,234 @@ namespace OpenQuant.Shared.Options
 
     private void InitializeComponent()
     {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (ProvidersOptionsPanel));
-      this.tabControl = new TabControl();
-      this.tabSQ = new TabPage();
-      this.ltvPlugins_SQ = new ListView();
-      this.columnHeader1 = new ColumnHeader();
-      this.columnHeader2 = new ColumnHeader();
-      this.columnHeader5 = new ColumnHeader();
-      this.images = new ImageList(this.components);
-      this.tabOQ = new TabPage();
-      this.ltvPlugins_OQ = new ListView();
-      this.columnHeader3 = new ColumnHeader();
-      this.columnHeader4 = new ColumnHeader();
-      this.panel2 = new Panel();
-      this.btnRemove = new Button();
-      this.btnAdd = new Button();
-      this.dlgOpenUserPlugin = new OpenFileDialog();
-      this.panel1 = new Panel();
-      this.nudTimeout = new NumericUpDown();
-      this.label1 = new Label();
-      this.tabControl.SuspendLayout();
-      this.tabSQ.SuspendLayout();
-      this.tabOQ.SuspendLayout();
-      this.panel2.SuspendLayout();
-      this.panel1.SuspendLayout();
-      this.nudTimeout.BeginInit();
-      this.SuspendLayout();
-      this.tabControl.Controls.Add((Control) this.tabSQ);
-      this.tabControl.Controls.Add((Control) this.tabOQ);
-      this.tabControl.Dock = DockStyle.Fill;
-      this.tabControl.Location = new Point(0, 0);
-      this.tabControl.Name = "tabControl";
-      this.tabControl.SelectedIndex = 0;
-      this.tabControl.Size = new Size(400, 324);
-      this.tabControl.TabIndex = 0;
-      this.tabControl.SelectedIndexChanged += new EventHandler(this.tabControl_SelectedIndexChanged);
-      this.tabControl.Selected += new TabControlEventHandler(this.tabControl_Selected);
-      this.tabSQ.Controls.Add((Control) this.ltvPlugins_SQ);
-      this.tabSQ.Location = new Point(4, 22);
-      this.tabSQ.Name = "tabSQ";
-      this.tabSQ.Padding = new Padding(3);
-      this.tabSQ.Size = new Size(392, 298);
-      this.tabSQ.TabIndex = 0;
-      this.tabSQ.Text = "Built-in";
-      this.tabSQ.UseVisualStyleBackColor = true;
-      this.ltvPlugins_SQ.BorderStyle = BorderStyle.None;
-      this.ltvPlugins_SQ.CheckBoxes = true;
-      this.ltvPlugins_SQ.Columns.AddRange(new ColumnHeader[3]
-      {
-        this.columnHeader1,
-        this.columnHeader2,
-        this.columnHeader5
-      });
-      this.ltvPlugins_SQ.Dock = DockStyle.Fill;
-      this.ltvPlugins_SQ.FullRowSelect = true;
-      this.ltvPlugins_SQ.GridLines = true;
-      this.ltvPlugins_SQ.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.ltvPlugins_SQ.HideSelection = false;
-      this.ltvPlugins_SQ.Location = new Point(3, 3);
-      this.ltvPlugins_SQ.MultiSelect = false;
-      this.ltvPlugins_SQ.Name = "ltvPlugins_SQ";
-      this.ltvPlugins_SQ.ShowGroups = false;
-      this.ltvPlugins_SQ.ShowItemToolTips = true;
-      this.ltvPlugins_SQ.Size = new Size(386, 292);
-      this.ltvPlugins_SQ.SmallImageList = this.images;
-      this.ltvPlugins_SQ.Sorting = SortOrder.Ascending;
-      this.ltvPlugins_SQ.TabIndex = 0;
-      this.ltvPlugins_SQ.UseCompatibleStateImageBehavior = false;
-      this.ltvPlugins_SQ.View = View.Details;
-      this.ltvPlugins_SQ.ItemCheck += new ItemCheckEventHandler(this.ltvPlugins_SQ_ItemCheck);
-      this.columnHeader1.Text = "TypeName";
-      this.columnHeader1.Width = 159;
-      this.columnHeader2.Text = "AssemblyName";
-      this.columnHeader2.TextAlign = HorizontalAlignment.Right;
-      this.columnHeader2.Width = 134;
-      this.columnHeader5.Text = "x64";
-      this.columnHeader5.TextAlign = HorizontalAlignment.Center;
-      this.images.ImageStream = (ImageListStreamer) componentResourceManager.GetObject("images.ImageStream");
-      this.images.TransparentColor = Color.Transparent;
-      this.images.Images.SetKeyName(0, "plugin_unloaded.ico");
-      this.images.Images.SetKeyName(1, "plugin_loaded.png");
-      this.images.Images.SetKeyName(2, "plugin_error.png");
-      this.tabOQ.Controls.Add((Control) this.ltvPlugins_OQ);
-      this.tabOQ.Controls.Add((Control) this.panel2);
-      this.tabOQ.Location = new Point(4, 22);
-      this.tabOQ.Name = "tabOQ";
-      this.tabOQ.Padding = new Padding(3);
-      this.tabOQ.Size = new Size(392, 298);
-      this.tabOQ.TabIndex = 1;
-      this.tabOQ.Text = "User";
-      this.tabOQ.UseVisualStyleBackColor = true;
-      this.ltvPlugins_OQ.BorderStyle = BorderStyle.None;
-      this.ltvPlugins_OQ.CheckBoxes = true;
-      this.ltvPlugins_OQ.Columns.AddRange(new ColumnHeader[2]
-      {
-        this.columnHeader3,
-        this.columnHeader4
-      });
-      this.ltvPlugins_OQ.Dock = DockStyle.Fill;
-      this.ltvPlugins_OQ.FullRowSelect = true;
-      this.ltvPlugins_OQ.GridLines = true;
-      this.ltvPlugins_OQ.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.ltvPlugins_OQ.HideSelection = false;
-      this.ltvPlugins_OQ.Location = new Point(3, 3);
-      this.ltvPlugins_OQ.MultiSelect = false;
-      this.ltvPlugins_OQ.Name = "ltvPlugins_OQ";
-      this.ltvPlugins_OQ.ShowGroups = false;
-      this.ltvPlugins_OQ.ShowItemToolTips = true;
-      this.ltvPlugins_OQ.Size = new Size(386, 256);
-      this.ltvPlugins_OQ.SmallImageList = this.images;
-      this.ltvPlugins_OQ.Sorting = SortOrder.Ascending;
-      this.ltvPlugins_OQ.TabIndex = 1;
-      this.ltvPlugins_OQ.UseCompatibleStateImageBehavior = false;
-      this.ltvPlugins_OQ.View = View.Details;
-      this.ltvPlugins_OQ.ItemCheck += new ItemCheckEventHandler(this.ltvPlugins_OQ_ItemCheck);
-      this.columnHeader3.Text = "TypeName";
-      this.columnHeader3.Width = 210;
-      this.columnHeader4.Text = "AssemblyName";
-      this.columnHeader4.TextAlign = HorizontalAlignment.Right;
-      this.columnHeader4.Width = 141;
-      this.panel2.Controls.Add((Control) this.btnRemove);
-      this.panel2.Controls.Add((Control) this.btnAdd);
-      this.panel2.Dock = DockStyle.Bottom;
-      this.panel2.Location = new Point(3, 259);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new Size(386, 36);
-      this.panel2.TabIndex = 3;
-      this.btnRemove.Location = new Point(81, 8);
-      this.btnRemove.Name = "btnRemove";
-      this.btnRemove.Size = new Size(67, 22);
-      this.btnRemove.TabIndex = 1;
-      this.btnRemove.Text = "Remove";
-      this.btnRemove.UseVisualStyleBackColor = true;
-      this.btnRemove.Click += new EventHandler(this.btnRemove_Click);
-      this.btnAdd.Location = new Point(8, 8);
-      this.btnAdd.Name = "btnAdd";
-      this.btnAdd.Size = new Size(67, 22);
-      this.btnAdd.TabIndex = 0;
-      this.btnAdd.Text = "Add...";
-      this.btnAdd.UseVisualStyleBackColor = true;
-      this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
-      this.dlgOpenUserPlugin.Filter = "Assemblies|*.dll";
-      this.dlgOpenUserPlugin.Title = "Select custom provider assembly";
-      this.panel1.Controls.Add((Control) this.nudTimeout);
-      this.panel1.Controls.Add((Control) this.label1);
-      this.panel1.Dock = DockStyle.Bottom;
-      this.panel1.Location = new Point(0, 324);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new Size(400, 32);
-      this.panel1.TabIndex = 1;
-      this.nudTimeout.Location = new Point(150, 8);
-      NumericUpDown numericUpDown1 = this.nudTimeout;
-      int[] bits1 = new int[4];
-      bits1[0] = 10000;
-      Decimal num1 = new Decimal(bits1);
-      numericUpDown1.Maximum = num1;
-      NumericUpDown numericUpDown2 = this.nudTimeout;
-      int[] bits2 = new int[4];
-      bits2[0] = 1;
-      Decimal num2 = new Decimal(bits2);
-      numericUpDown2.Minimum = num2;
-      this.nudTimeout.Name = "nudTimeout";
-      this.nudTimeout.Size = new Size(47, 20);
-      this.nudTimeout.TabIndex = 1;
-      this.nudTimeout.TextAlign = HorizontalAlignment.Center;
-      NumericUpDown numericUpDown3 = this.nudTimeout;
-      int[] bits3 = new int[4];
-      bits3[0] = 1;
-      Decimal num3 = new Decimal(bits3);
-      numericUpDown3.Value = num3;
-      this.nudTimeout.ValueChanged += new EventHandler(this.nudTimeout_ValueChanged);
-      this.label1.Location = new Point(8, 8);
-      this.label1.Name = "label1";
-      this.label1.Size = new Size(136, 20);
-      this.label1.TabIndex = 0;
-      this.label1.Text = "Connection timeout (sec)";
-      this.label1.TextAlign = ContentAlignment.MiddleLeft;
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.Controls.Add((Control) this.tabControl);
-      this.Controls.Add((Control) this.panel1);
-      this.Name = "ProvidersOptionsPanel";
-      this.Padding = new Padding(0, 0, 0, 4);
-      this.tabControl.ResumeLayout(false);
-      this.tabSQ.ResumeLayout(false);
-      this.tabOQ.ResumeLayout(false);
-      this.panel2.ResumeLayout(false);
-      this.panel1.ResumeLayout(false);
-      this.nudTimeout.EndInit();
-      this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProvidersOptionsPanel));
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabSQ = new System.Windows.Forms.TabPage();
+            this.ltvPlugins_SQ = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.images = new System.Windows.Forms.ImageList(this.components);
+            this.tabOQ = new System.Windows.Forms.TabPage();
+            this.ltvPlugins_OQ = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dlgOpenUserPlugin = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.nudTimeout = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabControl.SuspendLayout();
+            this.tabSQ.SuspendLayout();
+            this.tabOQ.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeout)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabSQ);
+            this.tabControl.Controls.Add(this.tabOQ);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(400, 324);
+            this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl_Selected);
+            // 
+            // tabSQ
+            // 
+            this.tabSQ.Controls.Add(this.ltvPlugins_SQ);
+            this.tabSQ.Location = new System.Drawing.Point(4, 22);
+            this.tabSQ.Name = "tabSQ";
+            this.tabSQ.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSQ.Size = new System.Drawing.Size(392, 298);
+            this.tabSQ.TabIndex = 0;
+            this.tabSQ.Text = "Built-in";
+            this.tabSQ.UseVisualStyleBackColor = true;
+            // 
+            // ltvPlugins_SQ
+            // 
+            this.ltvPlugins_SQ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ltvPlugins_SQ.CheckBoxes = true;
+            this.ltvPlugins_SQ.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader5});
+            this.ltvPlugins_SQ.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ltvPlugins_SQ.FullRowSelect = true;
+            this.ltvPlugins_SQ.GridLines = true;
+            this.ltvPlugins_SQ.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ltvPlugins_SQ.HideSelection = false;
+            this.ltvPlugins_SQ.Location = new System.Drawing.Point(3, 3);
+            this.ltvPlugins_SQ.MultiSelect = false;
+            this.ltvPlugins_SQ.Name = "ltvPlugins_SQ";
+            this.ltvPlugins_SQ.ShowGroups = false;
+            this.ltvPlugins_SQ.ShowItemToolTips = true;
+            this.ltvPlugins_SQ.Size = new System.Drawing.Size(386, 292);
+            this.ltvPlugins_SQ.SmallImageList = this.images;
+            this.ltvPlugins_SQ.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.ltvPlugins_SQ.TabIndex = 0;
+            this.ltvPlugins_SQ.UseCompatibleStateImageBehavior = false;
+            this.ltvPlugins_SQ.View = System.Windows.Forms.View.Details;
+            this.ltvPlugins_SQ.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ltvPlugins_SQ_ItemCheck);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "TypeName";
+            this.columnHeader1.Width = 159;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "AssemblyName";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader2.Width = 134;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "x64";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "plugin_unloaded.ico");
+            this.images.Images.SetKeyName(1, "plugin_loaded.png");
+            this.images.Images.SetKeyName(2, "plugin_error.png");
+            // 
+            // tabOQ
+            // 
+            this.tabOQ.Controls.Add(this.ltvPlugins_OQ);
+            this.tabOQ.Controls.Add(this.panel2);
+            this.tabOQ.Location = new System.Drawing.Point(4, 22);
+            this.tabOQ.Name = "tabOQ";
+            this.tabOQ.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOQ.Size = new System.Drawing.Size(392, 298);
+            this.tabOQ.TabIndex = 1;
+            this.tabOQ.Text = "User";
+            this.tabOQ.UseVisualStyleBackColor = true;
+            // 
+            // ltvPlugins_OQ
+            // 
+            this.ltvPlugins_OQ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ltvPlugins_OQ.CheckBoxes = true;
+            this.ltvPlugins_OQ.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            this.ltvPlugins_OQ.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ltvPlugins_OQ.FullRowSelect = true;
+            this.ltvPlugins_OQ.GridLines = true;
+            this.ltvPlugins_OQ.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ltvPlugins_OQ.HideSelection = false;
+            this.ltvPlugins_OQ.Location = new System.Drawing.Point(3, 3);
+            this.ltvPlugins_OQ.MultiSelect = false;
+            this.ltvPlugins_OQ.Name = "ltvPlugins_OQ";
+            this.ltvPlugins_OQ.ShowGroups = false;
+            this.ltvPlugins_OQ.ShowItemToolTips = true;
+            this.ltvPlugins_OQ.Size = new System.Drawing.Size(386, 256);
+            this.ltvPlugins_OQ.SmallImageList = this.images;
+            this.ltvPlugins_OQ.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.ltvPlugins_OQ.TabIndex = 1;
+            this.ltvPlugins_OQ.UseCompatibleStateImageBehavior = false;
+            this.ltvPlugins_OQ.View = System.Windows.Forms.View.Details;
+            this.ltvPlugins_OQ.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ltvPlugins_OQ_ItemCheck);
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "TypeName";
+            this.columnHeader3.Width = 210;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "AssemblyName";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader4.Width = 141;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnRemove);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 259);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(386, 36);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(81, 8);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(67, 22);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(67, 22);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add...";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dlgOpenUserPlugin
+            // 
+            this.dlgOpenUserPlugin.Filter = "Assemblies|*.dll";
+            this.dlgOpenUserPlugin.Title = "Select custom provider assembly";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.nudTimeout);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 324);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 32);
+            this.panel1.TabIndex = 1;
+            // 
+            // nudTimeout
+            // 
+            this.nudTimeout.Location = new System.Drawing.Point(150, 8);
+            this.nudTimeout.Name = "nudTimeout";
+            this.nudTimeout.Size = new System.Drawing.Size(47, 20);
+            this.nudTimeout.TabIndex = 1;
+            this.nudTimeout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudTimeout.ValueChanged += new System.EventHandler(this.nudTimeout_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(8, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Connection timeout (sec)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ProvidersOptionsPanel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.panel1);
+            this.Name = "ProvidersOptionsPanel";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.tabControl.ResumeLayout(false);
+            this.tabSQ.ResumeLayout(false);
+            this.tabOQ.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeout)).EndInit();
+            this.ResumeLayout(false);
+
     }
 
     protected override void OnLoad(EventArgs e)

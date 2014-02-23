@@ -23,7 +23,7 @@ namespace OpenQuant.Shared.Charting
 	partial class QuickChartForm 
   {
 
-    private IContainer components;
+        private IContainer components = null;
     private Chart chart;
 
     protected override void Dispose(bool disposing)

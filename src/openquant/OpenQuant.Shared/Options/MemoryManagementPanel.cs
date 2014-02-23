@@ -7,7 +7,7 @@ namespace OpenQuant.Shared.Options
 {
   class MemoryManagementPanel : OptionsPanel
   {
-    private IContainer components;
+        private IContainer components = null;
     private GroupBox groupBox1;
     private CheckBox chbPortfolioPerformance;
     private CheckBox chbCalculateDrawdown;
@@ -31,103 +31,130 @@ namespace OpenQuant.Shared.Options
 
     private void InitializeComponent()
     {
-      this.groupBox1 = new GroupBox();
-      this.nudIntervalLength = new NumericUpDown();
-      this.chbCalculateDrawdown = new CheckBox();
-      this.chbCalculatePnL = new CheckBox();
-      this.chbUpdateInterval = new CheckBox();
-      this.chbPortfolioPerformance = new CheckBox();
-      this.groupBox2 = new GroupBox();
-      this.chbRemoveOrders = new CheckBox();
-      this.groupBox1.SuspendLayout();
-      this.nudIntervalLength.BeginInit();
-      this.groupBox2.SuspendLayout();
-      this.SuspendLayout();
-      this.groupBox1.Controls.Add((Control) this.nudIntervalLength);
-      this.groupBox1.Controls.Add((Control) this.chbCalculateDrawdown);
-      this.groupBox1.Controls.Add((Control) this.chbCalculatePnL);
-      this.groupBox1.Controls.Add((Control) this.chbUpdateInterval);
-      this.groupBox1.Controls.Add((Control) this.chbPortfolioPerformance);
-      this.groupBox1.Location = new Point(8, 4);
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new Size(384, 148);
-      this.groupBox1.TabIndex = 0;
-      this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "Performance";
-      this.nudIntervalLength.Location = new Point(195, 108);
-      this.nudIntervalLength.Maximum = new Decimal(new int[4]
-      {
-        -727379968,
-        232,
-        0,
-        0
-      });
-      NumericUpDown numericUpDown1 = this.nudIntervalLength;
-      int[] bits1 = new int[4];
-      bits1[0] = 1;
-      Decimal num1 = new Decimal(bits1);
-      numericUpDown1.Minimum = num1;
-      this.nudIntervalLength.Name = "nudIntervalLength";
-      this.nudIntervalLength.Size = new Size(73, 20);
-      this.nudIntervalLength.TabIndex = 3;
-      this.nudIntervalLength.TextAlign = HorizontalAlignment.Right;
-      this.nudIntervalLength.ThousandsSeparator = true;
-      NumericUpDown numericUpDown2 = this.nudIntervalLength;
-      int[] bits2 = new int[4];
-      bits2[0] = 1;
-      Decimal num2 = new Decimal(bits2);
-      numericUpDown2.Value = num2;
-      this.nudIntervalLength.ValueChanged += new EventHandler(this.nudIntervalLength_ValueChanged);
-      this.chbCalculateDrawdown.Location = new Point(31, 80);
-      this.chbCalculateDrawdown.Name = "chbCalculateDrawdown";
-      this.chbCalculateDrawdown.Size = new Size(237, 22);
-      this.chbCalculateDrawdown.TabIndex = 2;
-      this.chbCalculateDrawdown.Text = "Calculate Drawdown";
-      this.chbCalculateDrawdown.UseVisualStyleBackColor = true;
-      this.chbCalculateDrawdown.CheckedChanged += new EventHandler(this.chbCalculateDrawdown_CheckedChanged);
-      this.chbCalculatePnL.Location = new Point(31, 52);
-      this.chbCalculatePnL.Name = "chbCalculatePnL";
-      this.chbCalculatePnL.Size = new Size(237, 22);
-      this.chbCalculatePnL.TabIndex = 1;
-      this.chbCalculatePnL.Text = "Calculate PnL";
-      this.chbCalculatePnL.UseVisualStyleBackColor = true;
-      this.chbCalculatePnL.CheckedChanged += new EventHandler(this.chbCalculatePnL_CheckedChanged);
-      this.chbUpdateInterval.Location = new Point(31, 108);
-      this.chbUpdateInterval.Name = "chbUpdateInterval";
-      this.chbUpdateInterval.Size = new Size(151, 22);
-      this.chbUpdateInterval.TabIndex = 0;
-      this.chbUpdateInterval.Text = "Update interval (seconds)";
-      this.chbUpdateInterval.UseVisualStyleBackColor = true;
-      this.chbUpdateInterval.CheckedChanged += new EventHandler(this.chbUpdateInterval_CheckedChanged);
-      this.chbPortfolioPerformance.Location = new Point(16, 24);
-      this.chbPortfolioPerformance.Name = "chbPortfolioPerformance";
-      this.chbPortfolioPerformance.Size = new Size(237, 22);
-      this.chbPortfolioPerformance.TabIndex = 0;
-      this.chbPortfolioPerformance.Text = "Enable built-in portfolio performance calculation";
-      this.chbPortfolioPerformance.UseVisualStyleBackColor = true;
-      this.chbPortfolioPerformance.CheckedChanged += new EventHandler(this.chbPortfolioPerformance_CheckedChanged);
-      this.groupBox2.Controls.Add((Control) this.chbRemoveOrders);
-      this.groupBox2.Location = new Point(8, 162);
-      this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new Size(384, 58);
-      this.groupBox2.TabIndex = 1;
-      this.groupBox2.TabStop = false;
-      this.groupBox2.Text = "Orders";
-      this.chbRemoveOrders.Location = new Point(16, 24);
-      this.chbRemoveOrders.Name = "chbRemoveOrders";
-      this.chbRemoveOrders.Size = new Size(259, 22);
-      this.chbRemoveOrders.TabIndex = 0;
-      this.chbRemoveOrders.Text = "Remove done orders from the Order Manager";
-      this.chbRemoveOrders.UseVisualStyleBackColor = true;
-      this.chbRemoveOrders.CheckedChanged += new EventHandler(this.chbRemoveOrders_CheckedChanged);
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.Controls.Add((Control) this.groupBox2);
-      this.Controls.Add((Control) this.groupBox1);
-      this.Name = "MemoryManagementPanel";
-      this.groupBox1.ResumeLayout(false);
-      this.nudIntervalLength.EndInit();
-      this.groupBox2.ResumeLayout(false);
-      this.ResumeLayout(false);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudIntervalLength = new System.Windows.Forms.NumericUpDown();
+            this.chbCalculateDrawdown = new System.Windows.Forms.CheckBox();
+            this.chbCalculatePnL = new System.Windows.Forms.CheckBox();
+            this.chbUpdateInterval = new System.Windows.Forms.CheckBox();
+            this.chbPortfolioPerformance = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chbRemoveOrders = new System.Windows.Forms.CheckBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIntervalLength)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.nudIntervalLength);
+            this.groupBox1.Controls.Add(this.chbCalculateDrawdown);
+            this.groupBox1.Controls.Add(this.chbCalculatePnL);
+            this.groupBox1.Controls.Add(this.chbUpdateInterval);
+            this.groupBox1.Controls.Add(this.chbPortfolioPerformance);
+            this.groupBox1.Location = new System.Drawing.Point(8, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(384, 148);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Performance";
+            // 
+            // nudIntervalLength
+            // 
+            this.nudIntervalLength.Location = new System.Drawing.Point(195, 108);
+            this.nudIntervalLength.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.nudIntervalLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudIntervalLength.Name = "nudIntervalLength";
+            this.nudIntervalLength.Size = new System.Drawing.Size(73, 20);
+            this.nudIntervalLength.TabIndex = 3;
+            this.nudIntervalLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudIntervalLength.ThousandsSeparator = true;
+            this.nudIntervalLength.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudIntervalLength.ValueChanged += new System.EventHandler(this.nudIntervalLength_ValueChanged);
+            // 
+            // chbCalculateDrawdown
+            // 
+            this.chbCalculateDrawdown.Location = new System.Drawing.Point(31, 80);
+            this.chbCalculateDrawdown.Name = "chbCalculateDrawdown";
+            this.chbCalculateDrawdown.Size = new System.Drawing.Size(237, 22);
+            this.chbCalculateDrawdown.TabIndex = 2;
+            this.chbCalculateDrawdown.Text = "Calculate Drawdown";
+            this.chbCalculateDrawdown.UseVisualStyleBackColor = true;
+            this.chbCalculateDrawdown.CheckedChanged += new System.EventHandler(this.chbCalculateDrawdown_CheckedChanged);
+            // 
+            // chbCalculatePnL
+            // 
+            this.chbCalculatePnL.Location = new System.Drawing.Point(31, 52);
+            this.chbCalculatePnL.Name = "chbCalculatePnL";
+            this.chbCalculatePnL.Size = new System.Drawing.Size(237, 22);
+            this.chbCalculatePnL.TabIndex = 1;
+            this.chbCalculatePnL.Text = "Calculate PnL";
+            this.chbCalculatePnL.UseVisualStyleBackColor = true;
+            this.chbCalculatePnL.CheckedChanged += new System.EventHandler(this.chbCalculatePnL_CheckedChanged);
+            // 
+            // chbUpdateInterval
+            // 
+            this.chbUpdateInterval.Location = new System.Drawing.Point(31, 108);
+            this.chbUpdateInterval.Name = "chbUpdateInterval";
+            this.chbUpdateInterval.Size = new System.Drawing.Size(151, 22);
+            this.chbUpdateInterval.TabIndex = 0;
+            this.chbUpdateInterval.Text = "Update interval (seconds)";
+            this.chbUpdateInterval.UseVisualStyleBackColor = true;
+            this.chbUpdateInterval.CheckedChanged += new System.EventHandler(this.chbUpdateInterval_CheckedChanged);
+            // 
+            // chbPortfolioPerformance
+            // 
+            this.chbPortfolioPerformance.Location = new System.Drawing.Point(16, 24);
+            this.chbPortfolioPerformance.Name = "chbPortfolioPerformance";
+            this.chbPortfolioPerformance.Size = new System.Drawing.Size(237, 22);
+            this.chbPortfolioPerformance.TabIndex = 0;
+            this.chbPortfolioPerformance.Text = "Enable built-in portfolio performance calculation";
+            this.chbPortfolioPerformance.UseVisualStyleBackColor = true;
+            this.chbPortfolioPerformance.CheckedChanged += new System.EventHandler(this.chbPortfolioPerformance_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chbRemoveOrders);
+            this.groupBox2.Location = new System.Drawing.Point(8, 162);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(384, 58);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Orders";
+            // 
+            // chbRemoveOrders
+            // 
+            this.chbRemoveOrders.Location = new System.Drawing.Point(16, 24);
+            this.chbRemoveOrders.Name = "chbRemoveOrders";
+            this.chbRemoveOrders.Size = new System.Drawing.Size(259, 22);
+            this.chbRemoveOrders.TabIndex = 0;
+            this.chbRemoveOrders.Text = "Remove done orders from the Order Manager";
+            this.chbRemoveOrders.UseVisualStyleBackColor = true;
+            this.chbRemoveOrders.CheckedChanged += new System.EventHandler(this.chbRemoveOrders_CheckedChanged);
+            // 
+            // MemoryManagementPanel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "MemoryManagementPanel";
+            this.Size = new System.Drawing.Size(400, 353);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudIntervalLength)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
     }
 
     protected override void OnInit()

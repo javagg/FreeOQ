@@ -56,126 +56,171 @@ namespace OpenQuant.Shared.Logs
 
     private void InitializeComponent()
     {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (StrategyMonitorWindow));
-      this.tabControl = new System.Windows.Forms.TabControl();
-      this.ctxTabs = new ContextMenuStrip(this.components);
-      this.ctxTabs_New = new ToolStripMenuItem();
-      this.toolStripSeparator1 = new ToolStripSeparator();
-      this.ctxTabs_Rename = new ToolStripMenuItem();
-      this.toolStripSeparator2 = new ToolStripSeparator();
-      this.ctxTabs_Remove = new ToolStripMenuItem();
-      this.imgTabs = new ImageList(this.components);
-      this.toolStrip = new ToolStrip();
-      this.tsbLayout = new ToolStripDropDownButton();
-      this.tsbLayout_Load = new ToolStripMenuItem();
-      this.toolStripSeparator3 = new ToolStripSeparator();
-      this.tsbLayout_Save = new ToolStripMenuItem();
-      this.tsbLayout_SaveAs = new ToolStripMenuItem();
-      this.dlgSaveLayout = new SaveFileDialog();
-      this.dlgLoadLayout = new OpenFileDialog();
-      this.ctxTabs.SuspendLayout();
-      this.toolStrip.SuspendLayout();
-      this.SuspendLayout();
-      this.tabControl.ContextMenuStrip = this.ctxTabs;
-      this.tabControl.Dock = DockStyle.Fill;
-      this.tabControl.ImageList = this.imgTabs;
-      this.tabControl.ItemSize = new Size(58, 18);
-      this.tabControl.Location = new Point(0, 25);
-      this.tabControl.Name = "tabControl";
-      this.tabControl.SelectedIndex = 0;
-      this.tabControl.Size = new Size(630, 460);
-      this.tabControl.TabIndex = 0;
-      this.tabControl.MouseDown += new MouseEventHandler(this.tabControl_MouseDown);
-      this.tabControl.MouseMove += new MouseEventHandler(this.tabControl_MouseMove);
-      this.ctxTabs.Items.AddRange(new ToolStripItem[5]
-      {
-        (ToolStripItem) this.ctxTabs_New,
-        (ToolStripItem) this.toolStripSeparator1,
-        (ToolStripItem) this.ctxTabs_Rename,
-        (ToolStripItem) this.toolStripSeparator2,
-        (ToolStripItem) this.ctxTabs_Remove
-      });
-      this.ctxTabs.Name = "ctxTabs";
-      this.ctxTabs.Size = new Size(124, 82);
-      this.ctxTabs.Opening += new CancelEventHandler(this.ctxTabs_Opening);
-      this.ctxTabs_New.Name = "ctxTabs_New";
-      this.ctxTabs_New.Size = new Size(123, 22);
-      this.ctxTabs_New.Text = "Add New";
-      this.ctxTabs_New.Click += new EventHandler(this.ctxTabs_New_Click);
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new Size(120, 6);
-      this.ctxTabs_Rename.Image = (Image) Resources.rename;
-      this.ctxTabs_Rename.Name = "ctxTabs_Rename";
-      this.ctxTabs_Rename.Size = new Size(123, 22);
-      this.ctxTabs_Rename.Text = "Rename";
-      this.ctxTabs_Rename.Click += new EventHandler(this.ctxTabs_Rename_Click);
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      this.toolStripSeparator2.Size = new Size(120, 6);
-      this.ctxTabs_Remove.Image = (Image) Resources.delete;
-      this.ctxTabs_Remove.Name = "ctxTabs_Remove";
-      this.ctxTabs_Remove.Size = new Size(123, 22);
-      this.ctxTabs_Remove.Text = "Remove";
-      this.ctxTabs_Remove.Click += new EventHandler(this.ctxTabs_Remove_Click);
-      this.imgTabs.ImageStream = (ImageListStreamer) componentResourceManager.GetObject("imgTabs.ImageStream");
-      this.imgTabs.TransparentColor = Color.Transparent;
-      this.imgTabs.Images.SetKeyName(0, "tab.png");
-      this.toolStrip.Items.AddRange(new ToolStripItem[1]
-      {
-        (ToolStripItem) this.tsbLayout
-      });
-      this.toolStrip.Location = new Point(0, 0);
-      this.toolStrip.Name = "toolStrip";
-      this.toolStrip.Size = new Size(630, 25);
-      this.toolStrip.TabIndex = 1;
-      this.toolStrip.Text = "toolStrip1";
-      this.tsbLayout.DropDownItems.AddRange(new ToolStripItem[4]
-      {
-        (ToolStripItem) this.tsbLayout_Load,
-        (ToolStripItem) this.toolStripSeparator3,
-        (ToolStripItem) this.tsbLayout_Save,
-        (ToolStripItem) this.tsbLayout_SaveAs
-      });
-      this.tsbLayout.Image = (Image) componentResourceManager.GetObject("tsbLayout.Image");
-      this.tsbLayout.ImageTransparentColor = Color.Magenta;
-      this.tsbLayout.Name = "tsbLayout";
-      this.tsbLayout.Size = new Size(72, 22);
-      this.tsbLayout.Text = "Layout";
-      this.tsbLayout.DropDownOpening += new EventHandler(this.tsbLayout_DropDownOpening);
-      this.tsbLayout_Load.Name = "tsbLayout_Load";
-      this.tsbLayout_Load.Size = new Size(152, 22);
-      this.tsbLayout_Load.Text = "Load...";
-      this.tsbLayout_Load.Click += new EventHandler(this.tsbLayout_Load_Click);
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      this.toolStripSeparator3.Size = new Size(159, 6);
-      this.tsbLayout_Save.Name = "tsbLayout_Save";
-      this.tsbLayout_Save.Size = new Size(152, 22);
-      this.tsbLayout_Save.Text = "Save";
-      this.tsbLayout_Save.Click += new EventHandler(this.tsbLayout_Save_Click);
-      this.tsbLayout_SaveAs.Name = "tsbLayout_SaveAs";
-      this.tsbLayout_SaveAs.Size = new Size(152, 22);
-      this.tsbLayout_SaveAs.Text = "Save As...";
-      this.tsbLayout_SaveAs.Click += new EventHandler(this.tsbLayout_SaveAs_Click);
-      this.dlgSaveLayout.DefaultExt = "*.sml";
-      this.dlgSaveLayout.Filter = "Layout Files|*.sml|All Files|*.*";
-      this.dlgSaveLayout.Title = "Save Layout";
-      this.dlgLoadLayout.Filter = "Layout Files|*.sml|All Files|*.*";
-      this.dlgLoadLayout.Title = "Load Layout";
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.Controls.Add((Control) this.tabControl);
-      this.Controls.Add((Control) this.toolStrip);
-      this.DefaultDockLocation = ContainerDockLocation.Center;
-      this.Name = "StrategyMonitorWindow";
-      this.PersistState = false;
-      this.Size = new Size(630, 485);
-      this.TabImage = (Image) Resources.strategy_monitor;
-      this.Text = "Strategy Monitor";
-      this.ctxTabs.ResumeLayout(false);
-      this.toolStrip.ResumeLayout(false);
-      this.toolStrip.PerformLayout();
-      this.ResumeLayout(false);
-      this.PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StrategyMonitorWindow));
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.ctxTabs = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctxTabs_New = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctxTabs_Rename = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctxTabs_Remove = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgTabs = new System.Windows.Forms.ImageList(this.components);
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.tsbLayout = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsbLayout_Load = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbLayout_Save = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbLayout_SaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.dlgSaveLayout = new System.Windows.Forms.SaveFileDialog();
+            this.dlgLoadLayout = new System.Windows.Forms.OpenFileDialog();
+            this.ctxTabs.SuspendLayout();
+            this.toolStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // tabControl
+            // 
+            this.tabControl.ContextMenuStrip = this.ctxTabs;
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.ImageList = this.imgTabs;
+            this.tabControl.ItemSize = new System.Drawing.Size(58, 18);
+            this.tabControl.Location = new System.Drawing.Point(0, 25);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(630, 460);
+            this.tabControl.TabIndex = 0;
+            this.tabControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl_MouseDown);
+            this.tabControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabControl_MouseMove);
+            // 
+            // ctxTabs
+            // 
+            this.ctxTabs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxTabs_New,
+            this.toolStripSeparator1,
+            this.ctxTabs_Rename,
+            this.toolStripSeparator2,
+            this.ctxTabs_Remove});
+            this.ctxTabs.Name = "ctxTabs";
+            this.ctxTabs.Size = new System.Drawing.Size(124, 82);
+            this.ctxTabs.Opening += new System.ComponentModel.CancelEventHandler(this.ctxTabs_Opening);
+            // 
+            // ctxTabs_New
+            // 
+            this.ctxTabs_New.Name = "ctxTabs_New";
+            this.ctxTabs_New.Size = new System.Drawing.Size(123, 22);
+            this.ctxTabs_New.Text = "Add New";
+            this.ctxTabs_New.Click += new System.EventHandler(this.ctxTabs_New_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
+            // 
+            // ctxTabs_Rename
+            // 
+            this.ctxTabs_Rename.Image = global::OpenQuant.Shared.Properties.Resources.rename;
+            this.ctxTabs_Rename.Name = "ctxTabs_Rename";
+            this.ctxTabs_Rename.Size = new System.Drawing.Size(123, 22);
+            this.ctxTabs_Rename.Text = "Rename";
+            this.ctxTabs_Rename.Click += new System.EventHandler(this.ctxTabs_Rename_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(120, 6);
+            // 
+            // ctxTabs_Remove
+            // 
+            this.ctxTabs_Remove.Image = global::OpenQuant.Shared.Properties.Resources.delete;
+            this.ctxTabs_Remove.Name = "ctxTabs_Remove";
+            this.ctxTabs_Remove.Size = new System.Drawing.Size(123, 22);
+            this.ctxTabs_Remove.Text = "Remove";
+            this.ctxTabs_Remove.Click += new System.EventHandler(this.ctxTabs_Remove_Click);
+            // 
+            // imgTabs
+            // 
+            this.imgTabs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTabs.ImageStream")));
+            this.imgTabs.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgTabs.Images.SetKeyName(0, "tsbLayout.Image.png");
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbLayout});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(630, 25);
+            this.toolStrip.TabIndex = 1;
+            this.toolStrip.Text = "toolStrip1";
+            // 
+            // tsbLayout
+            // 
+            this.tsbLayout.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbLayout_Load,
+            this.toolStripSeparator3,
+            this.tsbLayout_Save,
+            this.tsbLayout_SaveAs});
+            this.tsbLayout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLayout.Name = "tsbLayout";
+            this.tsbLayout.Size = new System.Drawing.Size(56, 22);
+            this.tsbLayout.Text = "Layout";
+            this.tsbLayout.DropDownOpening += new System.EventHandler(this.tsbLayout_DropDownOpening);
+            // 
+            // tsbLayout_Load
+            // 
+            this.tsbLayout_Load.Name = "tsbLayout_Load";
+            this.tsbLayout_Load.Size = new System.Drawing.Size(123, 22);
+            this.tsbLayout_Load.Text = "Load...";
+            this.tsbLayout_Load.Click += new System.EventHandler(this.tsbLayout_Load_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(120, 6);
+            // 
+            // tsbLayout_Save
+            // 
+            this.tsbLayout_Save.Name = "tsbLayout_Save";
+            this.tsbLayout_Save.Size = new System.Drawing.Size(123, 22);
+            this.tsbLayout_Save.Text = "Save";
+            this.tsbLayout_Save.Click += new System.EventHandler(this.tsbLayout_Save_Click);
+            // 
+            // tsbLayout_SaveAs
+            // 
+            this.tsbLayout_SaveAs.Name = "tsbLayout_SaveAs";
+            this.tsbLayout_SaveAs.Size = new System.Drawing.Size(123, 22);
+            this.tsbLayout_SaveAs.Text = "Save As...";
+            this.tsbLayout_SaveAs.Click += new System.EventHandler(this.tsbLayout_SaveAs_Click);
+            // 
+            // dlgSaveLayout
+            // 
+            this.dlgSaveLayout.DefaultExt = "*.sml";
+            this.dlgSaveLayout.Filter = "Layout Files|*.sml|All Files|*.*";
+            this.dlgSaveLayout.Title = "Save Layout";
+            // 
+            // dlgLoadLayout
+            // 
+            this.dlgLoadLayout.Filter = "Layout Files|*.sml|All Files|*.*";
+            this.dlgLoadLayout.Title = "Load Layout";
+            // 
+            // StrategyMonitorWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.toolStrip);
+            this.DefaultDockLocation = TD.SandDock.ContainerDockLocation.Center;
+            this.Name = "StrategyMonitorWindow";
+            this.PersistState = false;
+            this.Size = new System.Drawing.Size(630, 485);
+            this.TabImage = global::OpenQuant.Shared.Properties.Resources.strategy_monitor;
+            this.Text = "Strategy Monitor";
+            this.ctxTabs.ResumeLayout(false);
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
     }
 
     protected override void OnInit()

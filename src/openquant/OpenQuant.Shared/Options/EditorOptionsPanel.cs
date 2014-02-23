@@ -6,7 +6,7 @@ namespace OpenQuant.Shared.Options
 {
   internal class EditorOptionsPanel : OptionsPanel
   {
-    private IContainer components;
+        private IContainer components = null;
     private GroupBox groupBox1;
     private PropertyGrid propertyGrid;
 
