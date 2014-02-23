@@ -143,110 +143,149 @@ namespace OpenQuant.Shared.Options
 
     private void InitializeComponent()
     {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (BuildOptionsPanel));
-      this.groupBox1 = new GroupBox();
-      this.ltvReferences = new ListView();
-      this.columnHeader1 = new ColumnHeader();
-      this.columnHeader2 = new ColumnHeader();
-      this.columnHeader3 = new ColumnHeader();
-      this.images = new ImageList(this.components);
-      this.btnAdd = new Button();
-      this.btnRemove = new Button();
-      this.ctxAddReference = new ContextMenuStrip(this.components);
-      this.ctxAddReference_DotNET = new ToolStripMenuItem();
-      this.toolStripSeparator1 = new ToolStripSeparator();
-      this.ctxAddReference_User = new ToolStripMenuItem();
-      this.dlgBrowseUserDll = new OpenFileDialog();
-      this.groupBox1.SuspendLayout();
-      this.ctxAddReference.SuspendLayout();
-      this.SuspendLayout();
-      this.groupBox1.Controls.Add((Control) this.ltvReferences);
-      this.groupBox1.Location = new Point(8, 8);
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Padding = new Padding(8, 4, 8, 8);
-      this.groupBox1.Size = new Size(384, 193);
-      this.groupBox1.TabIndex = 0;
-      this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "References";
-      this.ltvReferences.BorderStyle = BorderStyle.None;
-      this.ltvReferences.Columns.AddRange(new ColumnHeader[3]
-      {
-        this.columnHeader1,
-        this.columnHeader2,
-        this.columnHeader3
-      });
-      this.ltvReferences.Dock = DockStyle.Fill;
-      this.ltvReferences.FullRowSelect = true;
-      this.ltvReferences.GridLines = true;
-      this.ltvReferences.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.ltvReferences.HideSelection = false;
-      this.ltvReferences.Location = new Point(8, 17);
-      this.ltvReferences.Name = "ltvReferences";
-      this.ltvReferences.ShowGroups = false;
-      this.ltvReferences.ShowItemToolTips = true;
-      this.ltvReferences.Size = new Size(368, 168);
-      this.ltvReferences.SmallImageList = this.images;
-      this.ltvReferences.Sorting = SortOrder.Ascending;
-      this.ltvReferences.TabIndex = 0;
-      this.ltvReferences.UseCompatibleStateImageBehavior = false;
-      this.ltvReferences.View = View.Details;
-      this.columnHeader1.Text = "Name";
-      this.columnHeader1.Width = 159;
-      this.columnHeader2.Text = "Version";
-      this.columnHeader2.TextAlign = HorizontalAlignment.Right;
-      this.columnHeader2.Width = 77;
-      this.columnHeader3.Text = "Path";
-      this.columnHeader3.Width = 123;
-      this.images.ImageStream = (ImageListStreamer) componentResourceManager.GetObject("images.ImageStream");
-      this.images.TransparentColor = Color.Transparent;
-      this.images.Images.SetKeyName(0, "VSProject_reference.png");
-      this.images.Images.SetKeyName(1, "VSProject_brokenreference.png");
-      this.btnAdd.Location = new Point(24, 210);
-      this.btnAdd.Name = "btnAdd";
-      this.btnAdd.Size = new Size(64, 22);
-      this.btnAdd.TabIndex = 1;
-      this.btnAdd.Text = "Add";
-      this.btnAdd.UseVisualStyleBackColor = true;
-      this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
-      this.btnRemove.Location = new Point(96, 210);
-      this.btnRemove.Name = "btnRemove";
-      this.btnRemove.Size = new Size(64, 22);
-      this.btnRemove.TabIndex = 2;
-      this.btnRemove.Text = "Remove";
-      this.btnRemove.UseVisualStyleBackColor = true;
-      this.btnRemove.Click += new EventHandler(this.btnRemove_Click);
-      this.ctxAddReference.Items.AddRange(new ToolStripItem[3]
-      {
-        (ToolStripItem) this.ctxAddReference_DotNET,
-        (ToolStripItem) this.toolStripSeparator1,
-        (ToolStripItem) this.ctxAddReference_User
-      });
-      this.ctxAddReference.Name = "ctxAddReference";
-      this.ctxAddReference.Size = new Size(153, 76);
-      this.ctxAddReference_DotNET.Name = "ctxAddReference_DotNET";
-      this.ctxAddReference_DotNET.Size = new Size(152, 22);
-      this.ctxAddReference_DotNET.Text = ".NET...";
-      this.ctxAddReference_DotNET.Click += new EventHandler(this.ctxAddReference_DotNET_Click);
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new Size(149, 6);
-      this.ctxAddReference_User.Name = "ctxAddReference_User";
-      this.ctxAddReference_User.Size = new Size(152, 22);
-      this.ctxAddReference_User.Text = "Browse...";
-      this.ctxAddReference_User.Click += new EventHandler(this.ctxAddReference_User_Click);
-      this.dlgBrowseUserDll.DefaultExt = "dll";
-      this.dlgBrowseUserDll.Filter = "Assemblies|*.dll";
-      this.dlgBrowseUserDll.Title = "Select assembly to add";
-      this.dlgBrowseUserDll.FileOk += new CancelEventHandler(this.dlgBrowseUserDll_FileOk);
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.Controls.Add((Control) this.btnRemove);
-      this.Controls.Add((Control) this.btnAdd);
-      this.Controls.Add((Control) this.groupBox1);
-      this.Name = "BuildOptionsPanel";
-      this.groupBox1.ResumeLayout(false);
-      this.ctxAddReference.ResumeLayout(false);
-      this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuildOptionsPanel));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ltvReferences = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.images = new System.Windows.Forms.ImageList(this.components);
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.ctxAddReference = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctxAddReference_DotNET = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctxAddReference_User = new System.Windows.Forms.ToolStripMenuItem();
+            this.dlgBrowseUserDll = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox1.SuspendLayout();
+            this.ctxAddReference.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ltvReferences);
+            this.groupBox1.Location = new System.Drawing.Point(8, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(8, 4, 8, 8);
+            this.groupBox1.Size = new System.Drawing.Size(384, 193);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "References";
+            // 
+            // ltvReferences
+            // 
+            this.ltvReferences.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ltvReferences.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.ltvReferences.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ltvReferences.FullRowSelect = true;
+            this.ltvReferences.GridLines = true;
+            this.ltvReferences.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ltvReferences.HideSelection = false;
+            this.ltvReferences.Location = new System.Drawing.Point(8, 17);
+            this.ltvReferences.Name = "ltvReferences";
+            this.ltvReferences.ShowGroups = false;
+            this.ltvReferences.ShowItemToolTips = true;
+            this.ltvReferences.Size = new System.Drawing.Size(368, 168);
+            this.ltvReferences.SmallImageList = this.images;
+            this.ltvReferences.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.ltvReferences.TabIndex = 0;
+            this.ltvReferences.UseCompatibleStateImageBehavior = false;
+            this.ltvReferences.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 159;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Version";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader2.Width = 77;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Path";
+            this.columnHeader3.Width = 123;
+            // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "VSProject_reference.png");
+            this.images.Images.SetKeyName(1, "VSProject_brokenreference.png");
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(24, 210);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(64, 22);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(96, 210);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(64, 22);
+            this.btnRemove.TabIndex = 2;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // ctxAddReference
+            // 
+            this.ctxAddReference.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxAddReference_DotNET,
+            this.toolStripSeparator1,
+            this.ctxAddReference_User});
+            this.ctxAddReference.Name = "ctxAddReference";
+            this.ctxAddReference.Size = new System.Drawing.Size(122, 54);
+            // 
+            // ctxAddReference_DotNET
+            // 
+            this.ctxAddReference_DotNET.Name = "ctxAddReference_DotNET";
+            this.ctxAddReference_DotNET.Size = new System.Drawing.Size(121, 22);
+            this.ctxAddReference_DotNET.Text = ".NET...";
+            this.ctxAddReference_DotNET.Click += new System.EventHandler(this.ctxAddReference_DotNET_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
+            // 
+            // ctxAddReference_User
+            // 
+            this.ctxAddReference_User.Name = "ctxAddReference_User";
+            this.ctxAddReference_User.Size = new System.Drawing.Size(121, 22);
+            this.ctxAddReference_User.Text = "Browse...";
+            this.ctxAddReference_User.Click += new System.EventHandler(this.ctxAddReference_User_Click);
+            // 
+            // dlgBrowseUserDll
+            // 
+            this.dlgBrowseUserDll.DefaultExt = "dll";
+            this.dlgBrowseUserDll.Filter = "Assemblies|*.dll";
+            this.dlgBrowseUserDll.Title = "Select assembly to add";
+            this.dlgBrowseUserDll.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgBrowseUserDll_FileOk);
+            // 
+            // BuildOptionsPanel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "BuildOptionsPanel";
+            this.groupBox1.ResumeLayout(false);
+            this.ctxAddReference.ResumeLayout(false);
+            this.ResumeLayout(false);
+
     }
   }
 }

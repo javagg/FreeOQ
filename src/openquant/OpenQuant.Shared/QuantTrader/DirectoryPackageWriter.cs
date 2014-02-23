@@ -28,14 +28,14 @@ namespace OpenQuant.Shared.QuantTrader
 
 		private void Write(DirectoryInfo directory, PackageFolder folder)
 		{
-			foreach (PackageEntry entry in (IEnumerable<PackageEntry>) folder.GetEntries())
+			foreach (PackageEntry entry in folder.GetEntries())
 			{
 				if (!this.FilterEntry(entry))
 				{
 					if (entry is PackageFolder)
 						this.Write(directory.CreateSubdirectory(entry.Name), (PackageFolder)entry);
 					if (entry is PackageFile)
-						File.WriteAllBytes(string.Format("{0}\\{1}", directory.FullName, entry.Name), ((PackageFile)entry).Data);
+                        File.WriteAllBytes(Path.Combine(directory.FullName, entry.Name), ((PackageFile)entry).Data);
 				}
 			}
 		}

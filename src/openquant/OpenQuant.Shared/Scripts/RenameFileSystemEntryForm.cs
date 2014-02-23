@@ -7,7 +7,7 @@ namespace OpenQuant.Shared.Scripts
 {
   class RenameFileSystemEntryForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private TextBox tbxName;
     private Button btnOK;
     private Button btnCancel;
@@ -43,14 +43,14 @@ namespace OpenQuant.Shared.Scripts
       this.tbxName.Size = new Size(191, 20);
       this.tbxName.TabIndex = 0;
       this.tbxName.TextChanged += new EventHandler(this.tbxName_TextChanged);
-      this.btnOK.DialogResult = DialogResult.OK;
+      this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.btnOK.Location = new Point(55, 49);
       this.btnOK.Name = "btnOK";
       this.btnOK.Size = new Size(62, 22);
       this.btnOK.TabIndex = 1;
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
-      this.btnCancel.DialogResult = DialogResult.Cancel;
+      this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.btnCancel.Location = new Point(123, 49);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new Size(62, 22);
@@ -59,13 +59,13 @@ namespace OpenQuant.Shared.Scripts
       this.btnCancel.UseVisualStyleBackColor = true;
       this.AcceptButton = (IButtonControl) this.btnOK;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = (IButtonControl) this.btnCancel;
       this.ClientSize = new Size(241, 81);
       this.Controls.Add((Control) this.btnCancel);
       this.Controls.Add((Control) this.btnOK);
       this.Controls.Add((Control) this.tbxName);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "RenameFileSystemEntryForm";

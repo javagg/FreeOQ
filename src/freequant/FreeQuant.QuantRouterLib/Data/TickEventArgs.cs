@@ -1,15 +1,14 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.QuantRouterLib.Data
 {
-  public class TickEventArgs : EventArgs
-  {
-    public Tick Tick { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
-
-    public TickEventArgs(Tick tick)
+    public class TickEventArgs : EventArgs
     {
-      this.Tick = tick;
+        public Tick Tick { get; private set; }
+
+        public TickEventArgs(Tick tick)
+        {
+            this.Tick = tick;
+        }
     }
-  }
 }

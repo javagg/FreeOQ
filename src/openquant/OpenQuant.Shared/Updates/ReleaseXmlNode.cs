@@ -37,7 +37,7 @@ namespace OpenQuant.Shared.Updates
 				if (stringAttribute != null)
 					return new Uri(stringAttribute);
 				else
-					return (Uri)null;
+					return null;
 			}
 		}
 

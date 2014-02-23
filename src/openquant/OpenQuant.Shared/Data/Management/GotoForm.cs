@@ -18,7 +18,7 @@ namespace OpenQuant.Shared.Data.Management
     private DateTimePicker dtpDateTime;
     private Label label1;
     private NumericUpDown nudMilliseconds;
-    private Container components;
+        private IContainer components = null;
 
     internal DateTime Result
     {

@@ -11,7 +11,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class QuoteEditor : DataObjectEditor
   {
-    private IContainer components;
+        private IContainer components = null;
     private NumericUpDown nudAsk;
     private NumericUpDown nudBidSize;
     private NumericUpDown nudBid;

@@ -1,7 +1,6 @@
 using OpenQuant.Shared;
 using OpenQuant.Shared.Indicators;
 using OpenQuant.Shared.Properties;
-using FreeQuant.FinChart;
 using FreeQuant.Indicators;
 using FreeQuant.Series;
 using System;
@@ -11,10 +10,11 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Windows.Forms;
+using FreeQuant.FinChart;
 
 namespace OpenQuant.Shared.Charting
 {
-	public partial class Chart : FreeQuant.FinChart.Chart
+    public partial class Chart : FreeQuant.FinChart.Chart
 	{
 		private Color defaultLineColor;
 		private bool indicatorDropEnabled;

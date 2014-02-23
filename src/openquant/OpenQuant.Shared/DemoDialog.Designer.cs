@@ -5,7 +5,7 @@ namespace OpenQuant.Shared
 {
 	partial class DemoDialog
 	{
-		private IContainer components;
+        private IContainer components = null;
 		private Panel panel1;
 		private Label label1;
 		private Label lblDemoMessage;

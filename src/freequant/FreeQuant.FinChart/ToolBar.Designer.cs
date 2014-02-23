@@ -35,6 +35,7 @@ namespace FreeQuant.FinChart
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBar));
             this.uPSSFuKEDk = new System.Windows.Forms.ToolBar();
             this.kbZSI7yHWF = new System.Windows.Forms.ToolBarButton();
             this.SHBSzi5RWV = new System.Windows.Forms.ToolBarButton();
@@ -60,26 +61,24 @@ namespace FreeQuant.FinChart
             // uPSSFuKEDk
             // 
             this.uPSSFuKEDk.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
-            this.uPSSFuKEDk.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[]
-            {
-                this.kbZSI7yHWF,
-                this.SHBSzi5RWV,
-                this.GHZSaNnkGg,
-                this.sav0tem4ql,
-                this.rTk0wOhRro,
-                this.tM9SpQ48d1,
-                this.L4H0cGUhOc,
-                this.gnW0JYdeuq,
-                this.d90SW54h6P,
-                this.Jxd0K4UyYR,
-                this.SYG0iI8HBl,
-                this.HOr0XJ5GIq,
-                this.Bla0rORiyV,
-                this.W840yr4JgF,
-                this.tk80SKptT6,
-                this.SDT00J8DRD,
-                this.GW90DgPn0G
-            });
+            this.uPSSFuKEDk.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
+            this.kbZSI7yHWF,
+            this.SHBSzi5RWV,
+            this.GHZSaNnkGg,
+            this.sav0tem4ql,
+            this.rTk0wOhRro,
+            this.tM9SpQ48d1,
+            this.L4H0cGUhOc,
+            this.gnW0JYdeuq,
+            this.d90SW54h6P,
+            this.Jxd0K4UyYR,
+            this.SYG0iI8HBl,
+            this.HOr0XJ5GIq,
+            this.Bla0rORiyV,
+            this.W840yr4JgF,
+            this.tk80SKptT6,
+            this.SDT00J8DRD,
+            this.GW90DgPn0G});
             this.uPSSFuKEDk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uPSSFuKEDk.DropDownArrows = true;
             this.uPSSFuKEDk.ImageList = this.N8BSouAZN1;
@@ -191,9 +190,13 @@ namespace FreeQuant.FinChart
             // 
             // N8BSouAZN1
             // 
-            this.N8BSouAZN1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.N8BSouAZN1.ImageSize = new System.Drawing.Size(16, 16);
+            this.N8BSouAZN1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("N8BSouAZN1.ImageStream")));
             this.N8BSouAZN1.TransparentColor = System.Drawing.Color.Transparent;
+            this.N8BSouAZN1.Images.SetKeyName(0, "menuData_Import_Instruments.Image.png");
+            // 
+            // sf4SjX1ToR
+            // 
+            this.sf4SjX1ToR.Popup += new System.Windows.Forms.PopupEventHandler(this.sf4SjX1ToR_Popup);
             // 
             // ToolBar
             // 

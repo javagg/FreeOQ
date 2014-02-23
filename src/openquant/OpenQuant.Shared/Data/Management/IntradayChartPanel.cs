@@ -1,5 +1,4 @@
 ﻿using OpenQuant.Shared.Properties;
-using FreeQuant.Charting;
 using FreeQuant.Data;
 using System;
 using System.Collections;
@@ -10,14 +9,15 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 using IDataObject = FreeQuant.Data.IDataObject;
+using FreeQuant.Charting;
 
 namespace OpenQuant.Shared.Data.Management
 {
   internal class IntradayChartPanel : ChartPanel
   {
-    private IContainer components;
+        private IContainer components = null;
     private ToolStrip toolStrip;
-    protected Chart chart;
+        protected FreeQuant.Charting.Chart chart;
     private ToolStripTextBox tbxSelectedDate;
     private ToolStripButton btnDate;
     private ToolStripSeparator toolStripSeparator1;

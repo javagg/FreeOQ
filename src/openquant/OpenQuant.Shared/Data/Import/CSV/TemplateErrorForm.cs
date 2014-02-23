@@ -14,7 +14,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
   {
     private TextBox tbxErrors;
     private Button btnOk;
-    private Container components;
+        private IContainer components = null;
 
     public TemplateErrorForm()
     {

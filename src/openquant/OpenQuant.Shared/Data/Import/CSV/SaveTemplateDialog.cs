@@ -12,7 +12,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
     private ComboBox cbxNames;
     private Button btnOk;
     private Button btnCancel;
-    private Container components;
+        private IContainer components = null;
 
     public string TemplateName
     {

@@ -12,7 +12,7 @@ namespace OpenQuant.Shared.Data.Import.CSV
     private Button btnOk;
     private Button btnCancel;
     private LinkLabel lnkHelp;
-    private Container components;
+        private IContainer components = null;
 
     public string Format
     {

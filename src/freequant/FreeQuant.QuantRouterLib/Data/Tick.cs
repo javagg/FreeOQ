@@ -1,21 +1,19 @@
 using System;
-using System.Runtime.CompilerServices;
 
 namespace FreeQuant.QuantRouterLib.Data
 {
-  public class Tick
-  {
-    public int RequestId { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+    public class Tick
+    {
+        public int RequestId { get; set; }
 
-    public int SourceId { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+        public int SourceId { get; set; }
 
-    public TickType TickType { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+        public TickType TickType { get; set; }
 
-    public DateTime DateTime { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+        public DateTime DateTime { get; set; }
 
-    public double Price { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
+        public double Price { get; set; }
 
-    public int Size { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-  }
+        public int Size { get; set; }
+    }
 }

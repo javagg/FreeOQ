@@ -6,7 +6,7 @@ namespace OpenQuant.Shared
 {
 	partial class SplashScreen
 	{
-		private IContainer components;
+        private System.ComponentModel.IContainer components;
 		private PictureBox pictureBox;
 		private Label lblProgress;
 		private Label label1;

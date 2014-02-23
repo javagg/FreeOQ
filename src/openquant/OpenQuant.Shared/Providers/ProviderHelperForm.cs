@@ -9,7 +9,7 @@ namespace OpenQuant.Shared.Providers
 {
   internal class ProviderHelperForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Label label1;
     private ProgressBar progressBar;
     private IProvider provider;
@@ -44,12 +44,12 @@ namespace OpenQuant.Shared.Providers
       this.progressBar.Style = ProgressBarStyle.Marquee;
       this.progressBar.TabIndex = 1;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new Size(271, 69);
       this.ControlBox = false;
       this.Controls.Add((Control) this.progressBar);
       this.Controls.Add((Control) this.label1);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ProviderHelperForm";

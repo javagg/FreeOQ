@@ -2,13 +2,13 @@ using System;
 
 namespace FreeQuant.QuantRouterLib.Data
 {
-  [Flags]
-  public enum TickType : byte
-  {
-    Unknown = (byte) 0,
-    Bid = (byte) 1,
-    Ask = (byte) 2,
-    Trade = (byte) 4,
-    Level2 = (byte) 8,
-  }
+    [Flags]
+    public enum TickType : byte
+    {
+        Unknown = 0,
+        Bid = 1,
+        Ask = 2,
+        Trade = 4,
+        Level2 = 8,
+    }
 }

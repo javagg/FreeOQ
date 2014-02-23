@@ -1,4 +1,6 @@
-﻿namespace OpenQuant.Shared.QuantTrader
+﻿using System.IO;
+
+namespace OpenQuant.Shared.QuantTrader
 {
 	public abstract class PackageReader
 	{
@@ -8,11 +10,11 @@
 
 		protected void AddEntry(Package package, string path, byte[] data)
 		{
-			string[] strArray = path.Split(new char[] { '\\' });
+            string[] array = path.Split(new char[] { Path.DirectorySeparatorChar });
 			PackageFolder packageFolder = (PackageFolder)package;
-			for (int index = 0; index < strArray.Length - 1; ++index)
-				packageFolder = packageFolder.GetEntry<PackageFolder>(strArray[index]);
-			packageFolder.GetEntry<PackageFile>(strArray[strArray.Length - 1]).Data = data;
+            for (int i = 0; i < array.Length - 1; ++i)
+				packageFolder = packageFolder.GetEntry<PackageFolder>(array[i]);
+			packageFolder.GetEntry<PackageFile>(array[array.Length - 1]).Data = data;
 		}
 	}
 }

@@ -9,7 +9,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class NewBarSeriesForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Panel panel1;
     private GroupBox groupBox1;
     private Button btnCancel;

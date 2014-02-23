@@ -1,26 +1,24 @@
-using System.Runtime.CompilerServices;
-
 namespace FreeQuant.QuantRouterLib.Data
 {
-  public class Command
-  {
-    public Instrument Instrument { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
-
-    public Order Order { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] private set; }
-
-    public int CommandId { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public byte CommandType { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public byte ProviderId { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public string Text { [MethodImpl(MethodImplOptions.NoInlining)] get; [MethodImpl(MethodImplOptions.NoInlining)] set; }
-
-    public Command()
+    public class Command
     {
-      this.Instrument = new Instrument();
-      this.Order = new Order();
-      this.Text = string.Empty;
+        public Instrument Instrument { get; private set; }
+
+        public Order Order { get; private set; }
+
+        public int CommandId { get; set; }
+
+        public byte CommandType { get; set; }
+
+        public byte ProviderId { get; set; }
+
+        public string Text { get; set; }
+
+        public Command()
+        {
+            this.Instrument = new Instrument();
+            this.Order = new Order();
+            this.Text = string.Empty;
+        }
     }
-  }
 }

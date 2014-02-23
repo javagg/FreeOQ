@@ -10,7 +10,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class DataObjectEditor : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Panel panel;
     protected Label label1;
     protected DateTimePicker dtpDateTime;

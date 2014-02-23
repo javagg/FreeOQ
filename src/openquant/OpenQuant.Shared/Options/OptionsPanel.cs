@@ -83,7 +83,7 @@ namespace OpenQuant.Shared.Options
             this.components = new Container();
             this.SuspendLayout();
             this.AutoScaleDimensions = new SizeF(6f, 13f);
-            this.AutoScaleMode = AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "OptionsPanel";
             this.Size = new Size(400, 360);
             this.ResumeLayout(false);

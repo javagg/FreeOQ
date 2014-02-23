@@ -14,7 +14,7 @@ namespace OpenQuant.Shared.Data.Management
 {
   internal class DataSeriesCalendarForm : Form
   {
-    private IContainer components;
+        private IContainer components = null;
     private Panel panel;
     private Button btnOK;
     private Button btnCancel;

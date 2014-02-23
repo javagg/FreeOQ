@@ -35,7 +35,7 @@ namespace OpenQuant.Shared.Data.Import.TAQ
     private RadioButton rbnExistents;
     private RadioButton rbnCustom;
     private Button btnSelect;
-    private Container components;
+        private IContainer components = null;
 
     public TAQImportForm()
     {
