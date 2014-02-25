@@ -39,47 +39,60 @@ namespace OpenQuant.Shared.Logs
 
 		private void InitializeComponent()
 		{
-			this.tbxTabName = new TextBox();
-			this.btnOK = new Button();
-			this.btnCancel = new Button();
-			this.SuspendLayout();
-			this.tbxTabName.Location = new Point(20, 16);
-			this.tbxTabName.Name = "tbxTabName";
-			this.tbxTabName.Size = new Size(216, 20);
-			this.tbxTabName.TabIndex = 0;
-			this.tbxTabName.TextChanged += new EventHandler(this.tbxTabName_TextChanged);
+            this.tbxTabName = new System.Windows.Forms.TextBox();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // tbxTabName
+            // 
+            this.tbxTabName.Location = new System.Drawing.Point(20, 16);
+            this.tbxTabName.Name = "tbxTabName";
+            this.tbxTabName.Size = new System.Drawing.Size(216, 20);
+            this.tbxTabName.TabIndex = 0;
+            this.tbxTabName.TextChanged += new System.EventHandler(this.tbxTabName_TextChanged);
+            // 
+            // btnOK
+            // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.btnOK.Location = new Point(68, 52);
-			this.btnOK.Name = "btnOK";
-			this.btnOK.Size = new Size(60, 24);
-			this.btnOK.TabIndex = 1;
-			this.btnOK.Text = "OK";
-			this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(68, 52);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(60, 24);
+            this.btnOK.TabIndex = 1;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new Point(134, 52);
-			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new Size(60, 24);
-			this.btnCancel.TabIndex = 2;
-			this.btnCancel.Text = "Cancel";
-			this.btnCancel.UseVisualStyleBackColor = true;
-			this.AcceptButton = (IButtonControl)this.btnOK;
-			this.AutoScaleDimensions = new SizeF(6f, 13f);
+            this.btnCancel.Location = new System.Drawing.Point(134, 52);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(60, 24);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // TabNameForm
+            // 
+            this.AcceptButton = this.btnOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.CancelButton = (IButtonControl)this.btnCancel;
-			this.ClientSize = new Size(258, 84);
-			this.Controls.Add((Control)this.btnCancel);
-			this.Controls.Add((Control)this.btnOK);
-			this.Controls.Add((Control)this.tbxTabName);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(261, 84);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.tbxTabName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.MaximizeBox = false;
-			this.MinimizeBox = false;
-			this.Name = "TabNameForm";
-			this.ShowIcon = false;
-			this.ShowInTaskbar = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "TabNameForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Tab Name";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.Text = "Tab Name";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 
 		private void tbxTabName_TextChanged(object sender, EventArgs e)

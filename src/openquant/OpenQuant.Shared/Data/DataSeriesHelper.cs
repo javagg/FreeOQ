@@ -55,9 +55,9 @@ namespace OpenQuant.Shared.Data
 			switch (dataSeriesInfo.DataType)
 			{
 				case DataType.Bar:
-					return string.Format("{0} {1}", (object)"Bar", (object)DataSeriesHelper.BarTypeSizeToString(dataSeriesInfo.BarType, dataSeriesInfo.BarSize));
+					return string.Format("{0} {1}", "Bar", DataSeriesHelper.BarTypeSizeToString(dataSeriesInfo.BarType, dataSeriesInfo.BarSize));
 				case DataType.MarketDepth:
-					return ((object)dataSeriesInfo.DataType).ToString();
+					return dataSeriesInfo.DataType.ToString();
 				default:
 					return dataSeriesInfo.Suffix;
 			}
@@ -71,7 +71,7 @@ namespace OpenQuant.Shared.Data
 					if (barSize == 86400L)
 						return "Daily";
 					if (barSize % 86400L == 0L)
-						return string.Format("{0} day", (object)(barSize / 86400L));
+                        return string.Format("{0} day", barSize / 86400);
 					if (barSize % 3600L == 0L)
 						return string.Format("{0} hour", (object)(barSize / 3600L));
 					if (barSize % 60L == 0L)
