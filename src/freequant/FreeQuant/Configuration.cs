@@ -9,12 +9,12 @@ namespace FreeQuant
         private const string Defaults = "Defaults";
         private const string qSTmIZYQno = "Error Management";
         private const string TvkmlyTube = "framework.xml";
-        private const string Currency = "Currency";
-        private const string Portfolio = "Portfolio";
-        private const string Exchange = "Exchange";
-        private const string ExecutionProvider = "ExecutionProvider";
-        private const string MarketDataProvider = "MarketDataProvider";
-        private ReferenceList DQjmfsNtrs;
+        private const string DEFAULT_CURRENCY = "USD";
+        private const string DEFAULT_PORTFOLIO = "Portfolio";
+        private const string DEFAULT_EXCHANGE = "NYSE";
+        private const string DEFAULT_EXECUTION_PROVIDER = "ExecutionProvider";
+        private const string DEFAULT_MARKETDATA_PROVIDER = "MarketDataProvider";
+        private ReferenceList references;
         private PluginList plugins = new PluginList();
         private System.Diagnostics.TraceLevel traceLevel = TraceLevel.Info;
         private string ytrmcAy4ir;
@@ -35,7 +35,7 @@ namespace FreeQuant
         {
             get
             {
-                return (ReferenceList)null;
+                return references;
             }
         }
 
@@ -91,7 +91,7 @@ namespace FreeQuant
         {
             get
             {
-                return "NYSE";
+                return DEFAULT_EXCHANGE;
             }
             set
             {
@@ -104,7 +104,7 @@ namespace FreeQuant
         {
             get
             {
-                return (string)null;
+                return DEFAULT_EXECUTION_PROVIDER;
             }
             set
             {
@@ -117,7 +117,7 @@ namespace FreeQuant
         {
             get
             {
-                return (string)null;
+                return DEFAULT_MARKETDATA_PROVIDER;
             }
             set
             {
@@ -130,86 +130,25 @@ namespace FreeQuant
         {
             get
             {
-                return "DefaultPortfolio";
+                return DEFAULT_PORTFOLIO;
             }
             set
             {
             }
         }
 
-        public event ReferenceEventHandler ReferenceAdded
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
+        public event ReferenceEventHandler ReferenceAdded;
+        public event ReferenceEventHandler ReferenceRemoved;
+        public event ReferenceEventHandler ReferenceEnabledChanged;
+        public event PluginEventHandler PluginAdded;
+        public event PluginEventHandler PluginRemoved;
+        public event PluginEventHandler PluginEnabledChanged;
+        public event EventHandler TraceLevelChanged;
 
-        public event ReferenceEventHandler ReferenceRemoved
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
-
-        public event ReferenceEventHandler ReferenceEnabledChanged
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
-
-        public event PluginEventHandler PluginAdded
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
-
-        public event PluginEventHandler PluginRemoved
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
-
-        public event PluginEventHandler PluginEnabledChanged
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
-
-        public event EventHandler TraceLevelChanged
-        {
-            add
-            {
-            }
-            remove
-            {
-            }
-        }
-
-        static Configuration()
-        {
-        }
+//        static Configuration()
+//        {
+//
+//        }
 
         internal Configuration()
         {
@@ -221,52 +160,62 @@ namespace FreeQuant
 
         public void AddReference(Reference reference)
         {
+            this.references.Add(reference);
+            if (this.ReferenceAdded != null)
+                this.ReferenceAdded(new ReferenceEventArgs(reference));
         }
 
         public void RemoveReference(Reference reference)
         {
+            this.references.Remove(reference);
+            if (this.ReferenceRemoved != null)
+                this.ReferenceRemoved(new ReferenceEventArgs(reference));
         }
 
         public void AddPlugin(Plugin plugin)
         {
             this.plugins.Add(plugin);
+            if (this.PluginAdded != null)
+                this.PluginAdded(new PluginEventArgs(plugin));
         }
 
         public void RemovePlugin(Plugin plugin)
         {
             this.plugins.Remove(plugin);
+            if (this.PluginRemoved != null)
+                this.PluginRemoved(new PluginEventArgs(plugin));
         }
 
-        private void r4omhfJxrr(Reference obj0)
-        {
-        }
+//        private void r4omhfJxrr(Reference obj0)
+//        {
+//        }
+//
+//        private void i7WmspOSjr(Reference obj0)
+//        {
+//        }
+//
+//        internal void iVCmyqqsve(Reference obj0)
+//        {
+//        }
+//
+//        private void cTdmESFHjc(Plugin obj0)
+//        {
+//        }
+//
+//        private void rRLmTCXR6E(Plugin obj0)
+//        {
+//        }
+//
+//        internal void S6RmWfq0Ij(Plugin obj0)
+//        {
+//        }
 
-        private void i7WmspOSjr(Reference obj0)
-        {
-        }
-
-        internal void iVCmyqqsve(Reference obj0)
-        {
-        }
-
-        private void cTdmESFHjc(Plugin obj0)
-        {
-        }
-
-        private void rRLmTCXR6E(Plugin obj0)
-        {
-        }
-
-        internal void S6RmWfq0Ij(Plugin obj0)
-        {
-        }
-
-        private void L7GmG9IG7M()
-        {
-        }
-
-        private void XQDm0HUSTN()
-        {
-        }
+//        private void L7GmG9IG7M()
+//        {
+//        }
+//
+//        private void XQDm0HUSTN()
+//        {
+//        }
     }
 }

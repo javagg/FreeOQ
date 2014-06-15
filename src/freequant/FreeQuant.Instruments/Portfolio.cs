@@ -11,9 +11,10 @@ namespace FreeQuant.Instruments
 {
     public class Portfolio
     {
-        private const string PZwsidQPL5 = "Naming";
+        private const string CATEGORY_NAMING = "Naming";
         private const bool RjashrZH84 = true;
         private const bool rSjstETkMn = false;
+
         private TransactionList transactions;
         private PositionList positions;
         private Account account;
@@ -27,11 +28,11 @@ namespace FreeQuant.Instruments
         [Browsable(false)]
         public int Id { get; set; }
 
-        [Category("Naming")]
+        [Category(CATEGORY_NAMING)]
         [ReadOnly(true)]
         public string Name { get; set; }
 
-        [Category("Naming")]
+        [Category(CATEGORY_NAMING)]
         public string Description { get; set; }
 
         [Browsable(false)]
@@ -133,14 +134,14 @@ namespace FreeQuant.Instruments
             this.dataLock = new object();
         }
 
-        public Portfolio(string name, string description)
+        public Portfolio(string name, string description) : this()
         {
             this.Name = name;
             this.Description = description;
             PortfolioManager.Add(this);
         }
 
-        public Portfolio(string name) : this(name, String.Empty)
+        public Portfolio(string name) : this(name, string.Empty)
         {
         }
 

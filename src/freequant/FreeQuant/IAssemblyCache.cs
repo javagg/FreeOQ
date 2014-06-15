@@ -1,13 +1,11 @@
-using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System;
 
 namespace FreeQuant
 {
-//	[Guid("e707dcde-d1cd-11d2-bab9-00c04f8eceae")]
+	[Guid("e707dcde-d1cd-11d2-bab9-00c04f8eceae")]
 	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-//	[ComImport]
+	[ComImport]
 	internal interface IAssemblyCache
 	{
 		int UninstallAssembly(uint dwFlags, [MarshalAs(UnmanagedType.LPWStr)] string pszAssemblyName, [MarshalAs(UnmanagedType.LPArray)] string[] pRefData, out uint pulDisposition);

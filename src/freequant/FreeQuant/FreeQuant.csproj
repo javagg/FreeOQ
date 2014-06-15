@@ -90,6 +90,9 @@
     <Compile Include="FreeQuantReference.cs" />
     <Compile Include="ClockMode.cs" />
     <Compile Include="InfoBase.cs" />
+    <Compile Include="IApplicationContext.cs" />
+    <Compile Include="IHistoryReader.cs" />
+    <Compile Include="Fusion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

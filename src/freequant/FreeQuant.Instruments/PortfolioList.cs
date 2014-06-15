@@ -38,12 +38,12 @@ namespace FreeQuant.Instruments
 		internal void Add(Portfolio portfolio)
 		{
 			if (this.portfolios.Contains(portfolio.Name))
-				throw new ApplicationException("" + portfolio.Name);
+                throw new ApplicationException("Already added: Name={0}" + portfolio.Name);
 			this.portfolios.Add(portfolio.Name, portfolio);
 			if (portfolio.Id == -1)
 				return;
 			if (this.portfoliosById.Contains(portfolio.Id))
-				throw new ApplicationException("" + portfolio.Id);
+                throw new ApplicationException("Already added: Id={0}" + portfolio.Id);
 			this.portfoliosById.Add(portfolio.Id, portfolio);
 		}
 

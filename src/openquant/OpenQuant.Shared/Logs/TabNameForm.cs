@@ -7,7 +7,7 @@ namespace OpenQuant.Shared.Logs
 {
 	class TabNameForm : Form
 	{
-		private IContainer components;
+        private IContainer components = null;
 		private TextBox tbxTabName;
 		private Button btnOK;
 		private Button btnCancel;

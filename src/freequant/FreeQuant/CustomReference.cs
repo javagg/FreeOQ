@@ -10,7 +10,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return file.DirectoryName + file.FullName;
+                return file.FullName;
 			}
 		}
 

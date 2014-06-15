@@ -39,7 +39,7 @@ namespace OpenQuant.Shared.Plugins
 
 		public void CopyTo(Array array, int index)
 		{
-			new List<PluginInfo>((IEnumerable<PluginInfo>)this.plugins.Values).ToArray().CopyTo(array, index);
+			new List<PluginInfo>(this.plugins.Values).ToArray().CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()

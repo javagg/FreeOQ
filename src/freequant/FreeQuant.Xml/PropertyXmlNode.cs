@@ -4,14 +4,14 @@ namespace FreeQuant.Xml
 {
 	public class PropertyXmlNode : XmlNodeBase
 	{
-		private const string YISEWI7PD = "name";
-		private const string f5FJf7ixS = "type";
+        private const string NAME = "name";
+        private const string TYPE = "type"; 
 
 		public override string NodeName
 		{
 			get
 			{
-				return YISEWI7PD;
+				return NAME;
 			}
 		}
 
@@ -19,11 +19,11 @@ namespace FreeQuant.Xml
 		{
 			get
 			{
-				return this.GetStringAttribute(YISEWI7PD);
+				return this.GetStringAttribute(NAME);
 			}
 			set
 			{
-				this.SetAttribute(YISEWI7PD, value);
+				this.SetAttribute(NAME, value);
 			}
 		}
 
@@ -31,11 +31,11 @@ namespace FreeQuant.Xml
 		{
 			get
 			{
-				return this.GetTypeAttribute(f5FJf7ixS);
+				return this.GetTypeAttribute(TYPE);
 			}
 			set
 			{
-				this.SetAttribute(f5FJf7ixS, value);
+				this.SetAttribute(TYPE, value);
 			}
 		}
 

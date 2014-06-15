@@ -2,7 +2,7 @@
 
 namespace OpenQuant.Shared.Compiler
 {
-	internal class BuildReferenceList : List<BuildReference>
+	class BuildReferenceList : List<BuildReference>
 	{
 	}
 }

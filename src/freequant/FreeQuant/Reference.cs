@@ -1,68 +1,69 @@
 using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System;
 
 namespace FreeQuant
 {
-  public class Reference
-  {
-    protected AssemblyName assemblyName;
-    protected ReferenceType referenceType;
-    protected bool enabled;
-    protected bool valid;
-    private Configuration YwFLqei13;
-
-    public AssemblyName AssemblyName
+    public class Reference
     {
-      get
-      {
-        return null;
-      }
-    }
+        protected AssemblyName assemblyName;
+        protected ReferenceType referenceType;
+        protected bool enabled;
+        protected bool valid;
 
-    public ReferenceType ReferenceType
-    {
-      get
-      {
-				return referenceType;
-      }
-    }
+        private Configuration configuration;
 
-    [Browsable(false)]
-    public bool Enabled
-    {
-      get
-      {
-        return true;
-      }
-      set
-      {
-      }
-    }
+        public AssemblyName AssemblyName
+        {
+            get
+            {
+                return assemblyName;
+            }
+        }
 
-    public bool Valid
-    {
-      get
-      {
-        return true;
-      }
-    }
+        public ReferenceType ReferenceType
+        {
+            get
+            {
+                return referenceType;
+            }
+        }
 
-    public virtual string Path
-    {
-      get
-      {
-        return null;
-      }
-    }
+        [Browsable(false)]
+        public bool Enabled
+        {
+            get
+            {
+                return enabled;
+            }
+        }
 
-    
-    protected Reference(ReferenceType referenceType, bool enabled)
-    {
-    }
+        public bool Valid
+        {
+            get
+            {
+                return valid;
+            }
+        }
 
-		    internal void sq01wopyU(Configuration value)
-    {
+        public virtual string Path
+        {
+            get
+            {
+                return new Uri(this.assemblyName.CodeBase).LocalPath;
+            }
+        }
+
+        protected Reference(ReferenceType referenceType, bool enabled)
+        {
+            this.referenceType = referenceType;
+            this.enabled = enabled;
+        }
+
+        internal void sq01wopyU(Configuration value)
+        {
+            this.configuration = value;
+        }
     }
-  }
 }

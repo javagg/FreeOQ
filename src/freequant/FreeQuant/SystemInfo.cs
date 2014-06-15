@@ -20,7 +20,7 @@ namespace FreeQuant
 		{
 			get
 			{
-				return (OperatingSystem)null;
+                return Environment.OSVersion;
 			}
 		}
 
@@ -30,9 +30,6 @@ namespace FreeQuant
 			{
 				return (CPUInfo)null;
 			}
-			private set
-			{
-			}
 		}
 
 		public RAMInfo RAM
@@ -40,9 +37,6 @@ namespace FreeQuant
 			get
 			{
 				return (RAMInfo)null;
-			}
-			private set
-			{
 			}
 		}
 
@@ -56,7 +50,7 @@ namespace FreeQuant
 
 		static SystemInfo()
 		{
-			SystemInfo.systemInfo = (SystemInfo)null;
+            SystemInfo.systemInfo = new SystemInfo();
 		}
 
 		private SystemInfo()

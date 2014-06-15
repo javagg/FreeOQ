@@ -42,7 +42,7 @@ namespace FreeQuant.Xml
 			if (xmlAttribute != null)
 				return xmlAttribute.Value;
 			else
-				return (string)null;
+				return null;
 		}
 
 		protected int GetInt32Attribute(string name)

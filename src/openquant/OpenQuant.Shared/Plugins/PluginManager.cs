@@ -32,37 +32,26 @@ namespace OpenQuant.Shared.Plugins
         {
             if (!this.configFile.Exists)
                 return;
-            PluginsXmlDocument pluginsXmlDocument = new PluginsXmlDocument();
-            ((XmlDocument)pluginsXmlDocument).Load(this.configFile.FullName);
-            IEnumerator enumerator = pluginsXmlDocument.Plugins.GetEnumerator();
-            try
+            PluginsXmlDocument doc = new PluginsXmlDocument();
+            doc.Load(this.configFile.FullName);
+            foreach (PluginXmlNode node in doc.Plugins)
             {
-                while (enumerator.MoveNext())
-                {
-                    PluginXmlNode pluginXmlNode = (PluginXmlNode)enumerator.Current;
-                    PluginInfo plugin = new PluginInfo(pluginXmlNode.PluginType, pluginXmlNode.TypeName.Value, pluginXmlNode.AssemblyName.Value);
-                    plugin.Enabled = pluginXmlNode.Enabled;
-                    if (pluginXmlNode.X86.HasValue)
-                        plugin.x86 = pluginXmlNode.X86.Value;
-                    if (pluginXmlNode.X64.HasValue)
-                        plugin.x64 = pluginXmlNode.X64.Value;
-                    this.plugins.Add(plugin);
-                }
-            }
-            finally
-            {
-                IDisposable disposable = enumerator as IDisposable;
-                if (disposable != null)
-                    disposable.Dispose();
+                PluginInfo plugin = new PluginInfo(node.PluginType, node.TypeName.Value, node.AssemblyName.Value);
+                plugin.Enabled = node.Enabled;
+                if (node.X86.HasValue)
+                    plugin.x86 = node.X86.Value;
+                if (node.X64.HasValue)
+                    plugin.x64 = node.X64.Value;
+                this.plugins.Add(plugin);
             }
         }
 
         public void SaveConfig()
         {
-            PluginsXmlDocument pluginsXmlDocument = new PluginsXmlDocument();
+            PluginsXmlDocument doc = new PluginsXmlDocument();
             foreach (PluginInfo plugin in this.plugins)
-                pluginsXmlDocument.Plugins.Add(plugin);
-            ((XmlDocument)pluginsXmlDocument).Save(this.configFile.FullName);
+                doc.Plugins.Add(plugin);
+            doc.Save(this.configFile.FullName);
         }
 
         public void LoadPlugins()
@@ -82,13 +71,13 @@ namespace OpenQuant.Shared.Plugins
                 if (plugin.PluginType != PluginType.UserProvider)
                     return;
                 FieldInfo field = typeof(UserProvider).GetField("provider", BindingFlags.Instance | BindingFlags.NonPublic);
-                if (!(field != (FieldInfo)null))
+                if (field == null)
                     return;
                 ProviderManager.Add((IProvider)field.GetValue(obj));
             }
             catch (Exception ex)
             {
-                int num = (int)MessageBox.Show(((object)ex).ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

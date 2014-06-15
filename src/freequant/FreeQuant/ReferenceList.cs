@@ -5,26 +5,30 @@ using System.Runtime.InteropServices;
 
 namespace FreeQuant
 {
-  public class ReferenceList : ReadOnlyCollectionBase
-  {
-    public Reference this[int index]
+    public class ReferenceList : ReadOnlyCollectionBase
     {
-      get
-      {
-        return (Reference) null;
-      }
-    }
+        private ArrayList references;
+        public Reference this[int index]
+        {
+            get
+            {
+                return (Reference)this.references[index];
+            }
+        }
 
-    internal ReferenceList()
-    {
-    }
+        internal ReferenceList()
+        {
+            this.references = new ArrayList();
+        }
 
-    internal void ixrmJae9g7([In] Reference obj0)
-    {
-    }
+        internal void Add(Reference reference)
+        {
+            this.references.Add(reference);
+        }
 
-    internal void ITPmQ2EYKc([In] Reference obj0)
-    {
+        internal void Remove(Reference reference)
+        {
+            this.references.Remove(reference);
+        }
     }
-  }
 }

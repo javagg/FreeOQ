@@ -2,33 +2,32 @@
 
 namespace OpenQuant.Shared.Charting
 {
-  internal class ChartColorTemplateXmlDocument : XmlDocumentBase
-  {
-    private const string ATTR_NAME = "name";
-
-    public string TemplateName
+    class ChartColorTemplateXmlDocument : XmlDocumentBase
     {
-      get
-      {
-        return this.GetStringAttribute("name");
-      }
-      set
-      {
-        this.SetAttribute("name", value);
-      }
-    }
+        private const string ATTR_NAME = "name";
 
-    public PropertyListXmlNode Properties
-    {
-      get
-      {
-        return this.GetChildNode<PropertyListXmlNode>();
-      }
-    }
+        public string TemplateName
+        {
+            get
+            {
+                return this.GetStringAttribute(ATTR_NAME);
+            }
+            set
+            {
+                this.SetAttribute(ATTR_NAME, value);
+            }
+        }
 
-		public ChartColorTemplateXmlDocument():  base("template", "chart color template file")
-    {
-   
+        public PropertyListXmlNode Properties
+        {
+            get
+            {
+                return this.GetChildNode<PropertyListXmlNode>();
+            }
+        }
+
+        public ChartColorTemplateXmlDocument() : base("template", "chart color template file")
+        {
+        }
     }
-  }
 }
